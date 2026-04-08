@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Service Edit · Digital Marketing for Independent Hospitality</title>
+<meta name="description" content="Email marketing, digital audits and website builds for independent hospitality businesses. Built by a 3x cafe owner who knows exactly what your customers respond to.">
+<link rel="canonical" href="https://www.theserviceedit.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#2b4a35;
+  --green-mid:#3a6347;
+  --green-pale:#eef5f1;
+  --cream:#faf8f4;
+  --cream-mid:#f2ede3;
+  --cream-dark:#e8e0d0;
+  --rule:#e4ddd0;
+  --warm-black:#1a1814;
+  --dark:#2b2820;
+  --mid:#8a8070;
+  --light:#b0a898;
+  --white:#ffffff;
+  --fd:'Bebas Neue',Impact,'Arial Narrow',Arial,sans-serif;
+  --fb:'DM Sans',-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--cream);color:var(--warm-black);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:var(--cream);border-bottom:1px solid var(--rule);transition:background .3s}
+.nav-logo{font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-black);text-decoration:none}
+.nav-logo em{font-style:italic;font-weight:300}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:12px;font-weight:400;letter-spacing:.05em;color:var(--mid);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--warm-black)}
+.nav-cta{background:var(--green)!important;color:var(--white)!important;padding:8px 18px!important;font-size:11px!important;font-weight:500!important;letter-spacing:.12em!important;text-transform:uppercase!important}
+.nav-cta:hover{background:var(--green-mid)!important;color:var(--white)!important}
+
+/* HERO */
+.hero{padding-top:58px;min-height:100vh;background:var(--green);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 64px 80px 64px;position:relative;z-index:2}
+.hero-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:20px}
+.hero-h1{font-family:var(--fd);font-size:clamp(64px,6.5vw,104px);line-height:.91;letter-spacing:.01em;color:var(--white);margin-bottom:28px}
+.hero-h1 em{color:#c8dabb;font-style:normal}
+.hero-body{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.68);max-width:400px;margin-bottom:40px}
+.hero-body strong{font-weight:500;color:rgba(255,255,255,.9)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.btn-hero-primary{display:inline-flex;align-items:center;gap:8px;background:#c8dabb;color:var(--green);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all .2s}
+.btn-hero-primary:hover{background:var(--white)}
+.btn-hero-outline{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.75);font-size:11px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all .2s}
+.btn-hero-outline:hover{border-color:rgba(255,255,255,.6);color:var(--white)}
+.hero-trust{display:flex;gap:32px}
+.hero-trust-item{display:flex;flex-direction:column;gap:3px}
+.hero-trust-num{font-family:var(--fd);font-size:36px;color:var(--white);line-height:1}
+.hero-trust-num em{color:#c8dabb;font-style:normal}
+.hero-trust-label{font-size:11px;font-weight:300;color:rgba(255,255,255,.4);letter-spacing:.04em}
+
+/* HERO RIGHT - proof panel */
+.hero-right{display:flex;flex-direction:column;justify-content:center;padding:80px 64px 80px 32px;position:relative;z-index:2;gap:20px}
+.hero-panel-label{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px}
+.proof-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);padding:28px 28px 24px;position:relative}
+.proof-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:#c8dabb}
+.proof-tag{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
+.proof-headline{font-family:var(--fd);font-size:clamp(28px,2.8vw,40px);line-height:1;color:var(--white);margin-bottom:12px}
+.proof-headline em{color:#c8dabb;font-style:normal}
+.proof-detail{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.5)}
+.proof-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.proof-num-val{font-family:var(--fd);font-size:28px;color:var(--white);line-height:1}
+.proof-num-val em{color:#c8dabb;font-style:normal}
+.proof-num-label{font-size:10px;font-weight:300;color:rgba(255,255,255,.4);line-height:1.4;margin-top:3px}
+.proof-note{font-size:11px;font-weight:300;color:rgba(255,255,255,.2);font-style:italic;text-align:right;margin-top:8px}
+
+/* DECORATIVE */
+.hero::after{content:'';position:absolute;bottom:-200px;right:-200px;width:700px;height:700px;border:1px solid rgba(255,255,255,.04);border-radius:50%;pointer-events:none}
+
+/* TICKER */
+.ticker{background:var(--cream-mid);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:11px 0;overflow:hidden}
+.ticker-track{display:flex;align-items:center;width:max-content;animation:ticker 32s linear infinite}
+.ticker-item{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--green);white-space:nowrap;padding:0 20px}
+.ticker-sep{width:3px;height:3px;background:var(--green);border-radius:50%;opacity:.3;margin:0 4px}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* JOURNEY STRIP - new section */
+.journey{background:var(--warm-black);padding:72px 40px}
+.journey-inner{max-width:1200px;margin:0 auto}
+.journey-top{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:end;margin-bottom:56px}
+.section-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.journey-heading{font-family:var(--fd);font-size:clamp(40px,3.8vw,62px);line-height:.94;color:var(--white)}
+.journey-heading em{color:#c8dabb;font-style:normal}
+.journey-sub{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.5)}
+.journey-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06)}
+.journey-step{background:var(--warm-black);padding:32px 28px}
+.journey-step-num{font-family:var(--fd);font-size:52px;color:rgba(255,255,255,.08);line-height:1;margin-bottom:12px}
+.journey-step-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:8px;line-height:1.3}
+.journey-step-body{font-size:13px;font-weight:300;line-height:1.75;color:rgba(255,255,255,.45)}
+.journey-step-price{display:inline-block;margin-top:14px;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#c8dabb;border:1px solid rgba(200,218,187,.25);padding:5px 12px}
+
+/* WHY SECTION */
+.why{padding:96px 40px;background:var(--cream)}
+.why-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start}
+.why-left{position:sticky;top:80px}
+.why-heading{font-family:var(--fd);font-size:clamp(44px,4vw,68px);line-height:.93;color:var(--warm-black);margin-bottom:20px}
+.why-heading em{color:var(--green)}
+.why-note{font-size:13px;font-weight:300;line-height:1.8;color:var(--mid);border-left:2px solid var(--green);padding-left:16px}
+.why-items{display:flex;flex-direction:column}
+.why-item{padding:32px 0;border-bottom:1px solid var(--rule)}
+.why-item:first-child{border-top:1px solid var(--rule)}
+.why-num{font-family:var(--fd);font-size:48px;color:var(--rule);line-height:1;margin-bottom:8px}
+.why-title{font-size:17px;font-weight:500;color:var(--warm-black);margin-bottom:10px;line-height:1.3}
+.why-body{font-size:14px;font-weight:300;line-height:1.85;color:var(--mid)}
+
+/* SERVICES */
+.services{padding:96px 40px;background:var(--cream-mid)}
+.services-inner{max-width:1200px;margin:0 auto}
+.services-header{margin-bottom:56px}
+.services-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.services-heading{font-family:var(--fd);font-size:clamp(44px,4vw,68px);line-height:.93;color:var(--warm-black);margin-bottom:0}
+.services-heading em{color:var(--green)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule)}
+
+/* SERVICE CARDS */
+.svc-card{background:var(--cream);display:flex;flex-direction:column;padding:44px 36px;transition:background .2s}
+.svc-card.featured{background:var(--green)}
+.svc-num{font-family:var(--fd);font-size:60px;line-height:1;color:var(--rule);margin-bottom:14px}
+.svc-card.featured .svc-num{color:rgba(255,255,255,.1)}
+.svc-name{font-family:var(--fd);font-size:clamp(28px,2.5vw,38px);line-height:.97;color:var(--warm-black);margin-bottom:6px}
+.svc-card.featured .svc-name{color:var(--white)}
+.svc-name em{color:var(--green)}
+.svc-card.featured .svc-name em{color:#c8dabb}
+.svc-price{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--rule)}
+.svc-card.featured .svc-price{color:rgba(255,255,255,.4);border-bottom-color:rgba(255,255,255,.1)}
+.svc-desc{font-size:14px;font-weight:300;line-height:1.85;color:var(--mid);flex:1;margin-bottom:24px}
+.svc-card.featured .svc-desc{color:rgba(255,255,255,.6)}
+.svc-includes-label{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--warm-black);margin-bottom:10px}
+.svc-card.featured .svc-includes-label{color:rgba(255,255,255,.4)}
+.svc-includes{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:28px}
+.svc-includes li{font-size:13px;font-weight:300;color:var(--mid);padding-left:16px;position:relative;line-height:1.5}
+.svc-includes li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:1px;background:var(--green)}
+.svc-card.featured .svc-includes li{color:rgba(255,255,255,.5)}
+.svc-card.featured .svc-includes li::before{background:#c8dabb}
+.svc-cta{display:inline-block;background:var(--warm-black);color:var(--white);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:13px 22px;text-decoration:none;align-self:flex-start;transition:all .2s}
+.svc-cta:hover{background:var(--green)}
+.svc-card.featured .svc-cta{background:#c8dabb;color:var(--green)}
+.svc-card.featured .svc-cta:hover{background:var(--white)}
+
+/* AUDIT CTA BAND */
+.audit-band{background:var(--green);padding:64px 40px}
+.audit-band-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.audit-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
+.audit-heading{font-family:var(--fd);font-size:clamp(40px,3.8vw,62px);line-height:.93;color:var(--white);margin-bottom:0}
+.audit-heading em{color:#c8dabb;font-style:normal}
+.audit-right{display:flex;flex-direction:column;gap:24px}
+.audit-body{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.6)}
+.audit-body strong{font-weight:500;color:rgba(255,255,255,.9)}
+.audit-features{list-style:none;display:flex;flex-direction:column;gap:10px}
+.audit-features li{font-size:13px;font-weight:300;color:rgba(255,255,255,.55);padding-left:18px;position:relative;line-height:1.5}
+.audit-features li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:1px;background:#c8dabb}
+.audit-features li strong{color:rgba(255,255,255,.85);font-weight:500}
+.audit-btn{display:inline-flex;align-items:center;gap:10px;background:#c8dabb;color:var(--green);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:16px 32px;text-decoration:none;transition:all .2s;align-self:flex-start}
+.audit-btn:hover{background:var(--white)}
+.audit-price-note{font-size:12px;font-weight:300;color:rgba(255,255,255,.3);font-style:italic}
+
+/* STATS */
+.stats{background:var(--warm-black);padding:0}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.07)}
+.stat{background:var(--warm-black);padding:48px 40px}
+.stat-num{font-family:var(--fd);font-size:clamp(52px,5vw,76px);color:#c8dabb;line-height:1;margin-bottom:10px}
+.stat-label{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.65}
+
+/* CASE STUDIES - new section */
+.cases{padding:96px 40px;background:var(--cream)}
+.cases-inner{max-width:1200px;margin:0 auto}
+.cases-header{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:end;margin-bottom:56px}
+.cases-heading{font-family:var(--fd);font-size:clamp(44px,4vw,68px);line-height:.93;color:var(--warm-black)}
+.cases-heading em{color:var(--green)}
+.cases-sub{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid)}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule)}
+.case-card{background:var(--cream);padding:44px 40px}
+.case-card.dark{background:var(--warm-black)}
+.case-client{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:20px}
+.case-card.dark .case-client{color:rgba(255,255,255,.3)}
+.case-result{font-family:var(--fd);font-size:clamp(36px,3.5vw,52px);line-height:.95;color:var(--warm-black);margin-bottom:14px}
+.case-card.dark .case-result{color:var(--white)}
+.case-result em{color:var(--green)}
+.case-card.dark .case-result em{color:#c8dabb}
+.case-desc{font-size:14px;font-weight:300;line-height:1.8;color:var(--mid)}
+.case-card.dark .case-desc{color:rgba(255,255,255,.45)}
+.case-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;padding-top:24px;border-top:1px solid var(--rule)}
+.case-card.dark .case-metrics{border-top-color:rgba(255,255,255,.07)}
+.case-metric-val{font-family:var(--fd);font-size:30px;color:var(--warm-black);line-height:1;margin-bottom:4px}
+.case-card.dark .case-metric-val{color:var(--white)}
+.case-metric-val em{color:var(--green)}
+.case-card.dark .case-metric-val em{color:#c8dabb}
+.case-metric-label{font-size:11px;font-weight:300;color:var(--mid);line-height:1.4}
+.case-card.dark .case-metric-label{color:rgba(255,255,255,.35)}
+
+/* ABOUT */
+.about{background:var(--green);padding:96px 40px}
+.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
+.about-heading{font-family:var(--fd);font-size:clamp(44px,4vw,68px);line-height:.93;color:var(--white);margin-bottom:0}
+.about-heading em{color:#c8dabb;font-style:normal}
+.about-body{display:flex;flex-direction:column;gap:18px}
+.about-body p{font-size:15px;font-weight:300;line-height:1.9;color:rgba(255,255,255,.62)}
+.about-body p strong{font-weight:500;color:rgba(255,255,255,.88)}
+.about-creds{display:flex;gap:32px;margin-top:8px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}
+.about-cred strong{display:block;font-family:var(--fd);font-size:24px;letter-spacing:.02em;color:var(--white);font-weight:400;line-height:1;margin-bottom:4px}
+.about-cred span{font-size:11px;font-weight:300;color:rgba(255,255,255,.35);letter-spacing:.04em}
+
+/* RETAINER SECTION - new */
+.retainer{padding:96px 40px;background:var(--cream-mid)}
+.retainer-inner{max-width:1200px;margin:0 auto}
+.retainer-header{margin-bottom:56px}
+.retainer-heading{font-family:var(--fd);font-size:clamp(44px,4vw,68px);line-height:.93;color:var(--warm-black)}
+.retainer-heading em{color:var(--green)}
+.retainer-sub{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);max-width:480px;margin-top:16px}
+.retainer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule)}
+.ret-card{background:var(--cream);padding:36px 32px}
+.ret-name{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--warm-black);margin-bottom:6px}
+.ret-price{font-family:var(--fd);font-size:40px;line-height:1;color:var(--green);margin-bottom:16px}
+.ret-price span{font-family:var(--fb);font-size:13px;font-weight:300;color:var(--mid);letter-spacing:0}
+.ret-desc{font-size:13px;font-weight:300;line-height:1.75;color:var(--mid);margin-bottom:20px}
+.ret-includes{list-style:none;display:flex;flex-direction:column;gap:7px}
+.ret-includes li{font-size:13px;font-weight:300;color:var(--mid);padding-left:16px;position:relative;line-height:1.5}
+.ret-includes li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:1px;background:var(--green)}
+
+/* CONTACT */
+.contact{padding:96px 40px;background:var(--cream)}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.contact-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.contact-heading{font-family:var(--fd);font-size:clamp(40px,3.8vw,62px);line-height:.93;color:var(--warm-black);margin-bottom:20px}
+.contact-heading em{color:var(--green)}
+.contact-sub{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);margin-bottom:36px;border-left:2px solid var(--green);padding-left:18px}
+.contact-details{display:flex;flex-direction:column;gap:16px}
+.contact-detail-label{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin-bottom:4px}
+.contact-detail-value{font-size:14px;font-weight:400;color:var(--warm-black)}
+.contact-detail-value a{color:var(--green);text-decoration:none}
+.booking-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-label{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+.form-input{padding:12px 16px;border:1.5px solid var(--rule);background:var(--white);font-family:var(--fb);font-size:14px;font-weight:300;color:var(--warm-black);outline:none;border-radius:0;width:100%;transition:border-color .2s;-webkit-appearance:none}
+.form-input:focus{border-color:var(--green)}
+.btn-submit{background:var(--green);color:var(--white);font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:15px 24px;border:none;cursor:pointer;transition:background .2s}
+.btn-submit:hover{background:var(--green-mid)}
+.form-privacy{font-size:12px;font-weight:300;color:var(--light);line-height:1.6}
+.form-success{display:none;flex-direction:column;align-items:center;gap:16px;padding:56px 24px;text-align:center}
+
+/* FOOTER */
+footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer-brand{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:12px}
+.footer-brand em{font-style:italic;font-weight:300}
+.footer-tagline{font-size:13px;font-weight:300;color:rgba(255,255,255,.28);line-height:1.7}
+.footer-col-label{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{font-size:13px;font-weight:300;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s}
+.footer-col ul li a:hover{color:rgba(255,255,255,.8)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:11px;font-weight:300;color:rgba(255,255,255,.18);letter-spacing:.04em}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  nav{padding:0 24px}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:72px 24px 40px}
+  .hero-right{padding:0 24px 72px}
+  .journey-top,.why-inner,.about-inner,.contact-inner,.audit-band-inner,.cases-header{grid-template-columns:1fr;gap:40px}
+  .journey-steps{grid-template-columns:1fr 1fr}
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .services-grid,.case-grid,.retainer-grid{grid-template-columns:1fr}
+  .why-left{position:static}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .why,.services,.cases,.about,.retainer,.contact,.audit-band,.stats{padding:64px 24px}
+  .journey{padding:64px 24px}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .form-row,.about-creds,.hero-trust{flex-direction:column;grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .stats-inner,.journey-steps{grid-template-columns:1fr}
+}
+
+/* ROI ESTIMATOR */
+.roi{padding:96px 40px;background:var(--warm-black)}
+.roi-inner{max-width:1200px;margin:0 auto}
+.roi-header{margin-bottom:56px}
+.roi-heading{font-family:var(--fd);font-size:clamp(44px,4vw,68px);line-height:.93;color:var(--white);margin-bottom:0}
+.roi-heading em{color:#c8dabb;font-style:normal}
+.roi-sub{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.45);max-width:480px;margin-top:16px}
+.roi-body{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.roi-controls{display:flex;flex-direction:column;gap:32px}
+.roi-control-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.roi-label{font-size:12px;font-weight:400;color:rgba(255,255,255,.5);letter-spacing:.04em}
+.roi-val{font-family:var(--fd);font-size:22px;color:#c8dabb;line-height:1}
+.roi-slider{width:100%;-webkit-appearance:none;appearance:none;height:2px;background:rgba(255,255,255,.15);outline:none;cursor:pointer}
+.roi-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:#c8dabb;border-radius:50%;cursor:pointer;transition:transform .15s}
+.roi-slider::-webkit-slider-thumb:hover{transform:scale(1.2)}
+.roi-slider::-moz-range-thumb{width:18px;height:18px;background:#c8dabb;border-radius:50%;cursor:pointer;border:none}
+.roi-range-labels{display:flex;justify-content:space-between;margin-top:6px;font-size:11px;font-weight:300;color:rgba(255,255,255,.25)}
+.roi-results{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);padding:40px 36px;display:flex;flex-direction:column;gap:12px}
+.roi-result-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.roi-headline{font-family:var(--fd);font-size:clamp(52px,5vw,80px);color:#c8dabb;line-height:1;transition:all .3s}
+.roi-result-sub{font-size:12px;font-weight:300;color:rgba(255,255,255,.35);margin-top:-4px}
+.roi-breakdown{display:flex;align-items:center;gap:12px;padding:20px 0;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);margin:4px 0}
+.roi-break-item{display:flex;flex-direction:column;gap:3px}
+.roi-break-val{font-family:var(--fd);font-size:24px;color:var(--white);line-height:1;transition:all .3s}
+.roi-break-label{font-size:10px;font-weight:300;color:rgba(255,255,255,.35)}
+.roi-break-sep{font-size:18px;color:rgba(255,255,255,.2);flex-shrink:0}
+.roi-context{font-size:14px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.55)}
+.roi-context strong{color:#c8dabb;font-weight:500}
+.roi-disclaimer{font-size:11px;font-weight:300;color:rgba(255,255,255,.25);line-height:1.6;font-style:italic}
+.roi-cta{display:inline-block;background:#c8dabb;color:var(--green);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:all .2s;margin-top:4px}
+.roi-cta:hover{background:var(--white)}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:0;margin-top:4px}
+.acc-item{border-top:1px solid rgba(255,255,255,.1)}
+.acc-item:last-child{border-bottom:1px solid rgba(255,255,255,.1)}
+.acc-trigger{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;padding:18px 0;cursor:pointer;text-align:left;gap:16px}
+.acc-trigger span:first-child{font-size:14px;font-weight:400;color:rgba(255,255,255,.8);line-height:1.4}
+.acc-icon{font-size:20px;font-weight:300;color:rgba(255,255,255,.4);flex-shrink:0;transition:transform .25s;line-height:1}
+.acc-item.acc-open .acc-icon{transform:rotate(45deg);color:#c8dabb}
+.acc-body{overflow:hidden;max-height:0;transition:max-height .35s ease}
+.acc-item.acc-open .acc-body{max-height:400px}
+.acc-body p{font-size:13px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.5);padding-bottom:20px}
+.acc-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:10px;padding-bottom:20px}
+.acc-list li{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);padding-left:16px;position:relative;line-height:1.5}
+.acc-list li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:1px;background:#c8dabb}
+.acc-list li strong{color:rgba(255,255,255,.75);font-weight:500}
+
+/* CASE TOGGLE */
+.case-toggle-wrap{display:flex;gap:0;margin-top:24px;border:1px solid var(--rule);align-self:flex-start}
+.case-toggle-btn{background:none;border:none;padding:11px 22px;font-family:var(--fb);font-size:12px;font-weight:400;letter-spacing:.06em;color:var(--mid);cursor:pointer;transition:all .2s;white-space:nowrap}
+.case-toggle-btn.active{background:var(--green);color:var(--white)}
+.case-phase-label{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:12px;display:inline-block;padding:4px 10px;border:1px solid var(--rule)}
+.case-phase-label.after{color:var(--green);border-color:var(--green)}
+.case-card.dark .case-phase-label{color:rgba(255,255,255,.3);border-color:rgba(255,255,255,.12)}
+.case-before-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.07)}
+.case-panel{animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.cases-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:56px}
+
+@media(max-width:1024px){
+  .roi-body{grid-template-columns:1fr;gap:40px}
+  .cases-header{grid-template-columns:1fr;gap:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">The <em>Service</em> Edit</a>
+  <div class="nav-links">
+    <a href="#how-it-works">How it works</a>
+    <a href="#services">Services</a>
+    <a href="#cases">Results</a>
+    <a href="#about">About</a>
+    <a href="the-service-edit-journal.html">Journal</a>
+    <a href="#contact" class="nav-cta">Start with an audit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">Digital marketing for independent hospitality</div>
+    <h1 class="hero-h1">YOUR BEST<br>CUSTOMERS<br>AREN'T<br>COMING<br><em>BACK.</em></h1>
+    <p class="hero-body">
+      Not because they didn't enjoy it. Because you never gave them a reason to. <strong>I build the email systems, websites and digital strategy that turn one-time visitors into regulars. Automatically.</strong>
+    </p>
+    <div class="hero-btns">
+      <a href="#audit" class="btn-hero-primary">Start with the $595 audit</a>
+      <a href="#cases" class="btn-hero-outline">See the results</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <div class="hero-trust-num"><em>20+</em></div>
+        <div class="hero-trust-label">Years in hospitality</div>
+      </div>
+      <div class="hero-trust-item">
+        <div class="hero-trust-num"><em>3×</em></div>
+        <div class="hero-trust-label">Cafe owner</div>
+      </div>
+      <div class="hero-trust-item">
+        <div class="hero-trust-num"><em>AU</em></div>
+        <div class="hero-trust-label">Perth · Australia-wide</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-panel-label">Real results from real venues</div>
+    <div class="proof-card">
+      <div class="proof-tag">Online Butcher · Perth · 75-day programme</div>
+      <div class="proof-headline">From zero email<br>revenue to <em>30%</em><br>of all store sales.</div>
+      <div class="proof-nums">
+        <div><div class="proof-num-val"><em>57.5%</em></div><div class="proof-num-label">Open rate</div></div>
+        <div><div class="proof-num-val"><em>30%</em></div><div class="proof-num-label">Of all revenue</div></div>
+        <div><div class="proof-num-val"><em>16</em></div><div class="proof-num-label">Automated flows</div></div>
+      </div>
+      <div class="proof-detail">Built from scratch. Welcome series, abandoned cart, win-back, post-purchase. Running 24/7.</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-tag">Pizza Restaurant · Darwin · First campaign</div>
+      <div class="proof-headline">From 9 covers<br>to <em>60–92</em><br>per night.</div>
+      <div class="proof-detail">$0 weekly email revenue to fully booked midweeks from a single campaign. Same venue, same menu, same staff.</div>
+    </div>
+    <div class="proof-note">Real results. Available to discuss on a call.</div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Email Marketing</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Klaviyo for Hospitality</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Website Builds</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Digital Audits</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Welcome Sequences</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Win-Back Campaigns</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Post-Visit Flows</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Cafes and Restaurants</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Email Marketing</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Klaviyo for Hospitality</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Website Builds</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Digital Audits</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Welcome Sequences</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Win-Back Campaigns</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Post-Visit Flows</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Cafes and Restaurants</span><span class="ticker-sep"></span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS - CLIENT JOURNEY -->
+<section class="journey" id="how-it-works">
+  <div class="journey-inner">
+    <div class="journey-top">
+      <div>
+        <div class="section-kicker reveal">How it works</div>
+        <h2 class="journey-heading reveal">THE PATH<br>FROM PROBLEM<br>TO <em>REVENUE.</em></h2>
+      </div>
+      <div>
+        <p class="journey-sub reveal">Every engagement starts with understanding what is actually broken. The audit is the diagnosis. The services are the treatment. The retainer keeps it working. Most clients find their first project pays for itself before they move to the next one.</p>
+      </div>
+    </div>
+    <div class="journey-steps">
+      <div class="journey-step reveal">
+        <div class="journey-step-num">01</div>
+        <div class="journey-step-title">Free digital health check</div>
+        <div class="journey-step-body">Start with the 5-minute quiz. It scores your digital presence across email, website and social. You will know exactly where the gaps are before you spend a dollar.</div>
+        <a href="tse-quiz.html" class="journey-step-price">Free · Take the quiz</a>
+      </div>
+      <div class="journey-step reveal">
+        <div class="journey-step-num">02</div>
+        <div class="journey-step-title">Digital audit</div>
+        <div class="journey-step-body">A full diagnostic of your email, website, and digital presence. Delivered in 5 business days. Clear findings, ranked by impact, with an exact roadmap of what to fix first.</div>
+        <span class="journey-step-price">$595 flat</span>
+      </div>
+      <div class="journey-step reveal">
+        <div class="journey-step-num">03</div>
+        <div class="journey-step-title">Build or email programme</div>
+        <div class="journey-step-body">Audit findings scope the project precisely. No guesswork, no padding. Website builds from $3,500. Email programmes from $1,500. Every deliverable tied to a specific outcome.</div>
+        <span class="journey-step-price">From $1,500</span>
+      </div>
+      <div class="journey-step reveal">
+        <div class="journey-step-num">04</div>
+        <div class="journey-step-title">Ongoing retainer</div>
+        <div class="journey-step-body">Once the foundation is built, keep it performing. Monthly email management, site care, and strategy. This is where the compounding starts.</div>
+        <span class="journey-step-price">From $500/mo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY EMAIL -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div class="why-left">
+      <div class="section-kicker reveal">Sound familiar?</div>
+      <h2 class="why-heading reveal">YOU ARE<br>LEAVING<br>MONEY IN<br>YOUR<br><em>DATABASE.</em></h2>
+      <p class="why-note reveal">I spent 20 years on your side of the counter. I know exactly what this costs you every week.</p>
+    </div>
+    <div class="why-items">
+      <div class="why-item reveal">
+        <div class="why-num">01</div>
+        <div class="why-title">Your best customers are in a list you never email</div>
+        <div class="why-body">Every booking, order, and QR scan is a warm contact. A single well-written email to that list, sent automatically, can bring them back. Most hospitality businesses never send one.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">02</div>
+        <div class="why-title">Email is the only channel you actually own</div>
+        <div class="why-body">Instagram can change its algorithm tomorrow. Google Ads costs money every click. Your email list is yours. The people on it already know you. They are the most likely people on earth to spend money with you again.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">03</div>
+        <div class="why-title">Your website is losing you customers right now</div>
+        <div class="why-body">Slow load times, no mobile menu, missing opening hours, broken booking links. Any one of these is sending people straight to your competitor. Most hospitality websites were built once and never touched again.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">04</div>
+        <div class="why-title">You have tried things that did not work</div>
+        <div class="why-body">A social media manager who posted three times and disappeared. A web developer who handed over a site you cannot edit. Someone who ran ads that cost more than they made. None of that is your fault. But it is why having someone who actually understands hospitality matters.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI ESTIMATOR -->
+<section class="roi" id="roi-estimator">
+  <div class="roi-inner">
+    <div class="roi-header">
+      <div class="section-kicker reveal">See your numbers</div>
+      <h2 class="roi-heading reveal">WHAT IS ONE<br>EMAIL CAMPAIGN<br><em>WORTH TO YOU?</em></h2>
+      <p class="roi-sub reveal">Adjust the sliders to match your business. The numbers update in real time.</p>
+    </div>
+    <div class="roi-body reveal">
+      <div class="roi-controls">
+        <div class="roi-control">
+          <div class="roi-control-top">
+            <label class="roi-label">Customers on your list</label>
+            <span class="roi-val" id="list-val">1,000</span>
+          </div>
+          <input type="range" class="roi-slider" id="list-size" min="100" max="10000" step="100" value="1000">
+          <div class="roi-range-labels"><span>100</span><span>10,000</span></div>
+        </div>
+        <div class="roi-control">
+          <div class="roi-control-top">
+            <label class="roi-label">Average spend per visit</label>
+            <span class="roi-val" id="spend-val">$45</span>
+          </div>
+          <input type="range" class="roi-slider" id="avg-spend" min="15" max="200" step="5" value="45">
+          <div class="roi-range-labels"><span>$15</span><span>$200</span></div>
+        </div>
+        <div class="roi-control">
+          <div class="roi-control-top">
+            <label class="roi-label">Open rate (industry avg: 22%)</label>
+            <span class="roi-val" id="open-val">22%</span>
+          </div>
+          <input type="range" class="roi-slider" id="open-rate" min="10" max="60" step="1" value="22">
+          <div class="roi-range-labels"><span>10%</span><span>60%</span></div>
+        </div>
+        <div class="roi-control">
+          <div class="roi-control-top">
+            <label class="roi-label">Estimated click-to-visit rate</label>
+            <span class="roi-val" id="convert-val">15%</span>
+          </div>
+          <input type="range" class="roi-slider" id="convert-rate" min="5" max="40" step="1" value="15">
+          <div class="roi-range-labels"><span>5%</span><span>40%</span></div>
+        </div>
+      </div>
+      <div class="roi-results">
+        <div class="roi-result-label">From one campaign</div>
+        <div class="roi-headline" id="roi-revenue">$1,485</div>
+        <div class="roi-result-sub">estimated revenue</div>
+        <div class="roi-breakdown">
+          <div class="roi-break-item">
+            <div class="roi-break-val" id="roi-opens">220</div>
+            <div class="roi-break-label">emails opened</div>
+          </div>
+          <div class="roi-break-sep">→</div>
+          <div class="roi-break-item">
+            <div class="roi-break-val" id="roi-visits">33</div>
+            <div class="roi-break-label">visits generated</div>
+          </div>
+          <div class="roi-break-sep">→</div>
+          <div class="roi-break-item">
+            <div class="roi-break-val" id="roi-rev">$1,485</div>
+            <div class="roi-break-label">revenue</div>
+          </div>
+        </div>
+        <div class="roi-context">That is <strong id="roi-multiple">2.5×</strong> the cost of the audit. From a single send.</div>
+        <div class="roi-disclaimer">Estimates based on industry conversion benchmarks. Results vary by list quality, offer, and timing.</div>
+        <a href="#contact" class="roi-cta">Book the audit · $595</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <div class="services-kicker reveal">Services</div>
+      <h2 class="services-heading reveal">THREE WAYS<br>I CAN <em>HELP YOU.</em></h2>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-name">Digital<br><em>Audit</em></div>
+        <div class="svc-price">$595 flat · Delivered in 5 days</div>
+        <div class="svc-desc">A thorough diagnostic of everything that is costing you customers online. The right place to start if you are not sure what is broken or where to spend first. Most clients find it pays for itself before they have acted on a single recommendation.</div>
+        <div class="svc-includes-label">What you get</div>
+        <ul class="svc-includes">
+          <li>Email list health and deliverability review</li>
+          <li>Website speed, mobile, and conversion audit</li>
+          <li>Google Business and search presence review</li>
+          <li>Competitor digital benchmark</li>
+          <li>Prioritised action plan, quick wins first</li>
+          <li>30-minute debrief call</li>
+        </ul>
+        <a href="#contact" class="svc-cta">Book the audit</a>
+      </div>
+      <div class="svc-card featured reveal">
+        <div class="svc-num">02</div>
+        <div class="svc-name">Email<br><em>Marketing</em></div>
+        <div class="svc-price">From $1,500 · Full setup + 90-day programme</div>
+        <div class="svc-desc">I build the entire email system from scratch. Platform setup, list segmentation, automated flows, campaign calendar, and the first 90 days of sends. By the end, your email channel runs largely without you.</div>
+        <div class="svc-includes-label">What's included</div>
+        <ul class="svc-includes">
+          <li>Klaviyo or Mailchimp setup and migration</li>
+          <li>Welcome series (3–5 emails)</li>
+          <li>Abandoned cart and post-purchase flows</li>
+          <li>Win-back sequence</li>
+          <li>Monthly campaign calendar</li>
+          <li>90-day performance report</li>
+        </ul>
+        <a href="#contact" class="svc-cta">Enquire now</a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-num">03</div>
+        <div class="svc-name">Web<br><em>Presence Build</em></div>
+        <div class="svc-price">From $3,500 · Strategy through launch</div>
+        <div class="svc-desc">A website built for a hospitality business by someone who has run one. Not a template fill-in. A proper build with strategy, copywriting, SEO, and a design that makes people want to visit. Built to be fast, mobile-first, and easy for you to update.</div>
+        <div class="svc-includes-label">What's included</div>
+        <ul class="svc-includes">
+          <li>Brand and audience strategy session</li>
+          <li>Copywriting for all core pages</li>
+          <li>Mobile-first design and build</li>
+          <li>On-page SEO structured for local search</li>
+          <li>Google Analytics and Search Console setup</li>
+          <li>30-day post-launch support</li>
+        </ul>
+        <a href="#contact" class="svc-cta">Enquire now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIT BAND -->
+<section class="audit-band" id="audit">
+  <div class="audit-band-inner">
+    <div>
+      <div class="audit-kicker">Where to start</div>
+      <h2 class="audit-heading">BEFORE<br>ANYTHING<br>ELSE.<br>THE <em>AUDIT.</em></h2>
+    </div>
+    <div class="audit-right">
+      <p class="audit-body">
+        Whether you are thinking about email, a new website, or both. The audit tells you exactly what is broken and in what order to fix it. <strong>It means every dollar you spend after it goes to the right place.</strong>
+      </p>
+      <div class="accordion">
+        <div class="acc-item acc-open">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span>What does the audit actually cover?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-body">
+            <p>Six areas, each scored and ranked by impact:</p>
+            <ul class="acc-list">
+              <li><strong>Email list health.</strong> Size, engagement rate, deliverability, segmentation gaps</li>
+              <li><strong>Website performance.</strong> Load speed, mobile experience, Core Web Vitals</li>
+              <li><strong>Conversion audit.</strong> Booking flow, menu access, contact clarity, trust signals</li>
+              <li><strong>Google presence.</strong> Business Profile, local SEO, review response rate</li>
+              <li><strong>Social and content.</strong> Consistency, platform fit, missed channels</li>
+              <li><strong>Competitor benchmark.</strong> How you compare to 2-3 direct competitors</li>
+            </ul>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span>What do I get at the end?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-body">
+            <p>A written report delivered within 5 business days, structured as a ranked action plan. Each item explains why it matters and what to do. Plus a 30-minute debrief call.</p>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span>Do I have to work with you after the audit?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-body">
+            <p>No. The audit is a standalone deliverable. You own it. Most clients do go on to work together because the findings make the next step obvious. There is no obligation and no upsell pressure.</p>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <span>How does it pay for itself?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-body">
+            <p>Nearly every audit surfaces at least one quick win worth more than $595. A broken booking link. A welcome email not firing. Wrong hours on Google. Any one of those fixed pays back the cost within days.</p>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="audit-btn">Book the audit · $595</a>
+      <p class="audit-price-note">Or start free. Take the 5-minute digital health check first.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat reveal">
+      <div class="stat-num">57.5%</div>
+      <div class="stat-label">Email open rate achieved. Industry average for hospitality is 20–25%</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">30%</div>
+      <div class="stat-label">Of all store revenue driven by email within 75 days for an independent online butcher in Northern NSW</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">9→92</div>
+      <div class="stat-label">Covers per night for a Northern NSW pizza restaurant after a single email campaign</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Years in hospitality. I have been on your side of the counter.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<section class="cases" id="cases">
+  <div class="cases-inner">
+    <div class="cases-header">
+      <div>
+        <div class="section-kicker reveal">Results</div>
+        <h2 class="cases-heading reveal">REAL<br>VENUES.<br><em>REAL</em><br>NUMBERS.</h2>
+      </div>
+      <div>
+        <p class="cases-sub reveal">These are not projections or industry benchmarks. They are actual results from actual hospitality businesses. Each one started with an audit and a conversation about what was costing them customers.</p>
+        <div class="case-toggle-wrap reveal">
+          <button class="case-toggle-btn active" onclick="showCase('mm', this)">Online Butcher</button>
+          <button class="case-toggle-btn" onclick="showCase('jc', this)">Pizza Restaurant</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEAT MERCHANT -->
+    <div class="case-panel" id="case-mm">
+      <div class="case-grid">
+        <div class="case-card dark">
+          <div class="case-client">Online Butcher · Northern NSW</div>
+          <div class="case-phase-label">Before</div>
+          <div class="case-result">Email list sitting<br>idle. <em>Zero</em><br>automated flows.<br>No campaigns.</div>
+          <div class="case-desc">A warm customer list built up through years of orders, with nothing going to it. No welcome email, no abandoned cart, no post-purchase follow-up. Revenue entirely dependent on paid ads and word of mouth.</div>
+          <div class="case-before-stats">
+            <div><div class="case-metric-val"><em>0</em></div><div class="case-metric-label">Email flows active</div></div>
+            <div><div class="case-metric-val"><em>0%</em></div><div class="case-metric-label">Revenue from email</div></div>
+            <div><div class="case-metric-val"><em>~15%</em></div><div class="case-metric-label">Typical open rate</div></div>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-client">Online Butcher · Northern NSW · 75 days later</div>
+          <div class="case-phase-label after">After</div>
+          <div class="case-result">Email the <em>single<br>biggest</em> revenue<br>channel. <em>30%</em><br>of all store sales.</div>
+          <div class="case-desc">Full Klaviyo build from scratch. Welcome series, abandoned cart, post-purchase upsell, and win-back sequences live and running automatically. 16 flows working 24/7 without any manual effort.</div>
+          <div class="case-metrics">
+            <div><div class="case-metric-val"><em>57.5%</em></div><div class="case-metric-label">Average open rate</div></div>
+            <div><div class="case-metric-val"><em>30%</em></div><div class="case-metric-label">Of store revenue</div></div>
+            <div><div class="case-metric-val"><em>16</em></div><div class="case-metric-label">Automated flows</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JORDY'S -->
+    <div class="case-panel" id="case-jc" style="display:none">
+      <div class="case-grid">
+        <div class="case-card dark">
+          <div class="case-client">Pizza Restaurant · Northern NSW</div>
+          <div class="case-phase-label">Before</div>
+          <div class="case-result">Quiet midweeks.<br><em>9 covers</em> on a<br>Tuesday night.<br>Tables empty.</div>
+          <div class="case-desc">A great venue with a loyal local following but no way of reaching them. No email marketing, no automated communications. Midweek trade entirely dependent on walk-ins and organic foot traffic.</div>
+          <div class="case-before-stats">
+            <div><div class="case-metric-val"><em>9</em></div><div class="case-metric-label">Covers on a Tuesday</div></div>
+            <div><div class="case-metric-val"><em>0</em></div><div class="case-metric-label">Emails sent to list</div></div>
+            <div><div class="case-metric-val"><em>$0</em></div><div class="case-metric-label">Email ad spend</div></div>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-client">Pizza Restaurant · Northern NSW · After one campaign</div>
+          <div class="case-phase-label after">After</div>
+          <div class="case-result"><em>Fully booked</em><br>midweeks.<br>60–92 covers<br>per night.</div>
+          <div class="case-desc">A single email to the existing customer list. No paid ads, no discounting, no social push. Just a well-written email to people who already loved the venue and had not been given a reason to come back.</div>
+          <div class="case-metrics">
+            <div><div class="case-metric-val"><em>60–92</em></div><div class="case-metric-label">Covers per night</div></div>
+            <div><div class="case-metric-val"><em>$0</em></div><div class="case-metric-label">Ad spend</div></div>
+            <div><div class="case-metric-val"><em>1</em></div><div class="case-metric-label">Email sent</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="about-kicker">Who I am</div>
+      <h2 class="about-heading reveal">20 YEARS<br>IN HOSPITALITY.<br>NOW I FIX<br>THE <em>DIGITAL<br>SIDE.</em></h2>
+    </div>
+    <div class="about-body">
+      <p>I owned three cafes. I spent more than twenty years working in hospitality before I moved into digital. I know what it looks like when a business is run with real care and not enough time.</p>
+      <p>I have done the 5am starts, the stocktakes, the week where everything breaks at once and you just keep going. When COVID hit, I closed my cafes. And I started paying attention to something I had already noticed: <strong>the best independent businesses I knew were invisible online.</strong> Not because they did not care. Because they were too busy keeping the doors open.</p>
+      <p>That is the gap I close. Not as an agency. Not as a freelancer who disappears after handover. As someone who has been on your side of the counter and knows exactly what needs to work, and why it has not been working.</p>
+      <div class="about-creds">
+        <div class="about-cred"><strong>3×</strong><span>Cafe owner</span></div>
+        <div class="about-cred"><strong>20+</strong><span>Years in hospitality</span></div>
+        <div class="about-cred"><strong>Perth</strong><span>WA · Australia-wide</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETAINER OPTIONS - new section -->
+<section class="retainer" id="retainers">
+  <div class="retainer-inner">
+    <div class="retainer-header">
+      <div class="section-kicker reveal">After the build</div>
+      <h2 class="retainer-heading reveal">KEEP IT<br><em>WORKING.</em></h2>
+      <p class="retainer-sub reveal">A website or email programme built once and left alone loses its edge within six months. These retainer options keep your digital presence performing, without you having to think about it.</p>
+    </div>
+    <div class="retainer-grid">
+      <div class="ret-card reveal">
+        <div class="ret-name">Site care plan</div>
+        <div class="ret-price">$350<span>/month</span></div>
+        <div class="ret-desc">For clients with an existing website who want it kept fast, updated, and working. Monthly check-in, updates, SEO monitoring and technical support.</div>
+        <ul class="ret-includes">
+          <li>Monthly content and plugin updates</li>
+          <li>Speed and uptime monitoring</li>
+          <li>Google Search Console reporting</li>
+          <li>2 hours of copy or design changes</li>
+          <li>Priority response within 1 business day</li>
+        </ul>
+      </div>
+      <div class="ret-card reveal">
+        <div class="ret-name">Email management</div>
+        <div class="ret-price">$800<span>/month</span></div>
+        <div class="ret-desc">Ongoing email campaign management. Two sends per month, list hygiene, performance reporting, and seasonal campaign planning. You stay front of mind without lifting a finger.</div>
+        <ul class="ret-includes">
+          <li>2 email campaigns per month</li>
+          <li>Copywriting and design</li>
+          <li>List segmentation and hygiene</li>
+          <li>Monthly performance report</li>
+          <li>Seasonal and promotional planning</li>
+        </ul>
+      </div>
+      <div class="ret-card reveal">
+        <div class="ret-name">AI operations partner</div>
+        <div class="ret-price">$1,800<span>/month</span></div>
+        <div class="ret-desc">Full digital partnership. Email, website, strategy and AI systems working together. The closest thing to having an in-house digital operator without the overhead.</div>
+        <ul class="ret-includes">
+          <li>Everything in email management</li>
+          <li>Website care and monthly updates</li>
+          <li>Monthly strategy session</li>
+          <li>AI tools audit and implementation</li>
+          <li>Quarterly digital performance review</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="contact-kicker">Get in touch</div>
+      <h2 class="contact-heading reveal">LET'S<br><em>TALK.</em></h2>
+      <p class="contact-sub">Tell me about your business. I will let you know what I think the right first step is. Usually the audit, sometimes a conversation first. Either way, no hard sell and a response within one business day.</p>
+      <div class="contact-details">
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-value"><a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a></div>
+        </div>
+        <div>
+          <div class="contact-detail-label">Based in</div>
+          <div class="contact-detail-value">Perth, WA · Working Australia-wide</div>
+        </div>
+        <div>
+          <div class="contact-detail-label">Response time</div>
+          <div class="contact-detail-value">Within one business day</div>
+        </div>
+        <div>
+          <div class="contact-detail-label">Not sure yet?</div>
+          <div class="contact-detail-value"><a href="tse-quiz.html">Take the free digital health check</a></div>
+        </div>
+      </div>
+    </div>
+    <div id="contact-form">
+      <form class="booking-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="f-name">Your name</label>
+            <input class="form-input" type="text" id="f-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-business">Business name</label>
+            <input class="form-input" type="text" id="f-business" name="business_name" placeholder="Your business" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-email">Email address</label>
+          <input class="form-input" type="email" id="f-email" name="email" placeholder="hello@yourbusiness.com.au" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-website">Your website URL</label>
+          <input class="form-input" type="url" id="f-website" name="website" placeholder="https://yourbusiness.com.au">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-service">What are you interested in?</label>
+          <select class="form-input" id="f-service" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="audit">Digital Audit · $595 · best place to start</option>
+            <option value="email">Email Marketing · from $1,500</option>
+            <option value="build">Web Presence Build · from $3,500</option>
+            <option value="retainer">Ongoing Retainer · from $350/mo</option>
+            <option value="unsure">Not sure yet · let's talk first</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-message">Tell me about your business</label>
+          <textarea class="form-input" id="f-message" name="message" style="min-height:120px;resize:vertical;line-height:1.7" placeholder="What you run, how many covers or orders per week, what you have tried so far, and what you want to fix." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send enquiry</button>
+        <p class="form-privacy">No spam. No hard sell. A straightforward conversation about whether I can help.</p>
+      </form>
+      <div class="form-success" id="form-success" style="display:none;flex-direction:column;align-items:center;gap:16px;text-align:center;padding:56px 24px">
+        <div style="width:48px;height:48px;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:18px">✓</div>
+        <h3 style="font-family:var(--fd);font-size:32px;letter-spacing:.02em;color:var(--warm-black)">GOT IT. IN TOUCH WITHIN ONE BUSINESS DAY.</h3>
+        <p style="font-size:14px;line-height:1.75;color:var(--mid);font-weight:300;max-width:320px">In the meantime, take the free digital health check if you have not already.</p>
+        <a href="tse-quiz.html" style="display:inline-block;background:var(--green);color:var(--white);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:13px 24px;text-decoration:none;margin-top:8px">Take the free health check</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">The <em>Service</em> Edit</div>
+        <p class="footer-tagline">Email marketing, digital audits and website builds for independent hospitality businesses. Built by a 3x cafe owner who knows exactly what your customers respond to.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Services</div>
+        <ul>
+          <li><a href="#services">Digital Audit · $595</a></li>
+          <li><a href="#services">Email Marketing</a></li>
+          <li><a href="#services">Web Presence Build</a></li>
+          <li><a href="#retainers">Retainers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Resources</div>
+        <ul>
+          <li><a href="tse-quiz.html">Free Health Check</a></li>
+          <li><a href="the-service-edit-journal.html">Journal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Contact</div>
+        <ul>
+          <li><a href="#contact">Start a conversation</a></li>
+          <li><a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a></li>
+          <li><a href="https://linkedin.com/in/mel-cox-7480a8379" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 The Service Edit · Mel Cox · Perth, WA</div>
+      <div class="footer-copy">ABN 88 429 285 575</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(r){ observer.observe(r); });
+
+// Contact form
+function handleSubmit(e){
+  e.preventDefault();
+  var form=e.target;
+  var btn=form.querySelector('.btn-submit');
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  var data=new FormData(form);
+  data.append('access_key','2870139d-38b7-4118-9f7c-9217fd52c463');
+  data.append('subject','New enquiry - The Service Edit');
+  data.append('from_name','The Service Edit Website');
+  fetch('https://api.web3forms.com/submit',{method:'POST',body:data})
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d.success){
+      form.style.display='none';
+      var s=document.getElementById('form-success');
+      s.style.display='flex';
+    } else {
+      btn.textContent='Try again';
+      btn.disabled=false;
+    }
+  })
+  .catch(function(){
+    btn.textContent='Try again';
+    btn.disabled=false;
+  });
+}
+
+
+// ROI ESTIMATOR
+function calcROI(){
+  var list = parseInt(document.getElementById('list-size').value);
+  var spend = parseInt(document.getElementById('avg-spend').value);
+  var open = parseInt(document.getElementById('open-rate').value);
+  var conv = parseInt(document.getElementById('convert-rate').value);
+  var opens = Math.round(list * open / 100);
+  var visits = Math.round(opens * conv / 100);
+  var rev = visits * spend;
+  var multiple = (rev / 595).toFixed(1);
+  document.getElementById('list-val').textContent = list.toLocaleString();
+  document.getElementById('spend-val').textContent = '$' + spend;
+  document.getElementById('open-val').textContent = open + '%';
+  document.getElementById('convert-val').textContent = conv + '%';
+  document.getElementById('roi-opens').textContent = opens.toLocaleString();
+  document.getElementById('roi-visits').textContent = visits.toLocaleString();
+  var revStr = '$' + rev.toLocaleString();
+  document.getElementById('roi-rev').textContent = revStr;
+  document.getElementById('roi-revenue').textContent = revStr;
+  document.getElementById('roi-multiple').textContent = multiple + 'x';
+}
+['list-size','avg-spend','open-rate','convert-rate'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(el) el.addEventListener('input', calcROI);
+});
+calcROI();
+
+// ACCORDION
+function toggleAcc(btn){
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('acc-open');
+  document.querySelectorAll('.acc-item').forEach(function(i){ i.classList.remove('acc-open'); });
+  if(!isOpen) item.classList.add('acc-open');
+}
+
+// CASE TOGGLE
+function showCase(id, btn){
+  document.querySelectorAll('.case-panel').forEach(function(p){ p.style.display='none'; });
+  document.getElementById('case-' + id).style.display='block';
+  document.querySelectorAll('.case-toggle-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

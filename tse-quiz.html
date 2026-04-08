@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Health Check · The Service Edit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#2b4a35;
+  --green-mid:#3a6347;
+  --green-pale:#eef5f1;
+  --cream:#faf8f4;
+  --cream-mid:#f2ede3;
+  --rule:#e4ddd0;
+  --warm-black:#1a1814;
+  --mid:#8a8070;
+  --light:#b0a898;
+  --white:#ffffff;
+  --accent:#c8dabb;
+  --fd:'Bebas Neue',Impact,'Arial Narrow',Arial,sans-serif;
+  --fb:'DM Sans',-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--cream);color:var(--warm-black);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* NAV */
+.quiz-nav{height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:var(--cream);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:100}
+.quiz-logo{font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-black);text-decoration:none}
+.quiz-logo em{font-style:italic;font-weight:300}
+.quiz-badge{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--green);border:1px solid rgba(43,74,53,.25);padding:5px 12px}
+
+/* PAGES */
+.page{display:none}
+.page.active{display:block}
+
+/* INTRO */
+.intro-body{background:var(--green);min-height:calc(100vh - 58px);padding:64px 40px;display:flex;flex-direction:column;gap:32px;position:relative;overflow:hidden}
+.intro-body::after{content:'';position:absolute;bottom:-180px;right:-120px;width:500px;height:500px;border:1px solid rgba(255,255,255,.04);border-radius:50%;pointer-events:none}
+.intro-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.intro-heading{font-family:var(--fd);font-size:clamp(52px,10vw,88px);line-height:.91;color:var(--white);letter-spacing:.01em}
+.intro-heading em{color:var(--accent);font-style:normal}
+.intro-sub{font-size:16px;line-height:1.8;color:rgba(255,255,255,.55);font-weight:300;max-width:380px}
+.intro-sub strong{color:rgba(255,255,255,.88);font-weight:500}
+.intro-points{display:flex;flex-direction:column;gap:10px}
+.intro-point{font-size:13px;color:rgba(255,255,255,.4);font-weight:300;display:flex;align-items:center;gap:12px}
+.intro-point::before{content:'';width:4px;height:4px;background:var(--accent);border-radius:50%;flex-shrink:0}
+.btn-start{background:var(--accent);color:var(--green);font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:18px 36px;border:none;cursor:pointer;width:100%;margin-top:8px;transition:background .2s;align-self:flex-start;max-width:320px}
+.btn-start:hover{background:var(--white)}
+
+/* PROGRESS */
+.progress-bar{height:3px;background:var(--rule)}
+.progress-fill{height:100%;background:var(--green);transition:width .4s ease}
+
+/* QUESTIONS */
+.question-body{padding:48px 40px 120px;display:flex;flex-direction:column;gap:32px;max-width:680px}
+.q-counter{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light)}
+.q-text{font-family:var(--fd);font-size:clamp(30px,5vw,48px);line-height:.95;color:var(--warm-black);letter-spacing:.01em}
+.options{display:flex;flex-direction:column;gap:10px}
+.option{padding:18px 22px;border:1.5px solid var(--rule);background:var(--white);cursor:pointer;display:flex;align-items:center;gap:16px;text-align:left;width:100%;transition:border-color .2s,background .2s;font-family:var(--fb)}
+.option:hover{border-color:var(--green);background:var(--green-pale)}
+.option.selected{border-color:var(--green);background:var(--green-pale)}
+.opt-circle{width:20px;height:20px;border:1.5px solid var(--rule);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s}
+.option.selected .opt-circle{border-color:var(--green);background:var(--green)}
+.option.selected .opt-circle::after{content:'';width:6px;height:6px;background:var(--white);border-radius:50%;display:block}
+.option:hover .opt-circle{border-color:var(--green)}
+.opt-text{font-size:15px;font-weight:300;color:var(--warm-black);line-height:1.4}
+.option.selected .opt-text{font-weight:400;color:var(--green)}
+
+/* NEXT BUTTON */
+.question-footer{position:fixed;bottom:0;left:0;right:0;padding:16px 40px;background:var(--cream);border-top:1px solid var(--rule)}
+.btn-next{width:100%;max-width:680px;padding:17px;background:var(--green);color:var(--white);font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;opacity:.3;pointer-events:none;transition:background .2s,opacity .2s}
+.btn-next.enabled{opacity:1;pointer-events:all}
+.btn-next.enabled:hover{background:var(--green-mid)}
+
+/* EMAIL CAPTURE */
+.email-body{padding:64px 40px;display:flex;flex-direction:column;gap:24px;max-width:560px}
+.email-kicker{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--green)}
+.email-heading{font-family:var(--fd);font-size:clamp(40px,7vw,64px);line-height:.93;color:var(--warm-black);letter-spacing:.01em}
+.email-heading em{color:var(--green);font-style:normal}
+.email-sub{font-size:15px;line-height:1.8;color:var(--mid);font-weight:300}
+.field-group{display:flex;flex-direction:column;gap:6px}
+.field-label{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+.field-input{padding:13px 16px;border:1.5px solid var(--rule);background:var(--white);font-family:var(--fb);font-size:15px;font-weight:300;color:var(--warm-black);outline:none;border-radius:0;-webkit-appearance:none;width:100%;transition:border-color .2s}
+.field-input:focus{border-color:var(--green)}
+.btn-see-results{width:100%;padding:17px;background:var(--green);color:var(--white);font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;margin-top:8px;transition:background .2s}
+.btn-see-results:hover{background:var(--green-mid)}
+.email-privacy{font-size:12px;color:var(--light);font-weight:300;line-height:1.6}
+
+/* RESULTS */
+.result-hero{padding:56px 40px 44px;background:var(--green);display:flex;flex-direction:column;gap:18px}
+.result-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.result-heading{font-family:var(--fd);font-size:clamp(36px,6vw,56px);line-height:.93;color:var(--white);letter-spacing:.01em;max-width:560px}
+.result-heading em{color:var(--accent);font-style:normal}
+.score-row{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
+.score-num{font-family:var(--fd);font-size:64px;color:var(--white);line-height:1}
+.score-num span{color:var(--accent)}
+.score-desc{font-size:14px;line-height:1.65;color:rgba(255,255,255,.5);font-weight:300;max-width:280px}
+
+.result-body{padding:40px 40px;display:flex;flex-direction:column;gap:28px;max-width:760px}
+.result-summary{font-size:16px;line-height:1.85;color:var(--warm-black);font-weight:300}
+
+/* FINDINGS */
+.findings{display:flex;flex-direction:column;gap:1px;background:var(--rule)}
+.finding{background:var(--white);padding:20px 24px;display:flex;gap:16px;align-items:flex-start}
+.finding-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0;margin-top:1px}
+.finding-icon.warn{background:#fdf0ea;color:#c4501a}
+.finding-icon.ok{background:var(--green-pale);color:var(--green)}
+.finding-title{font-size:14px;font-weight:500;color:var(--warm-black);margin-bottom:5px;line-height:1.3}
+.finding-desc{font-size:13px;color:var(--mid);font-weight:300;line-height:1.65}
+
+/* SCORE BAR */
+.score-bar-wrap{margin:4px 0 8px}
+.score-bar-track{height:4px;background:var(--rule);border-radius:2px;overflow:hidden;margin-bottom:8px}
+.score-bar-fill{height:100%;background:var(--green);border-radius:2px;transition:width .8s ease}
+.score-bar-labels{display:flex;justify-content:space-between;font-size:10px;font-weight:300;color:var(--light);letter-spacing:.04em}
+
+/* RESULT CTA */
+.result-cta{background:var(--warm-black);padding:40px;display:flex;flex-direction:column;gap:14px;margin-top:4px}
+.result-cta-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.result-cta-heading{font-family:var(--fd);font-size:clamp(28px,3vw,38px);line-height:.97;color:var(--white);letter-spacing:.01em}
+.result-cta-heading em{color:var(--accent);font-style:normal}
+.result-cta-sub{font-size:14px;line-height:1.75;color:rgba(255,255,255,.45);font-weight:300;max-width:440px}
+.btn-audit{display:inline-block;padding:16px 32px;background:var(--accent);color:var(--green);font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;text-align:center;margin-top:4px;transition:background .2s;align-self:flex-start}
+.btn-audit:hover{background:var(--white)}
+
+.result-footer{padding:28px 40px;border-top:1px solid var(--rule)}
+.result-footer p{font-size:12px;color:var(--light);font-weight:300;line-height:1.6}
+.result-footer a{color:var(--green);text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .quiz-nav{padding:0 20px}
+  .intro-body,.question-body,.email-body,.result-hero,.result-body,.result-cta,.result-footer{padding-left:24px;padding-right:24px}
+  .btn-start{max-width:100%}
+  .question-footer{padding:14px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- INTRO PAGE -->
+<div class="page active" id="page-intro">
+  <nav class="quiz-nav">
+    <a href="index.html" class="quiz-logo">The <em>Service</em> Edit</a>
+    <span class="quiz-badge">Free</span>
+  </nav>
+  <div class="intro-body">
+    <div class="intro-kicker">2 minute digital health check</div>
+    <h1 class="intro-heading">FIND OUT<br>WHERE YOUR<br>BUSINESS IS<br><em>INVISIBLE.</em></h1>
+    <p class="intro-sub">Six questions. A personalised result. <strong>A clear picture of what is actually costing you customers online.</strong> And what to fix first.</p>
+    <div class="intro-points">
+      <div class="intro-point">Takes about 2 minutes</div>
+      <div class="intro-point">Personalised to your business</div>
+      <div class="intro-point">No sales pitch. Just honest findings.</div>
+    </div>
+    <button class="btn-start" id="btn-start">Start the health check</button>
+  </div>
+</div>
+
+<!-- QUESTIONS PAGE -->
+<div class="page" id="page-questions">
+  <nav class="quiz-nav">
+    <a href="index.html" class="quiz-logo">The <em>Service</em> Edit</a>
+    <span class="quiz-badge" id="q-counter">1 of 6</span>
+  </nav>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="question-body" id="question-body"></div>
+  <div class="question-footer">
+    <button class="btn-next" id="btn-next">Next</button>
+  </div>
+</div>
+
+<!-- EMAIL CAPTURE PAGE -->
+<div class="page" id="page-email">
+  <nav class="quiz-nav">
+    <a href="index.html" class="quiz-logo">The <em>Service</em> Edit</a>
+    <span class="quiz-badge">Almost there</span>
+  </nav>
+  <div class="email-body">
+    <div class="email-kicker">Your results are ready</div>
+    <h2 class="email-heading">WHERE SHOULD<br>I SEND YOUR<br><em>FINDINGS?</em></h2>
+    <p class="email-sub">Enter your details to see your personalised digital health report.</p>
+    <div class="field-group">
+      <label class="field-label" for="f-name">Your name</label>
+      <input class="field-input" type="text" id="f-name" placeholder="Your name" autocomplete="given-name">
+    </div>
+    <div class="field-group">
+      <label class="field-label" for="f-business">Business name</label>
+      <input class="field-input" type="text" id="f-business" placeholder="Your business" autocomplete="organization">
+    </div>
+    <div class="field-group">
+      <label class="field-label" for="f-email">Email address</label>
+      <input class="field-input" type="email" id="f-email" placeholder="hello@yourbusiness.com.au" autocomplete="email">
+    </div>
+    <button class="btn-see-results" id="btn-results">See my results</button>
+    <p class="email-privacy">No spam. No hard sell. Just your results and occasionally useful things worth reading.</p>
+  </div>
+</div>
+
+<!-- RESULTS PAGE -->
+<div class="page" id="page-result">
+  <nav class="quiz-nav">
+    <a href="index.html" class="quiz-logo">The <em>Service</em> Edit</a>
+    <span class="quiz-badge">Your results</span>
+  </nav>
+  <div class="result-hero">
+    <div class="result-label" id="r-label">Digital Health Check</div>
+    <h2 class="result-heading" id="r-heading"></h2>
+    <div class="score-row">
+      <div class="score-num" id="r-score">0<span>/10</span></div>
+      <div class="score-desc" id="r-score-desc"></div>
+    </div>
+  </div>
+  <div class="result-body">
+    <p class="result-summary" id="r-summary"></p>
+    <div class="score-bar-wrap">
+      <div class="score-bar-track"><div class="score-bar-fill" id="r-bar" style="width:0%"></div></div>
+      <div class="score-bar-labels"><span>Needs work</span><span>Strong</span></div>
+    </div>
+    <div class="findings" id="r-findings"></div>
+    <div class="result-cta">
+      <div class="result-cta-label">The next step</div>
+      <div class="result-cta-heading">WANT THE FULL<br>PICTURE? <em>BOOK<br>THE $595 AUDIT.</em></div>
+      <p class="result-cta-sub">This health check gives you the overview. The audit goes deep on every area and tells you exactly what to fix, in what order, and what it will take.</p>
+      <a href="index.html#contact" class="btn-audit">Book the audit · $595</a>
+    </div>
+  </div>
+  <div class="result-footer">
+    <p>Questions? Get in touch at <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a></p>
+  </div>
+</div>
+
+<script>
+var Qs = [
+  { text: 'When did your website last get a proper update?', opts: [
+    { t: 'In the last six months', v: 3, tag: 'website_ok' },
+    { t: 'In the last one to two years', v: 1, tag: 'website_warn' },
+    { t: 'More than two years ago', v: 0, tag: 'website_bad' },
+    { t: 'I am not sure', v: 0, tag: 'website_bad' }
+  ]},
+  { text: 'How does your website look on a mobile phone?', opts: [
+    { t: 'Great. I have checked recently.', v: 2, tag: 'mobile_ok' },
+    { t: 'Okay but not perfect', v: 1, tag: 'mobile_warn' },
+    { t: 'Honestly not great', v: 0, tag: 'mobile_bad' },
+    { t: 'I have never checked', v: 0, tag: 'mobile_bad' }
+  ]},
+  { text: 'Have you claimed and set up your Google Business profile?', opts: [
+    { t: 'Yes and it is fully up to date', v: 2, tag: 'google_ok' },
+    { t: 'Yes but I have not updated it in a while', v: 1, tag: 'google_warn' },
+    { t: 'I have one but have never touched it', v: 0, tag: 'google_bad' },
+    { t: 'I do not have one or am not sure', v: 0, tag: 'google_bad' }
+  ]},
+  { text: 'Do you have an email list? And are you emailing it?', opts: [
+    { t: 'Yes and I email it regularly', v: 3, tag: 'email_ok' },
+    { t: 'I have a list but rarely send anything', v: 1, tag: 'email_warn' },
+    { t: 'I have a list I have basically forgotten about', v: 0, tag: 'email_bad' },
+    { t: 'I do not have an email list', v: 0, tag: 'email_bad' }
+  ]},
+  { text: 'If someone searched for what you offer in your area, would they find you?', opts: [
+    { t: 'Yes I appear near the top', v: 2, tag: 'search_ok' },
+    { t: 'Sometimes but not consistently', v: 1, tag: 'search_warn' },
+    { t: 'Probably not', v: 0, tag: 'search_bad' },
+    { t: 'I have no idea', v: 0, tag: 'search_bad' }
+  ]},
+  { text: 'When someone lands on your website, is it obvious what to do next?', opts: [
+    { t: 'Yes there is a clear call to action', v: 2, tag: 'cta_ok' },
+    { t: 'Kind of but it could be clearer', v: 1, tag: 'cta_warn' },
+    { t: 'Not really', v: 0, tag: 'cta_bad' },
+    { t: 'I am not sure what you mean', v: 0, tag: 'cta_bad' }
+  ]}
+];
+
+var qIdx = 0, picked = null, score = 0, tags = [];
+
+function goTo(id) {
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function drawQ() {
+  var q = Qs[qIdx];
+  picked = null;
+  document.getElementById('q-counter').textContent = (qIdx+1) + ' of ' + Qs.length;
+  document.getElementById('progress-fill').style.width = ((qIdx/Qs.length)*100) + '%';
+  var btn = document.getElementById('btn-next');
+  btn.className = 'btn-next';
+  btn.textContent = qIdx === Qs.length-1 ? 'See my results' : 'Next';
+
+  var h = '<div class="q-counter">Question '+(qIdx+1)+' of '+Qs.length+'</div>';
+  h += '<div class="q-text">'+q.text+'</div><div class="options">';
+  for (var i = 0; i < q.opts.length; i++) {
+    h += '<button class="option" data-i="'+i+'"><div class="opt-circle"></div><div class="opt-text">'+q.opts[i].t+'</div></button>';
+  }
+  h += '</div>';
+  document.getElementById('question-body').innerHTML = h;
+
+  document.querySelectorAll('.option').forEach(function(el) {
+    el.onclick = function() {
+      document.querySelectorAll('.option').forEach(function(o){ o.classList.remove('selected'); });
+      el.classList.add('selected');
+      picked = parseInt(el.getAttribute('data-i'));
+      document.getElementById('btn-next').className = 'btn-next enabled';
+    };
+  });
+}
+
+function doNext() {
+  if (picked === null) return;
+  score += Qs[qIdx].opts[picked].v;
+  tags.push(Qs[qIdx].opts[picked].tag);
+  qIdx++;
+  if (qIdx >= Qs.length) goTo('page-email');
+  else drawQ();
+}
+
+function doResults() {
+  var name = document.getElementById('f-name').value || 'there';
+  var fn = name.split(' ')[0];
+  var email = document.getElementById('f-email').value;
+  var biz = document.getElementById('f-business').value;
+  var KEY = 'SPsa9E';
+  if (email && KEY !== 'YOUR_KLAVIYO_PUBLIC_API_KEY') {
+    fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+KEY, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'revision': '2023-12-15' },
+      body: JSON.stringify({ data: { type: 'subscription', attributes: { profile: { data: { type: 'profile', attributes: {
+          email: email,
+          first_name: fn,
+          properties: {
+            business_name: biz,
+            quiz_score: score,
+            quiz_score_display: score + '/10',
+            source: 'Digital Health Check Quiz',
+            website_health: tags.indexOf('website_bad') > -1 ? 'Needs work' : tags.indexOf('website_warn') > -1 ? 'Average' : 'Good',
+            mobile_health: tags.indexOf('mobile_bad') > -1 ? 'Needs work' : tags.indexOf('mobile_warn') > -1 ? 'Average' : 'Good',
+            google_health: tags.indexOf('google_bad') > -1 ? 'Needs work' : tags.indexOf('google_warn') > -1 ? 'Average' : 'Good',
+            email_health: tags.indexOf('email_bad') > -1 ? 'Needs work' : tags.indexOf('email_warn') > -1 ? 'Average' : 'Good',
+            search_health: tags.indexOf('search_bad') > -1 ? 'Needs work' : tags.indexOf('search_warn') > -1 ? 'Average' : 'Good',
+            cta_health: tags.indexOf('cta_bad') > -1 ? 'Needs work' : tags.indexOf('cta_warn') > -1 ? 'Average' : 'Good',
+            priority_area: tags.indexOf('website_bad') > -1 ? 'Website' : tags.indexOf('google_bad') > -1 ? 'Google Business' : tags.indexOf('email_bad') > -1 ? 'Email Marketing' : tags.indexOf('search_bad') > -1 ? 'Local Search' : 'General Digital Presence',
+            quiz_tags: tags.join(', ')
+          }
+        } } } }, relationships: { list: { data: { type: 'list', id: 'XyCZXe' } } } } })
+    }).catch(function(e){ console.log('Klaviyo error:', e); });
+  }
+  goTo('page-result');
+  buildResult(fn);
+}
+
+function buildResult(name) {
+  var s = Math.round((score/14)*10);
+  var label, heading, desc, summary;
+  if (s >= 8) {
+    label = 'Solid digital health';
+    heading = 'STRONG FOUNDATIONS, ' + name.toUpperCase() + '. A FEW THINGS STILL <em>WORTH LOOKING AT.</em>';
+    desc = 'Your digital presence is in solid shape. A few targeted improvements could still make a real difference.';
+    summary = 'You are doing better than most independent businesses online. But there are still gaps worth closing, and finding them requires a closer look than a six-question quiz can provide.';
+  } else if (s >= 5) {
+    label = 'Mixed digital health';
+    heading = 'YOU ARE PART OF THE WAY THERE, ' + name.toUpperCase() + '. BUT THERE ARE <em>GAPS.</em>';
+    desc = 'Some real strengths but also significant gaps that are costing you customers.';
+    summary = 'Some things are working for you. But based on your answers there are one or two areas that are likely losing you customers right now. The good news is these are fixable without a full rebuild.';
+  } else {
+    label = 'Digital health needs work';
+    heading = 'THERE IS REAL OPPORTUNITY HERE, ' + name.toUpperCase() + '. SEVERAL THINGS NEED <em>ATTENTION.</em>';
+    desc = 'Significant gaps that are very likely costing you customers every single day.';
+    summary = 'Based on your answers your business is probably harder to find online than it should be. That means customers who would have chosen you are going somewhere else. This is completely fixable.';
+  }
+
+  document.getElementById('r-label').textContent = label;
+  document.getElementById('r-heading').innerHTML = heading;
+  document.getElementById('r-score').innerHTML = s + '<span>/10</span>';
+  document.getElementById('r-score-desc').textContent = desc;
+  document.getElementById('r-summary').textContent = summary;
+
+  // Animate score bar
+  setTimeout(function(){
+    document.getElementById('r-bar').style.width = (s * 10) + '%';
+  }, 200);
+
+  var findings = [
+    tags.indexOf('website_bad') > -1 || tags.indexOf('mobile_bad') > -1
+      ? { w: true, t: 'Your website needs attention', d: 'An outdated or mobile-unfriendly website is actively turning potential customers away before they have a chance to choose you.' }
+      : { w: false, t: 'Your website is in reasonable shape', d: 'You are maintaining your site well. A deeper look might still surface some quick wins.' },
+    tags.indexOf('google_bad') > -1 || tags.indexOf('search_bad') > -1
+      ? { w: true, t: 'You are hard to find in local search', d: 'If customers cannot find you when they search for what you offer nearby, you are invisible at the most important moment.' }
+      : { w: false, t: 'Your Google presence is solid', d: 'You are appearing in local search and your Google Business profile is being maintained.' },
+    tags.indexOf('email_bad') > -1
+      ? { w: true, t: 'Your email list is an untapped asset', d: 'You have people who have already chosen you and you are not staying in touch. That is revenue sitting in a drawer.' }
+      : { w: false, t: 'Your email marketing is active', d: 'You are communicating with existing customers. That is one of the highest return activities for any independent business.' },
+    tags.indexOf('cta_bad') > -1
+      ? { w: true, t: 'Your website is not converting visitors', d: 'Without a clear next step, visitors leave without taking action. That is wasted traffic regardless of how many people are visiting.' }
+      : { w: false, t: 'Your calls to action are clear', d: 'Visitors know what to do when they land on your site. That is an important foundation for everything else.' }
+  ];
+
+  var h = '';
+  findings.forEach(function(f){
+    h += '<div class="finding"><div class="finding-icon '+(f.w?'warn':'ok')+'">'+(f.w?'!':'✓')+'</div>';
+    h += '<div><div class="finding-title">'+f.t+'</div><div class="finding-desc">'+f.d+'</div></div></div>';
+  });
+  document.getElementById('r-findings').innerHTML = h;
+}
+
+window.onload = function() {
+  document.getElementById('btn-start').onclick = function(){ qIdx=0; score=0; tags=[]; goTo('page-questions'); drawQ(); };
+  document.getElementById('btn-next').onclick = doNext;
+  document.getElementById('btn-results').onclick = doResults;
+};
+</script>
+</body>
+</html>

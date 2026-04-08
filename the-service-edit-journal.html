@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal · The Service Edit</title>
+<meta name="description" content="Email marketing, website and digital strategy for independent hospitality businesses. Written by a 3x cafe owner who has been on your side of the counter.">
+<link rel="canonical" href="https://www.theserviceedit.com/the-service-edit-journal.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#2b4a35;
+  --green-mid:#3a6347;
+  --green-pale:#eef5f1;
+  --cream:#faf8f4;
+  --cream-mid:#f2ede3;
+  --rule:#e4ddd0;
+  --warm-black:#1a1814;
+  --mid:#8a8070;
+  --light:#b0a898;
+  --white:#ffffff;
+  --accent:#c8dabb;
+  --fd:'Bebas Neue',Impact,'Arial Narrow',Arial,sans-serif;
+  --fb:'DM Sans',-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--cream);color:var(--warm-black);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:var(--cream);border-bottom:1px solid var(--rule)}
+.nav-logo{font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-black);text-decoration:none}
+.nav-logo em{font-style:italic;font-weight:300}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:12px;font-weight:400;letter-spacing:.05em;color:var(--mid);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--warm-black)}
+.nav-links a.active{color:var(--warm-black)}
+.nav-cta{background:var(--green)!important;color:var(--white)!important;padding:8px 18px!important;font-size:11px!important;font-weight:500!important;letter-spacing:.12em!important;text-transform:uppercase!important}
+.nav-cta:hover{background:var(--green-mid)!important;color:var(--white)!important}
+
+/* HEADER */
+.journal-header{padding-top:58px;background:var(--green);padding-bottom:0}
+.journal-header-inner{max-width:1200px;margin:0 auto;padding:72px 40px 0}
+.journal-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+.journal-heading{font-family:var(--fd);font-size:clamp(56px,6vw,96px);line-height:.91;color:var(--white);letter-spacing:.01em;margin-bottom:24px}
+.journal-heading em{color:var(--accent);font-style:normal}
+.journal-sub{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.55);max-width:480px;margin-bottom:56px}
+
+/* CATEGORY TABS */
+.cat-bar{border-top:1px solid rgba(255,255,255,.1);display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-bar::-webkit-scrollbar{display:none}
+.cat-btn{background:none;border:none;padding:18px 24px;font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;flex-shrink:0}
+.cat-btn:hover{color:rgba(255,255,255,.7)}
+.cat-btn.active{color:var(--white);border-bottom-color:var(--accent)}
+
+/* MAIN CONTENT */
+.journal-body{max-width:1200px;margin:0 auto;padding:64px 40px}
+
+/* EMPTY STATE */
+.empty-state{padding:80px 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+.empty-icon{width:64px;height:64px;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.empty-icon svg{width:24px;height:24px;stroke:var(--light);fill:none;stroke-width:1.5}
+.empty-heading{font-family:var(--fd);font-size:clamp(32px,3vw,48px);line-height:.95;color:var(--warm-black)}
+.empty-heading em{color:var(--green);font-style:normal}
+.empty-body{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);max-width:400px}
+.empty-cta{display:inline-block;background:var(--green);color:var(--white);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:background .2s;margin-top:8px}
+.empty-cta:hover{background:var(--green-mid)}
+
+/* ARTICLE GRID — ready for when posts exist */
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule)}
+.article-card{background:var(--cream);padding:36px 32px;display:flex;flex-direction:column;gap:0;text-decoration:none;transition:background .2s}
+.article-card:hover{background:var(--green-pale)}
+.article-card.featured{background:var(--green);grid-column:span 2}
+.article-cat{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.article-card.featured .article-cat{color:var(--accent)}
+.article-title{font-family:var(--fd);font-size:clamp(22px,2.2vw,32px);line-height:.97;color:var(--warm-black);margin-bottom:14px;letter-spacing:.01em}
+.article-card.featured .article-title{color:var(--white);font-size:clamp(28px,3vw,44px)}
+.article-excerpt{font-size:13px;font-weight:300;line-height:1.75;color:var(--mid);flex:1;margin-bottom:20px}
+.article-card.featured .article-excerpt{color:rgba(255,255,255,.55)}
+.article-meta{font-size:11px;font-weight:400;color:var(--light);letter-spacing:.04em}
+.article-card.featured .article-meta{color:rgba(255,255,255,.3)}
+.article-read{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-top:16px;display:inline-flex;align-items:center;gap:6px}
+.article-card.featured .article-read{color:var(--accent)}
+.article-read::after{content:'→'}
+
+/* CATEGORY INTRO */
+.cat-intro{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+.cat-intro-heading{font-family:var(--fd);font-size:clamp(36px,3.5vw,56px);line-height:.93;color:var(--warm-black);margin-bottom:12px}
+.cat-intro-heading em{color:var(--green);font-style:normal}
+.cat-intro-body{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);max-width:540px}
+
+/* NEWSLETTER BAND */
+.newsletter{background:var(--warm-black);padding:72px 40px;margin-top:80px}
+.newsletter-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.newsletter-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.newsletter-heading{font-family:var(--fd);font-size:clamp(36px,3.5vw,56px);line-height:.93;color:var(--white)}
+.newsletter-heading em{color:var(--accent);font-style:normal}
+.newsletter-right{display:flex;flex-direction:column;gap:16px}
+.newsletter-body{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.5)}
+.newsletter-form{display:flex;gap:0}
+.newsletter-input{flex:1;padding:14px 18px;border:1.5px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);font-family:var(--fb);font-size:14px;font-weight:300;color:var(--white);outline:none;border-radius:0;-webkit-appearance:none;transition:border-color .2s}
+.newsletter-input::placeholder{color:rgba(255,255,255,.3)}
+.newsletter-input:focus{border-color:rgba(255,255,255,.4)}
+.newsletter-btn{background:var(--accent);color:var(--green);font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:14px 24px;border:none;cursor:pointer;white-space:nowrap;transition:background .2s;flex-shrink:0}
+.newsletter-btn:hover{background:var(--white)}
+.newsletter-note{font-size:12px;font-weight:300;color:rgba(255,255,255,.25);line-height:1.6}
+
+/* FOOTER */
+footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer-brand{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:12px}
+.footer-brand em{font-style:italic;font-weight:300}
+.footer-tagline{font-size:13px;font-weight:300;color:rgba(255,255,255,.28);line-height:1.7}
+.footer-col-label{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{font-size:13px;font-weight:300;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s}
+.footer-col ul li a:hover{color:rgba(255,255,255,.8)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:11px;font-weight:300;color:rgba(255,255,255,.18);letter-spacing:.04em}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  nav{padding:0 24px}
+  .journal-header-inner{padding:56px 24px 0}
+  .journal-body{padding:48px 24px}
+  .article-grid{grid-template-columns:1fr}
+  .article-card.featured{grid-column:span 1}
+  .topics-grid{grid-template-columns:1fr}
+  .newsletter-inner{grid-template-columns:1fr;gap:32px}
+  .newsletter{padding:56px 24px;margin-top:56px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .newsletter-form{flex-direction:column}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">The <em>Service</em> Edit</a>
+  <div class="nav-links">
+    <a href="index.html#how-it-works">How it works</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#cases">Results</a>
+    <a href="index.html#about">About</a>
+    <a href="the-service-edit-journal.html" class="active">Journal</a>
+    <a href="index.html#contact" class="nav-cta">Start with an audit</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="journal-header">
+  <div class="journal-header-inner">
+    <div class="journal-kicker">The Service Edit</div>
+    <h1 class="journal-heading">DIGITAL<br>STRATEGY FOR<br>INDEPENDENT<br><em>HOSPITALITY.</em></h1>
+    <p class="journal-sub">Practical writing on email marketing, websites and digital strategy — from someone who has spent 20 years on your side of the counter.</p>
+  </div>
+
+  <!-- CATEGORY TABS -->
+  <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+    <div class="cat-bar">
+      <button class="cat-btn active" onclick="filterCat('all', this)">All</button>
+      <button class="cat-btn" onclick="filterCat('email', this)">Email Marketing</button>
+      <button class="cat-btn" onclick="filterCat('website', this)">Website</button>
+      <button class="cat-btn" onclick="filterCat('strategy', this)">Strategy</button>
+      <button class="cat-btn" onclick="filterCat('cases', this)">Case Studies</button>
+    </div>
+  </div>
+</div>
+
+<!-- JOURNAL BODY -->
+<div class="journal-body">
+
+  <!-- CATEGORY INTRO (shown when filtering) -->
+  <div class="cat-intro" id="cat-intro" style="display:none">
+    <h2 class="cat-intro-heading" id="cat-intro-heading"></h2>
+    <p class="cat-intro-body" id="cat-intro-body"></p>
+  </div>
+
+  <!-- ARTICLE GRID -->
+  <div class="article-grid" id="article-grid">
+    <a href="journal/your-email-list-is-doing-nothing.html" class="article-card featured" data-cat="email">
+      <div class="article-cat">Email Marketing</div>
+      <div class="article-title">YOUR EMAIL LIST IS SITTING THERE DOING NOTHING. HERE IS WHAT THAT IS COSTING YOU.</div>
+      <div class="article-excerpt">Most independent hospitality businesses have a list of warm customers they never contact. The cost of that silence is real — it just never shows up on a bill.</div>
+      <div class="article-meta">5 min read</div>
+      <span class="article-read">Read article</span>
+    </a>
+    <a href="journal/why-hospitality-gets-better-email-results.html" class="article-card" data-cat="email">
+      <div class="article-cat">Email Marketing</div>
+      <div class="article-title">WHY HOSPITALITY GETS BETTER RESULTS FROM EMAIL THAN ALMOST ANY OTHER INDUSTRY.</div>
+      <div class="article-excerpt">The relationship is already there. The purchase is emotional. The cycle is frequent. Here is why the opportunity is larger than most operators realise.</div>
+      <div class="article-meta">5 min read</div>
+      <span class="article-read">Read article</span>
+    </a>
+    <a href="journal/your-website-is-losing-you-customers.html" class="article-card" data-cat="website">
+      <div class="article-cat">Website</div>
+      <div class="article-title">YOUR WEBSITE IS LOSING YOU CUSTOMERS AND YOU PROBABLY DO NOT KNOW WHICH ONES.</div>
+      <div class="article-excerpt">It rarely looks broken. But a website that loads slowly, does not work on mobile, or buries the booking link is quietly turning people away every single day.</div>
+      <div class="article-meta">5 min read</div>
+      <span class="article-read">Read article</span>
+    </a>
+    <a href="journal/quiet-midweeks-are-not-a-foot-traffic-problem.html" class="article-card" data-cat="strategy">
+      <div class="article-cat">Strategy</div>
+      <div class="article-title">WHY QUIET MIDWEEKS ARE NOT A FOOT TRAFFIC PROBLEM.</div>
+      <div class="article-excerpt">Most hospitality businesses treat quiet Tuesdays as inevitable. They are not. They are a communication failure — and there is a significant difference.</div>
+      <div class="article-meta">4 min read</div>
+      <span class="article-read">Read article</span>
+    </a>
+    <a href="journal/restaurant-from-9-covers-to-fully-booked.html" class="article-card" data-cat="cases">
+      <div class="article-cat">Case Study</div>
+      <div class="article-title">THE RESTAURANT THAT WENT FROM 9 COVERS TO FULLY BOOKED WITHOUT SPENDING A DOLLAR ON ADS.</div>
+      <div class="article-excerpt">A Darwin pizza restaurant had quiet midweeks and a customer list they had never used. Here is exactly what happened when they sent one email.</div>
+      <div class="article-meta">4 min read</div>
+      <span class="article-read">Read article</span>
+    </a>
+  </div>
+
+  <!-- EMPTY STATE — shown when filtering returns no results -->
+  <div class="empty-state" id="empty-state" style="display:none">
+    <div class="empty-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2 class="empty-heading" id="empty-heading">MORE COMING<br><em>SOON.</em></h2>
+    <p class="empty-body" id="empty-body">More articles in this category are on their way. Sign up below to get notified when they drop.</p>
+    <a href="tse-quiz.html" class="empty-cta">Take the free health check</a>
+  </div>
+
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="newsletter-inner">
+    <div>
+      <div class="newsletter-kicker">Stay in the loop</div>
+      <h2 class="newsletter-heading">GET IT IN<br>YOUR <em>INBOX.</em></h2>
+    </div>
+    <div class="newsletter-right">
+      <p class="newsletter-body">New articles, practical tips, and the occasional thing worth knowing about digital marketing for independent hospitality. No spam, no hard sell.</p>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="hello@yourbusiness.com.au" id="nl-email">
+        <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
+      </div>
+      <p class="newsletter-note" id="nl-msg">One or two emails a month. Unsubscribe any time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">The <em>Service</em> Edit</div>
+        <p class="footer-tagline">Email marketing, digital audits and website builds for independent hospitality businesses. Built by a 3x cafe owner who knows exactly what your customers respond to.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Services</div>
+        <ul>
+          <li><a href="index.html#services">Digital Audit · $595</a></li>
+          <li><a href="index.html#services">Email Marketing</a></li>
+          <li><a href="index.html#services">Web Presence Build</a></li>
+          <li><a href="index.html#retainers">Retainers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Resources</div>
+        <ul>
+          <li><a href="tse-quiz.html">Free Health Check</a></li>
+          <li><a href="the-service-edit-journal.html">Journal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Contact</div>
+        <ul>
+          <li><a href="index.html#contact">Start a conversation</a></li>
+          <li><a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a></li>
+          <li><a href="https://linkedin.com/in/mel-cox-7480a8379" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 The Service Edit · Mel Cox · Perth, WA</div>
+      <div class="footer-copy">ABN 88 429 285 575</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+var catMeta = {
+  all: {
+    heading: null,
+    body: null
+  },
+  email: {
+    heading: 'EMAIL <em>MARKETING.</em>',
+    body: 'How to build and run email marketing for independent cafes, restaurants and hospitality businesses. Klaviyo, campaigns, automations and list growth — without the agency jargon.'
+  },
+  website: {
+    heading: 'WEBSITE &amp; <em>LOCAL SEO.</em>',
+    body: 'Practical guides on building and improving websites for hospitality venues. Local search, mobile design, Google Business and what actually converts a visitor into a booking.'
+  },
+  strategy: {
+    heading: 'DIGITAL <em>STRATEGY.</em>',
+    body: 'Broader thinking on digital marketing for independent hospitality. Where to focus, what to ignore, and how to build a presence that compounds over time.'
+  },
+  cases: {
+    heading: 'CASE <em>STUDIES.</em>',
+    body: 'Real results from real venues. What the problem was, what was done, and what happened next.'
+  }
+};
+
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+
+  var intro = document.getElementById('cat-intro');
+  var grid = document.getElementById('article-grid');
+  var emptyState = document.getElementById('empty-state');
+  var cards = document.querySelectorAll('.article-card');
+  var visible = 0;
+
+  cards.forEach(function(card){
+    if(cat === 'all' || card.getAttribute('data-cat') === cat){
+      card.style.display = 'flex';
+      visible++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // first card featured styling
+  var firstVisible = null;
+  cards.forEach(function(card){
+    card.classList.remove('featured');
+    if(!firstVisible && card.style.display !== 'none') firstVisible = card;
+  });
+  if(firstVisible) firstVisible.classList.add('featured');
+
+  if (cat === 'all') {
+    intro.style.display = 'none';
+  } else {
+    var meta = catMeta[cat];
+    document.getElementById('cat-intro-heading').innerHTML = meta.heading;
+    document.getElementById('cat-intro-body').textContent = meta.body.replace(/&amp;/g, '&');
+    intro.style.display = 'block';
+  }
+
+  if(visible === 0){
+    grid.style.display = 'none';
+    emptyState.style.display = 'flex';
+  } else {
+    grid.style.display = 'grid';
+    emptyState.style.display = 'none';
+  }
+}
+
+function subscribeNewsletter() {
+  var email = document.getElementById('nl-email').value;
+  var msg = document.getElementById('nl-msg');
+  if (!email || !email.includes('@')) {
+    msg.textContent = 'Please enter a valid email address.';
+    msg.style.color = 'rgba(255,100,80,.7)';
+    return;
+  }
+  var KEY = 'SPsa9E';
+  fetch('https://a.klaviyo.com/client/subscriptions/?company_id=' + KEY, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'revision': '2023-12-15' },
+    body: JSON.stringify({ data: { type: 'subscription', attributes: {
+      profile: { data: { type: 'profile', attributes: { email: email, properties: { source: 'Journal newsletter signup' } } } }
+    }, relationships: { list: { data: { type: 'list', id: 'XyCZXe' } } } } })
+  }).then(function(){
+    msg.textContent = 'You are on the list. Talk soon.';
+    msg.style.color = 'rgba(200,218,187,.8)';
+    document.getElementById('nl-email').value = '';
+  }).catch(function(){
+    msg.textContent = 'Something went wrong. Try emailing hello@theserviceedit.com directly.';
+    msg.style.color = 'rgba(255,100,80,.7)';
+  });
+}
+</script>
+</body>
+</html>

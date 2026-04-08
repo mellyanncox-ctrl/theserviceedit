@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Restaurant That Went From 9 Covers to Fully Booked Without Spending a Dollar on Ads · The Service Edit</title>
+<meta name="description" content="A Darwin pizza restaurant had quiet midweeks and a customer list they had never emailed. Here is what happened when they used it.">
+<link rel="canonical" href="https://www.theserviceedit.com/journal/restaurant-from-9-covers-to-fully-booked.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#2b4a35;--green-mid:#3a6347;--green-pale:#eef5f1;
+  --cream:#faf8f4;--cream-mid:#f2ede3;--rule:#e4ddd0;
+  --warm-black:#1a1814;--mid:#8a8070;--light:#b0a898;--white:#ffffff;--accent:#c8dabb;
+  --fd:'Bebas Neue',Impact,'Arial Narrow',Arial,sans-serif;
+  --fb:'DM Sans',-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--cream);color:var(--warm-black);-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:var(--cream);border-bottom:1px solid var(--rule)}
+.nav-logo{font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-black);text-decoration:none}
+.nav-logo em{font-style:italic;font-weight:300}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:12px;font-weight:400;letter-spacing:.05em;color:var(--mid);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--warm-black)}
+.nav-cta{background:var(--green)!important;color:var(--white)!important;padding:8px 18px!important;font-size:11px!important;font-weight:500!important;letter-spacing:.12em!important;text-transform:uppercase!important}
+.article-header{padding-top:58px;background:var(--green)}
+.article-header-inner{max-width:800px;margin:0 auto;padding:72px 40px 64px}
+.article-breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:28px}
+.article-breadcrumb a{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
+.article-breadcrumb a:hover{color:rgba(255,255,255,.7)}
+.article-breadcrumb span{font-size:11px;color:rgba(255,255,255,.2)}
+.article-cat{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.article-title{font-family:var(--fd);font-size:clamp(44px,5vw,80px);line-height:.91;color:var(--white);letter-spacing:.01em;margin-bottom:28px}
+.article-meta{display:flex;align-items:center;gap:20px}
+.article-meta-item{font-size:12px;font-weight:300;color:rgba(255,255,255,.35);letter-spacing:.04em}
+.article-meta-sep{width:3px;height:3px;background:rgba(255,255,255,.2);border-radius:50%}
+.article-body{max-width:800px;margin:0 auto;padding:64px 40px 80px}
+.article-body p{font-size:17px;font-weight:300;line-height:1.9;color:var(--warm-black);margin-bottom:28px}
+.article-body p strong{font-weight:500}
+.article-body h2{font-family:var(--fd);font-size:clamp(28px,2.8vw,42px);line-height:.95;color:var(--warm-black);letter-spacing:.01em;margin:52px 0 20px}
+.article-body h2 em{color:var(--green);font-style:normal}
+.pull-quote{background:var(--green-pale);border-left:3px solid var(--green);padding:28px 32px;margin:40px 0}
+.pull-quote p{font-size:19px;font-weight:300;line-height:1.75;color:var(--green);margin-bottom:0;font-style:italic}
+.result-band{background:var(--warm-black);padding:40px;margin:48px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--warm-black)}
+.result-band-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.result-stat{background:var(--warm-black);padding:32px 28px}
+.result-stat-num{font-family:var(--fd);font-size:clamp(36px,4vw,56px);color:var(--accent);line-height:1;margin-bottom:8px}
+.result-stat-label{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.5}
+.article-cta{background:var(--warm-black);padding:52px 40px;margin:0 -40px}
+.article-cta-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.article-cta-heading{font-family:var(--fd);font-size:clamp(32px,3vw,48px);line-height:.95;color:var(--white);margin-bottom:16px}
+.article-cta-heading em{color:var(--accent);font-style:normal}
+.article-cta-body{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.5);max-width:480px;margin-bottom:28px}
+.article-cta-btn{display:inline-block;background:var(--accent);color:var(--green);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:background .2s}
+.article-cta-btn:hover{background:var(--white)}
+.article-back{margin-top:56px;padding-top:40px;border-top:1px solid var(--rule)}
+.article-back a{font-size:12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color .2s}
+.article-back a:hover{color:var(--green)}
+.article-back a::before{content:'←'}
+footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:11px;font-weight:300;color:rgba(255,255,255,.18);letter-spacing:.04em}
+@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.article-header-inner,.article-body{padding-left:24px;padding-right:24px}.article-cta{margin:0 -24px;padding:40px 24px}.result-band-inner{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">The <em>Service</em> Edit</a>
+  <div class="nav-links">
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#cases">Results</a>
+    <a href="../index.html#about">About</a>
+    <a href="../the-service-edit-journal.html">Journal</a>
+    <a href="../index.html#contact" class="nav-cta">Start with an audit</a>
+  </div>
+</nav>
+
+<div class="article-header">
+  <div class="article-header-inner">
+    <div class="article-breadcrumb">
+      <a href="../the-service-edit-journal.html">Journal</a>
+      <span>/</span>
+      <a href="../the-service-edit-journal.html">Case Studies</a>
+    </div>
+    <div class="article-cat">Case Study</div>
+    <h1 class="article-title">THE RESTAURANT THAT WENT FROM 9 COVERS TO FULLY BOOKED WITHOUT SPENDING A DOLLAR ON <em>ADS.</em></h1>
+    <div class="article-meta">
+      <span class="article-meta-item">Mel Cox</span>
+      <span class="article-meta-sep"></span>
+      <span class="article-meta-item">4 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p>A pizza restaurant in Darwin had a problem that will be familiar to anyone who has run a hospitality venue. Weekends were fine. Friday and Saturday nights the place was full, the kitchen was running hard, the team was busy. But midweek was a different story entirely.</p>
+
+  <p>Nine covers on a Tuesday night. Tables empty. Staff standing around. Fixed costs running regardless. The owner had tried a few things — social media posts, a sign out the front, word of mouth — but nothing had meaningfully shifted the midweek numbers.</p>
+
+  <p>The assumption, as it often is, was that this was just how it worked. Midweek is quiet. That is the industry.</p>
+
+  <h2>WHAT WAS ALREADY <em>THERE</em></h2>
+
+  <p>Before doing anything else, we looked at what the business already had. And what it had, sitting completely unused, was a customer list. People who had dined there, left their details, and never been contacted again.</p>
+
+  <p>This is extraordinarily common. Most independent venues accumulate customer contact details through bookings, loyalty programs, or online ordering — and then do nothing with them. The data just sits there, a record of past visits that never turns into future ones.</p>
+
+  <p>The list at this restaurant was not enormous. But it was warm. Every person on it had already chosen the venue once. They knew the food. They knew the vibe. They had no reason not to come back — they just had not been given one.</p>
+
+  <div class="pull-quote">
+    <p>The restaurant did not have a customer problem. It had a communication problem. The customers were already there. They just needed to be asked.</p>
+  </div>
+
+  <h2>ONE EMAIL. NOTHING <em>ELSE.</em></h2>
+
+  <p>The campaign was straightforward. One email to the existing customer list. No paid promotion behind it. No discount. No gimmick. Just a well-written message that reminded people the restaurant existed, told them what was on, and gave them a reason to come in this week rather than some unspecified future week.</p>
+
+  <p>The email went out on a Monday. By Tuesday afternoon, the bookings had already shifted. By Tuesday evening, the restaurant had moved from nine covers to over sixty. Midweek numbers held for the following weeks, because the communication had reminded people that this was somewhere worth going — and that feeling does not disappear after one visit.</p>
+
+  <div class="result-band">
+    <div class="result-band-inner">
+      <div class="result-stat">
+        <div class="result-stat-num">9</div>
+        <div class="result-stat-label">Covers on a Tuesday night before</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-stat-num">60–92</div>
+        <div class="result-stat-label">Covers per night after a single campaign</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-stat-num">$0</div>
+        <div class="result-stat-label">Spent on advertising</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>WHY THIS WORKS WHEN OTHER THINGS <em>DO NOT</em></h2>
+
+  <p>Paid advertising reaches strangers. It puts your message in front of people who have no prior relationship with you, no reason to trust you, and plenty of other options competing for their attention at the same moment. It can work, but it is expensive, requires ongoing spend to maintain, and converts at a fraction of the rate of warm outreach.</p>
+
+  <p>Social media reaches your followers, but only a small percentage of them at any given time, and only when they happen to be scrolling at the right moment. You have no control over the timing, no guarantee of delivery, and no direct line to the people you most want to reach.</p>
+
+  <p>Email reaches people who have already chosen you, directly, at a time you choose, with a message you control. The economics are completely different. A hospitality business with a warm email list of 500 people and a well-written campaign will almost always see a better return than the same business spending several hundred dollars on Facebook ads to reach strangers.</p>
+
+  <h2>WHAT MADE THE DIFFERENCE IN THIS <em>CASE</em></h2>
+
+  <p>A few things were true about this campaign that made it work as well as it did. The list was genuinely warm — these were real past customers, not cold contacts. The message was honest and specific — it told people something concrete about what was on and why this week was worth coming in for. And it landed at the right moment in the week, when people are making decisions about their social plans.</p>
+
+  <p>None of that is complicated. But all of it requires knowing what you are doing and why — which is where most independent venues get stuck. Writing a good email is harder than it looks. Timing matters. List hygiene matters. Knowing which customers to target and with what message matters.</p>
+
+  <p>When those things are right, the results are not subtle. A single email to an existing customer base can move a business's midweek trade more than months of social media activity or a significant paid advertising budget.</p>
+
+  <h2>THE BIGGER <em>PICTURE</em></h2>
+
+  <p>This case study is not just about one campaign. It is about a different way of thinking about customer relationships in hospitality.</p>
+
+  <p>Every booking, every table, every order is the beginning of a relationship — not a transaction. The businesses that treat it that way, that stay in contact and maintain that relationship over time, end up with a customer base that behaves completely differently to one that has been left to drift.</p>
+
+  <p>The restaurant's quiet Tuesdays were not inevitable. They were the result of a gap in communication that had been there for years, unnoticed, costing the business money every week. Closing that gap did not require a rebrand, a new menu, or a renovation. It required one email.</p>
+
+  <div class="article-cta">
+    <div class="article-cta-label">The next step</div>
+    <h2 class="article-cta-heading">FIND OUT WHAT YOUR<br>CUSTOMER LIST COULD<br><em>DO FOR YOUR BUSINESS.</em></h2>
+    <p class="article-cta-body">The $595 digital audit looks at your email list health, customer communication and digital presence. You will leave with a clear picture of what is sitting idle and exactly what to do about it.</p>
+    <a href="../index.html#contact" class="article-cta-btn">Book the audit · $595</a>
+  </div>
+
+  <div class="article-back">
+    <a href="../the-service-edit-journal.html">Back to the journal</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 The Service Edit · Mel Cox · Perth, WA</div>
+      <div class="footer-copy">ABN 88 429 285 575</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

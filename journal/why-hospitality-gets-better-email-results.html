@@ -40,14 +40,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .article-meta{display:flex;align-items:center;gap:20px}
 .article-meta-item{font-size:12px;font-weight:300;color:rgba(255,255,255,.35);letter-spacing:.04em}
 .article-meta-sep{width:3px;height:3px;background:rgba(255,255,255,.2);border-radius:50%}
-.article-body{max-width:800px;margin:0 auto;padding:64px 40px 80px}
+.article-body{max-width:800px;margin:0 auto;padding:64px 40px 48px}
 .article-body p{font-size:17px;font-weight:300;line-height:1.9;color:var(--warm-black);margin-bottom:28px}
 .article-body p strong{font-weight:500}
 .article-body h2{font-family:var(--fd);font-size:clamp(28px,2.8vw,42px);line-height:.95;color:var(--warm-black);letter-spacing:.01em;margin:52px 0 20px}
 .article-body h2 em{color:var(--green);font-style:normal}
 .pull-quote{background:var(--green-pale);border-left:3px solid var(--green);padding:28px 32px;margin:40px 0}
 .pull-quote p{font-size:19px;font-weight:300;line-height:1.75;color:var(--green);margin-bottom:0;font-style:italic}
-.article-cta{background:var(--warm-black);padding:52px 40px;margin:0 -40px}
+.article-cta{background:var(--warm-black);padding:52px 40px;width:100%}
 .article-cta-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
 .article-cta-heading{font-family:var(--fd);font-size:clamp(32px,3vw,48px);line-height:.95;color:var(--white);margin-bottom:16px}
 .article-cta-heading em{color:var(--accent);font-style:normal}
@@ -62,7 +62,32 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 .footer-inner{max-width:1200px;margin:0 auto}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center}
 .footer-copy{font-size:11px;font-weight:300;color:rgba(255,255,255,.18);letter-spacing:.04em}
-@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.article-header-inner,.article-body{padding-left:24px;padding-right:24px}.article-cta{margin:0 -24px;padding:40px 24px}}
+@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.article-header-inner,.article-body{padding-left:24px;padding-right:24px}.article-cta{padding:40px 24px}}
+
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;z-index:300}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--warm-black);transition:all .3s;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:58px;left:0;right:0;bottom:0;background:var(--cream);z-index:199;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:0 0 80px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-section{padding:32px 40px 0}
+.mobile-menu-section:last-child{padding-bottom:40px}
+.mobile-menu-label{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--light);margin-bottom:16px}
+.mobile-menu-links{display:flex;flex-direction:column;gap:0}
+.mobile-menu-link{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--warm-black);transition:color .2s}
+.mobile-menu-link:last-child{border-bottom:none}
+.mobile-menu-link-title{font-size:16px;font-weight:400;color:var(--warm-black)}
+.mobile-menu-link-detail{font-size:12px;font-weight:300;color:var(--light);letter-spacing:.04em}
+.mobile-menu-link:hover .mobile-menu-link-title{color:var(--green)}
+.mobile-menu-divider{height:1px;background:var(--rule);margin:8px 40px 0}
+.mobile-menu-cta{margin:32px 40px 0;display:block;background:var(--green);color:var(--white);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:16px 24px;text-decoration:none;text-align:center;transition:background .2s}
+.mobile-menu-cta:hover{background:var(--green-mid)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav-links{display:none}
+}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6KWBFDZ30"></script>
@@ -83,7 +108,65 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
     <a href="../the-service-edit-journal.html">Journal</a>
     <a href="../index.html#contact" class="nav-cta">Start with an audit</a>
   </div>
+
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Services</div>
+    <div class="mobile-menu-links">
+      <a href="../digital-audit.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Digital Audit</span>
+        <span class="mobile-menu-link-detail">$595</span>
+      </a>
+      <a href="../email-marketing.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Email Marketing</span>
+        <span class="mobile-menu-link-detail">from $2,999</span>
+      </a>
+      <a href="../web-presence-build.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Web Presence Build</span>
+        <span class="mobile-menu-link-detail">from $4,999</span>
+      </a>
+    </div>
+  </div>
+  <div class="mobile-menu-divider"></div>
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Resources</div>
+    <div class="mobile-menu-links">
+      <a href="../tse-quiz.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Free Digital Health Check</span>
+        <span class="mobile-menu-link-detail">2 minutes · free</span>
+      </a>
+      <a href="../the-service-edit-journal.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Journal</span>
+        <span class="mobile-menu-link-detail">Strategy and thinking</span>
+      </a>
+    </div>
+  </div>
+  <div class="mobile-menu-divider"></div>
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Company</div>
+    <div class="mobile-menu-links">
+      <a href="../index.html#about" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">About</span>
+        <span class="mobile-menu-link-detail">20 years in hospitality</span>
+      </a>
+      <a href="../index.html#contact" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Contact</span>
+        <span class="mobile-menu-link-detail">hello@theserviceedit.com</span>
+      </a>
+      <a href="../privacy-policy.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Privacy Policy</span>
+        <span class="mobile-menu-link-detail"></span>
+      </a>
+    </div>
+  </div>
+  <a href="../index.html#contact" class="mobile-menu-cta" onclick="toggleMenu()">Start with the audit</a>
+</div>
 
 <div class="article-header">
   <div class="article-header-inner">
@@ -104,25 +187,25 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 
 <div class="article-body">
 
-  <p>Email marketing works across almost every industry. But it works differently — better, in some specific and important ways — for hospitality businesses. Understanding why matters, because it changes how you think about the size of the opportunity sitting in your customer database.</p>
+  <p>Email marketing works across almost every industry. But it works differently, better, in some specific and important ways, for hospitality businesses. Understanding why matters, because it changes how you think about the size of the opportunity sitting in your customer database.</p>
 
-  <p>Most of the businesses that have figured this out are not independents. They are chains, franchise groups, and large venue operators with dedicated marketing teams and the budget to build proper systems. The independent cafe, restaurant or specialty food business is almost always behind — not because the opportunity is smaller for them, but because no one has built it for them.</p>
+  <p>Most of the businesses that have figured this out are not independents. They are chains, franchise groups, and large venue operators with dedicated marketing teams and the budget to build proper systems. The independent cafe, restaurant or specialty food business is almost always behind, not because the opportunity is smaller for them, but because no one has built it for them.</p>
 
   <h2>THE RELATIONSHIP IS ALREADY <em>THERE</em></h2>
 
   <p>Most industries that use email marketing are trying to build a relationship from scratch. A software company emailing its trial users. A clothing brand emailing people who bought once six months ago. An insurance company emailing leads who filled out a form. The relationship is thin, the trust is low, and the email has to work hard to earn attention.</p>
 
-  <p>Hospitality is different. When someone sits at your table, eats your food, and leaves happy, something real has happened. They have a memory of your venue. They associate your name with an experience they enjoyed. When your email arrives in their inbox, it does not land as marketing — it lands as a reminder of something they already like.</p>
+  <p>Hospitality is different. When someone sits at your table, eats your food, and leaves happy, something real has happened. They have a memory of your venue. They associate your name with an experience they enjoyed. When your email arrives in their inbox, it does not land as marketing, it lands as a reminder of something they already like.</p>
 
   <div class="pull-quote">
     <p>You are not marketing to strangers. You are staying in touch with people who have already chosen you. That is a completely different conversation.</p>
   </div>
 
-  <p>This is why open rates for well-run hospitality email lists tend to significantly outperform industry averages. The average open rate across all industries sits around 20 to 22 percent. For hospitality businesses with warm, well-maintained lists, rates of 40, 50 or even higher are achievable — because the recipient recognises the name and has a reason to care.</p>
+  <p>This is why open rates for well-run hospitality email lists tend to significantly outperform industry averages. The average open rate across all industries sits around 20 to 22 percent. For hospitality businesses with warm, well-maintained lists, rates of 40, 50 or even higher are achievable, because the recipient recognises the name and has a reason to care.</p>
 
   <h2>THE PURCHASE DECISION IS <em>EMOTIONAL</em></h2>
 
-  <p>When someone decides where to eat or drink, they are not running a rational cost-benefit analysis. They are following a feeling. They want somewhere comfortable, reliable, known. They are looking for a reason to choose — and the business that stays in their minds is the one that gets chosen.</p>
+  <p>When someone decides where to eat or drink, they are not running a rational cost-benefit analysis. They are following a feeling. They want somewhere comfortable, reliable, known. They are looking for a reason to choose, and the business that stays in their minds is the one that gets chosen.</p>
 
   <p>Email is unusually good at maintaining this kind of emotional presence. A well-written message from a venue you love lands differently than an ad. It feels personal, even when it is sent to hundreds of people. It reminds you of the last time you were there. It makes you think about going back.</p>
 
@@ -130,7 +213,7 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 
   <h2>THE PURCHASE CYCLE WORKS IN YOUR <em>FAVOUR</em></h2>
 
-  <p>Another reason email works so well in hospitality is the nature of the purchase itself. People eat out regularly. They get coffee multiple times a week. The decision to visit a venue recurs constantly — which means the opportunity to influence that decision also recurs constantly.</p>
+  <p>Another reason email works so well in hospitality is the nature of the purchase itself. People eat out regularly. They get coffee multiple times a week. The decision to visit a venue recurs constantly, which means the opportunity to influence that decision also recurs constantly.</p>
 
   <p>Compare this to a business that sells something people buy once every few years. The window for email to matter is narrow. For hospitality, the window is open all the time. Every week is another opportunity to be the place someone chooses on a Wednesday night, a Saturday brunch, a birthday dinner.</p>
 
@@ -152,24 +235,26 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 
   <p>Most independent hospitality businesses are leaving the majority of this opportunity untouched. They have a list. They may have sent something once, when they first set up a platform. They may send the occasional campaign around Christmas or Mother's Day. But they have no welcome sequence, no automated flows, no regular communication programme. The list sits there, growing and doing nothing.</p>
 
-  <p>This is not a criticism. Running a hospitality business is demanding in ways that leave little room for anything beyond the immediate. Email marketing feels complicated and time-consuming to do properly — and doing it badly is worse than not doing it at all, because a poorly executed campaign can damage the relationship you are trying to build.</p>
+  <p>This is not a criticism. Running a hospitality business is demanding in ways that leave little room for anything beyond the immediate. Email marketing feels complicated and time-consuming to do properly, and doing it badly is worse than not doing it at all, because a poorly executed campaign can damage the relationship you are trying to build.</p>
 
-  <p>But the gap between what is possible and what most operators are currently doing is significant. And for the businesses that close it — that build a proper email programme, maintain it consistently, and treat their list as the asset it is — the results tend to be among the clearest and most direct of any marketing activity they undertake.</p>
+  <p>But the gap between what is possible and what most operators are currently doing is significant. And for the businesses that close it, that build a proper email programme, maintain it consistently, and treat their list as the asset it is, the results tend to be among the clearest and most direct of any marketing activity they undertake.</p>
 
   <p>The opportunity is not going anywhere. The list is there. The question is when someone decides to use it.</p>
 
-  <div class="article-cta">
+</div>
+
+<div class="article-cta">
+  <div style="max-width:800px;margin:0 auto;padding:0">
     <div class="article-cta-label">The next step</div>
     <h2 class="article-cta-heading">FIND OUT WHAT YOUR<br>EMAIL LIST IS WORTH<br><em>TO YOUR BUSINESS.</em></h2>
     <p class="article-cta-body">The $595 digital audit includes a full assessment of your email list health, platform setup and communication gaps. You will know exactly what you have and what it would take to make it work.</p>
     <a href="../index.html#contact" class="article-cta-btn">Book the audit · $595</a>
   </div>
+  </div>
 
   <div class="article-back">
     <a href="../the-service-edit-journal.html">Back to the journal</a>
-  </div>
-
-</div>
+  
 
 <footer>
   <div class="footer-inner">

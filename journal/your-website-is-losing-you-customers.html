@@ -40,14 +40,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .article-meta{display:flex;align-items:center;gap:20px}
 .article-meta-item{font-size:12px;font-weight:300;color:rgba(255,255,255,.35);letter-spacing:.04em}
 .article-meta-sep{width:3px;height:3px;background:rgba(255,255,255,.2);border-radius:50%}
-.article-body{max-width:800px;margin:0 auto;padding:64px 40px 80px}
+.article-body{max-width:800px;margin:0 auto;padding:64px 40px 48px}
 .article-body p{font-size:17px;font-weight:300;line-height:1.9;color:var(--warm-black);margin-bottom:28px}
 .article-body p strong{font-weight:500}
 .article-body h2{font-family:var(--fd);font-size:clamp(28px,2.8vw,42px);line-height:.95;color:var(--warm-black);letter-spacing:.01em;margin:52px 0 20px}
 .article-body h2 em{color:var(--green);font-style:normal}
 .pull-quote{background:var(--green-pale);border-left:3px solid var(--green);padding:28px 32px;margin:40px 0}
 .pull-quote p{font-size:19px;font-weight:300;line-height:1.75;color:var(--green);margin-bottom:0;font-style:italic}
-.article-cta{background:var(--warm-black);padding:52px 40px;margin:0 -40px}
+.article-cta{background:var(--warm-black);padding:52px 40px;width:100%}
 .article-cta-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
 .article-cta-heading{font-family:var(--fd);font-size:clamp(32px,3vw,48px);line-height:.95;color:var(--white);margin-bottom:16px}
 .article-cta-heading em{color:var(--accent);font-style:normal}
@@ -62,7 +62,32 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 .footer-inner{max-width:1200px;margin:0 auto}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center}
 .footer-copy{font-size:11px;font-weight:300;color:rgba(255,255,255,.18);letter-spacing:.04em}
-@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.article-header-inner,.article-body{padding-left:24px;padding-right:24px}.article-cta{margin:0 -24px;padding:40px 24px}}
+@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.article-header-inner,.article-body{padding-left:24px;padding-right:24px}.article-cta{padding:40px 24px}}
+
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;z-index:300}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--warm-black);transition:all .3s;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:58px;left:0;right:0;bottom:0;background:var(--cream);z-index:199;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:0 0 80px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-section{padding:32px 40px 0}
+.mobile-menu-section:last-child{padding-bottom:40px}
+.mobile-menu-label{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--light);margin-bottom:16px}
+.mobile-menu-links{display:flex;flex-direction:column;gap:0}
+.mobile-menu-link{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--warm-black);transition:color .2s}
+.mobile-menu-link:last-child{border-bottom:none}
+.mobile-menu-link-title{font-size:16px;font-weight:400;color:var(--warm-black)}
+.mobile-menu-link-detail{font-size:12px;font-weight:300;color:var(--light);letter-spacing:.04em}
+.mobile-menu-link:hover .mobile-menu-link-title{color:var(--green)}
+.mobile-menu-divider{height:1px;background:var(--rule);margin:8px 40px 0}
+.mobile-menu-cta{margin:32px 40px 0;display:block;background:var(--green);color:var(--white);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:16px 24px;text-decoration:none;text-align:center;transition:background .2s}
+.mobile-menu-cta:hover{background:var(--green-mid)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav-links{display:none}
+}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6KWBFDZ30"></script>
@@ -83,7 +108,65 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
     <a href="../the-service-edit-journal.html">Journal</a>
     <a href="../index.html#contact" class="nav-cta">Start with an audit</a>
   </div>
+
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Services</div>
+    <div class="mobile-menu-links">
+      <a href="../digital-audit.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Digital Audit</span>
+        <span class="mobile-menu-link-detail">$595</span>
+      </a>
+      <a href="../email-marketing.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Email Marketing</span>
+        <span class="mobile-menu-link-detail">from $2,999</span>
+      </a>
+      <a href="../web-presence-build.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Web Presence Build</span>
+        <span class="mobile-menu-link-detail">from $4,999</span>
+      </a>
+    </div>
+  </div>
+  <div class="mobile-menu-divider"></div>
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Resources</div>
+    <div class="mobile-menu-links">
+      <a href="../tse-quiz.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Free Digital Health Check</span>
+        <span class="mobile-menu-link-detail">2 minutes · free</span>
+      </a>
+      <a href="../the-service-edit-journal.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Journal</span>
+        <span class="mobile-menu-link-detail">Strategy and thinking</span>
+      </a>
+    </div>
+  </div>
+  <div class="mobile-menu-divider"></div>
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Company</div>
+    <div class="mobile-menu-links">
+      <a href="../index.html#about" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">About</span>
+        <span class="mobile-menu-link-detail">20 years in hospitality</span>
+      </a>
+      <a href="../index.html#contact" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Contact</span>
+        <span class="mobile-menu-link-detail">hello@theserviceedit.com</span>
+      </a>
+      <a href="../privacy-policy.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Privacy Policy</span>
+        <span class="mobile-menu-link-detail"></span>
+      </a>
+    </div>
+  </div>
+  <a href="../index.html#contact" class="mobile-menu-cta" onclick="toggleMenu()">Start with the audit</a>
+</div>
 
 <div class="article-header">
   <div class="article-header-inner">
@@ -112,7 +195,7 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 
   <h2>THE STANDARD THAT VISITORS HOLD <em>YOU TO</em></h2>
 
-  <p>Your website is not being judged in isolation. Every person who lands on it has just come from somewhere else on the internet — and that somewhere else was fast, easy to navigate, and worked perfectly on their phone.</p>
+  <p>Your website is not being judged in isolation. Every person who lands on it has just come from somewhere else on the internet, and that somewhere else was fast, easy to navigate, and worked perfectly on their phone.</p>
 
   <p>They are not being unreasonable when they bounce from a site that takes six seconds to load. They are not being difficult when they close a page where the menu is a scanned PDF and the phone number is buried in the footer. They just move on. It takes half a second and costs them nothing.</p>
 
@@ -120,7 +203,7 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
     <p>The person who left your website without booking did not choose your competitor because they preferred them. They chose them because they made it easier.</p>
   </div>
 
-  <p>This is one of the most important and least discussed dynamics in hospitality marketing. The competition for a customer's attention is not just with other venues — it is with every other digital experience they have ever had. And the bar for what feels acceptable keeps rising.</p>
+  <p>This is one of the most important and least discussed dynamics in hospitality marketing. The competition for a customer's attention is not just with other venues, it is with every other digital experience they have ever had. And the bar for what feels acceptable keeps rising.</p>
 
   <h2>WHAT A BROKEN WEBSITE ACTUALLY <em>LOOKS LIKE</em></h2>
 
@@ -134,7 +217,7 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 
   <p>Beyond what happens once someone lands on your site, there is a more fundamental issue: whether they find it in the first place.</p>
 
-  <p>When someone searches for a cafe, restaurant or venue in your area, Google decides who to show them. That decision is based on dozens of factors — how your site is structured, how fast it loads, whether your Google Business profile is complete, whether other sites link to yours, whether the words on your pages match what people are searching for.</p>
+  <p>When someone searches for a cafe, restaurant or venue in your area, Google decides who to show them. That decision is based on dozens of factors, how your site is structured, how fast it loads, whether your Google Business profile is complete, whether other sites link to yours, whether the words on your pages match what people are searching for.</p>
 
   <p>Most independent hospitality websites were built by someone whose job was to make it look good, not to make it findable. Those are different skills. A beautiful website that does not rank for local searches is, commercially, almost worthless. The people it needs to reach never see it.</p>
 
@@ -148,7 +231,7 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 
   <p>The businesses that understand this treat their website as infrastructure, not a one-off project. They check it regularly. They fix things when they break. They update it when the business changes. They think about what a first-time visitor needs to find and whether they can find it in under ten seconds.</p>
 
-  <p>The businesses that do not — and there are many of them — are effectively running a venue with a front door that sticks, a menu board that is out of date, and a sign outside with the wrong opening hours. They would fix those things immediately if they could see them. The digital equivalent is just harder to notice.</p>
+  <p>The businesses that do not, and there are many of them, are effectively running a venue with a front door that sticks, a menu board that is out of date, and a sign outside with the wrong opening hours. They would fix those things immediately if they could see them. The digital equivalent is just harder to notice.</p>
 
   <h2>THE PART YOU CANNOT MEASURE, BUT SHOULD <em>THINK ABOUT</em></h2>
 
@@ -156,22 +239,24 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 
   <p>What you can do is look at your website with honest eyes and ask whether it would make you book. Whether a stranger landing on it for the first time would feel confident. Whether it is making it easy, or making it hard.</p>
 
-  <p>Most owners, when they look at their sites this way, know the answer before they finish reading the first page. The problem is not awareness. It is that fixing it requires time and expertise they do not have — so it keeps getting pushed to the bottom of the list.</p>
+  <p>Most owners, when they look at their sites this way, know the answer before they finish reading the first page. The problem is not awareness. It is that fixing it requires time and expertise they do not have, so it keeps getting pushed to the bottom of the list.</p>
 
   <p>Meanwhile, the quiet Tuesday nights stay quiet.</p>
 
-  <div class="article-cta">
+</div>
+
+<div class="article-cta">
+  <div style="max-width:800px;margin:0 auto;padding:0">
     <div class="article-cta-label">The next step</div>
     <h2 class="article-cta-heading">SEE EXACTLY WHAT YOUR<br>WEBSITE IS COSTING<br><em>YOUR BUSINESS.</em></h2>
-    <p class="article-cta-body">The $595 digital audit gives you a complete picture of your website's performance, findability and conversion — with a ranked action plan for what to fix first. Delivered in 5 business days.</p>
+    <p class="article-cta-body">The $595 digital audit gives you a complete picture of your website's performance, findability and conversion, with a ranked action plan for what to fix first. Delivered in 5 business days.</p>
     <a href="../index.html#contact" class="article-cta-btn">Book the audit · $595</a>
+  </div>
   </div>
 
   <div class="article-back">
     <a href="../the-service-edit-journal.html">Back to the journal</a>
-  </div>
-
-</div>
+  
 
 <footer>
   <div class="footer-inner">

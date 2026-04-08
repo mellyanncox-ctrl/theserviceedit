@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Email List Is Sitting There Doing Nothing. Here Is What That Is Costing You. · The Service Edit</title>
-<meta name="description" content="Most independent hospitality businesses have an email list they never use. Here is the real cost of leaving it idle — and why it matters more than any other marketing channel.">
+<meta name="description" content="Most independent hospitality businesses have an email list they never use. Here is the real cost of leaving it idle, and why it matters more than any other marketing channel.">
 <link rel="canonical" href="https://www.theserviceedit.com/journal/your-email-list-is-doing-nothing.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -44,7 +44,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .article-meta-sep{width:3px;height:3px;background:rgba(255,255,255,.2);border-radius:50%}
 
 /* ARTICLE BODY */
-.article-body{max-width:800px;margin:0 auto;padding:64px 40px 80px}
+.article-body{max-width:800px;margin:0 auto;padding:64px 40px 48px}
 .article-body p{font-size:17px;font-weight:300;line-height:1.9;color:var(--warm-black);margin-bottom:28px}
 .article-body p strong{font-weight:500}
 .article-body h2{font-family:var(--fd);font-size:clamp(28px,2.8vw,42px);line-height:.95;color:var(--warm-black);letter-spacing:.01em;margin:52px 0 20px}
@@ -53,7 +53,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .pull-quote p{font-size:19px;font-weight:300;line-height:1.75;color:var(--green);margin-bottom:0;font-style:italic}
 
 /* CTA BAND */
-.article-cta{background:var(--warm-black);padding:52px 40px;margin:0 -40px}
+.article-cta{background:var(--warm-black);padding:52px 40px;width:100%}
 .article-cta-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
 .article-cta-heading{font-family:var(--fd);font-size:clamp(32px,3vw,48px);line-height:.95;color:var(--white);margin-bottom:16px}
 .article-cta-heading em{color:var(--accent);font-style:normal}
@@ -76,7 +76,32 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
   nav{padding:0 20px}
   .nav-links{display:none}
   .article-header-inner,.article-body{padding-left:24px;padding-right:24px}
-  .article-cta{margin:0 -24px;padding:40px 24px}
+  .article-cta{padding:40px 24px}
+}
+
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;z-index:300}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--warm-black);transition:all .3s;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:58px;left:0;right:0;bottom:0;background:var(--cream);z-index:199;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:0 0 80px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-section{padding:32px 40px 0}
+.mobile-menu-section:last-child{padding-bottom:40px}
+.mobile-menu-label{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--light);margin-bottom:16px}
+.mobile-menu-links{display:flex;flex-direction:column;gap:0}
+.mobile-menu-link{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--warm-black);transition:color .2s}
+.mobile-menu-link:last-child{border-bottom:none}
+.mobile-menu-link-title{font-size:16px;font-weight:400;color:var(--warm-black)}
+.mobile-menu-link-detail{font-size:12px;font-weight:300;color:var(--light);letter-spacing:.04em}
+.mobile-menu-link:hover .mobile-menu-link-title{color:var(--green)}
+.mobile-menu-divider{height:1px;background:var(--rule);margin:8px 40px 0}
+.mobile-menu-cta{margin:32px 40px 0;display:block;background:var(--green);color:var(--white);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:16px 24px;text-decoration:none;text-align:center;transition:background .2s}
+.mobile-menu-cta:hover{background:var(--green-mid)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav-links{display:none}
 }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -99,7 +124,65 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
     <a href="../the-service-edit-journal.html">Journal</a>
     <a href="../index.html#contact" class="nav-cta">Start with an audit</a>
   </div>
+
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Services</div>
+    <div class="mobile-menu-links">
+      <a href="../digital-audit.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Digital Audit</span>
+        <span class="mobile-menu-link-detail">$595</span>
+      </a>
+      <a href="../email-marketing.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Email Marketing</span>
+        <span class="mobile-menu-link-detail">from $2,999</span>
+      </a>
+      <a href="../web-presence-build.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Web Presence Build</span>
+        <span class="mobile-menu-link-detail">from $4,999</span>
+      </a>
+    </div>
+  </div>
+  <div class="mobile-menu-divider"></div>
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Resources</div>
+    <div class="mobile-menu-links">
+      <a href="../tse-quiz.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Free Digital Health Check</span>
+        <span class="mobile-menu-link-detail">2 minutes · free</span>
+      </a>
+      <a href="../the-service-edit-journal.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Journal</span>
+        <span class="mobile-menu-link-detail">Strategy and thinking</span>
+      </a>
+    </div>
+  </div>
+  <div class="mobile-menu-divider"></div>
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Company</div>
+    <div class="mobile-menu-links">
+      <a href="../index.html#about" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">About</span>
+        <span class="mobile-menu-link-detail">20 years in hospitality</span>
+      </a>
+      <a href="../index.html#contact" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Contact</span>
+        <span class="mobile-menu-link-detail">hello@theserviceedit.com</span>
+      </a>
+      <a href="../privacy-policy.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Privacy Policy</span>
+        <span class="mobile-menu-link-detail"></span>
+      </a>
+    </div>
+  </div>
+  <a href="../index.html#contact" class="mobile-menu-cta" onclick="toggleMenu()">Start with the audit</a>
+</div>
 
 <div class="article-header">
   <div class="article-header-inner">
@@ -124,13 +207,13 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 
   <p>Most independent hospitality businesses have hundreds of these people. Some have thousands. And almost none of them are doing anything with that list.</p>
 
-  <p>This is not a small problem. It is one of the most expensive habits in hospitality — and it is completely invisible because the cost never shows up on a bill.</p>
+  <p>This is not a small problem. It is one of the most expensive habits in hospitality, and it is completely invisible because the cost never shows up on a bill.</p>
 
   <h2>THE COST OF DOING <em>NOTHING</em></h2>
 
   <p>When a customer visits and you never contact them again, you are leaving the next visit entirely to chance. Maybe they will remember you. Maybe they will walk past on the right day. Maybe they will see something on Instagram. Maybe they will not.</p>
 
-  <p>The average hospitality customer who has a positive experience will return — if they are reminded. That is the part most businesses skip. Not because they do not want the return visit, but because no one has ever built the system that makes it happen automatically.</p>
+  <p>The average hospitality customer who has a positive experience will return, if they are reminded. That is the part most businesses skip. Not because they do not want the return visit, but because no one has ever built the system that makes it happen automatically.</p>
 
   <div class="pull-quote">
     <p>You are not losing customers because they had a bad experience. You are losing them because you went quiet. And in their inbox, someone else did not.</p>
@@ -138,13 +221,13 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 
   <p>Email is the only marketing channel where you have a direct, algorithm-free line to a person who already likes you. No boosting. No bidding. No hoping the feed surfaces your post at the right moment. You send an email, it lands in their inbox, they see your name.</p>
 
-  <p>That is a level of access that most businesses spend significant money trying to replicate with paid advertising — and they are doing it to reach strangers. Your email list is full of people who already know you.</p>
+  <p>That is a level of access that most businesses spend significant money trying to replicate with paid advertising, and they are doing it to reach strangers. Your email list is full of people who already know you.</p>
 
   <h2>WHAT THE GAP ACTUALLY <em>LOOKS LIKE</em></h2>
 
   <p>The difference between a business that emails its list and one that does not is not subtle. It shows up in midweek covers. It shows up in whether a seasonal promotion actually moves the needle or disappears into the noise. It shows up in whether your regulars come back once a month or once every three.</p>
 
-  <p>A well-run email list does not just drive one-off visits. It changes the relationship. The people on it feel like insiders. They hear about things before they are announced publicly. They get the first chance at limited menus or events. They feel like they belong to something — and that feeling makes them more loyal, more frequent, and more likely to bring someone else with them.</p>
+  <p>A well-run email list does not just drive one-off visits. It changes the relationship. The people on it feel like insiders. They hear about things before they are announced publicly. They get the first chance at limited menus or events. They feel like they belong to something, and that feeling makes them more loyal, more frequent, and more likely to bring someone else with them.</p>
 
   <p>That is not a marketing tactic. That is just good hospitality, extended into a channel you already have access to.</p>
 
@@ -159,7 +242,7 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
   <p>None of that requires you to write anything once it is built. It just runs.</p>
 
   <div class="pull-quote">
-    <p>The businesses that have figured this out are not spending more time on marketing. They have less to do, not more — because the system does the work.</p>
+    <p>The businesses that have figured this out are not spending more time on marketing. They have less to do, not more, because the system does the work.</p>
   </div>
 
   <h2>THE QUESTION WORTH <em>ASKING</em></h2>
@@ -170,18 +253,20 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
 
   <p>The list was always there. It just needed someone to use it.</p>
 
-  <div class="article-cta">
+</div>
+
+<div class="article-cta">
+  <div style="max-width:800px;margin:0 auto;padding:0">
     <div class="article-cta-label">The next step</div>
     <h2 class="article-cta-heading">FIND OUT WHAT YOUR<br>DIGITAL PRESENCE IS<br><em>ACTUALLY COSTING YOU.</em></h2>
     <p class="article-cta-body">The $595 digital audit covers your email list health, website, Google presence and more. Delivered in 5 business days with a clear action plan. Most clients find it pays for itself before they act on a single recommendation.</p>
     <a href="../index.html#contact" class="article-cta-btn">Book the audit · $595</a>
   </div>
+  </div>
 
   <div class="article-back">
     <a href="../the-service-edit-journal.html">Back to the journal</a>
-  </div>
-
-</div>
+  
 
 <footer>
   <div class="footer-inner">

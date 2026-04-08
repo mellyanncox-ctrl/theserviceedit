@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Presence Build for Hospitality · The Service Edit</title>
+<meta name="description" content="A website built for hospitality by someone who has run a hospitality business. Strategy, copy, design and build — from $3,500.">
+<link rel="canonical" href="https://www.theserviceedit.com/web-presence-build.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#2b4a35;--green-mid:#3a6347;--green-pale:#eef5f1;
+  --cream:#faf8f4;--cream-mid:#f2ede3;--rule:#e4ddd0;
+  --warm-black:#1a1814;--mid:#8a8070;--light:#b0a898;--white:#ffffff;--accent:#c8dabb;
+  --fd:'Bebas Neue',Impact,'Arial Narrow',Arial,sans-serif;
+  --fb:'DM Sans',-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--cream);color:var(--warm-black);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:var(--cream);border-bottom:1px solid var(--rule)}
+.nav-logo{font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-black);text-decoration:none}
+.nav-logo em{font-style:italic;font-weight:300}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:12px;font-weight:400;letter-spacing:.05em;color:var(--mid);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--warm-black)}
+.nav-cta{background:var(--green)!important;color:var(--white)!important;padding:8px 18px!important;font-size:11px!important;font-weight:500!important;letter-spacing:.12em!important;text-transform:uppercase!important}
+
+/* HERO */
+.hero{padding-top:58px;background:var(--warm-black);min-height:85vh;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hero-left{padding:80px 64px}
+.hero-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+.hero-h1{font-family:var(--fd);font-size:clamp(56px,6vw,96px);line-height:.91;color:var(--white);letter-spacing:.01em;margin-bottom:24px}
+.hero-h1 em{color:var(--accent);font-style:normal}
+.hero-body{font-size:16px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.6);max-width:420px;margin-bottom:36px}
+.hero-body strong{color:rgba(255,255,255,.9);font-weight:500}
+.hero-price{font-size:13px;font-weight:300;color:rgba(255,255,255,.4);letter-spacing:.04em;margin-bottom:28px}
+.btn-primary{display:inline-block;background:var(--accent);color:var(--green);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:16px 32px;text-decoration:none;transition:all .2s}
+.btn-primary:hover{background:var(--white)}
+.btn-outline{display:inline-block;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.75);font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;padding:16px 32px;text-decoration:none;transition:all .2s;margin-left:12px}
+.btn-outline:hover{border-color:rgba(255,255,255,.6);color:var(--white)}
+.hero-right{padding:80px 64px 80px 0}
+.hero-diff-heading{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px}
+.diff-list{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.06)}
+.diff-item{background:var(--warm-black);padding:24px 28px;display:flex;gap:14px}
+.diff-num{font-family:var(--fd);font-size:36px;color:rgba(255,255,255,.08);line-height:1;flex-shrink:0;width:40px}
+.diff-body{}
+.diff-title{font-size:14px;font-weight:500;color:var(--white);margin-bottom:6px}
+.diff-desc{font-size:13px;font-weight:300;color:rgba(255,255,255,.4);line-height:1.65}
+
+/* WHY */
+.why{padding:96px 40px;background:var(--cream)}
+.why-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.section-kicker{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.section-heading{font-family:var(--fd);font-size:clamp(40px,4vw,64px);line-height:.93;color:var(--warm-black)}
+.section-heading em{color:var(--green);font-style:normal}
+.why-items{display:flex;flex-direction:column}
+.why-item{padding:28px 0;border-bottom:1px solid var(--rule)}
+.why-item:first-child{border-top:1px solid var(--rule)}
+.why-title{font-size:15px;font-weight:500;color:var(--warm-black);margin-bottom:8px}
+.why-body{font-size:13px;font-weight:300;line-height:1.75;color:var(--mid)}
+
+/* INCLUDED */
+.included{padding:96px 40px;background:var(--cream-mid)}
+.included-inner{max-width:1200px;margin:0 auto}
+.included-header{margin-bottom:56px}
+.included-heading{font-family:var(--fd);font-size:clamp(40px,4vw,64px);line-height:.93;color:var(--warm-black)}
+.included-heading em{color:var(--green);font-style:normal}
+.included-sub{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);max-width:520px;margin-top:14px}
+.includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule)}
+.include-card{background:var(--cream);padding:36px 32px}
+.include-num{font-family:var(--fd);font-size:48px;color:var(--rule);line-height:1;margin-bottom:12px}
+.include-name{font-size:15px;font-weight:500;color:var(--warm-black);margin-bottom:10px}
+.include-body{font-size:13px;font-weight:300;line-height:1.75;color:var(--mid)}
+
+/* TIMELINE */
+.timeline-section{padding:96px 40px;background:var(--green)}
+.timeline-inner{max-width:1200px;margin:0 auto}
+.timeline-header{margin-bottom:56px}
+.timeline-heading{font-family:var(--fd);font-size:clamp(40px,4vw,64px);line-height:.93;color:var(--white)}
+.timeline-heading em{color:var(--accent);font-style:normal}
+.timeline-sub{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.45);max-width:480px;margin-top:14px}
+.weeks{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.week{background:var(--green);padding:32px 24px}
+.week-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.week-title{font-size:14px;font-weight:500;color:var(--white);margin-bottom:10px;line-height:1.3}
+.week-body{font-size:12px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.4)}
+
+/* WHAT YOU NEED */
+.need{padding:96px 40px;background:var(--cream)}
+.need-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.need-heading{font-family:var(--fd);font-size:clamp(40px,4vw,64px);line-height:.93;color:var(--warm-black)}
+.need-heading em{color:var(--green);font-style:normal}
+.need-body{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);margin-top:14px}
+.need-list{display:flex;flex-direction:column;gap:1px;background:var(--rule)}
+.need-item{background:var(--cream);padding:20px 24px;display:flex;gap:14px;align-items:flex-start}
+.need-check{width:26px;height:26px;border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:var(--green)}
+.need-text{font-size:14px;font-weight:300;color:var(--warm-black);line-height:1.6;padding-top:2px}
+.need-note{background:var(--green-pale);border-left:3px solid var(--green);padding:20px 24px;margin-top:2px}
+.need-note p{font-size:13px;font-weight:300;line-height:1.75;color:var(--green)}
+
+/* CARE PLAN */
+.care{background:var(--warm-black);padding:72px 40px}
+.care-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:80px;align-items:center}
+.care-kicker{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.care-heading{font-family:var(--fd);font-size:clamp(32px,3.5vw,52px);line-height:.93;color:var(--white)}
+.care-heading em{color:var(--accent);font-style:normal}
+.care-body{font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.45);margin-top:12px}
+.care-includes{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:20px}
+.care-includes li{font-size:13px;font-weight:300;color:rgba(255,255,255,.4);padding-left:16px;position:relative;line-height:1.5}
+.care-includes li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:1px;background:var(--accent)}
+.care-price{font-family:var(--fd);font-size:52px;color:var(--white);line-height:1;margin-bottom:4px}
+.care-price-note{font-size:12px;font-weight:300;color:rgba(255,255,255,.3)}
+
+/* CTA */
+.cta{background:var(--green);padding:96px 40px}
+.cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.cta-heading{font-family:var(--fd);font-size:clamp(44px,4.5vw,72px);line-height:.91;color:var(--white)}
+.cta-heading em{color:var(--accent);font-style:normal}
+.cta-right{display:flex;flex-direction:column;gap:20px}
+.cta-body{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.55)}
+.cta-from{font-size:12px;font-weight:300;color:rgba(255,255,255,.35);letter-spacing:.04em}
+.cta-price{font-family:var(--fd);font-size:52px;color:var(--white);line-height:1}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--green);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:16px 32px;text-decoration:none;transition:all .2s;align-self:flex-start}
+.btn-cta:hover{background:var(--white)}
+
+footer{background:var(--warm-black);padding:40px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:11px;font-weight:300;color:rgba(255,255,255,.18);letter-spacing:.04em}
+.footer-copy a{color:rgba(255,255,255,.3);text-decoration:none}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:1024px){
+  nav{padding:0 24px}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:72px 24px 40px}
+  .hero-right{padding:0 24px 64px}
+  .why-inner,.need-inner,.cta-inner,.care-inner{grid-template-columns:1fr;gap:40px}
+  .includes-grid{grid-template-columns:1fr 1fr}
+  .weeks{grid-template-columns:1fr 1fr}
+  .why,.included,.timeline-section,.need,.care,.cta{padding:64px 24px}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .includes-grid,.weeks{grid-template-columns:1fr}
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N6KWBFDZ30"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N6KWBFDZ30');
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">The <em>Service</em> Edit</a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#cases">Results</a>
+    <a href="index.html#about">About</a>
+    <a href="the-service-edit-journal.html">Journal</a>
+    <a href="index.html#contact" class="nav-cta">Start with an audit</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">The Service Edit · Service</div>
+    <h1 class="hero-h1">WEB<br>PRESENCE<br><em>BUILD.</em></h1>
+    <p class="hero-body">A website built for a hospitality business by someone who has run one. <strong>Not a template fill-in. A proper build with strategy, copy, design and SEO — that makes people want to visit.</strong></p>
+    <div class="hero-price">Strategy through launch · from $3,500</div>
+    <a href="index.html#contact" class="btn-primary">Enquire now</a>
+    <a href="digital-audit.html" class="btn-outline">Start with the audit</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-diff-heading">What makes this different</div>
+    <div class="diff-list">
+      <div class="diff-item reveal">
+        <div class="diff-num">01</div>
+        <div class="diff-body">
+          <div class="diff-title">Built by someone who has run a hospitality business</div>
+          <div class="diff-desc">20 years in hospitality as an owner and operator. I know what a cafe or restaurant website needs to do — and I know what most of them are getting wrong.</div>
+        </div>
+      </div>
+      <div class="diff-item reveal">
+        <div class="diff-num">02</div>
+        <div class="diff-body">
+          <div class="diff-title">Copy is included</div>
+          <div class="diff-desc">Most web builds hand you a template and ask you to fill in the words. Every page is written as part of this project — not an add-on, not your problem.</div>
+        </div>
+      </div>
+      <div class="diff-item reveal">
+        <div class="diff-num">03</div>
+        <div class="diff-body">
+          <div class="diff-title">Built to be found</div>
+          <div class="diff-desc">On-page SEO structured for local search is part of the brief from day one — not an afterthought. Your site should be findable by the people who are already looking for you.</div>
+        </div>
+      </div>
+      <div class="diff-item reveal">
+        <div class="diff-num">04</div>
+        <div class="diff-body">
+          <div class="diff-title">No disappearing act after handover</div>
+          <div class="diff-desc">30 days of post-launch support. You will not be handed something you cannot update and left to figure it out.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="why-inner">
+    <div>
+      <div class="section-kicker reveal">Why it matters</div>
+      <h2 class="section-heading reveal">YOUR WEBSITE<br>IS THE FIRST<br>THING PEOPLE<br><em>JUDGE YOU ON.</em></h2>
+    </div>
+    <div class="why-items">
+      <div class="why-item reveal">
+        <div class="why-title">Most hospitality websites are losing customers silently</div>
+        <div class="why-body">Slow load times, buried menus, broken booking links, wrong hours — any one of these sends a potential customer straight to your competitor. The loss is invisible because they never tell you they left.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-title">A beautiful site that does not rank is commercially worthless</div>
+        <div class="why-body">If your site does not appear in local search results, the people most likely to visit you will never see it. Good design and good SEO are not the same skill — this build includes both.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-title">The standard your visitors hold you to keeps rising</div>
+        <div class="why-body">Every time someone uses a fast, well-designed website elsewhere on the internet, their tolerance for slow, confusing or mobile-unfriendly sites drops. A site built in 2021 is working against you in 2025.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-title">Your website should be working harder than your best staff member</div>
+        <div class="why-body">It is open 24 hours a day, takes bookings, answers questions, and builds trust before anyone walks through your door. It should be treated with the same care as every other part of the operation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="included">
+  <div class="included-inner">
+    <div class="included-header">
+      <div class="section-kicker reveal">What is included</div>
+      <h2 class="included-heading reveal">STRATEGY THROUGH<br><em>LAUNCH.</em></h2>
+      <p class="included-sub reveal">Every build covers the full scope — from understanding your audience and goals to a live website that is fast, findable and built to convert visitors into customers.</p>
+    </div>
+    <div class="includes-grid">
+      <div class="include-card reveal">
+        <div class="include-num">01</div>
+        <div class="include-name">Brand and audience strategy</div>
+        <div class="include-body">A session to understand your business, your customers, and what you need the website to do. This shapes everything that follows — the copy, the structure, the design, the calls to action.</div>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-num">02</div>
+        <div class="include-name">Copywriting for all core pages</div>
+        <div class="include-body">Homepage, about, menu or services, contact, and any additional pages agreed in the brief. Written in your voice, optimised for search, and structured to convert visitors into customers.</div>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-num">03</div>
+        <div class="include-name">Mobile-first design and build</div>
+        <div class="include-body">Designed for the device most of your customers are using. Fast, clean, and built to work — not just to look good in a browser window at full width.</div>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-num">04</div>
+        <div class="include-name">On-page SEO for local search</div>
+        <div class="include-body">Page titles, meta descriptions, heading structure, schema markup, and Google Business integration. Structured from day one to help you appear when people search for what you offer nearby.</div>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-num">05</div>
+        <div class="include-name">Analytics and Search Console setup</div>
+        <div class="include-body">Google Analytics and Search Console configured so you can see who is visiting, where they are coming from, and what they are doing on your site. You should always know how your website is performing.</div>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-num">06</div>
+        <div class="include-name">30-day post-launch support</div>
+        <div class="include-body">A month of support after launch for fixes, tweaks and questions. You will not be handed a site and left to figure it out. Changes and amends handled within one business day.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline-section">
+  <div class="timeline-inner">
+    <div class="timeline-header">
+      <div class="section-kicker" style="color:rgba(255,255,255,.35)">The timeline</div>
+      <h2 class="timeline-heading reveal">LIVE IN<br><em>FIVE WEEKS.</em></h2>
+      <p class="timeline-sub reveal">A clear process with defined stages. You know what is happening and when. No open-ended timelines, no waiting around for updates.</p>
+    </div>
+    <div class="weeks">
+      <div class="week reveal">
+        <div class="week-label">Week 1</div>
+        <div class="week-title">Strategy and brief</div>
+        <div class="week-body">Kickoff session. We agree on goals, audience, pages, tone and structure. Brand assets collected. Content requirements confirmed.</div>
+      </div>
+      <div class="week reveal">
+        <div class="week-label">Week 2</div>
+        <div class="week-title">Copy and design concept</div>
+        <div class="week-body">All page copy drafted and submitted for review. Initial design concept presented. One round of feedback on each.</div>
+      </div>
+      <div class="week reveal">
+        <div class="week-label">Weeks 3 and 4</div>
+        <div class="week-title">Full build</div>
+        <div class="week-body">Complete site built based on approved copy and design. Mobile, speed and SEO all implemented as part of the build — not added after.</div>
+      </div>
+      <div class="week reveal">
+        <div class="week-label">Week 5</div>
+        <div class="week-title">Review and launch</div>
+        <div class="week-body">Final review session. Amends completed. Analytics configured. DNS transferred. Site goes live.</div>
+      </div>
+      <div class="week reveal">
+        <div class="week-label">Days 30 to 60</div>
+        <div class="week-title">Post-launch support</div>
+        <div class="week-body">30 days of included support for fixes and questions. Review of early traffic data. Recommendations for next steps.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="need">
+  <div class="need-inner">
+    <div>
+      <div class="section-kicker reveal">What I need from you</div>
+      <h2 class="need-heading reveal">YOUR PART<br>IS <em>SMALL.</em></h2>
+      <p class="need-body reveal">The build is designed to minimise the time you need to spend on it. You run a business — this should not feel like another job. Here is what the process actually requires from you.</p>
+    </div>
+    <div>
+      <div class="need-list">
+        <div class="need-item reveal">
+          <div class="need-check">✓</div>
+          <div class="need-text">A 60-minute kickoff session at the start to agree on goals, audience and structure</div>
+        </div>
+        <div class="need-item reveal">
+          <div class="need-check">✓</div>
+          <div class="need-text">Your existing brand assets — logo, any photos, brand colours if established</div>
+        </div>
+        <div class="need-item reveal">
+          <div class="need-check">✓</div>
+          <div class="need-text">One round of feedback on the copy draft — usually a 30-minute call or written notes</div>
+        </div>
+        <div class="need-item reveal">
+          <div class="need-check">✓</div>
+          <div class="need-text">One round of feedback on the design concept before the full build begins</div>
+        </div>
+        <div class="need-item reveal">
+          <div class="need-check">✓</div>
+          <div class="need-text">A final review session before launch — typically 30 to 45 minutes</div>
+        </div>
+        <div class="need-item reveal">
+          <div class="need-check">✓</div>
+          <div class="need-text">Access to your domain registrar for DNS setup at launch</div>
+        </div>
+      </div>
+      <div class="need-note reveal">
+        <p>No photography? We can work with stock imagery and advise on a photography brief — or recommend a hospitality photographer if that is the right call for your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="care">
+  <div class="care-inner">
+    <div>
+      <div class="care-kicker">After launch</div>
+      <h2 class="care-heading reveal">KEEP IT FAST,<br>UPDATED AND<br><em>WORKING.</em></h2>
+      <p class="care-body">A site care plan is available after the build for clients who want their website maintained, monitored and updated without having to think about it.</p>
+      <ul class="care-includes">
+        <li>Monthly content and plugin updates</li>
+        <li>Speed and uptime monitoring</li>
+        <li>Google Search Console reporting</li>
+        <li>2 hours of copy or design changes per month</li>
+        <li>Priority response within 1 business day</li>
+      </ul>
+    </div>
+    <div>
+      <div class="care-price">$350<span style="font-family:var(--fb);font-size:16px;font-weight:300;color:rgba(255,255,255,.35)">/mo</span></div>
+      <div class="care-price-note">After launch · cancel any time</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-inner">
+    <h2 class="cta-heading reveal">START WITH<br>THE AUDIT.<br><em>THEN BUILD<br>PROPERLY.</em></h2>
+    <div class="cta-right">
+      <p class="cta-body">The audit tells you exactly what your current website is costing you and what needs to change. It scopes the build precisely — so the quote is accurate and the project stays on track. Most clients find the audit surfaces enough to justify the build before they have even finished reading the report.</p>
+      <div>
+        <div class="cta-from">Web presence build</div>
+        <div class="cta-price">From $3,500</div>
+      </div>
+      <a href="index.html#contact" class="btn-cta">Enquire now</a>
+      <a href="digital-audit.html" style="font-size:12px;font-weight:300;color:rgba(255,255,255,.35);text-decoration:none">Or start with the $595 audit first</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2025 The Service Edit · Mel Cox · Perth, WA · ABN 88 429 285 575</div>
+    <div class="footer-copy"><a href="privacy-policy.html">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<script>
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(r){ observer.observe(r); });
+</script>
+</body>
+</html>

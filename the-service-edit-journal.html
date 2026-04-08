@@ -17,8 +17,8 @@
   --green:#2b4a35;
   --green-mid:#3a6347;
   --green-pale:#dff0e4;
-  --cream:#e8f5ec;
-  --cream-mid:#daeee0;
+  --cream:#faf8f4;
+  --cream-mid:#f2ede3;
   --rule:#c2dcc9;
   --warm-black:#1a1814;
   --mid:#3d5e47;
@@ -140,6 +140,31 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
   .newsletter-form{flex-direction:column}
   .footer-top{grid-template-columns:1fr}
 }
+
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;z-index:300}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--warm-black);transition:all .3s;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:58px;left:0;right:0;bottom:0;background:var(--cream);z-index:199;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:0 0 80px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-section{padding:32px 40px 0}
+.mobile-menu-section:last-child{padding-bottom:40px}
+.mobile-menu-label{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--light);margin-bottom:16px}
+.mobile-menu-links{display:flex;flex-direction:column;gap:0}
+.mobile-menu-link{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--warm-black);transition:color .2s}
+.mobile-menu-link:last-child{border-bottom:none}
+.mobile-menu-link-title{font-size:16px;font-weight:400;color:var(--warm-black)}
+.mobile-menu-link-detail{font-size:12px;font-weight:300;color:var(--light);letter-spacing:.04em}
+.mobile-menu-link:hover .mobile-menu-link-title{color:var(--green)}
+.mobile-menu-divider{height:1px;background:var(--rule);margin:8px 40px 0}
+.mobile-menu-cta{margin:32px 40px 0;display:block;background:var(--green);color:var(--white);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:16px 24px;text-decoration:none;text-align:center;transition:background .2s}
+.mobile-menu-cta:hover{background:var(--green-mid)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav-links{display:none}
+}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6KWBFDZ30"></script>
@@ -163,7 +188,65 @@ footer{background:var(--warm-black);padding:52px 40px;border-top:1px solid rgba(
     <a href="the-service-edit-journal.html" class="active">Journal</a>
     <a href="index.html#contact" class="nav-cta">Start with an audit</a>
   </div>
+
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Services</div>
+    <div class="mobile-menu-links">
+      <a href="digital-audit.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Digital Audit</span>
+        <span class="mobile-menu-link-detail">$595</span>
+      </a>
+      <a href="email-marketing.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Email Marketing</span>
+        <span class="mobile-menu-link-detail">from $2,999</span>
+      </a>
+      <a href="web-presence-build.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Web Presence Build</span>
+        <span class="mobile-menu-link-detail">from $4,999</span>
+      </a>
+    </div>
+  </div>
+  <div class="mobile-menu-divider"></div>
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Resources</div>
+    <div class="mobile-menu-links">
+      <a href="tse-quiz.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Free Digital Health Check</span>
+        <span class="mobile-menu-link-detail">2 minutes · free</span>
+      </a>
+      <a href="the-service-edit-journal.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Journal</span>
+        <span class="mobile-menu-link-detail">Strategy and thinking</span>
+      </a>
+    </div>
+  </div>
+  <div class="mobile-menu-divider"></div>
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Company</div>
+    <div class="mobile-menu-links">
+      <a href="index.html#about" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">About</span>
+        <span class="mobile-menu-link-detail">20 years in hospitality</span>
+      </a>
+      <a href="index.html#contact" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Contact</span>
+        <span class="mobile-menu-link-detail">hello@theserviceedit.com</span>
+      </a>
+      <a href="privacy-policy.html" class="mobile-menu-link">
+        <span class="mobile-menu-link-title">Privacy Policy</span>
+        <span class="mobile-menu-link-detail"></span>
+      </a>
+    </div>
+  </div>
+  <a href="index.html#contact" class="mobile-menu-cta" onclick="toggleMenu()">Start with the audit</a>
+</div>
 
 <!-- HEADER -->
 <div class="journal-header">

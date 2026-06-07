@@ -321,6 +321,14 @@
   .res .rv{ font-size:clamp(2.2rem,4vw,3rem); font-weight:600; letter-spacing:-.03em; line-height:1; margin-top:.4rem; }
   .calc-note{ font-size:1rem; color:var(--ink-40); margin-top:1.6rem; }
   @media (max-width:900px){ .calc{ grid-template-columns:1fr; } }
+
+  /* SOCIALS */
+  .soc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1rem,2vw,1.6rem); }
+  .soc-card{ background:var(--bg-soft); border-radius:var(--r-card); padding:clamp(1.6rem,2.5vw,2.2rem); }
+  .soc-card .soc-l{ font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40); }
+  .soc-card h3{ font-size:1.3rem; font-weight:500; letter-spacing:-.02em; line-height:1.12; margin:1rem 0 .7rem; }
+  .soc-card p{ font-size:1rem; color:var(--ink-60); }
+  @media (max-width:900px){ .soc-grid{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body id="top">
@@ -333,7 +341,7 @@
       <a href="#method">How it works</a>
       <a href="#work">Work</a>
       <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
+      <a href="faq.html">FAQ</a>
     </nav>
     <div class="nav-r">
       <a href="#contact" class="btn btn-primary">Get a free concept</a>
@@ -347,7 +355,7 @@
   <a href="#method">How it works</a>
   <a href="#work">Work</a>
   <a href="#pricing">Pricing</a>
-  <a href="#faq">FAQ</a>
+  <a href="faq.html">FAQ</a>
   <a href="#contact" class="btn btn-primary">Get a free concept</a>
 </div>
 
@@ -417,6 +425,21 @@
         <div class="bubble">"I'll get in touch."</div>
       </div>
     </div>
+  </section>
+
+  <!-- SOCIALS -->
+  <section id="socials" class="wrap pad" style="padding-top:0;">
+    <div class="shead reveal" style="max-width:40rem;">
+      <span class="eyebrow">If you're only on socials</span>
+      <h2>Instagram gets you seen. It doesn't get you trusted.</h2>
+    </div>
+    <p class="reveal" style="font-size:clamp(1.15rem,1.7vw,1.45rem); color:var(--ink-60); max-width:54ch; line-height:1.45; margin-bottom:clamp(2rem,3.5vw,2.8rem);">Socials are brilliant for staying in front of people. But they're rented ground. You don't own your audience, and the reach you had last year is mostly gone. When someone is ready to actually spend money, they go looking for a website. If there isn't one, or it looks half-finished, that quiet doubt is often enough to lose the job.</p>
+    <div class="soc-grid">
+      <div class="soc-card reveal"><div class="soc-l">You don't own it</div><h3>Your following can vanish overnight</h3><p>One algorithm change and the audience you spent years building can disappear. A website is the one place online that is actually yours.</p></div>
+      <div class="soc-card reveal" style="transition-delay:.08s;"><div class="soc-l">It's where they check</div><h3>A profile gets the click. A site gets the trust</h3><p>Before someone books a real job, they look you up properly. A proper site is where they decide you are established enough to call.</p></div>
+      <div class="soc-card reveal" style="transition-delay:.16s;"><div class="soc-l">Different jobs</div><h3>Keep posting. Give them somewhere to land</h3><p>Socials keep you front of mind. Your website is where that attention turns into booked work. You want both, each doing what it does best.</p></div>
+    </div>
+    <div class="reveal" style="margin-top:clamp(2rem,3.5vw,2.8rem);"><a href="#contact" class="btn btn-primary">Get my free homepage concept <span class="a">&rarr;</span></a></div>
   </section>
 
   <!-- SERVICE REFRAME -->
@@ -557,26 +580,6 @@
     <p class="ongoing reveal">Optional hosting, edits and support from $150/month, only if you'd rather not think about it.</p>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="wrap pad" style="padding-top:0;">
-    <div class="faq">
-      <div class="reveal">
-        <span class="eyebrow">FAQ</span>
-        <h2 style="margin-top:1rem;">The things people actually ask.</h2>
-        <p style="margin-top:1rem;">If your question isn't here, ask it in the form and I'll give you a straight answer.</p>
-      </div>
-      <div class="faq-l reveal" style="transition-delay:.08s;">
-        <div class="faq-i"><button class="faq-q">What's the free homepage concept, exactly?<span class="pm"></span></button><div class="faq-a"><p>Before you spend a dollar, I'll put together a custom direction for your homepage, built around your actual business. If you love it, we build it. If you don't, you've still got a sharper idea of where your business could go. No pressure, no obligation.</p></div></div>
-        <div class="faq-i"><button class="faq-q">What if I already have a site?<span class="pm"></span></button><div class="faq-a"><p>Even better. I'll work out what's worth keeping and what's holding you back, then rebuild around it. You're not starting from zero, you're starting from sharper.</p></div></div>
-        <div class="faq-i"><button class="faq-q">What if I only have Instagram or Facebook?<span class="pm"></span></button><div class="faq-a"><p>That's a fine starting point. Socials are great for staying in front of people, but they're rented ground. A proper presence is the one place online that's actually yours, and where people go to check you're the real deal.</p></div></div>
-        <div class="faq-i"><button class="faq-q">How long does it take?<span class="pm"></span></button><div class="faq-a"><p>A single-page build is usually live within a week or two of the direction being approved. A fuller build takes a little longer. Most of the timeline comes down to how quickly we can get your content together.</p></div></div>
-        <div class="faq-i"><button class="faq-q">Do I need professional photos?<span class="pm"></span></button><div class="faq-a"><p>No. I'll work with what you have, and I'll tell you honestly if a few better photos would lift the whole thing. Good photography helps, but it's never a blocker to getting started.</p></div></div>
-        <div class="faq-i"><button class="faq-q">Can you write the copy?<span class="pm"></span></button><div class="faq-a"><p>Yes. Most people would rather not write about themselves, and that's the point. I write trust-focused copy in plain English, built around what your customers actually need to hear.</p></div></div>
-        <div class="faq-i"><button class="faq-q">Do I own it?<span class="pm"></span></button><div class="faq-a"><p>Completely. It's your site, your domain, your content. If you ever want to take it elsewhere, you can. No lock-in, no holding it hostage.</p></div></div>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section id="contact" class="contact wrap pad" style="padding-top:0;">
     <div class="c-grid">
@@ -621,7 +624,7 @@
       <a href="#method">How it works</a>
       <a href="#work">Work</a>
       <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
+      <a href="faq.html">FAQ</a>
     </div>
     <div class="foot-col">
       <h4>Get in touch</h4>

@@ -329,6 +329,18 @@
   .soc-card h3{ font-size:1.3rem; font-weight:500; letter-spacing:-.02em; line-height:1.12; margin:1rem 0 .7rem; }
   .soc-card p{ font-size:1rem; color:var(--ink-60); }
   @media (max-width:900px){ .soc-grid{ grid-template-columns:1fr; } }
+
+  /* FREE CONCEPT */
+  .free{ background:var(--ink); color:#fff; border-radius:var(--r-media); padding:clamp(2.2rem,5vw,4rem); }
+  .free .eyebrow{ color:rgba(255,255,255,.5); }
+  .free-h{ color:#fff; font-size:clamp(2.3rem,5.4vw,4.3rem); letter-spacing:-.04em; line-height:.98; max-width:15ch; margin-top:1rem; }
+  .free-sub{ color:rgba(255,255,255,.72); font-size:clamp(1.1rem,1.7vw,1.4rem); max-width:50ch; margin-top:1.4rem; line-height:1.45; }
+  .free-steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.2rem,2.5vw,2rem); margin:clamp(2.2rem,4vw,3rem) 0; }
+  .fstep{ display:flex; gap:.9rem; align-items:flex-start; }
+  .fstep .fn{ width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.3); display:grid; place-items:center; font-size:.9rem; flex:0 0 auto; font-family:var(--mono); }
+  .fstep h3{ font-size:1.18rem; font-weight:500; color:#fff; margin-bottom:.35rem; letter-spacing:-.01em; }
+  .fstep p{ font-size:.96rem; color:rgba(255,255,255,.66); line-height:1.4; }
+  @media (max-width:900px){ .free-steps{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body id="top">
@@ -365,12 +377,27 @@
   <section class="hero wrap">
     <span class="eyebrow reveal">The Service Edit</span>
     <h1 class="reveal">You built the business. We build the trust.</h1>
-    <p class="sub reveal">Your customers decide whether to trust you long before they ever get in touch. We take outdated, scattered online presences and turn them into brands people remember.</p>
+    <p class="sub reveal">Custom websites for service businesses, designed to make people trust you before they ever call. We turn outdated, scattered online presences into brands people remember.</p>
     <div class="hero-cta reveal">
       <a href="#contact" class="btn btn-primary">Get my free homepage concept <span class="a">&rarr;</span></a>
       <a href="#transform" class="btn btn-ghost">See the transformation</a>
     </div>
     <div class="reassure reveal">No obligation. Built specifically for your business.</div>
+  </section>
+
+  <!-- FREE CONCEPT -->
+  <section id="free" class="wrap pad" style="padding-top:clamp(2rem,4vw,3rem);">
+    <div class="free reveal">
+      <span class="eyebrow">No cost, no catch</span>
+      <h2 class="free-h">We'll redesign your homepage. For free.</h2>
+      <p class="free-sub">Not a generic template. A custom direction built around your actual business by someone who has run them, so you can see exactly what it could look like. If you love it, we build it. If you don't, you've lost nothing.</p>
+      <div class="free-steps">
+        <div class="fstep"><span class="fn">1</span><div><h3>Send us your site or socials</h3><p>A link is all we need. No brief, no forms to fill in.</p></div></div>
+        <div class="fstep"><span class="fn">2</span><div><h3>We redesign your homepage</h3><p>A custom concept built around your business, not a theme.</p></div></div>
+        <div class="fstep"><span class="fn">3</span><div><h3>You decide</h3><p>Love it and we build it. Don't and you keep the idea, no obligation.</p></div></div>
+      </div>
+      <a href="#contact" class="btn btn-light">Get my free homepage concept &rarr;</a>
+    </div>
   </section>
 
   <!-- TRANSFORMATION (slider) -->
@@ -392,16 +419,17 @@
           <figcaption>Rebuilt by The Service Edit. Scroll inside the frame to explore the whole site.</figcaption>
         </figure>
       </div>
-      <p style="text-align:center; margin-top:1.6rem; font-size:.9rem; color:var(--ink-40); font-family:var(--mono);">A real rebuild for CVBS, Worldwide Venue Finding Solutions.</p>
+      <p class="reveal" style="text-align:center; margin:2.2rem auto 0; font-size:clamp(1.35rem,2.6vw,2rem); font-weight:500; letter-spacing:-.02em; line-height:1.2; max-width:22ch;">Same business, same services. One of them just looks like the obvious choice.</p>
+      <p style="text-align:center; margin-top:1rem; font-size:.9rem; color:var(--ink-40); font-family:var(--mono);">A real rebuild for CVBS, Worldwide Venue Finding Solutions.</p>
     </div>
   </section>
 
   <!-- PUNCH / PROBLEM -->
   <section id="problem" class="wrap pad" style="padding-top:0;">
     <div class="punch reveal">
-      <h2>Most service businesses don't have a lead problem. They have a <span class="em">trust problem.</span></h2>
+      <h2>You're not losing work because you're worse. You're losing because you <span class="em">look</span> worse.</h2>
     </div>
-    <p class="punch-body reveal">You can be the best carpenter in Perth. The best sparkie, the best plumber, the best in your trade. But if your online presence looks neglected, people quietly assume the business is too. So they go with whoever looks more professional. Even when that person does worse work.</p>
+    <p class="punch-body reveal">When your online presence looks neglected, people assume the business is too, and they call whoever looks more professional.</p>
   </section>
 
   <!-- WHAT CUSTOMERS THINK -->
@@ -493,9 +521,30 @@
           <span class="ph">Add screenshot</span>
         </div>
         <div class="wmeta"><div class="wt">Beauty clinic</div><div class="wd">A tired template turned into a brand that feels considered.</div></div>
+      <div class="wcard reveal" style="transition-delay:.24s;">
+        <div class="thumb">
+          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">No mess. No fuss. Just done.</div><div class="a-sub s1"></div><span class="a-btn">Get a quote</span></div></div>
+          <span class="ph">Add screenshot</span>
+        </div>
+        <div class="wmeta"><div class="wt">Plumbing, Perth</div><div class="wd">A dated one-pager rebuilt to feel safe to hire.</div></div>
+      </div>
+      <div class="wcard reveal" style="transition-delay:.32s;">
+        <div class="thumb">
+          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Booked solid, week on week.</div><div class="a-sub s1"></div><span class="a-btn">Book a table</span></div></div>
+          <span class="ph">Add screenshot</span>
+        </div>
+        <div class="wmeta"><div class="wt">Hospitality</div><div class="wd">A scattered presence pulled into one clear home base.</div></div>
+      </div>
+      <div class="wcard reveal" style="transition-delay:.4s;">
+        <div class="thumb">
+          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Advice you can actually trust.</div><div class="a-sub s1"></div><span class="a-btn">Enquire</span></div></div>
+          <span class="ph">Add screenshot</span>
+        </div>
+        <div class="wmeta"><div class="wt">Consultant</div><div class="wd">A plain profile turned into a credible, considered brand.</div></div>
+      </div>
       </div>
     </div>
-    <p class="work-note reveal">Your real client transformations and words go here.</p>
+    <p class="work-note reveal">A selection of recent work. Your real client transformations and words go here, the more the better.</p>
   </section>
 
   <!-- FOUNDER -->
@@ -544,13 +593,13 @@
   <section id="pricing" class="wrap pad" style="padding-top:0;">
     <div class="shead reveal price-intro">
       <span class="eyebrow">Investment</span>
-      <p class="big">Every project is a little different. Most fall between $499 and $1,499, depending on what needs rebuilding.</p>
+      <p class="big">Every project is a little different. Most fall between $799 and $1,499, depending on what needs rebuilding.</p>
     </div>
     <div class="price">
       <div class="pcard one reveal">
         <span class="pflag">The Launch Edit</span>
         <div class="pname">For businesses that need to look credible, fast.</div>
-        <div class="pfrom">$499 <span class="c">AUD</span></div>
+        <div class="pfrom">$799 <span class="c">AUD</span></div>
         <p class="pdesc">A sharp, single-page online presence that earns trust at a glance.</p>
         <ul class="pinc">
           <li><span class="ck">&check;</span> Custom one-page design</li>

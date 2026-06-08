@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Work | The Service Edit</title>
-<meta name="description" content="Real before-and-after rebuilds for service businesses, including a live site you can click through. See what The Service Edit could do for yours." />
+<meta name="description" content="See how we audit, fix and rebuild service business websites to win more enquiries, plus how we turn your iPhone photos into website-ready images. Perth based." />
 <meta name="theme-color" content="#ffffff" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111210'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='14' font-weight='600' fill='%23fff' text-anchor='middle'%3Ese%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -325,6 +325,27 @@
   .soc-card h3{ font-size:1.3rem; font-weight:500; letter-spacing:-.02em; line-height:1.12; margin:1rem 0 .7rem; }
   .soc-card p{ font-size:1rem; color:var(--ink-60); }
   @media (max-width:900px){ .soc-grid{ grid-template-columns:1fr; } }
+
+  /* AUDIT CASE STUDIES */
+  .case{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.6rem,3.5vw,3.5rem); align-items:center; }
+  .case + .case{ margin-top:clamp(3rem,6vw,5rem); }
+  .case-media .mock{ max-width:none; }
+  .audit{ display:flex; flex-direction:column; gap:1.15rem; margin-top:1.4rem; }
+  .audit-row{ padding-left:1.1rem; border-left:2px solid var(--line); }
+  .audit-row.fix{ border-left-color:var(--ink); }
+  .audit-row .lab{ font-family:var(--mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40); margin-bottom:.4rem; }
+  .audit-row p{ font-size:1.02rem; color:var(--ink-60); margin:0; line-height:1.5; }
+  .cap-mono{ font-family:var(--mono); font-size:.6rem; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-40); text-align:center; margin-top:.8rem; }
+  @media (max-width:900px){ .case{ grid-template-columns:1fr; } .case .case-media{ order:-1; } }
+
+  /* IMAGE CONVERSION */
+  .imgflow{ display:flex; align-items:center; justify-content:center; gap:clamp(.9rem,2.2vw,1.8rem); flex-wrap:wrap; }
+  .phone{ width:118px; flex:0 0 auto; border-radius:22px; border:1px solid var(--line); background:#fff; padding:7px; box-shadow:0 18px 36px -22px rgba(17,18,16,.5); }
+  .phone .scr{ border-radius:15px; aspect-ratio:9/16; background:repeating-linear-gradient(135deg,#d8d3c8,#d8d3c8 9px,#cdc7bb 9px,#cdc7bb 18px); }
+  .flow-arrow{ font-size:1.5rem; color:var(--ink-40); flex:0 0 auto; }
+  .shot-img{ aspect-ratio:16/10; border-radius:8px; background:linear-gradient(120deg,#2c2c28,#0e0f0d); position:relative; overflow:hidden; }
+  .shot-img::after{ content:""; position:absolute; inset:0; background:radial-gradient(circle at 28% 26%, rgba(255,255,255,.14), transparent 58%); }
+  @media (max-width:560px){ .flow-arrow{ transform:rotate(90deg); } }
 </style>
 </head>
 <body id="top">
@@ -357,96 +378,170 @@
 <main>
   <!-- PAGE HEAD -->
   <section class="wrap pad" style="padding-bottom:clamp(2rem,4vw,3rem);">
-    <div class="shead reveal" style="max-width:38rem;">
+    <div class="shead reveal" style="max-width:40rem;">
       <span class="eyebrow">Work</span>
-      <h2>Real businesses. Real before and afters.</h2>
-      <p style="margin-top:1.2rem; font-size:clamp(1.12rem,1.6vw,1.32rem); line-height:1.45;">Every site here started as something outdated, unfinished or buried on a social feed. Below is the kind of change a credible site makes, and a live rebuild you can click through yourself.</p>
+      <h2>We don't just redesign. We diagnose.</h2>
+      <p style="margin-top:1.2rem; font-size:clamp(1.12rem,1.6vw,1.32rem); line-height:1.45;">Every rebuild starts with an honest audit: what's quietly costing you enquiries, and exactly how we fix it. Here's how that looks in practice, in plain English.</p>
     </div>
   </section>
 
-  <!-- FEATURED CASE STUDY -->
+  <!-- APPROACH BAND -->
   <section class="wrap pad" style="padding-top:0;">
-    <div class="c-grid" style="align-items:center;">
-      <div class="reveal">
-        <span class="eyebrow">Featured rebuild</span>
-        <h2 style="margin-top:1rem; font-size:clamp(1.9rem,3.4vw,2.8rem);">CVBS — Worldwide Venue Finding Solutions</h2>
-        <p class="c-sub" style="max-width:46ch;">An established business with a site that didn't match the quality of its work. We rebuilt it into something that looks as credible as the service behind it, with a clear structure, confident copy and a layout built around how clients actually decide.</p>
-        <ul class="c-pts">
-          <li><span class="ic">&check;</span> Outdated layout rebuilt into a modern, trustworthy brand</li>
-          <li><span class="ic">&check;</span> Clear messaging that explains the service at a glance</li>
-          <li><span class="ic">&check;</span> Built to work properly on phones, where most people look</li>
-        </ul>
-        <div style="margin-top:1.8rem;">
-          <a href="contact.html" class="btn btn-primary">Get a free homepage concept <span class="a">&rarr;</span></a>
-        </div>
+    <div class="method stagger">
+      <div class="mstep">
+        <span class="mn">01</span>
+        <h3>We audit</h3>
+        <p>We go through your current site or socials the way a customer would, and find the things quietly making them hesitate.</p>
       </div>
-      <figure class="ba-item reveal" style="transition-delay:.08s;">
+      <div class="mstep">
+        <span class="mn">02</span>
+        <h3>We rebuild</h3>
+        <p>Clearer messaging, a layout built around trust, and a design that finally matches the quality of your actual work.</p>
+      </div>
+      <div class="mstep">
+        <span class="mn">03</span>
+        <h3>We convert</h3>
+        <p>The goal isn't a site that looks nicer. It's a site that turns visitors into enquiries. That's what we build for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED AUDIT: CVBS -->
+  <section class="wrap pad" style="padding-top:clamp(1rem,2vw,2rem);">
+    <div class="shead reveal" style="max-width:34rem; margin-bottom:clamp(2rem,4vw,3rem);">
+      <span class="eyebrow">Featured rebuild</span>
+      <h2 style="max-width:20ch;">A live before and after you can click through.</h2>
+    </div>
+    <div class="case">
+      <figure class="case-media ba-item reveal">
         <span class="ba-tag after">Live rebuild</span>
         <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://mellyanncox-ctrl.github.io/CVBS-SITE-MARCH2026/index.html" title="CVBS, rebuilt by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
         <figcaption>Rebuilt by The Service Edit. Scroll inside the frame to explore the whole site.</figcaption>
       </figure>
+      <div class="reveal" style="transition-delay:.08s;">
+        <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">CVBS — Worldwide Venue Finding Solutions</h3>
+        <div class="audit">
+          <div class="audit-row prob">
+            <div class="lab">The problem</div>
+            <p>An established, capable business with a site that didn't show it. The layout felt dated, and the core service wasn't clear in the first few seconds, so visitors couldn't tell at a glance what they did or why to trust them.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">What we changed</div>
+            <p>A full rebuild with a clear structure, confident messaging that explains the service up front, and a clean, modern design that finally works properly on a phone, where most people look first.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">Why it converts</div>
+            <p>When a site looks as credible as the service behind it, people stop second-guessing and start enquiring. Every section is built around that one decision: is this who I should call?</p>
+          </div>
+        </div>
+        <div style="margin-top:1.8rem;">
+          <a href="contact.html" class="btn btn-primary">Get a free homepage concept <span class="a">&rarr;</span></a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PROJECT GRID -->
+  <!-- MORE AUDIT CASE STUDIES -->
   <section class="wrap pad" style="padding-top:0;">
-    <div class="shead reveal" style="margin-bottom:clamp(2.2rem,4vw,3rem);">
-      <span class="eyebrow">More projects</span>
-      <h2 style="max-width:20ch;">A look at the kind of businesses we work with.</h2>
+    <div class="shead reveal" style="margin-bottom:clamp(2rem,4vw,3rem);">
+      <span class="eyebrow">More audits</span>
+      <h2 style="max-width:22ch;">The kind of problems we fix, and how.</h2>
     </div>
-    <div class="work">
-      <div class="wcard reveal">
-        <div class="thumb">
-          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Bespoke joinery, done right.</div><div class="a-sub s1"></div><span class="a-btn">Get a quote</span></div></div>
-          <span class="ph">Add screenshot</span>
+
+    <div class="case">
+      <div class="case-media reveal">
+        <div class="mock"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">yourbusiness.com.au</span></div>
+          <div class="mbody" style="min-height:200px;"><div class="a-h">Bespoke joinery, done right.</div><div class="a-sub s1"></div><div class="a-sub s2"></div><span class="a-btn">Get a quote</span><div class="a-row"><div class="a-card"></div><div class="a-card"></div><div class="a-card"></div></div></div>
         </div>
-        <div class="wmeta"><div class="wt">Carpentry, western suburbs</div><div class="wd">Outdated builder site rebuilt into a premium brand.</div></div>
+        <p class="cap-mono">Drop a real before/after screenshot in here</p>
       </div>
-      <div class="wcard reveal" style="transition-delay:.08s;">
-        <div class="thumb">
-          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Reliable. On time. Every time.</div><div class="a-sub s1"></div><span class="a-btn">Book a service</span></div></div>
-          <span class="ph">Add screenshot</span>
+      <div class="reveal" style="transition-delay:.08s;">
+        <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">Carpentry — western suburbs</h3>
+        <div class="audit">
+          <div class="audit-row prob">
+            <div class="lab">The problem</div>
+            <p>Premium work, sitting behind a site that looked like a weekend DIY job. Hard-to-read text, no clear next step, and nothing that signalled the craftsmanship the business was known for.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">What we changed</div>
+            <p>A premium, photo-led rebuild with one clear action, plain-English copy, and room for the work to speak for itself.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">Why it converts</div>
+            <p>Premium work needs a premium first impression. Now the site sets the expectation before the first call, so the conversation starts with the quality, not the price.</p>
+          </div>
         </div>
-        <div class="wmeta"><div class="wt">Trades, Perth</div><div class="wd">From a buried Facebook page to a site that wins quotes.</div></div>
-      </div>
-      <div class="wcard reveal" style="transition-delay:.16s;">
-        <div class="thumb">
-          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Looking your best starts here.</div><div class="a-sub s1"></div><span class="a-btn">Book now</span></div></div>
-          <span class="ph">Add screenshot</span>
-        </div>
-        <div class="wmeta"><div class="wt">Beauty clinic</div><div class="wd">A tired template turned into a brand that feels considered.</div></div>
-      </div>
-      <div class="wcard reveal">
-        <div class="thumb">
-          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Your space, transformed.</div><div class="a-sub s1"></div><span class="a-btn">Request a quote</span></div></div>
-          <span class="ph">Add screenshot</span>
-        </div>
-        <div class="wmeta"><div class="wt">Landscaping</div><div class="wd">A clean, photo-led site that lets the work do the talking.</div></div>
-      </div>
-      <div class="wcard reveal" style="transition-delay:.08s;">
-        <div class="thumb">
-          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Care you can count on.</div><div class="a-sub s1"></div><span class="a-btn">Enquire</span></div></div>
-          <span class="ph">Add screenshot</span>
-        </div>
-        <div class="wmeta"><div class="wt">Allied health</div><div class="wd">A warmer, clearer site that makes booking feel easy.</div></div>
-      </div>
-      <div class="wcard reveal" style="transition-delay:.16s;">
-        <div class="thumb">
-          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Built to last. Priced to suit.</div><div class="a-sub s1"></div><span class="a-btn">Get a quote</span></div></div>
-          <span class="ph">Add screenshot</span>
-        </div>
-        <div class="wmeta"><div class="wt">Cleaning &amp; maintenance</div><div class="wd">A simple one-page site that turns visitors into enquiries.</div></div>
       </div>
     </div>
-    <p class="work-note reveal">Real client screenshots drop straight into these cards as projects go live.</p>
+
+    <div class="case">
+      <div class="case-media reveal">
+        <div class="mock"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">yourbusiness.com.au</span></div>
+          <div class="mbody" style="min-height:200px;"><div class="a-h">Looking your best starts here.</div><div class="a-sub s1"></div><div class="a-sub s2"></div><span class="a-btn">Book now</span><div class="a-row"><div class="a-card"></div><div class="a-card"></div><div class="a-card"></div></div></div>
+        </div>
+        <p class="cap-mono">Drop a real before/after screenshot in here</p>
+      </div>
+      <div class="reveal" style="transition-delay:.08s;">
+        <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">Beauty clinic</h3>
+        <div class="audit">
+          <div class="audit-row prob">
+            <div class="lab">The problem</div>
+            <p>A tired template that looked like ten other clinics. Booking was buried a few clicks deep, and nothing about the brand felt considered or reassuring.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">What we changed</div>
+            <p>A warmer, fully custom design with booking front and centre, clear services, and a calm, professional look that feels like the brand made a choice.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">Why it converts</div>
+            <p>In beauty, trust is the whole sale. A considered brand quietly promises a considered experience, so booking starts to feel like an easy yes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="work-note reveal" style="margin-top:clamp(2.4rem,4vw,3.2rem);">Real client before-and-afters drop straight into these slots as projects go live.</p>
+  </section>
+
+  <!-- IMAGE CONVERSION -->
+  <section class="wrap pad" style="padding-top:0;">
+    <div class="c-grid" style="align-items:center;">
+      <div class="reveal">
+        <span class="eyebrow">A built-in advantage</span>
+        <h2 style="margin-top:1rem; font-size:clamp(1.9rem,3.4vw,2.8rem);">Your iPhone photos, turned into website-ready images.</h2>
+        <p class="c-sub" style="max-width:46ch;">You don't need a photographer to look professional. Most owners are already sitting on good photos, they're just in the wrong shape for the web. We take what's on your phone and make it look as good as the work itself.</p>
+        <ul class="c-pts">
+          <li><span class="ic">&check;</span> Cropped and framed to fit your layout, not stretched or squashed</li>
+          <li><span class="ic">&check;</span> Lighting and colour corrected so everything looks consistent</li>
+          <li><span class="ic">&check;</span> Compressed to load fast, even on mobile data</li>
+          <li><span class="ic">&check;</span> Converted from HEIC and other phone formats the web can't read</li>
+        </ul>
+        <p style="margin-top:1.6rem; font-size:.95rem; color:var(--ink-60);">No studio, no stock photos, no extra cost. Just send what you've got.</p>
+      </div>
+      <div class="reveal" style="transition-delay:.08s;">
+        <div class="imgflow">
+          <div>
+            <div class="phone"><div class="scr"></div></div>
+            <p class="cap-mono">Straight off your phone</p>
+          </div>
+          <div class="flow-arrow">&rarr;</div>
+          <div style="flex:1 1 240px; min-width:220px;">
+            <div class="mock" style="max-width:none;"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">yourbusiness.com.au</span></div>
+              <div class="mbody" style="min-height:0;"><div class="shot-img"></div><div class="a-sub s1" style="margin-top:.9rem;"></div><div class="a-sub s2"></div></div>
+            </div>
+            <p class="cap-mono">Sharp, fast and on-brand on your site</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- CTA -->
   <section class="wrap pad" style="padding-top:0;">
     <div class="reveal" style="background:var(--ink); color:#fff; border-radius:var(--r-media); padding:clamp(2.2rem,4vw,3.6rem); text-align:center;">
       <span class="eyebrow" style="color:rgba(255,255,255,.5);">Your business next</span>
-      <h2 style="color:#fff; max-width:20ch; margin:1rem auto 1.6rem;">See what yours could look like, for free.</h2>
-      <a href="contact.html" class="btn btn-light">Get my free homepage concept &rarr;</a>
+      <h2 style="color:#fff; max-width:22ch; margin:1rem auto 1.6rem;">Want to see where yours is leaking enquiries?</h2>
+      <a href="contact.html" class="btn btn-light">Get a free homepage concept &rarr;</a>
     </div>
   </section>
 </main>

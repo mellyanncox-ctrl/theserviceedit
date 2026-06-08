@@ -496,7 +496,7 @@
     <!-- Concept: Pet care -->
     <div class="case">
       <figure class="case-media ba-item reveal">
-        <span class="ba-tag after">Concept build &middot; live</span>
+        <span class="ba-tag after">Concept build</span>
         <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://the-service-edit.github.io/sues-pet-transport/index.html" title="Pet care concept by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
         <figcaption>Live concept by The Service Edit. Scroll inside the frame to explore.</figcaption>
       </figure>
@@ -523,7 +523,7 @@
     <!-- Concept: Bespoke joinery -->
     <div class="case" style="margin-top:clamp(3rem,6vw,5rem);">
       <figure class="case-media ba-item reveal">
-        <span class="ba-tag after">Concept build &middot; live</span>
+        <span class="ba-tag after">Concept build</span>
         <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://the-service-edit.github.io/tower-carpentry/" title="Bespoke joinery concept by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
         <figcaption>Live concept by The Service Edit. Scroll inside the frame to explore.</figcaption>
       </figure>
@@ -549,11 +549,18 @@
 
     <!-- Concept: Cafe -->
     <div class="case" style="margin-top:clamp(3rem,6vw,5rem);">
-      <figure class="case-media ba-item reveal">
-        <span class="ba-tag after">Concept build &middot; live</span>
-        <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://mellyanncox-ctrl.github.io/giant-test/" title="Cafe concept by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
-        <figcaption>Live concept by The Service Edit. Scroll inside the frame to explore.</figcaption>
-      </figure>
+      <div class="ba-real reveal">
+        <figure class="ba-item">
+          <span class="ba-tag after">Mobile</span>
+          <div class="ba-frame" style="aspect-ratio:9/16;"><div class="ba-shot" data-native-width="390" style="width:390px;"><iframe class="ba-iframe" src="https://mellyanncox-ctrl.github.io/giant-test/" title="Cafe concept, mobile view" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin" style="width:390px;"></iframe></div></div>
+          <figcaption>Mobile view. Scroll inside the frame to explore.</figcaption>
+        </figure>
+        <figure class="ba-item">
+          <span class="ba-tag after">Desktop</span>
+          <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://mellyanncox-ctrl.github.io/giant-test/" title="Cafe concept, desktop view" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
+          <figcaption>Desktop view. Scroll inside the frame to explore.</figcaption>
+        </figure>
+      </div>
       <div class="reveal" style="transition-delay:.08s;">
         <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">Cafe, Northbridge</h3>
         <div class="audit">
@@ -577,7 +584,7 @@
     <!-- Concept: Residential carpentry -->
     <div class="case" style="margin-top:clamp(3rem,6vw,5rem);">
       <figure class="case-media ba-item reveal">
-        <span class="ba-tag after">Concept build &middot; live</span>
+        <span class="ba-tag after">Concept build</span>
         <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://the-service-edit.github.io/king-carpentry-wa/" title="Residential carpentry concept by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
         <figcaption>Live concept by The Service Edit. Scroll inside the frame to explore.</figcaption>
       </figure>
@@ -604,7 +611,7 @@
     <!-- Concept: Construction group -->
     <div class="case" style="margin-top:clamp(3rem,6vw,5rem);">
       <figure class="case-media ba-item reveal">
-        <span class="ba-tag after">Concept build &middot; live</span>
+        <span class="ba-tag after">Concept build</span>
         <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://the-service-edit.github.io/jma-group/" title="Construction group concept by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
         <figcaption>Live concept by The Service Edit. Scroll inside the frame to explore.</figcaption>
       </figure>
@@ -705,7 +712,7 @@
     document.querySelectorAll('.ba-shot').forEach(function(s){
       var frame = s.parentElement;
       var w = frame.clientWidth, h = frame.clientHeight;
-      var scale = w / 1280;
+      var scale = w / (parseInt(s.dataset.nativeWidth) || 1280);
       s.style.transform = 'scale(' + scale + ')';
       var ifr = s.querySelector('iframe');
       if(ifr){ ifr.style.height = (h / scale) + 'px'; }

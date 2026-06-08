@@ -325,6 +325,14 @@
   .soc-card h3{ font-size:1.3rem; font-weight:500; letter-spacing:-.02em; line-height:1.12; margin:1rem 0 .7rem; }
   .soc-card p{ font-size:1rem; color:var(--ink-60); }
   @media (max-width:900px){ .soc-grid{ grid-template-columns:1fr; } }
+
+  /* CARE PLAN */
+  .care{ border:1px solid var(--line); border-radius:var(--r-media); padding:clamp(1.9rem,3vw,2.6rem); display:grid; grid-template-columns:1fr 1.15fr; gap:clamp(1.4rem,3vw,3rem); align-items:center; }
+  .care .pflag{ display:block; }
+  .care .pname{ margin:.5rem 0 .3rem; }
+  .care .pdesc{ margin:.9rem 0 0; }
+  .care .pinc{ margin-bottom:0; }
+  @media (max-width:760px){ .care{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body id="top">
@@ -405,7 +413,46 @@
       <span class="dot"></span>
       <span>Every build starts with a free homepage concept, so you see exactly what you're getting before you pay anything.</span>
     </div>
-    <p class="ongoing reveal">Optional hosting and ongoing support from $150/month, if you'd rather not think about the technical side. Otherwise the site is yours outright, with nothing ongoing to pay.</p>
+    <p class="ongoing reveal">The site is yours outright, with nothing ongoing to pay. If you'd rather we keep it growing for you, there's an optional care plan below.</p>
+  </section>
+
+  <!-- CARE PLAN -->
+  <section class="wrap pad" style="padding-top:0;">
+    <div class="shead reveal" style="max-width:36rem; margin-bottom:clamp(1.6rem,3vw,2.2rem);">
+      <span class="eyebrow">Optional add-ons</span>
+      <h2 style="font-size:clamp(1.9rem,3.4vw,2.8rem);">A couple of optional extras.</h2>
+    </div>
+    <div class="care reveal">
+      <div>
+        <span class="pflag">Optional add-on</span>
+        <div class="pname">Ongoing care plan</div>
+        <div class="pfrom">$150 <span class="c">/ month</span></div>
+        <p class="pdesc">A website isn't "set and forget". This keeps yours fresh, climbing in search, and working as hard as you do, without you having to think about the technical side.</p>
+      </div>
+      <ul class="pinc">
+        <li><span class="ck">&check;</span> Monthly revisions and content updates</li>
+        <li><span class="ck">&check;</span> Ongoing SEO, building your search ranking over time</li>
+        <li><span class="ck">&check;</span> Hosting, backups and security all handled</li>
+        <li><span class="ck">&check;</span> Priority support when you need a change made</li>
+        <li><span class="ck">&check;</span> Cancel anytime, no lock-in</li>
+      </ul>
+    </div>
+    <div class="care reveal" style="margin-top:clamp(1.2rem,2.5vw,1.8rem);">
+      <div>
+        <span class="pflag">One-time setup</span>
+        <div class="pname">Google Business Profile</div>
+        <div class="pfrom">$150 <span class="c">one-off</span></div>
+        <p class="pdesc">Show up when nearby customers go looking. We create and optimise your Google Business Profile so you appear on Google Maps and in local search, then link it to your new site.</p>
+      </div>
+      <ul class="pinc">
+        <li><span class="ck">&check;</span> Profile created, claimed and verified for you</li>
+        <li><span class="ck">&check;</span> Categories, services, hours and service area set up properly</li>
+        <li><span class="ck">&check;</span> A written description and your best photos added</li>
+        <li><span class="ck">&check;</span> Linked to your new website</li>
+        <li><span class="ck">&check;</span> Ready to start collecting Google reviews</li>
+      </ul>
+    </div>
+    <p class="ongoing reveal">Completely optional. Plenty of clients take the site and run with it. These are here for the ones who'd rather keep growing without lifting a finger.</p>
   </section>
 
   <!-- REASSURANCE -->

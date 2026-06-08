@@ -374,6 +374,7 @@
     <span class="eyebrow reveal">The Service Edit</span>
     <h1 class="reveal">We take outdated service businesses and turn them into brands people trust online.</h1>
     <p class="sub reveal">Custom websites for service businesses that need to look as good as the work they do.</p>
+    <p class="reveal" style="margin-top:1.5rem; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--ink);">Custom one-page websites from <strong style="font-weight:600;">$799</strong>. Multi-page builds from <strong style="font-weight:600;">$1,499</strong>.</p>
     <div class="hero-cta reveal">
       <a href="#contact" class="btn btn-primary">Get a free homepage concept <span class="a">&rarr;</span></a>
     </div>
@@ -412,6 +413,7 @@
       <h2>People decide before they <span class="em">call.</span></h2>
     </div>
     <p class="punch-body reveal">If your website looks outdated, unfinished or generic, customers assume your business is too.</p>
+    <p class="punch-body reveal" style="transition-delay:.08s; margin-top:1.4rem; color:var(--ink);">Built by someone who has <strong style="font-weight:600;">owned service businesses</strong>, not just designed for them. That means a site shaped by how customers actually choose who to trust, not just how it looks.</p>
   </section>
 
   <!-- FREE CONCEPT -->
@@ -469,17 +471,14 @@
       <span class="eyebrow">The maths</span>
       <h2>What's one extra customer a week worth to you?</h2>
     </div>
+    <p class="maths-p reveal" style="margin-top:1.5rem;">One extra enquiry can pay for the site. One extra customer a week can change the month.</p>
     <div class="calc reveal">
       <div class="cl">
         <div class="ctrl">
           <label for="cv">What an average customer is worth to you</label>
           <div class="money"><span>$</span><input type="number" id="cv" value="350" min="0" inputmode="numeric" /></div>
         </div>
-        <div class="ctrl">
-          <div class="slider-row"><label for="cc" style="margin:0;">Extra customers per week</label><span class="sv" id="ccv">1</span></div>
-          <input type="range" id="cc" min="1" max="10" value="1" />
-        </div>
-        <p class="chint">Just one extra customer a week. Most owners are aiming higher than that.</p>
+        <p class="chint">Based on just one extra customer a week. Most owners are aiming higher than that.</p>
       </div>
       <div class="cr">
         <div class="res"><div class="rk">Extra revenue per month</div><div class="rv" id="rm">$1,517</div></div>
@@ -621,11 +620,11 @@
   scaleShots();
 
   /* revenue calculator */
-  var cv=document.getElementById('cv'), cc=document.getElementById('cc'), ccv=document.getElementById('ccv'), rm=document.getElementById('rm'), ry=document.getElementById('ry');
+  var cv=document.getElementById('cv'), rm=document.getElementById('rm'), ry=document.getElementById('ry');
   if(cv){
     var fmtMoney=function(n){ return '$'+Math.round(n).toLocaleString('en-AU'); };
-    var calc=function(){ var v=parseFloat(cv.value)||0, n=parseInt(cc.value)||0; ccv.textContent=n; var month=v*n*52/12; rm.textContent=fmtMoney(month); ry.textContent=fmtMoney(v*n*52); };
-    cv.addEventListener('input',calc); cc.addEventListener('input',calc); calc();
+    var calc=function(){ var v=parseFloat(cv.value)||0; rm.textContent=fmtMoney(v*52/12); ry.textContent=fmtMoney(v*52); };
+    cv.addEventListener('input',calc); calc();
   }
 
   /* contact form */

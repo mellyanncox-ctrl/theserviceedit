@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Concept Builds | The Service Edit</title>
+<meta name="description" content="Unsolicited website redesign concepts by The Service Edit, showing service businesses what is possible before they spend a dollar. Independent concepts, not affiliated with the businesses shown." />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111210'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='14' font-weight='600' fill='%23fff' text-anchor='middle'%3Ese%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#ffffff; --bg-soft:#F5F4F1; --card-mute:#EFEEE9;
+    --ink:#111210; --ink-60:rgba(17,18,16,.6); --ink-40:rgba(17,18,16,.42);
+    --line:rgba(17,18,16,.1); --line-soft:rgba(17,18,16,.055);
+    --dark:#0E0F0D; --accent:#111210;
+    --r-btn:10px; --r-card:18px; --r-media:22px; --pill:999px;
+    --maxw:1200px; --pad:clamp(1.15rem,4vw,4rem);
+    --f:"Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --mono:"Geist Mono", ui-monospace, "SF Mono", monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--f); background:var(--bg); color:var(--ink); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:clip;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ::selection{background:var(--ink); color:#fff;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding-left:var(--pad); padding-right:var(--pad);}
+
+  h1,h2,h3{font-weight:600; letter-spacing:-.03em; line-height:1.02;}
+  h2{font-size:clamp(2.1rem,4.6vw,3.6rem);}
+  h3{font-weight:500; letter-spacing:-.02em;}
+  p{color:var(--ink-60);}
+  .eyebrow{font-family:var(--mono); font-size:.74rem; font-weight:400; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40);}
+
+  .btn{display:inline-flex; align-items:center; gap:.5rem; font-family:var(--f); font-weight:500; font-size:.97rem; padding:.85rem 1.45rem; border-radius:var(--r-btn); cursor:pointer; border:1px solid transparent; transition:.22s ease; white-space:nowrap;}
+  .btn .a{transition:transform .22s ease;}
+  .btn:hover .a{transform:translateX(3px);}
+  .btn-primary{background:var(--ink); color:#fff;}
+  .btn-primary:hover{background:#2c2c28;}
+  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-light{background:#fff; color:var(--ink);}
+  .btn-light:hover{background:#f0efeb;}
+
+  .nav{position:sticky; top:0; z-index:100; background:rgba(255,255,255,.8); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid transparent; transition:border-color .3s;}
+  .nav.scrolled{border-bottom-color:var(--line);}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:66px;}
+  .brand{display:flex; align-items:center; gap:.55rem; font-size:1.08rem; font-weight:600; letter-spacing:-.03em;}
+  .brand .mk{width:26px; height:26px; border-radius:8px; background:var(--ink); display:grid; place-items:center; color:#fff; font-size:.74rem; font-weight:600;}
+  .nav-links{display:flex; align-items:center; gap:2rem;}
+  .nav-links a{font-size:.93rem; color:var(--ink-60); transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-r{display:flex; align-items:center; gap:.85rem;}
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding:8px;}
+  .burger span{width:22px; height:2px; background:var(--ink); border-radius:2px;}
+  .mmenu{display:none; position:fixed; inset:66px 0 auto; z-index:99; background:var(--bg); border-bottom:1px solid var(--line); padding:1.4rem var(--pad) 2rem; flex-direction:column;}
+  .mmenu.open{display:flex;}
+  .mmenu a{font-size:1.5rem; font-weight:500; letter-spacing:-.03em; padding:.65rem 0; border-bottom:1px solid var(--line-soft);}
+  .mmenu .btn{margin-top:1.2rem; justify-content:center;}
+
+  section{scroll-margin-top:84px;}
+  .pad{padding-top:clamp(4.5rem,9vw,8rem); padding-bottom:clamp(4.5rem,9vw,8rem);}
+  .shead .eyebrow{display:block; margin-bottom:1rem;}
+
+  /* HERO */
+  .hero{text-align:center; padding-top:clamp(3.5rem,8vw,7rem); padding-bottom:clamp(2rem,4vw,3rem);}
+  .hero .eyebrow{display:inline-block; margin-bottom:1.8rem;}
+  .hero h1{font-size:clamp(2.7rem,7vw,5.6rem); font-weight:600; letter-spacing:-.04em; line-height:1.0; max-width:16ch; margin:0 auto;}
+  .hero .sub{font-size:clamp(1.1rem,1.7vw,1.35rem); color:var(--ink-60); max-width:50ch; margin:1.8rem auto 0;}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; margin-top:2.2rem;}
+  .hero .reassure{font-family:var(--mono); font-size:.74rem; letter-spacing:.04em; color:var(--ink-40); margin-top:1.4rem; text-transform:uppercase;}
+
+  /* mock (shared) */
+  .mock{border-radius:14px; overflow:hidden; background:#fff; box-shadow:0 24px 50px -30px rgba(17,18,16,.34); width:100%; max-width:560px;}
+  .mbar{display:flex; align-items:center; gap:.4rem; padding:.6rem .9rem; border-bottom:1px solid var(--line-soft); background:var(--bg-soft);}
+  .mbar .d{width:8px; height:8px; border-radius:50%; background:var(--line);}
+  .mbar .u{margin-left:.5rem; font-family:var(--mono); font-size:.6rem; color:var(--ink-40); background:#fff; border:1px solid var(--line-soft); border-radius:var(--pill); padding:.14rem .7rem;}
+  .mbody{padding:1.4rem; min-height:230px;}
+  .a-nav{display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem;}
+  .a-logo{font-weight:600; font-size:.95rem; letter-spacing:-.02em;}
+  .a-links{display:flex; gap:.6rem;}
+  .a-links span{width:26px; height:6px; background:var(--line); border-radius:3px;}
+  .a-h{font-size:1.5rem; font-weight:600; letter-spacing:-.03em; line-height:1.06; max-width:18ch;}
+  .a-sub{height:7px; background:var(--line-soft); border-radius:4px; margin-top:.7rem;}
+  .a-sub.s1{width:72%;} .a-sub.s2{width:56%; margin-top:.4rem;}
+  .a-btn{display:inline-block; margin-top:1rem; background:var(--ink); color:#fff; font-size:.66rem; padding:.5rem .95rem; border-radius:8px;}
+  .a-row{display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; margin-top:1.2rem;}
+  .a-card{height:46px; border-radius:9px; background:var(--bg-soft); border:1px solid var(--line-soft);}
+  .b-nav{display:flex; justify-content:space-between; align-items:center; padding-bottom:.6rem; border-bottom:1px solid #e2e0da; margin-bottom:.9rem;}
+  .b-logo{font-size:.88rem; font-weight:600; color:#5a584f;}
+  .b-links{display:flex; gap:.5rem;}
+  .b-links span{font-size:.58rem; color:#8a877c; text-decoration:underline;}
+  .b-hero{height:74px; background:#e4e2db; display:grid; place-items:center; color:#a8a496; font-size:.6rem; margin-bottom:.8rem; border-radius:6px;}
+  .b-h{font-size:.95rem; color:#5a584f; text-align:center;}
+  .b-text{margin-top:.6rem;}
+  .b-text .l{height:5px; background:#e0ded7; border-radius:2px; margin-bottom:.3rem;}
+  .b-btn{display:inline-block; margin-top:.8rem; font-size:.58rem; color:#8a877c; text-decoration:underline;}
+
+  /* COMPARE SLIDER */
+  .compare{position:relative; border-radius:var(--r-media); overflow:hidden; aspect-ratio:16/11; background:var(--bg-soft); touch-action:none; user-select:none; cursor:ew-resize; --pos:56%;}
+  .cmp-layer{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:clamp(1.2rem,3.5vw,3rem);}
+  .cmp-after{background:var(--bg-soft);}
+  .cmp-before{background:var(--card-mute); clip-path:inset(0 calc(100% - var(--pos)) 0 0);}
+  .cmp-before .mock{filter:saturate(.4);}
+  .cmp-handle{position:absolute; top:0; bottom:0; left:var(--pos); transform:translateX(-50%); width:2px; background:#fff; box-shadow:0 0 0 1px rgba(17,18,16,.08); z-index:5;}
+  .cmp-handle .knob{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:46px; height:46px; border-radius:50%; background:#fff; box-shadow:0 8px 24px -8px rgba(17,18,16,.4); display:grid; place-items:center; color:var(--ink); font-size:1rem; letter-spacing:-2px;}
+  .cmp-cap{position:absolute; bottom:1rem; font-family:var(--mono); font-size:.66rem; letter-spacing:.04em; text-transform:uppercase; background:rgba(255,255,255,.92); color:var(--ink-60); padding:.4rem .8rem; border-radius:var(--pill); z-index:4;}
+  .cmp-cap.l{left:1rem;} .cmp-cap.r{right:1rem; background:var(--ink); color:#fff;}
+  .cmp-hint{animation:nudge 2.4s ease 1;}
+  @keyframes nudge{0%{--pos:56%;}30%{--pos:68%;}60%{--pos:46%;}100%{--pos:56%;}}
+
+  /* PROBLEM punch */
+  .punch{max-width:40rem;}
+  .punch h2{font-size:clamp(2.1rem,4.4vw,3.5rem); letter-spacing:-.035em; line-height:1.0;}
+  .punch .em{color:var(--accent);}
+  .punch-body{font-size:clamp(1.15rem,1.9vw,1.5rem); color:var(--ink-60); max-width:50ch; margin-top:1.8rem; line-height:1.45; font-weight:400;}
+
+  /* THOUGHTS */
+  .think-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.4rem,3vw,3rem); align-items:center; margin-top:clamp(2rem,4vw,3rem);}
+  .think-col h3{font-size:1.1rem; font-weight:500; color:var(--ink-40); margin-bottom:1.2rem; font-family:var(--mono); font-size:.76rem; letter-spacing:.06em; text-transform:uppercase;}
+  .bubble{background:var(--bg-soft); border-radius:16px 16px 16px 4px; padding:.9rem 1.2rem; font-size:1.05rem; color:var(--ink-60); margin-bottom:.8rem; max-width:30ch;}
+  .think-col.after .bubble{background:var(--ink); color:#fff; border-radius:16px 16px 4px 16px; margin-left:auto;}
+
+  /* SERVICE reframe */
+  .reframe{text-align:center; max-width:34rem; margin:0 auto;}
+  .reframe h2{font-size:clamp(2.2rem,5vw,3.8rem); letter-spacing:-.035em;}
+  .reframe h2 .strike{color:var(--ink-40); text-decoration:line-through; text-decoration-thickness:2px;}
+  .reframe-list{display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem; margin-top:2rem;}
+  .reframe-list span{font-size:.95rem; color:var(--ink-60); background:var(--bg-soft); border:1px solid var(--line-soft); padding:.5rem 1.1rem; border-radius:var(--pill);}
+  .reframe-p{font-size:1.1rem; color:var(--ink-60); max-width:50ch; margin:2rem auto 0;}
+
+  /* METHOD */
+  .method{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.1rem,2vw,1.6rem);}
+  .mstep{border-top:1px solid var(--ink); padding-top:1.4rem;}
+  .mstep .mn{font-family:var(--mono); font-size:.76rem; color:var(--accent); letter-spacing:.04em;}
+  .mstep h3{font-size:1.5rem; font-weight:500; letter-spacing:-.025em; margin:1.4rem 0 .7rem;}
+  .mstep p{font-size:1rem;}
+
+  /* WORK proof */
+  .work{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.1rem,2vw,1.6rem);}
+  .wcard{background:var(--bg-soft); border-radius:var(--r-card); overflow:hidden;}
+  .wcard .thumb{aspect-ratio:4/3; background:var(--card-mute); display:grid; place-items:center; position:relative;}
+  .wcard .thumb .mini{width:78%; box-shadow:0 14px 30px -18px rgba(17,18,16,.4);}
+  .wcard .thumb .ph{position:absolute; bottom:.7rem; left:.7rem; font-family:var(--mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-40); background:rgba(255,255,255,.85); padding:.25rem .6rem; border-radius:var(--pill);}
+  .wcard .wmeta{padding:1.2rem 1.3rem 1.4rem;}
+  .wcard .wt{font-weight:500; font-size:1.05rem; letter-spacing:-.01em;}
+  .wcard .wd{font-size:.9rem; color:var(--ink-60); margin-top:.25rem;}
+  .work-note{font-family:var(--mono); font-size:.72rem; color:var(--ink-40); margin-top:1.6rem; text-align:center;}
+
+  /* FOUNDER */
+  .founder{background:var(--bg-soft); border-radius:var(--r-media); padding:clamp(2.2rem,4vw,3.8rem);}
+  .founder-in{display:grid; grid-template-columns:auto 1fr; gap:clamp(1.4rem,3vw,2.6rem); align-items:start;}
+  .f-mk{width:84px; height:84px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-size:1.9rem; font-weight:500; flex:0 0 auto;}
+  .f-q{font-size:clamp(1.3rem,2.5vw,1.95rem); font-weight:400; letter-spacing:-.02em; line-height:1.3; color:var(--ink);}
+  .f-w{font-family:var(--mono); font-size:.76rem; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-40); margin-top:1.2rem;}
+
+  /* MATHS */
+  .maths-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(.8rem,1.5vw,1.1rem); margin-top:clamp(2rem,3vw,2.6rem);}
+  .mcard{background:var(--bg-soft); border-radius:var(--r-card); padding:1.6rem 1.4rem;}
+  .mcard .mv{font-size:1.7rem; font-weight:600; letter-spacing:-.03em; color:var(--accent);}
+  .mcard .ml{font-size:.92rem; color:var(--ink-60); margin-top:.3rem;}
+  .maths-p{font-size:clamp(1.2rem,2vw,1.6rem); color:var(--ink); max-width:48ch; margin-top:clamp(2rem,3vw,2.6rem); font-weight:400; letter-spacing:-.015em; line-height:1.4;}
+
+  /* PRICING */
+  .price-intro{max-width:50ch; margin-bottom:clamp(2rem,3vw,2.6rem);}
+  .price-intro .big{font-size:clamp(1.3rem,2.2vw,1.7rem); color:var(--ink); font-weight:400; letter-spacing:-.015em;}
+  .price{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.2rem,2.5vw,1.8rem);}
+  .pcard{border-radius:var(--r-media); padding:clamp(1.9rem,3vw,2.6rem); display:flex; flex-direction:column;}
+  .pcard.one{background:var(--bg); border:1px solid var(--line);}
+  .pcard.five{background:var(--ink); color:#fff;}
+  .pcard.five p,.pcard.five .pinc li{color:rgba(255,255,255,.7);}
+  .pflag{font-family:var(--mono); font-size:.74rem; letter-spacing:.04em; text-transform:uppercase; color:var(--accent);}
+  .pcard.five .pflag{color:#D8D5CE;}
+  .pname{font-size:1.6rem; font-weight:500; letter-spacing:-.025em; margin:.6rem 0 .3rem;}
+  .pfrom{font-size:1.5rem; font-weight:600; letter-spacing:-.03em;}
+  .pfrom .c{font-size:.85rem; font-weight:400; color:var(--ink-40);}
+  .pcard.five .pfrom .c{color:rgba(255,255,255,.5);}
+  .pdesc{font-size:.98rem; margin:.9rem 0 1.5rem;}
+  .pinc{list-style:none; display:flex; flex-direction:column; gap:.5rem; margin-bottom:1.8rem; flex:1;}
+  .pinc li{font-size:.92rem; color:var(--ink-60); display:flex; gap:.6rem; align-items:flex-start;}
+  .pinc li .ck{color:var(--accent); flex:0 0 auto;}
+  .pcard.five .pinc li .ck{color:#D8D5CE;}
+  .pcard .btn{width:100%; justify-content:center;}
+  .scarcity{margin-top:1.4rem; border:1px solid var(--line); border-radius:var(--r-card); padding:1.3rem 1.7rem; display:flex; gap:.8rem; align-items:center; font-size:1rem; color:var(--ink);}
+  .scarcity .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:0 0 auto; box-shadow:0 0 0 4px rgba(17,18,16,.12);}
+  .ongoing{margin-top:1rem; font-size:.92rem; color:var(--ink-40);}
+
+  /* FAQ */
+  .faq{display:grid; grid-template-columns:.62fr 1.38fr; gap:clamp(2rem,4vw,4rem); align-items:start;}
+  .faq-l{border-top:1px solid var(--line);}
+  .faq-i{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%; text-align:left; background:none; border:0; cursor:pointer; padding:1.5rem 0; display:flex; justify-content:space-between; align-items:center; gap:1rem; font-family:var(--f); font-size:1.15rem; font-weight:500; letter-spacing:-.02em; color:var(--ink);}
+  .faq-q .pm{flex:0 0 auto; width:24px; height:24px; position:relative;}
+  .faq-q .pm::before,.faq-q .pm::after{content:""; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:var(--ink-40); transition:.25s;}
+  .faq-q .pm::before{width:12px; height:1.5px;}
+  .faq-q .pm::after{width:1.5px; height:12px;}
+  .faq-i.open .pm::after{transform:translate(-50%,-50%) scaleY(0);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+  .faq-a p{padding:0 0 1.5rem; font-size:1rem; max-width:64ch;}
+
+  /* CONTACT */
+  .c-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,4.5rem); align-items:start;}
+  .contact h2{max-width:15ch;}
+  .c-sub{color:var(--ink-60); font-size:1.06rem; margin-top:1.3rem; max-width:44ch;}
+  .c-pts{list-style:none; margin-top:1.8rem; display:flex; flex-direction:column; gap:.7rem;}
+  .c-pts li{display:flex; gap:.7rem; align-items:flex-start; font-size:.98rem; color:var(--ink-60);}
+  .c-pts li .ic{width:20px; height:20px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-size:.62rem; flex:0 0 auto; margin-top:.1rem;}
+  .form{display:flex; flex-direction:column; gap:.9rem;}
+  .field label{display:block; font-size:.82rem; color:var(--ink-60); margin-bottom:.45rem;}
+  .field input,.field textarea{width:100%; background:var(--bg); border:1px solid var(--line); border-radius:var(--r-btn); padding:.85rem 1.1rem; color:var(--ink); font-family:var(--f); font-size:1rem; transition:.2s;}
+  .field input::placeholder,.field textarea::placeholder{color:var(--ink-40);}
+  .field input:focus,.field textarea:focus{outline:none; border-color:var(--ink);}
+  .field textarea{resize:vertical; min-height:78px;}
+  .form .btn{justify-content:center; margin-top:.3rem;}
+  .fnote{display:none; font-size:.95rem; padding:1rem 1.2rem; border-radius:var(--r-btn);}
+  .fnote.ok{display:block; background:var(--bg-soft); border:1px solid var(--line); color:var(--ink);}
+  .fnote.err{display:block; background:var(--bg-soft); border:1px solid var(--accent); color:var(--ink);}
+  .hp{position:absolute; left:-9999px;}
+
+  .foot{border-top:1px solid var(--line); padding:clamp(3rem,5vw,4.5rem) 0 2rem;}
+  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:clamp(2rem,4vw,4rem); padding-bottom:2.6rem;}
+  .foot-brand{display:flex; align-items:center; gap:.55rem; font-size:1.3rem; font-weight:600; letter-spacing:-.03em;}
+  .foot-brand .mk{width:28px; height:28px; border-radius:8px; background:var(--ink); display:grid; place-items:center; color:#fff; font-size:.76rem;}
+  .foot-sub{color:var(--ink-60); margin-top:.9rem; max-width:40ch; font-size:.97rem;}
+  .foot-col h4{font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40); margin-bottom:1rem; font-weight:400;}
+  .foot-col a,.foot-col p{display:block; font-size:.95rem; color:var(--ink-60); margin-bottom:.55rem;}
+  .foot-col a:hover{color:var(--ink);}
+  .foot-bottom{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; padding-top:2rem; margin-top:0; border-top:1px solid var(--line-soft); font-family:var(--mono); font-size:.72rem; color:var(--ink-40);}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1; transform:none;}
+  .stagger > *{opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
+  .stagger.in > *{opacity:1; transform:none;}
+  .stagger.in > *:nth-child(2){transition-delay:.09s;}
+  .stagger.in > *:nth-child(3){transition-delay:.18s;}
+  .stagger.in > *:nth-child(4){transition-delay:.27s;}
+  @media (prefers-reduced-motion:reduce){.reveal,.stagger>*{opacity:1!important; transform:none!important; transition:none!important;} html{scroll-behavior:auto;} .cmp-hint{animation:none;}}
+
+  @media (max-width:900px){
+    .nav-links{display:none;} .burger{display:flex;}
+    .think-grid{grid-template-columns:1fr; gap:1.4rem;}
+    .method{grid-template-columns:1fr;}
+    .work{grid-template-columns:1fr;}
+    .founder-in{grid-template-columns:1fr;}
+    .maths-grid{grid-template-columns:1fr 1fr;}
+    .price{grid-template-columns:1fr;}
+    .faq{grid-template-columns:1fr; gap:1.5rem;}
+    .c-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){ .maths-grid{grid-template-columns:1fr;} .foot-grid{grid-template-columns:1fr;} }
+
+  @property --pos{ syntax:'<percentage>'; inherits:false; initial-value:56%; }
+  .compare{ aspect-ratio:auto; height:clamp(380px,58vw,640px); background:#fff; }
+  .cmp-after,.cmp-before{ padding:0; }
+  .cmp-frame{ width:100%; height:100%; border:0; pointer-events:none; display:block; background:#fff; }
+  .cmp-img{ width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+
+  .ba-real{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1rem,2.5vw,1.8rem); }
+  .ba-item{ margin:0; }
+  .ba-tag{ display:inline-block; font-family:var(--mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-60); margin-bottom:.85rem; padding:.32rem .85rem; border:1px solid var(--line); border-radius:var(--pill); }
+  .ba-tag.after{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .ba-frame{ position:relative; overflow:hidden; border-radius:var(--r-media); border:1px solid var(--line); background:#fff; aspect-ratio:1300 / 668; }
+  .ba-img{ width:100%; height:100%; object-fit:contain; display:block; }
+  .ba-shot{ position:absolute; top:0; left:0; width:1280px; transform-origin:top left; }
+  .ba-iframe{ width:1280px; border:0; display:block; background:#fff; }
+  .ba-item figcaption{ font-size:.92rem; color:var(--ink-60); margin-top:.9rem; }
+  @media (max-width:900px){ .ba-real{ grid-template-columns:1fr; } }
+  /* --- carry the hero's typographic confidence across the whole page --- */
+  h2{ font-size:clamp(2.25rem,5vw,3.9rem); letter-spacing:-.038em; line-height:.98; }
+  h3{ letter-spacing:-.025em; }
+  .shead .eyebrow{ margin-bottom:1.1rem; }
+  .reframe h2{ font-size:clamp(2.3rem,5.2vw,4rem); }
+  .reframe-p{ font-size:clamp(1.15rem,1.7vw,1.45rem); line-height:1.45; }
+  .punch-body{ font-size:clamp(1.2rem,2vw,1.55rem); }
+  .c-sub{ font-size:clamp(1.12rem,1.6vw,1.32rem); line-height:1.45; }
+  .faq .reveal p{ font-size:1.12rem; line-height:1.5; }
+  .price-intro .big{ font-size:clamp(1.35rem,2.2vw,1.85rem); line-height:1.32; }
+  .method .mstep h3{ font-size:clamp(1.5rem,2.2vw,1.9rem); }
+  .method .mstep p{ font-size:1.07rem; }
+  .wcard .wt{ font-size:1.18rem; }
+  .wcard .wd{ font-size:.98rem; }
+  .pname{ font-size:clamp(1.5rem,2.2vw,1.95rem); }
+  .pdesc{ font-size:1.05rem; }
+  .pinc li{ font-size:.99rem; }
+  .scarcity{ font-size:1.06rem; }
+  .faq-q{ font-size:clamp(1.18rem,1.8vw,1.45rem); }
+  .faq-a p{ font-size:1.07rem; line-height:1.55; }
+  .mcard .mv{ font-size:clamp(1.7rem,2.6vw,2.2rem); }
+  .mcard .ml{ font-size:1rem; }
+  .bubble{ font-size:1.12rem; }
+  .f-q{ font-size:clamp(1.35rem,2.6vw,2.05rem); }
+  .maths-p{ font-size:clamp(1.25rem,2.1vw,1.7rem); }
+
+  /* REVENUE CALCULATOR */
+  .calc{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.2rem,2.5vw,1.8rem); align-items:stretch; margin-top:clamp(2rem,3vw,2.6rem); }
+  .calc .cl{ display:flex; flex-direction:column; gap:1.4rem; background:var(--bg-soft); border-radius:var(--r-card); padding:clamp(1.6rem,3vw,2.2rem); }
+  .calc h4{ font-size:1.2rem; font-weight:500; letter-spacing:-.01em; }
+  .calc .chint{ font-size:.96rem; color:var(--ink-60); margin-top:.4rem; }
+  .ctrl label{ display:block; font-size:.9rem; color:var(--ink-60); margin-bottom:.55rem; }
+  .money{ display:flex; align-items:center; background:#fff; border:1px solid var(--line); border-radius:var(--r-btn); padding:.2rem 1rem; transition:border-color .2s; }
+  .money:focus-within{ border-color:var(--ink); }
+  .money span{ color:var(--ink-40); font-size:1.05rem; }
+  .money input{ background:none; border:0; color:var(--ink); font-family:var(--f); font-size:1.25rem; font-weight:600; padding:.7rem .4rem; width:100%; outline:none; }
+  .slider-row{ display:flex; align-items:center; justify-content:space-between; margin-bottom:.7rem; }
+  .slider-row .sv{ font-weight:600; font-size:1.25rem; }
+  .calc input[type=range]{ -webkit-appearance:none; appearance:none; width:100%; height:5px; border-radius:5px; background:var(--line); outline:none; }
+  .calc input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:24px; height:24px; border-radius:50%; background:var(--ink); cursor:pointer; border:4px solid var(--bg-soft); box-shadow:0 0 0 1px var(--line); }
+  .calc input[type=range]::-moz-range-thumb{ width:24px; height:24px; border-radius:50%; background:var(--ink); cursor:pointer; border:4px solid var(--bg-soft); }
+  .calc .cr{ background:var(--ink); color:#fff; border-radius:var(--r-card); padding:clamp(1.8rem,3vw,2.4rem); display:flex; flex-direction:column; justify-content:center; }
+  .res{ padding:1.2rem 0; border-bottom:1px solid rgba(255,255,255,.18); }
+  .res:last-child{ border-bottom:0; padding-bottom:0; }
+  .res .rk{ font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,.55); }
+  .res .rv{ font-size:clamp(2.2rem,4vw,3rem); font-weight:600; letter-spacing:-.03em; line-height:1; margin-top:.4rem; }
+  .calc-note{ font-size:1rem; color:var(--ink-40); margin-top:1.6rem; }
+  @media (max-width:900px){ .calc{ grid-template-columns:1fr; } }
+
+  /* SOCIALS */
+  .soc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1rem,2vw,1.6rem); }
+  .soc-card{ background:var(--bg-soft); border-radius:var(--r-card); padding:clamp(1.6rem,2.5vw,2.2rem); }
+  .soc-card .soc-l{ font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40); }
+  .soc-card h3{ font-size:1.3rem; font-weight:500; letter-spacing:-.02em; line-height:1.12; margin:1rem 0 .7rem; }
+  .soc-card p{ font-size:1rem; color:var(--ink-60); }
+  @media (max-width:900px){ .soc-grid{ grid-template-columns:1fr; } }
+
+  /* AUDIT CASE STUDIES */
+  .case{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.6rem,3.5vw,3.5rem); align-items:center; }
+  .case + .case{ margin-top:clamp(3rem,6vw,5rem); }
+  .case-media .mock{ max-width:none; }
+  .audit{ display:flex; flex-direction:column; gap:1.15rem; margin-top:1.4rem; }
+  .audit-row{ padding-left:1.1rem; border-left:2px solid var(--line); }
+  .audit-row.fix{ border-left-color:var(--ink); }
+  .audit-row .lab{ font-family:var(--mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40); margin-bottom:.4rem; }
+  .audit-row p{ font-size:1.02rem; color:var(--ink-60); margin:0; line-height:1.5; }
+  .cap-mono{ font-family:var(--mono); font-size:.6rem; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-40); text-align:center; margin-top:.8rem; }
+  @media (max-width:900px){ .case{ grid-template-columns:1fr; } .case .case-media{ order:-1; } }
+
+  /* IMAGE CONVERSION */
+  .imgflow{ display:flex; align-items:center; justify-content:center; gap:clamp(.9rem,2.2vw,1.8rem); flex-wrap:wrap; }
+  .phone{ width:118px; flex:0 0 auto; border-radius:22px; border:1px solid var(--line); background:#fff; padding:7px; box-shadow:0 18px 36px -22px rgba(17,18,16,.5); }
+  .phone .scr{ border-radius:15px; aspect-ratio:9/16; background:repeating-linear-gradient(135deg,#d8d3c8,#d8d3c8 9px,#cdc7bb 9px,#cdc7bb 18px); }
+  .flow-arrow{ font-size:1.5rem; color:var(--ink-40); flex:0 0 auto; }
+  .shot-img{ aspect-ratio:16/10; border-radius:8px; background:linear-gradient(120deg,#2c2c28,#0e0f0d); position:relative; overflow:hidden; }
+  .shot-img::after{ content:""; position:absolute; inset:0; background:radial-gradient(circle at 28% 26%, rgba(255,255,255,.14), transparent 58%); }
+  @media (max-width:560px){ .flow-arrow{ transform:rotate(90deg); } }
+</style>
+</head>
+<body id="top">
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html#top" class="brand"><span class="mk">se</span>The Service Edit</a>
+    <nav class="nav-links">
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-r">
+      <a href="contact.html" class="btn btn-primary">Get a free concept</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <a href="work.html">Work</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="about.html">About</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html" class="btn btn-primary">Get a free concept</a>
+</div>
+
+<main>
+  <!-- PAGE HEAD -->
+  <section class="wrap pad" style="padding-bottom:clamp(2rem,4vw,3rem);">
+    <div class="shead reveal" style="max-width:42rem;">
+      <span class="eyebrow">Concept Builds</span>
+      <h2>Real mockups. Built before a client spends a dollar.</h2>
+      <p style="margin-top:1.2rem; font-size:clamp(1.12rem,1.6vw,1.32rem); line-height:1.45;">This is our sales process, in the open. Every build below is an unsolicited redesign concept, made to show a real service business what's possible before any money changes hands. It's also the best proof we can give you of how we think.</p>
+      <div class="reveal" style="border:1px solid var(--line); border-radius:var(--r-card); padding:1.2rem 1.5rem; font-size:.95rem; color:var(--ink-60); margin-top:1.8rem; max-width:62ch;">
+        <strong style="color:var(--ink); font-weight:600;">Independent concepts.</strong> Everything on this page is an unsolicited design concept created by The Service Edit. These are not official websites, and we are not affiliated with or endorsed by the businesses shown. If your business is featured here and you'd prefer the concept removed, email <a href="mailto:hello@theserviceedit.com" style="color:var(--ink); text-decoration:underline; text-underline-offset:3px;">hello@theserviceedit.com</a> and we'll take it down promptly.
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 1 -->
+  <section class="wrap pad" style="padding-top:0;">
+    <div class="case">
+      <div class="case-media reveal">
+        <div class="mock"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">concept &middot; theserviceedit.com</span></div>
+          <div class="mbody" style="min-height:210px;">
+            <div class="a-nav"><span class="a-logo">Tower Carpentry</span><div class="a-links"><span></span><span></span><span></span></div></div>
+            <div class="a-h">Built to last. Finished to impress.</div>
+            <div class="a-sub s1"></div><div class="a-sub s2"></div>
+            <span class="a-btn">Get a quote</span>
+            <div class="a-row"><div class="a-card"></div><div class="a-card"></div><div class="a-card"></div></div>
+          </div>
+        </div>
+        <p class="cap-mono">Drop the concept screenshot in here</p>
+      </div>
+      <div class="reveal" style="transition-delay:.08s;">
+        <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">Tower Carpentry</h3>
+        <div class="audit">
+          <div class="audit-row prob">
+            <div class="lab">What's holding it back</div>
+            <p>The work is clearly high quality, but the online presence doesn't show it. There's no clear next step for a visitor, and nothing that signals craftsmanship in the first few seconds.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">The concept</div>
+            <p>A clean, photo-led homepage with one obvious action, plain-English copy, and room for the workmanship to carry the page.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">Why it works</div>
+            <p>Premium work needs a premium first impression. The concept sets that expectation before the first call, so the conversation starts with quality, not price.</p>
+          </div>
+        </div>
+        <p style="margin-top:1.2rem; font-size:.82rem; color:var(--ink-40);">Unsolicited concept. Not affiliated with or endorsed by Tower Carpentry.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 2 -->
+  <section class="wrap pad" style="padding-top:0;">
+    <div class="case">
+      <div class="case-media reveal">
+        <div class="mock"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">concept &middot; theserviceedit.com</span></div>
+          <div class="mbody" style="min-height:210px;">
+            <div class="a-nav"><span class="a-logo">JMA</span><div class="a-links"><span></span><span></span><span></span></div></div>
+            <div class="a-h">Trusted work, done properly.</div>
+            <div class="a-sub s1"></div><div class="a-sub s2"></div>
+            <span class="a-btn">Request a quote</span>
+            <div class="a-row"><div class="a-card"></div><div class="a-card"></div><div class="a-card"></div></div>
+          </div>
+        </div>
+        <p class="cap-mono">Drop the concept screenshot in here</p>
+      </div>
+      <div class="reveal" style="transition-delay:.08s;">
+        <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">JMA</h3>
+        <div class="audit">
+          <div class="audit-row prob">
+            <div class="lab">What's holding it back</div>
+            <p>A capable business that's hard to read at a glance. It's not immediately clear what they do, who they do it for, or why to trust them over the next option.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">The concept</div>
+            <p>A structured homepage that answers those three questions up front, with clear services and trust signals where they matter most.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">Why it works</div>
+            <p>People decide in seconds. When the page does the explaining for them, they spend that time deciding to enquire instead of working out what you actually offer.</p>
+          </div>
+        </div>
+        <p style="margin-top:1.2rem; font-size:.82rem; color:var(--ink-40);">Unsolicited concept. Not affiliated with or endorsed by JMA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 3 -->
+  <section class="wrap pad" style="padding-top:0;">
+    <div class="case">
+      <div class="case-media reveal">
+        <div class="mock"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">concept &middot; theserviceedit.com</span></div>
+          <div class="mbody" style="min-height:210px;">
+            <div class="a-nav"><span class="a-logo">Fixing Carpentry WA</span><div class="a-links"><span></span><span></span><span></span></div></div>
+            <div class="a-h">Repairs and joinery you can rely on.</div>
+            <div class="a-sub s1"></div><div class="a-sub s2"></div>
+            <span class="a-btn">Get a quote</span>
+            <div class="a-row"><div class="a-card"></div><div class="a-card"></div><div class="a-card"></div></div>
+          </div>
+        </div>
+        <p class="cap-mono">Drop the concept screenshot in here</p>
+      </div>
+      <div class="reveal" style="transition-delay:.08s;">
+        <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">Fixing Carpentry WA</h3>
+        <div class="audit">
+          <div class="audit-row prob">
+            <div class="lab">What's holding it back</div>
+            <p>Plenty of local demand, but the online presence doesn't build confidence. There's little to reassure a homeowner that this is the safe, reliable choice.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">The concept</div>
+            <p>A warmer, trust-first homepage that leads with reliability, makes getting a quote effortless, and shows the breadth of work clearly.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">Why it works</div>
+            <p>For home repairs, trust is the whole sale. A site that feels dependable turns a cautious browser into a confident enquiry.</p>
+          </div>
+        </div>
+        <p style="margin-top:1.2rem; font-size:.82rem; color:var(--ink-40);">Unsolicited concept. Not affiliated with or endorsed by Fixing Carpentry WA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 4 -->
+  <section class="wrap pad" style="padding-top:0;">
+    <div class="case">
+      <div class="case-media reveal">
+        <div class="mock"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">concept &middot; theserviceedit.com</span></div>
+          <div class="mbody" style="min-height:210px;">
+            <div class="a-nav"><span class="a-logo">Blocked Up Plumbing</span><div class="a-links"><span></span><span></span><span></span></div></div>
+            <div class="a-h">Fast, fair, no-mess plumbing.</div>
+            <div class="a-sub s1"></div><div class="a-sub s2"></div>
+            <span class="a-btn">Book a plumber</span>
+            <div class="a-row"><div class="a-card"></div><div class="a-card"></div><div class="a-card"></div></div>
+          </div>
+        </div>
+        <p class="cap-mono">Drop the concept screenshot in here</p>
+      </div>
+      <div class="reveal" style="transition-delay:.08s;">
+        <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">Blocked Up Plumbing</h3>
+        <div class="audit">
+          <div class="audit-row prob">
+            <div class="lab">What's holding it back</div>
+            <p>Plumbing is urgent and local, but the site makes people hunt for the one thing they need in a hurry: a fast way to get someone out.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">The concept</div>
+            <p>A clear, mobile-first homepage with the phone number and booking action front and centre, and the service area obvious at a glance.</p>
+          </div>
+          <div class="audit-row fix">
+            <div class="lab">Why it works</div>
+            <p>When someone has water on the floor, they pick whoever's easiest to call. The concept is built to be that business.</p>
+          </div>
+        </div>
+        <p style="margin-top:1.2rem; font-size:.82rem; color:var(--ink-40);">Unsolicited concept. Not affiliated with or endorsed by Blocked Up Plumbing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW THIS WORKS -->
+  <section class="wrap pad" style="padding-top:0;">
+    <div class="punch reveal">
+      <h2>This is the offer, not a portfolio trick.</h2>
+    </div>
+    <p class="punch-body reveal">We'd rather show you than tell you. If you run a service business, we'll build a concept like one of these for your homepage, free, before you decide anything. If you love it, we build it. If you don't, you keep the idea.</p>
+  </section>
+
+  <!-- CTA -->
+  <section class="wrap pad" style="padding-top:0;">
+    <div class="reveal" style="background:var(--ink); color:#fff; border-radius:var(--r-media); padding:clamp(2.2rem,4vw,3.6rem); text-align:center;">
+      <span class="eyebrow" style="color:rgba(255,255,255,.5);">Your turn</span>
+      <h2 style="color:#fff; max-width:22ch; margin:1rem auto 1.6rem;">Want a concept like these, for free?</h2>
+      <a href="contact.html" class="btn btn-light">Get my free homepage concept &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand"><span class="mk">se</span>The Service Edit</div>
+      <p class="foot-sub">We take outdated service businesses and turn them into brands people trust online.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h4>Get in touch</h4>
+      <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
+      <p>Perth based</p>
+      <p>Working Australia-wide</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; <span id="yr"></span> The Service Edit. ABN 88 429 285 575.</span>
+    <span>You built the business. We build the trust.</span>
+  </div>
+</footer>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 10); });
+  var burger = document.getElementById('burger'), mmenu = document.getElementById('mmenu');
+  burger.addEventListener('click', function(){ mmenu.classList.toggle('open'); document.body.style.overflow = mmenu.classList.contains('open') ? 'hidden' : ''; });
+  mmenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mmenu.classList.remove('open'); document.body.style.overflow=''; }); });
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = q.closest('.faq-i'), ans = item.querySelector('.faq-a'), open = item.classList.contains('open');
+      document.querySelectorAll('.faq-i').forEach(function(i){ i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+      if(!open){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+    });
+  });
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold:.1, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .stagger').forEach(function(el){ io.observe(el); });
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N6KWBFDZ30"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N6KWBFDZ30');
+</script>
+</body>
+</html>

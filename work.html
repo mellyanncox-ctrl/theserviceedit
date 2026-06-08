@@ -346,6 +346,11 @@
   .shot-img{ aspect-ratio:16/10; border-radius:8px; background:linear-gradient(120deg,#2c2c28,#0e0f0d); position:relative; overflow:hidden; }
   .shot-img::after{ content:""; position:absolute; inset:0; background:radial-gradient(circle at 28% 26%, rgba(255,255,255,.14), transparent 58%); }
   @media (max-width:560px){ .flow-arrow{ transform:rotate(90deg); } }
+
+  /* MEAT MERCHANT 3-COL AUDIT */
+  .audit-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.4rem,3vw,2.4rem); margin-top:clamp(1.9rem,3.5vw,2.8rem); }
+  .audit-3 .audit-row{ margin:0; }
+  @media (max-width:760px){ .audit-3{ grid-template-columns:1fr; gap:1.1rem; } }
 </style>
 </head>
 <body id="top">
@@ -446,40 +451,32 @@
     </div>
 
     <!-- MEAT MERCHANT -->
-    <div class="case" style="margin-top:clamp(3rem,6vw,5rem);">
-      <div class="case-media reveal">
-        <div class="ba-real">
-          <figure class="ba-item">
-            <span class="ba-tag">Before</span>
-            <div class="ba-frame"><img class="ba-img" src="meat-merchant-before.png" alt="Meat Merchant's previous website" loading="lazy" /></div>
-          </figure>
-          <figure class="ba-item">
-            <span class="ba-tag after">After</span>
-            <div class="ba-frame" style="background:var(--bg-soft); display:grid; place-items:center; text-align:center;">
-              <span class="cap-mono" style="margin:0; padding:1rem;">Drop a screenshot of the live store here</span>
-            </div>
-          </figure>
-        </div>
-        <p class="cap-mono" style="margin-top:.9rem;">Now live on Shopify &middot; <a href="https://www.meatmerchantonline.com.au/" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:underline; text-underline-offset:3px;">view the live store</a></p>
+    <div style="margin-top:clamp(3rem,6vw,5rem);">
+      <h3 class="reveal" style="font-size:clamp(1.6rem,2.6vw,2.1rem); margin-bottom:clamp(1.4rem,3vw,2rem);">Meat Merchant</h3>
+      <div class="ba-real reveal">
+        <figure class="ba-item">
+          <span class="ba-tag">Before</span>
+          <div class="ba-frame"><img class="ba-img" src="meat-merchant-before.png" alt="Meat Merchant's previous website" loading="lazy" /></div>
+          <figcaption>The previous site.</figcaption>
+        </figure>
+        <figure class="ba-item">
+          <span class="ba-tag after">After &middot; live</span>
+          <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://www.meatmerchantonline.com.au/" title="Meat Merchant, rebuilt by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></div></div>
+          <figcaption>The live store, rebuilt. Scroll inside the frame to explore.</figcaption>
+        </figure>
       </div>
-      <div class="reveal" style="transition-delay:.08s;">
-        <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">Meat Merchant</h3>
-        <div class="audit">
-          <div class="audit-row prob">
-            <div class="lab">The problem</div>
-            <p>A well-known Casuarina butcher with an online store that looked the part but didn't push people to buy. The path to actually ordering wasn't obvious, and there was little urgency or reassurance to turn a browser into a checkout.</p>
-          </div>
-          <div class="audit-row fix">
-            <div class="lab">What we changed</div>
-            <p>We rebuilt the store around how people actually buy meat: a clear "Build Your Box", easy subscriptions, honest sourcing front and centre, delivery zones made obvious, and real customer reviews where they count.</p>
-          </div>
-          <div class="audit-row fix">
-            <div class="lab">Why it converts</div>
-            <p>Every block now answers a buying question, from "is this good meat?" to "do you deliver to me?", so the store does the selling and the customer just has to add to box.</p>
-          </div>
+      <div class="audit-3 reveal">
+        <div class="audit-row prob">
+          <div class="lab">The problem</div>
+          <p>A well-known Casuarina butcher with an online store that looked the part but didn't push people to buy. The path to actually ordering wasn't obvious, and there was little urgency or reassurance to turn a browser into a checkout.</p>
         </div>
-        <div style="margin-top:1.8rem;">
-          <a href="https://www.meatmerchantonline.com.au/" target="_blank" rel="noopener" class="btn btn-primary">View the live store <span class="a">&rarr;</span></a>
+        <div class="audit-row fix">
+          <div class="lab">What we changed</div>
+          <p>We rebuilt the store around how people actually buy meat: a clear "Build Your Box", easy subscriptions, honest sourcing front and centre, delivery zones made obvious, and real customer reviews where they count.</p>
+        </div>
+        <div class="audit-row fix">
+          <div class="lab">Why it converts</div>
+          <p>Every block now answers a buying question, from "is this good meat?" to "do you deliver to me?", so the store does the selling and the customer just has to add to box.</p>
         </div>
       </div>
     </div>
@@ -501,7 +498,7 @@
       <figure class="case-media ba-item reveal">
         <span class="ba-tag after">Concept build &middot; live</span>
         <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://the-service-edit.github.io/fcwa/" title="Fixing Carpentry WA concept by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
-        <figcaption>Live concept by The Service Edit. Scroll inside the frame, or <a href="https://the-service-edit.github.io/fcwa/" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:underline; text-underline-offset:3px;">open it full screen</a>.</figcaption>
+        <figcaption>Live concept by The Service Edit. Scroll inside the frame to explore.</figcaption>
       </figure>
       <div class="reveal" style="transition-delay:.08s;">
         <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">Fixing Carpentry WA</h3>
@@ -528,7 +525,7 @@
       <figure class="case-media ba-item reveal">
         <span class="ba-tag after">Concept build &middot; live</span>
         <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://the-service-edit.github.io/tower-carpentry/" title="Tower Carpentry concept by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
-        <figcaption>Live concept by The Service Edit. Scroll inside the frame, or <a href="https://the-service-edit.github.io/tower-carpentry/" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:underline; text-underline-offset:3px;">open it full screen</a>.</figcaption>
+        <figcaption>Live concept by The Service Edit. Scroll inside the frame to explore.</figcaption>
       </figure>
       <div class="reveal" style="transition-delay:.08s;">
         <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">Tower Carpentry</h3>
@@ -555,7 +552,7 @@
       <figure class="case-media ba-item reveal">
         <span class="ba-tag after">Concept build &middot; live</span>
         <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://the-service-edit.github.io/king-carpentry-wa/" title="King Carpentry WA concept by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
-        <figcaption>Live concept by The Service Edit. Scroll inside the frame, or <a href="https://the-service-edit.github.io/king-carpentry-wa/" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:underline; text-underline-offset:3px;">open it full screen</a>.</figcaption>
+        <figcaption>Live concept by The Service Edit. Scroll inside the frame to explore.</figcaption>
       </figure>
       <div class="reveal" style="transition-delay:.08s;">
         <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">King Carpentry WA</h3>
@@ -582,7 +579,7 @@
       <figure class="case-media ba-item reveal">
         <span class="ba-tag after">Concept build &middot; live</span>
         <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://the-service-edit.github.io/jma-group/" title="JMA Group concept by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
-        <figcaption>Live concept by The Service Edit. Scroll inside the frame, or <a href="https://the-service-edit.github.io/jma-group/" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:underline; text-underline-offset:3px;">open it full screen</a>.</figcaption>
+        <figcaption>Live concept by The Service Edit. Scroll inside the frame to explore.</figcaption>
       </figure>
       <div class="reveal" style="transition-delay:.08s;">
         <h3 style="font-size:clamp(1.6rem,2.6vw,2.1rem);">JMA Group</h3>

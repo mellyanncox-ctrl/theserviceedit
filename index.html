@@ -70,12 +70,51 @@
   .shead .eyebrow{display:block; margin-bottom:1rem;}
 
   /* HERO */
-  .hero{text-align:center; padding-top:clamp(3.5rem,8vw,7rem); padding-bottom:clamp(2rem,4vw,3rem);}
+  .hero{text-align:center; padding-top:clamp(3.5rem,8vw,7rem); padding-bottom:clamp(3rem,6vw,5rem);}
   .hero .eyebrow{display:inline-block; margin-bottom:1.8rem;}
   .hero h1{font-size:clamp(2.7rem,7vw,5.6rem); font-weight:600; letter-spacing:-.04em; line-height:1.0; max-width:16ch; margin:0 auto;}
   .hero .sub{font-size:clamp(1.1rem,1.7vw,1.35rem); color:var(--ink-60); max-width:50ch; margin:1.8rem auto 0;}
   .hero-cta{display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; margin-top:2.2rem;}
   .hero .reassure{font-family:var(--mono); font-size:.74rem; letter-spacing:.04em; color:var(--ink-40); margin-top:1.4rem; text-transform:uppercase;}
+
+  @media(min-width:901px){
+    .hero{display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(2rem,4vw,4rem); align-items:center; text-align:left;}
+    .hero h1{font-size:clamp(2.7rem,4.4vw,4.2rem); margin:0;}
+    .hero .sub{margin:1.8rem 0 0;}
+    .hero-cta{justify-content:flex-start;}
+  }
+
+  /* HERO PORTFOLIO FLOAT */
+  .hero-folio{position:relative; width:100%; max-width:1020px; margin:clamp(3.5rem,7vw,6rem) auto 0; perspective:1400px; height:clamp(560px,58vw,640px);}
+  @media(min-width:901px){
+    .hero-folio{max-width:none; margin:0; height:clamp(540px,46vw,620px);}
+  }
+  .hero-folio::before{content:""; position:absolute; inset:-8% -12%; background:
+    radial-gradient(42% 38% at 28% 30%, rgba(214,209,196,.55), transparent 70%),
+    radial-gradient(40% 36% at 72% 60%, rgba(229,225,214,.6), transparent 70%),
+    radial-gradient(36% 34% at 50% 85%, rgba(220,216,205,.45), transparent 70%);
+    filter:blur(8px); z-index:0; pointer-events:none;}
+  .hf-panel{position:absolute; display:grid; grid-template-columns:1fr 1.15fr; gap:1rem; align-items:center; width:clamp(300px,30vw,380px); padding:clamp(1rem,1.5vw,1.3rem); border-radius:var(--r-media); background:rgba(255,255,255,.55); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,.85); box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 30px 70px -28px rgba(17,18,16,.22), 0 8px 24px -10px rgba(17,18,16,.08); will-change:transform; text-align:left;}
+  .hf-num{font-family:var(--mono); font-size:.62rem; color:var(--ink-40); letter-spacing:.08em; margin-bottom:.45rem;}
+  .hf-name{font-family:var(--mono); font-size:.72rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); margin-bottom:.6rem;}
+  .hf-type{font-size:.86rem; line-height:1.45; color:var(--ink-60); max-width:16ch;}
+  .hf-media{border-radius:12px; overflow:hidden; border:1px solid var(--line); box-shadow:0 14px 34px -16px rgba(17,18,16,.3); background:#fff;}
+  .hf-media img{display:block; width:100%; aspect-ratio:4/3; object-fit:cover; object-position:top;}
+
+  .hf-panel:nth-child(1){left:0; top:0; z-index:2; transform:rotateX(6deg) rotateY(7deg) rotate(-1.5deg); animation:hfloat1 9s ease-in-out infinite;}
+  .hf-panel:nth-child(2){right:0; top:18%; z-index:1; transform:rotateX(5deg) rotateY(-8deg) rotate(1.5deg); animation:hfloat2 10s ease-in-out infinite;}
+  .hf-panel:nth-child(3){left:4%; top:42%; z-index:4; transform:rotateX(7deg) rotateY(4deg) rotate(-1deg) scale(1.02); animation:hfloat3 11s ease-in-out infinite;}
+  .hf-panel:nth-child(4){right:2%; bottom:0; z-index:3; transform:rotateX(5deg) rotateY(9deg) rotate(-2deg); animation:hfloat4 9.5s ease-in-out infinite;}
+
+  @keyframes hfloat1{0%,100%{transform:translate3d(var(--hfpx,0),var(--hfpy,0),0) rotateX(6deg) rotateY(7deg) rotate(-1.5deg);}50%{transform:translate3d(var(--hfpx,0),calc(var(--hfpy,0px) - 9px),10px) rotateX(5deg) rotateY(6deg) rotate(-1.5deg);}}
+  @keyframes hfloat2{0%,100%{transform:translate3d(var(--hfpx,0),var(--hfpy,0),0) rotateX(5deg) rotateY(-8deg) rotate(1.5deg);}50%{transform:translate3d(var(--hfpx,0),calc(var(--hfpy,0px) - 12px),8px) rotateX(4deg) rotateY(-7deg) rotate(1.5deg);}}
+  @keyframes hfloat3{0%,100%{transform:translate3d(var(--hfpx,0),var(--hfpy,0),20px) rotateX(7deg) rotateY(4deg) rotate(-1deg) scale(1.02);}50%{transform:translate3d(var(--hfpx,0),calc(var(--hfpy,0px) - 8px),30px) rotateX(6deg) rotateY(3deg) rotate(-1deg) scale(1.02);}}
+  @keyframes hfloat4{0%,100%{transform:translate3d(var(--hfpx,0),var(--hfpy,0),0) rotateX(5deg) rotateY(9deg) rotate(-2deg);}50%{transform:translate3d(var(--hfpx,0),calc(var(--hfpy,0px) - 10px),12px) rotateX(4deg) rotateY(8deg) rotate(-2deg);}}
+
+  @media(max-width:900px){
+    .hero-folio{perspective:none; height:auto; display:grid; grid-template-columns:1fr; gap:clamp(.9rem,2.5vw,1.3rem); margin-top:clamp(2.5rem,5vw,3.5rem);}
+    .hf-panel{position:static; width:100%; max-width:430px; margin:0 auto; transform:none !important; animation:none !important;}
+  }
 
   /* mock (shared) */
   .mock{border-radius:14px; overflow:hidden; background:#fff; box-shadow:0 24px 50px -30px rgba(17,18,16,.34); width:100%; max-width:560px;}
@@ -241,7 +280,7 @@
   .stagger.in > *:nth-child(2){transition-delay:.09s;}
   .stagger.in > *:nth-child(3){transition-delay:.18s;}
   .stagger.in > *:nth-child(4){transition-delay:.27s;}
-  @media (prefers-reduced-motion:reduce){.reveal,.stagger>*{opacity:1!important; transform:none!important; transition:none!important;} html{scroll-behavior:auto;} .cmp-hint{animation:none;}}
+  @media (prefers-reduced-motion:reduce){.reveal,.stagger>*{opacity:1!important; transform:none!important; transition:none!important;} html{scroll-behavior:auto;} .cmp-hint{animation:none;} .hf-panel{animation:none!important;}}
 
   @media (max-width:900px){
     .nav-links{display:none;} .burger{display:flex;}
@@ -376,15 +415,52 @@
 
   <!-- HERO -->
   <section class="hero wrap">
-    <span class="eyebrow reveal">The Service Edit</span>
-    <h1 class="reveal">We take outdated service businesses and turn them into brands people trust online.</h1>
-    <p class="sub reveal">Custom websites for service businesses that need to look as good as the work they do.</p>
-    <p class="reveal" style="margin-top:1.5rem; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--ink);">Custom one-page websites from <strong style="font-weight:600;">$799</strong>. Multi-page builds from <strong style="font-weight:600;">$1,499</strong>.</p>
-    <p class="reveal" style="margin-top:.55rem; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--ink);">From first look to live in <strong style="font-weight:600;">5 days</strong>.</p>
-    <div class="hero-cta reveal">
-      <a href="#contact" class="btn btn-primary">Get a free homepage concept <span class="a">&rarr;</span></a>
+    <div class="hero-copy">
+      <span class="eyebrow reveal">The Service Edit</span>
+      <h1 class="reveal">We take outdated service businesses and turn them into brands people trust online.</h1>
+      <p class="sub reveal">Custom websites for service businesses that need to look as good as the work they do.</p>
+      <p class="reveal" style="margin-top:1.5rem; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--ink);">Custom one-page websites from <strong style="font-weight:600;">$799</strong>. Multi-page builds from <strong style="font-weight:600;">$1,499</strong>.</p>
+      <p class="reveal" style="margin-top:.55rem; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--ink);">From first look to live in <strong style="font-weight:600;">5 days</strong>.</p>
+      <div class="hero-cta reveal">
+        <a href="#contact" class="btn btn-primary">Get a free homepage concept <span class="a">&rarr;</span></a>
+      </div>
+      <div class="reassure reveal">No obligation. No templates. Designed specifically for your business.</div>
     </div>
-    <div class="reassure reveal">No obligation. No templates. Designed specifically for your business.</div>
+
+    <div class="hero-folio reveal" id="heroFolio">
+      <div class="hf-panel">
+        <div>
+          <div class="hf-num">01</div>
+          <div class="hf-name">CVBS Australia</div>
+          <p class="hf-type">Conference and venue sourcing, worldwide.</p>
+        </div>
+        <div class="hf-media"><img src="/mockups/cvbs.jpg" alt="CVBS Australia website" loading="lazy" /></div>
+      </div>
+      <div class="hf-panel">
+        <div>
+          <div class="hf-num">02</div>
+          <div class="hf-name">Creative Green</div>
+          <p class="hf-type">Landscaping website concept.</p>
+        </div>
+        <div class="hf-media"><img src="/mockups/creative-green.jpg" alt="Creative Green Landscaping website" loading="lazy" /></div>
+      </div>
+      <div class="hf-panel">
+        <div>
+          <div class="hf-num">03</div>
+          <div class="hf-name">Coastside Plastering</div>
+          <p class="hf-type">Trade website concept.</p>
+        </div>
+        <div class="hf-media"><img src="/mockups/coastside.jpg" alt="Coastside Plastering website" loading="lazy" /></div>
+      </div>
+      <div class="hf-panel">
+        <div>
+          <div class="hf-num">04</div>
+          <div class="hf-name">Tower Carpentry</div>
+          <p class="hf-type">Carpentry and joinery website.</p>
+        </div>
+        <div class="hf-media"><img src="/mockups/tower-carpentry.jpg" alt="Tower Carpentry website" loading="lazy" /></div>
+      </div>
+    </div>
   </section>
 
   <!-- TRANSFORMATION (slider) -->
@@ -591,6 +667,29 @@
   window.addEventListener('resize', scaleShots);
   window.addEventListener('load', scaleShots);
   scaleShots();
+
+  /* hero portfolio parallax */
+  (function(){
+    var folio = document.getElementById('heroFolio');
+    if(!folio || window.innerWidth < 901) return;
+    var panels = folio.querySelectorAll('.hf-panel');
+    var depths = [6, 10, 14, 8];
+    var ticking = false;
+    document.addEventListener('mousemove', function(e){
+      if(ticking) return;
+      ticking = true;
+      requestAnimationFrame(function(){
+        var cx = (e.clientX / window.innerWidth - 0.5) * 2;
+        var cy = (e.clientY / window.innerHeight - 0.5) * 2;
+        panels.forEach(function(p, i){
+          var d = depths[i] || 8;
+          p.style.setProperty('--hfpx', (cx * d) + 'px');
+          p.style.setProperty('--hfpy', (cy * d * 0.5) + 'px');
+        });
+        ticking = false;
+      });
+    });
+  })();
 
   /* revenue calculator */
   var cv=document.getElementById('cv'), rm=document.getElementById('rm'), ry=document.getElementById('ry');

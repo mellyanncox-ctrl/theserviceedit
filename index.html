@@ -224,7 +224,7 @@
   .fnote.err{display:block; background:var(--bg-soft); border:1px solid var(--accent); color:var(--ink);}
   .hp{position:absolute; left:-9999px;}
 
-  .foot{border-top:1px solid var(--line); padding:clamp(3rem,5vw,4.5rem) 0 2rem;}
+  .foot{border-top:1px solid var(--line); padding-top:clamp(3rem,5vw,4.5rem); padding-bottom:2rem;}
   .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:clamp(2rem,4vw,4rem); padding-bottom:2.6rem;}
   .foot-brand{display:flex; align-items:center; gap:.55rem; font-size:1.3rem; font-weight:600; letter-spacing:-.03em;}
   .foot-brand .mk{width:28px; height:28px; border-radius:8px; background:var(--ink); display:grid; place-items:center; color:#fff; font-size:.76rem;}
@@ -349,9 +349,11 @@
   <div class="wrap nav-in">
     <a href="#top" class="brand"><span class="mk">se</span>The Service Edit</a>
     <nav class="nav-links">
-      <a href="#transform">Work</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
+      <a href="work.html">Work</a>
+      <a href="work.html#concept-builds">Concept Builds</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
     </nav>
     <div class="nav-r">
       <a href="#contact" class="btn btn-primary">Get a free concept</a>
@@ -361,9 +363,12 @@
 </header>
 
 <div class="mmenu" id="mmenu">
-  <a href="#transform">Work</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#contact">Contact</a>
+  <a href="work.html">Work</a>
+  <a href="work.html#concept-builds">Concept Builds</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="about.html">About</a>
+  <a href="faq.html">FAQ</a>
   <a href="#contact" class="btn btn-primary">Get a free concept</a>
 </div>
 
@@ -374,6 +379,8 @@
     <span class="eyebrow reveal">The Service Edit</span>
     <h1 class="reveal">We take outdated service businesses and turn them into brands people trust online.</h1>
     <p class="sub reveal">Custom websites for service businesses that need to look as good as the work they do.</p>
+    <p class="reveal" style="margin-top:1.5rem; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--ink);">Custom one-page websites from <strong style="font-weight:600;">$799</strong>. Multi-page builds from <strong style="font-weight:600;">$1,499</strong>.</p>
+    <p class="reveal" style="margin-top:.55rem; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--ink);">From first look to live in <strong style="font-weight:600;">5 days</strong>.</p>
     <div class="hero-cta reveal">
       <a href="#contact" class="btn btn-primary">Get a free homepage concept <span class="a">&rarr;</span></a>
     </div>
@@ -395,7 +402,7 @@
         </figure>
         <figure class="ba-item reveal" style="transition-delay:.08s;">
           <span class="ba-tag after">After</span>
-          <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://the-service-edit.github.io/cvbs-2026/index.html" title="CVBS, rebuilt by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
+          <div class="ba-frame"><div class="ba-shot"><iframe class="ba-iframe" src="https://mellyanncox-ctrl.github.io/CVBS-SITE-MARCH2026/index.html" title="CVBS, rebuilt by The Service Edit" loading="lazy" scrolling="yes" sandbox="allow-scripts allow-same-origin"></iframe></div></div>
           <figcaption>Rebuilt by The Service Edit. Scroll inside the frame to explore the whole site.</figcaption>
         </figure>
       </div>
@@ -429,57 +436,20 @@
     </div>
   </section>
 
-  <!-- WORK / PROOF -->
-  <section id="work" class="wrap pad" style="padding-top:0;">
-    <div class="shead reveal" style="margin-bottom:clamp(2.4rem,4vw,3.4rem);">
-      <span class="eyebrow">Recent work</span>
-      <h2 style="max-width:18ch;">Real businesses. Real before and afters.</h2>
-    </div>
-    <div class="work">
-      <div class="wcard reveal">
-        <div class="thumb">
-          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Bespoke joinery, done right.</div><div class="a-sub s1"></div><span class="a-btn">Get a quote</span></div></div>
-          <span class="ph">Add screenshot</span>
-        </div>
-        <div class="wmeta"><div class="wt">Carpentry, western suburbs</div><div class="wd">Outdated builder site rebuilt into a premium brand.</div></div>
-      </div>
-      <div class="wcard reveal" style="transition-delay:.08s;">
-        <div class="thumb">
-          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Reliable. On time. Every time.</div><div class="a-sub s1"></div><span class="a-btn">Book a service</span></div></div>
-          <span class="ph">Add screenshot</span>
-        </div>
-        <div class="wmeta"><div class="wt">Trades, Perth</div><div class="wd">From a buried Facebook page to a site that wins quotes.</div></div>
-      </div>
-      <div class="wcard reveal" style="transition-delay:.16s;">
-        <div class="thumb">
-          <div class="mock mini"><div class="mbar"><span class="d"></span><span class="d"></span><span class="d"></span></div><div class="mbody" style="min-height:120px;"><div class="a-h" style="font-size:1.1rem;">Looking your best starts here.</div><div class="a-sub s1"></div><span class="a-btn">Book now</span></div></div>
-          <span class="ph">Add screenshot</span>
-        </div>
-        <div class="wmeta"><div class="wt">Beauty clinic</div><div class="wd">A tired template turned into a brand that feels considered.</div></div>
-      </div>
-    </div>
-    <div class="reveal" style="text-align:center; margin-top:clamp(2.2rem,4vw,3rem);">
-      <a href="work.html" class="btn btn-ghost">View all projects <span class="a">&rarr;</span></a>
-    </div>
-  </section>
-
   <!-- MATHS / REVENUE CALCULATOR -->
   <section id="maths" class="wrap pad" style="padding-top:0;">
     <div class="shead reveal" style="max-width:40rem;">
       <span class="eyebrow">The maths</span>
       <h2>What's one extra customer a week worth to you?</h2>
     </div>
+    <p class="maths-p reveal" style="margin-top:1.5rem;">One extra enquiry can pay for the site. One extra customer a week can change the month.</p>
     <div class="calc reveal">
       <div class="cl">
         <div class="ctrl">
           <label for="cv">What an average customer is worth to you</label>
           <div class="money"><span>$</span><input type="number" id="cv" value="350" min="0" inputmode="numeric" /></div>
         </div>
-        <div class="ctrl">
-          <div class="slider-row"><label for="cc" style="margin:0;">Extra customers per week</label><span class="sv" id="ccv">1</span></div>
-          <input type="range" id="cc" min="1" max="10" value="1" />
-        </div>
-        <p class="chint">Just one extra customer a week. Most owners are aiming higher than that.</p>
+        <p class="chint">Based on just one extra customer a week. Most owners are aiming higher than that.</p>
       </div>
       <div class="cr">
         <div class="res"><div class="rk">Extra revenue per month</div><div class="rv" id="rm">$1,517</div></div>
@@ -554,10 +524,13 @@
     </div>
     <div class="foot-col">
       <h4>Explore</h4>
-      <a href="#transform">Work</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
+      <a href="work.html">Work</a>
+      <a href="work.html#concept-builds">Concept Builds</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
     </div>
     <div class="foot-col">
       <h4>Get in touch</h4>
@@ -605,7 +578,6 @@
     window.addEventListener('pointerup', end);
   }
 
-
   function scaleShots(){
     document.querySelectorAll('.ba-shot').forEach(function(s){
       var frame = s.parentElement;
@@ -621,11 +593,11 @@
   scaleShots();
 
   /* revenue calculator */
-  var cv=document.getElementById('cv'), cc=document.getElementById('cc'), ccv=document.getElementById('ccv'), rm=document.getElementById('rm'), ry=document.getElementById('ry');
+  var cv=document.getElementById('cv'), rm=document.getElementById('rm'), ry=document.getElementById('ry');
   if(cv){
     var fmtMoney=function(n){ return '$'+Math.round(n).toLocaleString('en-AU'); };
-    var calc=function(){ var v=parseFloat(cv.value)||0, n=parseInt(cc.value)||0; ccv.textContent=n; var month=v*n*52/12; rm.textContent=fmtMoney(month); ry.textContent=fmtMoney(v*n*52); };
-    cv.addEventListener('input',calc); cc.addEventListener('input',calc); calc();
+    var calc=function(){ var v=parseFloat(cv.value)||0; rm.textContent=fmtMoney(v*52/12); ry.textContent=fmtMoney(v*52); };
+    cv.addEventListener('input',calc); calc();
   }
 
   /* contact form */

@@ -85,16 +85,17 @@
   }
 
   /* HERO PORTFOLIO FLOAT */
-  .hero-folio{position:relative; width:100%; max-width:1020px; margin:clamp(3.5rem,7vw,6rem) auto 0; perspective:1400px; height:clamp(560px,58vw,640px);}
+  .hero-folio{position:relative; width:100%; max-width:1020px; margin:clamp(3.5rem,7vw,6rem) auto 0; perspective:1400px; height:clamp(640px,66vw,760px);}
   @media(min-width:901px){
-    .hero-folio{max-width:none; margin:0; height:clamp(540px,46vw,620px);}
+    .hero-folio{max-width:none; margin:0; height:clamp(620px,54vw,740px);}
   }
   .hero-folio::before{content:""; position:absolute; inset:-8% -12%; background:
     radial-gradient(42% 38% at 28% 30%, rgba(214,209,196,.55), transparent 70%),
     radial-gradient(40% 36% at 72% 60%, rgba(229,225,214,.6), transparent 70%),
     radial-gradient(36% 34% at 50% 85%, rgba(220,216,205,.45), transparent 70%);
     filter:blur(8px); z-index:0; pointer-events:none;}
-  .hf-panel{position:absolute; display:grid; grid-template-columns:1fr 1.15fr; gap:1rem; align-items:center; width:clamp(300px,30vw,380px); padding:clamp(1rem,1.5vw,1.3rem); border-radius:var(--r-media); background:rgba(255,255,255,.55); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,.85); box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 30px 70px -28px rgba(17,18,16,.22), 0 8px 24px -10px rgba(17,18,16,.08); will-change:transform; text-align:left;}
+  .hf-panel{position:absolute; display:grid; grid-template-columns:1fr 1.15fr; gap:1.1rem; align-items:center; width:clamp(340px,36vw,470px); padding:clamp(1.2rem,1.8vw,1.6rem); border-radius:var(--r-media); background:linear-gradient(155deg, rgba(255,255,255,.5), rgba(255,255,255,.22) 55%, rgba(255,255,255,.38)); backdrop-filter:blur(26px) saturate(1.5); -webkit-backdrop-filter:blur(26px) saturate(1.5); border:1px solid rgba(255,255,255,.7); box-shadow:0 1px 0 rgba(255,255,255,.95) inset, 0 -1px 0 rgba(255,255,255,.35) inset, 0 40px 90px -32px rgba(17,18,16,.28), 0 10px 30px -12px rgba(17,18,16,.1); will-change:transform; text-align:left; overflow:hidden;}
+  .hf-panel::after{content:""; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(115deg, rgba(255,255,255,.45) 0%, transparent 28%, transparent 70%, rgba(255,255,255,.2) 100%); pointer-events:none;}
   .hf-num{font-family:var(--mono); font-size:.62rem; color:var(--ink-40); letter-spacing:.08em; margin-bottom:.45rem;}
   .hf-name{font-family:var(--mono); font-size:.72rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); margin-bottom:.6rem;}
   .hf-type{font-size:.86rem; line-height:1.45; color:var(--ink-60); max-width:16ch;}
@@ -102,9 +103,9 @@
   .hf-media img{display:block; width:100%; height:auto;}
 
   .hf-panel:nth-child(1){left:0; top:0; z-index:2; transform:rotateX(6deg) rotateY(7deg) rotate(-1.5deg); animation:hfloat1 9s ease-in-out infinite;}
-  .hf-panel:nth-child(2){right:0; top:18%; z-index:1; transform:rotateX(5deg) rotateY(-8deg) rotate(1.5deg); animation:hfloat2 10s ease-in-out infinite;}
-  .hf-panel:nth-child(3){left:4%; top:42%; z-index:4; transform:rotateX(7deg) rotateY(4deg) rotate(-1deg) scale(1.02); animation:hfloat3 11s ease-in-out infinite;}
-  .hf-panel:nth-child(4){right:2%; bottom:0; z-index:3; transform:rotateX(5deg) rotateY(9deg) rotate(-2deg); animation:hfloat4 9.5s ease-in-out infinite;}
+  .hf-panel:nth-child(2){right:0; top:27%; z-index:1; transform:rotateX(5deg) rotateY(-8deg) rotate(1.5deg); animation:hfloat2 10s ease-in-out infinite;}
+  .hf-panel:nth-child(3){left:2%; top:50%; z-index:4; transform:rotateX(7deg) rotateY(4deg) rotate(-1deg) scale(1.02); animation:hfloat3 11s ease-in-out infinite;}
+  .hf-panel:nth-child(4){right:0; bottom:0; z-index:3; transform:rotateX(5deg) rotateY(9deg) rotate(-2deg); animation:hfloat4 9.5s ease-in-out infinite;}
 
   @keyframes hfloat1{0%,100%{transform:translate3d(var(--hfpx,0),var(--hfpy,0),0) rotateX(6deg) rotateY(7deg) rotate(-1.5deg);}50%{transform:translate3d(var(--hfpx,0),calc(var(--hfpy,0px) - 9px),10px) rotateX(5deg) rotateY(6deg) rotate(-1.5deg);}}
   @keyframes hfloat2{0%,100%{transform:translate3d(var(--hfpx,0),var(--hfpy,0),0) rotateX(5deg) rotateY(-8deg) rotate(1.5deg);}50%{transform:translate3d(var(--hfpx,0),calc(var(--hfpy,0px) - 12px),8px) rotateX(4deg) rotateY(-7deg) rotate(1.5deg);}}
@@ -113,7 +114,7 @@
 
   @media(max-width:900px){
     .hero-folio{perspective:none; height:auto; display:grid; grid-template-columns:1fr; gap:clamp(.9rem,2.5vw,1.3rem); margin-top:clamp(2.5rem,5vw,3.5rem);}
-    .hf-panel{position:static; width:100%; max-width:430px; margin:0 auto; transform:none !important; animation:none !important;}
+    .hf-panel{position:static; width:100%; max-width:470px; margin:0 auto; transform:none !important; animation:none !important;}
   }
 
   /* mock (shared) */

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Work — mockup | The Service Edit</title>
+<meta name="description" content="Filterable live case-study grid mockup for The Service Edit work page." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111210'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='14' font-weight='600' fill='%23fff' text-anchor='middle'%3Ese%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#ffffff; --bg-soft:#F5F4F1; --card-mute:#EFEEE9;
+    --ink:#111210; --ink-60:rgba(17,18,16,.6); --ink-40:rgba(17,18,16,.42);
+    --line:rgba(17,18,16,.1); --line-soft:rgba(17,18,16,.055);
+    --dark:#0E0F0D; --accent:#111210;
+    --r-btn:10px; --r-card:18px; --r-media:22px; --pill:999px;
+    --maxw:1200px; --pad:clamp(1.15rem,4vw,4rem);
+    --f:"Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --mono:"Geist Mono", ui-monospace, "SF Mono", monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--f); background:var(--bg); color:var(--ink); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:clip;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ::selection{background:var(--ink); color:#fff;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding-left:var(--pad); padding-right:var(--pad);}
+
+  h1,h2,h3{font-weight:600; letter-spacing:-.03em; line-height:1.02;}
+  h2{font-size:clamp(2.25rem,5vw,3.9rem); letter-spacing:-.038em; line-height:.98;}
+  h3{font-weight:500; letter-spacing:-.025em;}
+  p{color:var(--ink-60);}
+  .eyebrow{font-family:var(--mono); font-size:.74rem; font-weight:400; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40);}
+
+  .btn{display:inline-flex; align-items:center; gap:.5rem; font-family:var(--f); font-weight:500; font-size:.97rem; padding:.85rem 1.45rem; border-radius:var(--r-btn); cursor:pointer; border:1px solid transparent; transition:.22s ease; white-space:nowrap;}
+  .btn .a{transition:transform .22s ease;}
+  .btn:hover .a{transform:translateX(3px);}
+  .btn-primary{background:var(--ink); color:#fff;}
+  .btn-primary:hover{background:#2c2c28;}
+  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-light{background:#fff; color:var(--ink);}
+  .btn-light:hover{background:#f0efeb;}
+
+  .nav{position:sticky; top:0; z-index:100; background:rgba(255,255,255,.8); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid transparent; transition:border-color .3s;}
+  .nav.scrolled{border-bottom-color:var(--line);}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:66px;}
+  .brand{display:flex; align-items:center; gap:.55rem; font-size:1.08rem; font-weight:600; letter-spacing:-.03em;}
+  .brand .mk{width:26px; height:26px; border-radius:8px; background:var(--ink); display:grid; place-items:center; color:#fff; font-size:.74rem; font-weight:600;}
+  .nav-links{display:flex; align-items:center; gap:2rem;}
+  .nav-links a{font-size:.93rem; color:var(--ink-60); transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-r{display:flex; align-items:center; gap:.85rem;}
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding:8px;}
+  .burger span{width:22px; height:2px; background:var(--ink); border-radius:2px;}
+
+  section{scroll-margin-top:84px;}
+  .pad{padding-top:clamp(4.5rem,9vw,8rem); padding-bottom:clamp(4.5rem,9vw,8rem);}
+  .shead .eyebrow{display:block; margin-bottom:1.1rem;}
+
+  /* WORK HEAD */
+  .work-head{padding-top:clamp(3.5rem,7vw,6rem); padding-bottom:clamp(1.6rem,3vw,2.4rem);}
+  .work-head h2{max-width:18ch;}
+  .work-head p{margin-top:1.2rem; font-size:clamp(1.12rem,1.6vw,1.32rem); line-height:1.45; max-width:48ch;}
+
+  /* FILTER BAR */
+  .filterbar{position:sticky; top:66px; z-index:50; background:rgba(255,255,255,.9); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line);}
+  .filterbar-in{display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; padding-top:1rem; padding-bottom:1rem;}
+  .seg{display:inline-flex; background:var(--bg-soft); border:1px solid var(--line-soft); border-radius:var(--pill); padding:.25rem;}
+  .seg button{font-family:var(--f); font-size:.9rem; font-weight:500; color:var(--ink-60); background:none; border:0; cursor:pointer; padding:.5rem 1.05rem; border-radius:var(--pill); transition:.2s; white-space:nowrap;}
+  .seg button.on{background:var(--ink); color:#fff;}
+  .chips{display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;}
+  .chip{font-family:var(--f); font-size:.86rem; color:var(--ink-60); background:transparent; border:1px solid var(--line); border-radius:var(--pill); padding:.42rem .9rem; cursor:pointer; transition:.18s; white-space:nowrap;}
+  .chip:hover{border-color:var(--ink); color:var(--ink);}
+  .chip.on{background:var(--ink); color:#fff; border-color:var(--ink);}
+  .fcount{margin-left:auto; font-family:var(--mono); font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-40); white-space:nowrap;}
+
+  /* GRID */
+  .grid-sec{padding-top:clamp(2rem,4vw,3rem); padding-bottom:clamp(4rem,8vw,7rem);}
+  .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(1.3rem,2.4vw,2rem);}
+  .gcard{background:var(--bg-soft); border:1px solid var(--line-soft); border-radius:var(--r-card); overflow:hidden; transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s; display:flex; flex-direction:column;}
+  .gcard:hover{transform:translateY(-4px); box-shadow:0 26px 50px -34px rgba(17,18,16,.4);}
+  .gcard.hide{display:none;}
+
+  /* LIVE PREVIEW */
+  .pv{position:relative; aspect-ratio:16/12.5; background:#fff; border-bottom:1px solid var(--line-soft); overflow:hidden;}
+  .pv-bar{display:flex; align-items:center; gap:.35rem; padding:.55rem .8rem; background:var(--bg-soft); border-bottom:1px solid var(--line-soft); position:relative; z-index:4;}
+  .pv-bar .d{width:7px; height:7px; border-radius:50%; background:var(--line);}
+  .pv-bar .u{margin-left:.45rem; font-family:var(--mono); font-size:.56rem; color:var(--ink-40); background:#fff; border:1px solid var(--line-soft); border-radius:var(--pill); padding:.12rem .65rem; max-width:74%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .pv-live{position:absolute; top:33px; left:0; right:0; bottom:0; overflow:hidden; background:var(--bg-soft);}
+  .pv-live iframe{border:0; transform-origin:top left; pointer-events:auto; background:#fff; display:block;}
+  .pv-live .ph{position:absolute; inset:0; display:grid; place-items:center; font-family:var(--mono); font-size:.62rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-40);}
+  .pv-img{position:absolute; top:33px; left:0; right:0; bottom:0; width:100%; height:calc(100% - 33px); object-fit:cover; object-position:top center;}
+  .pv-open{position:absolute; top:33px; left:0; right:0; bottom:0; z-index:5; display:flex; align-items:flex-end; justify-content:flex-end; padding:.7rem; opacity:0; transition:opacity .25s;}
+  .pv-open .badge{font-family:var(--f); font-size:.78rem; font-weight:500; color:var(--ink); background:rgba(255,255,255,.94); border:1px solid var(--line); border-radius:var(--pill); padding:.45rem .9rem; display:inline-flex; gap:.35rem; align-items:center; box-shadow:0 10px 24px -12px rgba(17,18,16,.5);}
+  .gcard:hover .pv-open{opacity:1;}
+
+  .gmeta{padding:1.05rem 1.2rem 1.25rem; display:flex; flex-direction:column; flex:1;}
+  .gtags{display:flex; gap:.4rem; align-items:center; margin-bottom:.65rem; flex-wrap:wrap;}
+  .tag{font-family:var(--mono); font-size:.58rem; text-transform:uppercase; letter-spacing:.05em; padding:.26rem .58rem; border-radius:var(--pill); border:1px solid var(--line);}
+  .tag.real{background:var(--ink); color:#fff; border-color:var(--ink);}
+  .tag.concept{background:transparent; color:var(--ink-60);}
+  .tag.ind{background:var(--card-mute); color:var(--ink-60); border-color:transparent;}
+  .gt{font-size:1.12rem; font-weight:500; letter-spacing:-.02em; line-height:1.12;}
+  .gloc{font-family:var(--mono); font-size:.66rem; letter-spacing:.03em; text-transform:uppercase; color:var(--ink-40); margin-top:.32rem;}
+  .gd{font-size:.92rem; color:var(--ink-60); margin-top:.6rem; line-height:1.45; flex:1;}
+  .gfoot{display:flex; align-items:center; gap:1rem; margin-top:1rem;}
+  .gcase{font-family:var(--f); font-size:.85rem; font-weight:500; color:var(--ink); background:none; border:0; cursor:pointer; padding:0; display:inline-flex; align-items:center; gap:.3rem;}
+  .gcase .a{transition:transform .2s;}
+  .gcase:hover .a{transform:translateX(3px);}
+  .ghint{margin-left:auto; font-family:var(--mono); font-size:.6rem; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-40); display:inline-flex; align-items:center; gap:.3rem;}
+
+  .empty{display:none; text-align:center; padding:4rem 1rem; color:var(--ink-40); font-family:var(--mono); font-size:.8rem; letter-spacing:.04em; text-transform:uppercase;}
+  .disc{font-size:.86rem; color:var(--ink-60); line-height:1.5; border:1px solid var(--line); border-radius:var(--r-card); padding:1rem 1.3rem; max-width:64ch; margin-top:1.4rem;}
+  .disc strong{color:var(--ink); font-weight:600;}
+
+  /* MODAL */
+  .ov{position:fixed; inset:0; z-index:200; background:rgba(17,18,16,.55); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); display:none; align-items:flex-start; justify-content:center; padding:clamp(1rem,4vw,3.5rem) clamp(1rem,4vw,2rem); overflow-y:auto;}
+  .ov.open{display:flex;}
+  .sheet{background:var(--bg); border-radius:var(--r-media); max-width:880px; width:100%; overflow:hidden; box-shadow:0 40px 90px -40px rgba(17,18,16,.6); position:relative;}
+  .sheet-x{position:absolute; top:1rem; right:1rem; z-index:6; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.92); border:1px solid var(--line); cursor:pointer; display:grid; place-items:center; font-size:1.1rem; color:var(--ink); transition:.2s;}
+  .sheet-x:hover{background:#fff; transform:scale(1.05);}
+  .sheet-live{position:relative; height:clamp(280px,42vw,420px); background:var(--bg-soft); overflow:hidden; border-bottom:1px solid var(--line);}
+  .sheet-live iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0;}
+  .sheet-body{padding:clamp(1.6rem,3.5vw,2.6rem);}
+  .sheet-k{font-family:var(--mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40);}
+  .sheet-t{font-size:clamp(1.6rem,3vw,2.3rem); font-weight:600; letter-spacing:-.03em; line-height:1.02; margin:.5rem 0 1rem;}
+  .sheet-tags{display:flex; gap:.45rem; flex-wrap:wrap; margin-bottom:1.4rem;}
+  .audit{display:flex; flex-direction:column; gap:1.1rem;}
+  .audit-row{padding-left:1.1rem; border-left:2px solid var(--line);}
+  .audit-row.fix{border-left-color:var(--ink);}
+  .audit-row .lab{font-family:var(--mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40); margin-bottom:.4rem;}
+  .audit-row p{font-size:1.02rem; color:var(--ink-60); margin:0; line-height:1.5;}
+  .sheet-blurb{font-size:1.1rem; color:var(--ink-60); line-height:1.55;}
+  .sheet-cta{display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.8rem; padding-top:1.6rem; border-top:1px solid var(--line);}
+  .sheet-dis{font-size:.82rem; color:var(--ink-40); margin-top:1.2rem;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1; transform:none;}
+
+  @media (max-width:900px){ .nav-links{display:none;} .burger{display:flex;} .fcount{margin-left:0; width:100%;} }
+  @media (max-width:640px){ .grid{grid-template-columns:1fr;} .chips{width:100%; overflow-x:auto; flex-wrap:nowrap; padding-bottom:.3rem;} .ghint{display:none;} }
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1!important; transform:none!important;} html{scroll-behavior:auto;} }
+</style>
+</head>
+<body id="top">
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html#top" class="brand"><span class="mk">se</span>The Service Edit</a>
+    <nav class="nav-links">
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-r">
+      <a href="contact.html" class="btn btn-primary">Get a free concept</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap work-head">
+    <div class="shead reveal">
+      <span class="eyebrow">Work</span>
+      <h2>We don't just redesign. We diagnose.</h2>
+      <p>Every build below is live and clickable. Real rebuilds for clients, and concepts for businesses we'd love to work with. Filter by what you need to see.</p>
+    </div>
+  </section>
+
+  <div class="filterbar" id="filterbar">
+    <div class="wrap filterbar-in">
+      <div class="seg" id="seg">
+        <button data-type="all" class="on">All work</button>
+        <button data-type="real">Real builds</button>
+        <button data-type="concept">Concepts</button>
+      </div>
+      <div class="chips" id="chips">
+        <button class="chip on" data-ind="all">All industries</button>
+        <button class="chip" data-ind="construction">Construction</button>
+        <button class="chip" data-ind="carpentry">Carpentry &amp; Joinery</button>
+        <button class="chip" data-ind="trades">Specialist Trades</button>
+        <button class="chip" data-ind="landscaping">Landscaping</button>
+        <button class="chip" data-ind="property">Property</button>
+        <button class="chip" data-ind="finance">Finance &amp; Accounting</button>
+        <button class="chip" data-ind="health">Health</button>
+        <button class="chip" data-ind="events">Events</button>
+      </div>
+      <span class="fcount" id="fcount"></span>
+    </div>
+  </div>
+
+  <section class="wrap grid-sec">
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">No builds in that combination yet.</div>
+    <div class="disc reveal"><strong>About the concepts.</strong> Builds marked “Concept” are unsolicited designs created by The Service Edit to show what's possible. They are not official websites and we are not affiliated with or endorsed by the businesses shown. If yours is featured and you'd prefer it removed, email <a href="mailto:hello@theserviceedit.com" style="color:var(--ink); text-decoration:underline; text-underline-offset:3px;">hello@theserviceedit.com</a>.</div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:clamp(4.5rem,9vw,8rem);">
+    <div class="reveal" style="background:var(--ink); color:#fff; border-radius:var(--r-media); padding:clamp(2.2rem,4vw,3.6rem); text-align:center;">
+      <span class="eyebrow" style="color:rgba(255,255,255,.5);">Your business next</span>
+      <h2 style="color:#fff; max-width:22ch; margin:1rem auto 1.6rem;">Want to see where yours is leaking enquiries?</h2>
+      <a href="contact.html" class="btn btn-light">Get a free homepage concept <span class="a">&rarr;</span></a>
+    </div>
+  </section>
+</main>
+
+<div class="ov" id="ov">
+  <div class="sheet" id="sheet">
+    <button class="sheet-x" id="sheetX" aria-label="Close">&times;</button>
+    <div class="sheet-live" id="sheetLive"></div>
+    <div class="sheet-body">
+      <div class="sheet-k" id="shK">Concept build</div>
+      <div class="sheet-t" id="shT">Title</div>
+      <div class="sheet-tags" id="shTags"></div>
+      <div id="shContent"></div>
+      <div class="sheet-cta" id="shCta"></div>
+      <p class="sheet-dis" id="shDis"></p>
+    </div>
+  </div>
+</div>
+
+<footer class="foot wrap" style="border-top:1px solid var(--line); padding-top:clamp(3rem,5vw,4.5rem); padding-bottom:2rem;">
+  <div style="display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:clamp(2rem,4vw,4rem); padding-bottom:2.6rem;" class="foot-grid">
+    <div>
+      <div style="display:flex; align-items:center; gap:.55rem; font-size:1.3rem; font-weight:600; letter-spacing:-.03em;"><span style="width:28px; height:28px; border-radius:8px; background:var(--ink); display:grid; place-items:center; color:#fff; font-size:.76rem;">se</span>The Service Edit</div>
+      <p style="color:var(--ink-60); margin-top:.9rem; max-width:40ch; font-size:.97rem;">We take outdated service businesses and turn them into brands people trust online.</p>
+    </div>
+    <div>
+      <h4 style="font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40); margin-bottom:1rem; font-weight:400;">Explore</h4>
+      <a href="work.html" style="display:block; font-size:.95rem; color:var(--ink-60); margin-bottom:.55rem;">Work</a>
+      <a href="services.html" style="display:block; font-size:.95rem; color:var(--ink-60); margin-bottom:.55rem;">Services</a>
+      <a href="pricing.html" style="display:block; font-size:.95rem; color:var(--ink-60); margin-bottom:.55rem;">Pricing</a>
+      <a href="about.html" style="display:block; font-size:.95rem; color:var(--ink-60); margin-bottom:.55rem;">About</a>
+    </div>
+    <div>
+      <h4 style="font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40); margin-bottom:1rem; font-weight:400;">Get in touch</h4>
+      <a href="mailto:hello@theserviceedit.com" style="display:block; font-size:.95rem; color:var(--ink-60); margin-bottom:.55rem;">hello@theserviceedit.com</a>
+      <p style="font-size:.95rem; color:var(--ink-60);">Perth based</p>
+      <p style="font-size:.95rem; color:var(--ink-60);">Working Australia-wide</p>
+    </div>
+  </div>
+  <div style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; padding-top:2rem; border-top:1px solid var(--line-soft); font-family:var(--mono); font-size:.72rem; color:var(--ink-40);">
+    <span>&copy; <span id="yr"></span> The Service Edit. ABN 88 429 285 575.</span>
+    <span>You built the business. We build the trust.</span>
+  </div>
+</footer>
+
+<script>
+  var BUILDS = [
+    { id:"cvbs", type:"real", ind:"events", indLabel:"Events & Venues", title:"CVBS Venue Finding", loc:"Worldwide · Ongoing", status:"Real build · Ongoing",
+      url:"https://the-service-edit.github.io/cvbs-2026/",
+      audit:[
+        ["The brief","An established venue finding business with global reach but a dated online presence that didn't reflect the calibre of the service. The website was the starting point for a full overhaul of how the business presents, operates and converts online."],
+        ["What we're building","A phased, long-term rebuild that starts with the website and extends across the entire digital presence: brand, messaging, content, systems and the tools clients interact with.",1],
+        ["Why it works","Big transformations fail when everything ships at once. A phased approach keeps the business running while each piece is rebuilt properly.",1]
+      ] },
+
+    { id:"thomsen", type:"concept", ind:"construction", indLabel:"Construction", title:"Thomsen Builders & Carpenters", loc:"Campbelltown, Sydney NSW",
+      url:"https://the-service-edit.github.io/thomsen/",
+      blurb:"A family-run Campbelltown builder of more than twenty years — homes, renovations, fit-outs and maintenance — with no website to match the reputation. The concept gives the work a proper home: clear services, real projects, and an obvious way to start an enquiry." },
+    { id:"siwb", type:"concept", ind:"construction", indLabel:"Construction", title:"Sydney Inner West Builders", loc:"Inner West, Sydney NSW",
+      url:"https://the-service-edit.github.io/sydney-inner-west-builders/",
+      blurb:"Renovation and extension specialists whose presence lived on a phone number, not a site. The concept leads with the “as your family grows, so can your home” story, the licence number for trust, and a free-quote path on every screen." },
+    { id:"scc", type:"concept", ind:"construction", indLabel:"Construction", title:"Sydney Carpentry & Constructions", loc:"Sydney NSW",
+      url:"https://the-service-edit.github.io/scc/",
+      blurb:"Residential and commercial builds across Sydney with nowhere online to show the quality. The concept is built around simplicity and detail, with a quote request front and centre." },
+    { id:"home-haven", type:"concept", ind:"construction", indLabel:"Construction", title:"Home Haven Carpentry & Construction", loc:"Brisbane & Sunshine Coast QLD",
+      url:"https://the-service-edit.github.io/home-haven/",
+      blurb:"Custom carpentry and premium renovations designed for modern family living across Brisbane and the Sunshine Coast. The concept centres the finishes and the projects, with a clear process so a homeowner knows what to expect." },
+    { id:"jma", type:"concept", ind:"construction", indLabel:"Construction", title:"JMA Group", loc:"Perth WA",
+      url:"https://the-service-edit.github.io/jma-group/",
+      audit:[
+        ["What's holding it back","Two strong building brands under one roof — carpentry and construction plus new homes — with no single home online to tie them together. On social, the two offerings blur and the bigger story gets lost."],
+        ["The concept","A clean group landing page that splits the two brands clearly and sends each visitor to the right place, ready to grow as the homes side launches.",1],
+        ["Why it works","When a business has more than one offer, clarity wins work. A proper front door lets each brand stand on its own and look established.",1]
+      ] },
+
+    { id:"jt", type:"concept", ind:"carpentry", indLabel:"Carpentry & Joinery", title:"JT Carpentry WA", loc:"Perth & WA",
+      url:"https://the-service-edit.github.io/jt-carpentry-wa/",
+      blurb:"Carpentry from the first frame to the final fix-out across Perth and WA, running on referrals with nothing online. The concept shows the full span of the work and gives a serious enquiry somewhere to land." },
+    { id:"tower", type:"concept", ind:"carpentry", indLabel:"Carpentry & Joinery", title:"Tower Carpentry", loc:"Perth & Mandurah WA",
+      url:"https://the-service-edit.github.io/tower-carpentry/",
+      audit:[
+        ["What's holding it back","Beautiful bespoke joinery — media walls, fireplaces, custom doors — but the only home online is a social profile. There's nowhere to properly showcase the detail, and nothing that makes booking feel effortless."],
+        ["The concept","A clean, photo-led site built around the signature work, with a clear quote request and the service areas across the Perth metro and Mandurah front and centre.",1],
+        ["Why it works","Bespoke work sells on detail. A real site lets the craftsmanship carry the page.",1]
+      ] },
+    { id:"fcwa", type:"concept", ind:"carpentry", indLabel:"Carpentry & Joinery", title:"Fixing Carpentry WA", loc:"Perth WA",
+      url:"https://the-service-edit.github.io/fcwa/",
+      blurb:"Premium residential carpentry in Perth — new builds, decking, cladding and high-end internal finishing — the kind builders and architects keep coming back to. The concept leads with craftsmanship and a project-led gallery." },
+    { id:"king", type:"concept", ind:"carpentry", indLabel:"Carpentry & Joinery", title:"King Carpentry WA", loc:"Wanneroo, Perth WA",
+      url:"https://the-service-edit.github.io/king-carpentry-wa/",
+      blurb:"Acoustic panelling, decking and custom carpentry across Perth's northern suburbs, out of Wanneroo. The concept uses before & after and recent projects to prove the precision in every finish." },
+
+    { id:"blocked-up", type:"concept", ind:"trades", indLabel:"Specialist Trades", title:"Blocked Up Plumbing", loc:"North Shore, Sydney NSW",
+      url:"https://the-service-edit.github.io/blocked-up-plumbing/",
+      blurb:"24/7 emergency plumbers for Sydney's north shore — blocked drains, burst pipes, no hot water — with upfront fixed pricing. The concept is built for the panic search: fast reassurance, service areas, and a one-tap call." },
+    { id:"coastside", type:"concept", ind:"trades", indLabel:"Specialist Trades", title:"Coastside Solid Plastering", loc:"Gold Coast QLD",
+      url:"https://the-service-edit.github.io/coastside/",
+      blurb:"Gold Coast specialists in architectural plaster, rendering and texture coatings for high-end homes, 25 years in. The concept lets the finish do the talking, with selected work leading the page." },
+    { id:"x-tiling", type:"concept", ind:"trades", indLabel:"Specialist Trades", title:"X Tiling", loc:"Melbourne VIC",
+      url:"https://the-service-edit.github.io/x-tiling/",
+      audit:[
+        ["What's holding it back","A skilled tiling business running almost entirely on word of mouth, with no website showing the quality of the finished work and no easy way to request a quote."],
+        ["The concept","A clean, visual site built around completed projects — bathroom renovations, feature walls, outdoor areas — all shown with real photography.",1],
+        ["Why it works","Tiling is visual work. When a customer can scroll through finished projects and see the precision, they stop shopping around.",1]
+      ] },
+
+    { id:"creative-green", type:"concept", ind:"landscaping", indLabel:"Landscaping", title:"Creative Green Landscapes", loc:"Adelaide SA",
+      url:"https://the-service-edit.github.io/creative-green/",
+      audit:[
+        ["What's holding it back","Strong work but a broken website that does nothing for it. Most enquiries come through HiPages, which means paying for every lead and competing on price. No real project photos, no reviews, no direct contact."],
+        ["The concept","A clean, professional site built around the work: upgraded project photography, real reviews, clear calls to action, and a simple way to request a quote without a third party in the middle.",1],
+        ["Why it works","When customers can see the quality and get in touch directly, the business stops paying for leads and starts owning them.",1]
+      ] },
+
+    { id:"property-wizards", type:"concept", ind:"property", indLabel:"Property", title:"Property Wizards", loc:"Perth WA",
+      url:"https://the-service-edit.github.io/property-wizards/",
+      blurb:"One of Australia's most awarded buyer's agencies — 11 Buyer's Agent of the Year titles and REIWA Hall of Fame, established 2004 — representing buyers, never sellers. The concept puts the awards and the buyer-only promise where they convert." },
+    { id:"domain-rental", type:"concept", ind:"property", indLabel:"Property", title:"Domain Rental Management", loc:"Adelaide SA",
+      url:"https://the-service-edit.github.io/domain-rental/",
+      blurb:"Boutique Adelaide property management run by one specialist, Valerie Dellow, with 35 years and a single point of contact. The concept leans into the boutique, you-know-exactly-who story that big agencies can't match." },
+    { id:"waterman", type:"concept", ind:"property", indLabel:"Property", title:"Waterman Property Advocates", loc:"Adelaide SA",
+      url:"https://the-service-edit.github.io/waterman-home/",
+      blurb:"Adelaide's original buyer's agency — independent buyer and vendor advocacy with 30+ years of SA property experience. The concept makes the “whose side we're on” difference the whole argument." },
+
+    { id:"black-swan", type:"concept", ind:"finance", indLabel:"Finance & Accounting", title:"Black Swan Mortgage Services", loc:"Perth WA",
+      url:"https://the-service-edit.github.io/black-swan/",
+      blurb:"Local Perth mortgage brokers since 2013, comparing 30+ banks and lenders to find a better home loan and handle the paperwork. The concept explains the (usually free) broker model in plain language and walks through the four steps." },
+    { id:"integrity", type:"concept", ind:"finance", indLabel:"Finance & Accounting", title:"Integrity Financial Advisory", loc:"Adelaide SA",
+      url:"https://the-service-edit.github.io/integrity/",
+      blurb:"An Adelaide-owned, self-licensed financial planning and stockbroking firm — wealth, direct equities, SMSF, retirement, insurance and aged-care advice. The concept signals competence and independence from the first screen." },
+    { id:"rjs", type:"concept", ind:"finance", indLabel:"Finance & Accounting", title:"RJS Accounting Services", loc:"Tewantin QLD",
+      url:"https://the-service-edit.github.io/rjs/",
+      audit:[
+        ["What's holding it back","An established practice with a website that feels dated and generic. Services buried in dense copy, and nothing separating it from every other firm with a stock-photo handshake."],
+        ["The concept","A modern, confident site that leads with clarity: who the firm helps, what they specialise in, and a straightforward way to book a consultation.",1],
+        ["Why it works","People choosing an accountant are trusting someone with their money. A sharp, simple site signals competence before anyone picks up the phone.",1]
+      ] },
+    { id:"zb", type:"concept", ind:"finance", indLabel:"Finance & Accounting", title:"ZB Accounting", loc:"NSW",
+      url:"https://the-service-edit.github.io/zb-accounting/",
+      blurb:"A NSW public accounting practice and registered tax agent where clients deal directly with Zaher, not a call centre. The concept frames the personal, compliance-meets-tax-saving service for individuals and businesses." },
+
+    { id:"glen", type:"concept", ind:"health", indLabel:"Health", title:"Glen Forrest Dental Care", loc:"Perth Hills WA",
+      url:"https://the-service-edit.github.io/glen-forest-dental/",
+      blurb:"A Perth Hills family dental practice trusted for decades — gentle, unhurried care for nervous patients and growing families. The concept sets a calm tone and makes booking online effortless." }
+  ];
+
+  var NATIVE_W = 1280;
+
+  function host(u){ try{ return new URL(u).host.replace("www.",""); }catch(e){ return u; } }
+
+  function cardHTML(b){
+    var typeTag = b.type==="real" ? '<span class="tag real">'+b.status+'</span>' : '<span class="tag concept">Concept</span>';
+    return '<article class="gcard" data-type="'+b.type+'" data-ind="'+b.ind+'" data-id="'+b.id+'">'+
+      '<div class="pv">'+
+        '<div class="pv-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">'+host(b.url)+'</span></div>'+
+        '<div class="pv-live"><div class="ph">Loading live preview…</div><iframe data-src="'+b.url+'" title="'+b.title+' — live build" scrolling="yes" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></div>'+
+      '</div>'+
+      '<div class="gmeta">'+
+        '<div class="gtags">'+typeTag+'<span class="tag ind">'+b.indLabel+'</span></div>'+
+        '<h3 class="gt">'+b.title+'</h3>'+
+        '<div class="gloc">'+b.loc+'</div>'+
+        '<p class="gd">'+(b.blurb? b.blurb.split(". ")[0]+"." : b.audit[0][1].split(". ")[0]+".")+'</p>'+
+        '<div class="gfoot"><button class="gcase" data-id="'+b.id+'">Read the case study <span class="a">&rarr;</span></button>'+
+        '<span class="ghint">Scroll inside to explore</span></div>'+
+      '</div>'+
+    '</article>';
+  }
+
+  var grid = document.getElementById("grid");
+  grid.innerHTML = BUILDS.map(cardHTML).join("");
+
+  function scaleFrame(live){
+    var w = live.clientWidth, h = live.clientHeight;
+    if(!w||!h) return;
+    var scale = w / NATIVE_W;
+    var ifr = live.querySelector("iframe");
+    ifr.style.width = NATIVE_W + "px";
+    ifr.style.height = (h / scale) + "px";
+    ifr.style.transform = "scale(" + scale + ")";
+  }
+
+  var frameIO = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var live = e.target, ifr = live.querySelector("iframe");
+      if(ifr && !ifr.src && ifr.dataset.src){
+        scaleFrame(live);
+        ifr.addEventListener("load", function(){ var ph=live.querySelector(".ph"); if(ph) ph.style.display="none"; scaleFrame(live); });
+        ifr.src = ifr.dataset.src;
+      }
+      frameIO.unobserve(live);
+    });
+  }, { rootMargin:"400px 0px" });
+  document.querySelectorAll(".pv-live").forEach(function(l){ frameIO.observe(l); });
+
+  var rt;
+  window.addEventListener("resize", function(){ clearTimeout(rt); rt=setTimeout(function(){ document.querySelectorAll(".pv-live").forEach(function(l){ if(l.querySelector("iframe").src) scaleFrame(l); }); }, 160); });
+
+  // FILTER
+  var state = { type:"all", ind:"all" };
+  var fcount = document.getElementById("fcount"), empty = document.getElementById("empty");
+  function apply(){
+    var n=0;
+    document.querySelectorAll(".gcard").forEach(function(c){
+      var show = (state.type==="all"||c.dataset.type===state.type) && (state.ind==="all"||c.dataset.ind===state.ind);
+      c.classList.toggle("hide", !show); if(show) n++;
+    });
+    fcount.textContent = n + (n===1?" build":" builds");
+    empty.style.display = n===0 ? "block" : "none";
+  }
+  document.getElementById("seg").addEventListener("click", function(e){ var b=e.target.closest("button"); if(!b) return; state.type=b.dataset.type; document.querySelectorAll("#seg button").forEach(function(x){x.classList.toggle("on",x===b);}); apply(); });
+  document.getElementById("chips").addEventListener("click", function(e){ var b=e.target.closest(".chip"); if(!b) return; state.ind=b.dataset.ind; document.querySelectorAll(".chip").forEach(function(x){x.classList.toggle("on",x===b);}); apply(); });
+  apply();
+
+  // MODAL
+  var ov=document.getElementById("ov");
+  function openCase(id){
+    var b=BUILDS.find(function(x){return x.id===id;}); if(!b) return;
+    document.getElementById("sheetLive").innerHTML = '<iframe src="'+b.url+'" title="'+b.title+' — live" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>';
+    document.getElementById("shK").textContent = b.type==="real" ? b.status : "Concept build";
+    document.getElementById("shT").textContent = b.title;
+    document.getElementById("shTags").innerHTML =
+      (b.type==="real"?'<span class="tag real">Real build</span>':'<span class="tag concept">Concept</span>')+
+      '<span class="tag ind">'+b.indLabel+'</span><span class="tag ind">'+b.loc+'</span>';
+    document.getElementById("shContent").innerHTML = b.audit
+      ? '<div class="audit">'+b.audit.map(function(r){return '<div class="audit-row '+(r[2]?"fix":"prob")+'"><div class="lab">'+r[0]+'</div><p>'+r[1]+'</p></div>';}).join("")+'</div>'
+      : '<p class="sheet-blurb">'+b.blurb+'</p>';
+    document.getElementById("shCta").innerHTML = '<a href="'+b.url+'" target="_blank" rel="noopener" class="btn btn-primary">Open live site <span class="a">&#8599;</span></a><a href="contact.html" class="btn btn-ghost">Get a build like this</a>';
+    document.getElementById("shDis").textContent = b.type==="concept" ? "Unsolicited concept. Not affiliated with or endorsed by the business shown." : "Rebuilt by The Service Edit.";
+    ov.classList.add("open"); document.body.style.overflow="hidden";
+  }
+  function closeCase(){ ov.classList.remove("open"); document.body.style.overflow=""; document.getElementById("sheetLive").innerHTML=""; }
+  grid.addEventListener("click", function(e){ var btn=e.target.closest(".gcase"); if(btn){ e.preventDefault(); openCase(btn.dataset.id); } });
+  document.getElementById("sheetX").addEventListener("click", closeCase);
+  ov.addEventListener("click", function(e){ if(e.target===ov) closeCase(); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeCase(); });
+
+  // chrome
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  var nav=document.getElementById("nav");
+  window.addEventListener("scroll", function(){ nav.classList.toggle("scrolled", window.scrollY>10); });
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.1,rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>

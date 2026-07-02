@@ -74,12 +74,6 @@ input{font-family:inherit}
   animation:grain 9s steps(6) infinite}
 @keyframes grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-2%,1%)}40%{transform:translate(1%,-2%)}60%{transform:translate(-1%,2%)}80%{transform:translate(2%,-1%)}}
 
-/* Page loader */
-.loader{position:fixed;inset:0;z-index:3000;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity 1s var(--ease),visibility 1s}
-.loader.done{opacity:0;visibility:hidden}
-.loader-mark{font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);font-weight:500;animation:loaderPulse 1.6s var(--ease) infinite}
-@keyframes loaderPulse{0%,100%{opacity:.35}50%{opacity:1}}
-
 /* The floating page shell — whole site sits as one huge rounded card */
 .shell{
   position:relative;
@@ -589,7 +583,6 @@ div.shot{position:absolute;inset:0}
 </head>
 
 <body>
-<div class="loader"><div class="loader-mark">The Service Edit</div></div>
 <div class="grain"></div>
 
 <nav class="nav" id="nav">
@@ -1180,12 +1173,6 @@ var io = new IntersectionObserver(function(entries){
   });
 },{threshold:0.15, rootMargin:"0px 0px -8% 0px"});
 document.querySelectorAll(".rv, .w-split").forEach(function(el){ io.observe(el); });
-
-/* ---------- Loader ---------- */
-window.addEventListener("load", function(){
-  setTimeout(function(){ document.querySelector(".loader").classList.add("done"); }, 350);
-});
-setTimeout(function(){ document.querySelector(".loader").classList.add("done"); }, 2400);
 
 /* ---------- Marquee duplication ---------- */
 var track = document.getElementById("marqueeTrack");

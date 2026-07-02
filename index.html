@@ -190,7 +190,13 @@ input{font-family:inherit}
 .hero-meta b{color:var(--muted);font-weight:560}
 
 /* Cascading floating browser mockups */
-.hero-stage{position:relative;height:clamp(360px,44vw,540px);margin-top:clamp(36px,5vw,72px);pointer-events:none}
+.hero-stage{position:relative;height:clamp(320px,38vw,470px);margin-top:clamp(36px,5vw,72px);pointer-events:none}
+.fan{position:absolute;left:50%;top:5%;transform:translateX(-50%);will-change:transform;pointer-events:auto}
+.fan .browser{box-shadow:var(--shadow-float)}
+.chip-pop{opacity:0;transition:opacity .7s var(--ease)}
+.chip-pop.in{opacity:1}
+.chip-pop .pop{display:inline-block;transform:scale(.5) translateY(14px);transition:transform .8s cubic-bezier(.34,1.56,.64,1)}
+.chip-pop.in .pop{transform:none}
 .hero-stage .fl{position:absolute;will-change:transform;pointer-events:auto}
 .browser{
   background:var(--surface);border-radius:14px;overflow:hidden;
@@ -569,51 +575,47 @@ div.shot{position:absolute;inset:0}
 
     <!-- Cascading floating mockups -->
     <div class="hero-stage" id="heroStage">
-      <span class="chip lite fl" data-depth="1.6" style="left:14%;top:2%">enquiry received <span class="up">●</span></span>
-      <span class="chip fl" data-depth="1.3" style="right:16%;top:6%">free homepage concept</span>
-      <span class="chip accent fl" data-depth="1.8" style="right:8%;top:52%">built in Perth</span>
+      <span class="chip lite fl chip-pop" data-depth="1.6" style="left:11%;top:6%"><span class="pop">enquiry received <span class="up">●</span></span></span>
+      <span class="chip fl chip-pop" data-depth="1.3" style="right:13%;top:3%"><span class="pop">free homepage concept</span></span>
+      <span class="chip accent fl chip-pop" data-depth="1.8" style="right:7%;top:58%"><span class="pop">built in Perth</span></span>
 
-      <div class="fl" data-depth=".55" data-rot="-7" style="left:2%;top:16%;width:26%">
-        <div class="browser" style="transform:rotate(-7deg)">
+      <div class="fan" data-fx="-0.34" data-fy="66" data-fr="-13" style="width:23%;z-index:2">
+        <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">Nutterjuck Lures</span></div>
           <div class="browser-body" style="aspect-ratio:16/11">
             <div class="shot ph-nutterjuck" role="img" aria-label="Nutterjuck Lures — e-commerce website by The Service Edit"></div>
           </div>
         </div>
       </div>
-
-      <div class="fl" data-depth=".85" data-rot="5" style="left:23%;top:36%;width:24%">
-        <div class="browser" style="transform:rotate(5deg)">
+      <div class="fan" data-fx="-0.18" data-fy="26" data-fr="-7" style="width:26%;z-index:3">
+        <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">Giant Coffee</span></div>
           <div class="browser-body" style="aspect-ratio:16/11">
             <div class="shot ph-giant" role="img" aria-label="Giant Coffee — hospitality website by The Service Edit"></div>
           </div>
         </div>
       </div>
-
-      <div class="fl" data-depth=".4" data-rot="0" style="left:36%;top:6%;width:30%;z-index:3">
-        <div class="browser" style="transform:rotate(-1deg)">
-          <div class="browser-bar"><i></i><i></i><i></i><span class="url">Orange Mortgage &amp; Finance Brokers</span></div>
-          <div class="browser-body" style="aspect-ratio:16/10.5">
-            <div class="shot ph-orange" role="img" aria-label="Orange Mortgage &amp; Finance Brokers — website by The Service Edit"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="fl" data-depth=".95" data-rot="-4" style="right:20%;top:40%;width:25%">
-        <div class="browser" style="transform:rotate(-4deg)">
+      <div class="fan" data-fx="0.18" data-fy="26" data-fr="7" style="width:26%;z-index:3">
+        <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">CVBS Venue Finders</span></div>
           <div class="browser-body" style="aspect-ratio:16/11">
             <div class="shot ph-cvbs" role="img" aria-label="CVBS Venue Finders — website by The Service Edit"></div>
           </div>
         </div>
       </div>
-
-      <div class="fl" data-depth=".6" data-rot="6" style="right:1%;top:12%;width:23%">
-        <div class="browser" style="transform:rotate(6deg)">
+      <div class="fan" data-fx="0.34" data-fy="66" data-fr="13" style="width:23%;z-index:2">
+        <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">Coastside Solid Plastering</span></div>
           <div class="browser-body" style="aspect-ratio:16/11">
             <div class="shot ph-coastside" role="img" aria-label="Coastside Solid Plastering — website by The Service Edit"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fan" data-fx="0" data-fy="0" data-fr="-1.5" style="width:30%;z-index:5">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">Orange Mortgage &amp; Finance Brokers</span></div>
+          <div class="browser-body" style="aspect-ratio:16/10.5">
+            <div class="shot ph-orange" role="img" aria-label="Orange Mortgage &amp; Finance Brokers — website by The Service Edit"></div>
           </div>
         </div>
       </div>
@@ -1210,6 +1212,20 @@ var stmtSection = document.getElementById("statement");
 var processSec = document.getElementById("process");
 var processBar = document.getElementById("processProgress");
 var lastY = 0, mx = 0, my = 0, smx = 0, smy = 0;
+var fanEls = Array.prototype.slice.call(document.querySelectorAll(".fan"));
+var fanStart = null, introFan = reduce ? 1 : 0;
+function easeOutBack(t){var s=1.35;t=t-1;return 1+(t*t*((s+1)*t+s));}
+function chipsIn(){
+  var chips = document.querySelectorAll(".chip-pop");
+  chips.forEach(function(c,i){ setTimeout(function(){ c.classList.add("in"); }, i*190); });
+}
+function armFan(){
+  if(fanStart !== null) return;
+  fanStart = performance.now() + 750;
+  setTimeout(chipsIn, reduce ? 300 : 2100);
+}
+window.addEventListener("load", armFan);
+setTimeout(armFan, 2600);
 
 if(window.matchMedia("(pointer:fine)").matches){
   window.addEventListener("mousemove", function(ev){
@@ -1239,6 +1255,31 @@ function tick(){
       var tmy = smy * d * 16;
       el.style.transform = "translate3d(" + (tx).toFixed(2) + "px," + (ty + tmy).toFixed(2) + "px,0)";
     });
+
+    /* hero fan: spread on entry, collapse on scroll */
+    if(fanEls.length && stage){
+      var now = performance.now();
+      if(!reduce && fanStart !== null){
+        var tt = clamp((now - fanStart) / 1300, 0, 1);
+        introFan = tt <= 0 ? 0 : easeOutBack(tt);
+      }
+      var sr = stage.getBoundingClientRect();
+      var sf = clamp((sr.top + sr.height * 0.55) / (vh() * 0.5), 0, 1);
+      var total = introFan * (0.12 + 0.88 * sf);
+      var sw = stage.clientWidth;
+      fanEls.forEach(function(el, i){
+        var fx = parseFloat(el.getAttribute("data-fx"));
+        var fy = parseFloat(el.getAttribute("data-fy"));
+        var fr = parseFloat(el.getAttribute("data-fr"));
+        var dd = 1 + Math.abs(fx) * 2;
+        var bob = reduce ? 0 : Math.sin(now / 1500 + i * 1.7) * 4 * total;
+        var fxp = fx * sw * total + smx * dd * 22;
+        var fyp = fy * total + bob - y * 0.1 + smy * dd * 14;
+        var rr = fr * total;
+        var sc = 0.94 + 0.06 * Math.min(total, 1);
+        el.style.transform = "translateX(-50%) translate3d(" + fxp.toFixed(1) + "px," + fyp.toFixed(1) + "px,0) rotate(" + rr.toFixed(2) + "deg) scale(" + sc.toFixed(3) + ")";
+      });
+    }
 
     /* generic depth elements relative to viewport centre */
     fl2Els.forEach(function(el){

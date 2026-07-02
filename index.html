@@ -197,6 +197,16 @@ input{font-family:inherit}
 .chip-pop.in{opacity:1}
 .chip-pop .pop{display:inline-block;transform:scale(.5) translateY(14px);transition:transform .8s cubic-bezier(.34,1.56,.64,1)}
 .chip-pop.in .pop{transform:none}
+@media(max-width:720px){
+  .hero-stage{height:290px;margin-top:18px}
+  .hero-stage .browser-bar{padding:6px 9px}
+  .hero-stage .browser-bar .url{display:none}
+  .fan[data-fx="-0.42"],.fan[data-fx="0.42"]{width:37%!important}
+  .fan[data-fx="-0.22"],.fan[data-fx="0.22"]{width:45%!important}
+  .fan[data-fx="0"]{width:54%!important}
+  .hero-stage .chip:not(.accent){display:none}
+  .hero-stage .chip.accent{right:4%;top:64%}
+}
 .hero-stage .fl{position:absolute;will-change:transform;pointer-events:auto}
 .browser{
   background:var(--surface);border-radius:14px;overflow:hidden;
@@ -207,7 +217,7 @@ input{font-family:inherit}
 .browser:hover{transform:translateY(-6px) scale(1.015)}
 .browser-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:var(--surface-2);border-bottom:1px solid var(--line)}
 .browser-bar i{width:8px;height:8px;border-radius:50%;background:rgba(24,23,18,.14)}
-.browser-bar .url{flex:1;margin-left:8px;font-size:8.5px;color:var(--faint);background:var(--surface);border-radius:99px;padding:3px 10px;text-align:center;letter-spacing:.02em;border:1px solid var(--line)}
+.browser-bar .url{flex:1;min-width:0;margin-left:8px;font-size:8.5px;color:var(--faint);background:var(--surface);border-radius:99px;padding:3px 10px;text-align:center;letter-spacing:.02em;border:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .browser-body{position:relative;overflow:hidden}
 .browser-body .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
 .shot{background-size:cover;background-position:top center;background-repeat:no-repeat}
@@ -324,7 +334,7 @@ div.shot{position:absolute;inset:0}
   position:relative;border-radius:var(--r-xl);overflow:hidden;
   box-shadow:var(--shadow-float);border:1px solid var(--line);
   aspect-ratio:16/9.4;max-height:640px;width:100%;
-  user-select:none;-webkit-user-select:none;touch-action:none;cursor:ew-resize;
+  user-select:none;-webkit-user-select:none;touch-action:pan-y;cursor:ew-resize;
   background:var(--surface);
 }
 .ba-layer{position:absolute;inset:0;overflow:hidden}
@@ -579,7 +589,7 @@ div.shot{position:absolute;inset:0}
       <span class="chip fl chip-pop" data-depth="1.3" style="right:13%;top:3%"><span class="pop">free homepage concept</span></span>
       <span class="chip accent fl chip-pop" data-depth="1.8" style="right:7%;top:58%"><span class="pop">built in Perth</span></span>
 
-      <div class="fan" data-fx="-0.34" data-fy="66" data-fr="-13" style="width:23%;z-index:2">
+      <div class="fan" data-fx="-0.42" data-fy="88" data-fr="-17" style="width:23%;z-index:2">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">Nutterjuck Lures</span></div>
           <div class="browser-body" style="aspect-ratio:16/11">
@@ -587,7 +597,7 @@ div.shot{position:absolute;inset:0}
           </div>
         </div>
       </div>
-      <div class="fan" data-fx="-0.18" data-fy="26" data-fr="-7" style="width:26%;z-index:3">
+      <div class="fan" data-fx="-0.22" data-fy="36" data-fr="-9" style="width:26%;z-index:3">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">Giant Coffee</span></div>
           <div class="browser-body" style="aspect-ratio:16/11">
@@ -595,7 +605,7 @@ div.shot{position:absolute;inset:0}
           </div>
         </div>
       </div>
-      <div class="fan" data-fx="0.18" data-fy="26" data-fr="7" style="width:26%;z-index:3">
+      <div class="fan" data-fx="0.22" data-fy="36" data-fr="9" style="width:26%;z-index:3">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">CVBS Venue Finders</span></div>
           <div class="browser-body" style="aspect-ratio:16/11">
@@ -603,7 +613,7 @@ div.shot{position:absolute;inset:0}
           </div>
         </div>
       </div>
-      <div class="fan" data-fx="0.34" data-fy="66" data-fr="13" style="width:23%;z-index:2">
+      <div class="fan" data-fx="0.42" data-fy="88" data-fr="17" style="width:23%;z-index:2">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">Coastside Solid Plastering</span></div>
           <div class="browser-body" style="aspect-ratio:16/11">
@@ -1214,7 +1224,7 @@ var processBar = document.getElementById("processProgress");
 var lastY = 0, mx = 0, my = 0, smx = 0, smy = 0;
 var fanEls = Array.prototype.slice.call(document.querySelectorAll(".fan"));
 var fanStart = null, introFan = reduce ? 1 : 0;
-function easeOutBack(t){var s=1.35;t=t-1;return 1+(t*t*((s+1)*t+s));}
+function easeOutBack(t){var s=1.7;t=t-1;return 1+(t*t*((s+1)*t+s));}
 function chipsIn(){
   var chips = document.querySelectorAll(".chip-pop");
   chips.forEach(function(c,i){ setTimeout(function(){ c.classList.add("in"); }, i*190); });
@@ -1274,11 +1284,11 @@ function tick(){
         var fy = parseFloat(el.getAttribute("data-fy"));
         var fr = parseFloat(el.getAttribute("data-fr"));
         var dd = 1 + Math.abs(fx) * 2;
-        var bob = reduce ? 0 : Math.sin(now / 1500 + i * 1.7) * 4 * total;
+        var bob = reduce ? 0 : Math.sin(now / 1500 + i * 1.7) * 5.5 * total;
         var fxp = fx * sw * total + smx * dd * 22;
         var fyp = fy * total + bob - y * 0.1 + smy * dd * 14;
         var rr = fr * total;
-        var sc = 0.94 + 0.06 * Math.min(total, 1);
+        var sc = 0.92 + 0.08 * Math.min(total, 1);
         el.style.transform = "translateX(-50%) translate3d(" + fxp.toFixed(1) + "px," + fyp.toFixed(1) + "px,0) rotate(" + rr.toFixed(2) + "deg) scale(" + sc.toFixed(3) + ")";
       });
     }

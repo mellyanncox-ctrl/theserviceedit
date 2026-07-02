@@ -147,7 +147,7 @@ input{font-family:inherit}
 .eyebrow::before{content:"";width:20px;height:1px;background:var(--accent);display:inline-block}
 .eyebrow em{font-style:normal;color:var(--accent-ink)}
 .h-display{
-  font-size:clamp(44px,7.2vw,104px);line-height:1.02;letter-spacing:-.042em;font-weight:600;
+  font-size:clamp(42px,6.6vw,92px);line-height:1.02;letter-spacing:-.042em;font-weight:600;
 }
 .h-xl{font-size:clamp(36px,4.8vw,64px);line-height:1.06;letter-spacing:-.035em;font-weight:600}
 .h-lg{font-size:clamp(28px,3.4vw,44px);line-height:1.12;letter-spacing:-.03em;font-weight:600}
@@ -181,16 +181,16 @@ input{font-family:inherit}
 .w-split.in .w>span{transform:none;opacity:1;filter:none;transition:transform 1.15s var(--ease),opacity .9s var(--ease),filter 1s var(--ease)}
 
 /* ============ HERO ============ */
-.hero{padding:clamp(150px,17vh,220px) 0 0;text-align:center;position:relative}
+.hero{padding:clamp(115px,14vh,165px) 0 0;text-align:center;position:relative}
 .hero .eyebrow{justify-content:center}
 .hero h1{max-width:15ch;margin:0 auto}
-.hero .lede{margin:34px auto 0;text-align:center}
-.hero-ctas{display:flex;gap:14px;justify-content:center;margin-top:44px;flex-wrap:wrap}
-.hero-meta{margin-top:26px;font-size:12.5px;color:var(--faint);letter-spacing:.04em}
+.hero .lede{margin:26px auto 0;text-align:center}
+.hero-ctas{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+.hero-meta{margin-top:18px;font-size:12.5px;color:var(--faint);letter-spacing:.04em}
 .hero-meta b{color:var(--muted);font-weight:560}
 
 /* Cascading floating browser mockups */
-.hero-stage{position:relative;height:clamp(320px,38vw,470px);margin-top:clamp(36px,5vw,72px);pointer-events:none}
+.hero-stage{position:relative;height:clamp(320px,38vw,470px);margin-top:clamp(24px,3.5vw,44px);pointer-events:none}
 .fan{position:absolute;left:50%;top:5%;transform:translateX(-50%);will-change:transform;pointer-events:auto}
 .fan .browser{box-shadow:var(--shadow-float)}
 .chip-pop{opacity:0;transition:opacity .7s var(--ease)}
@@ -1264,8 +1264,10 @@ function tick(){
         introFan = tt <= 0 ? 0 : easeOutBack(tt);
       }
       var sr = stage.getBoundingClientRect();
-      var sf = clamp((sr.top + sr.height * 0.55) / (vh() * 0.5), 0, 1);
-      var total = introFan * (0.12 + 0.88 * sf);
+      var enter = clamp((vh() - sr.top) / (vh() * 0.6), 0, 1);
+      var exit = clamp((sr.top + sr.height * 0.55) / (vh() * 0.5), 0, 1);
+      var spread = easeOutBack(enter) * exit;
+      var total = introFan * (0.10 + 0.90 * spread);
       var sw = stage.clientWidth;
       fanEls.forEach(function(el, i){
         var fx = parseFloat(el.getAttribute("data-fx"));

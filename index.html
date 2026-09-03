@@ -1,284 +1,570 @@
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Service Edit</title>
-<meta name="description" content="The Service Edit is a Perth web design studio building modern sites for service businesses. Something new is on the way.">
-
-<meta property="og:title" content="The Service Edit">
-<meta property="og:description" content="A Perth studio building modern sites for service businesses. Something new is on the way.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://theserviceedit.com">
-
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Service Edit | We make service businesses look like the obvious choice</title>
+<meta name="description" content="We take outdated service businesses and turn them into brands people trust online. Your customers decide whether to trust you before they ever get in touch. Perth based, working Australia-wide." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="canonical" href="https://theserviceedit.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://theserviceedit.com/" />
+<meta property="og:title" content="The Service Edit" />
+<meta property="og:description" content="We take outdated service businesses and turn them into brands people trust online." />
+<meta property="og:image" content="https://theserviceedit.com/work/og.jpg" />
+<meta property="og:locale" content="en_AU" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111210'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='14' font-weight='600' fill='%23fff' text-anchor='middle'%3Ese%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
-@import url('https://cdn.jsdelivr.net/fontsource/fonts/geist:vf@latest/latin-wght-normal.css');
-@import url('https://cdn.jsdelivr.net/fontsource/fonts/geist-mono:vf@latest/latin-wght-normal.css');
+  :root{
+    --bg:#ffffff; --bg-soft:#F5F4F1; --card-mute:#EFEEE9;
+    --ink:#111210; --ink-60:rgba(17,18,16,.6); --ink-40:rgba(17,18,16,.42);
+    --line:rgba(17,18,16,.1); --line-soft:rgba(17,18,16,.055);
+    --dark:#0E0F0D; --accent:#111210;
+    --r-btn:10px; --r-card:18px; --r-media:22px; --pill:999px;
+    --maxw:1200px; --pad:clamp(1.15rem,4vw,4rem);
+    --f:"Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --mono:"Geist Mono", ui-monospace, "SF Mono", monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--f); background:var(--bg); color:var(--ink); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:clip;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ::selection{background:var(--ink); color:#fff;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding-left:var(--pad); padding-right:var(--pad);}
 
-:root{
-  --ink:#111210;
-  --bg-soft:#F5F4F1;
-  --sand:#EDE8DE;
-  --sage:#E2E7DC;
-  --stone:#DDD8CF;
-  --muted:#6b6b64;
-  --line:rgba(17,18,16,0.12);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-body{
-  font-family:'Geist Variable','Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  background:var(--bg-soft);
-  color:var(--ink);
-  min-height:100vh;
-  line-height:1.5;
-}
-.mono{font-family:'Geist Mono Variable','Geist Mono',ui-monospace,monospace}
+  h1,h2,h3{font-weight:600; letter-spacing:-.03em; line-height:1.02;}
+  h2{font-size:clamp(2.1rem,4.6vw,3.6rem);}
+  h3{font-weight:500; letter-spacing:-.02em;}
+  p{color:var(--ink-60);}
+  .eyebrow{font-family:var(--mono); font-size:.74rem; font-weight:400; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40);}
 
-.wrap{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  max-width:1120px;
-  margin:0 auto;
-  padding:36px 32px 48px;
-}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; font-family:var(--f); font-weight:500; font-size:.97rem; padding:.85rem 1.45rem; border-radius:var(--r-btn); cursor:pointer; border:1px solid transparent; transition:.22s ease; white-space:nowrap;}
+  .btn .a{transition:transform .22s ease;}
+  .btn:hover .a{transform:translateX(3px);}
+  .btn-primary{background:var(--ink); color:#fff;}
+  .btn-primary:hover{background:#2c2c28;}
+  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-light{background:#fff; color:var(--ink);}
+  .btn-light:hover{background:#f0efeb;}
 
-/* header */
-.top{display:flex;align-items:center;justify-content:space-between}
-.brand{
-  font-weight:600;
-  font-size:15px;
-  letter-spacing:-0.01em;
-}
-.badge{
-  font-size:11px;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--muted);
-  border:1px solid var(--line);
-  padding:7px 13px;
-  border-radius:999px;
-}
+  .nav{position:sticky; top:0; z-index:100; background:rgba(255,255,255,.8); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid transparent; transition:border-color .3s;}
+  .nav.scrolled{border-bottom-color:var(--line);}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:66px;}
+  .brand{display:flex; align-items:center; gap:.55rem; font-size:1.08rem; font-weight:600; letter-spacing:-.03em;}
+  .brand .mk{width:26px; height:26px; border-radius:8px; background:var(--ink); display:grid; place-items:center; color:#fff; font-size:.74rem; font-weight:600;}
+  .nav-links{display:flex; align-items:center; gap:2rem;}
+  .nav-links a{font-size:.93rem; color:var(--ink-60); transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-r{display:flex; align-items:center; gap:.85rem;}
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding:8px;}
+  .burger span{width:22px; height:2px; background:var(--ink); border-radius:2px;}
+  .mmenu{display:none; position:fixed; inset:66px 0 auto; z-index:99; background:var(--bg); border-bottom:1px solid var(--line); padding:1.4rem var(--pad) 2rem; flex-direction:column;}
+  .mmenu.open{display:flex;}
+  .mmenu a{font-size:1.5rem; font-weight:500; letter-spacing:-.03em; padding:.65rem 0; border-bottom:1px solid var(--line-soft);}
+  .mmenu .btn{margin-top:1.2rem; justify-content:center;}
 
-/* hero */
-.hero{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:72px 0 56px;
-  max-width:760px;
-}
-.kicker{
-  font-size:12px;
-  letter-spacing:0.16em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:26px;
-}
-h1{
-  font-weight:500;
-  font-size:clamp(38px,6.4vw,72px);
-  line-height:1.02;
-  letter-spacing:-0.03em;
-}
-h1 .dim{color:rgba(17,18,16,0.32)}
-.lede{
-  margin-top:28px;
-  font-size:clamp(17px,2.2vw,20px);
-  line-height:1.6;
-  color:#33342f;
-  max-width:560px;
-}
+  section{scroll-margin-top:84px;}
+  .pad{padding-top:clamp(4.5rem,9vw,8rem); padding-bottom:clamp(4.5rem,9vw,8rem);}
+  .shead .eyebrow{display:block; margin-bottom:1rem;}
 
-/* card + form */
-.panel{
-  margin-top:44px;
-  background:var(--sand);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:30px;
-  max-width:520px;
-}
-.panel h2{
-  font-weight:500;
-  font-size:19px;
-  letter-spacing:-0.01em;
-}
-.panel p.sub{
-  margin-top:8px;
-  font-size:14px;
-  color:var(--muted);
-  line-height:1.55;
-}
-form{margin-top:22px;display:grid;gap:14px}
-.field label{
-  display:block;
-  font-size:11px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:7px;
-}
-input,textarea{
-  width:100%;
-  font-family:inherit;
-  font-size:15px;
-  color:var(--ink);
-  background:#fbfaf7;
-  border:1px solid var(--line);
-  border-radius:11px;
-  padding:12px 14px;
-  transition:border-color .18s ease,background .18s ease;
-}
-textarea{resize:vertical;min-height:96px}
-input:focus,textarea:focus{
-  outline:none;
-  border-color:rgba(17,18,16,0.4);
-  background:#fff;
-}
-button{
-  font-family:inherit;
-  font-size:15px;
-  font-weight:500;
-  color:var(--bg-soft);
-  background:var(--ink);
-  border:none;
-  border-radius:11px;
-  padding:13px 18px;
-  cursor:pointer;
-  transition:opacity .18s ease,transform .06s ease;
-}
-button:hover{opacity:0.9}
-button:active{transform:translateY(1px)}
-button:disabled{opacity:0.55;cursor:default}
-.status{
-  font-size:14px;
-  color:#33342f;
-  min-height:1px;
-}
-.status.err{color:#8a2f2f}
+  /* HERO */
+  .hero{text-align:center; padding-top:clamp(3.5rem,8vw,7rem); padding-bottom:clamp(2rem,4vw,3rem);}
+  .hero .eyebrow{display:inline-block; margin-bottom:1.8rem;}
+  .hero h1{font-size:clamp(2.7rem,7vw,5.6rem); font-weight:600; letter-spacing:-.04em; line-height:1.0; max-width:16ch; margin:0 auto;}
+  .hero .sub{font-size:clamp(1.1rem,1.7vw,1.35rem); color:var(--ink-60); max-width:50ch; margin:1.8rem auto 0;}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; margin-top:2.2rem;}
+  .hero .reassure{font-family:var(--mono); font-size:.74rem; letter-spacing:.04em; color:var(--ink-40); margin-top:1.4rem; text-transform:uppercase;}
 
-/* footer */
-.foot{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:12px;
-  padding-top:34px;
-  border-top:1px solid var(--line);
-  font-size:13px;
-  color:var(--muted);
-}
-.foot a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
-.foot a:hover{border-color:var(--ink)}
+  /* PROBLEM punch */
+  .punch{max-width:40rem;}
+  .punch h2{font-size:clamp(2.1rem,4.4vw,3.5rem); letter-spacing:-.035em; line-height:1.0;}
+  .punch .em{color:var(--accent);}
+  .punch-body{font-size:clamp(1.15rem,1.9vw,1.5rem); color:var(--ink-60); max-width:50ch; margin-top:1.8rem; line-height:1.45; font-weight:400;}
 
-/* thank you state */
-.thanks{display:none}
-.thanks h2{font-weight:500;font-size:19px}
-.thanks p{margin-top:8px;font-size:14px;color:var(--muted);line-height:1.55}
+  /* METHOD */
+  .method{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.1rem,2vw,1.6rem);}
+  .mstep{border-top:1px solid var(--ink); padding-top:1.4rem;}
+  .mstep .mn{font-family:var(--mono); font-size:.76rem; color:var(--accent); letter-spacing:.04em;}
+  .mstep h3{font-size:1.5rem; font-weight:500; letter-spacing:-.025em; margin:1.4rem 0 .7rem;}
+  .mstep p{font-size:1rem;}
 
-@media (max-width:560px){
-  .wrap{padding:26px 22px 36px}
-  .hero{padding:48px 0 40px}
-  .panel{padding:24px}
-}
+  /* WORK proof */
+  .work{display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(1.2rem,2.5vw,2rem);}
+  .wcard{background:var(--bg-soft); border-radius:var(--r-card); overflow:hidden; display:block; transition:transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease;}
+  a.wcard:hover{transform:translateY(-4px); box-shadow:0 22px 44px -28px rgba(17,18,16,.42);}
+  .wcard .thumb{aspect-ratio:4/3; background:var(--card-mute); position:relative; overflow:hidden;}
+  .wcard .thumb img{width:100%; height:100%; object-fit:cover; object-position:top center;}
+  .wcard .ph{position:absolute; top:.8rem; left:.8rem; font-family:var(--mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink); background:rgba(255,255,255,.92); padding:.3rem .7rem; border-radius:var(--pill);}
+  .wcard .ph.building{background:var(--ink); color:#fff;}
+  .wcard .wmeta{padding:1.2rem 1.3rem 1.4rem; display:flex; align-items:flex-start; justify-content:space-between; gap:1rem;}
+  .wcard .wt{font-weight:500; font-size:1.05rem; letter-spacing:-.01em;}
+  .wcard .wloc{font-family:var(--mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-40); margin-top:.3rem;}
+  .wcard .wd{font-size:.9rem; color:var(--ink-60); margin-top:.55rem;}
+  .wcard .go{font-size:1rem; color:var(--ink-40); flex:0 0 auto; transition:transform .22s ease, color .22s ease;}
+  a.wcard:hover .go{transform:translateX(3px); color:var(--ink);}
+  .work-note{font-family:var(--mono); font-size:.72rem; color:var(--ink-40); margin-top:1.6rem; text-align:center;}
+
+  /* MATHS */
+  .maths-p{font-size:clamp(1.2rem,2vw,1.6rem); color:var(--ink); max-width:48ch; margin-top:clamp(2rem,3vw,2.6rem); font-weight:400; letter-spacing:-.015em; line-height:1.4;}
+
+  /* PRICING */
+  .price-intro{max-width:50ch; margin-bottom:clamp(2rem,3vw,2.6rem);}
+  .price-intro .big{font-size:clamp(1.3rem,2.2vw,1.7rem); color:var(--ink); font-weight:400; letter-spacing:-.015em;}
+  .price{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.2rem,2.5vw,1.8rem);}
+  .pcard{border-radius:var(--r-media); padding:clamp(1.9rem,3vw,2.6rem); display:flex; flex-direction:column;}
+  .pcard.one{background:var(--bg); border:1px solid var(--line);}
+  .pcard.five{background:var(--ink); color:#fff;}
+  .pcard.five p,.pcard.five .pinc li{color:rgba(255,255,255,.7);}
+  .pflag{font-family:var(--mono); font-size:.74rem; letter-spacing:.04em; text-transform:uppercase; color:var(--accent);}
+  .pcard.five .pflag{color:#D8D5CE;}
+  .pname{font-size:1.6rem; font-weight:500; letter-spacing:-.025em; margin:.6rem 0 .3rem;}
+  .pfrom{font-size:1.5rem; font-weight:600; letter-spacing:-.03em;}
+  .pfrom .c{font-size:.85rem; font-weight:400; color:var(--ink-40);}
+  .pcard.five .pfrom .c{color:rgba(255,255,255,.5);}
+  .pdesc{font-size:.98rem; margin:.9rem 0 1.5rem;}
+  .pinc{list-style:none; display:flex; flex-direction:column; gap:.5rem; margin-bottom:1.8rem; flex:1;}
+  .pinc li{font-size:.92rem; color:var(--ink-60); display:flex; gap:.6rem; align-items:flex-start;}
+  .pinc li .ck{color:var(--accent); flex:0 0 auto;}
+  .pcard.five .pinc li .ck{color:#D8D5CE;}
+  .pcard .btn{width:100%; justify-content:center;}
+  .ongoing{margin-top:1rem; font-size:.92rem; color:var(--ink-40);}
+
+  /* FAQ */
+  .faq-i{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%; text-align:left; background:none; border:0; cursor:pointer; padding:1.5rem 0; display:flex; justify-content:space-between; align-items:center; gap:1rem; font-family:var(--f); font-size:1.15rem; font-weight:500; letter-spacing:-.02em; color:var(--ink);}
+  .faq-q .pm{flex:0 0 auto; width:24px; height:24px; position:relative;}
+  .faq-q .pm::before,.faq-q .pm::after{content:""; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:var(--ink-40); transition:.25s;}
+  .faq-q .pm::before{width:12px; height:1.5px;}
+  .faq-q .pm::after{width:1.5px; height:12px;}
+  .faq-i.open .pm::after{transform:translate(-50%,-50%) scaleY(0);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+  .faq-a p{padding:0 0 1.5rem; font-size:1rem; max-width:64ch;}
+
+  /* CONTACT */
+  .c-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,4.5rem); align-items:start;}
+  .contact h2{max-width:15ch;}
+  .c-sub{color:var(--ink-60); font-size:1.06rem; margin-top:1.3rem; max-width:44ch;}
+  .c-pts{list-style:none; margin-top:1.8rem; display:flex; flex-direction:column; gap:.7rem;}
+  .c-pts li{display:flex; gap:.7rem; align-items:flex-start; font-size:.98rem; color:var(--ink-60);}
+  .c-pts li .ic{width:20px; height:20px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-size:.62rem; flex:0 0 auto; margin-top:.1rem;}
+  .form{display:flex; flex-direction:column; gap:.9rem;}
+  .field label{display:block; font-size:.82rem; color:var(--ink-60); margin-bottom:.45rem;}
+  .field input,.field textarea{width:100%; background:var(--bg); border:1px solid var(--line); border-radius:var(--r-btn); padding:.85rem 1.1rem; color:var(--ink); font-family:var(--f); font-size:1rem; transition:.2s;}
+  .field input::placeholder,.field textarea::placeholder{color:var(--ink-40);}
+  .field input:focus,.field textarea:focus{outline:none; border-color:var(--ink);}
+  .field textarea{resize:vertical; min-height:78px;}
+  .form .btn{justify-content:center; margin-top:.3rem;}
+  .fnote{display:none; font-size:.95rem; padding:1rem 1.2rem; border-radius:var(--r-btn);}
+  .fnote.ok{display:block; background:var(--bg-soft); border:1px solid var(--line); color:var(--ink);}
+  .fnote.err{display:block; background:var(--bg-soft); border:1px solid var(--accent); color:var(--ink);}
+  .hp{position:absolute; left:-9999px;}
+
+  .foot{border-top:1px solid var(--line); padding:clamp(3rem,5vw,4.5rem) 0 2rem;}
+  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:clamp(2rem,4vw,4rem); padding-bottom:2.6rem;}
+  .foot-brand{display:flex; align-items:center; gap:.55rem; font-size:1.3rem; font-weight:600; letter-spacing:-.03em;}
+  .foot-brand .mk{width:28px; height:28px; border-radius:8px; background:var(--ink); display:grid; place-items:center; color:#fff; font-size:.76rem;}
+  .foot-sub{color:var(--ink-60); margin-top:.9rem; max-width:40ch; font-size:.97rem;}
+  .foot-col h4{font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-40); margin-bottom:1rem; font-weight:400;}
+  .foot-col a,.foot-col p{display:block; font-size:.95rem; color:var(--ink-60); margin-bottom:.55rem;}
+  .foot-col a:hover{color:var(--ink);}
+  .foot-bottom{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; padding-top:2rem; margin-top:0; border-top:1px solid var(--line-soft); font-family:var(--mono); font-size:.72rem; color:var(--ink-40);}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1; transform:none;}
+  .stagger > *{opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
+  .stagger.in > *{opacity:1; transform:none;}
+  .stagger.in > *:nth-child(2){transition-delay:.09s;}
+  .stagger.in > *:nth-child(3){transition-delay:.18s;}
+  .stagger.in > *:nth-child(4){transition-delay:.27s;}
+  @media (prefers-reduced-motion:reduce){.reveal,.stagger>*{opacity:1!important; transform:none!important; transition:none!important;} html{scroll-behavior:auto;}}
+
+  /* BEFORE / AFTER */
+  .ba-real{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1rem,2.5vw,1.8rem); }
+  .ba-item{ margin:0; }
+  .ba-tag{ display:inline-block; font-family:var(--mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-60); margin-bottom:.85rem; padding:.32rem .85rem; border:1px solid var(--line); border-radius:var(--pill); }
+  .ba-tag.after{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .ba-frame{ position:relative; overflow:hidden; border-radius:var(--r-media); border:1px solid var(--line); background:#fff; aspect-ratio:1300 / 668; }
+  .ba-img{ width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+  .ba-item figcaption{ font-size:.92rem; color:var(--ink-60); margin-top:.9rem; }
+
+  /* REVENUE CALCULATOR */
+  .calc{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.2rem,2.5vw,1.8rem); align-items:stretch; margin-top:clamp(2rem,3vw,2.6rem); }
+  .calc .cl{ display:flex; flex-direction:column; gap:1.4rem; background:var(--bg-soft); border-radius:var(--r-card); padding:clamp(1.6rem,3vw,2.2rem); }
+  .calc h4{ font-size:1.2rem; font-weight:500; letter-spacing:-.01em; }
+  .calc .chint{ font-size:.96rem; color:var(--ink-60); margin-top:.4rem; }
+  .ctrl label{ display:block; font-size:.9rem; color:var(--ink-60); margin-bottom:.55rem; }
+  .money{ display:flex; align-items:center; background:#fff; border:1px solid var(--line); border-radius:var(--r-btn); padding:.2rem 1rem; transition:border-color .2s; }
+  .money:focus-within{ border-color:var(--ink); }
+  .money span{ color:var(--ink-40); font-size:1.05rem; }
+  .money input{ background:none; border:0; color:var(--ink); font-family:var(--f); font-size:1.25rem; font-weight:600; padding:.7rem .4rem; width:100%; outline:none; }
+  .slider-row{ display:flex; align-items:center; justify-content:space-between; margin-bottom:.7rem; }
+  .slider-row .sv{ font-weight:600; font-size:1.25rem; }
+  .calc input[type=range]{ -webkit-appearance:none; appearance:none; width:100%; height:5px; border-radius:5px; background:var(--line); outline:none; }
+  .calc input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:24px; height:24px; border-radius:50%; background:var(--ink); cursor:pointer; border:4px solid var(--bg-soft); box-shadow:0 0 0 1px var(--line); }
+  .calc input[type=range]::-moz-range-thumb{ width:24px; height:24px; border-radius:50%; background:var(--ink); cursor:pointer; border:4px solid var(--bg-soft); }
+  .calc .cr{ background:var(--ink); color:#fff; border-radius:var(--r-card); padding:clamp(1.8rem,3vw,2.4rem); display:flex; flex-direction:column; justify-content:center; }
+  .res{ padding:1.2rem 0; border-bottom:1px solid rgba(255,255,255,.18); }
+  .res:last-child{ border-bottom:0; padding-bottom:0; }
+  .res .rk{ font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,.55); }
+  .res .rv{ font-size:clamp(2.2rem,4vw,3rem); font-weight:600; letter-spacing:-.03em; line-height:1; margin-top:.4rem; }
+  .calc-note{ font-size:1rem; color:var(--ink-40); margin-top:1.6rem; }
+
+  /* FREE CONCEPT */
+  .free{ background:var(--ink); color:#fff; border-radius:var(--r-media); padding:clamp(2.2rem,5vw,4rem); }
+  .free .eyebrow{ color:rgba(255,255,255,.5); }
+  .free-h{ color:#fff; font-size:clamp(2.3rem,5.4vw,4.3rem); letter-spacing:-.04em; line-height:.98; max-width:15ch; margin-top:1rem; }
+  .free-sub{ color:rgba(255,255,255,.72); font-size:clamp(1.1rem,1.7vw,1.4rem); max-width:50ch; margin-top:1.4rem; line-height:1.45; }
+  .free-steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.2rem,2.5vw,2rem); margin:clamp(2.2rem,4vw,3rem) 0; }
+  .fstep{ display:flex; gap:.9rem; align-items:flex-start; }
+  .fstep .fn{ width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.3); display:grid; place-items:center; font-size:.9rem; flex:0 0 auto; font-family:var(--mono); }
+  .fstep h3{ font-size:1.18rem; font-weight:500; color:#fff; margin-bottom:.35rem; letter-spacing:-.01em; }
+  .fstep p{ font-size:.96rem; color:rgba(255,255,255,.66); line-height:1.4; }
+
+  /* typographic scale */
+  h2{ font-size:clamp(2.25rem,5vw,3.9rem); letter-spacing:-.038em; line-height:.98; }
+  h3{ letter-spacing:-.025em; }
+  .shead .eyebrow{ margin-bottom:1.1rem; }
+  .punch-body{ font-size:clamp(1.2rem,2vw,1.55rem); }
+  .c-sub{ font-size:clamp(1.12rem,1.6vw,1.32rem); line-height:1.45; }
+  .price-intro .big{ font-size:clamp(1.35rem,2.2vw,1.85rem); line-height:1.32; }
+  .method .mstep h3{ font-size:clamp(1.5rem,2.2vw,1.9rem); }
+  .method .mstep p{ font-size:1.07rem; }
+  .wcard .wt{ font-size:1.18rem; }
+  .wcard .wd{ font-size:.98rem; }
+  .pname{ font-size:clamp(1.5rem,2.2vw,1.95rem); }
+  .pdesc{ font-size:1.05rem; }
+  .pinc li{ font-size:.99rem; }
+  .faq-q{ font-size:clamp(1.18rem,1.8vw,1.45rem); }
+  .faq-a p{ font-size:1.07rem; line-height:1.55; }
+  .maths-p{ font-size:clamp(1.25rem,2.1vw,1.7rem); }
+
+  @media (max-width:900px){
+    .nav-links{display:none;} .burger{display:flex;}
+    .method{grid-template-columns:1fr;}
+    .work{grid-template-columns:1fr;}
+    .price{grid-template-columns:1fr;}
+    .c-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .ba-real{ grid-template-columns:1fr; }
+    .calc{ grid-template-columns:1fr; }
+    .free-steps{ grid-template-columns:1fr; }
+  }
+  @media (max-width:560px){ .foot-grid{grid-template-columns:1fr;} }
 </style>
 </head>
-<body>
-<div class="wrap">
+<body id="top">
 
-  <header class="top">
-    <div class="brand">The Service Edit</div>
-    <div class="badge mono">Perth</div>
-  </header>
-
-  <main class="hero">
-    <div class="kicker mono">Coming soon</div>
-    <h1>Websites that earn trust.<br><span class="dim">A new edit is on the way.</span></h1>
-    <p class="lede">A Perth studio building modern sites for service businesses. The full site is in the works. Leave your details and we will be in touch when it lands, or sooner if you would like to talk.</p>
-
-    <div class="panel" id="panel">
-      <div id="formView">
-        <h2>Get in touch</h2>
-        <p class="sub">Tell us a little about your business and what you are after.</p>
-        <form id="contactForm">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="What are you looking to build?"></textarea>
-          </div>
-          <input type="hidden" name="subject" value="New enquiry via coming soon page">
-          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-          <button type="submit" id="submitBtn">Send enquiry</button>
-          <div class="status" id="status" aria-live="polite"></div>
-        </form>
-      </div>
-      <div class="thanks" id="thanksView">
-        <h2>Thank you</h2>
-        <p>Your message is on its way. We will reply from hello@theserviceedit.com shortly.</p>
-      </div>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand"><span class="mk">se</span>The Service Edit</a>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-r">
+      <a href="#contact" class="btn btn-primary">Get a free concept</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-  </main>
+  </div>
+</header>
 
-  <footer class="foot">
-    <span>The Service Edit</span>
-    <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
-  </footer>
-
+<div class="mmenu" id="mmenu">
+  <a href="#work">Work</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary">Get a free concept</a>
 </div>
 
+<main>
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <span class="eyebrow reveal">The Service Edit</span>
+    <h1 class="reveal">We take outdated service businesses and turn them into brands people trust online.</h1>
+    <p class="sub reveal">Custom websites for service businesses that need to look as good as the work they do.</p>
+    <div class="hero-cta reveal">
+      <a href="#contact" class="btn btn-primary">Get a free homepage concept <span class="a">&rarr;</span></a>
+    </div>
+    <div class="reassure reveal">No obligation. No templates. Designed specifically for your business.</div>
+  </section>
+
+  <!-- TRANSFORMATION -->
+  <section id="transform" class="wrap pad" style="padding-top:clamp(2.5rem,5vw,4rem);">
+    <div class="shead reveal" style="text-align:center; max-width:34rem; margin:0 auto clamp(2rem,4vw,3rem);">
+      <span class="eyebrow">Before and after</span>
+      <h2>The difference isn't just <span style="color:var(--ink-40);">design.</span><br>It's trust.</h2>
+    </div>
+    <div class="reveal">
+      <div class="ba-real">
+        <figure class="ba-item reveal">
+          <span class="ba-tag">Before</span>
+          <div class="ba-frame"><img class="ba-img" src="work/cvbs-before.jpg" width="1300" height="668" loading="lazy" decoding="async" alt="The CVBS website before the rebuild" /></div>
+          <figcaption>The old site</figcaption>
+        </figure>
+        <figure class="ba-item reveal" style="transition-delay:.08s;">
+          <span class="ba-tag after">After</span>
+          <div class="ba-frame"><img class="ba-img" src="work/cvbs-after.jpg" width="1300" height="668" loading="lazy" decoding="async" alt="The CVBS website rebuilt by The Service Edit" /></div>
+          <figcaption>Rebuilt by The Service Edit</figcaption>
+        </figure>
+      </div>
+      <p style="text-align:center; margin-top:2rem; font-size:.9rem; color:var(--ink-40); font-family:var(--mono);">A real rebuild for CVBS, Worldwide Venue Finding Solutions.</p>
+      <div class="reveal" style="text-align:center; margin-top:clamp(1.6rem,3vw,2.4rem);">
+        <a href="#contact" class="btn btn-primary">Get a free homepage concept <span class="a">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section id="why" class="wrap pad">
+    <div class="punch reveal">
+      <h2>People decide before they <span class="em">call.</span></h2>
+    </div>
+    <p class="punch-body reveal">If your website looks outdated, unfinished or generic, customers assume your business is too.</p>
+  </section>
+
+  <!-- FREE CONCEPT -->
+  <section id="free" class="wrap pad" style="padding-top:0;">
+    <div class="free reveal">
+      <span class="eyebrow">No cost, no catch</span>
+      <h2 class="free-h">We'll redesign your homepage. For free.</h2>
+      <p class="free-sub">Not a generic template. A custom direction built around your actual business by someone who has run them, so you can see exactly what it could look like. If you love it, we build it. If you don't, you've lost nothing.</p>
+      <div class="free-steps">
+        <div class="fstep"><span class="fn">1</span><div><h3>Send us your site or socials</h3><p>A link is all we need. No brief, no forms to fill in.</p></div></div>
+        <div class="fstep"><span class="fn">2</span><div><h3>We redesign your homepage</h3><p>A custom concept built around your business, not a theme.</p></div></div>
+        <div class="fstep"><span class="fn">3</span><div><h3>You decide</h3><p>Love it and we build it. Don't and you keep the idea, no obligation.</p></div></div>
+      </div>
+      <a href="#contact" class="btn btn-light">Get a free homepage concept &rarr;</a>
+    </div>
+  </section>
+
+  <!-- WORK / PROOF -->
+  <section id="work" class="wrap pad" style="padding-top:0;">
+    <div class="shead reveal" style="margin-bottom:clamp(2.4rem,4vw,3.4rem);">
+      <span class="eyebrow">Recent work</span>
+      <h2 style="max-width:18ch;">Real businesses. Real builds.</h2>
+    </div>
+    <div class="work" id="workGrid">
+
+      <a class="wcard reveal" href="https://giantcoffee.com.au" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="work/giant-coffee.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Giant Coffee website built by The Service Edit" onerror="this.closest('.wcard').remove()" />
+          <span class="ph">Live</span>
+        </div>
+        <div class="wmeta">
+          <div>
+            <div class="wt">Giant Coffee</div>
+            <div class="wloc">Northbridge, Perth WA</div>
+            <div class="wd">A laneway specialty cafe made easy to find, with online ordering front and centre.</div>
+          </div>
+          <span class="go">&rarr;</span>
+        </div>
+      </a>
+
+      <a class="wcard reveal" style="transition-delay:.06s;" href="https://jordyscasuarina.com" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="work/jordys.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Jordy's Casuarina website built by The Service Edit" onerror="this.closest('.wcard').remove()" />
+          <span class="ph">Live</span>
+        </div>
+        <div class="wmeta">
+          <div>
+            <div class="wt">Jordy's Casuarina</div>
+            <div class="wloc">Casuarina, NSW</div>
+            <div class="wd">Sourdough pizza restaurant. Menu, bookings and ordering in one clear path.</div>
+          </div>
+          <span class="go">&rarr;</span>
+        </div>
+      </a>
+
+      <a class="wcard reveal" style="transition-delay:.12s;" href="https://goldfoilbooks.com.au" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="work/goldfoilbooks.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Gold Foil Books website built by The Service Edit" onerror="this.closest('.wcard').remove()" />
+          <span class="ph">Live</span>
+        </div>
+        <div class="wmeta">
+          <div>
+            <div class="wt">Gold Foil Books</div>
+            <div class="wloc">Wollongong, NSW</div>
+            <div class="wd">Artist-led book rebinding. A handmade product given a storefront that matches the craft.</div>
+          </div>
+          <span class="go">&rarr;</span>
+        </div>
+      </a>
+
+      <div class="wcard reveal" style="transition-delay:.18s;">
+        <div class="thumb">
+          <img src="work/nutterjuck.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Nutterjuck Lures website in progress" onerror="this.closest('.wcard').remove()" />
+          <span class="ph building">In build</span>
+        </div>
+        <div class="wmeta">
+          <div>
+            <div class="wt">Nutterjuck Lures</div>
+            <div class="wloc">Australia</div>
+            <div class="wd">Handmade fishing lures, moving from a maker's page to a proper storefront.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="reveal" style="text-align:center; margin-top:clamp(2.2rem,4vw,3rem);">
+      <a href="work.html" class="btn btn-ghost">View all projects <span class="a">&rarr;</span></a>
+    </div>
+  </section>
+
+  <!-- MATHS / REVENUE CALCULATOR -->
+  <section id="maths" class="wrap pad" style="padding-top:0;">
+    <div class="shead reveal" style="max-width:40rem;">
+      <span class="eyebrow">The maths</span>
+      <h2>What's one extra customer a week worth to you?</h2>
+    </div>
+    <div class="calc reveal">
+      <div class="cl">
+        <div class="ctrl">
+          <label for="cv">What an average customer is worth to you</label>
+          <div class="money"><span>$</span><input type="number" id="cv" value="350" min="0" inputmode="numeric" /></div>
+        </div>
+        <div class="ctrl">
+          <div class="slider-row"><label for="cc" style="margin:0;">Extra customers per week</label><span class="sv" id="ccv">1</span></div>
+          <input type="range" id="cc" min="1" max="10" value="1" />
+        </div>
+        <p class="chint">Just one extra customer a week. Most owners are aiming higher than that.</p>
+      </div>
+      <div class="cr">
+        <div class="res"><div class="rk">Extra revenue per month</div><div class="rv" id="rm">$1,517</div></div>
+        <div class="res"><div class="rk">Extra revenue per year</div><div class="rv" id="ry">$18,200</div></div>
+      </div>
+    </div>
+    <p class="calc-note reveal">A credible site rarely costs more than the work it wins back. That is the whole idea.</p>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="wrap pad">
+    <div class="shead reveal" style="text-align:center; max-width:30rem; margin:0 auto clamp(2rem,4vw,3rem);">
+      <span class="eyebrow">Pricing</span>
+      <h2>Simple, honest pricing.</h2>
+    </div>
+    <div class="price" style="grid-template-columns:1fr; max-width:30rem; margin:0 auto;">
+      <div class="pcard five reveal">
+        <span class="pflag">The Service Edit</span>
+        <div class="pname">Everything your business needs to look credible online.</div>
+        <div class="pfrom">From $799 <span class="c">AUD</span></div>
+        <ul class="pinc">
+          <li><span class="ck">&check;</span> Custom design, built around your business</li>
+          <li><span class="ck">&check;</span> Mobile optimised</li>
+          <li><span class="ck">&check;</span> Contact and enquiry forms</li>
+          <li><span class="ck">&check;</span> SEO foundations</li>
+          <li><span class="ck">&check;</span> Fast turnaround</li>
+        </ul>
+        <a href="#contact" class="btn btn-light">Get a free homepage concept <span class="a">&rarr;</span></a>
+      </div>
+    </div>
+    <p class="ongoing reveal" style="text-align:center;">Optional additional pages available, with larger multi-page builds from $1,499. Hosting and ongoing support from $150/month if you'd rather not think about it.</p>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="contact" class="contact wrap pad">
+    <div class="c-grid">
+      <div class="reveal">
+        <span class="eyebrow">Get started</span>
+        <h2 style="margin-top:1rem;">Your business deserves a website people trust.</h2>
+        <p class="c-sub">I'll redesign your homepage for free. If you love it, we build it. If you don't, you've still got a clearer picture of where your business could go.</p>
+        <ul class="c-pts">
+          <li><span class="ic">&check;</span> A custom concept built around your actual business</li>
+          <li><span class="ic">&check;</span> A real person, not a ticket bot</li>
+          <li><span class="ic">&check;</span> No commitment, no card, no hard sell</li>
+        </ul>
+        <p style="margin-top:1.6rem; font-size:.95rem; color:var(--ink-60);">Got questions first? <a href="faq.html" style="color:var(--ink); text-decoration:underline; text-underline-offset:3px;">Read the FAQ &rarr;</a></p>
+      </div>
+      <div class="reveal" style="transition-delay:.08s;">
+        <form class="form" id="leadForm">
+          <input type="hidden" name="access_key" value="2870139d-38b7-4118-9f7c-9217fd52c463" />
+          <input type="hidden" name="subject" value="New free concept request from The Service Edit" />
+          <input type="hidden" name="from_name" value="The Service Edit website" />
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+          <div class="field"><label for="name">Your name</label><input type="text" id="name" name="name" placeholder="First and last name" required /></div>
+          <div class="field"><label for="business">Business name</label><input type="text" id="business" name="business_name" placeholder="What's it called?" required /></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@yourbusiness.com.au" required /></div>
+          <div class="field"><label for="link">Current website or social link</label><input type="text" id="link" name="current_link" placeholder="A link, or 'none yet' is fine" /></div>
+          <div class="field"><label for="service">What do you do?</label><textarea id="service" name="service" placeholder="e.g. carpentry, mobile mechanic, beauty clinic" required></textarea></div>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Get my free homepage concept <span class="a">&rarr;</span></button>
+          <div class="fnote" id="fnote"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand"><span class="mk">se</span>The Service Edit</div>
+      <p class="foot-sub">We take outdated service businesses and turn them into brands people trust online.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="#work">Work</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="foot-col">
+      <h4>Get in touch</h4>
+      <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
+      <p>Perth based</p>
+      <p>Working Australia-wide</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; <span id="yr"></span> The Service Edit. ABN 88 429 285 575.</span>
+    <span>You built the business. We build the trust.</span>
+  </div>
+</footer>
+
 <script>
-const form = document.getElementById('contactForm');
-const statusEl = document.getElementById('status');
-const btn = document.getElementById('submitBtn');
-const ACCESS_KEY = '2870139d-38b7-4118-9f7c-9217fd52c463';
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 10); });
 
-form.addEventListener('submit', async function(e){
-  e.preventDefault();
-  statusEl.classList.remove('err');
-  statusEl.textContent = 'Sending';
-  btn.disabled = true;
+  var burger = document.getElementById('burger'), mmenu = document.getElementById('mmenu');
+  burger.addEventListener('click', function(){ mmenu.classList.toggle('open'); document.body.style.overflow = mmenu.classList.contains('open') ? 'hidden' : ''; });
+  mmenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mmenu.classList.remove('open'); document.body.style.overflow=''; }); });
 
-  const payload = Object.fromEntries(new FormData(form).entries());
-  payload.access_key = ACCESS_KEY;
-  payload.from_name = 'The Service Edit';
-
-  try{
-    const res = await fetch('https://api.web3forms.com/submit', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(payload)
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = q.closest('.faq-i'), ans = item.querySelector('.faq-a'), open = item.classList.contains('open');
+      document.querySelectorAll('.faq-i').forEach(function(i){ i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+      if(!open){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
     });
-    const data = await res.json();
-    if(data.success){
-      document.getElementById('formView').style.display = 'none';
-      document.getElementById('thanksView').style.display = 'block';
-      if(window.gtag){gtag('event','generate_lead',{method:'coming_soon_form'});}
-    }else{
-      statusEl.classList.add('err');
-      statusEl.textContent = 'Something went wrong. Please email hello@theserviceedit.com.';
-      btn.disabled = false;
-    }
-  }catch(err){
-    statusEl.classList.add('err');
-    statusEl.textContent = 'Something went wrong. Please email hello@theserviceedit.com.';
-    btn.disabled = false;
+  });
+
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold:.1, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .stagger').forEach(function(el){ io.observe(el); });
+
+  /* revenue calculator */
+  var cv=document.getElementById('cv'), cc=document.getElementById('cc'), ccv=document.getElementById('ccv'), rm=document.getElementById('rm'), ry=document.getElementById('ry');
+  if(cv){
+    var fmtMoney=function(n){ return '$'+Math.round(n).toLocaleString('en-AU'); };
+    var calc=function(){ var v=parseFloat(cv.value)||0, n=parseInt(cc.value)||0; ccv.textContent=n; var month=v*n*52/12; rm.textContent=fmtMoney(month); ry.textContent=fmtMoney(v*n*52); };
+    cv.addEventListener('input',calc); cc.addEventListener('input',calc); calc();
   }
-});
+
+  /* contact form */
+  var form = document.getElementById('leadForm'), note = document.getElementById('fnote'), btn = document.getElementById('submitBtn');
+  form.addEventListener('submit', function(e){
+    e.preventDefault(); btn.disabled = true; btn.innerHTML = 'Sending...'; note.className = 'fnote';
+    fetch('https://api.web3forms.com/submit', { method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form) })
+      .then(function(r){ return r.json(); })
+      .then(function(d){ if(d.success){ form.reset(); note.className='fnote ok'; note.textContent="Got it. I'll be in touch shortly with a free concept for your business."; btn.innerHTML='Sent &check;'; } else { throw new Error(); } })
+      .catch(function(){ note.className='fnote err'; note.textContent="That didn't send. Email me directly at hello@theserviceedit.com and I'll sort it out."; btn.disabled=false; btn.innerHTML='Get my free homepage concept &rarr;'; });
+  });
 </script>
 
-<!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6KWBFDZ30"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -286,5 +572,6 @@ form.addEventListener('submit', async function(e){
   gtag('js', new Date());
   gtag('config', 'G-N6KWBFDZ30');
 </script>
+
 </body>
 </html>

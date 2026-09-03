@@ -144,6 +144,9 @@
   .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
   .reveal.in{opacity:1; transform:none;}
 
+  .foot-grid{ grid-template-columns:1.5fr 1fr 1fr; }
+  @media (max-width:900px){ .foot-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .foot-grid{ grid-template-columns:1fr; } }
   @media (max-width:900px){ .nav-links{display:none;} .burger{display:flex;} .fcount{margin-left:0; width:100%;} }
   @media (max-width:640px){ .grid{grid-template-columns:1fr;} .chips{width:100%; overflow-x:auto; flex-wrap:nowrap; padding-bottom:.3rem;} .ghint{display:none;} }
   @media (prefers-reduced-motion:reduce){ .reveal{opacity:1!important; transform:none!important;} html{scroll-behavior:auto;} }
@@ -172,35 +175,12 @@
     <div class="shead reveal">
       <span class="eyebrow">Work</span>
       <h2>We don't just redesign. We diagnose.</h2>
-      <p>Every build below is live and clickable. Real rebuilds for clients, and concepts for businesses we'd love to work with. Filter by what you need to see.</p>
+      <p>Every build below is real client work. Open any one of them and you land on the live site.</p>
     </div>
   </section>
 
-  <div class="filterbar" id="filterbar">
-    <div class="wrap filterbar-in">
-      <div class="seg" id="seg">
-        <button data-type="all" class="on">All work</button>
-        <button data-type="real">Real builds</button>
-        <button data-type="concept">Concepts</button>
-      </div>
-      <div class="chips" id="chips">
-        <button class="chip on" data-ind="all">All industries</button>
-        <button class="chip" data-ind="construction">Construction</button>
-        <button class="chip" data-ind="carpentry">Carpentry &amp; Joinery</button>
-        <button class="chip" data-ind="trades">Specialist Trades</button>
-        <button class="chip" data-ind="landscaping">Landscaping</button>
-        <button class="chip" data-ind="property">Property</button>
-        <button class="chip" data-ind="finance">Finance &amp; Accounting</button>
-        <button class="chip" data-ind="events">Events</button>
-      </div>
-      <span class="fcount" id="fcount"></span>
-    </div>
-  </div>
-
   <section class="wrap grid-sec">
     <div class="grid" id="grid"></div>
-    <div class="empty" id="empty">No builds in that combination yet.</div>
-    <div class="disc reveal"><strong>About the concepts.</strong> Builds marked Concept are unsolicited designs created by The Service Edit to show what is possible. They are not official websites and we are not affiliated with or endorsed by the businesses shown. If yours is featured and you'd prefer it removed, email <a href="mailto:hello@theserviceedit.com" style="color:var(--ink); text-decoration:underline; text-underline-offset:3px;">hello@theserviceedit.com</a>.</div>
   </section>
 
   <section class="wrap" style="padding-bottom:clamp(4.5rem,9vw,8rem);">
@@ -217,7 +197,7 @@
     <button class="sheet-x" id="sheetX" aria-label="Close">&times;</button>
     <div class="sheet-live" id="sheetLive"></div>
     <div class="sheet-body">
-      <div class="sheet-k" id="shK">Concept build</div>
+      <div class="sheet-k" id="shK">Real build</div>
       <div class="sheet-t" id="shT">Title</div>
       <div class="sheet-tags" id="shTags"></div>
       <div id="shContent"></div>
@@ -228,7 +208,7 @@
 </div>
 
 <footer class="foot wrap" style="border-top:1px solid var(--line); padding-top:clamp(3rem,5vw,4.5rem); padding-bottom:2rem;">
-  <div style="display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:clamp(2rem,4vw,4rem); padding-bottom:2.6rem;" class="foot-grid">
+  <div style="display:grid; gap:clamp(2rem,4vw,4rem); padding-bottom:2.6rem;" class="foot-grid">
     <div>
       <div style="display:flex; align-items:center; gap:.55rem; font-size:1.3rem; font-weight:600; letter-spacing:-.03em;"><span style="width:28px; height:28px; border-radius:8px; background:var(--ink); display:grid; place-items:center; color:#fff; font-size:.76rem;">se</span>The Service Edit</div>
       <p style="color:var(--ink-60); margin-top:.9rem; max-width:40ch; font-size:.97rem;">We take outdated service businesses and turn them into brands people trust online.</p>
@@ -255,28 +235,38 @@
 
 <script>
   var BUILDS = [
-    { id:"jt", type:"concept", ind:"carpentry", indLabel:"Carpentry & Joinery", title:"JT Carpentry WA", loc:"Perth & WA",
-      url:"https://the-service-edit.github.io/jt-carpentry-wa/",
-      teaser:"Carpentry across Perth and WA, from structural framing to finished detail.",
+    { id:"giant", type:"real", ind:"hospitality", indLabel:"Hospitality", title:"Giant Coffee", loc:"Northbridge, Perth WA", status:"Live",
+      url:"https://giantcoffee.com.au", img:"work/giant-coffee.jpg",
+      teaser:"A laneway specialty cafe made easy to find, with online ordering front and centre.",
       study:[
-        "JT Carpentry WA offers carpentry services across Perth and WA, covering work from structural framing through to finished detail.",
-        "The opportunity was to give a referral-led trade business a more professional place to send serious enquiries.",
-        "The concept presents the business as capable across the full carpentry journey, with clearer service messaging and a stronger visual structure than a social profile alone can provide.",
-        "For a trade business, a website should not just look good. It should make the work feel easier to trust and easier to book."
-      ] },
-    { id:"waterman", type:"concept", ind:"property", indLabel:"Property", title:"Waterman Property Advocates", loc:"Adelaide SA",
-      url:"https://the-service-edit.github.io/waterman-home/",
-      teaser:"Adelaide's first buyer agency, established 2003, representing buyers and vendors.",
-      study:[
-        "Waterman Property Advocates is an Adelaide property advocacy business offering buyer advocacy, seller advocacy, property clearances and realty services.",
-        "The business has a strong history, including being established as South Australia's first buyer agency in 2003.",
-        "The opportunity was to make that authority clearer. The existing business has credibility, but the site needed to explain the difference between buyer advocacy, vendor advocacy and property problem-solving in a more modern way.",
-        "The concept sharpens the message around saving clients time, money and stress, while making the service pathways easier to follow.",
-        "The result is a more confident digital presence for an established advisory business in the Adelaide property market."
+        "Giant Coffee is a specialty cafe down Nicks Lane in Northbridge, serving rotating single origin beans alongside matcha, bagels and pastries.",
+        "The opportunity was findability. A laneway cafe lives or dies on whether people can find it and decide it is worth the walk, and most of that decision happens on a phone before anyone leaves the house.",
+        "The build leads with the product, keeps the location and the online order within reach from the first screen, and stays quiet everywhere else.",
+        "For a cafe, a website's job is not to explain coffee. It is to make the trip feel worth taking."
       ] },
 
-    { id:"cvbs", type:"real", ind:"events", indLabel:"Events & Venues", title:"CVBS Venue Finding", loc:"Worldwide · Ongoing", status:"Real build · Ongoing",
-      url:"https://the-service-edit.github.io/cvbs-2026/",
+    { id:"jordys", type:"real", ind:"hospitality", indLabel:"Hospitality", title:"Jordy's Casuarina", loc:"Casuarina, NSW", status:"Live",
+      url:"https://jordyscasuarina.com", img:"work/jordys.jpg",
+      teaser:"Sourdough pizza restaurant. Menu, bookings and ordering in one clear path.",
+      study:[
+        "Jordy's is a sourdough pizza restaurant at The Commons in Casuarina, open Wednesday through Sunday.",
+        "A restaurant site has three jobs competing for the same space: order, book, and read the menu. Most sites try to do all three at once and end up doing none of them well.",
+        "The build puts those three actions side by side in the first screen and lets the atmosphere of the room carry the brand instead of explaining it.",
+        "The result is a site that gets a hungry visitor to a decision quickly, which is the only thing they came for."
+      ] },
+
+    { id:"goldfoil", type:"real", ind:"retail", indLabel:"Retail & Makers", title:"Gold Foil Books", loc:"Wollongong, NSW", status:"Live",
+      url:"https://goldfoilbooks.com.au", img:"work/goldfoilbooks.jpg",
+      teaser:"Artist-led book rebinding. A handmade product given a storefront that matches the craft.",
+      study:[
+        "Gold Foil Books is an artist-led rebinding business in Wollongong, producing handbound collector's editions with hand-drawn panels, gold foil and hand-painted edges.",
+        "The difficulty with handmade work is that a photograph flattens it. The price only makes sense once someone understands how long a single book takes to make.",
+        "The build gives the making as much room as the finished product, and puts the maker's own story at the front, because that is what people are actually buying.",
+        "The result is a storefront that matches the craft it is selling."
+      ] },
+
+    { id:"cvbs", type:"real", ind:"events", indLabel:"Events & Venues", title:"CVBS Venue Finding", loc:"Worldwide", status:"Real build \u00b7 Ongoing",
+      url:"https://the-service-edit.github.io/cvbs-2026/", img:"work/cvbs-after.jpg",
       teaser:"An established global venue finding business, rebuilt in phases for long-term growth.",
       study:[
         "CVBS is an established venue finding business with global reach, but the digital presence needed to better reflect the scale, credibility and service depth behind the brand.",
@@ -285,177 +275,32 @@
         "The result is a more strategic online presence built around trust, clarity and long-term growth."
       ] },
 
-    { id:"siwb", type:"concept", ind:"construction", indLabel:"Construction", title:"Sydney Inner West Builders", loc:"Inner West, Sydney NSW",
-      url:"https://the-service-edit.github.io/sydney-inner-west-builders/",
-      teaser:"Renovations and extensions for Inner West families who want space without moving.",
+    { id:"nutterjuck", type:"real", ind:"retail", indLabel:"Retail & Makers", title:"Nutterjuck Lures", loc:"Australia", status:"In build",
+      url:"https://the-service-edit.github.io/nutterjuck/", img:"work/nutterjuck.jpg",
+      teaser:"Handmade fishing lures, moving from a maker's page to a proper storefront.",
       study:[
-        "Sydney Inner West Builders specialises in renovations, extensions, first-floor additions, decks, kitchens, bathrooms and maintenance across Sydney's Inner West.",
-        "The opportunity was to make the business easier to understand and easier to enquire with. The existing positioning already had a strong emotional hook: as your family grows, so can your home.",
-        "The concept builds around that message, speaking directly to homeowners who want more space without leaving the suburb, school zone or lifestyle they already love.",
-        "The result is a clearer, more conversion-focused site that turns practical building services into a more human homeowner story."
+        "Nutterjuck Lures makes handmade timber fishing lures, each one shaped, weighted and finished by hand.",
+        "The business had a following but no storefront of its own, which meant every sale ran through comments and messages.",
+        "The build gives each lure its own page, with the action, the depth and the water it is built for stated plainly, so a buyer can choose without having to ask.",
+        "This one is still in build and will be linked here when it goes live."
       ] },
-    { id:"scc", type:"concept", ind:"construction", indLabel:"Construction", title:"Sydney Carpentry & Constructions", loc:"Sydney NSW",
-      url:"https://the-service-edit.github.io/scc/",
-      teaser:"Residential and commercial construction, made to communicate quality fast.",
-      study:[
-        "Sydney Carpentry & Constructions needed a digital presence that could communicate quality quickly and make enquiries feel simple.",
-        "The concept was built around a clean residential and commercial construction story, with stronger service clarity and a more direct quote pathway.",
-        "Rather than overcomplicating the page, the approach was to make the business feel capable, professional and easy to contact.",
-        "For trade and construction businesses, trust is often won in the first few seconds. This concept gives the work a sharper first impression."
-      ] },
-    { id:"home-haven", type:"concept", ind:"construction", indLabel:"Construction", title:"Home Haven Carpentry & Construction", loc:"Brisbane & Sunshine Coast QLD",
-      url:"https://the-service-edit.github.io/home-haven/",
-      teaser:"Custom carpentry and renovations across Brisbane and the Sunshine Coast.",
-      study:[
-        "Home Haven Carpentry & Construction operates across Brisbane and the Sunshine Coast, with a focus on custom carpentry, renovations and family-focused living spaces.",
-        "The opportunity was to create a site that felt warmer, more premium and more aligned with the kind of homes their clients are trying to create.",
-        "The concept centres the finished details, the lifestyle outcome and the process behind the work. It gives homeowners a clearer sense of what the business does, who it helps and how to begin.",
-        "The result is a more polished digital presence that supports higher-trust renovation and carpentry enquiries."
-      ] },
-    { id:"jma", type:"concept", ind:"construction", indLabel:"Construction", title:"JMA Group", loc:"Perth WA",
-      url:"https://the-service-edit.github.io/jma-group/",
-      teaser:"Two building brands under one roof, given a clear group front door.",
-      study:[
-        "JMA Group had two strong offers sitting under one business story: carpentry and construction, with a new homes direction emerging.",
-        "The opportunity was clarity. When a business has multiple offers, the website needs to help visitors self-select quickly rather than making them piece it together from social media.",
-        "The concept creates a clean group landing page that separates each arm of the business while still making the overall brand feel established and cohesive.",
-        "The result is a stronger digital front door that can grow with the business as the homes side develops."
-      ] },
-
-    { id:"tower", type:"concept", ind:"carpentry", indLabel:"Carpentry & Joinery", title:"Tower Carpentry", loc:"Perth & Mandurah WA",
-      url:"https://the-service-edit.github.io/tower-carpentry/",
-      teaser:"Bespoke carpentry and joinery, turned into a digital showroom.",
-      study:[
-        "Tower Carpentry creates bespoke carpentry and joinery, including detailed custom features that deserve more than a social media grid.",
-        "The opportunity was to turn the business into a digital showroom. Social media can show recent work, but a website can organise it, explain it and convert it.",
-        "The concept uses a photo-led structure to highlight craftsmanship, detail and service areas across Perth and Mandurah.",
-        "The result is a more premium online presence designed to support higher-value enquiries and give custom work the space it needs to sell."
-      ] },
-    { id:"fcwa", type:"concept", ind:"carpentry", indLabel:"Carpentry & Joinery", title:"Fixing Carpentry WA", loc:"Perth WA",
-      url:"https://the-service-edit.github.io/fcwa/",
-      teaser:"Premium residential carpentry positioned on precision and reliability.",
-      study:[
-        "Fixing Carpentry WA works across premium residential carpentry, including new builds, decking, cladding and detailed internal finishing.",
-        "The opportunity was to position the business around precision and reliability, not just availability.",
-        "The concept leads with craftsmanship and uses a project-led structure to show the quality of the work at a glance.",
-        "For builders, architects and homeowners, the site creates a stronger reason to enquire and a clearer sense of the standard they can expect."
-      ] },
-    { id:"blocked-up", type:"concept", ind:"trades", indLabel:"Specialist Trades", title:"Blocked Up Plumbing", loc:"North Shore, Sydney NSW",
-      url:"https://the-service-edit.github.io/blocked-up-plumbing/",
-      teaser:"Emergency plumbing built for urgent decisions, not casual browsing.",
-      study:[
-        "Blocked Up Plumbing needed a concept built for urgent decision-making.",
-        "For plumbing, especially blocked drains, burst pipes and hot water issues, people are not casually browsing. They need reassurance fast.",
-        "The concept focuses on speed, trust and action. It brings emergency availability, fixed-pricing language, service areas and one-tap contact into clearer focus.",
-        "The result is a website designed for the panic search: calm the customer, answer the obvious questions and make calling easy."
-      ] },
-    { id:"coastside", type:"concept", ind:"trades", indLabel:"Specialist Trades", title:"Coastside Solid Plastering", loc:"Gold Coast QLD",
-      url:"https://the-service-edit.github.io/coastside/",
-      teaser:"High-end rendering and plastering, with the finish doing the selling.",
-      study:[
-        "Coastside Solid Plastering needed a visual-first site that could better support high-end rendering, plastering and texture coating work.",
-        "The opportunity was to let the finish do more of the selling.",
-        "The concept strips back unnecessary noise and gives completed work more space, allowing texture, detail and craftsmanship to become the strongest proof points.",
-        "For specialist trades, the website should help clients understand the difference between a basic service and a refined finish. This concept is built around that difference."
-      ] },
-    { id:"x-tiling", type:"concept", ind:"trades", indLabel:"Specialist Trades", title:"X Tiling", loc:"Melbourne VIC",
-      url:"https://the-service-edit.github.io/x-tiling/",
-      teaser:"A highly visual tiling trade, where precision earns the trust.",
-      study:[
-        "X Tiling needed a stronger digital presence for a highly visual trade.",
-        "Tiling sells through precision. Straight lines, clean edges, bathroom finishes, feature walls and outdoor surfaces all need to be seen before a client feels confident.",
-        "The concept uses completed project photography and simple service framing to make the business easier to assess and easier to contact.",
-        "The result is a clean, direct site that turns finished work into trust."
-      ] },
-
-    { id:"creative-green", type:"concept", ind:"landscaping", indLabel:"Landscaping", title:"Creative Green Landscapes", loc:"Adelaide SA",
-      url:"https://the-service-edit.github.io/creative-green/",
-      teaser:"Landscaping built to own its enquiries, not rent them from lead platforms.",
-      study:[
-        "Creative Green Landscapes had strong work, but the online presence was not doing enough to support direct enquiries.",
-        "The opportunity was to reduce dependence on third-party lead platforms and create a better-owned channel for trust and conversion.",
-        "The concept focuses on project photography, reviews, service clarity and a simple quote pathway. Instead of forcing customers to compare on price, the site helps them understand the quality of the work.",
-        "The result is a more professional presence designed to help the business own more of its enquiry flow."
-      ] },
-
-    { id:"domain-rental", type:"concept", ind:"property", indLabel:"Property", title:"Domain Rental Management", loc:"Adelaide SA",
-      url:"https://the-service-edit.github.io/domain-rental/",
-      teaser:"Boutique Adelaide property management led personally by Valerie Dellow.",
-      study:[
-        "Domain Rental Management is a boutique Adelaide property management agency based in Hove, led by Valerie Dellow and focused exclusively on property management.",
-        "The opportunity was to lean into what makes the business different from larger agencies: experience, personal service and a direct relationship with the person managing the property.",
-        "The concept positions the business around trust, care and specialist attention. Instead of trying to look like a large real estate group, it makes the boutique model the advantage.",
-        "The result is a calmer, more personal website that speaks directly to landlords who want their investment managed by someone experienced, accountable and easy to reach."
-      ] },
-    { id:"black-swan", type:"concept", ind:"finance", indLabel:"Finance & Accounting", title:"Black Swan Mortgage Services", loc:"Perth WA",
-      url:"https://the-service-edit.github.io/black-swan/",
-      teaser:"A boutique Perth mortgage brokerage that makes the broker model make sense.",
-      study:[
-        "Black Swan Mortgage Services is a boutique Perth mortgage brokerage founded in 2013 by David Mottram, with a business built heavily around repeat clients and referrals.",
-        "The opportunity was to make the broker model easier to understand and more reassuring for people comparing home loan options.",
-        "The concept uses plain language, a clear step-by-step process and a more personal tone to show how the team helps clients navigate lenders, paperwork and loan decisions.",
-        "The result is a website that feels approachable without losing professionalism, helping clients understand why a broker can be a better starting point than walking into one bank."
-      ] },
-    { id:"orange", type:"concept", ind:"finance", indLabel:"Finance & Accounting", title:"Orange Mortgage & Finance Brokers", loc:"North Perth, WA",
-      url:"https://the-service-edit.github.io/orange-mortgage-brokers/",
-      teaser:"Award-winning Perth mortgage brokers, with the proof leading the page.",
-      study:[
-        "Orange Mortgage & Finance Brokers is a North Perth brokerage serving buyers across WA, and a two-time winner of the RateMyAgent WA Broker of the Year award in 2024 and 2025.",
-        "The opportunity was to turn that recognition into trust on the page, and to make the broker model easy to understand for people comparing home loan options.",
-        "The concept leads with the awards and the core promise of keeping more money in the client's pocket, then walks through a simple four-step process, the panel of more than 30 lenders and the fact the service is free to the client.",
-        "The result is a confident, conversion-focused site where the proof does the work, helping a first enquiry feel like the obvious next step."
-      ] },
-    { id:"integrity", type:"concept", ind:"finance", indLabel:"Finance & Accounting", title:"Integrity Financial Advisory", loc:"Adelaide SA",
-      url:"https://the-service-edit.github.io/integrity/",
-      teaser:"Adelaide financial advisory, self-licensed, where trust is the product.",
-      study:[
-        "Integrity Financial Advisory is an Adelaide-owned financial advisory firm with roots dating back to 2003 and a self-licensed AFSL structure since 2009.",
-        "The business offers advice across wealth building, direct equities, SMSFs, retirement planning, insurance, Centrelink and aged care.",
-        "The opportunity was to make a highly qualified, experienced firm feel clearer and more accessible online.",
-        "The concept strengthens the first impression by bringing independence, experience and service depth forward earlier. It reduces the generic financial-planning feel and creates a more confident pathway for people seeking serious advice.",
-        "The result is a more credible and modern digital presence for a firm where trust is the product."
-      ] },
-    { id:"rjs", type:"concept", ind:"finance", indLabel:"Finance & Accounting", title:"RJS Accounting Services", loc:"Tewantin QLD",
-      url:"https://the-service-edit.github.io/rjs/",
-      teaser:"A Tewantin accounting firm modernised without losing its warmth.",
-      study:[
-        "RJS Accounting Services is a Tewantin accounting firm with a team of ten, serving clients across Australia and overseas.",
-        "The business offers tax compliance, financial statements, BAS, business structures, software support, cashflow forecasting, business planning and succession support.",
-        "The opportunity was to modernise the way the firm presents without losing the warmth and personality already present in the business.",
-        "The concept focuses on clarity, competence and approachability. It makes the services easier to understand, the team feel more current and the enquiry pathway more direct.",
-        "The result is a sharper site for an accounting firm that wants to feel experienced, helpful and human."
-      ] },
-    { id:"zb", type:"concept", ind:"finance", indLabel:"Finance & Accounting", title:"ZB Accounting", loc:"NSW",
-      url:"https://the-service-edit.github.io/zb-accounting/",
-      teaser:"Tax, accounting and advisory, made personal and professional at once.",
-      study:[
-        "ZB Accounting needed a more credible and modern digital presence for tax, accounting, bookkeeping and business advisory services.",
-        "The opportunity was to make the business feel more personal and more professional at the same time.",
-        "The concept focuses on direct access, practical support and clearer service pathways for individuals, sole traders, small businesses and family businesses.",
-        "For accounting clients, trust starts before the first appointment. The site needed to show that the business is organised, capable and easy to deal with.",
-        "The result is a cleaner, more confident online presence that supports enquiries from clients looking for straightforward financial support."
-      ] },
-
   ];
 
-  var NATIVE_W = 1280;
 
   function host(u){ try{ return new URL(u).host.replace("www.",""); }catch(e){ return u; } }
 
   function cardHTML(b){
-    var typeTag = b.type==="real" ? '<span class="tag real">'+b.status+'</span>' : '<span class="tag concept">Concept</span>';
     return '<article class="gcard" data-type="'+b.type+'" data-ind="'+b.ind+'" data-id="'+b.id+'">'+
       '<div class="pv">'+
         '<div class="pv-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">'+host(b.url)+'</span></div>'+
-        '<div class="pv-live"><div class="ph">Loading live preview…</div><iframe data-src="'+b.url+'" title="'+b.title+' live preview" scrolling="yes" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></div>'+
+        '<div class="pv-live"><img src="'+b.img+'" alt="'+b.title+' website built by The Service Edit" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>'+
       '</div>'+
       '<div class="gmeta">'+
-        '<div class="gtags">'+typeTag+'<span class="tag ind">'+b.indLabel+'</span></div>'+
+        '<div class="gtags"><span class="tag real">'+b.status+'</span><span class="tag ind">'+b.indLabel+'</span></div>'+
         '<h3 class="gt">'+b.title+'</h3>'+
         '<div class="gloc">'+b.loc+'</div>'+
         '<p class="gd">'+b.teaser+'</p>'+
-        '<div class="gfoot"><button class="gcase" data-id="'+b.id+'">Read the case study <span class="a">&rarr;</span></button>'+
-        '<span class="ghint">Scroll inside to explore</span></div>'+
+        '<div class="gfoot"><button class="gcase" data-id="'+b.id+'">Read the case study <span class="a">&rarr;</span></button></div>'+
       '</div>'+
     '</article>';
   }
@@ -463,62 +308,21 @@
   var grid = document.getElementById("grid");
   grid.innerHTML = BUILDS.map(cardHTML).join("");
 
-  function scaleFrame(live){
-    var w = live.clientWidth, h = live.clientHeight;
-    if(!w||!h) return;
-    var scale = w / NATIVE_W;
-    var ifr = live.querySelector("iframe");
-    ifr.style.width = NATIVE_W + "px";
-    ifr.style.height = (h / scale) + "px";
-    ifr.style.transform = "scale(" + scale + ")";
-  }
 
-  var frameIO = new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(!e.isIntersecting) return;
-      var live = e.target, ifr = live.querySelector("iframe");
-      if(ifr && !ifr.src && ifr.dataset.src){
-        scaleFrame(live);
-        ifr.addEventListener("load", function(){ var ph=live.querySelector(".ph"); if(ph) ph.style.display="none"; scaleFrame(live); });
-        ifr.src = ifr.dataset.src;
-      }
-      frameIO.unobserve(live);
-    });
-  }, { rootMargin:"400px 0px" });
-  document.querySelectorAll(".pv-live").forEach(function(l){ frameIO.observe(l); });
-
-  var rt;
-  window.addEventListener("resize", function(){ clearTimeout(rt); rt=setTimeout(function(){ document.querySelectorAll(".pv-live").forEach(function(l){ if(l.querySelector("iframe").src) scaleFrame(l); }); }, 160); });
-
-  // FILTER
-  var state = { type:"all", ind:"all" };
-  var fcount = document.getElementById("fcount"), empty = document.getElementById("empty");
-  function apply(){
-    var n=0;
-    document.querySelectorAll(".gcard").forEach(function(c){
-      var show = (state.type==="all"||c.dataset.type===state.type) && (state.ind==="all"||c.dataset.ind===state.ind);
-      c.classList.toggle("hide", !show); if(show) n++;
-    });
-    fcount.textContent = n + (n===1?" build":" builds");
-    empty.style.display = n===0 ? "block" : "none";
-  }
-  document.getElementById("seg").addEventListener("click", function(e){ var b=e.target.closest("button"); if(!b) return; state.type=b.dataset.type; document.querySelectorAll("#seg button").forEach(function(x){x.classList.toggle("on",x===b);}); apply(); });
-  document.getElementById("chips").addEventListener("click", function(e){ var b=e.target.closest(".chip"); if(!b) return; state.ind=b.dataset.ind; document.querySelectorAll(".chip").forEach(function(x){x.classList.toggle("on",x===b);}); apply(); });
-  apply();
 
   // MODAL
   var ov=document.getElementById("ov");
   function openCase(id){
     var b=BUILDS.find(function(x){return x.id===id;}); if(!b) return;
-    document.getElementById("sheetLive").innerHTML = '<iframe src="'+b.url+'" title="'+b.title+' live preview" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>';
-    document.getElementById("shK").textContent = b.type==="real" ? b.status : "Concept build";
+    document.getElementById("sheetLive").innerHTML = '<img src="'+b.img+'" alt="'+b.title+' website built by The Service Edit" style="width:100%;display:block;">';
+    document.getElementById("shK").textContent = b.status;
     document.getElementById("shT").textContent = b.title;
     document.getElementById("shTags").innerHTML =
-      (b.type==="real"?'<span class="tag real">Real build</span>':'<span class="tag concept">Concept</span>')+
+      '<span class="tag real">Real build</span>'+
       '<span class="tag ind">'+b.indLabel+'</span><span class="tag ind">'+b.loc+'</span>';
     document.getElementById("shContent").innerHTML = '<div class="study">'+b.study.map(function(p){return '<p>'+p+'</p>';}).join("")+'</div>';
     document.getElementById("shCta").innerHTML = '<a href="'+b.url+'" target="_blank" rel="noopener" class="btn btn-primary">Open live site <span class="a">&#8599;</span></a><a href="contact.html" class="btn btn-ghost">Get a build like this</a>';
-    document.getElementById("shDis").textContent = b.type==="concept" ? "Unsolicited concept. Not affiliated with or endorsed by the business shown." : "Rebuilt by The Service Edit.";
+    document.getElementById("shDis").textContent = "Built by The Service Edit.";
     ov.classList.add("open"); document.body.style.overflow="hidden";
   }
   function closeCase(){ ov.classList.remove("open"); document.body.style.overflow=""; document.getElementById("sheetLive").innerHTML=""; }

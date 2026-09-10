@@ -192,17 +192,15 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
 .svc-wrap{display:flex;flex-direction:column;gap:1rem}
 .svc{position:sticky;top:90px;min-height:clamp(320px,50vh,440px);border-radius:var(--r-media);padding:clamp(1.6rem,3.5vw,3rem);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem 3rem;transform-origin:50% 0;will-change:transform}
 .svc:nth-child(1){background:var(--bg-soft)}
-.svc:nth-child(2){background:var(--card-mute);top:104px}
-.svc:nth-child(3){background:var(--ink);color:#fff;top:118px}
-.svc:nth-child(4){background:#fff;border:1px solid var(--line);top:132px}
+.svc:nth-child(2){background:var(--ink);color:#fff;top:110px}
 .svc h3{font-size:clamp(2.4rem,5.5vw,4.6rem);letter-spacing:-.05em;line-height:.94}
 .svc .k{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;opacity:.5;margin-bottom:1.2rem}
 .svc .r{display:flex;flex-direction:column;justify-content:space-between;gap:1.6rem}
 .svc .r p{font-size:clamp(1.05rem,1.4vw,1.22rem);line-height:1.5;max-width:40ch}
-.svc:nth-child(3) p{color:var(--w-70)}
+.svc:nth-child(2) p{color:var(--w-70)}
 .svc ul{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem}
 .svc li{font-size:.86rem;padding:.4rem .85rem;border-radius:var(--pill);border:1px solid var(--line);color:var(--ink-60)}
-.svc:nth-child(3) li{border-color:var(--w-line);color:var(--w-70)}
+.svc:nth-child(2) li{border-color:var(--w-line);color:var(--w-70)}
 
 /* calculator */
 .calc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,2.5vw,1.8rem);align-items:stretch;margin-top:clamp(2rem,3vw,2.6rem)}
@@ -415,13 +413,11 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
   <section id="services" class="wrap pad" style="padding-top:0">
     <div class="shead" style="margin-bottom:clamp(2.4rem,4vw,3.4rem)">
       <span class="eyebrow">What we do</span>
-      <h2 data-split style="max-width:16ch">One studio. <span class="dim">Four ways in.</span></h2>
+      <h2 data-split style="max-width:16ch">Websites and email. <span class="dim">Done properly.</span></h2>
     </div>
     <div class="svc-wrap">
       <div class="svc"><div><span class="k">Websites</span><h3>Sites that win the enquiry.</h3></div><div class="r"><p>Custom single-page and multi-page sites, designed around how your customers actually decide. Fast on every phone.</p><ul><li>Custom design</li><li>Mobile optimised</li><li>Enquiry forms</li><li>SEO foundations</li></ul></div></div>
       <div class="svc"><div><span class="k">Email marketing</span><h3>Emails people open.</h3></div><div class="r"><p>Campaigns and automated flows that bring regulars back, built on value and recognition rather than discounts.</p><ul><li>Campaigns</li><li>Automated flows</li><li>List growth</li></ul></div></div>
-      <div class="svc"><div><span class="k">Social content</span><h3>Social with a plan.</h3></div><div class="r"><p>Content planned ahead, written in your voice and approved by you before anything goes live.</p><ul><li>Planning</li><li>Captions</li><li>Carousels</li></ul></div></div>
-      <div class="svc"><div><span class="k">Digital audits</span><h3>Know what to fix first.</h3></div><div class="r"><p>A plain-English report on where your site and systems are costing you customers, and the order to fix them in.</p><ul><li>Website review</li><li>Systems check</li><li>Priority list</li></ul></div></div>
     </div>
   </section>
 
@@ -657,7 +653,7 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
       cur.style.opacity = 1; cx(e.clientX); cy(e.clientY);
       var t = e.target, lb = t.closest && t.closest('[data-cursor]'), lk = t.closest && t.closest('a,button,input,textarea,label');
       cur.classList.toggle('is-label', !!lb); cur.classList.toggle('is-link', !lb && !!lk);
-      cur.classList.toggle('on-inv', !!(t.closest && t.closest('.inv, .calc .cr, .svc:nth-child(3)')));
+      cur.classList.toggle('on-inv', !!(t.closest && t.closest('.inv, .calc .cr, .svc:nth-child(2)')));
       if (lb) lab.textContent = lb.getAttribute('data-cursor');
     });
     document.addEventListener('mouseleave', function(){ cur.style.opacity = 0; });

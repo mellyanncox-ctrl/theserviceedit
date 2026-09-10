@@ -139,6 +139,10 @@ p{color:var(--ink-60)}
 .ba-tag{position:absolute;top:1rem;z-index:4;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;padding:.4rem .85rem;border-radius:var(--pill)}
 .ba-tag.l{left:1rem;background:rgba(255,255,255,.92);color:var(--ink-60)}
 .ba-tag.r{right:1rem;background:var(--ink);color:#fff}
+.ba-tag{transition:transform .4s var(--ease),background .3s,color .3s}
+.ba-tag:hover{transform:translateY(-2px)}
+.ba-tag.l:hover{background:#fff;color:var(--ink)}
+.ba-tag.r:hover{background:#34352f}
 .ba-cap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
 .ba-cap p{font-family:var(--mono);font-size:.8rem;color:var(--ink-40)}
 .ba-links{display:flex;flex-wrap:wrap;gap:.6rem}
@@ -350,7 +354,7 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
         <div class="ba-layer ba-before"><div class="ba-ph"><div><b>The old site</b>CVBS before the rebuild</div></div><img src="work/cvbs-before.jpg" width="1300" height="668" alt="The CVBS website before the rebuild" onerror="this.remove()"></div>
         <div class="ba-layer ba-after" id="baAfter"><div class="ba-ph"><div><b>Rebuilt</b>by The Service Edit</div></div><img src="work/cvbs-after.jpg" width="1300" height="668" alt="The CVBS website rebuilt by The Service Edit" onerror="this.remove()"></div>
         <span class="ba-line" id="baLine"><i>&lsaquo;&rsaquo;</i></span>
-        <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
+        <a class="ba-tag l" href="https://conferencevenues.com.au" target="_blank" rel="noopener">Before &middot; Old site &nearr;</a><a class="ba-tag r" href="https://the-service-edit.github.io/cvbs-2026/" target="_blank" rel="noopener">After &middot; The rebuild &nearr;</a>
       </div>
       <div class="ba-cap"><p>A real rebuild for CVBS, Worldwide Venue Finding Solutions.</p><div class="ba-links"><a href="https://conferencevenues.com.au" target="_blank" rel="noopener" class="btn btn-ghost magnet">View the old site <span class="a">&nearr;</span></a><a href="https://the-service-edit.github.io/cvbs-2026/" target="_blank" rel="noopener" class="btn btn-primary magnet">View the rebuild <span class="a">&nearr;</span></a></div></div>
     </div>
@@ -554,7 +558,7 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
   var stage = $('#baStage'), after = $('#baAfter'), line = $('#baLine'), baPos = { v: 50 };
   function setBA(p){ p = Math.max(0, Math.min(100, p)); baPos.v = p; after.style.clipPath = 'inset(0 0 0 ' + p + '%)'; line.style.left = p + '%'; }
   var dragging = false;
-  stage.addEventListener('pointerdown', function(e){ dragging = true; move(e); try { stage.setPointerCapture(e.pointerId); } catch(err){} });
+  stage.addEventListener('pointerdown', function(e){ if (e.target.closest('a')) return; dragging = true; move(e); try { stage.setPointerCapture(e.pointerId); } catch(err){} });
   stage.addEventListener('pointermove', function(e){ if (dragging) move(e); });
   window.addEventListener('pointerup', function(){ dragging = false; });
   function move(e){ var r = stage.getBoundingClientRect(); setBA(((e.clientX - r.left) / r.width) * 100); }

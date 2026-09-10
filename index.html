@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Custom websites for trades, hospitality and local service businesses. Perth based, working Australia-wide. Get a free homepage concept.">
+<meta name="description" content="Websites and email marketing for service businesses. Perth based, working Australia-wide. Get a free homepage concept.">
 <meta name="theme-color" content="#17271D">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Service Edit">
-<meta property="og:description" content="We make service businesses look like the obvious choice. Get a free homepage concept.">
+<meta property="og:description" content="Websites that win the customer. Emails that bring them back.">
 <meta property="og:locale" content="en_AU">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232B4A35'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-style='italic' font-size='17' fill='%23F7F4EE' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
 <title>The Service Edit</title>
@@ -19,7 +19,7 @@
   --bg:#ffffff; --bg-soft:#F5F4F1; --card-mute:#EFEEE9;
   --ink:#111210; --ink-60:rgba(17,18,16,.6); --ink-40:rgba(17,18,16,.42);
   --line:rgba(17,18,16,.1); --line-soft:rgba(17,18,16,.055);
-  --dark:#0E0F0D; --w-70:rgba(255,255,255,.7); --w-50:rgba(255,255,255,.5); --w-line:rgba(255,255,255,.14);
+  --dark:#0E0F0D; --blue:#C9E4FB; --blue-deep:#5B9BD5; --yellow:#FFF2A8; --yellow-deep:#E8C84A; --w-70:rgba(255,255,255,.7); --w-50:rgba(255,255,255,.5); --w-line:rgba(255,255,255,.14);
   --r-btn:10px; --r-card:18px; --r-media:22px; --pill:999px;
   --maxw:1200px; --pad:clamp(1.15rem,4vw,4rem);
   --f:"Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
@@ -113,6 +113,7 @@ p{color:var(--ink-60)}
 .menu-open .mmenu nav a:nth-child(2) span{transition-delay:.05s}
 .menu-open .mmenu nav a:nth-child(3) span{transition-delay:.1s}
 .menu-open .mmenu nav a:nth-child(4) span{transition-delay:.15s}
+.menu-open .mmenu nav a:nth-child(5) span{transition-delay:.2s}
 .mmenu .btn{margin-top:1.4rem;justify-content:center}
 
 /* hero */
@@ -204,6 +205,18 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
 .svc li{font-size:.86rem;padding:.4rem .85rem;border-radius:var(--pill);border:1px solid var(--line);color:var(--ink-60)}
 .svc:nth-child(2) li{border-color:var(--w-line);color:var(--w-70)}
 
+/* hand in hand loop */
+.loop{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1rem,2vw,1.6rem)}
+.loop-line{position:absolute;left:0;right:0;top:7px;height:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.loop-line i{position:absolute;inset:0;background:var(--ink);transform:scaleX(0);transform-origin:left}
+.lstep{position:relative;padding-top:2.2rem}
+.lstep .dot{position:absolute;top:0;left:0;width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--ink)}
+.lstep .tag{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .7rem;border-radius:var(--pill);border:1px solid var(--line);color:var(--ink-60)}
+.lstep .tag.em{background:var(--ink);color:#fff;border-color:var(--ink)}
+.lstep h3{font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;letter-spacing:-.025em;margin:1.2rem 0 .5rem}
+.lstep p{font-size:1rem;line-height:1.5}
+.loop-note{margin-top:clamp(2rem,4vw,3rem);font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:500;letter-spacing:-.03em;color:var(--ink);max-width:30ch}
+
 /* calculator */
 .calc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,2.5vw,1.8rem);align-items:stretch;margin-top:clamp(2rem,3vw,2.6rem)}
 .calc .cl{display:flex;flex-direction:column;gap:1.4rem;background:var(--bg-soft);border-radius:var(--r-card);padding:clamp(1.6rem,3vw,2.2rem)}
@@ -226,7 +239,8 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
 .calc-note{font-size:1rem;color:var(--ink-40);margin-top:1.6rem}
 
 /* pricing */
-.price-card{max-width:32rem;margin:0 auto;background:var(--ink);color:#fff;border-radius:var(--r-media);padding:clamp(1.9rem,3vw,2.6rem);display:flex;flex-direction:column}
+.prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2vw,1.4rem);max-width:60rem;margin:0 auto}
+.price-card{background:var(--ink);color:#fff;border-radius:var(--r-media);padding:clamp(1.9rem,3vw,2.6rem);display:flex;flex-direction:column}
 .pflag{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:#D8D5CE}
 .pname{font-size:clamp(1.5rem,2.2vw,1.95rem);font-weight:500;letter-spacing:-.025em;margin:.6rem 0 .8rem;line-height:1.15}
 .pfrom{display:flex;align-items:baseline;gap:.5rem;font-weight:600;letter-spacing:-.04em}
@@ -240,6 +254,7 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
 .pinc li{font-size:.99rem;color:var(--w-70);display:flex;gap:.6rem}
 .pinc li .ck{color:#D8D5CE}
 .price-card .btn{justify-content:center}
+.prices .price-card:first-child{background:#1f201d}
 .toggle{display:inline-flex;align-items:center;gap:.8rem;font-size:.92rem;margin:0 auto 1.4rem}
 .toggle .sw{width:52px;height:30px;border-radius:99px;background:var(--card-mute);border:1px solid var(--line);position:relative;transition:background .4s}
 .toggle .sw i{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--ink);transition:transform .55s var(--ease),background .4s}
@@ -260,10 +275,11 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
 .faq-link a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 .form{display:flex;flex-direction:column;gap:.9rem}
 .field label{display:block;font-size:.82rem;color:var(--ink-60);margin-bottom:.45rem}
-.field input,.field textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:var(--r-btn);padding:.85rem 1.1rem;color:var(--ink);font-family:var(--f);font-size:1rem;transition:border-color .2s}
+.field input,.field textarea,.field select{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:var(--r-btn);padding:.85rem 1.1rem;color:var(--ink);font-family:var(--f);font-size:1rem;transition:border-color .2s}
 .field input::placeholder,.field textarea::placeholder{color:var(--ink-40)}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
 .field textarea{resize:vertical;min-height:78px}
+.field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-40) 50%),linear-gradient(135deg,var(--ink-40) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat;cursor:pointer}
 .form .btn{justify-content:center;margin-top:.3rem}
 .fnote{display:none;font-size:.95rem;padding:1rem 1.2rem;border-radius:var(--r-btn);background:var(--bg-soft);border:1px solid var(--line);color:var(--ink)}
 .fnote.show{display:block}
@@ -281,10 +297,71 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
 .wordmark .dim{color:var(--ink-40)}
 .foot-bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.6rem;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:.72rem;color:var(--ink-40)}
 
+
+/* ===== colour system: baby blue = websites, baby yellow = email ===== */
+::selection{background:var(--yellow);color:var(--ink)}
+#loader{background:var(--blue)}
+.ld-bar{background:var(--ink)}
+.hero-chips{display:inline-flex;gap:.5rem;margin-bottom:1.8rem}
+.pill{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:.42rem .9rem;border-radius:var(--pill);color:var(--ink)}
+.pb{background:var(--blue)}.py{background:var(--yellow)}
+.hl{background-repeat:no-repeat;background-position:0 88%;background-size:0% 42%;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 1.2s var(--ease);color:var(--ink)}
+.hl.on{background-size:100% 42%}
+.hl-b{background-image:linear-gradient(var(--blue),var(--blue))}
+.hl-y{background-image:linear-gradient(var(--yellow),var(--yellow))}
+.hl-by{background-image:linear-gradient(90deg,var(--blue),var(--yellow))}
+.btn-primary::before{background:var(--blue)}
+.btn-primary:hover{color:var(--ink)}
+.btn-ghost::before{background:var(--yellow)}
+.btn-ghost:hover{color:var(--ink);border-color:var(--yellow-deep)}
+.cursor.is-link{background:rgba(91,155,213,.25)}
+.mq-set .mk:nth-of-type(odd){background:var(--blue);color:var(--ink)}
+.mq-set .mk:nth-of-type(even){background:var(--yellow);color:var(--ink)}
+.loop-line i{background:linear-gradient(90deg,var(--blue-deep) 0 50%,var(--yellow-deep) 50% 100%)}
+.lstep.lb .dot{border-color:var(--blue-deep);background:var(--blue)}
+.lstep.ly .dot{border-color:var(--yellow-deep);background:var(--yellow)}
+.lstep .tag.wb{background:var(--blue);border-color:var(--blue);color:var(--ink)}
+.lstep .tag.em{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.fstep .fn{display:inline-block;color:var(--ink);background:var(--blue);padding:.3rem .7rem;border-radius:var(--pill)}
+.fstep:nth-child(2) .fn{background:var(--yellow)}
+.fstep:nth-child(3) .fn{background:#fff}
+.wcard .ph{background:var(--blue);color:var(--ink)}
+.wcard .ph.both{background:linear-gradient(90deg,var(--blue) 0 50%,var(--yellow) 50% 100%)}
+.wcard .ph.building{background:var(--ink);color:#fff}
+.svc:nth-child(1){background:var(--blue)}
+.svc:nth-child(2){background:var(--yellow);color:var(--ink)}
+.svc:nth-child(2) p{color:var(--ink-60)}
+.svc li,.svc:nth-child(2) li{border-color:rgba(17,18,16,.18);color:var(--ink);background:rgba(255,255,255,.45)}
+.svc .k{opacity:.6}
+.calc .cr{background:var(--yellow);color:var(--ink)}
+.res{border-bottom-color:rgba(17,18,16,.14)}
+.res .rk{color:var(--ink-60)}
+.calc input[type=range]::-webkit-slider-thumb{background:var(--blue-deep)}
+.calc input[type=range]::-moz-range-thumb{background:var(--blue-deep)}
+.prices .price-card.pc-b{background:var(--blue);color:var(--ink)}
+.care-in{flex-wrap:wrap}.care-in b{white-space:nowrap}
+.prices .price-card.pc-y{background:var(--yellow);color:var(--ink)}
+.pc-b .pflag,.pc-y .pflag{color:var(--ink-60)}
+.pc-b .pfrom .from,.pc-y .pfrom .from,.pc-b .pfrom .c,.pc-y .pfrom .c{color:var(--ink-60)}
+.pc-b .care-in,.pc-y .care-in{background:rgba(255,255,255,.55);border-color:rgba(17,18,16,.1);color:var(--ink-60)}
+.pc-b .care-in b,.pc-y .care-in b{color:var(--ink)}
+.pc-b .pinc li,.pc-y .pinc li{color:var(--ink-60)}
+.pc-b .pinc li .ck,.pc-y .pinc li .ck{color:var(--ink)}
+.toggle[aria-pressed="true"] .sw{background:var(--blue-deep)}
+.c-pts li .ic{background:var(--blue);color:var(--ink)}
+.c-pts li:nth-child(2) .ic{background:var(--yellow)}
+.foot-col-b{background:var(--blue);border-top:0}
+.foot-col-b .foot-col a,.foot-col-b .foot-col p,.foot-col-b .foot-sub{color:rgba(17,18,16,.66)}
+.foot-col-b .foot-col h4,.foot-col-b .foot-bottom{color:rgba(17,18,16,.5)}
+.foot-col-b .foot-bottom{border-top-color:rgba(17,18,16,.12)}
+.foot-col-b .wordmark .dim{color:#fff}
+
 @media (max-width:900px){
   .nav-links,.nav-r .btn{display:none}
   .burger{display:block}
-  .free-steps,.work,.calc,.c-grid{grid-template-columns:1fr}
+  .free-steps,.work,.calc,.c-grid,.prices{grid-template-columns:1fr}
+  .loop{grid-template-columns:1fr 1fr;row-gap:2.2rem}
+  .loop-line{display:none}
   .wcard:nth-child(even){margin-top:0}
   .svc{grid-template-columns:1fr;position:relative;top:auto!important;min-height:0}
   .foot-grid{grid-template-columns:1fr 1fr}
@@ -311,6 +388,7 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
     <nav class="nav-links" aria-label="Primary">
       <a href="#work" data-scroll>Work</a>
       <a href="#services" data-scroll>Services</a>
+      <a href="#together" data-scroll>How it works</a>
       <a href="#pricing" data-scroll>Pricing</a>
       <a href="#contact" data-scroll>Contact</a>
     </nav>
@@ -325,6 +403,7 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
   <nav aria-label="Mobile">
     <a href="#work" data-scroll><span>Work</span></a>
     <a href="#services" data-scroll><span>Services</span></a>
+    <a href="#together" data-scroll><span>How it works</span></a>
     <a href="#pricing" data-scroll><span>Pricing</span></a>
     <a href="#contact" data-scroll><span>Contact</span></a>
   </nav>
@@ -334,14 +413,14 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
 <main id="top">
 
   <section class="hero wrap">
-    <span class="eyebrow" data-hero-fade>The Service Edit</span>
-    <h1 id="heroH">We take outdated service businesses and turn them into <span class="dim">brands people trust online.</span></h1>
-    <p class="sub" data-hero-fade>Custom websites for service businesses that need to look as good as the work they do.</p>
+    <span class="hero-chips" data-hero-fade><span class="pill pb">Websites</span><span class="pill py">Email marketing</span></span>
+    <h1 id="heroH">Websites that <span class="hl hl-b">win the customer.</span> Emails that <span class="hl hl-y">bring them back.</span></h1>
+    <p class="sub" data-hero-fade>We build websites and email marketing for service businesses, designed together so every visitor has a reason to come back.</p>
     <div class="hero-cta" data-hero-fade>
       <a href="#contact" class="btn btn-primary magnet" data-scroll>Get a free homepage concept <span class="a">&rarr;</span></a>
       <a href="#work" class="btn btn-ghost magnet" data-scroll>See the work</a>
     </div>
-    <div class="reassure" data-hero-fade>No obligation. No templates. Designed specifically for your business.</div>
+    <div class="reassure" data-hero-fade>No obligation. No templates. One team for your website and your emails.</div>
   </section>
 
   <section class="ba wrap" id="transform">
@@ -368,15 +447,30 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
   </div>
 
   <section id="why" class="wrap pad">
-    <div class="punch"><h2 data-split>People decide before they <span class="dim">call.</span></h2></div>
-    <p class="punch-body" id="punchBody">If your website looks outdated, unfinished or generic, customers assume your business is too. A credible site fixes that before they ever pick up the phone.</p>
+    <div class="punch"><h2 data-split>One wins them. <span class="dim">The other keeps them.</span></h2></div>
+    <p class="punch-body" id="punchBody">Your website turns a stranger into a customer. Your emails turn that customer into a regular. Most businesses pay for one and wonder why the other is not working. We build both, so they work as one.</p>
+  </section>
+
+  <section id="together" class="wrap pad" style="padding-top:0">
+    <div class="shead" style="max-width:40rem;margin-bottom:clamp(2.4rem,4vw,3.4rem)">
+      <span class="eyebrow">How it works</span>
+      <h2 data-split>Built to work <span class="hl hl-by">hand in hand.</span></h2>
+    </div>
+    <div class="loop" id="loop">
+      <div class="loop-line" aria-hidden="true"><i id="loopLine"></i></div>
+      <div class="lstep lb"><span class="dot"></span><span class="tag wb">Website</span><h3>Found and trusted</h3><p>A site that looks as good as your work, so first-time visitors book, order or enquire.</p></div>
+      <div class="lstep lb"><span class="dot"></span><span class="tag wb">Website</span><h3>Captured</h3><p>Sign-up forms built in from day one, so every visitor can join your list, not only the ones who buy.</p></div>
+      <div class="lstep ly"><span class="dot"></span><span class="tag em">Email</span><h3>Welcomed</h3><p>An automated welcome series introduces the business while you are still front of mind.</p></div>
+      <div class="lstep ly"><span class="dot"></span><span class="tag em">Email</span><h3>Back again</h3><p>Regular campaigns send people back to the site for the next booking, the new menu, the next job.</p></div>
+    </div>
+    <p class="loop-note">Every email points back to the website. Every website visit grows the list.</p>
   </section>
 
   <section id="free" class="wrap free-wrap">
     <div class="free inv" id="freeCard">
       <span class="eyebrow">No cost, no catch</span>
       <h2 class="free-h" data-split>We'll redesign your homepage. <span class="dim">For free.</span></h2>
-      <p class="free-sub">Not a generic template. A custom direction built around your actual business by someone who has run them, so you can see exactly what it could look like. If you love it, we build it. If you don't, you've lost nothing.</p>
+      <p class="free-sub">Not a generic template. A custom direction built around your actual business by people who have run them, so you can see exactly what it could look like. If you love it, we build it and set up the emails that keep it working. If you don't, you've lost nothing.</p>
       <div class="free-steps">
         <div class="fstep"><span class="fn">Step 1</span><h3>Send us your site or socials</h3><p>A link is all we need. No brief, no forms to fill in.</p></div>
         <div class="fstep"><span class="fn">Step 2</span><h3>We redesign your homepage</h3><p>A custom concept built around your business, not a theme.</p></div>
@@ -389,19 +483,19 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
   <section id="work" class="wrap pad" style="padding-top:0">
     <div class="shead" style="margin-bottom:clamp(2.4rem,4vw,3.4rem)">
       <span class="eyebrow">Recent work</span>
-      <h2 data-split style="max-width:18ch">Real businesses. <span class="dim">Real builds.</span></h2>
+      <h2 data-split style="max-width:18ch">Real businesses. <span class="dim">Websites and email.</span></h2>
     </div>
     <div class="work">
       <a class="wcard" href="https://giantcoffee.com.au" target="_blank" rel="noopener" data-cursor="Visit">
-        <div class="thumb" data-reveal><div class="in"><div class="tph">Giant<span>Coffee</span></div><img src="work/giant-coffee.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Giant Coffee website built by The Service Edit" onerror="this.remove()"></div><span class="ph">Live</span></div>
+        <div class="thumb" data-reveal><div class="in"><div class="tph">Giant<span>Coffee</span></div><img src="work/giant-coffee.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Giant Coffee website built by The Service Edit" onerror="this.remove()"></div><span class="ph">Website</span></div>
         <div class="wmeta"><div><div class="wt">Giant Coffee</div><div class="wloc">Northbridge, Perth WA</div><div class="wd">A laneway specialty cafe made easy to find, with online ordering front and centre.</div></div><span class="go">&rarr;</span></div>
       </a>
       <a class="wcard" href="https://jordyscasuarina.com" target="_blank" rel="noopener" data-cursor="Visit">
-        <div class="thumb" data-reveal><div class="in"><div class="tph">Jordy's<span>Casuarina</span></div><img src="work/jordys.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Jordy's Casuarina website built by The Service Edit" onerror="this.remove()"></div><span class="ph">Live</span></div>
-        <div class="wmeta"><div><div class="wt">Jordy's Casuarina</div><div class="wloc">Casuarina, NSW</div><div class="wd">Sourdough pizza restaurant. Menu, bookings and ordering in one clear path.</div></div><span class="go">&rarr;</span></div>
+        <div class="thumb" data-reveal><div class="in"><div class="tph">Jordy's<span>Casuarina</span></div><img src="work/jordys.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Jordy's Casuarina website built by The Service Edit" onerror="this.remove()"></div><span class="ph both">Website + Email</span></div>
+        <div class="wmeta"><div><div class="wt">Jordy's Casuarina</div><div class="wloc">Casuarina, NSW</div><div class="wd">Sourdough pizza restaurant. Menu, bookings and ordering in one clear path, plus weekly emails that keep regulars coming back.</div></div><span class="go">&rarr;</span></div>
       </a>
       <a class="wcard" href="https://goldfoilbooks.com.au" target="_blank" rel="noopener" data-cursor="Visit">
-        <div class="thumb" data-reveal><div class="in"><div class="tph">Gold Foil<span>Books</span></div><img src="work/goldfoilbooks.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Gold Foil Books website built by The Service Edit" onerror="this.remove()"></div><span class="ph">Live</span></div>
+        <div class="thumb" data-reveal><div class="in"><div class="tph">Gold Foil<span>Books</span></div><img src="work/goldfoilbooks.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Gold Foil Books website built by The Service Edit" onerror="this.remove()"></div><span class="ph">Website</span></div>
         <div class="wmeta"><div><div class="wt">Gold Foil Books</div><div class="wloc">Wollongong, NSW</div><div class="wd">Artist-led book rebinding. A handmade product given a storefront that matches the craft.</div></div><span class="go">&rarr;</span></div>
       </a>
       <div class="wcard">
@@ -415,11 +509,11 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
   <section id="services" class="wrap pad" style="padding-top:0">
     <div class="shead" style="margin-bottom:clamp(2.4rem,4vw,3.4rem)">
       <span class="eyebrow">What we do</span>
-      <h2 data-split style="max-width:16ch">Websites and email. <span class="dim">Done properly.</span></h2>
+      <h2 data-split style="max-width:16ch">Two services. <span class="hl hl-by">One system.</span></h2>
     </div>
     <div class="svc-wrap">
-      <div class="svc"><div><span class="k">Websites</span><h3>Sites that win the enquiry.</h3></div><div class="r"><p>Custom single-page and multi-page sites, designed around how your customers actually decide. Fast on every phone.</p><ul><li>Custom design</li><li>Mobile optimised</li><li>Enquiry forms</li><li>SEO foundations</li></ul></div></div>
-      <div class="svc"><div><span class="k">Email marketing</span><h3>Emails people open.</h3></div><div class="r"><p>Campaigns and automated flows that bring regulars back, built on value and recognition rather than discounts.</p><ul><li>Campaigns</li><li>Automated flows</li><li>List growth</li></ul></div></div>
+      <div class="svc"><div><span class="k">Websites</span><h3>Websites that win the enquiry.</h3></div><div class="r"><p>Custom sites designed around how your customers actually decide. Fast on every phone, easy to update, with email sign-up built in from day one.</p><ul><li>Custom design</li><li>Mobile optimised</li><li>Enquiry and booking forms</li><li>Email capture</li><li>SEO foundations</li></ul></div></div>
+      <div class="svc"><div><span class="k">Email marketing</span><h3>Email that brings them back.</h3></div><div class="r"><p>Set up, written, designed and sent for you. Welcome series, regular campaigns and automations that turn one visit into a habit, built on value and recognition rather than discounts.</p><ul><li>Platform setup</li><li>Welcome series</li><li>Campaigns</li><li>List growth</li><li>Monthly reporting</li></ul></div></div>
     </div>
   </section>
 
@@ -439,7 +533,7 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
         <div class="res"><div class="rk">Extra revenue per year</div><div class="rv" id="ry">$18,200</div></div>
       </div>
     </div>
-    <p class="calc-note">A credible site rarely costs more than the work it wins back. That is the whole idea.</p>
+    <p class="calc-note">A credible site wins that customer. Good email keeps them coming back, and that is where the real value sits.</p>
   </section>
 
   <section id="pricing" class="wrap pad" style="text-align:center">
@@ -447,33 +541,49 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
       <span class="eyebrow">Pricing</span>
       <h2 data-split>Simple, <span class="dim">honest pricing.</span></h2>
     </div>
-    <button class="toggle" id="careToggle" aria-pressed="false"><span class="tl a">Build only</span><span class="sw"><i></i></span><span class="tl b">Build + monthly care</span></button>
-    <div class="price-card inv" id="priceCard" style="text-align:left">
-      <span class="pflag">The Service Edit</span>
-      <div class="pname">Everything your business needs to look credible online.</div>
-      <div class="pfrom"><span class="from">From</span><span class="amt">$<span id="pAmt">799</span></span><span class="c">AUD</span></div>
-      <div class="care" id="care"><div class="care-in"><span>Hosting and ongoing support</span><b>+$<span id="pCare">150</span>/month</b></div></div>
-      <ul class="pinc">
-        <li><span class="ck">&check;</span> Custom design, built around your business</li>
-        <li><span class="ck">&check;</span> Mobile optimised</li>
-        <li><span class="ck">&check;</span> Contact and enquiry forms</li>
-        <li><span class="ck">&check;</span> SEO foundations</li>
-        <li><span class="ck">&check;</span> Fast turnaround</li>
-      </ul>
-      <a href="#contact" class="btn btn-light magnet" data-scroll>Get a free homepage concept <span class="a">&rarr;</span></a>
+    <button class="toggle" id="careToggle" aria-pressed="false"><span class="tl a">Set up</span><span class="sw"><i></i></span><span class="tl b">Set up + ongoing</span></button>
+    <div class="prices" style="text-align:left">
+      <div class="price-card pc-b">
+        <span class="pflag">Website</span>
+        <div class="pname">Everything you need to look credible online.</div>
+        <div class="pfrom"><span class="from">From</span><span class="amt">$799</span><span class="c">AUD</span></div>
+        <div class="care"><div class="care-in"><span>Hosting, updates and support</span><b>+$<span data-roll="150">150</span>/month</b></div></div>
+        <ul class="pinc">
+          <li><span class="ck">&check;</span> Custom design, built around your business</li>
+          <li><span class="ck">&check;</span> Mobile optimised</li>
+          <li><span class="ck">&check;</span> Enquiry and booking forms</li>
+          <li><span class="ck">&check;</span> Email sign-up built in</li>
+          <li><span class="ck">&check;</span> SEO foundations</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary magnet" data-scroll>Get a free homepage concept <span class="a">&rarr;</span></a>
+      </div>
+      <div class="price-card pc-y">
+        <span class="pflag">Email marketing</span>
+        <div class="pname">Everything you need to turn visitors into regulars.</div>
+        <div class="pfrom"><span class="from">From</span><span class="amt">$499</span><span class="c">AUD setup</span></div>
+        <div class="care"><div class="care-in"><span>Weekly or fortnightly emails, written, designed and sent</span><b>+$<span data-roll="350">350</span> + GST per email</b></div></div>
+        <ul class="pinc">
+          <li><span class="ck">&check;</span> Platform setup or migration</li>
+          <li><span class="ck">&check;</span> Branded email template</li>
+          <li><span class="ck">&check;</span> Sign-up forms connected to your site</li>
+          <li><span class="ck">&check;</span> Welcome series, written and automated</li>
+          <li><span class="ck">&check;</span> List growth and monthly reporting</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary magnet" data-scroll>Talk to us about email <span class="a">&rarr;</span></a>
+      </div>
     </div>
-    <p class="ongoing">Optional additional pages available, with larger multi-page builds from $1,499. Hosting and ongoing support from $150/month if you'd rather not think about it.</p>
+    <p class="ongoing">Most clients start with both. Larger multi-page builds from $1,499. Ongoing emails are $350 + GST each, sent weekly or fortnightly.</p>
   </section>
 
   <section id="contact" class="contact wrap pad">
     <div class="c-grid">
       <div>
         <span class="eyebrow">Get started</span>
-        <h2 data-split>Your business deserves a website <span class="dim">people trust.</span></h2>
-        <p class="c-sub">I'll redesign your homepage for free. If you love it, we build it. If you don't, you've still got a clearer picture of where your business could go.</p>
+        <h2 data-split>A website people <span class="hl hl-b">trust.</span> Emails they <span class="hl hl-y">open.</span></h2>
+        <p class="c-sub">We'll redesign your homepage for free. If you love it, we build it and set up the emails that keep it working. If you don't, you've still got a clearer picture of where your business could go.</p>
         <ul class="c-pts">
           <li><span class="ic">&check;</span> A custom concept built around your actual business</li>
-          <li><span class="ic">&check;</span> A real person, not a ticket bot</li>
+          <li><span class="ic">&check;</span> One team for your website and your emails</li>
           <li><span class="ic">&check;</span> No commitment, no card, no hard sell</li>
         </ul>
         <p class="faq-link">Got questions first? <a href="faq.html">Read the FAQ &rarr;</a></p>
@@ -487,6 +597,7 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
         <div class="field"><label for="business">Business name</label><input type="text" id="business" name="business_name" placeholder="What's it called?" required></div>
         <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@yourbusiness.com.au" required></div>
         <div class="field"><label for="link">Current website or social link</label><input type="text" id="link" name="current_link" placeholder="A link, or 'none yet' is fine"></div>
+        <div class="field"><label for="interest">What are you after?</label><select id="interest" name="interest"><option>Website and email</option><option>Website</option><option>Email marketing</option><option>Not sure yet</option></select></div>
         <div class="field"><label for="service">What do you do?</label><textarea id="service" name="service" placeholder="e.g. carpentry, mobile mechanic, beauty clinic" required></textarea></div>
         <button type="submit" class="btn btn-primary magnet" id="submitBtn">Get my free homepage concept <span class="a">&rarr;</span></button>
         <div class="fnote" id="fnote" role="status"></div>
@@ -495,11 +606,11 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
   </section>
 </main>
 
-<footer class="foot">
+<footer class="foot foot-col-b">
   <div class="wrap">
     <div class="foot-grid">
-      <div><a href="#top" class="brand" data-scroll><span class="mk">se</span>The Service Edit</a><p class="foot-sub">We take outdated service businesses and turn them into brands people trust online.</p></div>
-      <div class="foot-col"><h4>Explore</h4><a href="#work" data-scroll>Work</a><a href="#pricing" data-scroll>Pricing</a><a href="#contact" data-scroll>Contact</a><a href="faq.html">FAQ</a></div>
+      <div><a href="#top" class="brand" data-scroll><span class="mk">se</span>The Service Edit</a><p class="foot-sub">Websites and email marketing for service businesses that want to be chosen, and chosen again.</p></div>
+      <div class="foot-col"><h4>Explore</h4><a href="#work" data-scroll>Work</a><a href="#services" data-scroll>Services</a><a href="#pricing" data-scroll>Pricing</a><a href="#contact" data-scroll>Contact</a><a href="faq.html">FAQ</a></div>
       <div class="foot-col"><h4>Get in touch</h4><a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a><p>Perth based</p><p>Working Australia-wide</p></div>
     </div>
     <div class="wordmark" id="wordmark" aria-label="The Service Edit"><span>The</span><span>Service</span><span class="dim">Edit</span></div>
@@ -567,10 +678,11 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
   /* page load */
   var loader = $('#loader');
   function seen(){ try { var s = sessionStorage.getItem('tse-seen'); sessionStorage.setItem('tse-seen', '1'); return !!s; } catch(e){ return false; } }
-  if (!motion) { doc.classList.add('no-loader'); return; }
+  if (!motion) { doc.classList.add('no-loader'); $$('.hl').forEach(function(e){ e.classList.add('on'); }); return; }
 
   var heroH = $('#heroH'); maskWords(heroH);
   function intro(){
+    setTimeout(function(){ $$('.hero .hl').forEach(function(e){ e.classList.add('on'); }); }, 900);
     G.timeline({ defaults: { ease: 'expo.out' } })
       .from($$('.sw', heroH), { yPercent: 115, duration: 1.3, stagger: .035 })
       .from('[data-hero-fade]', { y: 22, opacity: 0, duration: 1, stagger: .07 }, '-=1');
@@ -585,6 +697,9 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
       .add(intro, '-=.5');
     setTimeout(function(){ doc.classList.add('no-loader'); }, 5000);
   }
+
+  /* highlighter sweeps */
+  $$('.hl').forEach(function(h){ if (h.closest('.hero')) return; ST.create({ trigger: h, start: 'top 80%', once: true, onEnter: function(){ h.classList.add('on'); } }); });
 
   /* split headings */
   $$('[data-split]').forEach(function(h){
@@ -637,7 +752,12 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
 
   /* calculator + pricing reveal */
   G.from('.calc > *', { y: 50, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: .1, scrollTrigger: { trigger: '.calc', start: 'top 85%' } });
-  G.from('#priceCard', { y: 70, rotate: -1.5, opacity: 0, duration: 1.3, ease: 'expo.out', scrollTrigger: { trigger: '#priceCard', start: 'top 88%' } });
+  G.from('.prices .price-card', { y: 70, rotate: function(i){ return i ? 1.5 : -1.5; }, opacity: 0, duration: 1.3, ease: 'expo.out', stagger: .12, scrollTrigger: { trigger: '.prices', start: 'top 88%' } });
+
+  /* hand in hand loop */
+  G.to('#loopLine', { scaleX: 1, ease: 'none', scrollTrigger: { trigger: '#loop', start: 'top 80%', end: 'bottom 55%', scrub: true } });
+  G.from('.lstep', { y: 40, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: .12, scrollTrigger: { trigger: '#loop', start: 'top 82%' } });
+  G.from('.lstep .dot', { scale: 0, duration: .8, ease: 'back.out(2)', stagger: .12, scrollTrigger: { trigger: '#loop', start: 'top 82%' } });
 
   /* footer wordmark */
   G.from('#wordmark span', { yPercent: 100, duration: 1.4, ease: 'expo.out', stagger: .08, scrollTrigger: { trigger: '#wordmark', start: 'top 96%' } });
@@ -655,7 +775,7 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
       cur.style.opacity = 1; cx(e.clientX); cy(e.clientY);
       var t = e.target, lb = t.closest && t.closest('[data-cursor]'), lk = t.closest && t.closest('a,button,input,textarea,label');
       cur.classList.toggle('is-label', !!lb); cur.classList.toggle('is-link', !lb && !!lk);
-      cur.classList.toggle('on-inv', !!(t.closest && t.closest('.inv, .calc .cr, .svc:nth-child(2)')));
+      cur.classList.toggle('on-inv', !!(t.closest && t.closest('.inv')));
       if (lb) lab.textContent = lb.getAttribute('data-cursor');
     });
     document.addEventListener('mouseleave', function(){ cur.style.opacity = 0; });
@@ -699,13 +819,16 @@ function initShared(){
   }
   cv.addEventListener('input', function(){ calc(); }); cc.addEventListener('input', function(){ calc(); }); calc(true);
   /* pricing toggle */
-  var tg = document.getElementById('careToggle'), care = document.getElementById('care'), pc = document.getElementById('pCare');
+  var tg = document.getElementById('careToggle');
   tg.addEventListener('click', function(){
     var on = tg.getAttribute('aria-pressed') !== 'true'; tg.setAttribute('aria-pressed', String(on));
-    if (anim) {
-      G.to(care, { height: on ? 'auto' : 0, duration: .8, ease: 'expo.out' });
-      if (on) { var o = { v: 0 }; G.to(o, { v: 150, duration: 1, ease: 'expo.out', onUpdate: function(){ pc.textContent = Math.round(o.v); } }); }
-    } else care.style.height = on ? 'auto' : '0';
+    Array.prototype.forEach.call(document.querySelectorAll('.care'), function(c){
+      if (anim) G.to(c, { height: on ? 'auto' : 0, duration: .8, ease: 'expo.out' }); else c.style.height = on ? 'auto' : '0';
+    });
+    if (on && anim) Array.prototype.forEach.call(document.querySelectorAll('[data-roll]'), function(el){
+      var end = +el.getAttribute('data-roll'), o = { v: 0 };
+      G.to(o, { v: end, duration: 1.1, ease: 'expo.out', onUpdate: function(){ el.textContent = Math.round(o.v); } });
+    });
   });
   /* form */
   var form = document.getElementById('leadForm'), note = document.getElementById('fnote'), btn = document.getElementById('submitBtn');

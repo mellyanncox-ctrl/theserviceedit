@@ -2035,7 +2035,7 @@ body.dark {
 }
 .dt-main-container { max-width: 96rem; padding-inline: clamp(1.25rem, 4vw, 3.5rem); }
 .dt-h1 {
-  letter-spacing: -.015em; line-height: 1.02; text-shadow: 0 1px 40px rgba(7,7,8,.55);
+  font-weight: 700; letter-spacing: -.025em; line-height: 1.0; text-shadow: 0 1px 40px rgba(7,7,8,.6);
   animation: tse-rise .58s cubic-bezier(.16, 1, .3, 1) both;
 }
 /* SERVICE leads; THE and EDIT land within 80ms. The whole wordmark is one
@@ -2193,8 +2193,8 @@ body.dark {
 .tse-form__status { margin: 0; min-height: 1.25rem; font-size: .9rem; color: color-mix(in srgb, var(--color--light) 62%, transparent); }
 .tse-form__status[data-state="err"] { color: #d98279; }
 .tse-contact h2 {
-  font-family: var(--byq-font-sans); font-weight: 200; text-transform: uppercase;
-  font-size: clamp(2.2rem,7vw,5rem); line-height: 1.02; letter-spacing: -.02em; margin: 0;
+  font-family: var(--byq-font-sans); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(2.2rem,7vw,5rem); line-height: 1.0; letter-spacing: -.028em; margin: 0;
 }
 .tse-contact p {
   margin: clamp(1.25rem,2.5vw,1.75rem) 0 0; max-width: 46ch; font-size: 1.02rem; line-height: 1.5;
@@ -2436,14 +2436,6 @@ body.dark {
             <img src="tse2/assets/shots/waterman-home.webp" data-photo="waterman-home" alt="" draggable="false" />
           </div>
         </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="Orange Mortgage" data-industry="Mortgage &amp; Finance" data-location="Perth, WA" data-url="https://the-service-edit.github.io/orange-mortgage-brokers/" data-status="Concept" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/orange-mortgage-brokers.webp" data-photo="orange-mortgage-brokers" alt="Orange Mortgage — Mortgage &amp; Finance website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/orange-mortgage-brokers.webp" data-photo="orange-mortgage-brokers" alt="" draggable="false" />
-          </div>
-        </figure>
       </div>
     </section>
     <div class="tse-wrap tse-flowmeta">
@@ -2451,7 +2443,7 @@ body.dark {
         <span class="tse-flowmeta__name" id="tseFlowName"></span>
         <span class="tse-flowmeta__sub" id="tseFlowSub"></span>
       </div>
-      <a class="tse-flowmeta__link" id="tseFlowLink" href="https://the-service-edit.github.io/cvbs-2026/" target="_blank" rel="noopener">Visit the live site &rarr;</a>
+      <a class="tse-flowmeta__link" id="tseFlowLink" href="https://the-service-edit.github.io/cvbs-2026/" target="_blank" rel="noopener">View the site &rarr;</a>
     </div>
   </div>
 
@@ -2467,7 +2459,7 @@ body.dark {
           <div class="label-small">testimonials</div>
         </div>
         <div class="heading-testimonials">
-          <h2 class="text-h2 no-margins">Proof <span class="heading-medium">from the floor</span></h2>
+          <h2 class="text-h2 no-margins">Proof <span class="heading-medium">from our clients</span></h2>
           <div class="body-medium">What changed after working with The Service Edit.</div>
         </div>
       </div>
@@ -2839,8 +2831,7 @@ body.dark {
         </div>
         <div class="tse-field">
           <label for="f-biz">Business, and what you do</label>
-          <input id="f-biz" name="business" type="text" autocomplete="organization"
-                 placeholder="Jordy&rsquo;s, pizza in Casuarina" required>
+          <input id="f-biz" name="business" type="text" autocomplete="organization" required>
         </div>
         <div class="tse-field">
           <label for="f-need">What are you after</label>

@@ -2540,7 +2540,7 @@ body.dark {
             </div>
             <div class="content-case-long">
               <div class="case-long-top-tile">
-                <div class="text-large">“We’d never done email before Mel approached us. With the cost of living it had gone quiet, and the first few months of this year were the slowest we’d had. She started in March. Our Wednesdays are now the busiest they’ve been all year and July was our biggest month on the app. She writes them like someone who’s worked in hospitality, because she has.”</div>
+                <div class="text-large">“We’d never done email before Mel approached us. With the cost of living it had gone quiet, and the start of this year was the slowest we’d had. She started in March. Our Wednesdays are now the busiest they’ve been all year and July was our biggest month on the app. We handed her the website and the emails, and they work as one thing now, which I don’t think happens when two different people are doing them. She checked every page and every send on her own phone first, which seemed like overkill until I thought about where our bookings actually come from. She writes them like someone who’s worked in hospitality, because she has.”</div>
               </div>
               <div class="case-long-bottom-tile">
                 <div class="case-long-author">
@@ -2609,13 +2609,13 @@ body.dark {
                 <div class="case-tag">
                   <div class="text-small text-accent">37 years</div>
                   <div class="text-small text-accent">→</div>
-                  <div class="text-small body-medium">Of brand, kept intact</div>
+                  <div class="text-small body-medium">Of business, modernised</div>
                 </div>
               </div>
             </div>
             <div class="content-case-long">
               <div class="case-long-top-tile">
-                <div class="text-large">“We have been finding venues since 1989 and the brand carries that. Mel rebuilt the site in phases without once asking us to become something newer than we are. The website, the look and the emails now all say the same thing, in our voice.”</div>
+                <div class="text-large">“We have been finding venues since 1989 and the site looked it. Mel sent a live link every time, so we were looking at the real thing instead of trying to picture it, and anything she needed from us came as a list. This photo, this bit of copy, this number. We did our part and it moved. It looks like 2026 now and it still sounds like us, which is the part I didn’t think we’d get.”</div>
               </div>
               <div class="case-long-bottom-tile">
                 <div class="case-long-author">
@@ -2837,7 +2837,6 @@ body.dark {
            A site that converts and a list you own is the same money working twice. I do both,
            and I write what goes out afterwards, because whoever built your website should be
            the one writing to your customers.</p>
-        <a class="tse-contact__mail" href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
       </div>
 
       <form class="tse-form" id="tseForm" novalidate>
@@ -2898,7 +2897,6 @@ body.dark {
         <a href="contact.html">Contact</a>
         <a href="privacy-policy.html">Privacy</a>
       </nav>
-      <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
     </div>
   </footer>
 
@@ -3126,17 +3124,17 @@ window.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <!-- ═══ Contact form ═══════════════════════════════════════════════════════
-     SET ENDPOINT BELOW. Paste the URL from Formspree, Basin, Web3Forms or any
-     service that accepts a POST, e.g. "https://formspree.io/f/xxxxxxxx".
+     Wired to the same Web3Forms account the old contact.html used, so these
+     enquiries land in the inbox they always did. The access key below is the
+     one already published in contact.html on the live site.
 
-     Until you do, the form still works: it opens a pre-filled email to
-     hello@theserviceedit.com instead of posting. That is deliberate. A form
-     wired to nothing looks like it worked and drops the enquiry on the floor,
-     which is worse than having no form at all.
+     If ENDPOINT or ACCESS_KEY is ever cleared, the form falls back to opening
+     a pre-filled email rather than silently dropping the enquiry.
      ═══════════════════════════════════════════════════════════════════════ -->
 <script>
 (function () {
-  var ENDPOINT = "";                       //  <-- paste your form URL here
+  var ENDPOINT = "https://api.web3forms.com/submit";
+  var ACCESS_KEY = "2870139d-38b7-4118-9f7c-9217fd52c463";
   var TO = "hello@theserviceedit.com";
 
   var form = document.getElementById("tseForm");
@@ -3162,7 +3160,7 @@ window.addEventListener("DOMContentLoaded", () => {
       slow: form.slow.value.trim()
     };
 
-    if (!ENDPOINT) {                                       // no backend yet
+    if (!ENDPOINT || !ACCESS_KEY) {                        // no backend wired
       var body = "Name: " + data.name + "\nEmail: " + data.email +
                  "\nBusiness: " + data.business + "\nThinks they need: " + data.need +
                  "\n\nWhat is slow:\n" + data.slow;
@@ -3177,7 +3175,16 @@ window.addEventListener("DOMContentLoaded", () => {
     fetch(ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify(data)
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        subject: "New enquiry from " + (data.business || data.name),
+        from_name: "The Service Edit website",
+        name: data.name,
+        email: data.email,
+        business: data.business,
+        "What they are after": data.need,
+        "Where they are losing people": data.slow
+      })
     }).then(function (r) {
       if (!r.ok) throw new Error(r.status);
       form.reset();

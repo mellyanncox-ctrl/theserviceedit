@@ -533,3 +533,10 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* The weekly price needs a companion line, set quiet so it reads as an aside
+   rather than a second claim. */
+.offer__note {
+  margin: -.35rem 0 0; font-size: .9rem; line-height: 1.45;
+  color: color-mix(in srgb, var(--color--light) 52%, transparent);
+}

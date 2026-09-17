@@ -540,3 +540,88 @@ img { max-width: 100%; display: block; }
   margin: -.35rem 0 0; font-size: .9rem; line-height: 1.45;
   color: color-mix(in srgb, var(--color--light) 52%, transparent);
 }
+
+
+/* ═══ ENGINEERING FIXES (shared by every page but the homepage, which inlines
+   its own copy). Behaviour only — no type, colour, imagery or layout changes.
+   ═══════════════════════════════════════════════════════════════════════ */
+:root { --tse-head-h: 52px; }
+/* Anchors, scrollIntoView() and the scroll reportValidity() does to reach an
+   invalid field all landed under the fixed header. One property fixes all three. */
+html { scroll-padding-top: calc(var(--tse-head-h) + 1.5rem); scroll-behavior: auto; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+
+/* .tse-field :is(input,select,textarea):focus sets outline:none and relies on a
+   1px underline shifting from 26% to 100% white. That is a fine mouse affordance
+   and a poor keyboard one, so :focus-visible gets a real indicator back. It has
+   to match that rule's specificity to win. */
+.tse-field :is(input, select, textarea):focus-visible {
+  outline: 2px solid var(--byq-accent-lime, #c5ef57);
+  outline-offset: 3px;
+}
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+textarea:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--byq-accent-lime, #c5ef57); outline-offset: 3px; border-radius: 3px;
+}
+.tse-skip {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  padding: .7rem 1rem; border-radius: var(--byq-radius, .5rem);
+  background: var(--byq-accent-lime, #c5ef57); color: #070708;
+  font-size: .78rem; font-weight: 600; letter-spacing: .04em; transition: top .2s ease;
+}
+.tse-skip:focus { top: 1rem; }
+[tabindex="-1"]:focus { outline: none; }
+
+.tse-head__toggle { display: none; }
+@media (max-width: 560px) {
+  .tse-head__toggle {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 42px; height: 42px; margin-right: -10px;
+    background: none; border: 0; padding: 0 9px; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tse-head__toggle span {
+    display: block; height: 1.5px; width: 100%; border-radius: 2px;
+    background: var(--color--light, #f6f3ec);
+    transition: transform .3s cubic-bezier(.16,1,.3,1), opacity .2s ease;
+  }
+  .tse-head__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .tse-head__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .tse-head__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .tse-head__toggle:focus-visible { outline: 2px solid var(--byq-accent-lime, #c5ef57); outline-offset: 2px; border-radius: 6px; }
+  /* The panel is position:fixed and comes after the button in the DOM, so
+     without this it paints over its own close control. */
+  .tse-head__toggle { position: relative; z-index: 2; }
+
+  /* .tse-head carries backdrop-filter, and a backdrop-filter makes an element
+     the containing block for its position:fixed descendants. So `inset: 0` on
+     this panel resolved against the 52px header box, not the viewport: the
+     panel was 52px tall, its background invisible and two of the five links
+     stacked off-screen above. Dropping the header's blur while the menu is
+     open hands the panel back to the viewport — and the blur is not visible
+     anyway while a full-screen panel is covering everything. */
+  body.tse-menu-open .tse-head { backdrop-filter: none; -webkit-backdrop-filter: none; background: none; }
+  .tse-head__nav {
+    position: fixed; inset: 0;
+    flex-direction: column; justify-content: center; align-items: flex-start;
+    gap: clamp(1.25rem, 5vh, 2.25rem);
+    padding: 0 clamp(1.5rem, 8vw, 3rem);
+    background: rgba(7,7,8,.97);
+    backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    visibility: hidden; opacity: 0; pointer-events: none;
+    transition: opacity .28s ease, visibility 0s linear .28s;
+    overscroll-behavior: contain;
+  }
+  body.tse-menu-open .tse-head__nav {
+    visibility: visible; opacity: 1; pointer-events: auto;
+    transition: opacity .28s ease, visibility 0s;
+  }
+  .tse-head__nav .is-optional { display: block; }
+  .tse-head__nav a { font-size: 1.05rem; letter-spacing: .1em; color: var(--color--light, #f6f3ec); }
+  .tse-head__nav a[aria-current="page"] { font-weight: 600; }
+  .tse-head { z-index: 70; }
+  .tse-head__in { position: relative; z-index: 2; }
+}
+
+.tse-head__nav a[aria-current="page"] { color: var(--color--light, #f6f3ec); }

@@ -7,7 +7,27 @@
 <meta name="description" content="Website design and email marketing for trades, hospitality and local service businesses across Australia. Based in Perth, WA.">
 <meta property="og:title" content="The Service Edit &middot; Website Design &amp; Email Marketing"><meta property="og:type" content="website">
 <meta property="og:description" content="The build wins them. The email brings them back. Working with trades, hospitality and local service businesses across Australia.">
-<meta property="og:image" content="tse2/assets/hero.webp"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://theserviceedit.com/tse2/assets/hero.webp">
+<meta property="og:image:width" content="1672"><meta property="og:image:height" content="941">
+<meta property="og:url" content="https://theserviceedit.com/">
+<meta property="og:site_name" content="The Service Edit">
+<meta property="og:locale" content="en_AU">
+<link rel="canonical" href="https://theserviceedit.com/">
+<meta name="theme-color" content="#070708">
+<!-- Placeholder mark: the current "se" tile. Swap when The Offcut is finalised. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111210'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='30' font-weight='600' fill='%23f6f3ec' text-anchor='middle'%3Ese%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://byqsupply-components.netlify.app" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"The Service Edit",
+"url":"https://theserviceedit.com/","image":"https://theserviceedit.com/tse2/assets/hero.webp",
+"email":"hello@theserviceedit.com",
+"description":"Website design and email marketing for trades, hospitality and local service businesses across Australia.",
+"address":{"@type":"PostalAddress","addressLocality":"Perth","addressRegion":"WA","addressCountry":"AU"},
+"areaServed":{"@type":"Country","name":"Australia"},
+"knowsAbout":["Website design","Email marketing","Hospitality marketing","Trade business websites"],
+"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website design"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Email marketing"}}]}
+</script><meta name="twitter:card" content="summary_large_image">
 
 <!-- ═══ 1. Testimonial Slider component styles — VERBATIM ═══ -->
 <style>
@@ -2317,13 +2337,246 @@ body.dark {
   font-size: clamp(1.75rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -.02em;
 }
 
+
+/* ── Work showcase ────────────────────────────────────────────────────────
+   One photograph of four builds on four screens. Its ground is near-black
+   like the page, so the edges are feathered into it rather than boxed. */
+.tse-showcase { margin: clamp(1.5rem,4vw,3rem) auto 0; max-width: 92rem; padding: 0; }
+.tse-showcase img {
+  display: block; width: 100%; height: auto;
+  -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 98%), radial-gradient(ellipse 74% 72% at 50% 46%, #000 60%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to bottom, #000 72%, transparent 98%), radial-gradient(ellipse 74% 72% at 50% 46%, #000 60%, transparent 100%);
+          mask-composite: intersect;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tse-showcase img { opacity: 0; transform: translateY(1.5rem) scale(.985);
+    transition: opacity 1s cubic-bezier(.16,1,.3,1), transform 1.2s cubic-bezier(.16,1,.3,1); }
+  .tse-showcase.is-in img { opacity: 1; transform: none; }
+}
+/* Phones: edge to edge with no gutter. The laptop touches the left edge of
+   the frame, so any zoom would crop it; only the top and bottom are feathered. */
+@media (max-width: 767px) {
+  .tse-showcase { margin-inline: 0; }
+  .tse-showcase img {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 80%, transparent);
+            mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 80%, transparent); }
+}
+.tse-worklist { list-style: none; margin: clamp(1rem,3vw,2rem) 0 0; padding: 0; border-top: 1px solid var(--byq-depth); }
+.tse-worklist li { border-bottom: 1px solid var(--byq-depth); }
+.tse-worklist a, .tse-worklist li > div {
+  display: grid; grid-template-columns: 1fr auto 1.5rem; align-items: baseline; gap: 1rem;
+  padding: clamp(.9rem,1.8vw,1.25rem) 0; color: var(--byq-fg); text-decoration: none;
+}
+.tse-worklist__name { font-family: var(--byq-font-display); font-size: clamp(1.25rem,2.6vw,2rem); letter-spacing: -.02em; line-height: 1.1; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.tse-worklist__meta { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: color-mix(in srgb, var(--byq-fg) 50%, transparent); }
+.tse-worklist__go { justify-self: end; color: color-mix(in srgb, var(--byq-fg) 45%, transparent); transition: color .3s ease, transform .4s cubic-bezier(.2,.8,.2,1); }
+.tse-worklist a:hover .tse-worklist__name { transform: translateX(.35rem); }
+.tse-worklist a:hover .tse-worklist__go { color: var(--byq-fg); transform: translate(2px,-2px); }
+.tse-worklist a:focus-visible { outline: 2px solid var(--byq-fg); outline-offset: 4px; }
+.tse-worklist__all { margin-top: clamp(1.5rem,3vw,2.25rem); }
+@media (max-width: 560px) {
+  .tse-worklist a, .tse-worklist li > div { grid-template-columns: 1fr 1.25rem; row-gap: .25rem; }
+  .tse-worklist__meta { grid-row: 2; grid-column: 1; }
+  .tse-worklist__go { grid-row: 1; grid-column: 2; }
+}
+</style>
+
+<!-- ═══ ENGINEERING FIXES ═══════════════════════════════════════════════════
+     Appended last so these rules win without !important. Nothing here changes
+     type, colour, imagery or layout — it fixes behaviour.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<style>
+.tse-hero-h1 { display: flex; flex-flow: column; align-items: flex-start;
+               margin: 0; font: inherit; letter-spacing: inherit; }
+/* ── 1. Anchors used to land under the fixed header ──────────────────────
+   .tse-head is fixed and 52px tall, so #work, #contact and #top all arrived
+   with their first 52px hidden behind it — and reportValidity() and focus()
+   parked invalid fields there too. scroll-padding-top fixes every one of
+   those at once, because it is the browser's own offset for "scroll
+   something into view". */
+:root { --tse-head-h: 52px; }
+/* scroll-padding on the scrollport only — NOT scroll-margin on the targets as
+   well, or the two offsets stack and everything lands twice as low. This one
+   property covers anchor clicks, scrollIntoView() and the scroll that
+   reportValidity() does to reach an invalid field. */
+html { scroll-padding-top: calc(var(--tse-head-h) + 1.5rem); }
+
+/* Smooth scrolling is a preference, not a default. */
+html { scroll-behavior: auto; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+/* ── 2. Hero reveal, in CSS ──────────────────────────────────────────────
+   Same fade-and-rise the interaction ran, but it can no longer be held
+   hostage by a third-party request. */
+.dt-right-hero-2 { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .dt-right-hero-2 { animation: tse-rise .8s cubic-bezier(.16,1,.3,1) .35s backwards; }
+}
+@keyframes tse-rise { from { opacity: 0; transform: translateY(1.25rem); } to { opacity: 1; transform: none; } }
+
+/* ── 3. Testimonial rail — native scroll-snap ────────────────────────────
+   The browser resolves gesture intent here, which is why there is no wheel
+   or touch JavaScript for this component at all. */
+.tse-rail {
+  max-width: var(--max-width--10-columns, 1144px);
+  margin-inline: auto;
+  padding-inline: var(--grid--page-padding, 32px);
+}
+.tse-rail__track {
+  display: flex;
+  gap: var(--spacing--120, 120px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  /* A swipe that runs off the end of the rail stops there instead of
+     handing the rest of the gesture to the page. */
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  /* Vertical panning stays with the document; horizontal belongs to the rail. */
+  touch-action: pan-x pan-y pinch-zoom;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-block: var(--spacing--4, 4px);
+}
+.tse-rail__track::-webkit-scrollbar { display: none; }
+.tse-rail__track:focus-visible {
+  outline: 2px solid var(--byq-accent-lime, #c5ef57);
+  outline-offset: 8px;
+  border-radius: var(--byq-radius, .5rem);
+}
+.slide-testimonial.tse-rail__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  margin-right: 0;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+/* The blur the old interaction applied to off-centre slides. Added by script
+   so that with JavaScript off nothing is blurred. */
+@media (prefers-reduced-motion: no-preference) {
+  .tse-rail__track.is-enhanced .tse-rail__slide { filter: blur(10px); transition: filter .35s ease; }
+  .tse-rail__track.is-enhanced .tse-rail__slide.is-active { filter: none; }
+}
+/* .circle-bg-center is a blurred decorative wash, absolutely positioned at
+   z-index 2 across the whole testimonial section with pointer-events:auto — so
+   it silently ate clicks on anything below it in the stack. Webflow's own
+   stylesheet happened to put z-index:4 on its slider arrows, which is the only
+   reason the old arrows were clickable at all. Decoration should not be in the
+   hit-testing path at all. */
+.circle-bg-center { pointer-events: none; }
+.tse-rail { position: relative; z-index: 3; }
+.tse-rail__ctrls { display: flex; justify-content: center; align-items: center; gap: var(--spacing--12, 12px); position: relative; z-index: 3; }
+.tse-rail__btn { background: none; border: 0; padding: 0; cursor: pointer; color: inherit; }
+.tse-rail__btn[aria-disabled="true"] { opacity: .35; cursor: default; }
+.tse-rail__btn:focus-visible {
+  outline: 2px solid var(--byq-accent-lime, #c5ef57); outline-offset: 4px;
+  border-radius: var(--byq-radius, .5rem);
+}
+/* The image lift on card hover, previously an interaction. */
+.card-case-tall .image-cover { transition: transform .5s cubic-bezier(.79,.14,.15,.86); }
+@media (hover: hover) { .card-case-tall:hover .image-cover { transform: scale(1.1); } }
+@media (prefers-reduced-motion: reduce) { .card-case-tall .image-cover { transition: none; } .card-case-tall:hover .image-cover { transform: none; } }
+
+/* ── 4. Work rail: never let a drag select or ghost-drag its contents ───── */
+.byq-gem--coverflow-3d-01__stage.is-dragging { cursor: grabbing; }
+.byq-gem--coverflow-3d-01__stage.is-dragging * { user-select: none; -webkit-user-select: none; }
+.byq-gem--coverflow-3d-01__card { cursor: pointer; }
+
+/* ── 5. Mobile navigation ────────────────────────────────────────────────
+   Below 560px, Services / Pricing / About were display:none with nothing to
+   open them, so three of the five header links simply did not exist on a
+   phone. Same links, same type, behind a control. */
+.tse-head__toggle { display: none; }
+@media (max-width: 560px) {
+  .tse-head__toggle {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 42px; height: 42px; margin-right: -10px;
+    background: none; border: 0; padding: 0 9px; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tse-head__toggle span {
+    display: block; height: 1.5px; width: 100%; border-radius: 2px;
+    background: var(--color--light, #f6f3ec);
+    transition: transform .3s cubic-bezier(.16,1,.3,1), opacity .2s ease;
+  }
+  .tse-head__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .tse-head__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .tse-head__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .tse-head__toggle:focus-visible { outline: 2px solid var(--byq-accent-lime, #c5ef57); outline-offset: 2px; border-radius: 6px; }
+  /* The panel is position:fixed and comes after the button in the DOM, so
+     without this it paints over its own close control. */
+  .tse-head__toggle { position: relative; z-index: 2; }
+
+  /* .tse-head carries backdrop-filter, and a backdrop-filter makes an element
+     the containing block for its position:fixed descendants. So `inset: 0` on
+     this panel resolved against the 52px header box, not the viewport: the
+     panel was 52px tall, its background invisible and two of the five links
+     stacked off-screen above. Dropping the header's blur while the menu is
+     open hands the panel back to the viewport — and the blur is not visible
+     anyway while a full-screen panel is covering everything. */
+  body.tse-menu-open .tse-head { backdrop-filter: none; -webkit-backdrop-filter: none; background: none; }
+  .tse-head__nav {
+    position: fixed; inset: 0;
+    flex-direction: column; justify-content: center; align-items: flex-start;
+    gap: clamp(1.25rem, 5vh, 2.25rem);
+    padding: 0 clamp(1.5rem, 8vw, 3rem);
+    background: rgba(7,7,8,.97);
+    backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    /* Kept in the DOM and out of the a11y tree until opened, so nothing
+       inside it is tabbable while it is closed. */
+    visibility: hidden; opacity: 0; pointer-events: none;
+    transition: opacity .28s ease, visibility 0s linear .28s;
+    overscroll-behavior: contain;
+  }
+  body.tse-menu-open .tse-head__nav {
+    visibility: visible; opacity: 1; pointer-events: auto;
+    transition: opacity .28s ease, visibility 0s;
+  }
+  /* Inside the panel every link shows, including the three that were hidden. */
+  .tse-head__nav .is-optional { display: block; }
+  .tse-head__nav a { font-size: 1.05rem; letter-spacing: .1em; color: var(--color--light, #f6f3ec); }
+  .tse-head__nav a[aria-current="page"] { font-weight: 600; }
+  .tse-head { z-index: 70; }
+  .tse-head__in { position: relative; z-index: 2; }
+}
+
+
+/* .tse-field :is(input,select,textarea):focus sets outline:none and relies on a
+   1px underline shifting from 26% to 100% white. That is a fine mouse affordance
+   and a poor keyboard one, so :focus-visible gets a real indicator back. It has
+   to match that rule's specificity to win. */
+.tse-field :is(input, select, textarea):focus-visible {
+  outline: 2px solid var(--byq-accent-lime, #c5ef57);
+  outline-offset: 3px;
+}
+/* ── 6. Focus is visible everywhere a keyboard can reach ─────────────────── */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--byq-accent-lime, #c5ef57);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.tse-skip {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  padding: .7rem 1rem; border-radius: var(--byq-radius, .5rem);
+  background: var(--byq-accent-lime, #c5ef57); color: #070708;
+  font-size: .78rem; font-weight: 600; letter-spacing: .04em;
+  transition: top .2s ease;
+}
+.tse-skip:focus { top: 1rem; }
+[tabindex="-1"]:focus { outline: none; }
 </style>
 </head>
 <body class="dark">
+  <a class="tse-skip" href="#top">Skip to content</a>
   <header class="tse-head">
     <div class="tse-head__in">
       <a class="tse-head__mark" href="#top">The Service Edit</a>
-      <nav class="tse-head__nav">
+      <button class="tse-head__toggle" type="button" id="tseMenuBtn"
+              aria-expanded="false" aria-controls="tseMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="tse-head__nav" id="tseMenu" aria-label="Main">
         <a href="#work">Work</a>
         <a href="services.html" class="is-optional">Services</a>
         <a href="pricing.html" class="is-optional">Pricing</a>
@@ -2337,149 +2590,53 @@ body.dark {
        lines, their data-w-id hooks and the inline image slot are the
        component's own. Only the words, the image and the CTA target change.
        The two service lines below are additions (see .tse-service). ══ -->
-<section class="dt-section" id="top">
+<section class="dt-section" id="top" tabindex="-1">
     <figure class="tse-hero-figure" aria-hidden="true">
-      <img src="tse2/assets/hero.webp" alt="" loading="eager" width="1672" height="941">
+      <img src="tse2/assets/hero.webp" alt="" loading="eager" fetchpriority="high" decoding="async" width="1672" height="941">
     </figure>
     <div class="w-layout-blockcontainer dt-main-container w-container">
       <div class="tse-eyebrow"><span>Australia wide. Limited client spots available</span></div>
       <div class="dt-flex-hero-2">
         <div class="dt-title-wrap-hero-2">
-          <div class="dt-item-hero-2">
-            <h1 class="dt-h1 tse-l1">The</h1>
-          </div>
-          <div class="single-hero-home-b">
-            <h1 class="dt-h1 tse-l2">Service</h1>
-          </div>
-          <div class="single-hero-home-b">
-            <h1 class="dt-h1 tse-l3">Edit</h1>
-          </div>
+          <!-- One h1, three lines. It used to be three separate h1 elements,
+               so the page announced "heading level 1: The", "heading level 1:
+               Service", "heading level 1: Edit" and had no single headline for
+               search. Spans inside a flex h1 keep the rendering identical. -->
+          <h1 class="tse-hero-h1">
+            <span class="dt-item-hero-2"><span class="dt-h1 tse-l1">The</span></span>
+            <span class="single-hero-home-b"><span class="dt-h1 tse-l2">Service</span></span>
+            <span class="single-hero-home-b"><span class="dt-h1 tse-l3">Edit</span></span>
+          </h1>
           <div class="tse-services">
             <span class="tse-service">Website Design</span>
             <span class="tse-service">Email Marketing</span>
           </div>
         </div>
-        <div data-w-id="7cbbde30-66ea-b61f-5de5-34b3a4ff2d05" style="opacity:0" class="dt-right-hero-2">
+        <div class="dt-right-hero-2">
           <a href="#work" class="dt-cta-outline w-button">explore projects</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ WORK — Coverflow 3D gem, markup verbatim (media inlined) ══ -->
+  <!-- ══ WORK · device showcase (replaced the Coverflow rail, 17 Sept 2026) ══ -->
   <div class="tse-section" id="work">
-    <div class="tse-wrap tse-section__head"><h2>Selected work</h2><p>Client sites, concept builds and work in progress, labelled as such. Drag the rail, or use the arrow keys.</p></div>
-    <section class="byq-gem byq-gem--coverflow-3d-01">
-      <!-- The depth IS the effect: cards sit on one 3D rail, the centre one
-           square to the viewer and its neighbours swinging away in perspective,
-           each trailing a mirrored reflection. Drag, scroll, use the arrow keys
-           or click a card to bring it forward. -->
-      <div class="byq-gem--coverflow-3d-01__stage" tabindex="0" role="listbox"
-           aria-label="Cover flow gallery">
-        <figure class="byq-gem--coverflow-3d-01__card" data-name="ZB Accounting" data-industry="Accounting &amp; Tax" data-location="NSW" data-url="https://the-service-edit.github.io/zb-accounting/" data-status="Concept" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/zb-accounting.webp" data-photo="zb-accounting" alt="ZB Accounting &mdash; Accounting &amp; Tax website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/zb-accounting.webp" data-photo="zb-accounting" alt="ZB Accounting &mdash; Accounting &amp; Tax website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="Creative Green" data-industry="Landscaping" data-location="Adelaide, SA" data-url="https://the-service-edit.github.io/creative-green/" data-status="Concept" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/creative-green.webp" data-photo="creative-green" alt="Creative Green &mdash; Landscaping website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/creative-green.webp" data-photo="creative-green" alt="Creative Green &mdash; Landscaping website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="Harper &amp; The Hare" data-industry="Hair Studio" data-location="Murwillumbah, NSW" data-url="https://the-service-edit.github.io/harper-hare/" data-status="Concept" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/harper-hare.webp" data-photo="harper-hare" alt="Harper &amp; The Hare &mdash; Hair Studio website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/harper-hare.webp" data-photo="harper-hare" alt="Harper &amp; The Hare &mdash; Hair Studio website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="Black Swan" data-industry="Mortgage Broking" data-location="Perth, WA" data-url="https://the-service-edit.github.io/black-swan/" data-status="Concept" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/black-swan.webp" data-photo="black-swan" alt="Black Swan &mdash; Mortgage Broking website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/black-swan.webp" data-photo="black-swan" alt="Black Swan &mdash; Mortgage Broking website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="Giant Coffee" data-industry="Cafe &amp; Roastery" data-location="Northbridge, Perth WA" data-url="https://giantcoffee.com.au" data-status="Live" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/giant.webp" data-photo="giant" alt="Giant Coffee &mdash; Cafe &amp; Roastery website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/giant.webp" data-photo="giant" alt="Giant Coffee &mdash; Cafe &amp; Roastery website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="CVBS" data-industry="Venue Sourcing" data-location="National" data-url="https://the-service-edit.github.io/cvbs-2026/" data-status="Client build" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/cvbs-2026.webp" data-photo="cvbs-2026" alt="CVBS &mdash; Venue Sourcing website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/cvbs-2026.webp" data-photo="cvbs-2026" alt="CVBS &mdash; Venue Sourcing website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="Jordy&rsquo;s Casuarina" data-industry="Sourdough Pizza" data-location="Casuarina, NSW" data-url="https://jordyscasuarina.com" data-status="Live" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/jordys.webp" data-photo="jordys" alt="Jordy&rsquo;s Casuarina &mdash; Sourdough Pizza website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/jordys.webp" data-photo="jordys" alt="Jordy&rsquo;s Casuarina &mdash; Sourdough Pizza website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="NutterJuck Lures" data-industry="Handmade Lures" data-location="Australia" data-url="https://the-service-edit.github.io/nutterjuck/" data-status="In progress" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/nutterjuck.webp" data-photo="nutterjuck" alt="NutterJuck Lures &mdash; Handmade Lures website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/nutterjuck.webp" data-photo="nutterjuck" alt="NutterJuck Lures &mdash; Handmade Lures website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="Gold Foil Books" data-industry="Artist-led Bookbinding" data-location="Wollongong, NSW" data-url="https://goldfoilbooks.com.au" data-status="Live" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/goldfoilbooks.webp" data-photo="goldfoilbooks" alt="Gold Foil Books &mdash; Artist-led Bookbinding website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/goldfoilbooks.webp" data-photo="goldfoilbooks" alt="Gold Foil Books &mdash; Artist-led Bookbinding website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="Tweed Coast Meats" data-industry="Butcher" data-location="Cabarita Beach, NSW" data-url="https://mellyanncox-ctrl.github.io/tweed-coast-meats/" data-status="Concept" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/tweed-coast-meats.webp" data-photo="tweed-coast-meats" alt="Tweed Coast Meats &mdash; Butcher website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/tweed-coast-meats.webp" data-photo="tweed-coast-meats" alt="Tweed Coast Meats &mdash; Butcher website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="Sue&rsquo;s Pet Transport" data-industry="Pet Care &amp; Transport" data-location="Illawarra, NSW" data-url="https://the-service-edit.github.io/sues-pet-transport/" data-status="Concept" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/sues-pet-transport.webp" data-photo="sues-pet-transport" alt="Sue&rsquo;s Pet Transport &mdash; Pet Care &amp; Transport website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/sues-pet-transport.webp" data-photo="sues-pet-transport" alt="Sue&rsquo;s Pet Transport &mdash; Pet Care &amp; Transport website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-<figure class="byq-gem--coverflow-3d-01__card" data-name="X Tiling" data-industry="Architectural Tiling" data-location="Melbourne, VIC" data-url="https://the-service-edit.github.io/x-tiling/" data-status="Concept" role="option" aria-selected="false">
-          <div class="byq-gem--coverflow-3d-01__face">
-            <img src="tse2/assets/shots/x-tiling.webp" data-photo="x-tiling" alt="X Tiling &mdash; Architectural Tiling website designed by The Service Edit" draggable="false" />
-          </div>
-          <div class="byq-gem--coverflow-3d-01__reflection" aria-hidden="true">
-            <img src="tse2/assets/shots/x-tiling.webp" data-photo="x-tiling" alt="X Tiling &mdash; Architectural Tiling website designed by The Service Edit" draggable="false" />
-          </div>
-        </figure>
-      </div>
-    </section>
-    <div class="tse-wrap tse-flowmeta">
-      <div>
-        <span class="tse-flowmeta__name" id="tseFlowName"></span>
-        <span class="tse-flowmeta__sub" id="tseFlowSub"></span>
-      </div>
-      <a class="tse-flowmeta__link" id="tseFlowLink" href="https://the-service-edit.github.io/cvbs-2026/" target="_blank" rel="noopener">View the site &rarr;</a>
+    <div class="tse-wrap tse-section__head"><h2>Selected work</h2><p>Four recent builds. Designed for the phone first, and every screen after it.</p></div>
+    <figure class="tse-showcase">
+      <img src="tse2/assets/work-devices.webp"
+           srcset="tse2/assets/work-devices-960.webp 960w, tse2/assets/work-devices.webp 1536w"
+           sizes="(max-width: 767px) 100vw, min(92rem, 100vw)"
+           alt="Websites built by The Service Edit for Giant Coffee, Jordy&rsquo;s, Sonnys and NutterJuck Lures, shown on a desktop, laptop, phone and tablet"
+           width="1536" height="1024" loading="lazy" decoding="async">
+    </figure>
+    <div class="tse-wrap">
+      <ol class="tse-worklist">
+        <li><a href="https://giantcoffee.com.au" target="_blank" rel="noopener"><span class="tse-worklist__name">Giant Coffee</span><span class="tse-worklist__meta">Cafe &middot; Northbridge, WA</span><span class="tse-worklist__go" aria-hidden="true">&nearr;</span></a></li>
+        <li><a href="https://jordyscasuarina.com" target="_blank" rel="noopener"><span class="tse-worklist__name">Jordy&rsquo;s</span><span class="tse-worklist__meta">Sourdough pizza &middot; Casuarina, NSW</span><span class="tse-worklist__go" aria-hidden="true">&nearr;</span></a></li>
+        <li><a href="https://sonnys.theserviceedit.com" target="_blank" rel="noopener"><span class="tse-worklist__name">Sonnys</span><span class="tse-worklist__meta">Small bar &middot; Mount Hawthorn, WA</span><span class="tse-worklist__go" aria-hidden="true">&nearr;</span></a></li>
+        <li><a href="https://the-service-edit.github.io/nutterjuck/" target="_blank" rel="noopener"><span class="tse-worklist__name">NutterJuck Lures</span><span class="tse-worklist__meta">Handmade lures &middot; Australia</span><span class="tse-worklist__go" aria-hidden="true">&nearr;</span></a></li>
+      </ol>
+      <a class="tse-flowmeta__link tse-worklist__all" href="work.html">See all work &rarr;</a>
     </div>
   </div>
 
@@ -2500,52 +2657,22 @@ body.dark {
         </div>
       </div>
     </div>
-    <div data-delay="3000" data-animation="slide" class="slider cropped w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
-      <div class="mask-testimonial long w-slider-mask">
-        <div class="slide-testimonial w-slide">
-          <div class="hide-cms w-dyn-list">
-            <div role="list" class="w-dyn-items">
-              <div role="listitem" class="w-dyn-item">
-                <a cms-item href="#" class="card-case-tall long w-inline-block">
-                  <div class="image-wrap-case-long"><img cms-image loading="lazy" alt src="https://cdn.prod.website-files.com/68c9c39b88fdc718ad27d553/68cebb1130564da8810b9306_Home%20A.png" class="image-cover">
-                    <div class="case-image-overlay">
-                      <div class="case-tag">
-                        <div class="text-small text-accent">This is some text inside of a div block.</div>
-                        <div class="text-small text-accent">→</div>
-                        <div class="text-small body-medium">This is some text inside of a div block.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="content-case-long">
-                    <div class="case-long-top-tile">
-                      <div class="text-large">This is some text inside of a div block.</div>
-                    </div>
-                    <div class="case-long-bottom-tile">
-                      <div class="case-long-author">
-                        <div class="text-small text-body-bold">This is some text inside of a div block.</div>
-                        <div class="text-small body-medium">This is some text inside of a div block.</div>
-                      </div>
-                      <div class="link-cs-card">
-                        <div cms-text="">View Case Study</div>
-                        <div cms-icon-wrap="" class="button-slider secondary">
-                          <div class="button-circle-slot secondary">
-                            <div cms-ico="" class="icon-slider-button text-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none">
-                                <path d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="w-dyn-empty">
-              <div>No items found.</div>
-            </div>
-          </div>
-          <a cms-item data-w-id="46325dbf-19ce-ed0f-befc-4ac25393ed27" href="https://jordyscasuarina.com" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
-            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/jordys.webp" alt="Jordy's — work by The Service Edit" cms-image loading="lazy">
+    <!-- The testimonial rail. This was a Webflow slider driven by a runtime on a
+         host we do not own: when that host was slow or down, three of the four
+         quotes were clipped out of reach with no way to get to them, and it
+         autoplayed every 3 seconds — nobody reads a 250-word quote in three
+         seconds, and moving content with no pause control fails WCAG 2.2.2.
+
+         It is a native scroll-snap rail now. The browser owns the gesture, so
+         axis intent, momentum, snapping and keyboard all behave the way the
+         platform does everywhere else, and overscroll-behavior-x stops a swipe
+         that hits the end from grabbing the page. -->
+    <div class="tse-rail">
+      <div class="tse-rail__track" id="tseRail" tabindex="0"
+           role="group" aria-roledescription="carousel" aria-label="What clients said">
+        <div class="slide-testimonial tse-rail__slide" role="group" aria-roledescription="slide" aria-label="1 of 4: Jordy">
+<a cms-item href="https://jordyscasuarina.com" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
+            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/jordys.webp" alt="Jordy's — work by The Service Edit" cms-image loading="lazy" width="1071" height="840" decoding="async">
               <div class="case-image-overlay">
                 <div class="case-tag">
                   <div class="text-small text-accent">+17%</div>
@@ -2577,50 +2704,9 @@ body.dark {
             </div>
           </a>
         </div>
-        <div class="slide-testimonial w-slide">
-          <div class="hide-cms w-dyn-list">
-            <div role="list" class="w-dyn-items">
-              <div role="listitem" class="w-dyn-item">
-                <a cms-item href="#" class="card-case-tall long w-inline-block">
-                  <div class="image-wrap-case-long"><img cms-image loading="lazy" alt src="https://cdn.prod.website-files.com/68c9c39b88fdc718ad27d553/68cebb1130564da8810b9306_Home%20A.png" class="image-cover">
-                    <div class="case-image-overlay">
-                      <div class="case-tag">
-                        <div class="text-small text-accent">This is some text inside of a div block.</div>
-                        <div class="text-small text-accent">→</div>
-                        <div class="text-small body-medium">This is some text inside of a div block.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="content-case-long">
-                    <div class="case-long-top-tile">
-                      <div class="text-large">This is some text inside of a div block.</div>
-                    </div>
-                    <div class="case-long-bottom-tile">
-                      <div class="case-long-author">
-                        <div class="text-small text-body-bold">This is some text inside of a div block.</div>
-                        <div class="text-small body-medium">This is some text inside of a div block.</div>
-                      </div>
-                      <div class="link-cs-card">
-                        <div cms-text="">View Case Study</div>
-                        <div cms-icon-wrap="" class="button-slider secondary">
-                          <div class="button-circle-slot secondary">
-                            <div cms-ico="" class="icon-slider-button text-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none">
-                                <path d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="w-dyn-empty">
-              <div>No items found.</div>
-            </div>
-          </div>
-          <a cms-item data-w-id="54769df0-9369-7e51-277f-9e624cec8b14" href="https://the-service-edit.github.io/cvbs-2026/" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
-            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/cvbs-2026.webp" alt="CVBS — work by The Service Edit" cms-image loading="lazy">
+        <div class="slide-testimonial tse-rail__slide" role="group" aria-roledescription="slide" aria-label="2 of 4: Anthony">
+<a cms-item href="https://the-service-edit.github.io/cvbs-2026/" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
+            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/cvbs-2026.webp" alt="CVBS — work by The Service Edit" cms-image loading="lazy" width="1071" height="840" decoding="async">
               <div class="case-image-overlay">
                 <div class="case-tag">
                   <div class="text-small text-accent">37 years</div>
@@ -2652,50 +2738,9 @@ body.dark {
             </div>
           </a>
         </div>
-        <div class="slide-testimonial w-slide">
-          <div class="hide-cms w-dyn-list">
-            <div role="list" class="w-dyn-items">
-              <div role="listitem" class="w-dyn-item">
-                <a cms-item href="#" class="card-case-tall long w-inline-block">
-                  <div class="image-wrap-case-long"><img cms-image loading="lazy" alt src="https://cdn.prod.website-files.com/68c9c39b88fdc718ad27d553/68cebb1130564da8810b9306_Home%20A.png" class="image-cover">
-                    <div class="case-image-overlay">
-                      <div class="case-tag">
-                        <div class="text-small text-accent">This is some text inside of a div block.</div>
-                        <div class="text-small text-accent">→</div>
-                        <div class="text-small body-medium">This is some text inside of a div block.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="content-case-long">
-                    <div class="case-long-top-tile">
-                      <div class="text-large">This is some text inside of a div block.</div>
-                    </div>
-                    <div class="case-long-bottom-tile">
-                      <div class="case-long-author">
-                        <div class="text-small text-body-bold">This is some text inside of a div block.</div>
-                        <div class="text-small body-medium">This is some text inside of a div block.</div>
-                      </div>
-                      <div class="link-cs-card">
-                        <div cms-text="">View Case Study</div>
-                        <div cms-icon-wrap="" class="button-slider secondary">
-                          <div class="button-circle-slot secondary">
-                            <div cms-ico="" class="icon-slider-button text-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none">
-                                <path d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="w-dyn-empty">
-              <div>No items found.</div>
-            </div>
-          </div>
-          <a cms-item data-w-id="e76098bc-b8fc-a358-1343-bda99a855d6b" href="https://giantcoffee.com.au/" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
-            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/giant.webp" alt="Giant Coffee — work by The Service Edit" cms-image loading="lazy">
+        <div class="slide-testimonial tse-rail__slide" role="group" aria-roledescription="slide" aria-label="3 of 4: Claire">
+<a cms-item href="https://giantcoffee.com.au/" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
+            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/giant.webp" alt="Giant Coffee — work by The Service Edit" cms-image loading="lazy" width="1071" height="840" decoding="async">
               <div class="case-image-overlay">
                 <div class="case-tag">
                   <div class="text-small text-accent">Zero</div>
@@ -2727,50 +2772,9 @@ body.dark {
             </div>
           </a>
         </div>
-        <div class="slide-testimonial w-slide">
-          <div class="hide-cms w-dyn-list">
-            <div role="list" class="w-dyn-items">
-              <div role="listitem" class="w-dyn-item">
-                <a cms-item href="#" class="card-case-tall long w-inline-block">
-                  <div class="image-wrap-case-long"><img cms-image loading="lazy" alt src="https://cdn.prod.website-files.com/68c9c39b88fdc718ad27d553/68cebb1130564da8810b9306_Home%20A.png" class="image-cover">
-                    <div class="case-image-overlay">
-                      <div class="case-tag">
-                        <div class="text-small text-accent">This is some text inside of a div block.</div>
-                        <div class="text-small text-accent">→</div>
-                        <div class="text-small body-medium">This is some text inside of a div block.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="content-case-long">
-                    <div class="case-long-top-tile">
-                      <div class="text-large">This is some text inside of a div block.</div>
-                    </div>
-                    <div class="case-long-bottom-tile">
-                      <div class="case-long-author">
-                        <div class="text-small text-body-bold">This is some text inside of a div block.</div>
-                        <div class="text-small body-medium">This is some text inside of a div block.</div>
-                      </div>
-                      <div class="link-cs-card">
-                        <div cms-text="">View Case Study</div>
-                        <div cms-icon-wrap="" class="button-slider secondary">
-                          <div class="button-circle-slot secondary">
-                            <div cms-ico="" class="icon-slider-button text-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none">
-                                <path d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="w-dyn-empty">
-              <div>No items found.</div>
-            </div>
-          </div>
-          <a cms-item data-w-id="ce75a2fd-0a2d-528d-9ca1-681bcf328a0f" href="https://goldfoilbooks.com.au" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
-            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/goldfoilbooks.webp" alt="Gold Foil Books — work by The Service Edit" cms-image loading="lazy">
+        <div class="slide-testimonial tse-rail__slide" role="group" aria-roledescription="slide" aria-label="4 of 4: Dani">
+<a cms-item href="https://goldfoilbooks.com.au" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
+            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/goldfoilbooks.webp" alt="Gold Foil Books — work by The Service Edit" cms-image loading="lazy" width="1071" height="840" decoding="async">
               <div class="case-image-overlay">
                 <div class="case-tag">
                   <div class="text-small text-accent">5 days</div>
@@ -2802,28 +2806,19 @@ body.dark {
             </div>
           </a>
         </div>
-                      </div>
-      <div class="slider-button-bottom w-slider-arrow-left">
-        <div cms-icon-wrap="" data-wf--button-circle--variant="secondary" class="button-slider w-variant-5792d278-dfb4-58fc-e0f1-816be54470a7">
-          <div class="button-circle-slot">
-            <div data-wf--icon-button-circle--variant="left" class="icon-slider-button w-variant-31998c3b-16f6-1669-9132-65d0d69952fb w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg></div>
-          </div>
-        </div>
       </div>
-      <div class="slider-button-bottom right w-slider-arrow-right">
-        <div cms-icon-wrap="" data-wf--button-circle--variant="secondary" class="button-slider w-variant-5792d278-dfb4-58fc-e0f1-816be54470a7">
-          <div class="button-circle-slot">
-            <div data-wf--icon-button-circle--variant="right" class="icon-slider-button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg></div>
-          </div>
-        </div>
+      <div class="tse-rail__ctrls">
+        <button type="button" class="slider-button-bottom tse-rail__btn" data-rail="-1"
+                aria-label="Previous testimonial" aria-controls="tseRail">
+          <span class="button-slider w-variant-5792d278-dfb4-58fc-e0f1-816be54470a7"><span class="button-circle-slot"><span class="icon-slider-button w-variant-31998c3b-16f6-1669-9132-65d0d69952fb w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></span>
+        </button>
+        <button type="button" class="slider-button-bottom right tse-rail__btn" data-rail="1"
+                aria-label="Next testimonial" aria-controls="tseRail">
+          <span class="button-slider w-variant-5792d278-dfb4-58fc-e0f1-816be54470a7"><span class="button-circle-slot"><span class="icon-slider-button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></span>
+        </button>
       </div>
-      <div class="hidden w-slider-nav w-round w-num"></div>
     </div>
-    <div class="circle-bg-center">
+    <div class="circle-bg-center" aria-hidden="true">
       <div class="bg-circle"></div>
     </div>
   </section>
@@ -2928,214 +2923,26 @@ body.dark {
      jQuery and GSAP are vendored locally; the ix2 engine is still fetched
      from BYQ, so the guard at the bottom reveals the hero if it never lands.
      ═══════════════════════════════════════════════════════════════════════ -->
-<script>window.__ix={"events":{"e-447":{"id":"e-447","name":"","animationType":"custom","eventTypeId":"SLIDER_ACTIVE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-112","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-904"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":".slide-testimonial","originalId":"0e802c4e-ed1c-0763-ad22-e444cc235c29","appliesTo":"CLASS"},"targets":[{"selector":".slide-testimonial","originalId":"0e802c4e-ed1c-0763-ad22-e444cc235c29","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1758443060392},"e-448":{"id":"e-448","name":"","animationType":"custom","eventTypeId":"SLIDER_INACTIVE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-113","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-897"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":".slide-testimonial","originalId":"0e802c4e-ed1c-0763-ad22-e444cc235c29","appliesTo":"CLASS"},"targets":[{"selector":".slide-testimonial","originalId":"0e802c4e-ed1c-0763-ad22-e444cc235c29","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1758443060392},"e-455":{"id":"e-455","name":"","animationType":"preset","eventTypeId":"SLIDER_ACTIVE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-112","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-901"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":".slide-testimonial","originalId":"6952447c023f47f5dcfb6e81|e1e49052-ee9f-6fe4-3b27-2aa6bea59185","appliesTo":"CLASS"},"targets":[{"selector":".slide-testimonial","originalId":"6952447c023f47f5dcfb6e81|e1e49052-ee9f-6fe4-3b27-2aa6bea59185","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1758470193673},"e-456":{"id":"e-456","name":"","animationType":"preset","eventTypeId":"SLIDER_INACTIVE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-113","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-903"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":".slide-testimonial","originalId":"6952447c023f47f5dcfb6e81|e1e49052-ee9f-6fe4-3b27-2aa6bea59185","appliesTo":"CLASS"},"targets":[{"selector":".slide-testimonial","originalId":"6952447c023f47f5dcfb6e81|e1e49052-ee9f-6fe4-3b27-2aa6bea59185","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1758470193673},"e-599":{"id":"e-599","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-123","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-600"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|46325dbf-19ce-ed0f-befc-4ac25393ed27","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|46325dbf-19ce-ed0f-befc-4ac25393ed27","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118794120},"e-600":{"id":"e-600","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-124","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-599"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|46325dbf-19ce-ed0f-befc-4ac25393ed27","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|46325dbf-19ce-ed0f-befc-4ac25393ed27","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118794120},"e-601":{"id":"e-601","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-123","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-602"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|54769df0-9369-7e51-277f-9e624cec8b14","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|54769df0-9369-7e51-277f-9e624cec8b14","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118807645},"e-602":{"id":"e-602","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-124","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-601"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|54769df0-9369-7e51-277f-9e624cec8b14","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|54769df0-9369-7e51-277f-9e624cec8b14","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118807646},"e-603":{"id":"e-603","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-123","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-604"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|e76098bc-b8fc-a358-1343-bda99a855d6b","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|e76098bc-b8fc-a358-1343-bda99a855d6b","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118821571},"e-604":{"id":"e-604","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-124","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-603"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|e76098bc-b8fc-a358-1343-bda99a855d6b","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|e76098bc-b8fc-a358-1343-bda99a855d6b","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118821572},"e-607":{"id":"e-607","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-123","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-608"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|ce75a2fd-0a2d-528d-9ca1-681bcf328a0f","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|ce75a2fd-0a2d-528d-9ca1-681bcf328a0f","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118841621},"e-608":{"id":"e-608","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-124","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-607"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|ce75a2fd-0a2d-528d-9ca1-681bcf328a0f","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|ce75a2fd-0a2d-528d-9ca1-681bcf328a0f","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118841622},"e-609":{"id":"e-609","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-123","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-610"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|ef0a0ede-0ab7-336d-7eaa-a1dd333aa466","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|ef0a0ede-0ab7-336d-7eaa-a1dd333aa466","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118855686},"e-610":{"id":"e-610","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-124","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-609"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|ef0a0ede-0ab7-336d-7eaa-a1dd333aa466","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|ef0a0ede-0ab7-336d-7eaa-a1dd333aa466","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118855687},"e-611":{"id":"e-611","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-123","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-612"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|b3ba12fd-98c7-ee7a-71a8-516ac51e8922","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|b3ba12fd-98c7-ee7a-71a8-516ac51e8922","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118870377},"e-612":{"id":"e-612","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-124","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-611"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"695297a8e577713d255d308b|b3ba12fd-98c7-ee7a-71a8-516ac51e8922","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"695297a8e577713d255d308b|b3ba12fd-98c7-ee7a-71a8-516ac51e8922","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1767118870378},"e-904":{"id":"e-904","name":"","animationType":"custom","eventTypeId":"SLIDER_INACTIVE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-195","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-897"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":null,"originalId":"0e802c4e-ed1c-0763-ad22-e444cc235c29","appliesTo":"CLASS"},"targets":[{"selector":null,"originalId":"0e802c4e-ed1c-0763-ad22-e444cc235c29","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1758443060392},"e-897":{"id":"e-897","name":"","animationType":"custom","eventTypeId":"SLIDER_ACTIVE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-194","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-904"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":null,"originalId":"0e802c4e-ed1c-0763-ad22-e444cc235c29","appliesTo":"CLASS"},"targets":[{"selector":null,"originalId":"0e802c4e-ed1c-0763-ad22-e444cc235c29","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1758443060392},"e-901":{"id":"e-901","name":"","animationType":"preset","eventTypeId":"SLIDER_INACTIVE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-195","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-903"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":null,"originalId":"6952447c023f47f5dcfb6e81|e1e49052-ee9f-6fe4-3b27-2aa6bea59185","appliesTo":"CLASS"},"targets":[{"selector":null,"originalId":"6952447c023f47f5dcfb6e81|e1e49052-ee9f-6fe4-3b27-2aa6bea59185","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1758470193673},"e-903":{"id":"e-903","name":"","animationType":"preset","eventTypeId":"SLIDER_ACTIVE","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-194","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-901"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":null,"originalId":"6952447c023f47f5dcfb6e81|e1e49052-ee9f-6fe4-3b27-2aa6bea59185","appliesTo":"CLASS"},"targets":[{"selector":null,"originalId":"6952447c023f47f5dcfb6e81|e1e49052-ee9f-6fe4-3b27-2aa6bea59185","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1758470193673},"e-425":{"id":"e-425","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-3","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-426"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2cfc","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2cfc","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1742692761149},"e-427":{"id":"e-427","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"FADE_EFFECT","instant":false,"config":{"actionListId":"fadeIn","autoStopEventId":"e-428","delay":300}},"mediaQueries":["main","medium"],"target":{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2cff","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2cff","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":1800,"direction":null,"effectIn":true},"createdOn":1742692761149},"e-429":{"id":"e-429","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-6","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-430"}},"mediaQueries":["small","tiny"],"target":{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2d00","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2d00","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1742692761149},"e-431":{"id":"e-431","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-7","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-432"}},"mediaQueries":["main","medium"],"target":{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2d00","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2d00","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1742692761149},"e-433":{"id":"e-433","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-8","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-434"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2d03","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2d03","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1742692761149},"e-435":{"id":"e-435","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"FADE_EFFECT","instant":false,"config":{"actionListId":"fadeIn","autoStopEventId":"e-436","delay":300}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2d05","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2d05","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":700,"direction":null,"effectIn":true},"createdOn":1742692761149},"e-437":{"id":"e-437","name":"","animationType":"preset","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"FADE_EFFECT","instant":false,"config":{"actionListId":"fadeIn","autoStopEventId":"e-438","delay":300}},"mediaQueries":["small","tiny"],"target":{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2cff","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"67de9219a31cea90cbf91947|7cbbde30-66ea-b61f-5de5-34b3a4ff2cff","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":900,"direction":null,"effectIn":true},"createdOn":1742692761149}},"actionLists":{"a-112":{"id":"a-112","title":"Slide / In","actionItemGroups":[{"actionItems":[{"id":"a-112-n","actionTypeId":"STYLE_FILTER","config":{"delay":0,"easing":"","duration":350,"target":{"useEventTarget":"SIBLINGS","selector":".slide-testimonial","selectorGuids":["f0254ff7-9421-7b78-2b3f-87f2611526b3"]},"filters":[{"type":"blur","filterId":"6324","value":10,"unit":"px"}]}}]}],"useFirstGroupAsInitialState":false,"createdOn":1758443065282},"a-113":{"id":"a-113","title":"Slide / Out","actionItemGroups":[{"actionItems":[{"id":"a-113-n","actionTypeId":"STYLE_FILTER","config":{"delay":0,"easing":"","duration":300,"target":{"useEventTarget":"SIBLINGS","selector":".slide-testimonial","selectorGuids":["f0254ff7-9421-7b78-2b3f-87f2611526b3"]},"filters":[{"type":"blur","filterId":"abd5","value":0,"unit":"px"}]}}]}],"useFirstGroupAsInitialState":false,"createdOn":1758443065282},"a-123":{"id":"a-123","title":"CMS Item / Hover","actionItemGroups":[{"actionItems":[{"id":"a-123-n","actionTypeId":"TRANSFORM_SCALE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".image-cover","selectorGuids":["88982242-6c5c-9b58-9dcb-2974138bdc23"]},"xValue":1,"yValue":1,"locked":true}},{"id":"a-123-n-3","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".button-slider.secondary","selectorGuids":["7e159b6f-29d3-14a6-cb0d-1045688b384c","269626e2-2c22-1c74-9c0e-dc559a292882"]},"globalSwatchId":"","rValue":0,"bValue":0,"gValue":0,"aValue":0}}]},{"actionItems":[{"id":"a-123-n-2","actionTypeId":"TRANSFORM_SCALE","config":{"delay":0,"easing":"inOutCirc","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".image-cover","selectorGuids":["88982242-6c5c-9b58-9dcb-2974138bdc23"]},"xValue":1.1,"yValue":1.1,"locked":true}},{"id":"a-123-n-4","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"ease","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".button-slider.secondary","selectorGuids":["7e159b6f-29d3-14a6-cb0d-1045688b384c","269626e2-2c22-1c74-9c0e-dc559a292882"]},"globalSwatchId":"","rValue":246,"bValue":236,"gValue":243,"aValue":0.88}}]}],"useFirstGroupAsInitialState":true,"createdOn":1767117199041},"a-124":{"id":"a-124","title":"CMS Item / Hover Out","actionItemGroups":[{"actionItems":[{"id":"a-124-n","actionTypeId":"TRANSFORM_SCALE","config":{"delay":0,"easing":"inOutCirc","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".image-cover","selectorGuids":["88982242-6c5c-9b58-9dcb-2974138bdc23"]},"xValue":1,"yValue":1,"locked":true}},{"id":"a-124-n-2","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"ease","duration":100,"target":{"useEventTarget":"CHILDREN","selector":".button-slider.secondary","selectorGuids":["7e159b6f-29d3-14a6-cb0d-1045688b384c","269626e2-2c22-1c74-9c0e-dc559a292882"]},"globalSwatchId":"","rValue":246,"bValue":236,"gValue":243,"aValue":0.08}}]}],"useFirstGroupAsInitialState":false,"createdOn":1767118011813},"a-195":{"id":"a-195","title":"Slide / Out 2","actionItemGroups":[{"actionItems":[{"id":"a-195-n","actionTypeId":"STYLE_FILTER","config":{"delay":0,"easing":"","duration":300,"target":{},"filters":[{"type":"blur","filterId":"abd5","value":0,"unit":"px"}]}}]}],"useFirstGroupAsInitialState":false,"createdOn":1758443065282},"a-194":{"id":"a-194","title":"Slide / In 2","actionItemGroups":[{"actionItems":[{"id":"a-194-n","actionTypeId":"STYLE_FILTER","config":{"delay":0,"easing":"","duration":350,"target":{},"filters":[{"type":"blur","filterId":"6324","value":10,"unit":"px"}]}}]}],"useFirstGroupAsInitialState":false,"createdOn":1758443065282},"a-3":{"id":"a-3","title":"DT / Heading Animation","actionItemGroups":[{"actionItems":[{"id":"a-3-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":200,"xUnit":"PX","yUnit":"%","zUnit":"PX"}},{"id":"a-3-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"value":0,"unit":""}},{"id":"a-3-n-3","actionTypeId":"TRANSFORM_SKEW","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":20,"xUnit":"DEG","yUnit":"deg","zUnit":"DEG"}}]},{"actionItems":[{"id":"a-3-n-4","actionTypeId":"TRANSFORM_MOVE","config":{"delay":60,"easing":"outExpo","duration":620,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":0,"xUnit":"PX","yUnit":"%","zUnit":"PX"}},{"id":"a-3-n-5","actionTypeId":"TRANSFORM_SKEW","config":{"delay":60,"easing":"outExpo","duration":620,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":0,"xUnit":"DEG","yUnit":"deg","zUnit":"DEG"}},{"id":"a-3-n-6","actionTypeId":"STYLE_OPACITY","config":{"delay":60,"easing":"ease","duration":400,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1651663386329},"fadeIn":{"id":"fadeIn","useFirstGroupAsInitialState":true,"actionItemGroups":[{"actionItems":[{"actionTypeId":"STYLE_OPACITY","config":{"delay":0,"duration":0,"target":{"id":"N/A","appliesTo":"TRIGGER_ELEMENT","useEventTarget":true},"value":0}}]},{"actionItems":[{"actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"outQuart","duration":1000,"target":{"id":"N/A","appliesTo":"TRIGGER_ELEMENT","useEventTarget":true},"value":1}}]}]},"a-6":{"id":"a-6","title":"DT / (0.3) Heading Animation","actionItemGroups":[{"actionItems":[{"id":"a-6-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":200,"xUnit":"PX","yUnit":"%","zUnit":"PX"}},{"id":"a-6-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"value":0,"unit":""}},{"id":"a-6-n-3","actionTypeId":"TRANSFORM_SKEW","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":20,"xUnit":"DEG","yUnit":"deg","zUnit":"DEG"}}]},{"actionItems":[{"id":"a-6-n-4","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"outExpo","duration":620,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":0,"xUnit":"PX","yUnit":"%","zUnit":"PX"}},{"id":"a-6-n-5","actionTypeId":"TRANSFORM_SKEW","config":{"delay":0,"easing":"outExpo","duration":620,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":0,"xUnit":"DEG","yUnit":"deg","zUnit":"DEG"}},{"id":"a-6-n-6","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"ease","duration":400,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1651663386329},"a-7":{"id":"a-7","title":"DT / Hero 2 / Heading Animation","actionItemGroups":[{"actionItems":[{"id":"a-7-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"xValue":-204,"yValue":200,"xUnit":"px","yUnit":"%","zUnit":"PX"}},{"id":"a-7-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"value":0,"unit":""}},{"id":"a-7-n-3","actionTypeId":"TRANSFORM_SKEW","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":20,"xUnit":"DEG","yUnit":"deg","zUnit":"DEG"}}]},{"actionItems":[{"id":"a-7-n-4","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"outExpo","duration":620,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":0,"xUnit":"PX","yUnit":"%","zUnit":"PX"}},{"id":"a-7-n-5","actionTypeId":"TRANSFORM_SKEW","config":{"delay":0,"easing":"outExpo","duration":620,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":0,"xUnit":"DEG","yUnit":"deg","zUnit":"DEG"}},{"id":"a-7-n-6","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"ease","duration":400,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"value":1,"unit":""}}]},{"actionItems":[{"id":"a-7-n-7","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutCubic","duration":520,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"xValue":0,"xUnit":"px","yUnit":"PX","zUnit":"PX"}}]}],"useFirstGroupAsInitialState":true,"createdOn":1651663386329},"a-8":{"id":"a-8","title":"DT / (0.6) Heading Animation","actionItemGroups":[{"actionItems":[{"id":"a-8-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":200,"xUnit":"PX","yUnit":"%","zUnit":"PX"}},{"id":"a-8-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"value":0,"unit":""}},{"id":"a-8-n-3","actionTypeId":"TRANSFORM_SKEW","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":20,"xUnit":"DEG","yUnit":"deg","zUnit":"DEG"}}]},{"actionItems":[{"id":"a-8-n-4","actionTypeId":"TRANSFORM_MOVE","config":{"delay":60,"easing":"outExpo","duration":620,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":0,"xUnit":"PX","yUnit":"%","zUnit":"PX"}},{"id":"a-8-n-5","actionTypeId":"TRANSFORM_SKEW","config":{"delay":60,"easing":"outExpo","duration":620,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"yValue":0,"xUnit":"DEG","yUnit":"deg","zUnit":"DEG"}},{"id":"a-8-n-6","actionTypeId":"STYLE_OPACITY","config":{"delay":60,"easing":"ease","duration":400,"target":{"useEventTarget":true,"id":"6628bccc1085145138ac1acd|87fc7e9e-9f69-c305-25bc-73a37efdf9a1"},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1651663386329}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}};</script>
-<script src="tse2/assets/vendor/jquery.min.js"></script>
-<script src="tse2/assets/vendor/gsap.min.js"></script>
-<script src="tse2/assets/vendor/Flip.min.js"></script>
-<script src="tse2/assets/vendor/ScrollTrigger.min.js"></script>
-<script src="tse2/assets/vendor/ScrollToPlugin.min.js"></script>
-<script>gsap.registerPlugin(Flip,ScrollTrigger,ScrollToPlugin);</script>
-<script src="https://byqsupply-components.netlify.app/Modulabs/js/webflow-ix2-engine.js"></script>
-<script>window.Webflow&&window.Webflow.push(function(){try{Webflow.require("ix2").init(window.__ix)}catch(e){console.warn("ix2",e)}});</script>
+<!-- jQuery, Flip, ScrollTrigger and ScrollToPlugin were loaded and never called:
+     162KB of download and parse for nothing. The Webflow IX2 runtime came from a
+     host we do not control and was a single point of failure for the hero and for
+     the whole testimonial section. Every animation it ran is plain CSS now.
+     GSAP stays: the work rail uses it to tween one number. -->
 
-<!-- ═══ Hero reveal guard ═══════════════════════════════════════════════
-     The hero's three lines are parked at opacity:0 by inline style and only
-     Webflow's engine clears them. If that request fails the headline is a
-     blank screen, so this un-parks them after 2.4s if nothing has. ═══ -->
-<script>
-setTimeout(function () {
-  document.querySelectorAll('.dt-section [data-w-id]').forEach(function (el) {
-    if (parseFloat(getComputedStyle(el).opacity) > 0.05) return;
-    el.style.transition = 'opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1)';
-    el.style.transform = 'none';
-    el.style.opacity = '1';
-  });
-}, 2400);
-</script>
 
-<!-- ═══ Coverflow 3D script — VERBATIM ═══ -->
-<script>
-/* Coverflow 3D — one float drives the whole rail.
-   `pos` is the index currently at the front, but it is deliberately fractional:
-   a drag moves it continuously so the cards swing with the pointer, and letting
-   go just tweens it to the nearest whole number. Every card's transform is a
-   pure function of (its index − pos), so there is no per-card state to keep in
-   sync and no layout thrash. */
-window.addEventListener("DOMContentLoaded", () => {
-  const root = document.querySelector(".byq-gem--coverflow-3d-01");
-  if (!root || typeof gsap === "undefined") return;
+<!-- The hero reveal is CSS now (see .dt-right-hero-2). It used to be parked at
+     opacity:0 waiting on a third-party script, with a 2.4s timeout as the only
+     safety net — so the CTA was invisible for 2.4s on a slow network, and
+     forever if that host was down. -->
 
-  const stage = root.querySelector(".byq-gem--coverflow-3d-01__stage");
-  const cards = Array.from(
-    root.querySelectorAll(".byq-gem--coverflow-3d-01__card"),
-  );
-  if (!stage || !cards.length) return;
-
-  // Geometry. NEAR is how far the first neighbour steps out; FAR is the much
-  // smaller step for every card beyond it, which is what stacks the deck into
-  // the classic compressed shoulders instead of a plain evenly-spaced row.
-  const ANGLE = 58; // deg the card has swung by one full step away
-  const NEAR = 0.62; // first step, in card widths
-  const FAR = 0.19; // each further step, in card widths
-  const LIFT = 190; // px pushed back in Z at the first step
-  const SINK = 60; // px pushed back for each step after that
-  const VISIBLE = 3.6; // cards past this distance fade out entirely
-
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const state = { pos: Math.floor(cards.length / 2) };
-  const clampIndex = (v) => Math.max(0, Math.min(cards.length - 1, v));
-
-  function render() {
-    const width = cards[0].offsetWidth || 1;
-
-    cards.forEach((card, i) => {
-      const d = i - state.pos;
-      const dir = Math.sign(d);
-      const dist = Math.abs(d);
-      const first = Math.min(dist, 1); // 0..1 across the first step
-      const rest = Math.max(0, dist - 1); // whatever is left beyond it
-
-      const x = -dir * (first * NEAR + rest * FAR) * width;
-      const z = -(first * LIFT + rest * SINK);
-      const rotate = dir * first * ANGLE;
-      const scale = 1 - first * 0.1 - Math.min(rest, 3) * 0.03;
-
-      card.style.transform =
-        `translate(-50%, 0) translate3d(${x}px, 0, ${z}px) ` +
-        `rotateY(${rotate}deg) scale(${scale})`;
-      // Nearer cards must paint over further ones; z-index can't be fractional.
-      card.style.zIndex = String(1000 - Math.round(dist * 100));
-      card.style.opacity = String(
-        dist > VISIBLE ? 0 : Math.min(1, (VISIBLE - dist) / 0.6),
-      );
-      card.style.setProperty("--cf-dim", (Math.min(first, 1) * 0.45).toFixed(3));
-      card.setAttribute("aria-selected", String(Math.round(state.pos) === i));
-    });
-  }
-
-  function goTo(index, immediate) {
-    const target = clampIndex(index);
-    gsap.killTweensOf(state);
-    if (immediate || reduced.matches) {
-      state.pos = target;
-      render();
-      return;
-    }
-    gsap.to(state, {
-      pos: target,
-      duration: 0.85,
-      ease: "power3.out",
-      onUpdate: render,
-    });
-  }
-
-  /* ---- drag ---- */
-  let dragging = false;
-  let startX = 0;
-  let startPos = 0;
-  let pointerId = null;
-  let moved = 0;
-
-  stage.addEventListener("pointerdown", (e) => {
-    dragging = true;
-    moved = 0;
-    startX = e.clientX;
-    startPos = state.pos;
-    pointerId = e.pointerId;
-    stage.setPointerCapture(pointerId);
-    stage.classList.add("is-dragging");
-    gsap.killTweensOf(state);
-  });
-
-  stage.addEventListener("pointermove", (e) => {
-    if (!dragging) return;
-    const dx = e.clientX - startX;
-    moved = Math.max(moved, Math.abs(dx));
-    // One card width of travel advances the rail by one card.
-    const width = cards[0].offsetWidth || 1;
-    state.pos = clampIndex(startPos - dx / width);
-    render();
-  });
-
-  function endDrag() {
-    if (!dragging) return;
-    dragging = false;
-    stage.classList.remove("is-dragging");
-    if (pointerId !== null && stage.hasPointerCapture(pointerId)) {
-      stage.releasePointerCapture(pointerId);
-    }
-    pointerId = null;
-    goTo(Math.round(state.pos));
-  }
-
-  stage.addEventListener("pointerup", endDrag);
-  stage.addEventListener("pointercancel", endDrag);
-
-  /* ---- click a shoulder card to bring it forward ---- */
-  cards.forEach((card, i) => {
-    card.addEventListener("click", () => {
-      // Ignore the click that ends a drag, or it would fight the snap.
-      if (moved > 6) return;
-      goTo(i);
-    });
-  });
-
-  /* ---- wheel + keyboard ---- */
-  let wheelLock = false;
-  stage.addEventListener(
-    "wheel",
-    (e) => {
-      // Only claim horizontal-ish intent; vertical scrolling stays with the page.
-      if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) return;
-      e.preventDefault();
-      if (wheelLock) return;
-      wheelLock = true;
-      setTimeout(() => (wheelLock = false), 260);
-      goTo(Math.round(state.pos) + (e.deltaX > 0 ? 1 : -1));
-    },
-    { passive: false },
-  );
-
-  stage.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") {
-      e.preventDefault();
-      goTo(Math.round(state.pos) + 1);
-    } else if (e.key === "ArrowLeft") {
-      e.preventDefault();
-      goTo(Math.round(state.pos) - 1);
-    }
-  });
-
-  window.addEventListener("resize", render);
-  render();
-});
-
-</script>
-
-<!-- ═══ Caption rail — mirrors the gem's own aria-selected state ═══ -->
 <script>
 (function () {
-  var name = document.getElementById('tseFlowName'),
-      sub  = document.getElementById('tseFlowSub'),
-      link = document.getElementById('tseFlowLink'),
-      cards = document.querySelectorAll('.byq-gem--coverflow-3d-01__card');
-  if (!name || !cards.length) return;
-  var current = null;
-  function sync() {
-    for (var i = 0; i < cards.length; i++) {
-      if (cards[i].getAttribute('aria-selected') !== 'true') continue;
-      if (cards[i] === current) return;
-      current = cards[i];
-      name.textContent = cards[i].dataset.name;
-      sub.innerHTML = cards[i].dataset.industry + ' &middot; ' + cards[i].dataset.location
-                    + ' <b class="tse-status" data-s="' + cards[i].dataset.status + '">' + cards[i].dataset.status + '</b>';
-      link.href = cards[i].dataset.url;
-      return;
-    }
-  }
-  new MutationObserver(sync).observe(document.querySelector('.byq-gem--coverflow-3d-01__stage'),
-    { subtree: true, attributes: true, attributeFilter: ['aria-selected'] });
-  sync();
+  var f = document.querySelector('.tse-showcase');
+  if (!f) return;
+  if (!('IntersectionObserver' in window)) { f.classList.add('is-in'); return; }
+  new IntersectionObserver(function (es, o) {
+    es.forEach(function (e) { if (e.isIntersecting) { f.classList.add('is-in'); o.disconnect(); } });
+  }, { rootMargin: '0px 0px -12% 0px' }).observe(f);
 })();
 </script>
 
@@ -3211,5 +3018,78 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 })();
 </script>
+
+<!-- ═══ Testimonial rail controls ══════════════════════════════════════════
+     The rail itself is a native scroll container: swipe, trackpad, momentum,
+     snapping, keyboard and screen-reader behaviour are all the browser's, and
+     there is no wheel or touch handler here at all. This only adds the arrow
+     buttons and the blur on off-centre cards that the old interaction ran.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  var track = document.getElementById('tseRail');
+  if (!track) return;
+  var slides = Array.prototype.slice.call(track.querySelectorAll('.tse-rail__slide'));
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.tse-rail__btn'));
+  if (!slides.length) return;
+
+  track.classList.add('is-enhanced');
+
+  // Which card is centred. IntersectionObserver against the track itself, so it
+  // costs nothing during a scroll and needs no scroll listener.
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { e.target.classList.toggle('is-active', e.intersectionRatio > 0.6); });
+  }, { root: track, threshold: [0, 0.6, 1] });
+  slides.forEach(function (s) { io.observe(s); });
+
+  // Measured from rects, not offsetLeft: offsetLeft is relative to the nearest
+  // positioned ancestor, which here is .tse-rail — so it silently carries that
+  // element's inline padding and put every arrow step one page-gutter off.
+  function centreDelta(i) {
+    var tr = track.getBoundingClientRect(), sr = slides[i].getBoundingClientRect();
+    return (sr.left + sr.width / 2) - (tr.left + tr.width / 2);
+  }
+
+  function nearestIndex() {
+    var best = 0, bestD = Infinity;
+    for (var i = 0; i < slides.length; i++) {
+      var d = Math.abs(centreDelta(i));
+      if (d < bestD) { bestD = d; best = i; }
+    }
+    return best;
+  }
+
+  function go(dir) {
+    var i = Math.max(0, Math.min(slides.length - 1, nearestIndex() + dir));
+    track.scrollBy({
+      left: centreDelta(i),
+      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+    });
+  }
+
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b.getAttribute('aria-disabled') === 'true') return;
+      go(parseInt(b.dataset.rail, 10));
+    });
+  });
+
+  function sync() {
+    var i = nearestIndex();
+    btns.forEach(function (b) {
+      var dir = parseInt(b.dataset.rail, 10);
+      var atEnd = (dir < 0 && i === 0) || (dir > 0 && i === slides.length - 1);
+      b.setAttribute('aria-disabled', String(atEnd));
+    });
+  }
+  var idle;
+  track.addEventListener('scroll', function () { clearTimeout(idle); idle = setTimeout(sync, 90); }, { passive: true });
+  window.addEventListener('resize', function () { clearTimeout(idle); idle = setTimeout(sync, 150); });
+  sync();
+})();
+</script>
+
+<script src="tse2/assets/js/nav.js" defer></script>
+
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Service Edit · Websites built to turn attention into enquiries</title>
+<title>The Service Edit · Websites and email marketing for service businesses</title>
 <meta name="description" content="Websites and email for trades, hospitality and local service businesses across Australia. Strategy, copy, search, enquiry paths and build, from Perth.">
 <link rel="preload" href="v2/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <style>@font-face{font-family:Geist;src:url("v2/assets/fonts/Geist-Variable.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}</style>
@@ -278,6 +278,21 @@ footer{padding:40px 0 32px}
 .rv-feature + .rv-grid{margin-top:18px}
 @media(min-width:1201px){.rv-grid{grid-template-columns:repeat(4,1fr)!important}}
 @media(max-width:700px){.rv-feature{margin-top:36px;padding:26px 22px}.rv-feature + .rv-grid{margin-top:14px}}
+/* v3 services */
+.svc-tags{display:flex;gap:8px;justify-content:center;margin-bottom:22px}
+.svc-tags span{font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(241,237,226,.55);border-radius:999px;padding:7px 14px;color:var(--off)}
+.services{background:var(--brown-deep);padding:clamp(40px,5vw,70px) 0;border-top:1px solid var(--line)}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px)}
+.svc{display:flex;flex-direction:column;text-decoration:none;color:var(--off);border:1px solid var(--line);border-radius:6px;padding:clamp(26px,3vw,44px);transition:background .25s,border-color .25s}
+.svc:hover{background:rgba(241,237,226,.04);border-color:rgba(241,237,226,.4)}
+.svc .mono{opacity:.6}
+.svc h2{font-size:clamp(32px,3.6vw,54px);margin:14px 0 16px}
+.svc p{opacity:.88;max-width:44ch}
+.svc-proof{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;opacity:.65}
+.svc-go{margin-top:18px;font-weight:500}
+.svc-go b{display:inline-block;transition:transform .2s}
+.svc:hover .svc-go b{transform:translateX(4px)}
+@media(max-width:700px){.svc-grid{grid-template-columns:1fr}.svc-tags{justify-content:flex-start}.services{padding:28px 0 40px}}
 </style>
 </head>
 <body>
@@ -290,9 +305,10 @@ footer{padding:40px 0 32px}
   <div class="wrap">
     <a href="#top" aria-label="The Service Edit, home"><svg class="logo" viewBox="0 0 120 64" role="img"><title>The Service Edit</title><use href="#tse"/></svg></a>
     <ul>
-      <li><a href="#how">How it works</a></li>
+      <li><a href="#how">Websites</a></li>
+      <li><a href="#email">Email marketing</a></li>
       <li><a href="#work">Work</a></li>
-      <li><a href="#email">Email</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#cost">What it costs</a></li>
       <li><a href="#about">About</a></li>
     </ul>
@@ -305,8 +321,9 @@ footer{padding:40px 0 32px}
 
 <section class="hero">
   <div class="copy wrap">
+    <div class="svc-tags"><span>Websites</span><span>Email marketing</span></div>
     <h1 class="caps">Why does one<br class="d"> website cost $500<br class="d"> and another $5K?</h1>
-    <p class="sub">It isn't because one is prettier. It's what the pages are built to do.</p>
+    <p class="sub">It isn't because one is prettier. It's what the pages are built to do. I build websites that bring customers in, and emails that bring them back.</p>
     <div class="actions">
       <a class="btn solid" href="#how">See the difference</a>
       <a class="btn ghost" href="#start">Get your site reviewed</a>
@@ -318,6 +335,24 @@ footer{padding:40px 0 32px}
   </picture>
 </section>
 
+<section class="services" id="services">
+  <div class="wrap svc-grid">
+    <a class="svc" href="#how">
+      <span class="mono">01 · Websites</span>
+      <h2 class="caps">Websites</h2>
+      <p>Built to turn a visitor into an enquiry, a booking or an order. Strategy, copy, search, enquiry paths and build, all done for you.</p>
+      <span class="svc-proof">CVBS · Giant Coffee · Coastside · Gold Foil Books · NutterJuck</span>
+      <span class="svc-go">How a build works <b>&rarr;</b></span>
+    </a>
+    <a class="svc" href="#email">
+      <span class="mono">02 · Email marketing</span>
+      <h2 class="caps">Email marketing</h2>
+      <p>Your list, turned into repeat business. Campaigns written, designed and sent for you, plus the flows that run on their own: welcome, win-back, abandoned cart.</p>
+      <span class="svc-proof">Jordy&rsquo;s · Meat Merchant · CVBS</span>
+      <span class="svc-go">How email works <b>&rarr;</b></span>
+    </a>
+  </div>
+</section>
 <section class="statement">
   <div class="wrap">
     <span class="mono">The Service Edit</span>

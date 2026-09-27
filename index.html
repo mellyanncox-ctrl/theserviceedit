@@ -311,6 +311,17 @@ footer{padding:40px 0 32px}
 .hero-me p{font-size:15px;line-height:1.4;opacity:.92;margin:0}
 .hero-me b{font-weight:600}
 @media(max-width:700px){.hero-me{display:flex}}
+/* rv mobile polish */
+.rv-dots{display:none}
+@media(max-width:1200px){.rv-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}.rv-dots span{width:7px;height:7px;border-radius:50%;background:var(--line-dark);transition:background .2s,width .2s}.rv-dots span.on{background:var(--ink);width:20px;border-radius:4px}}
+@media(max-width:700px){
+.rv-feature.clamp .rv-q{max-height:13.5em;overflow:hidden;-webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
+.rv-more{margin-top:10px;background:none;border:0;padding:0;font:inherit;font-size:15px;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.rv-feature .rv-q{font-size:17px}
+.rv-grid{grid-auto-flow:row!important;grid-template-columns:1fr!important;grid-auto-columns:auto!important;overflow:visible!important;margin-inline:0!important;padding:0!important;gap:12px}.rv-grid:not(.all) .rv-card:nth-child(n+3){display:none}.rv-dots{display:none!important}.rv-all{display:block;margin:16px auto 0;background:none;border:1px solid var(--line-dark);border-radius:999px;padding:12px 22px;font:inherit;font-size:15px;font-weight:500;color:var(--ink);cursor:pointer}
+.rv-card{padding:24px 22px}
+.rv-by{margin-top:18px}
+}
 </style>
 </head>
 <body>
@@ -440,6 +451,7 @@ footer{padding:40px 0 32px}
     </div>
     <div class="rv-feature" id="rvFeature"></div>
     <div class="rv-grid" id="rvGrid"></div>
+    <div class="rv-dots" id="rvDots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -601,6 +613,29 @@ var REVIEWS=[
     d.innerHTML='<p class="rv-q">'+r.q+'</p><div class="rv-by">'+mark(r)+'<div><b>'+r.who+'</b><small>'+r.role+'</small></div></div>';
     g.appendChild(d);
   });
+})();
+
+/* Reviews on mobile: collapse the long review, dots for the swipe row */
+(function(){
+  var f=document.getElementById('rvFeature'),g=document.getElementById('rvGrid'),d=document.getElementById('rvDots');
+  if(f&&window.matchMedia('(max-width:700px)').matches&&f.querySelector('.rv-q')){
+    f.classList.add('clamp');
+    var b=document.createElement('button');b.type='button';b.className='rv-more';b.textContent='Read the full review';
+    b.onclick=function(){f.classList.remove('clamp');b.remove()};
+    f.querySelector('.rv-q').after(b);
+  }
+  if(g&&window.matchMedia('(max-width:700px)').matches){
+    var hidden=g.querySelectorAll('.rv-card').length-2;
+    if(hidden>0){var m=document.createElement('button');m.type='button';m.className='rv-all';m.textContent='Show '+hidden+' more reviews';
+      m.onclick=function(){g.classList.add('all');m.remove()};g.after(m);}
+  }
+  if(!g||!d)return;
+  var cards=g.querySelectorAll('.rv-card');
+  cards.forEach(function(c,i){var s=document.createElement('span');if(!i)s.className='on';d.appendChild(s)});
+  var t;g.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){
+    var w=cards[0].offsetWidth+12,i=Math.round(g.scrollLeft/w);
+    d.querySelectorAll('span').forEach(function(s,k){s.className=k===i?'on':''});
+  },60)},{passive:true});
 })();
 
 /* Nav */

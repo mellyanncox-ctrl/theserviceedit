@@ -147,6 +147,22 @@ a{color:inherit}
 .price .foot{margin-top:clamp(40px,5vw,64px);max-width:56ch;font-size:clamp(18px,1.5vw,21px)}
 @media(max-width:760px){.pcols{grid-template-columns:1fr}.pcol+.pcol{border-left:0;padding-left:0;margin-top:30px}}
 
+/* TESTIMONIALS */
+.words{background:var(--off);color:var(--ink);padding:clamp(90px,12vw,160px) 0}
+.words-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,70px)}
+.words-head h2{font-size:clamp(40px,6vw,96px)}
+.words-head p{max-width:38ch;color:#4A4038}
+.qgrid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line-dark)}
+.q{padding:clamp(28px,3.4vw,48px) clamp(0px,3vw,48px) clamp(28px,3.4vw,48px) 0;border-bottom:1px solid var(--line-dark);display:flex;flex-direction:column}
+.q:nth-child(2n){border-left:1px solid var(--line-dark);padding-left:clamp(20px,3vw,48px);padding-right:0}
+.q .stat{font-size:clamp(40px,4.4vw,68px);font-weight:600;letter-spacing:-.04em;line-height:1}
+.q .mono{color:var(--mute);display:block;margin-top:10px}
+.q blockquote{margin:26px 0 28px;font-size:clamp(17px,1.35vw,20px);line-height:1.55;color:#2B231E;flex:1}
+.q .who{font-size:15px}
+.q .who b{display:block;font-weight:600}
+.q .who span{color:var(--mute)}
+@media(max-width:760px){.qgrid{grid-template-columns:1fr}.q:nth-child(2n){border-left:0;padding-left:0}.q{padding-right:0}}
+
 /* ABOUT */
 .about{background:var(--off);color:var(--ink);padding:clamp(90px,12vw,160px) 0}
 .about .cols{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,6vw,100px);align-items:start}
@@ -229,8 +245,8 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
     </div>
   </div>
   <picture>
-    <source media="(max-width:700px)" srcset="assets/hero-mobile.jpg?v=20260927f">
-    <img src="assets/hero.jpg?v=20260927f" alt="A CVBS website print pouring out of a large format printer and curling onto the floor" fetchpriority="high">
+    <source media="(max-width:700px)" srcset="assets/hero-mobile.jpg?v=20260927g">
+    <img src="assets/hero.jpg?v=20260927g" alt="A CVBS website print pouring out of a large format printer and curling onto the floor" fetchpriority="high">
   </picture>
 </section>
 
@@ -256,27 +272,27 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
       <article class="layer rv">
         <div class="txt"><span class="num">01 · Strategy</span><h3 class="caps">The expensive part starts before the design.</h3>
         <p>Who needs to find you, what they need to know, and what happens next. For a commercial renderer that meant leading with crew capacity, systems and documentation, because that is what a builder checks before sending plans.</p></div>
-        <div class="fig"><img src="assets/layer-strategy.jpg?v=20260927f" alt="A sitemap made of index cards pinned to the wall and joined with string, ending at an enquiry card" loading="lazy"></div>
+        <div class="fig"><img src="assets/layer-strategy.jpg?v=20260927g" alt="A sitemap made of index cards pinned to the wall and joined with string, ending at an enquiry card" loading="lazy"></div>
       </article>
       <article class="layer rv">
         <div class="txt"><span class="num">02 · Copy</span><h3 class="caps">Good copy doesn't sound like everyone else.</h3>
         <p>"Quality you can trust" says nothing. "The specification comes first" tells a builder exactly what kind of subcontractor they are dealing with. Every generic line is cut until the site sounds like the business, not the internet.</p></div>
-        <div class="fig"><img src="assets/layer-copy.jpg?v=20260927f" alt="A black marker striking through the printed words Quality you can trust" loading="lazy"></div>
+        <div class="fig"><img src="assets/layer-copy.jpg?v=20260927g" alt="A black marker striking through the printed words Quality you can trust" loading="lazy"></div>
       </article>
       <article class="layer rv">
         <div class="txt"><span class="num">03 · Search</span><h3 class="caps">The best website is useless if nobody finds it.</h3>
         <p>Services, projects and service areas are structured and connected so Google understands what you do and where you do it. Search isn't something added afterwards. It is the architecture.</p></div>
-        <div class="fig"><img src="assets/layer-search.jpg?v=20260927f" alt="Hundreds of blank sheets face down on the floor with one Coastside page face up in a spotlight" loading="lazy"></div>
+        <div class="fig"><img src="assets/layer-search.jpg?v=20260927g" alt="Hundreds of blank sheets face down on the floor with one Coastside page face up in a spotlight" loading="lazy"></div>
       </article>
       <article class="layer rv">
         <div class="txt"><span class="num">04 · Enquiries</span><h3 class="caps">Traffic isn't the end goal. Enquiries are.</h3>
         <p>Every section has a job. The hero gives context, the projects give proof, the capability section builds confidence, and one clear next step asks for the plans. Nothing sits on the page without a reason.</p></div>
-        <div class="fig"><img src="assets/layer-enquiry.jpg?v=20260927f" alt="Coastside website sections laid as a path across the floor, ending at an enquiry form" loading="lazy"></div>
+        <div class="fig"><img src="assets/layer-enquiry.jpg?v=20260927g" alt="Coastside website sections laid as a path across the floor, ending at an enquiry form" loading="lazy"></div>
       </article>
       <article class="layer rv">
         <div class="txt"><span class="num">05 · Build</span><h3 class="caps">Designing it is only half the job.</h3>
         <p>It has to load fast on a phone on site and look sharp on a desktop in the office. Forms that send, images that load, layouts that hold at every screen size. The part nobody sees is the part that decides whether it works.</p></div>
-        <div class="fig"><img src="assets/layer-build.jpg?v=20260927f" alt="A mobile width strip being cut from a desktop print of the Coastside homepage on a cutting mat" loading="lazy"></div>
+        <div class="fig"><img src="assets/layer-build.jpg?v=20260927g" alt="A mobile width strip being cut from a desktop print of the Coastside homepage on a cutting mat" loading="lazy"></div>
       </article>
     </div>
   </div>
@@ -298,15 +314,15 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
       <div><span class="mono" style="opacity:.6">Email marketing</span><h2 class="caps" style="margin-top:14px">Your list is already there. Let's use it.</h2></div>
       <p>Every booking, every order, every QR code on a table is a name you already have. Most businesses never send those people anything. I write, design and send the emails, and set up the ones that run on their own. Right now that includes Jordy's, Meat Merchant and CVBS.</p>
     </div>
-    <div class="wide rv"><img src="assets/email-campaigns.jpg?v=20260927f" alt="Four real Jordy's emails printed and hanging from a kitchen docket rail" loading="lazy"></div>
+    <div class="wide rv"><img src="assets/email-campaigns.jpg?v=20260927g" alt="Four real Jordy's emails printed and hanging from a kitchen docket rail" loading="lazy"></div>
     <div class="eflow">
       <div class="rv"><span class="mono">01</span><h3>Set up properly</h3><p>Your platform configured, your domain authenticated, your list cleaned and segmented, so emails land in inboxes instead of spam.</p></div>
       <div class="rv"><span class="mono">02</span><h3>Written and sent</h3><p>Campaigns written in your voice, designed to match your brand and sent on a schedule. You approve them, or you don't and they go anyway.</p></div>
       <div class="rv"><span class="mono">03</span><h3>Running on their own</h3><p>Welcome, birthday, milestone and win back emails. Set once, then working every day without you touching them.</p></div>
     </div>
     <div class="epair">
-      <figure class="rv"><img src="assets/email-cvbs.jpg?v=20260927f" alt="A printed CVBS email on a steel bench beside a conference lanyard and hotel key card" loading="lazy"><figcaption>CVBS's brief confirmation. Sent the moment a brief lands, with exactly what happens next.</figcaption></figure>
-      <figure class="rv"><img src="assets/email-subject.jpg?v=20260927f" alt="A Meat Merchant win back email sliding out of an envelope" loading="lazy"><figcaption>Meat Merchant's win back email. Written from the owner, with one offer and one button.</figcaption></figure>
+      <figure class="rv"><img src="assets/email-cvbs.jpg?v=20260927g" alt="A printed CVBS email on a steel bench beside a conference lanyard and hotel key card" loading="lazy"><figcaption>CVBS's brief confirmation. Sent the moment a brief lands, with exactly what happens next.</figcaption></figure>
+      <figure class="rv"><img src="assets/email-subject.jpg?v=20260927g" alt="A Meat Merchant win back email sliding out of an envelope" loading="lazy"><figcaption>Meat Merchant's win back email. Written from the owner, with one offer and one button.</figcaption></figure>
     </div>
     <div class="proof">
       <span class="mono" style="opacity:.6">Proof</span>
@@ -317,6 +333,37 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
         <div class="rv"><b>58.3%</b><span>Open rate, August sends</span><p>Against a hospitality benchmark of 25 to 35 per cent. Automated sends ran at 47.3 per cent.</p></div>
       </div>
       <p class="src rv">Jordy's real numbers out of NowBookIt and TalkBox, not a case study written backwards. The before window runs into summer and the after window into winter, which makes a 17 per cent midweek rise harder to argue with, not easier. Booked covers leave out walk-ins.</p>
+    </div>
+  </div>
+</section>
+
+<section class="words" id="clients">
+  <div class="wrap">
+    <div class="words-head">
+      <div><span class="mono" style="color:var(--mute)">From the clients</span><h2 class="caps" style="margin-top:14px">In their words.</h2></div>
+      <p>Four owners, four very different businesses. What changed after we worked together.</p>
+    </div>
+    <div class="qgrid">
+      <figure class="q rv">
+        <div class="stat">+17%</div><span class="mono">Midweek covers since March</span>
+        <blockquote>“We’d never done email before Mel approached us. With the cost of living it had gone quiet, and the start of this year was the slowest we’d had. She started in March. Our Wednesdays are now the busiest they’ve been all year and July was our biggest month on the app. We handed her the website and the emails, and they work as one thing now, which I don’t think happens when two different people are doing them. She checked every page and every send on her own phone first, which seemed like overkill until I thought about where our bookings actually come from. She writes them like someone who’s worked in hospitality, because she has.”</blockquote>
+        <figcaption class="who"><b>Jordy</b><span>Owner, Jordy’s Casuarina, NSW</span></figcaption>
+      </figure>
+      <figure class="q rv">
+        <div class="stat">37 years</div><span class="mono">Of business, modernised</span>
+        <blockquote>“We have been finding venues since 1989 and the site looked it. Mel sent a live link every time, so we were looking at the real thing instead of trying to picture it, and anything she needed from us came as a list. This photo, this bit of copy, this number. We did our part and it moved. It looks like 2026 now and it still sounds like us, which is the part I didn’t think we’d get.”</blockquote>
+        <figcaption class="who"><b>Anthony</b><span>Director, CVBS</span></figcaption>
+      </figure>
+      <figure class="q rv">
+        <div class="stat">Zero</div><span class="mono">Website before Mel called</span>
+        <blockquote>“Mel found us. We weren’t looking for a website, we were flat out running a café, and she’d been watching the brand grow and worked out there was nowhere for anyone to actually find us. She turned up with the concept already there. What she built feels exactly like Giant, which is the part I didn’t expect. It’s us, on a screen.”</blockquote>
+        <figcaption class="who"><b>Claire</b><span>Owner, Giant Coffee</span></figcaption>
+      </figure>
+      <figure class="q rv">
+        <div class="stat">5 days</div><span class="mono">First conversation to live</span>
+        <blockquote>“It was only five days from our first conversation to the whole thing being live. I kept waiting for the part where it gets hard and it never came. She’d send a round back with everything marked up so I could see what she’d changed, and she’d already know what she needed from me next. She went all in on the concept. More than I would have for someone else’s business, honestly. I’m not a website person and I never once felt like I was the one holding it up.”</blockquote>
+        <figcaption class="who"><b>Dani</b><span>Gold Foil Books, Wollongong NSW</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -343,7 +390,7 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
 
 <section class="about" id="about">
   <div class="wrap cols">
-    <div class="ph rv"><img src="assets/mel.jpg?v=20260927f" alt="Mel Cox, founder of The Service Edit, sitting on a wooden stool in natural light" loading="lazy"></div>
+    <div class="ph rv"><img src="assets/mel.jpg?v=20260927g" alt="Mel Cox, founder of The Service Edit, sitting on a wooden stool in natural light" loading="lazy"></div>
     <div>
       <span class="mono">About</span>
       <h2 class="caps rv">I've been on the other side of the counter.</h2>
@@ -403,12 +450,12 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
 <script>
 /* Projects. Notes are one line each: what the site was built to do. */
 var FEATURED=[
- {n:'CVBS',i:'Events & Venues',l:'Worldwide',u:'https://the-service-edit.github.io/cvbs-2026/',img:'assets/work-cvbs.jpg?v=20260927f',note:'A global venue finding business, rebuilt in phases around trust rather than search.'},
- {n:'Jordy\u2019s',i:'Hospitality',l:'Casuarina, NSW',u:'https://jordyscasuarina.com',img:'assets/work-jordys.jpg?v=20260927f',note:'A pizza and margarita bar, built to get people booking a table or ordering in, with the email running alongside it.'},
- {n:'Coastside Solid Plastering',i:'Specialist Trades',l:'Gold Coast, QLD',u:'https://coastside.theserviceedit.com',img:'assets/work-coastside.jpg?v=20260927f',note:'Commercial rendering, built so a builder can check capacity and systems before sending plans.'},
- {n:'Gold Foil Books',i:'E-commerce',l:'Wollongong, NSW',u:'https://goldfoilbooks.com.au',img:'assets/work-goldfoil.jpg?v=20260927f',note:'Hand-bound special editions sold worldwide, with the craft doing the selling.'},
- {n:'NutterJuck Lures',i:'Handmade Lures',l:'Australia',u:'https://the-service-edit.github.io/nutterjuck/',img:'assets/work-nutterjuck.jpg?v=20260927f',note:'Handmade fishing lures with a shop built to be as simple as the product.'},
- {n:'Orange Mortgage Brokers',i:'Finance',l:'Perth, WA',u:'https://orange-mortgage.theserviceedit.com/option-2/',img:'assets/work-orange.jpg?v=20260927f',note:'A North Perth broker, built so you know exactly who you will deal with before you book a chat.'}
+ {n:'CVBS',i:'Events & Venues',l:'Worldwide',u:'https://the-service-edit.github.io/cvbs-2026/',img:'assets/work-cvbs.jpg?v=20260927g',note:'A global venue finding business, rebuilt in phases around trust rather than search.'},
+ {n:'Jordy\u2019s',i:'Hospitality',l:'Casuarina, NSW',u:'https://jordyscasuarina.com',img:'assets/work-jordys.jpg?v=20260927g',note:'A pizza and margarita bar, built to get people booking a table or ordering in, with the email running alongside it.'},
+ {n:'Coastside Solid Plastering',i:'Specialist Trades',l:'Gold Coast, QLD',u:'https://coastside.theserviceedit.com',img:'assets/work-coastside.jpg?v=20260927g',note:'Commercial rendering, built so a builder can check capacity and systems before sending plans.'},
+ {n:'Gold Foil Books',i:'E-commerce',l:'Wollongong, NSW',u:'https://goldfoilbooks.com.au',img:'assets/work-goldfoil.jpg?v=20260927g',note:'Hand-bound special editions sold worldwide, with the craft doing the selling.'},
+ {n:'NutterJuck Lures',i:'Handmade Lures',l:'Australia',u:'https://the-service-edit.github.io/nutterjuck/',img:'assets/work-nutterjuck.jpg?v=20260927g',note:'Handmade fishing lures with a shop built to be as simple as the product.'},
+ {n:'Orange Mortgage Brokers',i:'Finance',l:'Perth, WA',u:'https://orange-mortgage.theserviceedit.com/option-2/',img:'assets/work-orange.jpg?v=20260927g',note:'A North Perth broker, built so you know exactly who you will deal with before you book a chat.'}
 ];
 (function(){
   var g=document.getElementById('featured');

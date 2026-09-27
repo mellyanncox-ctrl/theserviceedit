@@ -265,6 +265,13 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
 .contact .steps{margin-top:26px}
 footer{padding:40px 0 32px}
 }
+/* rv-av */
+.rv-logos{flex-wrap:nowrap!important;gap:0!important;margin-bottom:16px}
+.rv-av{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;border:3px solid var(--paper);margin-left:-10px;overflow:hidden;flex:none;position:relative;box-shadow:0 0 0 1px rgba(27,21,18,.12)}
+.rv-av:first-child{margin-left:0}.rv-av:nth-child(1){z-index:5}.rv-av:nth-child(2){z-index:4}.rv-av:nth-child(3){z-index:3}.rv-av:nth-child(4){z-index:2}.rv-av:nth-child(5){z-index:1}
+.rv-av img{max-width:66%;max-height:44%;width:auto;height:auto;object-fit:contain}
+.rv-av img[src*="nutterjuck"]{max-height:62%}
+@media(max-width:700px){.rv-av{width:54px;height:54px;margin-left:-8px}}
 </style>
 </head>
 <body>
@@ -515,7 +522,7 @@ var REVIEWS=[
   var g=document.getElementById('rvGrid'),f=document.getElementById('rvFaces');if(!g)return;
   function mark(r){return r.logo?'<span class="rv-logo"><img src="'+r.logo+'" alt="'+r.b+' logo"></span>':'<span class="rv-logo rv-wm '+r.wm+'">'+r.b+'</span>'}
   REVIEWS.forEach(function(r){
-    f.insertAdjacentHTML('beforeend',mark(r));
+    var BG={'CVBS':'#fff','Gold Foil Books':'#1B1512','Meat Merchant':'#fff','NutterJuck Lures':'#000'};f.insertAdjacentHTML('beforeend','<span class="rv-av" style="background:'+(BG[r.b]||'#fff')+'"><img src="'+r.logo+'" alt="'+r.b+'"></span>');
     var d=document.createElement('article');d.className='rv-card';
     d.innerHTML='<p class="rv-q">'+r.q+'</p><div class="rv-by">'+mark(r)+'<div><b>'+r.who+'</b><small>'+r.role+'</small></div></div>';
     g.appendChild(d);

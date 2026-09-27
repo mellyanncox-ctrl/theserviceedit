@@ -151,7 +151,7 @@ a{color:inherit}
 .about{background:var(--off);color:var(--ink);padding:clamp(90px,12vw,160px) 0}
 .about .cols{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,6vw,100px);align-items:start}
 .about .ph{border-radius:4px;overflow:hidden;background:var(--brown)}
-.about .ph img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:sepia(.18) saturate(.9) contrast(1.02)}
+.about .ph img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%}
 .about h2{font-size:clamp(36px,4.8vw,76px);margin:14px 0 28px}
 .about p{max-width:52ch;margin-bottom:16px;color:#3A302A}
 .about .mono{color:var(--mute)}
@@ -230,14 +230,14 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
   </div>
   <picture>
     <source media="(max-width:700px)" srcset="assets/hero-mobile.jpg">
-    <img src="assets/hero.jpg" alt="Printed website builds laid out on a stainless steel workbench" fetchpriority="high">
+    <img src="assets/hero.jpg" alt="A Gold Foil Books website print pouring out of a large format printer and curling onto the floor" fetchpriority="high">
   </picture>
 </section>
 
 <section class="statement">
   <div class="wrap">
     <span class="mono">The Service Edit</span>
-    <h2 class="caps rv" style="margin-top:18px">You're not paying for five pages. <span>You're paying for what those five pages do.</span></h2>
+    <h2 class="caps rv" style="margin-top:18px">You're not paying for pages. <span>Five or fifty, you're paying for what they do.</span></h2>
     <div class="row">
       <p class="rv">A cheap site is a template with your logo on it. That's fine if you only need to exist online. If your website is meant to bring in work, the design is the last and smallest part of the job.</p>
       <p class="rv">I build websites and email for trades, hospitality and local service businesses across Australia. Every build goes through the same five layers, and every layer has one job: turning attention into enquiries.</p>
@@ -256,27 +256,27 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
       <article class="layer rv">
         <div class="txt"><span class="num">01 · Strategy</span><h3 class="caps">The expensive part starts before the design.</h3>
         <p>Who needs to find you, what they need to know, and what happens next. For a commercial renderer that meant leading with crew capacity, systems and documentation, because that is what a builder checks before sending plans.</p></div>
-        <div class="fig"><img src="assets/layer-strategy.jpg" alt="Sitemap, customer journey and page hierarchy sheets marked up in black marker" loading="lazy"></div>
+        <div class="fig"><img src="assets/layer-strategy.jpg" alt="A sitemap made of index cards pinned to the wall and joined with string, ending at an enquiry card" loading="lazy"></div>
       </article>
       <article class="layer rv">
         <div class="txt"><span class="num">02 · Copy</span><h3 class="caps">Good copy doesn't sound like everyone else.</h3>
         <p>"Quality you can trust" says nothing. "The specification comes first" tells a builder exactly what kind of subcontractor they are dealing with. Every generic line is cut until the site sounds like the business, not the internet.</p></div>
-        <div class="fig"><img src="assets/layer-copy.jpg" alt="Printed website copy with generic phrases struck out in black marker" loading="lazy"></div>
+        <div class="fig"><img src="assets/layer-copy.jpg" alt="A black marker striking through the printed words Quality you can trust" loading="lazy"></div>
       </article>
       <article class="layer rv">
         <div class="txt"><span class="num">03 · Search</span><h3 class="caps">The best website is useless if nobody finds it.</h3>
         <p>Services, projects and service areas are structured and connected so Google understands what you do and where you do it. Search isn't something added afterwards. It is the architecture.</p></div>
-        <div class="fig"><img src="assets/layer-search.jpg" alt="Separate printed pages of the Coastside website organised with index tabs" loading="lazy"></div>
+        <div class="fig"><img src="assets/layer-search.jpg" alt="Archive boxes labelled by service and region, with a drawer of Coastside pages pulled open" loading="lazy"></div>
       </article>
       <article class="layer rv">
         <div class="txt"><span class="num">04 · Enquiries</span><h3 class="caps">Traffic isn't the end goal. Enquiries are.</h3>
         <p>Every section has a job. The hero gives context, the projects give proof, the capability section builds confidence, and one clear next step asks for the plans. Nothing sits on the page without a reason.</p></div>
-        <div class="fig"><img src="assets/layer-enquiry.jpg" alt="Coastside website sections laid in sequence along a workbench, ending in an enquiry form" loading="lazy"></div>
+        <div class="fig"><img src="assets/layer-enquiry.jpg" alt="Coastside website sections laid as a path across the floor, ending at an enquiry form" loading="lazy"></div>
       </article>
       <article class="layer rv">
         <div class="txt"><span class="num">05 · Build</span><h3 class="caps">Designing it is only half the job.</h3>
         <p>It has to load fast on a phone on site and look sharp on a desktop in the office. Forms that send, images that load, layouts that hold at every screen size. The part nobody sees is the part that decides whether it works.</p></div>
-        <div class="fig"><img src="assets/layer-build.jpg" alt="Desktop, tablet and mobile proofs of the Coastside website with technical annotations" loading="lazy"></div>
+        <div class="fig"><img src="assets/layer-build.jpg" alt="A mobile width strip being cut from a desktop print of the Coastside homepage on a cutting mat" loading="lazy"></div>
       </article>
     </div>
   </div>
@@ -286,13 +286,9 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
   <div class="wrap">
     <div class="work-head">
       <div><span class="mono" style="color:var(--mute)">Selected builds</span><h2 class="caps" style="margin-top:14px">Built to do a job.</h2></div>
-      <p>Six builds across six industries. Each one started with the same question: what does this business need a visitor to do?</p>
+      <p>Six very different businesses. Each build started with the same question: what does this business need a visitor to do?</p>
     </div>
     <div class="grid" id="featured"></div>
-    <div class="index">
-      <span class="mono">Every build</span>
-      <ol id="archive"></ol>
-    </div>
   </div>
 </section>
 
@@ -300,17 +296,17 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
   <div class="wrap">
     <div class="email-head">
       <div><span class="mono" style="opacity:.6">Email marketing</span><h2 class="caps" style="margin-top:14px">Your list is already there. Let's use it.</h2></div>
-      <p>Every booking, every order, every QR code on a table is a name you already have. Most businesses never send those people anything. I write, design and send the emails, and set up the ones that run on their own.</p>
+      <p>Every booking, every order, every QR code on a table is a name you already have. Most businesses never send those people anything. I write, design and send the emails, and set up the ones that run on their own. Right now that includes Jordy's and Meat Merchant.</p>
     </div>
-    <div class="wide rv"><img src="assets/email-campaigns.jpg" alt="Three printed Jordy's email campaigns on a stainless steel bench with marker notes" loading="lazy"></div>
+    <div class="wide rv"><img src="assets/email-campaigns.jpg" alt="Real Jordy's and Meat Merchant emails printed and hanging from a kitchen docket rail" loading="lazy"></div>
     <div class="eflow">
       <div class="rv"><span class="mono">01</span><h3>Set up properly</h3><p>Your platform configured, your domain authenticated, your list cleaned and segmented, so emails land in inboxes instead of spam.</p></div>
       <div class="rv"><span class="mono">02</span><h3>Written and sent</h3><p>Campaigns written in your voice, designed to match your brand and sent on a schedule. You approve them, or you don't and they go anyway.</p></div>
-      <div class="rv"><span class="mono">03</span><h3>Running on their own</h3><p>Welcome, post visit and win back emails. Set once, then working every day without you touching them.</p></div>
+      <div class="rv"><span class="mono">03</span><h3>Running on their own</h3><p>Welcome, birthday, milestone and win back emails. Set once, then working every day without you touching them.</p></div>
     </div>
     <div class="epair">
-      <figure class="rv"><img src="assets/email-sequences.jpg" alt="Welcome, post visit and win back emails laid out in sequence" loading="lazy"><figcaption>The sequences: welcome, post visit, win back.</figcaption></figure>
-      <figure class="rv"><img src="assets/email-subject.jpg" alt="A printed email with subject line options taped above it, one crossed out" loading="lazy"><figcaption>The subject line gets the same edit as the website copy.</figcaption></figure>
+      <figure class="rv"><img src="assets/email-sequences.jpg" alt="Jordy's welcome, milestone and win back emails speared on a docket spike" loading="lazy"><figcaption>Jordy's automated emails: welcome, milestone, win back. Set once, running every day.</figcaption></figure>
+      <figure class="rv"><img src="assets/email-subject.jpg" alt="A Meat Merchant win back email sliding out of an envelope" loading="lazy"><figcaption>Meat Merchant's win back email. Written from the owner, with one offer and one button.</figcaption></figure>
     </div>
     <div class="proof">
       <span class="mono" style="opacity:.6">Proof</span>
@@ -347,7 +343,7 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
 
 <section class="about" id="about">
   <div class="wrap cols">
-    <div class="ph rv"><img src="assets/mel.jpg" alt="Mel Cox, founder of The Service Edit" loading="lazy"></div>
+    <div class="ph rv"><img src="assets/mel.jpg" alt="Mel Cox, founder of The Service Edit, sitting on a wooden stool in natural light" loading="lazy"></div>
     <div>
       <span class="mono">About</span>
       <h2 class="caps rv">A practitioner, not a marketer.</h2>
@@ -408,26 +404,11 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
 /* Projects. Notes are one line each: what the site was built to do. */
 var FEATURED=[
  {n:'CVBS',i:'Events & Venues',l:'Worldwide',u:'https://the-service-edit.github.io/cvbs-2026/',img:'assets/work-cvbs.jpg',note:'A global venue finding business, rebuilt in phases around trust rather than search.'},
- {n:'JT Carpentry WA',i:'Carpentry & Joinery',l:'Perth, WA',u:'https://the-service-edit.github.io/jt-carpentry-wa/',img:'assets/work-jt.jpg',note:'Referral-led carpentry, given somewhere serious to send a serious enquiry.'},
- {n:'ZB Accounting',i:'Finance & Accounting',l:'NSW',u:'https://the-service-edit.github.io/zb-accounting/',img:'assets/work-zb.jpg',note:'Tax and advisory, made personal without giving up the professional edge.'},
- {n:'Creative Green',i:'Landscaping',l:'Adelaide, SA',u:'https://the-service-edit.github.io/creative-green/',img:'assets/work-creative-green.jpg',note:'Landscaping built to own its enquiries instead of renting them from lead platforms.'},
- {n:'X Tiling',i:'Specialist Trades',l:'Melbourne, VIC',u:'https://the-service-edit.github.io/x-tiling/',img:'assets/work-x-tiling.jpg',note:'A highly visual trade where precision is the proof, so the work runs full width.'},
- {n:'Waterman',i:'Property',l:'Adelaide, SA',u:'https://the-service-edit.github.io/waterman-home/',img:'assets/work-waterman.jpg',note:'South Australia’s first buyer agency, with two decades of authority made legible.'}
-];
-var ARCHIVE=[
- ['Coastside Solid Plastering','Specialist Trades','Gold Coast, QLD','https://coastside.theserviceedit.com'],
- ['Sydney Inner West Builders','Construction','Sydney, NSW','https://the-service-edit.github.io/sydney-inner-west-builders/'],
- ['Sydney Carpentry & Constructions','Construction','Sydney, NSW','https://the-service-edit.github.io/scc/'],
- ['Home Haven','Construction','Brisbane, QLD','https://the-service-edit.github.io/home-haven/'],
- ['JMA Group','Construction','Perth, WA','https://the-service-edit.github.io/jma-group/'],
- ['Tower Carpentry','Carpentry & Joinery','Perth, WA','https://the-service-edit.github.io/tower-carpentry/'],
- ['Fixing Carpentry WA','Carpentry & Joinery','Perth, WA','https://the-service-edit.github.io/fcwa/'],
- ['Blocked Up Plumbing','Specialist Trades','Sydney, NSW','https://the-service-edit.github.io/blocked-up-plumbing/'],
- ['Domain Rental Management','Property','Adelaide, SA','https://the-service-edit.github.io/domain-rental/'],
- ['Black Swan Mortgage Services','Finance & Accounting','Perth, WA','https://the-service-edit.github.io/black-swan/'],
- ['Orange Mortgage & Finance','Finance & Accounting','Perth, WA','https://the-service-edit.github.io/orange-mortgage-brokers/'],
- ['Integrity Financial Advisory','Finance & Accounting','Adelaide, SA','https://the-service-edit.github.io/integrity/'],
- ['RJS Accounting Services','Finance & Accounting','Tewantin, QLD','https://the-service-edit.github.io/rjs/']
+ {n:'Jordy\u2019s',i:'Hospitality',l:'Casuarina, NSW',u:'https://jordyscasuarina.com',img:'assets/work-jordys.jpg',note:'A pizza and margarita bar, built to get people booking a table or ordering in, with the email running alongside it.'},
+ {n:'Coastside Solid Plastering',i:'Specialist Trades',l:'Gold Coast, QLD',u:'https://coastside.theserviceedit.com',img:'assets/work-coastside.jpg',note:'Commercial rendering, built so a builder can check capacity and systems before sending plans.'},
+ {n:'Gold Foil Books',i:'E-commerce',l:'Wollongong, NSW',u:'https://goldfoilbooks.com.au',img:'assets/work-goldfoil.jpg',note:'Hand-bound special editions sold worldwide, with the craft doing the selling.'},
+ {n:'NutterJuck Lures',i:'Handmade Lures',l:'Australia',u:'https://the-service-edit.github.io/nutterjuck/',img:'assets/work-nutterjuck.jpg',note:'Handmade fishing lures with a shop built to be as simple as the product.'},
+ {n:'Orange Mortgage Brokers',i:'Finance',l:'Perth, WA',u:'https://the-service-edit.github.io/orange-mortgage-brokers/',img:'assets/work-orange.jpg',note:'A Perth broker, built to turn a rate search into a booked chat.'}
 ];
 (function(){
   var g=document.getElementById('featured');
@@ -435,14 +416,6 @@ var ARCHIVE=[
     var a=document.createElement('a');a.className='proj rv';a.href=p.u;a.target='_blank';a.rel='noopener';
     a.innerHTML='<div class="ph"><img src="'+p.img+'" alt="'+p.n+' website, printed" loading="lazy"></div><div class="meta"><h3>'+p.n+'</h3><span class="mono">'+p.i+' · '+p.l+'</span></div><p>'+p.note+'</p>';
     g.appendChild(a);
-  });
-  var all=FEATURED.map(function(p){return [p.n,p.i,p.l,p.u]}).concat(ARCHIVE);
-  var o=document.getElementById('archive');
-  all.forEach(function(r,k){
-    var li=document.createElement('li');
-    var href=r[3]||'#work';
-    li.innerHTML='<a href="'+href+'"'+(r[3]?' target="_blank" rel="noopener"':'')+'><span class="n">'+String(k+1).padStart(2,'0')+'</span><span class="nm">'+r[0]+'</span><span class="in">'+r[1]+'</span><span class="lc">'+r[2]+'</span><span class="ar">'+(r[3]?'&#8599;':'')+'</span></a>';
-    o.appendChild(li);
   });
 })();
 

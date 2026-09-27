@@ -1,0 +1,3093 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Service Edit &middot; Website Design &amp; Email Marketing, Australia Wide</title>
+<meta name="description" content="Website design and email marketing for trades, hospitality and local service businesses across Australia. Based in Perth, WA.">
+<meta property="og:title" content="The Service Edit &middot; Website Design &amp; Email Marketing"><meta property="og:type" content="website">
+<meta property="og:description" content="The build wins them. The email brings them back. Working with trades, hospitality and local service businesses across Australia.">
+<meta property="og:image" content="https://theserviceedit.com/tse2/assets/hero.webp">
+<meta property="og:image:width" content="1672"><meta property="og:image:height" content="941">
+<meta property="og:url" content="https://theserviceedit.com/">
+<meta property="og:site_name" content="The Service Edit">
+<meta property="og:locale" content="en_AU">
+<link rel="canonical" href="https://theserviceedit.com/">
+<meta name="theme-color" content="#070708">
+<!-- Placeholder mark: the current "se" tile. Swap when The Offcut is finalised. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111210'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='30' font-weight='600' fill='%23f6f3ec' text-anchor='middle'%3Ese%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://byqsupply-components.netlify.app" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"The Service Edit",
+"url":"https://theserviceedit.com/","image":"https://theserviceedit.com/tse2/assets/hero.webp",
+"email":"hello@theserviceedit.com",
+"description":"Website design and email marketing for trades, hospitality and local service businesses across Australia.",
+"address":{"@type":"PostalAddress","addressLocality":"Perth","addressRegion":"WA","addressCountry":"AU"},
+"areaServed":{"@type":"Country","name":"Australia"},
+"knowsAbout":["Website design","Email marketing","Hospitality marketing","Trade business websites"],
+"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website design"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Email marketing"}}]}
+</script><meta name="twitter:card" content="summary_large_image">
+
+<!-- ═══ 1. Testimonial Slider component styles — VERBATIM ═══ -->
+<style>
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+body {
+  margin: 0
+}
+section {
+  display: block
+}
+[hidden] {
+  display: none
+}
+a {
+  background-color: transparent
+}
+a:active,
+a:hover {
+  outline: 0
+}
+img {
+  border: 0
+}
+svg:not(:root) {
+  overflow: hidden
+}
+@font-face {
+  font-family: webflow-icons;
+  src: url("data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBiUAAAC8AAAAYGNtYXDpP+a4AAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZmhS2XEAAAGAAAADHGhlYWQTFw3HAAAEnAAAADZoaGVhCXYFgQAABNQAAAAkaG10eCe4A1oAAAT4AAAAMGxvY2EDtALGAAAFKAAAABptYXhwABAAPgAABUQAAAAgbmFtZSoCsMsAAAVkAAABznBvc3QAAwAAAAAHNAAAACAAAwP4AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAQAAAAAwACAACAAQAAQAg5gPpA//9//8AAAAAACDmAOkA//3//wAB/+MaBBcIAAMAAQAAAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEBIAAAAyADgAAFAAAJAQcJARcDIP5AQAGA/oBAAcABwED+gP6AQAABAOAAAALgA4AABQAAEwEXCQEH4AHAQP6AAYBAAcABwED+gP6AQAAAAwDAAOADQALAAA8AHwAvAAABISIGHQEUFjMhMjY9ATQmByEiBh0BFBYzITI2PQE0JgchIgYdARQWMyEyNj0BNCYDIP3ADRMTDQJADRMTDf3ADRMTDQJADRMTDf3ADRMTDQJADRMTAsATDSANExMNIA0TwBMNIA0TEw0gDRPAEw0gDRMTDSANEwAAAAABAJ0AtAOBApUABQAACQIHCQEDJP7r/upcAXEBcgKU/usBFVz+fAGEAAAAAAL//f+9BAMDwwAEAAkAABcBJwEXAwE3AQdpA5ps/GZsbAOabPxmbEMDmmz8ZmwDmvxmbAOabAAAAgAA/8AEAAPAAB0AOwAABSInLgEnJjU0Nz4BNzYzMTIXHgEXFhUUBw4BBwYjNTI3PgE3NjU0Jy4BJyYjMSIHDgEHBhUUFx4BFxYzAgBqXV6LKCgoKIteXWpqXV6LKCgoKIteXWpVSktvICEhIG9LSlVVSktvICEhIG9LSlVAKCiLXl1qal1eiygoKCiLXl1qal1eiygoZiEgb0tKVVVKS28gISEgb0tKVVVKS28gIQABAAABwAIAA8AAEgAAEzQ3PgE3NjMxFSIHDgEHBhUxIwAoKIteXWpVSktvICFmAcBqXV6LKChmISBvS0pVAAAAAgAA/8AFtgPAADIAOgAAARYXHgEXFhUUBw4BBwYHIxUhIicuAScmNTQ3PgE3NjMxOAExNDc+ATc2MzIXHgEXFhcVATMJATMVMzUEjD83NlAXFxYXTjU1PQL8kz01Nk8XFxcXTzY1PSIjd1BQWlJJSXInJw3+mdv+2/7c25MCUQYcHFg5OUA/ODlXHBwIAhcXTzY1PTw1Nk8XF1tQUHcjIhwcYUNDTgL+3QFt/pOTkwABAAAAAQAAmM7nP18PPPUACwQAAAAAANciZKUAAAAA1yJkpf/9/70FtgPDAAAACAACAAAAAAAAAAEAAAPA/8AAAAW3//3//QW2AAEAAAAAAAAAAAAAAAAAAAAMBAAAAAAAAAAAAAAAAgAAAAQAASAEAADgBAAAwAQAAJ0EAP/9BAAAAAQAAAAFtwAAAAAAAAAKABQAHgAyAEYAjACiAL4BFgE2AY4AAAABAAAADAA8AAMAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADQAAAAEAAAAAAAIABwCWAAEAAAAAAAMADQBIAAEAAAAAAAQADQCrAAEAAAAAAAUACwAnAAEAAAAAAAYADQBvAAEAAAAAAAoAGgDSAAMAAQQJAAEAGgANAAMAAQQJAAIADgCdAAMAAQQJAAMAGgBVAAMAAQQJAAQAGgC4AAMAAQQJAAUAFgAyAAMAAQQJAAYAGgB8AAMAAQQJAAoANADsd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==") format('truetype');
+  font-weight: 400;
+  font-style: normal
+}
+.w-icon-slider-right:before {
+  content: "\e600"
+}
+.w-icon-slider-left:before {
+  content: "\e601"
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+html {
+  height: 100%
+}
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: #fff;
+  font-family: Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block
+}
+html.w-mod-touch * {
+  background-attachment: scroll!important
+}
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block
+}
+h2 {
+  font-weight: 700;
+  margin-bottom: 10px
+}
+h2 {
+  font-size: 32px;
+  line-height: 36px;
+  margin-top: 20px
+}
+.w-embed:after,
+.w-embed:before {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2
+}
+.w-embed:after {
+  clear: both
+}
+.w-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px
+}
+.w-container:after,
+.w-container:before {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2
+}
+.w-container:after {
+  clear: both
+}
+@media screen and (max-width:991px) {
+  .w-container {
+    max-width: 728px
+  }
+}
+@media screen and (max-width:479px) {
+  .w-container {
+    max-width: none
+  }
+}
+.w-widget-twitter-count-shim.w--large {
+  width: 36px;
+  height: 28px
+}
+.w-widget-twitter-count-shim.w--large .w-widget-twitter-count-inner {
+  font-size: 18px;
+  line-height: 18px
+}
+.w-widget-twitter-count-shim:not(.w--vertical).w--large {
+  margin-left: 6px
+}
+.w-widget-twitter-count-shim:not(.w--vertical).w--large:before {
+  border-width: 5px;
+  margin-left: -10px;
+  margin-top: -5px
+}
+.w-widget-twitter-count-shim:not(.w--vertical).w--large:after {
+  border-width: 5px;
+  margin-left: -9px;
+  margin-top: -5px
+}
+.w-widget-twitter-count-shim.w--vertical {
+  width: 61px;
+  height: 33px;
+  margin-bottom: 8px
+}
+.w-widget-twitter-count-shim.w--vertical:after,
+.w-widget-twitter-count-shim.w--vertical:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none
+}
+.w-widget-twitter-count-shim.w--vertical:before {
+  border-color: rgba(117,134,150,0);
+  border-top-color: #5d6c7b;
+  border-width: 5px;
+  margin-left: -5px
+}
+.w-widget-twitter-count-shim.w--vertical:after {
+  border-color: rgba(255,255,255,0);
+  border-top-color: #fff;
+  border-width: 4px;
+  margin-left: -4px
+}
+.w-widget-twitter-count-shim.w--vertical .w-widget-twitter-count-inner {
+  font-size: 18px;
+  line-height: 22px
+}
+.w-widget-twitter-count-shim.w--vertical.w--large {
+  width: 76px
+}
+.w-slider {
+  position: relative;
+  height: 300px;
+  text-align: center;
+  background: #ddd;
+  clear: both;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: rgba(0,0,0,0)
+}
+.w-slider-mask {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  height: 100%;
+  white-space: nowrap
+}
+.w-slide {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  white-space: normal;
+  text-align: left
+}
+.w-slider-nav {
+  position: absolute;
+  z-index: 2;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding-top: 10px;
+  height: 40px;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: rgba(0,0,0,0)
+}
+.w-slider-nav.w-round > div {
+  border-radius: 100%
+}
+.w-slider-nav.w-num > div {
+  width: auto;
+  height: auto;
+  padding: .2em .5em;
+  font-size: inherit;
+  line-height: inherit
+}
+.w-slider-nav.w-shadow > div {
+  box-shadow: 0 0 3px rgba(51,51,51,.4)
+}
+.w-slider-nav-invert {
+  color: #fff
+}
+.w-slider-nav-invert > div {
+  background-color: rgba(34,34,34,.4)
+}
+.w-slider-nav-invert > div.w-active {
+  background-color: #222
+}
+.w-slider-dot {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: rgba(255,255,255,.4);
+  cursor: pointer;
+  margin: 0 3px .5em;
+  transition: background-color .1s,color .1s
+}
+.w-slider-dot.w-active {
+  background-color: #fff
+}
+.w-slider-dot:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px #fff
+}
+.w-slider-dot:focus.w-active {
+  box-shadow: none
+}
+.w-slider-arrow-left,
+.w-slider-arrow-right {
+  position: absolute;
+  width: 80px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  cursor: pointer;
+  overflow: hidden;
+  color: #fff;
+  font-size: 40px;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: rgba(0,0,0,0);
+  user-select: none
+}
+.w-slider-arrow-left [class*=' w-icon-'],
+.w-slider-arrow-left [class^=w-icon-],
+.w-slider-arrow-right [class*=' w-icon-'],
+.w-slider-arrow-right [class^=w-icon-] {
+  position: absolute
+}
+.w-slider-arrow-left:focus,
+.w-slider-arrow-right:focus {
+  outline: 0
+}
+.w-slider-arrow-left {
+  z-index: 3;
+  right: auto
+}
+.w-slider-arrow-right {
+  z-index: 4;
+  left: auto
+}
+.w-icon-slider-left,
+.w-icon-slider-right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 1em;
+  height: 1em
+}
+.w-slider-aria-label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px
+}
+.w-slider-force-show {
+  display: block!important
+}
+.w-dropdown-list.w--open {
+  display: block
+}
+.w-dropdown-link.w--current {
+  color: #0082f3
+}
+.w-nav-link.w--current {
+  color: #0082f3
+}
+.w--nav-link-open {
+  display: block;
+  position: relative
+}
+.w-nav-button.w--open {
+  background-color: #c8c8c8;
+  color: #fff
+}
+.w--nav-dropdown-open {
+  display: block
+}
+.w--nav-dropdown-toggle-open {
+  display: block
+}
+.w--nav-dropdown-list-open {
+  position: static
+}
+.w-tab-link.w--current {
+  background-color: #c8c8c8
+}
+.w--tab-active {
+  display: block
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+.w-dyn-empty {
+  padding: 10px;
+  background-color: #ddd
+}
+.w-dyn-hide {
+  display: none!important
+}
+.w-dyn-bind-empty {
+  display: none!important
+}
+.w-condition-invisible {
+  display: none!important
+}
+@font-face {
+  font-family: Raveo Display;
+  src: url("https://byqsupply-components.netlify.app/Modulabs/fonts/Raveo-Display-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap
+}
+@font-face {
+  font-family: Geist Variable;
+  src: url("https://byqsupply-components.netlify.app/Modulabs/fonts/Geist-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap
+}
+@font-face {
+  font-family: Geist Mono Variable;
+  src: url("https://byqsupply-components.netlify.app/Modulabs/fonts/GeistMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap
+}
+:root {
+  --_🎨-color--tokens---background--base: var(--_🎨-color--base---background-base--dark);
+  --_🔠-typography---font-family--body-2: var(--_🔠-typography---font--body);
+  --_🎨-color--tokens---text-body--strong: var(--_🎨-color--base---neutral--light-88);
+  --_🔠-typography---size--body-2: 16px;
+  --_🔠-typography---line-height--body-2: 24px;
+  --_🔠-typography---font-weight--body-2: var(--_🔠-typography---weight--body);
+  --_🔠-typography---letter-spacing--body-2: 0px;
+  --_🔠-typography---font-family--h1: var(--_🔠-typography---font--heading-sans);
+  --_🔠-typography---size--h1: 64px;
+  --_🔠-typography---line-height--h1: 60px;
+  --_🔠-typography---font-weight--h1: var(--_🔠-typography---weight--heading-sans);
+  --_🔠-typography---letter-spacing--h1: -2.5px;
+  --_🔠-typography---font-family--h2: var(--_🔠-typography---font--heading-sans);
+  --_🔠-typography---size--h2: 48px;
+  --_🔠-typography---line-height--h2: 48px;
+  --_🔠-typography---font-weight--h2: var(--_🔠-typography---weight--heading-sans);
+  --_🔠-typography---letter-spacing--h2: -2px;
+  --_🔠-typography---font-family--h3: var(--_🔠-typography---font--heading-sans);
+  --_🔠-typography---size--h3: 40px;
+  --_🔠-typography---line-height--h3: 40px;
+  --_🔠-typography---font-weight--h3: var(--_🔠-typography---weight--heading-sans);
+  --_🔠-typography---letter-spacing--h3: -1px;
+  --_🔠-typography---font-family--h4: var(--_🔠-typography---font--heading-sans);
+  --_🔠-typography---size--h4: 32px;
+  --_🔠-typography---line-height--h4: 36px;
+  --_🔠-typography---font-weight--h4: var(--_🔠-typography---weight--heading-sans);
+  --_🔠-typography---letter-spacing--h4: -.5px;
+  --_🔠-typography---font-family--h5: var(--_🔠-typography---font--heading-sans);
+  --_🔠-typography---size--h5: 28px;
+  --_🔠-typography---line-height--h5: 32px;
+  --_🔠-typography---font-weight--h5: var(--_🔠-typography---weight--heading-sans);
+  --_🔠-typography---letter-spacing--h5: -.25px;
+  --_🔠-typography---font-family--h6: var(--_🔠-typography---font--heading-sans);
+  --_🔠-typography---size--h6: 24px;
+  --_🔠-typography---line-height--h6: 28px;
+  --_🔠-typography---font-weight--h6: var(--_🔠-typography---weight--heading-sans);
+  --_🔠-typography---letter-spacing--h6: 0px;
+  --spacing--0: 0px;
+  --spacing--12: 12px;
+  --spacing--16: 16px;
+  --_🎨-color--tokens---input-default--border: var(--_🎨-color--base---neutral--light-8);
+  --_🔘-radius---ui-elements--input: 8px;
+  --_🎨-color--tokens---input-default--background: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--tokens---input-active--border: var(--_🎨-color--base---neutral--light-48);
+  --_🎨-color--tokens---input-active--text: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---input-active--background: var(--_🎨-color--base---neutral--light-16);
+  --_🎨-color--tokens---input--label: var(--_🎨-color--base---neutral--light-64);
+  --_🎨-color--tokens---text-body--medium: var(--_🎨-color--base---neutral--light-64);
+  --_🔠-typography---font-family--label-1: var(--_🔠-typography---font--label);
+  --_🔠-typography---size--label-1: 12px;
+  --_🔠-typography---line-height--label-1: 16px;
+  --_🔠-typography---font-weight--label-1: var(--_🔠-typography---weight--label);
+  --_🔠-typography---letter-spacing--label-1: .75px;
+  --_🎨-color--base---neutral--dark-32: color-mix(in srgb, var(--_🎨-color--base---neutral--dark-100) 32%, transparent);
+  --container--main: 1800px;
+  --grid--page-padding: 32px;
+  --_🔠-typography---font-family--body-3: var(--_🔠-typography---font--body);
+  --_🔠-typography---size--body-3: 14px;
+  --_🔠-typography---line-height--body-3: 20px;
+  --_🔠-typography---font-weight--body-3: var(--_🔠-typography---weight--body);
+  --_🔠-typography---letter-spacing--body-3: 0px;
+  --_🎨-color--base---accent--primary: #e45a47;
+  --section-padding--small: 80px;
+  --section-padding--medium: 120px;
+  --_🎨-color--tokens---border--subtle: var(--_🎨-color--base---neutral--light-16);
+  --_🎨-color--tokens---background--lift: var(--_🎨-color--base---background-lift--dark);
+  --section-padding--large: 160px;
+  --section-padding--extra-large: 200px;
+  --spacing--64: 64px;
+  --_🔠-typography---font-family--body-1: var(--_🔠-typography---font--body);
+  --_🔠-typography---size--body-1: 20px;
+  --_🔠-typography---line-height--body-1: 28px;
+  --_🔠-typography---font-weight--body-1: var(--_🔠-typography---weight--body);
+  --_🔠-typography---letter-spacing--body-1: 0px;
+  --_🔠-typography---font-family--label-2: var(--_🔠-typography---font--label);
+  --_🔠-typography---size--label-2: 10px;
+  --_🔠-typography---line-height--label-2: 12px;
+  --_🔠-typography---font-weight--label-2: var(--_🔠-typography---weight--label);
+  --_🔠-typography---letter-spacing--label-2: .75px;
+  --_🔘-radius---general--default: 8px;
+  --_🎨-color--base---ui--error: #c94040;
+  --_🎨-color--base---neutral--light-100: #f6f3ec;
+  --_❇️-icon---icon-size--large: 24px;
+  --_🎨-color--base---neutral--dark-0: color-mix(in srgb, var(--_🎨-color--base---neutral--dark-100) 0%, transparent);
+  --_🎨-color--tokens---input-filled--border: var(--_🎨-color--base---neutral--light-16);
+  --_🎨-color--tokens---text-heading--strong: var(--_🎨-color--base---neutral--light-100);
+  --spacing--24: 24px;
+  --spacing--8: 8px;
+  --_🔘-radius---ui-elements--button-base: 8px;
+  --_🔠-typography---font-family--button-1: var(--_🔠-typography---font--button);
+  --_🎨-color--tokens---button-primary-default--text: var(--_🎨-color--base---neutral--dark-100);
+  --_🔠-typography---size--button-1: 14px;
+  --_🔠-typography---line-height--button-1: 24px;
+  --_🔠-typography---font-weight--button-1: var(--_🔠-typography---weight--button);
+  --_🔠-typography---letter-spacing--button-1: 0px;
+  --_🎨-color--tokens---button-primary-hover--text: var(--_🎨-color--base---neutral--dark-100);
+  --_🎨-color--tokens---button-secondary-default--text: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---button-secondary-hover--text: var(--_🎨-color--base---neutral--dark-100);
+  --_❇️-icon---icon-size--medium: 16px;
+  --_🎨-color--tokens---button-primary-default--border: var(--_🎨-color--base---neutral--dark-8);
+  --_🎨-color--tokens---button-primary-default--background: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---button-primary-hover--border: var(--_🎨-color--base---neutral--dark-8);
+  --_🎨-color--tokens---button-primary-hover--background: var(--_🎨-color--base---neutral--light-88);
+  --_🎨-color--tokens---button-secondary-default--border: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--tokens---button-secondary-default--background: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--base---neutral--light-16: color-mix(in srgb, var(--_🎨-color--base---neutral--light-100) 16%, transparent);
+  --_🎨-color--base---neutral--light-8: color-mix(in srgb, var(--_🎨-color--base---neutral--light-100) 8%, transparent);
+  --_🎨-color--tokens---button-secondary-hover--border: var(--_🎨-color--base---neutral--dark-8);
+  --_🎨-color--tokens---button-secondary-hover--background: var(--_🎨-color--base---neutral--light-88);
+  --_🔠-typography---font-family--h0: var(--_🔠-typography---font--heading-sans);
+  --_🔠-typography---size--h0: 96px;
+  --_🔠-typography---line-height--h0: 80px;
+  --_🔠-typography---font-weight--h0: var(--_🔠-typography---weight--heading-sans);
+  --_🔠-typography---letter-spacing--h0: -2.5px;
+  --_🎨-color--tokens---text-heading--medium: var(--_🎨-color--base---neutral--light-64);
+  --_🎨-color--tokens---text-label--strong: var(--_🎨-color--base---neutral--light-88);
+  --_🎨-color--tokens---text-label--medium: var(--_🎨-color--base---neutral--light-64);
+  --_🎨-color--base---neutral--dark-8: color-mix(in srgb, var(--_🎨-color--base---neutral--dark-100) 8%, transparent);
+  --_🎨-color--tokens---background--lift-80-opacity: var(--_🎨-color--base---background-lift-opacity--dark);
+  --_🔠-typography---font-family--button-2: var(--_🔠-typography---font--button);
+  --_🔠-typography---size--button-2: 12px;
+  --_🔠-typography---line-height--button-2: 16px;
+  --_🔠-typography---font-weight--button-2: var(--_🔠-typography---weight--button);
+  --_🔠-typography---letter-spacing--button-2: 0px;
+  --spacing--4: 4px;
+  --spacing--20: 20px;
+  --_🎨-color--base---neutral--light-0: color-mix(in srgb, var(--_🎨-color--base---neutral--light-100) 0%, transparent);
+  --spacing--32: 32px;
+  --grid--column-gap: 16px;
+  --grid--content-gap: 120px;
+  --_🎨-color--tokens---icon--strong: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---icon--medium: var(--_🎨-color--base---neutral--light-64);
+  --_🎨-color--tokens---background--depth: var(--_🎨-color--base---background-depth--dark);
+  --_🎨-color--tokens---background-gradient-purposes--gradient-100: var(--_🎨-color--base---neutral--dark-100);
+  --_🎨-color--tokens---background-gradient-purposes--gradient-0: var(--_🎨-color--base---neutral--dark-0);
+  --_🎨-color--base---ui--success: #2ad87f;
+  --_🔘-radius---ui-elements--button-circle: 8px;
+  --_❇️-icon---icon-size--small: 12px;
+  --max-width--6-columns: 680px;
+  --spacing--48: 48px;
+  --_🎨-color--base---neutral--dark-16: color-mix(in srgb, var(--_🎨-color--base---neutral--dark-100) 16%, transparent);
+  --spacing--80: 80px;
+  --_🔠-typography---weight--body-bold: var(--all-weights--medium);
+  --_🎨-color--tokens---background--contrast: var(--_🎨-color--base---neutral--light-100);
+  --_❇️-icon---icon-stroke: 1.5px;
+  --max-width--7-columns: 796px;
+  --_🔘-radius---general--full: 100vw;
+  --spacing--120: 120px;
+  --max-width--8-columns: 912px;
+  --max-width--10-columns: 1144px;
+  --_🎨-color--tokens---background-gradient-purposes--gradient-64: var(--_🎨-color--base---neutral--dark-64);
+  --_🔠-typography---font--heading-serif: "Geist Variable",Arial,sans-serif;
+  --_🔠-typography---font--heading-sans: "Geist Variable",Arial,sans-serif;
+  --_🔠-typography---font--body: "Geist Variable",Arial,sans-serif;
+  --_🔠-typography---font--label: "Geist Mono Variable",Arial,sans-serif;
+  --_🔠-typography---font--button: "Geist Variable",Arial,sans-serif;
+  --_🔠-typography---weight--heading-serif: var(--all-weights--normal);
+  --_🔠-typography---weight--heading-sans: var(--all-weights--normal);
+  --_🔠-typography---weight--body: var(--all-weights--normal);
+  --_🔠-typography---weight--label: var(--all-weights--light);
+  --_🔠-typography---weight--button: var(--all-weights--medium);
+  --_🔘-radius---general--large: 16px;
+  --container--small: 912px;
+  --_🎨-color--base---neutral--dark-100: #0a0a0b;
+  --_🎨-color--base---neutral--dark-88: color-mix(in srgb, var(--_🎨-color--base---neutral--dark-100) 88%, transparent);
+  --_🎨-color--base---neutral--dark-64: color-mix(in srgb, var(--_🎨-color--base---neutral--dark-100) 64%, transparent);
+  --_🎨-color--base---neutral--dark-48: color-mix(in srgb, var(--_🎨-color--base---neutral--dark-100) 48%, transparent);
+  --all-weights--thin: 100;
+  --all-weights--extra-light: 200;
+  --all-weights--light: 300;
+  --all-weights--normal: 400;
+  --all-weights--medium: 500;
+  --all-weights--semi-bold: 600;
+  --_🎨-color--base---neutral--dark-4: color-mix(in srgb, var(--_🎨-color--base---neutral--dark-100) 4%, transparent);
+  --all-weights--bold: 700;
+  --all-weights--extra-bold: 800;
+  --all-weights--black: 900;
+  --_🎨-color--base---neutral--light-88: #f6f3ece0;
+  --_🎨-color--base---neutral--light-64: color-mix(in srgb, var(--_🎨-color--base---neutral--light-100) 64%, transparent);
+  --_🎨-color--base---neutral--light-48: color-mix(in srgb, var(--_🎨-color--base---neutral--light-100) 48%, transparent);
+  --_🎨-color--base---neutral--light-32: color-mix(in srgb, var(--_🎨-color--base---neutral--light-100) 32%, transparent);
+  --_🎨-color--base---neutral--light-4: color-mix(in srgb, var(--_🎨-color--base---neutral--light-100) 4%, transparent);
+  --_🎨-color--base---background-base--light: #f6f3ec;
+  --_🎨-color--base---background-base--dark: #0a0a0b;
+  --_🎨-color--base---background-lift--light: #fcfaf6;
+  --_🎨-color--base---background-lift--dark: #121212;
+  --_🎨-color--base---background-lift-opacity--light: #fcfaf6cc;
+  --_🎨-color--base---background-lift-opacity--dark: #121212cc;
+  --_🎨-color--base---background-depth--light: #e6e0da;
+  --_🎨-color--base---background-depth--dark: #212122;
+  --_🎨-color--base---background-contrast--light: #040404;
+  --_🎨-color--base---background-contrast--dark: #f6f3ec;
+  --_🎨-color--base---ui--warning: #c56a21;
+  --_🎨-color--tokens---button-tertiary-default--text: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---button-tertiary-hover--text: var(--_🎨-color--base---neutral--light-88);
+  --_🎨-color--tokens---input--icon: var(--_🎨-color--base---accent--primary);
+  --_🎨-color--tokens---input-default--text: var(--_🎨-color--base---neutral--light-48);
+  --_🎨-color--tokens---input-filled--background: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--tokens---input-filled--text: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---input-error--background: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--tokens---input-error--text: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---input-error--border: var(--_🎨-color--base---neutral--light-16)
+}
+.w-layout-blockcontainer {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block
+}
+.w-checkbox-input--inputType-custom.w--redirected-checked {
+  background-color: #3898ec;
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-color: #3898ec
+}
+.w-checkbox-input--inputType-custom.w--redirected-focus {
+  box-shadow: 0 0 3px 1px #3898ec
+}
+@media screen and (max-width:991px) {
+  .w-layout-blockcontainer {
+    max-width: 728px
+  }
+}
+@media screen and (max-width:767px) {
+  .w-layout-blockcontainer {
+    max-width: none
+  }
+}
+body {
+  background-color: var(--_🎨-color--tokens---background--base);
+  font-family: var(--_🔠-typography---font-family--body-2);
+  color: var(--_🎨-color--tokens---text-body--strong);
+  font-size: var(--_🔠-typography---size--body-2);
+  line-height: var(--_🔠-typography---line-height--body-2);
+  font-weight: var(--_🔠-typography---font-weight--body-2);
+  letter-spacing: var(--_🔠-typography---letter-spacing--body-2);
+  --_🎨-color--tokens---background--base: var(--_🎨-color--base---background-base--dark);
+  --_🎨-color--tokens---text-body--strong: var(--_🎨-color--base---neutral--light-88);
+  --_🎨-color--tokens---input-default--border: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--tokens---input-default--background: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--tokens---input-active--border: var(--_🎨-color--base---neutral--light-48);
+  --_🎨-color--tokens---input-active--text: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---input-active--background: var(--_🎨-color--base---neutral--light-16);
+  --_🎨-color--tokens---input--label: var(--_🎨-color--base---neutral--light-64);
+  --_🎨-color--tokens---text-body--medium: var(--_🎨-color--base---neutral--light-64);
+  --_🎨-color--tokens---border--subtle: var(--_🎨-color--base---neutral--light-16);
+  --_🎨-color--tokens---background--lift: var(--_🎨-color--base---background-lift--dark);
+  --_🎨-color--tokens---input-filled--border: var(--_🎨-color--base---neutral--light-16);
+  --_🎨-color--tokens---text-heading--strong: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---button-primary-default--text: var(--_🎨-color--base---neutral--dark-100);
+  --_🎨-color--tokens---button-primary-hover--text: var(--_🎨-color--base---neutral--dark-100);
+  --_🎨-color--tokens---button-secondary-default--text: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---button-secondary-hover--text: var(--_🎨-color--base---neutral--dark-100);
+  --_🎨-color--tokens---button-primary-default--border: var(--_🎨-color--base---neutral--dark-8);
+  --_🎨-color--tokens---button-primary-default--background: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---button-primary-hover--border: var(--_🎨-color--base---neutral--dark-8);
+  --_🎨-color--tokens---button-primary-hover--background: var(--_🎨-color--base---neutral--light-88);
+  --_🎨-color--tokens---button-secondary-default--border: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--tokens---button-secondary-default--background: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--tokens---button-secondary-hover--border: var(--_🎨-color--base---neutral--dark-8);
+  --_🎨-color--tokens---button-secondary-hover--background: var(--_🎨-color--base---neutral--light-88);
+  --_🎨-color--tokens---text-heading--medium: var(--_🎨-color--base---neutral--light-64);
+  --_🎨-color--tokens---text-label--strong: var(--_🎨-color--base---neutral--light-88);
+  --_🎨-color--tokens---text-label--medium: var(--_🎨-color--base---neutral--light-64);
+  --_🎨-color--tokens---background--lift-80-opacity: var(--_🎨-color--base---background-lift-opacity--dark);
+  --_🎨-color--tokens---icon--strong: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---icon--medium: var(--_🎨-color--base---neutral--light-64);
+  --_🎨-color--tokens---background--depth: var(--_🎨-color--base---background-depth--dark);
+  --_🎨-color--tokens---background-gradient-purposes--gradient-100: var(--_🎨-color--base---neutral--dark-100);
+  --_🎨-color--tokens---background-gradient-purposes--gradient-0: var(--_🎨-color--base---neutral--dark-0);
+  --_🎨-color--tokens---background--contrast: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---background-gradient-purposes--gradient-64: var(--_🎨-color--base---neutral--dark-64);
+  --_🎨-color--tokens---button-tertiary-default--text: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---button-tertiary-hover--text: var(--_🎨-color--base---neutral--light-88);
+  --_🎨-color--tokens---input--icon: var(--_🎨-color--base---accent--primary);
+  --_🎨-color--tokens---input-default--text: var(--_🎨-color--base---neutral--light-48);
+  --_🎨-color--tokens---input-filled--background: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--tokens---input-filled--text: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---input-error--background: var(--_🎨-color--base---neutral--light-8);
+  --_🎨-color--tokens---input-error--text: var(--_🎨-color--base---neutral--light-100);
+  --_🎨-color--tokens---input-error--border: var(--_🎨-color--base---neutral--light-16)
+}
+h2 {
+  font-family: var(--_🔠-typography---font-family--h2);
+  font-size: var(--_🔠-typography---size--h2);
+  line-height: var(--_🔠-typography---line-height--h2);
+  font-weight: var(--_🔠-typography---font-weight--h2);
+  letter-spacing: var(--_🔠-typography---letter-spacing--h2);
+  margin-top: 20px;
+  margin-bottom: 10px
+}
+a {
+  color: var(--_🎨-color--tokens---text-body--strong);
+  text-decoration: none
+}
+img {
+  max-width: 100%;
+  display: inline-block
+}
+.main-container {
+  z-index: 3;
+  max-width: var(--container--main);
+  padding-right: var(--grid--page-padding);
+  padding-left: var(--grid--page-padding);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative
+}
+.main-container.relative {
+  z-index: 5;
+  position: relative
+}
+.text-h2 {
+  font-family: var(--_🔠-typography---font-family--h2);
+  font-size: var(--_🔠-typography---size--h2);
+  line-height: var(--_🔠-typography---line-height--h2);
+  font-weight: var(--_🔠-typography---font-weight--h2);
+  letter-spacing: var(--_🔠-typography---letter-spacing--h2)
+}
+.text-small {
+  font-family: var(--_🔠-typography---font-family--body-3);
+  font-size: var(--_🔠-typography---size--body-3);
+  line-height: var(--_🔠-typography---line-height--body-3);
+  font-weight: var(--_🔠-typography---font-weight--body-3);
+  letter-spacing: var(--_🔠-typography---letter-spacing--body-3);
+  margin-top: 0;
+  margin-bottom: 0
+}
+.text-small.text-accent {
+  color: var(--_🎨-color--base---accent--primary)
+}
+.section {
+  z-index: 2;
+  padding-top: var(--section-padding--small);
+  padding-bottom: var(--section-padding--small);
+  background-color: var(--_🎨-color--tokens---background--base);
+  color: var(--_🎨-color--tokens---text-body--strong);
+  position: relative
+}
+.no-margins {
+  margin-top: 0;
+  margin-bottom: 0
+}
+.text-large {
+  font-family: var(--_🔠-typography---font-family--body-1);
+  color: var(--_🎨-color--tokens---text-body--strong);
+  font-size: var(--_🔠-typography---size--body-1);
+  line-height: var(--_🔠-typography---line-height--body-1);
+  font-weight: var(--_🔠-typography---font-weight--body-1);
+  letter-spacing: var(--_🔠-typography---letter-spacing--body-1);
+  margin-top: 0;
+  margin-bottom: 0;
+  text-decoration: none
+}
+.label-small {
+  font-family: var(--_🔠-typography---font-family--label-2);
+  font-size: var(--_🔠-typography---size--label-2);
+  line-height: var(--_🔠-typography---line-height--label-2);
+  font-weight: var(--_🔠-typography---font-weight--label-2);
+  letter-spacing: var(--_🔠-typography---letter-spacing--label-2);
+  text-transform: uppercase
+}
+.hidden {
+  display: none
+}
+.image-cover {
+  z-index: 1;
+  object-fit: cover;
+  width: 100%;
+  height: 100%
+}
+.heading-medium {
+  color: var(--_🎨-color--tokens---text-heading--medium)
+}
+.body-medium {
+  color: var(--_🎨-color--tokens---text-body--medium)
+}
+.checkbox-contact.w--redirected-checked {
+  background-image: url("https://byqsupply-components.netlify.app/Modulabs/images/CheckedCheckbox.svg");
+  background-position: 50%;
+  background-size: cover
+}
+.button-slider {
+  padding: var(--spacing--8) var(--spacing--12);
+  border: 1px solid var(--_🎨-color--tokens---button-primary-default--border);
+  border-radius: var(--_🔘-radius---ui-elements--button-circle);
+  background-color: var(--_🎨-color--tokens---button-primary-default--background);
+  color: var(--_🎨-color--base---accent--primary);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: border-color .3s,background-color .3s,color .3s;
+  display: flex
+}
+.button-slider:where(.w-variant-5792d278-dfb4-58fc-e0f1-816be54470a7) {
+  border-color: var(--_🎨-color--tokens---button-secondary-default--border);
+  background-color: var(--_🎨-color--tokens---button-secondary-default--background);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px)
+}
+.button-slider:hover {
+  border-color: var(--_🎨-color--tokens---button-primary-hover--border);
+  background-color: var(--_🎨-color--tokens---button-primary-hover--background)
+}
+.button-slider:hover:where(.w-variant-5792d278-dfb4-58fc-e0f1-816be54470a7) {
+  border-color: var(--_🎨-color--tokens---button-secondary-hover--border);
+  background-color: var(--_🎨-color--tokens---button-secondary-hover--background)
+}
+.button-slider.secondary {
+  border-color: var(--_🎨-color--tokens---button-secondary-default--border);
+  background-color: var(--_🎨-color--tokens---button-secondary-default--background);
+  box-shadow: 0 -1px 0 0 var(--_🎨-color--base---neutral--light-16),0 1px 0 0 var(--_🎨-color--base---neutral--light-8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px)
+}
+.button-slider.secondary {
+  border-color: var(--_🎨-color--tokens---button-secondary-default--border);
+  background-color: var(--_🎨-color--tokens---button-secondary-default--background)
+}
+.button-slider.secondary {
+  border-color: var(--_🎨-color--tokens---button-secondary-default--border);
+  background-color: var(--_🎨-color--tokens---button-secondary-default--background);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px)
+}
+.button-slider.secondary:hover {
+  border-color: var(--_🎨-color--tokens---button-secondary-hover--border);
+  background-color: var(--_🎨-color--tokens---button-secondary-hover--background)
+}
+.icon-slider-button {
+  width: var(--_❇️-icon---icon-size--large);
+  height: var(--_❇️-icon---icon-size--large);
+  justify-content: center;
+  align-items: center;
+  display: flex
+}
+.icon-slider-button:where(.w-variant-31998c3b-16f6-1669-9132-65d0d69952fb) {
+  transform: rotate(180deg)
+}
+.icon-slider-button.text-small {
+  width: var(--_❇️-icon---icon-size--small);
+  height: var(--_❇️-icon---icon-size--small)
+}
+.icon-slider-button.left {
+  transform: rotate(180deg)
+}
+.master-label {
+  grid-column-gap: var(--spacing--12);
+  grid-row-gap: var(--spacing--12);
+  color: var(--_🎨-color--tokens---text-label--strong);
+  justify-content: center;
+  align-items: center;
+  display: flex
+}
+.circle-label {
+  background-color: var(--_🎨-color--base---accent--primary);
+  border-radius: 2px;
+  width: 8px;
+  height: 8px
+}
+.text-body-bold {
+  font-weight: var(--_🔠-typography---weight--body-bold)
+}
+.tab-link-faq.w--current {
+  background-color: var(--_🎨-color--base---neutral--dark-0)
+}
+.tab-link-cms.w--current {
+  background-color: var(--_🎨-color--tokens---button-primary-default--background);
+  color: var(--_🎨-color--tokens---button-primary-default--text)
+}
+.tab-link-map.w--current {
+  border-color: var(--_🎨-color--tokens---input-active--border);
+  background-color: var(--_🎨-color--tokens---background--lift);
+  color: var(--_🎨-color--tokens---text-body--strong)
+}
+.bg-circle {
+  border-radius: var(--_🔘-radius---general--full);
+  background-color: var(--_🎨-color--base---accent--primary);
+  filter: blur(200px);
+  width: 400px;
+  height: 400px;
+  position: absolute
+}
+.text-accent {
+  color: var(--_🎨-color--base---accent--primary)
+}
+.dropdown-list.w--open {
+  padding-top: 18px;
+  padding-right: var(--grid--page-padding);
+  padding-left: var(--grid--page-padding);
+  background-color: var(--_🎨-color--base---neutral--light-0);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  inset: 67px 0% auto
+}
+.headline-testimonials {
+  margin-right: auto;
+  margin-bottom: var(--spacing--80);
+  grid-column-gap: var(--spacing--32);
+  grid-row-gap: var(--spacing--32);
+  text-align: center;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: auto;
+  display: flex
+}
+.heading-testimonials {
+  grid-column-gap: var(--spacing--16);
+  grid-row-gap: var(--spacing--16);
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex
+}
+.slider {
+  z-index: 5;
+  padding-top: var(--spacing--4);
+  padding-bottom: var(--spacing--4);
+  background-color: var(--_🎨-color--base---neutral--light-0);
+  height: auto
+}
+.slider.cropped {
+  overflow: clip
+}
+.slider-button-bottom {
+  margin-top: var(--spacing--80);
+  margin-right: var(--spacing--12);
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  display: inline-flex;
+  position: static
+}
+.slider-button-bottom.right {
+  right: -65px
+}
+.slide-testimonial {
+  margin-right: var(--spacing--120)
+}
+.mask-testimonial {
+  max-width: var(--max-width--6-columns);
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible
+}
+.mask-testimonial.long {
+  max-width: var(--max-width--10-columns);
+  padding-right: var(--grid--page-padding);
+  padding-left: var(--grid--page-padding)
+}
+.card-case-tall {
+  padding: var(--spacing--32);
+  grid-column-gap: var(--spacing--32);
+  grid-row-gap: var(--spacing--32);
+  border-radius: var(--_🔘-radius---general--default);
+  background-color: var(--_🎨-color--tokens---background--lift);
+  box-shadow: 0 -1px 0 0 var(--_🎨-color--base---neutral--light-16),0 1px 0 0 var(--_🎨-color--base---neutral--light-8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--_🎨-color--tokens---text-body--strong);
+  flex-flow: column;
+  width: 100%;
+  text-decoration: none;
+  display: flex
+}
+.card-case-tall.long {
+  grid-column-gap: var(--spacing--32);
+  grid-row-gap: var(--spacing--32);
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1.5fr;
+  grid-auto-columns: 1fr;
+  display: grid
+}
+.image-wrap-case-long {
+  border: 1px solid var(--_🎨-color--tokens---border--subtle);
+  border-radius: var(--_🔘-radius---general--default);
+  width: 100%;
+  height: 365px;
+  position: relative;
+  overflow: hidden
+}
+.content-case-long {
+  grid-column-gap: var(--spacing--120);
+  grid-row-gap: var(--spacing--120);
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 365px;
+  display: flex
+}
+.content-case-long.short {
+  grid-column-gap: var(--spacing--80);
+  grid-row-gap: var(--spacing--80);
+  min-height: auto
+}
+.case-long-top-tile {
+  grid-column-gap: var(--spacing--16);
+  grid-row-gap: var(--spacing--16);
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex
+}
+.case-long-bottom-tile {
+  grid-column-gap: var(--spacing--24);
+  grid-row-gap: var(--spacing--24);
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  display: flex
+}
+.case-long-author {
+  grid-column-gap: var(--spacing--4);
+  grid-row-gap: var(--spacing--4);
+  flex-flow: column;
+  display: flex
+}
+.link-cs-card {
+  grid-column-gap: var(--spacing--8);
+  grid-row-gap: var(--spacing--8);
+  font-family: var(--_🔠-typography---font-family--button-2);
+  font-size: var(--_🔠-typography---size--button-2);
+  line-height: var(--_🔠-typography---line-height--button-2);
+  font-weight: var(--_🔠-typography---font-weight--button-2);
+  letter-spacing: var(--_🔠-typography---letter-spacing--button-2);
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  display: flex
+}
+.circle-bg-center {
+  z-index: 2;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  inset: 0%
+}
+.case-image-overlay {
+  padding: var(--spacing--8);
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  inset: 0%
+}
+.case-tag {
+  padding: var(--spacing--12);
+  grid-column-gap: var(--spacing--8);
+  grid-row-gap: var(--spacing--8);
+  border: 1px solid var(--_🎨-color--tokens---border--subtle);
+  border-radius: var(--_🔘-radius---general--default);
+  background-color: var(--_🎨-color--tokens---background--lift-80-opacity);
+  box-shadow: 0 -1px 0 0 var(--_🎨-color--base---neutral--light-16),0 1px 0 0 var(--_🎨-color--base---neutral--light-8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+  display: flex
+}
+.tab-item.w--current {
+  color: var(--_🎨-color--tokens---text-label--strong);
+  padding-left: 20px;
+  text-decoration: none
+}
+.tab-accordion.w--current {
+  background-color: var(--_🎨-color--base---neutral--dark-0);
+  color: var(--_🎨-color--tokens---text-body--strong);
+  padding-left: 20px
+}
+.hide-cms {
+  display: none
+}
+@media screen and (max-width:991px) {
+  .menu-button.w--open {
+    background-color: var(--_🎨-color--tokens---background--depth)
+  }
+}
+@media screen and (max-width:767px) {
+  body {
+    --_🔠-typography---font-family--body-2: var(--_🔠-typography---font--body);
+    --_🔠-typography---size--body-2: 14px;
+    --_🔠-typography---line-height--body-2: 20px;
+    --_🔠-typography---font-weight--body-2: var(--_🔠-typography---weight--body);
+    --_🔠-typography---letter-spacing--body-2: 0px;
+    --_🔠-typography---font-family--h1: var(--_🔠-typography---font--heading-sans);
+    --_🔠-typography---size--h1: 44px;
+    --_🔠-typography---line-height--h1: 44px;
+    --_🔠-typography---font-weight--h1: var(--_🔠-typography---weight--heading-sans);
+    --_🔠-typography---letter-spacing--h1: -2px;
+    --_🔠-typography---font-family--h2: var(--_🔠-typography---font--heading-sans);
+    --_🔠-typography---size--h2: 36px;
+    --_🔠-typography---line-height--h2: 40px;
+    --_🔠-typography---font-weight--h2: var(--_🔠-typography---weight--heading-sans);
+    --_🔠-typography---letter-spacing--h2: -1.5px;
+    --_🔠-typography---font-family--h3: var(--_🔠-typography---font--heading-sans);
+    --_🔠-typography---size--h3: 32px;
+    --_🔠-typography---line-height--h3: 36px;
+    --_🔠-typography---font-weight--h3: var(--_🔠-typography---weight--heading-sans);
+    --_🔠-typography---letter-spacing--h3: -.5px;
+    --_🔠-typography---font-family--h4: var(--_🔠-typography---font--heading-sans);
+    --_🔠-typography---size--h4: 28px;
+    --_🔠-typography---line-height--h4: 32px;
+    --_🔠-typography---font-weight--h4: var(--_🔠-typography---weight--heading-sans);
+    --_🔠-typography---letter-spacing--h4: -1px;
+    --_🔠-typography---font-family--h5: var(--_🔠-typography---font--heading-sans);
+    --_🔠-typography---size--h5: 20px;
+    --_🔠-typography---line-height--h5: 24px;
+    --_🔠-typography---font-weight--h5: var(--_🔠-typography---weight--heading-sans);
+    --_🔠-typography---letter-spacing--h5: -.5px;
+    --_🔠-typography---font-family--h6: var(--_🔠-typography---font--heading-sans);
+    --_🔠-typography---size--h6: 20px;
+    --_🔠-typography---line-height--h6: 24px;
+    --_🔠-typography---font-weight--h6: var(--_🔠-typography---weight--heading-sans);
+    --_🔠-typography---letter-spacing--h6: -.25px;
+    --_🔠-typography---font-family--label-1: var(--_🔠-typography---font--label);
+    --_🔠-typography---size--label-1: 10px;
+    --_🔠-typography---line-height--label-1: 12px;
+    --_🔠-typography---font-weight--label-1: var(--_🔠-typography---weight--label);
+    --_🔠-typography---letter-spacing--label-1: .75px;
+    --_🔠-typography---font-family--body-3: var(--_🔠-typography---font--body);
+    --_🔠-typography---size--body-3: 12px;
+    --_🔠-typography---line-height--body-3: 16px;
+    --_🔠-typography---font-weight--body-3: var(--_🔠-typography---weight--body);
+    --_🔠-typography---letter-spacing--body-3: 0px;
+    --_🔠-typography---font-family--body-1: var(--_🔠-typography---font--body);
+    --_🔠-typography---size--body-1: 16px;
+    --_🔠-typography---line-height--body-1: 24px;
+    --_🔠-typography---font-weight--body-1: var(--_🔠-typography---weight--body);
+    --_🔠-typography---letter-spacing--body-1: 0px;
+    --_🔠-typography---font-family--label-2: var(--_🔠-typography---font--label);
+    --_🔠-typography---size--label-2: 8px;
+    --_🔠-typography---line-height--label-2: 10px;
+    --_🔠-typography---font-weight--label-2: var(--_🔠-typography---weight--label);
+    --_🔠-typography---letter-spacing--label-2: .75px;
+    --_🔠-typography---font-family--button-1: var(--_🔠-typography---font--button);
+    --_🔠-typography---size--button-1: 12px;
+    --_🔠-typography---line-height--button-1: 20px;
+    --_🔠-typography---font-weight--button-1: var(--_🔠-typography---weight--button);
+    --_🔠-typography---letter-spacing--button-1: 0px;
+    --_🔠-typography---font-family--h0: var(--_🔠-typography---font--heading-sans);
+    --_🔠-typography---size--h0: 64px;
+    --_🔠-typography---line-height--h0: 52px;
+    --_🔠-typography---font-weight--h0: var(--_🔠-typography---weight--heading-sans);
+    --_🔠-typography---letter-spacing--h0: -3px;
+    --_🔠-typography---font-family--button-2: var(--_🔠-typography---font--button);
+    --_🔠-typography---size--button-2: 10px;
+    --_🔠-typography---line-height--button-2: 16px;
+    --_🔠-typography---font-weight--button-2: var(--_🔠-typography---weight--button);
+    --_🔠-typography---letter-spacing--button-2: 0px;
+    --_🔠-typography---weight--body-bold: var(--all-weights--medium);
+    --_🔠-typography---font--heading-serif: "Geist Variable",Arial,sans-serif;
+    --_🔠-typography---font--heading-sans: "Geist Variable",Arial,sans-serif;
+    --_🔠-typography---font--body: "Geist Variable",Arial,sans-serif;
+    --_🔠-typography---font--label: "Geist Mono Variable",Arial,sans-serif;
+    --_🔠-typography---font--button: "Geist Variable",Arial,sans-serif;
+    --_🔠-typography---weight--heading-serif: var(--all-weights--normal);
+    --_🔠-typography---weight--heading-sans: var(--all-weights--normal);
+    --_🔠-typography---weight--body: var(--all-weights--normal);
+    --_🔠-typography---weight--label: var(--all-weights--light);
+    --_🔠-typography---weight--button: var(--all-weights--medium);
+    --spacing--0: 0px;
+    --spacing--12: 10px;
+    --spacing--16: 12px;
+    --container--main: 1800px;
+    --grid--page-padding: 16px;
+    --section-padding--small: 64px;
+    --section-padding--medium: 80px;
+    --section-padding--large: 96px;
+    --section-padding--extra-large: 120px;
+    --spacing--64: 48px;
+    --spacing--24: 16px;
+    --spacing--8: 8px;
+    --spacing--4: 4px;
+    --spacing--20: 16px;
+    --spacing--32: 24px;
+    --grid--column-gap: 12px;
+    --grid--content-gap: 40px;
+    --max-width--6-columns: 680px;
+    --spacing--48: 32px;
+    --spacing--80: 56px;
+    --max-width--7-columns: 796px;
+    --spacing--120: 80px;
+    --max-width--8-columns: 912px;
+    --max-width--10-columns: 1144px;
+    --container--small: 912px;
+    --all-weights--thin: 100;
+    --all-weights--extra-light: 200;
+    --all-weights--light: 300;
+    --all-weights--normal: 400;
+    --all-weights--medium: 500;
+    --all-weights--semi-bold: 600;
+    --all-weights--bold: 700;
+    --all-weights--extra-bold: 800;
+    --all-weights--black: 900;
+    --_❇️-icon---icon-size--large: 20px;
+    --_❇️-icon---icon-size--medium: 16px;
+    --_❇️-icon---icon-size--small: 12px;
+    --_❇️-icon---icon-stroke: 1.5px;
+    --_🔘-radius---ui-elements--input: 8px;
+    --_🔘-radius---general--default: 8px;
+    --_🔘-radius---ui-elements--button-base: 8px;
+    --_🔘-radius---ui-elements--button-circle: 8px;
+    --_🔘-radius---general--full: 100vw;
+    --_🔘-radius---general--large: 16px
+  }
+  .main-container {
+    padding-left: 16px;
+    padding-right: 16px
+  }
+  .text-h2 {
+    letter-spacing: -1.5px;
+    font-size: 36px;
+    line-height: 40px
+  }
+  .text-small {
+    letter-spacing: 0;
+    font-size: 12px;
+    line-height: 16px
+  }
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px
+  }
+  .text-large {
+    letter-spacing: 0;
+    font-size: 16px;
+    line-height: 24px
+  }
+  .label-small {
+    letter-spacing: .75px;
+    font-size: 8px;
+    line-height: 10px
+  }
+  .button-slider {
+    border-radius: 8px;
+    padding: 8px 10px
+  }
+  .icon-slider-button {
+    width: 20px;
+    height: 20px
+  }
+  .master-label {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px
+  }
+  .bg-circle {
+    filter: blur(100px);
+    width: 300px;
+    height: 300px
+  }
+  .headline-testimonials {
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    margin-bottom: 56px
+  }
+  .heading-testimonials {
+    grid-column-gap: 12px;
+    grid-row-gap: 12px
+  }
+  .slider {
+    padding-top: 4px;
+    padding-bottom: 4px
+  }
+  .slider-button-bottom {
+    margin-top: 24px;
+    margin-right: 10px
+  }
+  .slide-testimonial {
+    margin-right: 80px
+  }
+  .mask-testimonial {
+    padding-right: var(--grid--page-padding);
+    padding-left: var(--grid--page-padding)
+  }
+  .mask-testimonial.long {
+    max-width: 1144px;
+    padding-left: 16px;
+    padding-right: 16px
+  }
+  .mask-testimonial.short {
+    max-width: 680px;
+    padding-left: 16px;
+    padding-right: 16px
+  }
+  .card-case-tall {
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    padding: 24px
+  }
+  .card-case-tall.long {
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    grid-template-columns: 1fr
+  }
+  .image-wrap-case-long {
+    height: 315px
+  }
+  .content-case-long {
+    grid-column-gap: 80px;
+    grid-row-gap: 80px;
+    min-height: auto
+  }
+  .content-case-long.short {
+    grid-column-gap: 56px;
+    grid-row-gap: 56px
+  }
+  .case-long-top-tile {
+    grid-column-gap: 12px;
+    grid-row-gap: 12px
+  }
+  .case-long-bottom-tile {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px
+  }
+  .case-long-author {
+    grid-column-gap: 4px;
+    grid-row-gap: 4px
+  }
+  .link-cs-card {
+    grid-column-gap: 8px;
+    grid-row-gap: 8px
+  }
+  .case-image-overlay {
+    padding: 8px
+  }
+  .case-tag {
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    border-radius: 8px;
+    padding: 10px
+  }
+  .tab-item.w--current {
+    padding-left: 16px
+  }
+  .tab-accordion.w--current {
+    padding-left: 16px
+  }
+}
+@media screen and (max-width:479px) {
+  .case-long-bottom-tile {
+    grid-row-gap: var(--spacing--32);
+    flex-flow: wrap
+  }
+}
+
+</style>
+
+<!-- ═══ 2. BYQ brand tokens — VERBATIM ═══ -->
+<style>
+/* ============================================================
+   BYQ Supply — Brand Tokens
+   Lifted from the BYQ.supply Figma design system
+   (byq.supply/app/globals.css + tailwind.config.cjs).
+
+   Every gem references these `--byq-*` variables instead of
+   hardcoding colors / fonts / radius, so the whole library
+   feels like one cohesive, on-brand collection.
+
+   Light is the default. Add `class="dark"` to <body> (or any
+   ancestor of the gem) to switch to the dark palette.
+   ============================================================ */
+
+:root {
+  /* Surfaces */
+  --byq-bg: #f0eeed; /* Background / Base Light */
+  --byq-fg: #040404; /* Background / Contrast Light */
+  --byq-card: #ffffff; /* Background / Lift Light */
+  --byq-depth: #e2dfdc; /* Background / Depth Light — borders, subtle hover */
+
+  /* Accents — use sparingly as the "pop" */
+  --byq-accent-solar: #ffcd33; /* Accent / Solar Note (primary accent) */
+  --byq-accent-lime: #c5ef57; /* Accent / Lime Signal (secondary accent) */
+  --byq-error: #c9372d; /* Status / Error */
+
+  /* Foreground that sits on a solar/lime accent fill */
+  --byq-on-accent: #040404;
+
+  /* Shape */
+  --byq-radius: 0.5rem;
+  --byq-radius-lg: 1rem;
+
+  /* Type — matches byq.supply: "Raveo Display" for headings, "Inter" for body
+     copy. Both fall back gracefully when the font isn't self-hosted, so copied
+     snippets never break. Put --byq-font-display on headings/large display
+     type, --byq-font-sans on body text. */
+  --byq-font-display: "Raveo Display", "Raveo", Georgia, serif;
+  --byq-font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --byq-font-mono: "Saans Mono", "Geist Mono", ui-monospace, "SF Mono",
+    Menlo, monospace;
+
+  /* Opacity tokens */
+  --byq-lift-opacity: rgba(255, 255, 255, 0.8);
+  --byq-tag-opacity: rgba(4, 4, 4, 0.08);
+}
+
+.dark {
+  --byq-bg: #070708; /* Background / Base Dark */
+  --byq-fg: #f6f3ec; /* Background / Contrast Dark */
+  --byq-card: #18191a; /* Background / Lift Dark */
+  --byq-depth: #2a2b2c; /* Background / Depth Dark */
+
+  --byq-on-accent: #040404; /* accents stay bright; text on them stays dark */
+
+  --byq-lift-opacity: rgba(24, 25, 26, 0.8);
+  --byq-tag-opacity: rgba(246, 243, 236, 0.08);
+}
+
+</style>
+
+<!-- ═══ 3. Hero with Text Animation styles — VERBATIM ═══ -->
+<style>
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+body {
+  margin: 0
+}
+section {
+  display: block
+}
+a {
+  background-color: transparent
+}
+a:active,
+a:hover {
+  outline: 0
+}
+h1 {
+  font-size: 2em;
+  margin: .67em 0
+}
+img {
+  border: 0
+}
+@font-face {
+  font-family: webflow-icons;
+  src: url("data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBiUAAAC8AAAAYGNtYXDpP+a4AAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZmhS2XEAAAGAAAADHGhlYWQTFw3HAAAEnAAAADZoaGVhCXYFgQAABNQAAAAkaG10eCe4A1oAAAT4AAAAMGxvY2EDtALGAAAFKAAAABptYXhwABAAPgAABUQAAAAgbmFtZSoCsMsAAAVkAAABznBvc3QAAwAAAAAHNAAAACAAAwP4AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAQAAAAAwACAACAAQAAQAg5gPpA//9//8AAAAAACDmAOkA//3//wAB/+MaBBcIAAMAAQAAAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEBIAAAAyADgAAFAAAJAQcJARcDIP5AQAGA/oBAAcABwED+gP6AQAABAOAAAALgA4AABQAAEwEXCQEH4AHAQP6AAYBAAcABwED+gP6AQAAAAwDAAOADQALAAA8AHwAvAAABISIGHQEUFjMhMjY9ATQmByEiBh0BFBYzITI2PQE0JgchIgYdARQWMyEyNj0BNCYDIP3ADRMTDQJADRMTDf3ADRMTDQJADRMTDf3ADRMTDQJADRMTAsATDSANExMNIA0TwBMNIA0TEw0gDRPAEw0gDRMTDSANEwAAAAABAJ0AtAOBApUABQAACQIHCQEDJP7r/upcAXEBcgKU/usBFVz+fAGEAAAAAAL//f+9BAMDwwAEAAkAABcBJwEXAwE3AQdpA5ps/GZsbAOabPxmbEMDmmz8ZmwDmvxmbAOabAAAAgAA/8AEAAPAAB0AOwAABSInLgEnJjU0Nz4BNzYzMTIXHgEXFhUUBw4BBwYjNTI3PgE3NjU0Jy4BJyYjMSIHDgEHBhUUFx4BFxYzAgBqXV6LKCgoKIteXWpqXV6LKCgoKIteXWpVSktvICEhIG9LSlVVSktvICEhIG9LSlVAKCiLXl1qal1eiygoKCiLXl1qal1eiygoZiEgb0tKVVVKS28gISEgb0tKVVVKS28gIQABAAABwAIAA8AAEgAAEzQ3PgE3NjMxFSIHDgEHBhUxIwAoKIteXWpVSktvICFmAcBqXV6LKChmISBvS0pVAAAAAgAA/8AFtgPAADIAOgAAARYXHgEXFhUUBw4BBwYHIxUhIicuAScmNTQ3PgE3NjMxOAExNDc+ATc2MzIXHgEXFhcVATMJATMVMzUEjD83NlAXFxYXTjU1PQL8kz01Nk8XFxcXTzY1PSIjd1BQWlJJSXInJw3+mdv+2/7c25MCUQYcHFg5OUA/ODlXHBwIAhcXTzY1PTw1Nk8XF1tQUHcjIhwcYUNDTgL+3QFt/pOTkwABAAAAAQAAmM7nP18PPPUACwQAAAAAANciZKUAAAAA1yJkpf/9/70FtgPDAAAACAACAAAAAAAAAAEAAAPA/8AAAAW3//3//QW2AAEAAAAAAAAAAAAAAAAAAAAMBAAAAAAAAAAAAAAAAgAAAAQAASAEAADgBAAAwAQAAJ0EAP/9BAAAAAQAAAAFtwAAAAAAAAAKABQAHgAyAEYAjACiAL4BFgE2AY4AAAABAAAADAA8AAMAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADQAAAAEAAAAAAAIABwCWAAEAAAAAAAMADQBIAAEAAAAAAAQADQCrAAEAAAAAAAUACwAnAAEAAAAAAAYADQBvAAEAAAAAAAoAGgDSAAMAAQQJAAEAGgANAAMAAQQJAAIADgCdAAMAAQQJAAMAGgBVAAMAAQQJAAQAGgC4AAMAAQQJAAUAFgAyAAMAAQQJAAYAGgB8AAMAAQQJAAoANADsd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==") format('truetype');
+  font-weight: 400;
+  font-style: normal
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+html {
+  height: 100%
+}
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: #fff;
+  font-family: Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block
+}
+html.w-mod-touch * {
+  background-attachment: scroll!important
+}
+.w-button {
+  display: inline-block;
+  padding: 9px 15px;
+  background-color: #3898ec;
+  color: #fff;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0
+}
+h1 {
+  font-weight: 700;
+  margin-bottom: 10px
+}
+h1 {
+  font-size: 38px;
+  line-height: 44px;
+  margin-top: 20px
+}
+.w-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px
+}
+.w-container:after,
+.w-container:before {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2
+}
+.w-container:after {
+  clear: both
+}
+@media screen and (max-width:991px) {
+  .w-container {
+    max-width: 728px
+  }
+}
+@media screen and (max-width:479px) {
+  .w-container {
+    max-width: none
+  }
+}
+.w-widget-twitter-count-shim.w--large {
+  width: 36px;
+  height: 28px
+}
+.w-widget-twitter-count-shim.w--large .w-widget-twitter-count-inner {
+  font-size: 18px;
+  line-height: 18px
+}
+.w-widget-twitter-count-shim:not(.w--vertical).w--large {
+  margin-left: 6px
+}
+.w-widget-twitter-count-shim:not(.w--vertical).w--large:before {
+  border-width: 5px;
+  margin-left: -10px;
+  margin-top: -5px
+}
+.w-widget-twitter-count-shim:not(.w--vertical).w--large:after {
+  border-width: 5px;
+  margin-left: -9px;
+  margin-top: -5px
+}
+.w-widget-twitter-count-shim.w--vertical {
+  width: 61px;
+  height: 33px;
+  margin-bottom: 8px
+}
+.w-widget-twitter-count-shim.w--vertical:after,
+.w-widget-twitter-count-shim.w--vertical:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none
+}
+.w-widget-twitter-count-shim.w--vertical:before {
+  border-color: rgba(117,134,150,0);
+  border-top-color: #5d6c7b;
+  border-width: 5px;
+  margin-left: -5px
+}
+.w-widget-twitter-count-shim.w--vertical:after {
+  border-color: rgba(255,255,255,0);
+  border-top-color: #fff;
+  border-width: 4px;
+  margin-left: -4px
+}
+.w-widget-twitter-count-shim.w--vertical .w-widget-twitter-count-inner {
+  font-size: 18px;
+  line-height: 22px
+}
+.w-widget-twitter-count-shim.w--vertical.w--large {
+  width: 76px
+}
+.w-dropdown-list.w--open {
+  display: block
+}
+.w-dropdown-link.w--current {
+  color: #0082f3
+}
+.w-nav-link.w--current {
+  color: #0082f3
+}
+.w--nav-link-open {
+  display: block;
+  position: relative
+}
+.w-nav-button.w--open {
+  background-color: #c8c8c8;
+  color: #fff
+}
+.w--nav-dropdown-open {
+  display: block
+}
+.w--nav-dropdown-toggle-open {
+  display: block
+}
+.w--nav-dropdown-list-open {
+  position: static
+}
+.w-tab-link.w--current {
+  background-color: #c8c8c8
+}
+.w--tab-active {
+  display: block
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+.w-dyn-empty {
+  padding: 10px;
+  background-color: #ddd
+}
+.w-dyn-hide {
+  display: none!important
+}
+.w-dyn-bind-empty {
+  display: none!important
+}
+.w-condition-invisible {
+  display: none!important
+}
+:root {
+  --color--dark: #0b0b0b;
+  --color--light: #fbfbfb;
+  --size--body-regular: 20px;
+  --size--subtitle: 1.3em;
+  --size--h1: 5em;
+  --color--accent: #6ec2ff;
+  --size--big-text: 1.6em;
+  --size--h2: 2.6em;
+  --size--body-big: 1.1em;
+  --size--h3: 1.8em;
+  --color--elevation: #171717;
+  --color--light-0-3: #fbfbfb4d;
+  --white: white;
+  --black: black
+}
+.w-layout-blockcontainer {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block
+}
+.w-checkbox-input--inputType-custom.w--redirected-checked {
+  background-color: #3898ec;
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-color: #3898ec
+}
+.w-checkbox-input--inputType-custom.w--redirected-focus {
+  box-shadow: 0 0 3px 1px #3898ec
+}
+@media screen and (max-width:991px) {
+  .w-layout-blockcontainer {
+    max-width: 728px
+  }
+}
+@media screen and (max-width:767px) {
+  .w-layout-blockcontainer {
+    max-width: none
+  }
+}
+body {
+  background-color: var(--color--dark);
+  font-size: 20px;
+  line-height: 130%
+}
+a {
+  text-decoration: underline
+}
+.dt-section {
+  background-color: var(--color--dark);
+  color: var(--color--light);
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-size: var(--size--body-regular);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  font-weight: 300;
+  line-height: 130%
+}
+.dt-main-container {
+  width: 100%;
+  max-width: 1720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px
+}
+.dt-h1 {
+  font-size: var(--size--h1);
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 200;
+  line-height: 120%
+}
+.dt-cta-outline {
+  border: 1px solid var(--color--light);
+  background-color: #0b0b0b00;
+  border-radius: 70px;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  padding: 4px 28px;
+  font-size: 18px;
+  transition: color .3s,background-color .3s;
+  display: flex
+}
+.dt-cta-outline:hover {
+  background-color: var(--color--light);
+  color: var(--color--dark)
+}
+.dt-flex-hero-2 {
+  justify-content: space-between;
+  align-items: flex-end;
+  display: flex
+}
+.dt-title-wrap-hero-2 {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex
+}
+.dt-item-hero-2,
+.single-hero-home-b {
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex
+}
+.dt-image-hero-2 {
+  object-fit: cover;
+  width: 180px;
+  height: 100px
+}
+.dt-tab-link-feature-3.w--current {
+  color: #fff;
+  background-color: #ddd0
+}
+.dt-tab-link-feature-12.w--current {
+  opacity: 1;
+  background-color: #ddd0
+}
+.dropdown-list.w--open {
+  background-color: var(--color--elevation);
+  border: 1px solid #fbfbfb1a;
+  border-radius: 2px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  overflow: hidden
+}
+.link-dropdown.w--current {
+  color: #a5cdfd;
+  font-weight: 700
+}
+.dt-tab-link-testimonials-3.w--current {
+  border-top-color: var(--color--light);
+  color: var(--color--light);
+  background-color: #ddd0
+}
+.checkbox.w--redirected-checked {
+  background-color: #181818;
+  background-size: 50% 50%
+}
+@media screen and (max-width:991px) {
+  .dt-h1 {
+    font-size: 3.3em
+  }
+  .dt-flex-hero-2 {
+    grid-column-gap: 52px;
+    grid-row-gap: 52px;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start
+  }
+  .dt-image-hero-2 {
+    height: 77px
+  }
+  .dropdown-list.w--open {
+    position: static
+  }
+  .menu-button.w--open {
+    background-color: var(--color--elevation)
+  }
+}
+@media screen and (max-width:767px) {
+  .dt-h1 {
+    font-size: 56px
+  }
+  .dt-item-hero-2,
+  .single-hero-home-b {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px
+  }
+  .dt-image-hero-2 {
+    width: 110px;
+    height: 60px
+  }
+}
+@media screen and (max-width:479px) {
+  .dt-section {
+    padding-top: 40px;
+    padding-bottom: 40px
+  }
+  .dt-main-container {
+    padding-left: 16px;
+    padding-right: 16px
+  }
+  .dt-h1 {
+    font-size: 44px
+  }
+  .dt-flex-hero-2 {
+    grid-column-gap: 40px;
+    grid-row-gap: 40px
+  }
+  .dt-item-hero-2,
+  .single-hero-home-b {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start
+  }
+}
+
+</style>
+
+<!-- ═══ 4. Coverflow 3D gem styles — VERBATIM ═══ -->
+<style>
+/* Coverflow 3D
+   Every selector MUST start with .byq-gem--coverflow-3d-01 so this gem can sit
+   on a page next to other gems (and inside a user's site) with zero collisions.
+   Use brand tokens (var(--byq-*)) instead of raw hex for any core UI.
+
+   Technique: every card is absolutely centred on the same spot and pushed into
+   place by a single transform that script.js recomputes from its distance to the
+   current index. Because that distance is a *float*, the rail follows a drag
+   continuously instead of stepping between slots — the snap on release is just
+   the same number tweened to the nearest integer.
+
+   The reflection is a second copy of the photo flipped on Y and faded out with a
+   mask, sitting under the card and inheriting the parent's 3D transform, so it
+   swings with the card for free. */
+
+.byq-gem--coverflow-3d-01 {
+  font-family: var(--byq-font-sans);
+  color: var(--byq-fg);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+}
+
+.byq-gem--coverflow-3d-01__stage {
+  --cf-w: 15rem;
+  --cf-h: 15rem;
+
+  position: relative;
+  width: 100%;
+  max-width: 62rem;
+  height: calc(var(--cf-h) * 1.75);
+  perspective: 1300px;
+  /* The vanishing point sits above centre so the rail reads as slightly
+     top-down, which keeps the reflections visible underneath. */
+  perspective-origin: 50% 38%;
+  cursor: grab;
+  outline: none;
+  touch-action: pan-y;
+}
+
+.byq-gem--coverflow-3d-01__stage.is-dragging {
+  cursor: grabbing;
+}
+
+.byq-gem--coverflow-3d-01__stage:focus-visible {
+  outline: 2px solid var(--byq-accent-lime);
+  outline-offset: 10px;
+  border-radius: var(--byq-radius);
+}
+
+@media (max-width: 40rem) {
+  .byq-gem--coverflow-3d-01__stage {
+    --cf-w: 10.5rem;
+    --cf-h: 10.5rem;
+  }
+}
+
+.byq-gem--coverflow-3d-01__card {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  margin: 0;
+  width: var(--cf-w);
+  height: var(--cf-h);
+  /* script.js writes the transform; the origin is what makes the swing read as
+     a hinge at the card's own edge rather than a slide. */
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.byq-gem--coverflow-3d-01__face,
+.byq-gem--coverflow-3d-01__reflection {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--byq-radius);
+  background: var(--byq-card);
+}
+
+.byq-gem--coverflow-3d-01__face {
+  border: 1px solid var(--byq-depth);
+  box-shadow: 0 1.5rem 3rem color-mix(in srgb, var(--byq-bg) 75%, transparent);
+}
+
+.byq-gem--coverflow-3d-01__face img,
+.byq-gem--coverflow-3d-01__reflection img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* The mirrored copy: flipped on Y, parked directly under the card, and faded
+   out downward so it dissolves instead of ending on a hard edge. */
+.byq-gem--coverflow-3d-01__reflection {
+  /* inset:0 above already pinned bottom:0, so moving only `top` would collapse
+     the box to zero height — bottom has to be released explicitly. */
+  top: 100%;
+  bottom: auto;
+  height: 70%;
+  border: 0;
+  /* Flipped on Y, so the element's own bottom edge ends up visually adjacent to
+     the card — which is why the mask below runs "to top" rather than downward. */
+  transform: scaleY(-1);
+  opacity: 0.3;
+  -webkit-mask-image: linear-gradient(
+    to top,
+    var(--byq-fg) 0%,
+    transparent 62%
+  );
+  mask-image: linear-gradient(to top, var(--byq-fg) 0%, transparent 62%);
+}
+
+/* Everything off-centre is dimmed by a scrim on the face, so the focused card
+   is the only one at full brightness. script.js sets --cf-dim per card. */
+.byq-gem--coverflow-3d-01__face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--byq-bg);
+  opacity: var(--cf-dim, 0);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .byq-gem--coverflow-3d-01__card {
+    will-change: auto;
+  }
+}
+
+</style>
+
+<!-- ═══ 5. Integration layer ═══ -->
+<style>
+
+/* ════════════════════════════════════════════════════════════════════════
+   TSE INTEGRATION LAYER — the ONLY CSS written for this page.
+   Everything above this block is the three components verbatim. This does
+   four things and nothing else:
+     1. puts the page on the BYQ dark palette (the Webflow reset above sets
+        a white body, so it has to be re-stated after it)
+     2. stacks the three flip-word lines instead of one 100dvh screen
+     3. spaces the three components apart
+     4. adds the section labels above Work and Testimonials
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* Geist Variable + Geist Mono are already @font-face'd by the Testimonial
+   Slider component above. Pointing the two BYQ font tokens at them is a
+   two-line change that gives the whole page one clean geometric sans —
+   the gems' own default display face (Raveo) is a serif. Delete these two
+   lines to put every component back on its shipped face. */
+:root {
+  --byq-font-display: "Geist Variable", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --byq-font-sans: "Geist Variable", "Geist", ui-sans-serif, system-ui, sans-serif;
+}
+
+body.dark {
+  background: var(--byq-bg);
+  color: var(--byq-fg);
+  font-family: var(--byq-font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tse-wrap { width: 100%; max-width: 96rem; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 3.5rem); }
+
+/* ── Hero component on the page's palette and type ──────────────────────
+   The component ships its own near-black/near-white and a system font stack.
+   Re-pointing its two colour tokens and its font is all it takes to sit it on
+   the same ground as the rest of the page. */
+:root { --color--dark: #070708; --color--light: #F6F3EC; }
+.dt-section {
+  font-family: var(--byq-font-sans);
+  padding-top: clamp(5.5rem, 13vh, 8.5rem);
+  padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+.dt-main-container { max-width: 96rem; padding-inline: clamp(1.25rem, 4vw, 3.5rem); }
+.dt-h1 {
+  font-weight: 700; letter-spacing: -.025em; line-height: 1.0; text-shadow: 0 1px 40px rgba(7,7,8,.6);
+  animation: tse-rise .58s cubic-bezier(.16, 1, .3, 1) both;
+}
+/* SERVICE leads; THE and EDIT land within 80ms. The whole wordmark is one
+   gesture. Change these three numbers to retime it, nothing else. */
+.tse-l2 { animation-delay: 0ms; }
+.tse-l1 { animation-delay: 50ms; }
+.tse-l3 { animation-delay: 80ms; }
+
+/* The hero is now one layered block: the photograph fills it, the type sits
+   over it. Two scrims do the legibility work — a strong top-down one so the
+   wordmark reads across her shoulder and the curtain, and a gentler left-to-
+   right one for the eyebrow and the service line. The bottom fades back to the
+   page ground so the band does not end on a hard edge. */
+.dt-section {
+  position: relative; isolation: isolate;
+  min-height: min(84vh, 810px);
+  display: flex; align-items: center;
+  padding-block: clamp(6rem, 14vh, 9rem) clamp(3rem, 7vw, 5rem);
+}
+.tse-hero-figure { position: absolute; inset: 0; margin: 0; z-index: -2; }
+.tse-hero-figure img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 33%; display: block; }
+.tse-hero-figure::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    /* a pool of dark behind the wordmark only, so the type has a ground
+       without the laptop being buried under a full-width top scrim */
+    radial-gradient(ellipse 62% 46% at 20% 60%, rgba(7,7,8,.80) 0%, rgba(7,7,8,.45) 55%, rgba(7,7,8,0) 100%),
+    /* light across the top, where the laptop is */
+    linear-gradient(to bottom,
+      rgba(7,7,8,.34) 0%, rgba(7,7,8,.24) 24%, rgba(7,7,8,.30) 46%,
+      rgba(7,7,8,.26) 78%, rgba(7,7,8,.90) 100%),
+    linear-gradient(to right, rgba(7,7,8,.42) 0%, rgba(7,7,8,.10) 46%, rgba(7,7,8,0) 74%);
+}
+/* On a phone the box is portrait, so cover shows a narrow vertical slice of a
+   landscape photo. Centred, that slice is carpet and boots. The laptop sits at
+   roughly 32% across, so the crop is pulled left to hold it. The scrim is
+   re-pooled to match, since the type now sits over the chair rather than the
+   curtain. */
+@media (max-width: 767px) {
+  .tse-hero-figure img { object-position: 27% 38%; }
+  .tse-hero-figure::after {
+    background:
+      radial-gradient(ellipse 130% 42% at 30% 66%, rgba(7,7,8,.86) 0%, rgba(7,7,8,.5) 58%, rgba(7,7,8,0) 100%),
+      linear-gradient(to bottom,
+        rgba(7,7,8,.30) 0%, rgba(7,7,8,.20) 26%, rgba(7,7,8,.34) 50%,
+        rgba(7,7,8,.30) 80%, rgba(7,7,8,.92) 100%);
+  }
+}
+
+.dt-main-container { position: relative; z-index: 1; }
+
+/* The two services: same voice as the h1 (uppercase, weight 200), set well
+   below it in size and tone so the name leads and the services follow. */
+.tse-services { display: flex; flex-wrap: wrap; align-items: center; gap: .3em 1.1em; margin-top: .72em; }
+.tse-service {
+  font-size: 2.05em; text-transform: uppercase; font-weight: 200;
+  line-height: 120%; letter-spacing: -.01em;
+  color: color-mix(in srgb, var(--color--light) 72%, transparent);
+  text-shadow: 0 1px 32px rgba(7,7,8,.6);
+  animation: tse-rise .62s cubic-bezier(.16, 1, .3, 1) both;
+  animation-delay: 150ms;
+}
+.tse-service:nth-child(2) { animation-delay: 200ms; }
+/* A plus, not a rule. The hairline read as "pick one"; the offer is the pair. */
+.tse-service + .tse-service::before {
+  content: "+"; margin-right: .55em;
+  color: color-mix(in srgb, var(--color--light) 40%, transparent);
+}
+@keyframes tse-rise {
+  from { transform: translate3d(0, 200%, 0) skewY(20deg); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+@media (max-width: 991px) { .tse-service { font-size: 1.5em; } }
+@media (max-width: 767px) {
+  .tse-services { flex-direction: column; align-items: flex-start; gap: .12em; }
+  .tse-service { font-size: 22px; }
+  .tse-service + .tse-service::before { content: none; }
+}
+
+.tse-eyebrow {
+  display: flex; align-items: center; gap: .7rem;
+  font-family: var(--byq-font-sans); font-size: .72rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .16em;
+  color: color-mix(in srgb, var(--byq-fg) 50%, transparent);
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.tse-section { padding-block: clamp(3rem, 7vw, 5.5rem); }
+.tse-section__head { margin-bottom: clamp(.5rem, 1.2vw, 1rem); }
+/* the gem's stage reserves 75% extra height for reflections, so its own
+   3rem block padding doubles up with the section's — zero it here */
+.byq-gem--coverflow-3d-01 { padding-block: 0; }
+/* the Testimonial Slider brings its own section padding */
+.tse-section--flush { padding-block: 0; }
+
+/* The component's label marker (.circle-label) is an 8px block with a 2px
+   radius, so it reads as a square rather than a dot. Both section labels now
+   stand on their own letterspacing. .master-label is flex with a gap, so
+   display:none collapses the space cleanly. */
+.circle-label { display: none; }
+
+/* ═══ V2 ═══════════════════════════════════════════════════════════════
+   1. a header and a closing section, because the page had no contact route
+      of any kind: no nav, no footer, no email, no form.
+   2. the testimonial block left-aligned to match every other section.
+   3. the card's dead zone closed: the component pushes quote and author to
+      opposite ends of a fixed-height column, so a short quote leaves a hole.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.tse-head {
+  position: fixed; inset: 0 0 auto; z-index: 60;
+  background: linear-gradient(to bottom, rgba(7,7,8,.92), rgba(7,7,8,0));
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.tse-head__in {
+  max-width: 96rem; margin-inline: auto;
+  padding: clamp(.9rem,1.8vw,1.3rem) clamp(1.25rem,4vw,3.5rem);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.tse-head__mark { font-size: .95rem; font-weight: 700; letter-spacing: -.02em; color: var(--color--light); }
+.tse-head__nav { display: flex; align-items: center; gap: clamp(1rem,2.4vw,2rem); }
+.tse-head__nav a {
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .16em; font-weight: 500;
+  color: color-mix(in srgb, var(--color--light) 62%, transparent); transition: color .3s ease;
+}
+.tse-head__nav a:hover { color: var(--color--light); }
+@media (max-width: 560px) { .tse-head__nav .is-optional { display: none; } }
+
+.tse-contact { padding-block: clamp(4.5rem,11vw,9rem); }
+.tse-contact__in {
+  max-width: 96rem; margin-inline: auto; padding-inline: clamp(1.25rem,4vw,3.5rem);
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem,6vw,5rem); align-items: start;
+}
+@media (max-width: 900px) { .tse-contact__in { grid-template-columns: 1fr; } }
+
+/* Form. Bottom rules rather than boxes, to match the hairlines used elsewhere
+   on the page; boxed inputs would be the only bordered objects on the site. */
+.tse-form { display: flex; flex-direction: column; gap: clamp(1.15rem,2.2vw,1.6rem); }
+.tse-field { display: flex; flex-direction: column; gap: .5rem; }
+.tse-field label {
+  font-size: .68rem; text-transform: uppercase; letter-spacing: .15em; font-weight: 500;
+  color: color-mix(in srgb, var(--color--light) 52%, transparent);
+}
+.tse-field input, .tse-field select, .tse-field textarea {
+  font: inherit; font-size: 1rem; color: var(--color--light);
+  background: transparent; border: 0; border-bottom: 1px solid color-mix(in srgb, var(--color--light) 26%, transparent);
+  padding: .55rem 0; border-radius: 0; width: 100%;
+  transition: border-color .3s ease;
+}
+.tse-field textarea { resize: vertical; min-height: 5.5rem; line-height: 1.5; }
+.tse-field select { appearance: none; cursor: pointer; }
+.tse-field select option { background: #141416; color: var(--color--light); }
+.tse-field input::placeholder, .tse-field textarea::placeholder {
+  color: color-mix(in srgb, var(--color--light) 28%, transparent);
+}
+.tse-field :is(input,select,textarea):focus {
+  outline: none; border-bottom-color: var(--color--light);
+}
+.tse-field :is(input,textarea):user-invalid { border-bottom-color: #c9645a; }
+.tse-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.tse-submit {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: .85rem;
+  border: 1px solid color-mix(in srgb, var(--color--light) 40%, transparent); border-radius: 999px;
+  padding: .8rem 1.1rem .8rem 1.5rem; color: var(--color--light); font-size: .95rem;
+  transition: border-color .3s ease, background .3s ease;
+}
+.tse-submit:hover:not(:disabled) { border-color: var(--color--light); background: color-mix(in srgb, var(--color--light) 8%, transparent); }
+.tse-submit:disabled { opacity: .5; cursor: default; }
+.tse-submit__arrow {
+  width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--color--light); color: #070708;
+  display: grid; place-items: center; transition: transform .4s cubic-bezier(.2,.8,.2,1);
+}
+.tse-submit:hover:not(:disabled) .tse-submit__arrow { transform: translateX(3px); }
+.tse-form__status { margin: 0; min-height: 1.25rem; font-size: .9rem; color: color-mix(in srgb, var(--color--light) 62%, transparent); }
+.tse-form__status[data-state="err"] { color: #d98279; }
+.tse-contact h2 {
+  font-family: var(--byq-font-sans); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(2.2rem,7vw,5rem); line-height: 1.0; letter-spacing: -.028em; margin: 0;
+}
+.tse-contact p {
+  margin: clamp(1.25rem,2.5vw,1.75rem) 0 0; max-width: 46ch; font-size: 1.02rem; line-height: 1.5;
+  color: color-mix(in srgb, var(--color--light) 62%, transparent);
+}
+.tse-contact__mail {
+  display: inline-block; margin-top: clamp(1.75rem,3.5vw,2.75rem);
+  font-size: clamp(1.1rem,2.6vw,2rem); letter-spacing: -.02em; color: var(--color--light);
+  border-bottom: 1px solid color-mix(in srgb, var(--color--light) 35%, transparent);
+  padding-bottom: .12em; transition: border-color .3s ease;
+}
+.tse-contact__mail:hover { border-bottom-color: var(--color--light); }
+
+.tse-foot { border-top: 1px solid var(--byq-depth); padding-block: clamp(1.75rem,3.5vw,2.5rem); }
+.tse-foot__in {
+  max-width: 96rem; margin-inline: auto; padding-inline: clamp(1.25rem,4vw,3.5rem);
+  display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; justify-content: space-between;
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .14em;
+  color: color-mix(in srgb, var(--color--light) 45%, transparent);
+}
+.tse-foot__in a { color: inherit; transition: color .3s ease; }
+.tse-foot__nav { display: flex; flex-wrap: wrap; gap: .6rem 1.15rem; max-width: 46rem; }
+.tse-foot__in a:hover { color: var(--color--light); }
+
+/* 2 — the slider component centres its own heading; the page does not */
+.headline-testimonials, .heading-testimonials { text-align: left; align-items: flex-start; }
+.headline-testimonials { margin-left: 0; }
+
+/* 3 — quote and author as one group instead of pushed to opposite ends */
+.content-case-long {
+  justify-content: center;
+  grid-row-gap: clamp(1.5rem, 3vw, 2.25rem);
+  grid-column-gap: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+/* ── Testimonial card image well ─────────────────────────────────────────
+   The component fixes this box at 365px tall in a 1fr column, which works
+   out near square — so object-fit:cover was slicing the sides off screenshots
+   that are 1.28:1 and taking the nav and buttons with them. Giving the box
+   the screenshots' own ratio means the whole frame shows and nothing is cut.
+   align-self:start stops the grid stretching it back to the card's height. */
+.image-wrap-case-long {
+  height: auto;
+  aspect-ratio: 1072 / 839;
+  align-self: start;
+}
+.content-case-long { min-height: 0; }
+
+/* ── Testimonial accent ──────────────────────────────────────────────────
+   The whole component runs off ONE token: stat numbers, the label dot, the
+   slider arrows, the "→" and the big blurred glow behind the section. The
+   shipped value is #e45a47 (red). Change the two lines below to restyle the
+   entire section. #FFCD33 / #6B5310 are substituted at build time. */
+:root { --_🎨-color--base---accent--primary: #F6F3EC; }
+.bg-circle { background-color: #4A3F2A; opacity: .55; }
+/* The gem's card box is a square (--cf-w / --cf-h). Websites are 16:10, so
+   the height token is re-stated — these two custom properties are the gem's
+   own published knobs, so this is configuration, not an edit. */
+.byq-gem--coverflow-3d-01__stage { --cf-w: min(38rem, 62vw); --cf-h: calc(var(--cf-w) * 0.625); }
+@media (max-width: 50rem) { .byq-gem--coverflow-3d-01__stage { --cf-w: min(22rem, 80vw); } }
+
+/* caption rail — reads the gem's own aria-selected state, touches nothing */
+.tse-flowmeta {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem;
+  flex-wrap: wrap; margin-top: clamp(1.25rem, 3vw, 2rem);
+  padding-top: 1.25rem; border-top: 1px solid var(--byq-depth);
+}
+.tse-flowmeta__name {
+  display: block; font-family: var(--byq-font-display);
+  font-size: clamp(1.35rem, 2.4vw, 2rem); line-height: 1.05; letter-spacing: -.02em;
+}
+.tse-flowmeta__sub {
+  display: block; margin-top: .35rem; font-size: .9rem;
+  color: color-mix(in srgb, var(--byq-fg) 55%, transparent);
+}
+/* Live client work, concept builds and work in progress are not the same
+   claim, so the rail says which is which. */
+.tse-status {
+  display: inline-block; margin-left: .75rem; padding: .2em .6em;
+  border: 1px solid color-mix(in srgb, var(--byq-fg) 24%, transparent);
+  border-radius: 999px; font-size: .62rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .13em; vertical-align: .12em;
+  color: color-mix(in srgb, var(--byq-fg) 62%, transparent);
+}
+.tse-status[data-s="Live"] { color: var(--byq-fg); border-color: color-mix(in srgb, var(--byq-fg) 55%, transparent); }
+.tse-flowmeta__link {
+  display: inline-flex; align-items: center; gap: .6rem; flex: none;
+  border: 1px solid var(--byq-depth); border-radius: 999px; padding: .7rem 1.15rem;
+  color: var(--byq-fg); text-decoration: none; font-size: .85rem;
+  transition: border-color .3s ease, background .3s ease;
+}
+.tse-flowmeta__link:hover { border-color: var(--byq-fg); background: color-mix(in srgb, var(--byq-fg) 6%, transparent); }
+
+.tse-section__head p {
+  margin: .65rem 0 0; max-width: 46ch; font-size: .95rem;
+  color: color-mix(in srgb, var(--byq-fg) 55%, transparent);
+}
+.tse-section__head h2 {
+  font-family: var(--byq-font-display); font-weight: 400; margin: 0;
+  font-size: clamp(1.75rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -.02em;
+}
+
+
+/* ── Work showcase ────────────────────────────────────────────────────────
+   One photograph of four builds on four screens. Its ground is near-black
+   like the page, so the edges are feathered into it rather than boxed. */
+.tse-showcase { margin: clamp(1.5rem,4vw,3rem) auto 0; max-width: 92rem; padding: 0; }
+.tse-showcase img {
+  display: block; width: 100%; height: auto;
+  -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 98%), radial-gradient(ellipse 74% 72% at 50% 46%, #000 60%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to bottom, #000 72%, transparent 98%), radial-gradient(ellipse 74% 72% at 50% 46%, #000 60%, transparent 100%);
+          mask-composite: intersect;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tse-showcase img { opacity: 0; transform: translateY(1.5rem) scale(.985);
+    transition: opacity 1s cubic-bezier(.16,1,.3,1), transform 1.2s cubic-bezier(.16,1,.3,1); }
+  .tse-showcase.is-in img { opacity: 1; transform: none; }
+}
+/* Phones: edge to edge with no gutter. The laptop touches the left edge of
+   the frame, so any zoom would crop it; only the top and bottom are feathered. */
+@media (max-width: 767px) {
+  .tse-showcase { margin-inline: 0; }
+  .tse-showcase img {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 80%, transparent);
+            mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 80%, transparent); }
+}
+.tse-worklist { list-style: none; margin: clamp(1rem,3vw,2rem) 0 0; padding: 0; border-top: 1px solid var(--byq-depth); }
+.tse-worklist li { border-bottom: 1px solid var(--byq-depth); }
+.tse-worklist a, .tse-worklist li > div {
+  display: grid; grid-template-columns: 1fr auto 1.5rem; align-items: baseline; gap: 1rem;
+  padding: clamp(.9rem,1.8vw,1.25rem) 0; color: var(--byq-fg); text-decoration: none;
+}
+.tse-worklist__name { font-family: var(--byq-font-display); font-size: clamp(1.25rem,2.6vw,2rem); letter-spacing: -.02em; line-height: 1.1; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.tse-worklist__meta { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: color-mix(in srgb, var(--byq-fg) 50%, transparent); }
+.tse-worklist__go { justify-self: end; color: color-mix(in srgb, var(--byq-fg) 45%, transparent); transition: color .3s ease, transform .4s cubic-bezier(.2,.8,.2,1); }
+.tse-worklist a:hover .tse-worklist__name { transform: translateX(.35rem); }
+.tse-worklist a:hover .tse-worklist__go { color: var(--byq-fg); transform: translate(2px,-2px); }
+.tse-worklist a:focus-visible { outline: 2px solid var(--byq-fg); outline-offset: 4px; }
+.tse-worklist__all { margin-top: clamp(1.5rem,3vw,2.25rem); }
+@media (max-width: 560px) {
+  .tse-worklist a, .tse-worklist li > div { grid-template-columns: 1fr 1.25rem; row-gap: .25rem; }
+  .tse-worklist__meta { grid-row: 2; grid-column: 1; }
+  .tse-worklist__go { grid-row: 1; grid-column: 2; }
+}
+</style>
+
+<!-- ═══ ENGINEERING FIXES ═══════════════════════════════════════════════════
+     Appended last so these rules win without !important. Nothing here changes
+     type, colour, imagery or layout — it fixes behaviour.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<style>
+.tse-hero-h1 { display: flex; flex-flow: column; align-items: flex-start;
+               margin: 0; font: inherit; letter-spacing: inherit; }
+/* ── 1. Anchors used to land under the fixed header ──────────────────────
+   .tse-head is fixed and 52px tall, so #work, #contact and #top all arrived
+   with their first 52px hidden behind it — and reportValidity() and focus()
+   parked invalid fields there too. scroll-padding-top fixes every one of
+   those at once, because it is the browser's own offset for "scroll
+   something into view". */
+:root { --tse-head-h: 52px; }
+/* scroll-padding on the scrollport only — NOT scroll-margin on the targets as
+   well, or the two offsets stack and everything lands twice as low. This one
+   property covers anchor clicks, scrollIntoView() and the scroll that
+   reportValidity() does to reach an invalid field. */
+html { scroll-padding-top: calc(var(--tse-head-h) + 1.5rem); }
+
+/* Smooth scrolling is a preference, not a default. */
+html { scroll-behavior: auto; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+/* ── 2. Hero reveal, in CSS ──────────────────────────────────────────────
+   Same fade-and-rise the interaction ran, but it can no longer be held
+   hostage by a third-party request. */
+.dt-right-hero-2 { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .dt-right-hero-2 { animation: tse-rise .8s cubic-bezier(.16,1,.3,1) .35s backwards; }
+}
+@keyframes tse-rise { from { opacity: 0; transform: translateY(1.25rem); } to { opacity: 1; transform: none; } }
+
+/* ── 3. Testimonial rail — native scroll-snap ────────────────────────────
+   The browser resolves gesture intent here, which is why there is no wheel
+   or touch JavaScript for this component at all. */
+.tse-rail {
+  max-width: var(--max-width--10-columns, 1144px);
+  margin-inline: auto;
+  padding-inline: var(--grid--page-padding, 32px);
+}
+.tse-rail__track {
+  display: flex;
+  gap: var(--spacing--120, 120px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  /* A swipe that runs off the end of the rail stops there instead of
+     handing the rest of the gesture to the page. */
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  /* Vertical panning stays with the document; horizontal belongs to the rail. */
+  touch-action: pan-x pan-y pinch-zoom;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-block: var(--spacing--4, 4px);
+}
+.tse-rail__track::-webkit-scrollbar { display: none; }
+.tse-rail__track:focus-visible {
+  outline: 2px solid var(--byq-accent-lime, #c5ef57);
+  outline-offset: 8px;
+  border-radius: var(--byq-radius, .5rem);
+}
+.slide-testimonial.tse-rail__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  margin-right: 0;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+/* The blur the old interaction applied to off-centre slides. Added by script
+   so that with JavaScript off nothing is blurred. */
+@media (prefers-reduced-motion: no-preference) {
+  .tse-rail__track.is-enhanced .tse-rail__slide { filter: blur(10px); transition: filter .35s ease; }
+  .tse-rail__track.is-enhanced .tse-rail__slide.is-active { filter: none; }
+}
+/* .circle-bg-center is a blurred decorative wash, absolutely positioned at
+   z-index 2 across the whole testimonial section with pointer-events:auto — so
+   it silently ate clicks on anything below it in the stack. Webflow's own
+   stylesheet happened to put z-index:4 on its slider arrows, which is the only
+   reason the old arrows were clickable at all. Decoration should not be in the
+   hit-testing path at all. */
+.circle-bg-center { pointer-events: none; }
+.tse-rail { position: relative; z-index: 3; }
+.tse-rail__ctrls { display: flex; justify-content: center; align-items: center; gap: var(--spacing--12, 12px); position: relative; z-index: 3; }
+.tse-rail__btn { background: none; border: 0; padding: 0; cursor: pointer; color: inherit; }
+.tse-rail__btn[aria-disabled="true"] { opacity: .35; cursor: default; }
+.tse-rail__btn:focus-visible {
+  outline: 2px solid var(--byq-accent-lime, #c5ef57); outline-offset: 4px;
+  border-radius: var(--byq-radius, .5rem);
+}
+/* The image lift on card hover, previously an interaction. */
+.card-case-tall .image-cover { transition: transform .5s cubic-bezier(.79,.14,.15,.86); }
+@media (hover: hover) { .card-case-tall:hover .image-cover { transform: scale(1.1); } }
+@media (prefers-reduced-motion: reduce) { .card-case-tall .image-cover { transition: none; } .card-case-tall:hover .image-cover { transform: none; } }
+
+/* ── 4. Work rail: never let a drag select or ghost-drag its contents ───── */
+.byq-gem--coverflow-3d-01__stage.is-dragging { cursor: grabbing; }
+.byq-gem--coverflow-3d-01__stage.is-dragging * { user-select: none; -webkit-user-select: none; }
+.byq-gem--coverflow-3d-01__card { cursor: pointer; }
+
+/* ── 5. Mobile navigation ────────────────────────────────────────────────
+   Below 560px, Services / Pricing / About were display:none with nothing to
+   open them, so three of the five header links simply did not exist on a
+   phone. Same links, same type, behind a control. */
+.tse-head__toggle { display: none; }
+@media (max-width: 560px) {
+  .tse-head__toggle {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 42px; height: 42px; margin-right: -10px;
+    background: none; border: 0; padding: 0 9px; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tse-head__toggle span {
+    display: block; height: 1.5px; width: 100%; border-radius: 2px;
+    background: var(--color--light, #f6f3ec);
+    transition: transform .3s cubic-bezier(.16,1,.3,1), opacity .2s ease;
+  }
+  .tse-head__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .tse-head__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .tse-head__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .tse-head__toggle:focus-visible { outline: 2px solid var(--byq-accent-lime, #c5ef57); outline-offset: 2px; border-radius: 6px; }
+  /* The panel is position:fixed and comes after the button in the DOM, so
+     without this it paints over its own close control. */
+  .tse-head__toggle { position: relative; z-index: 2; }
+
+  /* .tse-head carries backdrop-filter, and a backdrop-filter makes an element
+     the containing block for its position:fixed descendants. So `inset: 0` on
+     this panel resolved against the 52px header box, not the viewport: the
+     panel was 52px tall, its background invisible and two of the five links
+     stacked off-screen above. Dropping the header's blur while the menu is
+     open hands the panel back to the viewport — and the blur is not visible
+     anyway while a full-screen panel is covering everything. */
+  body.tse-menu-open .tse-head { backdrop-filter: none; -webkit-backdrop-filter: none; background: none; }
+  .tse-head__nav {
+    position: fixed; inset: 0;
+    flex-direction: column; justify-content: center; align-items: flex-start;
+    gap: clamp(1.25rem, 5vh, 2.25rem);
+    padding: 0 clamp(1.5rem, 8vw, 3rem);
+    background: rgba(7,7,8,.97);
+    backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    /* Kept in the DOM and out of the a11y tree until opened, so nothing
+       inside it is tabbable while it is closed. */
+    visibility: hidden; opacity: 0; pointer-events: none;
+    transition: opacity .28s ease, visibility 0s linear .28s;
+    overscroll-behavior: contain;
+  }
+  body.tse-menu-open .tse-head__nav {
+    visibility: visible; opacity: 1; pointer-events: auto;
+    transition: opacity .28s ease, visibility 0s;
+  }
+  /* Inside the panel every link shows, including the three that were hidden. */
+  .tse-head__nav .is-optional { display: block; }
+  .tse-head__nav a { font-size: 1.05rem; letter-spacing: .1em; color: var(--color--light, #f6f3ec); }
+  .tse-head__nav a[aria-current="page"] { font-weight: 600; }
+  .tse-head { z-index: 70; }
+  .tse-head__in { position: relative; z-index: 2; }
+}
+
+
+/* .tse-field :is(input,select,textarea):focus sets outline:none and relies on a
+   1px underline shifting from 26% to 100% white. That is a fine mouse affordance
+   and a poor keyboard one, so :focus-visible gets a real indicator back. It has
+   to match that rule's specificity to win. */
+.tse-field :is(input, select, textarea):focus-visible {
+  outline: 2px solid var(--byq-accent-lime, #c5ef57);
+  outline-offset: 3px;
+}
+/* ── 6. Focus is visible everywhere a keyboard can reach ─────────────────── */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--byq-accent-lime, #c5ef57);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.tse-skip {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  padding: .7rem 1rem; border-radius: var(--byq-radius, .5rem);
+  background: var(--byq-accent-lime, #c5ef57); color: #070708;
+  font-size: .78rem; font-weight: 600; letter-spacing: .04em;
+  transition: top .2s ease;
+}
+.tse-skip:focus { top: 1rem; }
+[tabindex="-1"]:focus { outline: none; }
+</style>
+</head>
+<body class="dark">
+  <a class="tse-skip" href="#top">Skip to content</a>
+  <header class="tse-head">
+    <div class="tse-head__in">
+      <a class="tse-head__mark" href="#top">The Service Edit</a>
+      <button class="tse-head__toggle" type="button" id="tseMenuBtn"
+              aria-expanded="false" aria-controls="tseMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="tse-head__nav" id="tseMenu" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="services.html" class="is-optional">Services</a>
+        <a href="about.html" class="is-optional">About</a>
+        <a href="#contact">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ HERO — "Hero with Text Animation", markup verbatim; the three h1
+       lines, their data-w-id hooks and the inline image slot are the
+       component's own. Only the words, the image and the CTA target change.
+       The two service lines below are additions (see .tse-service). ══ -->
+<section class="dt-section" id="top" tabindex="-1">
+    <figure class="tse-hero-figure" aria-hidden="true">
+      <img src="tse2/assets/hero.webp" alt="" loading="eager" fetchpriority="high" decoding="async" width="1672" height="941">
+    </figure>
+    <div class="w-layout-blockcontainer dt-main-container w-container">
+      <div class="tse-eyebrow"><span>Australia wide. Limited client spots available</span></div>
+      <div class="dt-flex-hero-2">
+        <div class="dt-title-wrap-hero-2">
+          <!-- One h1, three lines. It used to be three separate h1 elements,
+               so the page announced "heading level 1: The", "heading level 1:
+               Service", "heading level 1: Edit" and had no single headline for
+               search. Spans inside a flex h1 keep the rendering identical. -->
+          <h1 class="tse-hero-h1">
+            <span class="dt-item-hero-2"><span class="dt-h1 tse-l1">The</span></span>
+            <span class="single-hero-home-b"><span class="dt-h1 tse-l2">Service</span></span>
+            <span class="single-hero-home-b"><span class="dt-h1 tse-l3">Edit</span></span>
+          </h1>
+          <div class="tse-services">
+            <span class="tse-service">Website Design</span>
+            <span class="tse-service">Email Marketing</span>
+          </div>
+        </div>
+        <div class="dt-right-hero-2">
+          <a href="#work" class="dt-cta-outline w-button">explore projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WORK · device showcase (replaced the Coverflow rail, 17 Sept 2026) ══ -->
+  <div class="tse-section" id="work">
+    <div class="tse-wrap tse-section__head"><h2>Selected work</h2><p>Four recent builds. Designed for the phone first, and every screen after it.</p></div>
+    <figure class="tse-showcase">
+      <img src="tse2/assets/work-devices.webp"
+           srcset="tse2/assets/work-devices-960.webp 960w, tse2/assets/work-devices.webp 1536w"
+           sizes="(max-width: 767px) 100vw, min(92rem, 100vw)"
+           alt="Websites built by The Service Edit for Giant Coffee, Jordy&rsquo;s, Sonnys and NutterJuck Lures, shown on a desktop, laptop, phone and tablet"
+           width="1536" height="1024" loading="lazy" decoding="async">
+    </figure>
+    <div class="tse-wrap">
+      <ol class="tse-worklist">
+        <li><a href="https://giantcoffee.com.au" target="_blank" rel="noopener"><span class="tse-worklist__name">Giant Coffee</span><span class="tse-worklist__meta">Cafe &middot; Northbridge, WA</span><span class="tse-worklist__go" aria-hidden="true">&nearr;</span></a></li>
+        <li><a href="https://jordyscasuarina.com" target="_blank" rel="noopener"><span class="tse-worklist__name">Jordy&rsquo;s</span><span class="tse-worklist__meta">Sourdough pizza &middot; Casuarina, NSW</span><span class="tse-worklist__go" aria-hidden="true">&nearr;</span></a></li>
+        <li><a href="https://sonnys.theserviceedit.com" target="_blank" rel="noopener"><span class="tse-worklist__name">Sonnys</span><span class="tse-worklist__meta">Small bar &middot; Mount Hawthorn, WA</span><span class="tse-worklist__go" aria-hidden="true">&nearr;</span></a></li>
+        <li><a href="https://the-service-edit.github.io/nutterjuck/" target="_blank" rel="noopener"><span class="tse-worklist__name">NutterJuck Lures</span><span class="tse-worklist__meta">Handmade lures &middot; Australia</span><span class="tse-worklist__go" aria-hidden="true">&nearr;</span></a></li>
+      </ol>
+      <a class="tse-flowmeta__link tse-worklist__all" href="work.html">See all work &rarr;</a>
+    </div>
+  </div>
+
+  <!-- ══ TESTIMONIALS — Testimonial Slider component, body VERBATIM ══ -->
+  <div class="tse-section tse-section--flush" id="words">
+
+
+  <section class="section">
+    <div class="w-layout-blockcontainer main-container relative w-container">
+      <div class="headline-testimonials">
+        <div class="master-label">
+          <div class="circle-label"></div>
+          <div class="label-small">testimonials</div>
+        </div>
+        <div class="heading-testimonials">
+          <h2 class="text-h2 no-margins">Proof <span class="heading-medium">from our clients</span></h2>
+          <div class="body-medium">What changed after working with The Service Edit.</div>
+        </div>
+      </div>
+    </div>
+    <!-- The testimonial rail. This was a Webflow slider driven by a runtime on a
+         host we do not own: when that host was slow or down, three of the four
+         quotes were clipped out of reach with no way to get to them, and it
+         autoplayed every 3 seconds — nobody reads a 250-word quote in three
+         seconds, and moving content with no pause control fails WCAG 2.2.2.
+
+         It is a native scroll-snap rail now. The browser owns the gesture, so
+         axis intent, momentum, snapping and keyboard all behave the way the
+         platform does everywhere else, and overscroll-behavior-x stops a swipe
+         that hits the end from grabbing the page. -->
+    <div class="tse-rail">
+      <div class="tse-rail__track" id="tseRail" tabindex="0"
+           role="group" aria-roledescription="carousel" aria-label="What clients said">
+        <div class="slide-testimonial tse-rail__slide" role="group" aria-roledescription="slide" aria-label="1 of 4: Jordy">
+<a cms-item href="https://jordyscasuarina.com" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
+            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/jordys.webp" alt="Jordy's — work by The Service Edit" cms-image loading="lazy" width="1071" height="840" decoding="async">
+              <div class="case-image-overlay">
+                <div class="case-tag">
+                  <div class="text-small text-accent">+17%</div>
+                  <div class="text-small text-accent">→</div>
+                  <div class="text-small body-medium">Midweek covers since March</div>
+                </div>
+              </div>
+            </div>
+            <div class="content-case-long">
+              <div class="case-long-top-tile">
+                <div class="text-large">“We’d never done email before Mel approached us. With the cost of living it had gone quiet, and the start of this year was the slowest we’d had. She started in March. Our Wednesdays are now the busiest they’ve been all year and July was our biggest month on the app. We handed her the website and the emails, and they work as one thing now, which I don’t think happens when two different people are doing them. She checked every page and every send on her own phone first, which seemed like overkill until I thought about where our bookings actually come from. She writes them like someone who’s worked in hospitality, because she has.”</div>
+              </div>
+              <div class="case-long-bottom-tile">
+                <div class="case-long-author">
+                  <div class="text-small text-body-bold">Jordy</div>
+                  <div class="text-small body-medium">Owner, Jordy&rsquo;s Casuarina, NSW</div>
+                </div>
+                <div class="link-cs-card">
+                  <div cms-text="">View the build</div>
+                  <div cms-icon-wrap="" class="button-slider secondary">
+                    <div class="button-circle-slot secondary">
+                      <div cms-ico="" class="icon-slider-button text-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none">
+                          <path d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="slide-testimonial tse-rail__slide" role="group" aria-roledescription="slide" aria-label="2 of 4: Anthony">
+<a cms-item href="https://the-service-edit.github.io/cvbs-2026/" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
+            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/cvbs-2026.webp" alt="CVBS — work by The Service Edit" cms-image loading="lazy" width="1071" height="840" decoding="async">
+              <div class="case-image-overlay">
+                <div class="case-tag">
+                  <div class="text-small text-accent">37 years</div>
+                  <div class="text-small text-accent">→</div>
+                  <div class="text-small body-medium">Of business, modernised</div>
+                </div>
+              </div>
+            </div>
+            <div class="content-case-long">
+              <div class="case-long-top-tile">
+                <div class="text-large">“We have been finding venues since 1989 and the site looked it. Mel sent a live link every time, so we were looking at the real thing instead of trying to picture it, and anything she needed from us came as a list. This photo, this bit of copy, this number. We did our part and it moved. It looks like 2026 now and it still sounds like us, which is the part I didn’t think we’d get.”</div>
+              </div>
+              <div class="case-long-bottom-tile">
+                <div class="case-long-author">
+                  <div class="text-small text-body-bold">Anthony</div>
+                  <div class="text-small body-medium">Director, CVBS</div>
+                </div>
+                <div class="link-cs-card">
+                  <div cms-text="">View the build</div>
+                  <div cms-icon-wrap="" class="button-slider secondary">
+                    <div class="button-circle-slot secondary">
+                      <div cms-ico="" class="icon-slider-button text-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none">
+                          <path d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="slide-testimonial tse-rail__slide" role="group" aria-roledescription="slide" aria-label="3 of 4: Claire">
+<a cms-item href="https://giantcoffee.com.au/" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
+            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/giant.webp" alt="Giant Coffee — work by The Service Edit" cms-image loading="lazy" width="1071" height="840" decoding="async">
+              <div class="case-image-overlay">
+                <div class="case-tag">
+                  <div class="text-small text-accent">Zero</div>
+                  <div class="text-small text-accent">→</div>
+                  <div class="text-small body-medium">Website before Mel called</div>
+                </div>
+              </div>
+            </div>
+            <div class="content-case-long">
+              <div class="case-long-top-tile">
+                <div class="text-large">“Mel found us. We weren’t looking for a website, we were flat out running a café, and she’d been watching the brand grow and worked out there was nowhere for anyone to actually find us. She turned up with the concept already there. What she built feels exactly like Giant, which is the part I didn’t expect. It’s us, on a screen.”</div>
+              </div>
+              <div class="case-long-bottom-tile">
+                <div class="case-long-author">
+                  <div class="text-small text-body-bold">Claire</div>
+                  <div class="text-small body-medium">Owner, Giant Coffee</div>
+                </div>
+                <div class="link-cs-card">
+                  <div cms-text="">View the build</div>
+                  <div cms-icon-wrap="" class="button-slider secondary">
+                    <div class="button-circle-slot secondary">
+                      <div cms-ico="" class="icon-slider-button text-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none">
+                          <path d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="slide-testimonial tse-rail__slide" role="group" aria-roledescription="slide" aria-label="4 of 4: Dani">
+<a cms-item href="https://goldfoilbooks.com.au" target="_blank" rel="noopener" class="card-case-tall long w-inline-block">
+            <div class="image-wrap-case-long"><img class="image-cover" src="tse2/assets/quotes/goldfoilbooks.webp" alt="Gold Foil Books — work by The Service Edit" cms-image loading="lazy" width="1071" height="840" decoding="async">
+              <div class="case-image-overlay">
+                <div class="case-tag">
+                  <div class="text-small text-accent">5 days</div>
+                  <div class="text-small text-accent">→</div>
+                  <div class="text-small body-medium">First conversation to live</div>
+                </div>
+              </div>
+            </div>
+            <div class="content-case-long">
+              <div class="case-long-top-tile">
+                <div class="text-large">“It was only five days from our first conversation to the whole thing being live. I kept waiting for the part where it gets hard and it never came. She’d send a round back with everything marked up so I could see what she’d changed, and she’d already know what she needed from me next. She went all in on the concept. More than I would have for someone else’s business, honestly. I’m not a website person and I never once felt like I was the one holding it up.”</div>
+              </div>
+              <div class="case-long-bottom-tile">
+                <div class="case-long-author">
+                  <div class="text-small text-body-bold">Dani</div>
+                  <div class="text-small body-medium">Gold Foil Books, Wollongong NSW</div>
+                </div>
+                <div class="link-cs-card">
+                  <div cms-text="">View the build</div>
+                  <div cms-icon-wrap="" class="button-slider secondary">
+                    <div class="button-circle-slot secondary">
+                      <div cms-ico="" class="icon-slider-button text-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none">
+                          <path d="M2.5 6H9.5M9.5 6L6 2.5M9.5 6L6 9.5" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="tse-rail__ctrls">
+        <button type="button" class="slider-button-bottom tse-rail__btn" data-rail="-1"
+                aria-label="Previous testimonial" aria-controls="tseRail">
+          <span class="button-slider w-variant-5792d278-dfb4-58fc-e0f1-816be54470a7"><span class="button-circle-slot"><span class="icon-slider-button w-variant-31998c3b-16f6-1669-9132-65d0d69952fb w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></span>
+        </button>
+        <button type="button" class="slider-button-bottom right tse-rail__btn" data-rail="1"
+                aria-label="Next testimonial" aria-controls="tseRail">
+          <span class="button-slider w-variant-5792d278-dfb4-58fc-e0f1-816be54470a7"><span class="button-circle-slot"><span class="icon-slider-button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="var(--_❇️-icon---icon-stroke)" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></span>
+        </button>
+      </div>
+    </div>
+    <div class="circle-bg-center" aria-hidden="true">
+      <div class="bg-circle"></div>
+    </div>
+  </section>
+  
+  
+  
+
+
+
+
+
+
+
+
+  </div>
+
+  <!-- ══ CONTACT ══════════════════════════════════════════════════════════
+       Two columns: the ask on the left, the form on the right. The form posts
+       to ENDPOINT if one is set (see the script at the foot of this file) and
+       falls back to opening a pre-filled email if it is not, so an enquiry is
+       never silently swallowed. ═══════════════════════════════════════════ -->
+  <section class="tse-contact" id="contact">
+    <div class="tse-contact__in">
+      <div class="tse-contact__say">
+        <h2>The build<br>wins them.<br>The email<br>brings them back.</h2>
+        <p>Most businesses pay to get found, let the customer go, then pay to get found again.
+           A site that converts and a list you own is the same money working twice. I do both,
+           and I write what goes out afterwards, because whoever built your website should be
+           the one writing to your customers.</p>
+      </div>
+
+      <form class="tse-form" id="tseForm" novalidate>
+        <div class="tse-field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="tse-field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="tse-field">
+          <label for="f-biz">Business, and what you do</label>
+          <input id="f-biz" name="business" type="text" autocomplete="organization" required>
+        </div>
+        <div class="tse-field">
+          <label for="f-need">What are you after</label>
+          <select id="f-need" name="need">
+            <option>Website and email</option>
+            <option>Website only</option>
+            <option>Email only</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="tse-field">
+          <label for="f-slow">Where are you losing people?</label>
+          <textarea id="f-slow" name="slow" rows="4" required
+            placeholder="Nobody can find us. Quotes go out and never come back. People come once and we never hear from them again."></textarea>
+        </div>
+        <p class="tse-hp" aria-hidden="true">
+          <label for="f-co">Company</label><input id="f-co" name="company" tabindex="-1" autocomplete="off">
+        </p>
+        <button class="tse-submit" type="submit">
+          <span>Send it</span>
+          <span class="tse-submit__arrow" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M9.5 6 6 2.5M9.5 6 6 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <p class="tse-form__status" id="tseStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="tse-foot">
+    <div class="tse-foot__in">
+      <span>The Service Edit &middot; Based in Perth, working Australia wide</span>
+      <nav class="tse-foot__nav">
+        <a href="work.html">Work</a>
+        <a href="services.html">Services</a>
+        <a href="web-presence-build.html">Web presence build</a>
+        <a href="email-marketing.html">Email marketing</a>
+        <a href="digital-audit.html">Digital audit</a>
+        <a href="concept-builds.html">Concept builds</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="the-service-edit-journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     ONE Webflow footer for BOTH components.
+
+     The hero and the testimonial slider each ship their own copy of this
+     block, and each assigns window.__ix — so loading both verbatim means the
+     second payload overwrites the first and one component's animations never
+     register. The two payloads are merged below instead (27 events, 11 action
+     lists, no id collisions) and the engine is initialised once.
+
+     jQuery and GSAP are vendored locally; the ix2 engine is still fetched
+     from BYQ, so the guard at the bottom reveals the hero if it never lands.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<!-- jQuery, Flip, ScrollTrigger and ScrollToPlugin were loaded and never called:
+     162KB of download and parse for nothing. The Webflow IX2 runtime came from a
+     host we do not control and was a single point of failure for the hero and for
+     the whole testimonial section. Every animation it ran is plain CSS now.
+     GSAP stays: the work rail uses it to tween one number. -->
+
+
+<!-- The hero reveal is CSS now (see .dt-right-hero-2). It used to be parked at
+     opacity:0 waiting on a third-party script, with a 2.4s timeout as the only
+     safety net — so the CTA was invisible for 2.4s on a slow network, and
+     forever if that host was down. -->
+
+<script>
+(function () {
+  var f = document.querySelector('.tse-showcase');
+  if (!f) return;
+  if (!('IntersectionObserver' in window)) { f.classList.add('is-in'); return; }
+  new IntersectionObserver(function (es, o) {
+    es.forEach(function (e) { if (e.isIntersecting) { f.classList.add('is-in'); o.disconnect(); } });
+  }, { rootMargin: '0px 0px -12% 0px' }).observe(f);
+})();
+</script>
+
+<!-- ═══ Contact form ═══════════════════════════════════════════════════════
+     Wired to the same Web3Forms account the old contact.html used, so these
+     enquiries land in the inbox they always did. The access key below is the
+     one already published in contact.html on the live site.
+
+     If ENDPOINT or ACCESS_KEY is ever cleared, the form falls back to opening
+     a pre-filled email rather than silently dropping the enquiry.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  var ENDPOINT = "https://api.web3forms.com/submit";
+  var ACCESS_KEY = "2870139d-38b7-4118-9f7c-9217fd52c463";
+  var TO = "hello@theserviceedit.com";
+
+  var form = document.getElementById("tseForm");
+  var status = document.getElementById("tseStatus");
+  if (!form) return;
+  var button = form.querySelector(".tse-submit");
+
+  function say(msg, state) { status.textContent = msg; status.setAttribute("data-state", state || ""); }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (form.company.value) return;                       // honeypot: a bot filled it
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      say("A couple of fields still need you.", "err");
+      return;
+    }
+    var data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      business: form.business.value.trim(),
+      need: form.need.value,
+      slow: form.slow.value.trim()
+    };
+
+    if (!ENDPOINT || !ACCESS_KEY) {                        // no backend wired
+      var body = "Name: " + data.name + "\nEmail: " + data.email +
+                 "\nBusiness: " + data.business + "\nThinks they need: " + data.need +
+                 "\n\nWhat is slow:\n" + data.slow;
+      window.location.href = "mailto:" + TO +
+        "?subject=" + encodeURIComponent("Enquiry from " + (data.business || data.name)) +
+        "&body=" + encodeURIComponent(body);
+      say("Opening your email so you can send it. If nothing happens, write to " + TO + ".");
+      return;
+    }
+
+    button.disabled = true; say("Sending.");
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        subject: "New enquiry from " + (data.business || data.name),
+        from_name: "The Service Edit website",
+        name: data.name,
+        email: data.email,
+        business: data.business,
+        "What they are after": data.need,
+        "Where they are losing people": data.slow
+      })
+    }).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      form.reset();
+      say("Got it. I read every one of these myself and will come back to you.");
+    }).catch(function () {
+      say("That did not send. Email me directly at " + TO + " and I will pick it up.", "err");
+    }).finally(function () { button.disabled = false; });
+  });
+})();
+</script>
+
+<!-- ═══ Testimonial rail controls ══════════════════════════════════════════
+     The rail itself is a native scroll container: swipe, trackpad, momentum,
+     snapping, keyboard and screen-reader behaviour are all the browser's, and
+     there is no wheel or touch handler here at all. This only adds the arrow
+     buttons and the blur on off-centre cards that the old interaction ran.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  var track = document.getElementById('tseRail');
+  if (!track) return;
+  var slides = Array.prototype.slice.call(track.querySelectorAll('.tse-rail__slide'));
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.tse-rail__btn'));
+  if (!slides.length) return;
+
+  track.classList.add('is-enhanced');
+
+  // Which card is centred. IntersectionObserver against the track itself, so it
+  // costs nothing during a scroll and needs no scroll listener.
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { e.target.classList.toggle('is-active', e.intersectionRatio > 0.6); });
+  }, { root: track, threshold: [0, 0.6, 1] });
+  slides.forEach(function (s) { io.observe(s); });
+
+  // Measured from rects, not offsetLeft: offsetLeft is relative to the nearest
+  // positioned ancestor, which here is .tse-rail — so it silently carries that
+  // element's inline padding and put every arrow step one page-gutter off.
+  function centreDelta(i) {
+    var tr = track.getBoundingClientRect(), sr = slides[i].getBoundingClientRect();
+    return (sr.left + sr.width / 2) - (tr.left + tr.width / 2);
+  }
+
+  function nearestIndex() {
+    var best = 0, bestD = Infinity;
+    for (var i = 0; i < slides.length; i++) {
+      var d = Math.abs(centreDelta(i));
+      if (d < bestD) { bestD = d; best = i; }
+    }
+    return best;
+  }
+
+  function go(dir) {
+    var i = Math.max(0, Math.min(slides.length - 1, nearestIndex() + dir));
+    track.scrollBy({
+      left: centreDelta(i),
+      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+    });
+  }
+
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b.getAttribute('aria-disabled') === 'true') return;
+      go(parseInt(b.dataset.rail, 10));
+    });
+  });
+
+  function sync() {
+    var i = nearestIndex();
+    btns.forEach(function (b) {
+      var dir = parseInt(b.dataset.rail, 10);
+      var atEnd = (dir < 0 && i === 0) || (dir > 0 && i === slides.length - 1);
+      b.setAttribute('aria-disabled', String(atEnd));
+    });
+  }
+  var idle;
+  track.addEventListener('scroll', function () { clearTimeout(idle); idle = setTimeout(sync, 90); }, { passive: true });
+  window.addEventListener('resize', function () { clearTimeout(idle); idle = setTimeout(sync, 150); });
+  sync();
+})();
+</script>
+
+<script src="tse2/assets/js/nav.js" defer></script>
+
+</body>
+</html>

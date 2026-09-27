@@ -293,7 +293,14 @@ footer{padding:40px 0 32px}
     .svc-go b{display:inline-block;transition:transform .2s}
     .svc:hover .svc-go b{transform:translateX(4px)}
     @media(max-width:700px){.svc-grid{grid-template-columns:1fr}.svc-tags{justify-content:flex-start}.services{padding:28px 0 40px}}
-    </style>
+    /* v2 portrait + menu */
+.about .ph img{object-position:50% 22%}
+.contact .me{display:flex;align-items:center;gap:14px;margin-top:28px}
+.contact .me img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(241,237,226,.5);flex:none}
+.contact .me b{display:block;font-weight:600}
+.contact .me span{display:block;font-size:15px;opacity:.75}
+.nav ul li.m-cta{display:none}@media(max-width:860px){.nav.open ul li.m-cta{display:block}.nav.open ul li.m-cta a{font-weight:600;border-bottom:0}}
+</style>
 </head>
 <body>
 
@@ -308,8 +315,10 @@ footer{padding:40px 0 32px}
       <li><a href="#how">Websites</a></li>
       <li><a href="#email">Email marketing</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#cost">What it costs</a></li>
       <li><a href="#about">About</a></li>
+      <li class="m-cta"><a href="#start">Start a project &rarr;</a></li>
     </ul>
     <a class="cta" href="#start">Start a project</a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
@@ -474,7 +483,7 @@ footer{padding:40px 0 32px}
 
 <section class="about" id="about">
   <div class="wrap cols">
-    <div class="ph rv"><img src="assets/mel.jpg?v=20260927f" alt="Mel Cox, founder of The Service Edit, sitting on a wooden stool in natural light" loading="lazy"></div>
+    <div class="ph rv"><img src="assets/mel-portrait.jpg?v=1" alt="Mel Cox, founder of The Service Edit" loading="lazy"></div>
     <div>
       <span class="mono">About</span>
       <h2 class="caps rv">I've been on the other side of the counter.</h2>
@@ -495,6 +504,7 @@ footer{padding:40px 0 32px}
       <span class="mono" style="opacity:.6">Start here</span>
       <h2 class="caps" style="margin-top:14px">Send me your website.</h2>
       <p class="lede">I'll go through it the same way I go through every build and tell you plainly what's costing you enquiries. If a new site isn't the answer, I'll say so.</p>
+      <div class="me"><img src="assets/mel-face.jpg?v=1" alt="Mel Cox" width="56" height="56"><p><b>Mel Cox</b><span>Founder. I read and reply to every one myself.</span></p></div>
       <ol class="steps">
         <li>You send your site and a line about your business</li>
         <li>I review the strategy, copy, search, enquiry path and build</li>

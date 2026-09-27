@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Service Edit · Websites built to turn attention into enquiries</title>
+<meta name="description" content="Websites and email for trades, hospitality and local service businesses across Australia. Strategy, copy, search, enquiry paths and build, from Perth.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brown:#584638; --brown-deep:#3A2E25; --wall:#4A3C31;
+  --off:#F1EDE2; --paper:#F7F4EC; --ink:#1B1512; --mute:#8C7F72; --line:rgba(241,237,226,.16); --line-dark:rgba(27,21,18,.14);
+  --max:1320px; --gut:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--brown-deep);color:var(--off);font-family:Geist,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.mono{font-family:"Geist Mono",ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.caps{text-transform:uppercase;letter-spacing:-.035em;line-height:.92;font-weight:600}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s,backdrop-filter .3s}
+.nav.solid{background:rgba(58,46,37,.88);backdrop-filter:blur(10px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav .logo{display:block;width:78px}
+.nav ul{display:flex;gap:32px;list-style:none}
+.nav ul a{text-decoration:none;font-size:14px;letter-spacing:.01em;opacity:.85}
+.nav ul a:hover{opacity:1}
+.nav .cta{text-decoration:none;font-size:14px;font-weight:500;border:1px solid var(--off);border-radius:999px;padding:9px 18px}
+.nav .cta:hover{background:var(--off);color:var(--ink)}
+.menu-btn{display:none;background:none;border:0;color:var(--off);font:inherit;font-size:14px}
+@media(max-width:860px){.nav ul,.nav .cta{display:none}.menu-btn{display:block}
+  .nav.open{background:var(--brown-deep)}
+  .nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;left:0;right:0;background:var(--brown-deep);padding:8px var(--gut) 28px;border-bottom:1px solid var(--line)}
+  .nav.open ul a{display:block;padding:14px 0;font-size:22px;border-bottom:1px solid var(--line)}}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(#725f51,#6a574a 60%,#6a574a)}
+.hero .copy{position:relative;z-index:2;padding-top:clamp(120px,11vw,170px);text-align:center}
+.hero picture{display:block;position:relative;z-index:1;margin-top:-19vw}
+.hero picture img{width:100%;height:auto;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%);mask-image:linear-gradient(to bottom,transparent 0,#000 14%)}
+.hero h1{font-size:clamp(44px,6.6vw,112px);color:var(--off)}
+.hero .sub{margin:22px auto 0;max-width:34ch;font-size:clamp(17px,1.6vw,21px);opacity:.92}
+.hero .actions{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:500;font-size:15px;border-radius:999px;padding:14px 22px;transition:transform .2s,background .2s,color .2s}
+.btn.solid{background:var(--off);color:var(--ink)}
+.btn.ghost{border:1px solid rgba(241,237,226,.7);color:var(--off)}
+.btn:hover{transform:translateY(-2px)}
+.btn.dark{background:var(--ink);color:var(--off)}
+@media(max-width:700px){.hero h1 br.d{display:none}.proj .meta{flex-direction:column;gap:4px}.hero picture{margin-top:-28vw}.hero .copy{text-align:left}.hero .sub{margin-left:0}.hero .actions{justify-content:flex-start}}
+
+/* STATEMENT */
+.statement{background:var(--off);color:var(--ink);padding:clamp(90px,14vw,190px) 0}
+.statement h2{font-size:clamp(40px,6.6vw,108px);max-width:14ch}
+.statement h2 span{color:#9C8B7A}
+.statement .row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);margin-top:clamp(40px,6vw,80px);align-items:end}
+.statement p{font-size:clamp(18px,1.5vw,21px);max-width:44ch}
+.statement .mono{color:var(--mute)}
+@media(max-width:800px){.statement .row{grid-template-columns:1fr}}
+
+/* TEARDOWN */
+.tear{background:var(--brown-deep);padding:clamp(90px,12vw,160px) 0 clamp(40px,6vw,80px)}
+.tear-head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(50px,8vw,110px)}
+.tear-head h2{font-size:clamp(40px,6vw,96px)}
+.tear-head p{max-width:42ch;opacity:.88}
+.tear-head .mono{opacity:.6;margin-bottom:18px;display:block}
+@media(max-width:800px){.tear-head{grid-template-columns:1fr}}
+.layer{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(34px,5vw,60px) 0;border-top:1px solid var(--line)}
+.layer:nth-child(even){grid-template-columns:7fr 5fr}
+.layer:nth-child(even) .txt{order:2}
+.layer .num{font-family:"Geist Mono",monospace;font-size:13px;opacity:.55;letter-spacing:.08em}
+.layer h3{font-size:clamp(34px,4.4vw,64px);margin:12px 0 18px}
+.layer p{max-width:40ch;opacity:.9}
+.layer .fig{overflow:hidden;border-radius:4px}
+.layer .fig img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.layer:hover .fig img{transform:scale(1.03)}
+@media(max-width:800px){.layer,.layer:nth-child(even){grid-template-columns:1fr}.layer:nth-child(even) .txt{order:0}}
+
+/* WORK */
+.work{background:var(--off);color:var(--ink);padding:clamp(90px,12vw,160px) 0}
+.work-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,70px)}
+.work-head h2{font-size:clamp(40px,6vw,96px)}
+.work-head p{max-width:38ch;color:#4A4038}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(28px,4vw,56px) clamp(20px,3vw,40px)}
+.proj{text-decoration:none;display:block}
+.proj .ph{overflow:hidden;border-radius:4px;background:var(--brown)}
+.proj img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.proj:hover img{transform:scale(1.035)}
+.proj .meta{display:flex;justify-content:space-between;gap:16px;margin-top:16px;align-items:baseline}
+.proj h3{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.proj .mono{color:var(--mute);white-space:nowrap}
+.proj p{margin-top:6px;color:#4A4038;max-width:46ch;font-size:16px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+.index{margin-top:clamp(70px,9vw,120px)}
+.index .mono{color:var(--mute);display:block;margin-bottom:14px}
+.index ol{list-style:none;border-top:1px solid var(--line-dark)}
+.index li a{display:grid;grid-template-columns:48px 1fr 1fr 150px 24px;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line-dark);text-decoration:none;transition:padding .25s,background .25s}
+.index li a:hover{padding-left:10px;background:rgba(88,70,56,.06)}
+.index .n{font-family:"Geist Mono",monospace;font-size:12px;color:var(--mute)}
+.index .nm{font-weight:600;font-size:18px;letter-spacing:-.01em}
+.index .in,.index .lc{color:#5E5247;font-size:15px}
+.index .ar{text-align:right;color:var(--mute)}
+@media(max-width:760px){.index li a{grid-template-columns:36px 1fr 20px}.index .in,.index .lc{display:none}}
+
+/* PRICE */
+.price{background:var(--brown);padding:clamp(90px,12vw,160px) 0}
+.price h2{font-size:clamp(40px,6vw,96px);max-width:12ch}
+.pcols{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:clamp(40px,6vw,80px);border-top:1px solid var(--line)}
+.pcol{padding:clamp(26px,3vw,44px) clamp(0px,3vw,44px) 0 0}
+.pcol+.pcol{border-left:1px solid var(--line);padding-left:clamp(20px,3vw,44px)}
+.pcol .mono{opacity:.6}
+.pcol h3{font-size:clamp(24px,2.4vw,34px);font-weight:600;letter-spacing:-.025em;margin:14px 0 14px;line-height:1.1}
+.pcol ul{list-style:none;margin-top:18px}
+.pcol li{padding:11px 0;border-top:1px solid var(--line);opacity:.92}
+.price .foot{margin-top:clamp(40px,5vw,64px);max-width:56ch;font-size:clamp(18px,1.5vw,21px)}
+@media(max-width:760px){.pcols{grid-template-columns:1fr}.pcol+.pcol{border-left:0;padding-left:0;margin-top:30px}}
+
+/* ABOUT */
+.about{background:var(--off);color:var(--ink);padding:clamp(90px,12vw,160px) 0}
+.about .cols{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,6vw,100px);align-items:start}
+.about .ph{border-radius:4px;overflow:hidden;background:var(--brown)}
+.about .ph img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:sepia(.18) saturate(.9) contrast(1.02)}
+.about h2{font-size:clamp(36px,4.8vw,76px);margin:14px 0 28px}
+.about p{max-width:52ch;margin-bottom:16px;color:#3A302A}
+.about .mono{color:var(--mute)}
+.about .facts{display:flex;gap:clamp(20px,4vw,56px);margin-top:36px;flex-wrap:wrap;border-top:1px solid var(--line-dark);padding-top:22px}
+.about .facts b{display:block;font-size:30px;letter-spacing:-.03em;font-weight:600}
+.about .facts span{font-size:14px;color:#5E5247}
+@media(max-width:800px){.about .cols{grid-template-columns:1fr}.about .ph{max-width:420px}}
+
+/* CONTACT */
+.contact{position:relative;background:var(--brown-deep);padding:clamp(90px,12vw,160px) 0;overflow:hidden}
+.contact .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px)}
+.contact h2{font-size:clamp(40px,6vw,96px)}
+.contact .lede{margin-top:24px;max-width:40ch;font-size:clamp(18px,1.5vw,21px);opacity:.92}
+.contact .steps{margin-top:34px;list-style:none;counter-reset:s}
+.contact .steps li{counter-increment:s;padding:13px 0 13px 44px;border-top:1px solid var(--line);position:relative;opacity:.9}
+.contact .steps li:before{content:"0" counter(s);position:absolute;left:0;top:15px;font-family:"Geist Mono",monospace;font-size:12px;opacity:.6}
+form{display:grid;gap:14px;align-content:start}
+label{display:block;font-size:13px;opacity:.75;margin-bottom:7px}
+input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(241,237,226,.35);color:var(--off);font:inherit;font-size:18px;padding:10px 0 12px;border-radius:0;outline:none;transition:border-color .2s}
+select option{color:var(--ink)}
+input:focus,select:focus,textarea:focus{border-color:var(--off)}
+textarea{resize:vertical;min-height:110px}
+.hp{position:absolute;left:-9999px}
+button.send{margin-top:12px;justify-self:start;background:var(--off);color:var(--ink);border:0;border-radius:999px;padding:15px 26px;font:inherit;font-weight:500;font-size:15px;cursor:pointer}
+button.send:disabled{opacity:.5}
+.status{font-size:15px;min-height:1.5em;opacity:.9}
+.status[data-state=err]{color:#F2B8A0}
+@media(max-width:860px){.contact .cols{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{background:var(--brown-deep);border-top:1px solid var(--line);padding:50px 0 40px}
+footer .cols{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:end}
+footer .logo{width:110px}
+footer nav{display:flex;gap:26px;flex-wrap:wrap}
+footer a{text-decoration:none;opacity:.8;font-size:14px}
+footer a:hover{opacity:1}
+footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="tse" viewBox="0 0 120 64"><text x="60" y="19" text-anchor="middle" font-family="Geist,Helvetica,Arial,sans-serif" font-weight="700" font-size="21" letter-spacing="-1" fill="currentColor">THE</text><text x="60" y="40" text-anchor="middle" font-family="Geist,Helvetica,Arial,sans-serif" font-weight="700" font-size="21" letter-spacing="-1" fill="currentColor">SERVICE</text><text x="60" y="61" text-anchor="middle" font-family="Geist,Helvetica,Arial,sans-serif" font-weight="700" font-size="21" letter-spacing="-1" fill="currentColor">EDIT</text></symbol>
+</defs></svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" aria-label="The Service Edit, home"><svg class="logo" viewBox="0 0 120 64" role="img"><title>The Service Edit</title><use href="#tse"/></svg></a>
+    <ul>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#cost">What it costs</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="cta" href="#start">Start a project</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="copy wrap">
+    <h1 class="caps">Why does one<br class="d"> website cost $500<br class="d"> and another $5K?</h1>
+    <p class="sub">It isn't because one is prettier. It's what the pages are built to do.</p>
+    <div class="actions">
+      <a class="btn solid" href="#how">See the difference</a>
+      <a class="btn ghost" href="#start">Get your site reviewed</a>
+    </div>
+  </div>
+  <picture>
+    <source media="(max-width:700px)" srcset="assets/hero-mobile.jpg">
+    <img src="assets/hero.jpg" alt="Printed website builds laid out on a stainless steel workbench" fetchpriority="high">
+  </picture>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <span class="mono">The Service Edit</span>
+    <h2 class="caps rv" style="margin-top:18px">You're not paying for five pages. <span>You're paying for what those five pages do.</span></h2>
+    <div class="row">
+      <p class="rv">A cheap site is a template with your logo on it. That's fine if you only need to exist online. If your website is meant to bring in work, the design is the last and smallest part of the job.</p>
+      <p class="rv">I build websites and email for trades, hospitality and local service businesses across Australia. Every build goes through the same five layers, and every layer has one job: turning attention into enquiries.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tear" id="how">
+  <div class="wrap">
+    <div class="tear-head">
+      <div><span class="mono">One build, taken apart</span><h2 class="caps">The five layers under a website that works.</h2></div>
+      <p>Coastside Solid Plastering renders and plasters commercial projects on the Gold Coast. Their buyers are builders and project managers, not homeowners. Here is what went into the site before anyone saw a colour.</p>
+    </div>
+
+    <div class="layers">
+      <article class="layer rv">
+        <div class="txt"><span class="num">01 · Strategy</span><h3 class="caps">The expensive part starts before the design.</h3>
+        <p>Who needs to find you, what they need to know, and what happens next. For a commercial renderer that meant leading with crew capacity, systems and documentation, because that is what a builder checks before sending plans.</p></div>
+        <div class="fig"><img src="assets/layer-strategy.jpg" alt="Sitemap, customer journey and page hierarchy sheets marked up in black marker" loading="lazy"></div>
+      </article>
+      <article class="layer rv">
+        <div class="txt"><span class="num">02 · Copy</span><h3 class="caps">Good copy doesn't sound like everyone else.</h3>
+        <p>"Quality you can trust" says nothing. "The specification comes first" tells a builder exactly what kind of subcontractor they are dealing with. Every generic line is cut until the site sounds like the business, not the internet.</p></div>
+        <div class="fig"><img src="assets/layer-copy.jpg" alt="Printed website copy with generic phrases struck out in black marker" loading="lazy"></div>
+      </article>
+      <article class="layer rv">
+        <div class="txt"><span class="num">03 · Search</span><h3 class="caps">The best website is useless if nobody finds it.</h3>
+        <p>Services, projects and service areas are structured and connected so Google understands what you do and where you do it. Search isn't something added afterwards. It is the architecture.</p></div>
+        <div class="fig"><img src="assets/layer-search.jpg" alt="Separate printed pages of the Coastside website organised with index tabs" loading="lazy"></div>
+      </article>
+      <article class="layer rv">
+        <div class="txt"><span class="num">04 · Enquiries</span><h3 class="caps">Traffic isn't the end goal. Enquiries are.</h3>
+        <p>Every section has a job. The hero gives context, the projects give proof, the capability section builds confidence, and one clear next step asks for the plans. Nothing sits on the page without a reason.</p></div>
+        <div class="fig"><img src="assets/layer-enquiry.jpg" alt="Coastside website sections laid in sequence along a workbench, ending in an enquiry form" loading="lazy"></div>
+      </article>
+      <article class="layer rv">
+        <div class="txt"><span class="num">05 · Build</span><h3 class="caps">Designing it is only half the job.</h3>
+        <p>It has to load fast on a phone on site and look sharp on a desktop in the office. Forms that send, images that load, layouts that hold at every screen size. The part nobody sees is the part that decides whether it works.</p></div>
+        <div class="fig"><img src="assets/layer-build.jpg" alt="Desktop, tablet and mobile proofs of the Coastside website with technical annotations" loading="lazy"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="work-head">
+      <div><span class="mono" style="color:var(--mute)">Selected builds</span><h2 class="caps" style="margin-top:14px">Built to do a job.</h2></div>
+      <p>Six builds across six industries. Each one started with the same question: what does this business need a visitor to do?</p>
+    </div>
+    <div class="grid" id="featured"></div>
+    <div class="index">
+      <span class="mono">Every build</span>
+      <ol id="archive"></ol>
+    </div>
+  </div>
+</section>
+
+<section class="price" id="cost">
+  <div class="wrap">
+    <span class="mono" style="opacity:.6">What it costs</span>
+    <h2 class="caps rv" style="margin-top:14px">Why builds cost what they cost.</h2>
+    <div class="pcols">
+      <div class="pcol rv">
+        <span class="mono">The cheap site</span>
+        <h3>A template, your logo, your phone number.</h3>
+        <ul><li>Written by filling in blanks</li><li>Same structure as every other site in your trade</li><li>Search left to chance</li><li>No thought about what a visitor does next</li><li>Right answer if you only need to exist online</li></ul>
+      </div>
+      <div class="pcol rv">
+        <span class="mono">The built site</span>
+        <h3>A sales tool, planned around your buyer.</h3>
+        <ul><li>Strategy before design</li><li>Copy written for your customers, in your voice</li><li>Pages structured to be found</li><li>Every section leading to an enquiry</li><li>Built to load fast and hold up on every screen</li></ul>
+      </div>
+    </div>
+    <p class="foot rv">Every business is different, so every quote is too. Tell me what you need the site to do and I'll tell you what it takes, including when the cheaper option is the right one.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap cols">
+    <div class="ph rv"><img src="assets/mel.jpg" alt="Mel Cox, founder of The Service Edit" loading="lazy"></div>
+    <div>
+      <span class="mono">About</span>
+      <h2 class="caps rv">A practitioner, not a marketer.</h2>
+      <p class="rv">I'm Mel. I've spent more than twenty years in hospitality and owned three cafés. I know what it's like to pay for a website that looks fine and does nothing, and what it's like when the phone doesn't ring.</p>
+      <p class="rv">The Service Edit builds websites and email marketing for trades, hospitality and local service businesses, from Perth, for clients right across Australia. You deal with me from the first conversation to the day the site goes live.</p>
+      <div class="facts rv">
+        <div><b>20+ years</b><span>in hospitality</span></div>
+        <div><b>3 cafés</b><span>owned and run</span></div>
+        <div><b>2 services</b><span>websites and email</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="start">
+  <div class="wrap cols">
+    <div>
+      <span class="mono" style="opacity:.6">Start here</span>
+      <h2 class="caps" style="margin-top:14px">Send me your website.</h2>
+      <p class="lede">I'll go through it the same way I go through every build and tell you plainly what's costing you enquiries. If a new site isn't the answer, I'll say so.</p>
+      <ol class="steps">
+        <li>You send your site and a line about your business</li>
+        <li>I review the strategy, copy, search, enquiry path and build</li>
+        <li>You get a straight answer on what to fix first</li>
+      </ol>
+    </div>
+    <form id="tseForm" novalidate>
+      <div><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div><label for="f-biz">Business, and your website if you have one</label><input id="f-biz" name="business" type="text"></div>
+      <div><label for="f-need">What are you after</label>
+        <select id="f-need" name="need"><option>A review of my current site</option><option>Website and email</option><option>Website only</option><option>Email marketing only</option><option>Not sure yet</option></select></div>
+      <div><label for="f-slow">Where are you losing people?</label><textarea id="f-slow" name="slow" rows="4" placeholder="Nobody can find us. Quotes go out and never come back. People visit once and we never hear from them again."></textarea></div>
+      <div class="hp"><label for="f-co">Company</label><input id="f-co" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+      <button class="send" type="submit">Send it through</button>
+      <p class="status" id="tseStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <svg class="logo" viewBox="0 0 120 64" role="img"><title>The Service Edit</title><use href="#tse"/></svg>
+      <small>Websites built to turn attention into enquiries. Based in Perth, working Australia wide.</small>
+    </div>
+    <nav>
+      <a href="#how">How it works</a><a href="#work">Work</a><a href="#about">About</a>
+      <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
+      <a href="../privacy-policy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+/* Projects. Notes are one line each: what the site was built to do. */
+var FEATURED=[
+ {n:'CVBS',i:'Events & Venues',l:'Worldwide',u:'https://the-service-edit.github.io/cvbs-2026/',img:'assets/work-cvbs.jpg',note:'A global venue finding business, rebuilt in phases around trust rather than search.'},
+ {n:'JT Carpentry WA',i:'Carpentry & Joinery',l:'Perth, WA',u:'https://the-service-edit.github.io/jt-carpentry-wa/',img:'assets/work-jt.jpg',note:'Referral-led carpentry, given somewhere serious to send a serious enquiry.'},
+ {n:'ZB Accounting',i:'Finance & Accounting',l:'NSW',u:'https://the-service-edit.github.io/zb-accounting/',img:'assets/work-zb.jpg',note:'Tax and advisory, made personal without giving up the professional edge.'},
+ {n:'Creative Green',i:'Landscaping',l:'Adelaide, SA',u:'https://the-service-edit.github.io/creative-green/',img:'assets/work-creative-green.jpg',note:'Landscaping built to own its enquiries instead of renting them from lead platforms.'},
+ {n:'X Tiling',i:'Specialist Trades',l:'Melbourne, VIC',u:'https://the-service-edit.github.io/x-tiling/',img:'assets/work-x-tiling.jpg',note:'A highly visual trade where precision is the proof, so the work runs full width.'},
+ {n:'Waterman',i:'Property',l:'Adelaide, SA',u:'https://the-service-edit.github.io/waterman-home/',img:'assets/work-waterman.jpg',note:'South Australia’s first buyer agency, with two decades of authority made legible.'}
+];
+var ARCHIVE=[
+ ['Coastside Solid Plastering','Specialist Trades','Gold Coast, QLD','https://coastside.theserviceedit.com'],
+ ['Sydney Inner West Builders','Construction','Sydney, NSW','https://the-service-edit.github.io/sydney-inner-west-builders/'],
+ ['Sydney Carpentry & Constructions','Construction','Sydney, NSW','https://the-service-edit.github.io/scc/'],
+ ['Home Haven','Construction','Brisbane, QLD','https://the-service-edit.github.io/home-haven/'],
+ ['JMA Group','Construction','Perth, WA','https://the-service-edit.github.io/jma-group/'],
+ ['Tower Carpentry','Carpentry & Joinery','Perth, WA','https://the-service-edit.github.io/tower-carpentry/'],
+ ['Fixing Carpentry WA','Carpentry & Joinery','Perth, WA','https://the-service-edit.github.io/fcwa/'],
+ ['Blocked Up Plumbing','Specialist Trades','Sydney, NSW','https://the-service-edit.github.io/blocked-up-plumbing/'],
+ ['Domain Rental Management','Property','Adelaide, SA','https://the-service-edit.github.io/domain-rental/'],
+ ['Black Swan Mortgage Services','Finance & Accounting','Perth, WA','https://the-service-edit.github.io/black-swan/'],
+ ['Orange Mortgage & Finance','Finance & Accounting','Perth, WA','https://the-service-edit.github.io/orange-mortgage-brokers/'],
+ ['Integrity Financial Advisory','Finance & Accounting','Adelaide, SA','https://the-service-edit.github.io/integrity/'],
+ ['RJS Accounting Services','Finance & Accounting','Tewantin, QLD','https://the-service-edit.github.io/rjs/']
+];
+(function(){
+  var g=document.getElementById('featured');
+  FEATURED.forEach(function(p){
+    var a=document.createElement('a');a.className='proj rv';a.href=p.u;a.target='_blank';a.rel='noopener';
+    a.innerHTML='<div class="ph"><img src="'+p.img+'" alt="'+p.n+' website, printed" loading="lazy"></div><div class="meta"><h3>'+p.n+'</h3><span class="mono">'+p.i+' · '+p.l+'</span></div><p>'+p.note+'</p>';
+    g.appendChild(a);
+  });
+  var all=FEATURED.map(function(p){return [p.n,p.i,p.l,p.u]}).concat(ARCHIVE);
+  var o=document.getElementById('archive');
+  all.forEach(function(r,k){
+    var li=document.createElement('li');
+    var href=r[3]||'#work';
+    li.innerHTML='<a href="'+href+'"'+(r[3]?' target="_blank" rel="noopener"':'')+'><span class="n">'+String(k+1).padStart(2,'0')+'</span><span class="nm">'+r[0]+'</span><span class="in">'+r[1]+'</span><span class="lc">'+r[2]+'</span><span class="ar">'+(r[3]?'&#8599;':'')+'</span></a>';
+    o.appendChild(li);
+  });
+})();
+
+/* Nav */
+(function(){
+  var nav=document.getElementById('nav'),btn=document.getElementById('menuBtn');
+  function s(){nav.classList.toggle('solid',window.scrollY>40)}s();window.addEventListener('scroll',s,{passive:true});
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu'});
+  nav.querySelectorAll('ul a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');btn.textContent='Menu';btn.setAttribute('aria-expanded','false')})});
+})();
+
+/* Reveal */
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+/* Form: same Web3Forms endpoint as the live site, with a mailto fallback */
+(function(){
+  var ENDPOINT="https://api.web3forms.com/submit",ACCESS_KEY="2870139d-38b7-4118-9f7c-9217fd52c463",TO="hello@theserviceedit.com";
+  var form=document.getElementById('tseForm'),status=document.getElementById('tseStatus'),button=form.querySelector('.send');
+  function say(m,s){status.textContent=m;status.setAttribute('data-state',s||'')}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(form.company.value)return;
+    if(!form.checkValidity()){form.reportValidity();say('A couple of fields still need you.','err');return}
+    var d={name:form.name.value.trim(),email:form.email.value.trim(),business:form.business.value.trim(),need:form.need.value,slow:form.slow.value.trim()};
+    button.disabled=true;say('Sending.');
+    fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({access_key:ACCESS_KEY,subject:'New enquiry from '+(d.business||d.name),from_name:'The Service Edit website',name:d.name,email:d.email,business:d.business,'What they are after':d.need,'Where they are losing people':d.slow})})
+    .then(function(r){if(!r.ok)throw new Error(r.status);form.reset();say('Got it. I read every one of these myself and will come back to you.')})
+    .catch(function(){say('That did not send. Email me directly at '+TO+' and I will pick it up.','err')})
+    .finally(function(){button.disabled=false});
+  });
+})();
+</script>
+</body>
+</html>

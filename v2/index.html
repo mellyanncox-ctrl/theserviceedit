@@ -107,6 +107,33 @@ a{color:inherit}
 .index .ar{text-align:right;color:var(--mute)}
 @media(max-width:760px){.index li a{grid-template-columns:36px 1fr 20px}.index .in,.index .lc{display:none}}
 
+
+/* EMAIL */
+.email{background:var(--brown-deep);padding:clamp(90px,12vw,160px) 0}
+.email-head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,70px)}
+.email-head h2{font-size:clamp(40px,6vw,96px)}
+.email-head p{max-width:44ch;opacity:.9;font-size:clamp(17px,1.4vw,20px)}
+.email .wide{border-radius:4px;overflow:hidden}
+.email .wide img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.eflow{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(40px,5vw,70px);border-top:1px solid var(--line)}
+.eflow div{padding:24px clamp(0px,2vw,30px) 0 0}
+.eflow div+div{border-left:1px solid var(--line);padding-left:clamp(16px,2vw,30px)}
+.eflow .mono{opacity:.55}
+.eflow h3{font-size:22px;font-weight:600;letter-spacing:-.02em;margin:10px 0 8px;line-height:1.15}
+.eflow p{opacity:.85;font-size:16px;max-width:36ch}
+.epair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,32px);margin-top:clamp(50px,7vw,90px)}
+.epair figure{margin:0}
+.epair img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.epair figcaption{margin-top:12px;font-size:15px;opacity:.75}
+.proof{margin-top:clamp(70px,9vw,120px);border-top:1px solid var(--line);padding-top:clamp(30px,4vw,50px)}
+.proof h3{font-size:clamp(28px,3vw,44px);font-weight:600;letter-spacing:-.03em;line-height:1.05;margin-top:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,50px);margin-top:clamp(30px,4vw,50px)}
+.stats b{display:block;font-size:clamp(56px,7vw,112px);font-weight:600;letter-spacing:-.05em;line-height:.9}
+.stats span{display:block;margin-top:14px;font-weight:500}
+.stats p{margin-top:8px;opacity:.75;font-size:15px;max-width:34ch}
+.proof .src{margin-top:clamp(28px,3vw,40px);max-width:70ch;opacity:.7;font-size:15px}
+@media(max-width:800px){.email-head,.epair{grid-template-columns:1fr}.eflow,.stats{grid-template-columns:1fr}.eflow div+div{border-left:0;padding-left:0;border-top:1px solid var(--line);margin-top:22px}}
+
 /* PRICE */
 .price{background:var(--brown);padding:clamp(90px,12vw,160px) 0}
 .price h2{font-size:clamp(40px,6vw,96px);max-width:12ch}
@@ -181,6 +208,7 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
     <ul>
       <li><a href="#how">How it works</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#email">Email</a></li>
       <li><a href="#cost">What it costs</a></li>
       <li><a href="#about">About</a></li>
     </ul>
@@ -268,6 +296,35 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
   </div>
 </section>
 
+<section class="email" id="email">
+  <div class="wrap">
+    <div class="email-head">
+      <div><span class="mono" style="opacity:.6">Email marketing</span><h2 class="caps" style="margin-top:14px">Your list is already there. Let's use it.</h2></div>
+      <p>Every booking, every order, every QR code on a table is a name you already have. Most businesses never send those people anything. I write, design and send the emails, and set up the ones that run on their own.</p>
+    </div>
+    <div class="wide rv"><img src="assets/email-campaigns.jpg" alt="Three printed Jordy's email campaigns on a stainless steel bench with marker notes" loading="lazy"></div>
+    <div class="eflow">
+      <div class="rv"><span class="mono">01</span><h3>Set up properly</h3><p>Your platform configured, your domain authenticated, your list cleaned and segmented, so emails land in inboxes instead of spam.</p></div>
+      <div class="rv"><span class="mono">02</span><h3>Written and sent</h3><p>Campaigns written in your voice, designed to match your brand and sent on a schedule. You approve them, or you don't and they go anyway.</p></div>
+      <div class="rv"><span class="mono">03</span><h3>Running on their own</h3><p>Welcome, post visit and win back emails. Set once, then working every day without you touching them.</p></div>
+    </div>
+    <div class="epair">
+      <figure class="rv"><img src="assets/email-sequences.jpg" alt="Welcome, post visit and win back emails laid out in sequence" loading="lazy"><figcaption>The sequences: welcome, post visit, win back.</figcaption></figure>
+      <figure class="rv"><img src="assets/email-subject.jpg" alt="A printed email with subject line options taped above it, one crossed out" loading="lazy"><figcaption>The subject line gets the same edit as the website copy.</figcaption></figure>
+    </div>
+    <div class="proof">
+      <span class="mono" style="opacity:.6">Proof</span>
+      <h3 class="rv">Jordy's midweek, since March.</h3>
+      <div class="stats">
+        <div class="rv"><b>+17%</b><span>Midweek covers per trading day</span><p>Wednesday and Thursday went from 42.9 covers a day to 50.1, measured over 128 trading days either side of the start.</p></div>
+        <div class="rv"><b>July</b><span>Biggest month on the app</span><p>The highest ordering revenue month of the last twelve, ahead of the summer peak in January.</p></div>
+        <div class="rv"><b>58.3%</b><span>Open rate, August sends</span><p>Against a hospitality benchmark of 25 to 35 per cent. Automated sends ran at 47.3 per cent.</p></div>
+      </div>
+      <p class="src rv">Jordy's real numbers out of NowBookIt and me&amp;u, not a case study written backwards. The before window runs into summer and the after window into winter, which makes a 17 per cent midweek rise harder to argue with, not easier.</p>
+    </div>
+  </div>
+</section>
+
 <section class="price" id="cost">
   <div class="wrap">
     <span class="mono" style="opacity:.6">What it costs</span>
@@ -340,7 +397,7 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
       <small>Websites built to turn attention into enquiries. Based in Perth, working Australia wide.</small>
     </div>
     <nav>
-      <a href="#how">How it works</a><a href="#work">Work</a><a href="#about">About</a>
+      <a href="#how">How it works</a><a href="#work">Work</a><a href="#email">Email</a><a href="#about">About</a>
       <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
       <a href="../privacy-policy.html">Privacy</a>
     </nav>

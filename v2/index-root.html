@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>The Service Edit · Websites built to turn attention into enquiries</title>
 <meta name="description" content="Websites and email for trades, hospitality and local service businesses across Australia. Strategy, copy, search, enquiry paths and build, from Perth.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -195,6 +195,23 @@ footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
+<!-- tse-protect -->
+<style>
+html{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%}
+img,picture,video,svg{-webkit-user-drag:none;user-drag:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+</style>
+<script>
+(function(){
+  var media='img,picture,video,svg,[style*="background-image"]';
+  document.addEventListener('contextmenu',function(e){if(e.target.closest(media))e.preventDefault();});
+  document.addEventListener('dragstart',function(e){if(e.target.closest(media))e.preventDefault();});
+  ['gesturestart','gesturechange','gestureend'].forEach(function(t){document.addEventListener(t,function(e){e.preventDefault();},{passive:false});});
+  document.addEventListener('touchmove',function(e){if(e.touches.length>1)e.preventDefault();},{passive:false});
+  var last=0;document.addEventListener('touchend',function(e){var n=Date.now();if(n-last<300)e.preventDefault();last=n;},{passive:false});
+  document.addEventListener('wheel',function(e){if(e.ctrlKey)e.preventDefault();},{passive:false});
+  document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&['+','=','-','_','0'].indexOf(e.key)>-1)e.preventDefault();});
+})();
+</script>
 </head>
 <body>
 

@@ -347,6 +347,31 @@ footer{padding:40px 0 32px}
 .mcta.show{transform:none}
 footer{padding-bottom:96px}
 }
+
+/* PHOTOS */
+.photo{background:var(--wall);padding:clamp(90px,12vw,160px) 0}
+.photo-head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,70px)}
+.photo-head h2{font-size:clamp(40px,6vw,96px)}
+.photo-head p{max-width:44ch;opacity:.9;font-size:clamp(17px,1.4vw,20px)}
+.photo figure{margin:0}
+.ptwo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px)}
+.ptwo img{width:100%;height:auto;aspect-ratio:1000/1242;object-fit:cover;border-radius:4px}
+.photo figcaption{margin-top:12px;opacity:.6}
+.pflow{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:clamp(40px,5vw,64px)}
+.pflow div+div{border-left:1px solid var(--line);padding-left:40px}
+.pflow h3{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:12px 0 10px}
+.pflow p{opacity:.8;font-size:16px;max-width:34ch}
+.pdirs{margin-top:clamp(70px,9vw,120px)}
+.pdirs-head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-bottom:28px}
+.pdirs-head p{opacity:.85;max-width:44ch}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px)}
+.pgrid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.poffer{margin-top:clamp(70px,9vw,120px);display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;border-top:1px solid var(--line);padding-top:clamp(40px,5vw,60px)}
+.poffer h3{font-size:clamp(30px,3.6vw,54px)}
+.poffer p{opacity:.85;max-width:40ch;margin-bottom:22px}
+.pbtn{display:inline-block;text-decoration:none;font-size:15px;font-weight:500;border:1px solid var(--off);border-radius:999px;padding:13px 24px;color:var(--off)}
+.pbtn:hover{background:var(--off);color:var(--ink)}
+@media(max-width:800px){.photo-head,.poffer,.pdirs-head{grid-template-columns:1fr}.pdirs-head{gap:12px}.pflow{grid-template-columns:1fr;gap:0}.pflow div+div{border-left:0;padding-left:0;border-top:1px solid var(--line);margin-top:22px;padding-top:22px}.pgrid{grid-template-columns:1fr 1fr}.pgrid figure:first-child{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -478,6 +503,36 @@ footer{padding-bottom:96px}
     <div class="rv-feature" id="rvFeature"></div>
     <div class="rv-grid" id="rvGrid"></div>
     <div class="rv-dots" id="rvDots" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="photo" id="photos">
+  <div class="wrap">
+    <div class="photo-head">
+      <div><span class="mono" style="opacity:.6">Your photos</span><h2 class="caps" style="margin-top:14px">Same dish. Better light.</h2></div>
+      <p>Most businesses already have the photos. They're just on a phone, shot at 2pm under a fluoro. I take what you've got and make it look the way it does in person. Nothing added to the plate, nothing that isn't on the menu.</p>
+    </div>
+    <div class="ptwo">
+      <figure><img src="v2/assets/photo-ft-before.jpg" alt="French toast with berries as shot on a phone" loading="lazy" width="1000" height="1242"><figcaption class="mono">Before · iPhone, as sent</figcaption></figure>
+      <figure><img src="v2/assets/photo-ft-after.jpg" alt="The same french toast after the photo upgrade" loading="lazy" width="1000" height="1242"><figcaption class="mono">After</figcaption></figure>
+    </div>
+    <div class="pflow">
+      <div><span class="mono" style="opacity:.6">01</span><h3>Your food, not a render</h3><p>Same portion, same plate, same garnish. If a customer orders it, this is what turns up.</p></div>
+      <div><span class="mono" style="opacity:.6">02</span><h3>No photoshoot needed</h3><p>Send me what's in your camera roll. It's part of every build, so the site launches with photos that match the rest of it.</p></div>
+      <div><span class="mono" style="opacity:.6">03</span><h3>Used everywhere</h3><p>The same shots carry your emails, your Google profile and your menus. One upgrade, every place people find you.</p></div>
+    </div>
+    <div class="pdirs">
+      <div class="pdirs-head"><span class="mono" style="opacity:.6">One phone photo · three directions</span><p>From the same shot: a clean overhead for the menu, a warm three quarter for the website, a moody crop for email headers. Same french toast every time.</p></div>
+      <div class="pgrid">
+        <figure><img src="v2/assets/photo-ft-after.jpg" alt="French toast, overhead" loading="lazy"><figcaption class="mono">Menu · overhead</figcaption></figure>
+        <figure><img src="v2/assets/photo-ft-angle.jpg" alt="French toast, three quarter angle" loading="lazy"><figcaption class="mono">Website · three quarter</figcaption></figure>
+        <figure><img src="v2/assets/photo-ft-moody.jpg" alt="French toast in low light" loading="lazy"><figcaption class="mono">Email · low light</figcaption></figure>
+      </div>
+    </div>
+    <div class="poffer">
+      <h3 class="caps">Send me your worst photo.</h3>
+      <div><p>Pick the one you'd never put on your website. I'll send it back upgraded, free, so you can see what your site could look like before we talk about building it.</p><a class="pbtn" href="#start">Send a photo</a></div>
+    </div>
   </div>
 </section>
 

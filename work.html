@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Work &middot; The Service Edit</title>
-<meta name="description" content="Client sites, concept builds and work in progress, each labelled as what it is. Website design and email marketing for trades, hospitality and local service businesses across Australia. Based in Perth, WA.">
+<meta name="description" content="Real client sites, filmed on a phone and labelled as what they are. Website design and email marketing for trades, hospitality and local service businesses across Australia. Based in Perth, WA.">
 <meta property="og:title" content="Work &middot; The Service Edit"><meta property="og:type" content="website">
-<meta property="og:description" content="Client sites, concept builds and work in progress, each labelled as what it is. Website design and email marketing for trades, hospitality and local service businesses across Australia. Based in Perth, WA.">
+<meta property="og:description" content="Real client sites, filmed on a phone and labelled as what they are. Website design and email marketing for trades, hospitality and local service businesses across Australia. Based in Perth, WA.">
 <meta property="og:image" content="https://theserviceedit.com/tse2/assets/hero.webp">
 <meta property="og:image:width" content="1672"><meta property="og:image:height" content="941">
 <meta property="og:url" content="https://theserviceedit.com/work.html">
@@ -16,6 +16,31 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111210'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='30' font-weight='600' fill='%23f6f3ec' text-anchor='middle'%3Ese%3C/text%3E%3C/svg%3E">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="tse2/assets/css/site.css">
+<style>
+.wk { padding-block: clamp(1rem,3vw,2rem) clamp(3rem,7vw,5.5rem); }
+.wk__list { display: grid; gap: clamp(4rem,9vw,7.5rem); }
+.wk__item { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(2rem,5vw,5rem); align-items: center; }
+.wk__item:nth-child(even) .wk__media { order: 2; }
+.wk__media { position: relative; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 1rem; overflow: hidden; background: #584638; }
+.wk__media video, .wk__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.wk__play { position: absolute; inset: auto 1rem 1rem auto; font: 500 .72rem/1 var(--byq-font-mono, monospace); letter-spacing: .14em; text-transform: uppercase; color: #F6F3EC; background: rgba(7,7,8,.6); border: 1px solid rgba(246,243,236,.3); border-radius: 999px; padding: .6rem .9rem; cursor: pointer; }
+.wk__play[hidden] { display: none; }
+.wk__txt { display: grid; gap: 1rem; max-width: 34rem; }
+.wk__txt h2 { margin: 0; font-size: clamp(2.2rem,5vw,4rem); text-transform: uppercase; letter-spacing: -.035em; line-height: .95; }
+.wk__meta { color: color-mix(in srgb, var(--color--light) 55%, transparent); font-size: .95rem; margin: 0; }
+.wk__note { margin: 0; font-size: clamp(1.05rem,1.5vw,1.2rem); line-height: 1.55; }
+.wk__did { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+.wk__did li { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; border: 1px solid var(--byq-depth); border-radius: 999px; padding: .45rem .8rem; }
+.wk__status { display: inline-flex; align-items: center; gap: .5rem; font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: color-mix(in srgb, var(--color--light) 70%, transparent); }
+.wk__status::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: #9CCBA3; }
+.wk__status--build::before { background: #E6C77A; }
+.wk__go { justify-self: start; margin-top: .5rem; }
+@media (max-width: 52rem) {
+  .wk__item { grid-template-columns: 1fr; gap: 1.5rem; }
+  .wk__item:nth-child(even) .wk__media { order: 0; }
+  .wk__media { max-width: 30rem; }
+}
+</style>
 </head>
 <body class="dark">
   <a class="tse-skip" href="#main">Skip to content</a>
@@ -38,42 +63,90 @@
     <div class="tse-wrap">
       <p class="pg-lab">Work</p>
       <h1>Selected<br><span class="mute">work</span></h1>
-      <p class="lede">Client sites, concept builds and work in progress, each labelled as what it is. Every one of them opens on the real thing.</p>
+      <p class="lede">Real sites for real businesses, filmed on a phone because that&rsquo;s where your customers see them. Each one is labelled as what it is.</p>
     </div>
   </section>
-  <section class="pg-sec pg-sec--plain">
+  <section class="wk">
     <div class="tse-wrap">
+      <div class="wk__list">
+      <article class="wk__item">
+        <div class="wk__media">
+          <video src="work/video/jordys.mp4" poster="work/video/jordys.jpg" muted loop playsinline preload="none" aria-label="Jordy&rsquo;s Casuarina website scrolling on a phone"></video>
+          <button class="wk__play" type="button" hidden>Play</button>
+        </div>
+        <div class="wk__txt">
+          <span class="wk__status">Live</span>
+          <h2>Jordy&rsquo;s Casuarina</h2>
+          <p class="wk__meta">Sourdough pizza &middot; Casuarina, NSW</p>
+          <p class="wk__note">A pizza and margarita bar, built to get people booking a table or ordering in, with the email running alongside it.</p>
+          <ul class="wk__did"><li>Website</li><li>Email marketing</li></ul>
+          <a class="btn wk__go" href="https://jordyscasuarina.com" target="_blank" rel="noopener">View the site &rarr;</a>
+        </div>
+      </article>
+      <article class="wk__item">
+        <div class="wk__media">
+          <video src="work/video/giant.mp4" poster="work/video/giant.jpg" muted loop playsinline preload="none" aria-label="Giant Coffee website scrolling on a phone"></video>
+          <button class="wk__play" type="button" hidden>Play</button>
+        </div>
+        <div class="wk__txt">
+          <span class="wk__status">Live</span>
+          <h2>Giant Coffee</h2>
+          <p class="wk__meta">Caf&eacute; &amp; roastery &middot; Northbridge, Perth WA</p>
+          <p class="wk__note">A laneway caf&eacute;, built so you can order ahead online or by text before you walk in.</p>
+          <ul class="wk__did"><li>Website</li></ul>
+          <a class="btn wk__go" href="https://giantcoffee.com.au" target="_blank" rel="noopener">View the site &rarr;</a>
+        </div>
+      </article>
+      <article class="wk__item">
+        <div class="wk__media">
+          <video src="work/video/goldfoil.mp4" poster="work/video/goldfoil.jpg" muted loop playsinline preload="none" aria-label="Gold Foil Books website scrolling on a phone"></video>
+          <button class="wk__play" type="button" hidden>Play</button>
+        </div>
+        <div class="wk__txt">
+          <span class="wk__status">Live</span>
+          <h2>Gold Foil Books</h2>
+          <p class="wk__meta">Artist-led bookbinding &middot; Wollongong, NSW</p>
+          <p class="wk__note">Hand-bound special editions sold worldwide, with the craft doing the selling.</p>
+          <ul class="wk__did"><li>Website</li><li>E-commerce</li></ul>
+          <a class="btn wk__go" href="https://goldfoilbooks.com.au" target="_blank" rel="noopener">View the site &rarr;</a>
+        </div>
+      </article>
+      <article class="wk__item">
+        <div class="wk__media">
+          <video src="work/video/cvbs.mp4" poster="work/video/cvbs.jpg" muted loop playsinline preload="none" aria-label="CVBS website scrolling on a phone"></video>
+          <button class="wk__play" type="button" hidden>Play</button>
+        </div>
+        <div class="wk__txt">
+          <span class="wk__status wk__status--build">Client build</span>
+          <h2>CVBS</h2>
+          <p class="wk__meta">Venue sourcing &middot; Australia-wide</p>
+          <p class="wk__note">A venue finding business, rebuilt in phases around trust rather than search.</p>
+          <ul class="wk__did"><li>Website</li></ul>
+          <a class="btn wk__go" href="https://the-service-edit.github.io/cvbs-2026/" target="_blank" rel="noopener">View the site &rarr;</a>
+        </div>
+      </article>
+      <article class="wk__item">
+        <div class="wk__media">
+          <video src="work/video/nutterjuck.mp4" poster="work/video/nutterjuck.jpg" muted loop playsinline preload="none" aria-label="NutterJuck Lures website scrolling on a phone"></video>
+          <button class="wk__play" type="button" hidden>Play</button>
+        </div>
+        <div class="wk__txt">
+          <span class="wk__status wk__status--build">In progress</span>
+          <h2>NutterJuck Lures</h2>
+          <p class="wk__meta">Handmade lures &middot; Australia</p>
+          <p class="wk__note">Handmade fishing lures with a shop built to be as simple as the product.</p>
+          <ul class="wk__did"><li>Website</li><li>Online shop</li></ul>
+          <a class="btn wk__go" href="https://the-service-edit.github.io/nutterjuck/" target="_blank" rel="noopener">View the site &rarr;</a>
+        </div>
+      </article>
+      </div>
+    </div>
+  </section>
+  <section class="pg-sec">
+    <div class="tse-wrap">
+      <p class="pg-lab">Concept builds</p>
+      <h2>Built to show what&rsquo;s possible</h2>
       <div class="idx">
-      <a class="idx__row" href="https://giantcoffee.com.au" target="_blank" rel="noopener">
-        <span class="idx__n">Giant Coffee</span>
-        <span class="idx__m">Cafe &amp; Roastery &middot; Northbridge, Perth WA</span>
-        <span class="idx__s">Live</span>
-        <span class="idx__go">View the site &rarr;</span>
-      </a>
-      <a class="idx__row" href="https://jordyscasuarina.com" target="_blank" rel="noopener">
-        <span class="idx__n">Jordy&rsquo;s Casuarina</span>
-        <span class="idx__m">Sourdough Pizza &middot; Casuarina, NSW</span>
-        <span class="idx__s">Live</span>
-        <span class="idx__go">View the site &rarr;</span>
-      </a>
-      <a class="idx__row" href="https://goldfoilbooks.com.au" target="_blank" rel="noopener">
-        <span class="idx__n">Gold Foil Books</span>
-        <span class="idx__m">Artist-led Bookbinding &middot; Wollongong, NSW</span>
-        <span class="idx__s">Live</span>
-        <span class="idx__go">View the site &rarr;</span>
-      </a>
-      <a class="idx__row" href="https://the-service-edit.github.io/cvbs-2026/" target="_blank" rel="noopener">
-        <span class="idx__n">CVBS</span>
-        <span class="idx__m">Venue Sourcing &middot; National</span>
-        <span class="idx__s">Client build</span>
-        <span class="idx__go">View the site &rarr;</span>
-      </a>
-      <a class="idx__row" href="https://the-service-edit.github.io/nutterjuck/" target="_blank" rel="noopener">
-        <span class="idx__n">NutterJuck Lures</span>
-        <span class="idx__m">Handmade Lures &middot; Australia</span>
-        <span class="idx__s">In progress</span>
-        <span class="idx__go">View the site &rarr;</span>
-      </a>
       <a class="idx__row" href="https://the-service-edit.github.io/zb-accounting/" target="_blank" rel="noopener">
         <span class="idx__n">ZB Accounting</span>
         <span class="idx__m">Accounting &amp; Tax &middot; NSW</span>
@@ -142,5 +215,28 @@
     </div>
   </footer>
 <script src="tse2/assets/js/nav.js" defer></script>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vids = document.querySelectorAll('.wk__media video');
+  vids.forEach(function(v){
+    var btn = v.parentNode.querySelector('.wk__play');
+    if (reduce) {
+      btn.hidden = false;
+      btn.addEventListener('click', function(){ v.preload='auto'; v.play(); btn.hidden = true; });
+      return;
+    }
+    if (!('IntersectionObserver' in window)) { v.preload='auto'; v.autoplay = true; v.play(); return; }
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting) { v.preload='auto'; var p=v.play(); if (p && p.catch) p.catch(function(){ btn.hidden=false; }); }
+        else { v.pause(); }
+      });
+    }, { threshold: 0.35 }).observe(v);
+    btn.addEventListener('click', function(){ v.play(); btn.hidden = true; });
+  });
+})();
+</script>
+
 </body>
 </html>

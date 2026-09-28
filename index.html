@@ -48,7 +48,7 @@ a{color:inherit}
 .nav .cta{text-decoration:none;font-size:14px;font-weight:500;border:1px solid var(--off);border-radius:999px;padding:9px 18px}
 .nav .cta:hover{background:var(--off);color:var(--ink)}
 .menu-btn{display:none;background:none;border:0;color:var(--off);font:inherit;font-size:14px}
-@media(max-width:860px){.nav ul,.nav .cta{display:none}.menu-btn{display:block}
+@media(max-width:1000px){.nav ul,.nav .cta{display:none}.menu-btn{display:block}
   .nav.open{background:var(--brown-deep)}
   .nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;left:0;right:0;background:var(--brown-deep);padding:8px var(--gut) 28px;border-bottom:1px solid var(--line)}
   .nav.open ul a{display:block;padding:14px 0;font-size:22px;border-bottom:1px solid var(--line)}}
@@ -338,7 +338,7 @@ footer{padding:40px 0 32px}
 }
 /* launch-pass */
 .nav ul li.m-cta{display:none}
-@media(max-width:860px){.nav.open ul li.m-cta{display:block}.nav.open ul li.m-cta a{font-weight:600;border-bottom:0}}
+@media(max-width:1000px){.nav.open ul li.m-cta{display:block}.nav.open ul li.m-cta a{font-weight:600;border-bottom:0}}
 .price-cta{margin-top:26px}
 .contact .reassure{font-size:14px;opacity:.7;margin-top:-4px}
 .mcta{display:none}
@@ -372,6 +372,11 @@ footer{padding-bottom:96px}
 .pbtn{display:inline-block;text-decoration:none;font-size:15px;font-weight:500;border:1px solid var(--off);border-radius:999px;padding:13px 24px;color:var(--off)}
 .pmail{margin:16px 0 0!important;font-size:14px;opacity:.65!important}
 .pmail a{color:inherit}
+.pprop{margin-top:clamp(70px,9vw,120px);display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;border-top:1px solid var(--line);padding-top:clamp(40px,5vw,60px)}
+.pprop h3{font-size:clamp(26px,2.8vw,40px);font-weight:600;letter-spacing:-.02em;line-height:1.05;margin:12px 0 14px;max-width:18ch}
+.pprop p{opacity:.8;max-width:44ch}
+.pprop .pbtn{justify-self:start}
+@media(max-width:800px){.pprop{grid-template-columns:1fr;gap:22px}}
 .pbtn:hover{background:var(--off);color:var(--ink)}
 @media(max-width:800px){.photo-head,.poffer,.pdirs-head{grid-template-columns:1fr}.pdirs-head{gap:12px}.pflow{grid-template-columns:1fr;gap:0}.pflow div+div{border-left:0;padding-left:0;border-top:1px solid var(--line);margin-top:22px;padding-top:22px}.pgrid{grid-template-columns:1fr 1fr}.pgrid figure:first-child{grid-column:1/-1}}
 </style>
@@ -388,6 +393,7 @@ footer{padding-bottom:96px}
     <ul>
       <li><a href="#how">Websites</a></li>
       <li><a href="#email">Email marketing</a></li>
+      <li><a href="#photos">Photos</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#cost">What it costs</a></li>
@@ -531,6 +537,11 @@ footer{padding-bottom:96px}
         <figure><img src="v2/assets/photo-ft-moody.jpg" alt="French toast in low light" loading="lazy"><figcaption class="mono">Email · low light</figcaption></figure>
       </div>
     </div>
+    <div class="pprop">
+      <div><span class="mono" style="opacity:.6">Property photos</span><h3>A whole house, from one iPhone walk-through.</h3><p>Corrected listing photos and labelled virtual staging for agents. Same rooms, same fittings, nothing hidden.</p></div>
+      <a class="pbtn" href="property.html">See the house &rarr;</a>
+    </div>
+
     <div class="poffer">
       <h3 class="caps">Send me your worst photo.</h3>
       <div><p>Pick the one you'd never put on your website. I'll send it back upgraded, free, so you can see what your site could look like before we talk about building it.</p><a class="pbtn" href="mailto:hello@theserviceedit.com?subject=My%20worst%20photo&amp;body=Business%20name%3A%20%0AWhere%20the%20photo%20will%20be%20used%3A%20%0A%0A(Attach%20your%20photo%20to%20this%20email.%20Straight%20from%20your%20camera%20roll%20is%20fine.)">Email me your photo</a><p class="pmail">Attach it straight from your camera roll to <a href="mailto:hello@theserviceedit.com?subject=My%20worst%20photo">hello@theserviceedit.com</a>. I reply to every one myself.</p></div>
@@ -654,7 +665,7 @@ footer{padding-bottom:96px}
       <small>Websites that bring customers in. Emails that bring them back. Based in Perth, working Australia wide.</small>
     </div>
     <nav>
-      <a href="#how">Websites</a><a href="#email">Email marketing</a><a href="#work">Work</a><a href="#reviews">Reviews</a><a href="property.html">Property photos</a><a href="#about">About</a>
+      <a href="#how">Websites</a><a href="#email">Email marketing</a><a href="#photos">Photos</a><a href="#work">Work</a><a href="#reviews">Reviews</a><a href="property.html">Property photos</a><a href="#about">About</a>
       <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
       <a href="privacy-policy.html">Privacy</a>
     </nav>

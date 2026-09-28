@@ -407,6 +407,12 @@ footer{padding-bottom:96px}
 .poffer p{opacity:.85;max-width:40ch;margin-bottom:22px}
 .pmail{margin:16px 0 0!important;font-size:14px;opacity:.65!important}
 .pmail a{color:inherit}
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,70px) clamp(24px,3vw,44px)}
+.rhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:14px;border-top:1px solid var(--line);padding-top:18px}
+.rhead h3{font-size:22px;font-weight:600;letter-spacing:-.01em}
+.pair.sm{gap:10px}
+.rcap{margin-top:14px;opacity:.75;font-size:15px;max-width:48ch}
+@media(max-width:800px){.rooms{grid-template-columns:1fr}}
 @media(max-width:800px){
   .ph-hero .sub,.sec-head,.poffer{grid-template-columns:1fr;gap:18px}
   .tiers,.rules,.steps3{grid-template-columns:1fr;gap:28px}
@@ -455,11 +461,54 @@ footer{padding-bottom:96px}
       <figure><img src="v2/assets/prop-before.jpg" alt="An empty living room with a federation fireplace, shot on an iPhone" width="1200" height="1600"><figcaption class="mono">Before · iPhone, as shot</figcaption></figure>
       <figure><div class="shot"><img src="v2/assets/prop-staged.jpg" alt="The same room, corrected and virtually staged with a sofa facing a TV" width="1200" height="1600"><span class="tag">Virtually staged</span></div><figcaption class="mono">After · corrected and staged</figcaption></figure>
     </div>
-    <p class="note">This is my own new rental in Perth. Same fireplace, same tiles, same door, same floor. The walls are straightened, the light is balanced and the furniture is added, and the image says so.</p>
+    <p class="note">This is my own new rental in Perth, shot on my iPhone. Same fireplace, same tiles, same door, same floor. The walls are straightened, the light is balanced and the furniture is added, and the image says so.</p>
   </div>
 </section>
 
-<section class="ph-sec">
+<section class="ph-sec" id="house">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="mono" style="opacity:.6">The whole house</span><h2 class="caps" style="margin-top:14px">Same phone. Every room.</h2></div>
+      <p>Shot on an iPhone in one walk-through. Bedrooms, wet areas and outdoors, each one locked to the real space.</p>
+    </div>
+    <div class="rooms">
+      <div class="room">
+        <div class="rhead"><h3>Main bedroom</h3><span class="mono" style="opacity:.6">Corrected and staged</span></div>
+        <div class="pair sm">
+          <figure><img src="v2/assets/prop-bed-before.jpg" alt="Main bedroom, iPhone photo" loading="lazy" width="1200" height="1600"><figcaption class="mono">Before</figcaption></figure>
+          <figure><div class="shot"><img src="v2/assets/prop-bed-after.jpg" alt="Main bedroom, after" loading="lazy" width="1200" height="1600"><span class="tag">Virtually staged</span></div><figcaption class="mono">After</figcaption></figure>
+        </div>
+        <p class="rcap">A queen bed, bedside table and rug, scaled to the room. Window, blind and door untouched.</p>
+      </div>
+      <div class="room">
+        <div class="rhead"><h3>Front room</h3><span class="mono" style="opacity:.6">Corrected only</span></div>
+        <div class="pair sm">
+          <figure><img src="v2/assets/prop-fire-before.jpg" alt="Front room, iPhone photo" loading="lazy" width="1200" height="1600"><figcaption class="mono">Before</figcaption></figure>
+          <figure><div class="shot"><img src="v2/assets/prop-fire-after.jpg" alt="Front room, after" loading="lazy" width="1200" height="1600"></div><figcaption class="mono">After</figcaption></figure>
+        </div>
+        <p class="rcap">Walls straightened, window held, floor sharpened. The person at the edge of the frame removed, nothing else.</p>
+      </div>
+      <div class="room">
+        <div class="rhead"><h3>Bathroom</h3><span class="mono" style="opacity:.6">Corrected, light styling</span></div>
+        <div class="pair sm">
+          <figure><img src="v2/assets/prop-bath-before.jpg" alt="Bathroom, iPhone photo" loading="lazy" width="1200" height="1600"><figcaption class="mono">Before</figcaption></figure>
+          <figure><div class="shot"><img src="v2/assets/prop-bath-after.jpg" alt="Bathroom, after" loading="lazy" width="1200" height="1600"></div><figcaption class="mono">After</figcaption></figure>
+        </div>
+        <p class="rcap">Every tile, basin and fitting where it is. A towel and a plant on the vanity, nothing fixed.</p>
+      </div>
+      <div class="room">
+        <div class="rhead"><h3>Backyard</h3><span class="mono" style="opacity:.6">Corrected and staged</span></div>
+        <div class="pair sm">
+          <figure><img src="v2/assets/prop-yard-before.jpg" alt="Backyard, iPhone photo" loading="lazy" width="1200" height="1600"><figcaption class="mono">Before</figcaption></figure>
+          <figure><div class="shot"><img src="v2/assets/prop-yard-after.jpg" alt="Backyard, after" loading="lazy" width="1200" height="1600"><span class="tag">Virtually staged</span></div><figcaption class="mono">After</figcaption></figure>
+        </div>
+        <p class="rcap">Same lawn, same trees, same sky. An outdoor table on the deck to show how it gets used.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ph-sec wall">
   <div class="wrap">
     <div class="sec-head">
       <div><span class="mono" style="opacity:.6">Two options</span><h2 class="caps" style="margin-top:14px">Honest first. Styled if you want it.</h2></div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Services &middot; The Service Edit</title>
 <meta name="description" content="Website design and email marketing for trades, hospitality and local service businesses across Australia. Based in Perth, WA.">
 <meta property="og:title" content="Services &middot; The Service Edit"><meta property="og:type" content="website">
@@ -19,6 +19,23 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="tse2/assets/css/site.css">
+<!-- tse-protect -->
+<style>
+html{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%}
+img,picture,video,svg{-webkit-user-drag:none;user-drag:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+</style>
+<script>
+(function(){
+  var media='img,picture,video,svg,[style*="background-image"]';
+  document.addEventListener('contextmenu',function(e){if(e.target.closest(media))e.preventDefault();});
+  document.addEventListener('dragstart',function(e){if(e.target.closest(media))e.preventDefault();});
+  ['gesturestart','gesturechange','gestureend'].forEach(function(t){document.addEventListener(t,function(e){e.preventDefault();},{passive:false});});
+  document.addEventListener('touchmove',function(e){if(e.touches.length>1)e.preventDefault();},{passive:false});
+  var last=0;document.addEventListener('touchend',function(e){var n=Date.now();if(n-last<300)e.preventDefault();last=n;},{passive:false});
+  document.addEventListener('wheel',function(e){if(e.ctrlKey)e.preventDefault();},{passive:false});
+  document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&['+','=','-','_','0'].indexOf(e.key)>-1)e.preventDefault();});
+})();
+</script>
 </head>
 <body class="dark">
   <a class="tse-skip" href="#main">Skip to content</a>

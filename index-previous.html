@@ -2,7 +2,7 @@
 <html lang="en-AU">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="description" content="Websites and email marketing for service businesses. Perth based, working Australia-wide. Get a free homepage concept.">
 <meta name="theme-color" content="#17271D">
 <meta property="og:type" content="website">
@@ -374,6 +374,23 @@ a.wcard:hover .go{background:var(--ink);color:#fff;transform:rotate(-45deg)}
 @media (max-width:560px){ .foot-grid{grid-template-columns:1fr} .ba-tag{top:.6rem;font-size:.58rem} .ba-tag.l{left:.6rem} .ba-tag.r{right:.6rem} }
 @media (prefers-reduced-motion:reduce){ *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important} }
 </style>
+<!-- tse-protect -->
+<style>
+html{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%}
+img,picture,video,svg{-webkit-user-drag:none;user-drag:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+</style>
+<script>
+(function(){
+  var media='img,picture,video,svg,[style*="background-image"]';
+  document.addEventListener('contextmenu',function(e){if(e.target.closest(media))e.preventDefault();});
+  document.addEventListener('dragstart',function(e){if(e.target.closest(media))e.preventDefault();});
+  ['gesturestart','gesturechange','gestureend'].forEach(function(t){document.addEventListener(t,function(e){e.preventDefault();},{passive:false});});
+  document.addEventListener('touchmove',function(e){if(e.touches.length>1)e.preventDefault();},{passive:false});
+  var last=0;document.addEventListener('touchend',function(e){var n=Date.now();if(n-last<300)e.preventDefault();last=n;},{passive:false});
+  document.addEventListener('wheel',function(e){if(e.ctrlKey)e.preventDefault();},{passive:false});
+  document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&['+','=','-','_','0'].indexOf(e.key)>-1)e.preventDefault();});
+})();
+</script>
 </head>
 <body>
 

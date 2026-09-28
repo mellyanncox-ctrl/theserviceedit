@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /v2/
+Disallow: /index-archive-2026-09.html
+Disallow: /index-old-backup.html
+Disallow: /index-previous.html
+Disallow: /work-mockup.html
 Sitemap: https://theserviceedit.com/sitemap.xml

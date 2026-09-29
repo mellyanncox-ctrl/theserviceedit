@@ -411,6 +411,8 @@ footer{padding-bottom:96px}
 .rhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:14px;border-top:1px solid var(--line);padding-top:18px}
 .rhead h3{font-size:22px;font-weight:600;letter-spacing:-.01em}
 .pair.sm{gap:10px}
+.pair.wide img{aspect-ratio:4/3}
+@media(max-width:800px){.pair.wide{grid-template-columns:1fr}}
 .rcap{margin-top:14px;opacity:.75;font-size:15px;max-width:48ch}
 @media(max-width:800px){.rooms{grid-template-columns:1fr}}
 @media(max-width:800px){
@@ -531,6 +533,19 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
         </div>
         <p class="rcap">Same lawn, same trees, same sky. An outdoor table on the deck to show how it gets used.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="ph-sec paper" id="twilight">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="mono" style="opacity:.6">Twilight</span><h2 class="caps" style="margin-top:14px">Midday phone shot. Blue hour listing.</h2></div>
+      <p>The front of the house is the photo that sells the click. One harsh midday phone photo, turned into the twilight shot agents usually book a second visit for.</p>
+    </div>
+    <div class="pair wide">
+      <figure><img src="v2/assets/prop-dusk-before.jpg" alt="Brick cottage frontage in harsh midday sun, iPhone photo" loading="lazy" width="1600" height="1200"><figcaption class="mono">Before · iPhone, midday</figcaption></figure>
+      <figure><div class="shot"><img src="v2/assets/prop-dusk-after.jpg" alt="The same cottage frontage converted to a twilight photo with warm window light" loading="lazy" width="1600" height="1200"><span class="tag">Twilight conversion</span></div><figcaption class="mono">After · twilight</figcaption></figure>
     </div>
   </div>
 </section>

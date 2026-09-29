@@ -411,6 +411,8 @@ footer{padding-bottom:96px}
 .rhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:14px;border-top:1px solid var(--line);padding-top:18px}
 .rhead h3{font-size:22px;font-weight:600;letter-spacing:-.01em}
 .pair.sm{gap:10px}
+.pair.wide img{aspect-ratio:4/3}
+@media(max-width:800px){.pair.wide{grid-template-columns:1fr}}
 .rcap{margin-top:14px;opacity:.75;font-size:15px;max-width:48ch}
 @media(max-width:800px){.rooms{grid-template-columns:1fr}}
 @media(max-width:800px){
@@ -428,6 +430,8 @@ footer{padding-bottom:96px}
 .std p{color:#4A4038;font-size:16px;max-width:34ch}
 .std ul{list-style:none;margin-top:12px;color:#4A4038;font-size:15px}
 .std li{padding:7px 0;border-bottom:1px solid var(--line-dark)}
+#why .std p,#why .std ul{color:inherit;opacity:.8}
+#why .std div,#why .std li{border-color:var(--line)}
 .cat{display:flex;justify-content:space-between;align-items:baseline;gap:20px;border-top:1px solid var(--line);padding-top:20px;margin:clamp(50px,7vw,90px) 0 22px}
 .cat h3{font-size:clamp(26px,2.8vw,40px);font-weight:600;letter-spacing:-.02em}
 .cat a{font-size:15px;opacity:.85}
@@ -507,6 +511,22 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
   </div>
 </section>
 
+<section class="ph-sec" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="mono" style="opacity:.6">Why not just book a shoot</span><h2 class="caps" style="margin-top:14px">A shoot is a day. This is a photo.</h2></div>
+      <p>Photographers are brilliant for a launch. But most of the photos a business needs are the ones in between, and those are already on your phone.</p>
+    </div>
+    <div class="std">
+      <div><span class="mono" style="opacity:.6">Caf&eacute;s and restaurants</span><h3>No shoot day</h3><p>A Perth food shoot runs around $850 for a half day, plus a stylist at $500 to $1,500 a day. Then there's the prep, the dishes cooked twice and the service you work around.</p><ul><li>Send the photo you took at the pass</li><li>New dish, new photo, same week</li></ul></div>
+      <div><span class="mono" style="opacity:.6">Trades and builders</span><h3>No waiting on the weather</h3><p>A builder's half-day shoot is $800 to $1,500, booked once the job is finished and moved if the sky turns grey. By then you're on the next site.</p><ul><li>Your best work is already in your camera roll</li><li>Every job, not just the one you paid to shoot</li></ul></div>
+      <div><span class="mono" style="opacity:.6">Property</span><h3>No second visit</h3><p>A listing shoot is quick and good value. What it can't fix is the photo taken before anyone was booked, the rental listed from a phone, or the twilight shot nobody came back for.</p><ul><li>Twilight from a midday photo</li><li>Rooms fixed after the listing is live</li></ul></div>
+    </div>
+    <p class="note">When to book a photographer instead: a new fit-out, a brand launch, a menu you'll use for years. Book the shoot. Everything between shoots, send to me.</p>
+    <p class="mono" style="margin-top:18px;font-size:11px;opacity:.5">Shoot rates from published Perth and Australian photographer pricing, 2026.</p>
+  </div>
+</section>
+
 <section class="ph-sec paper">
   <div class="wrap">
     <div class="sec-head">
@@ -552,6 +572,25 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
           <figure><img src="v2/assets/photo-tostada-macro.jpg" alt="The same scallop tostada as a close macro shot" loading="lazy" width="1200" height="1500"><figcaption class="mono">After · macro</figcaption></figure>
         </div>
         <p class="note">The same dish, taken in close from a straight-down phone photo. Nothing added to the plate.</p>
+      </div>
+    </div>
+
+    <div class="cat"><h3>Hotels and venues</h3><span class="mono" style="opacity:.6">For CVBS · site visit phone photos</span></div>
+    <div class="rooms" style="grid-template-columns:1fr">
+      <div class="room">
+        <div class="rhead"><h3>Harbour room</h3><span class="mono" style="opacity:.6">Daytime to twilight</span></div>
+        <div class="pair wide">
+          <figure><img src="v2/assets/venue-room-before.jpg" alt="Hotel bedroom with harbour view, daytime phone photo" loading="lazy" width="1600" height="1200"><figcaption class="mono">Before · iPhone, site visit</figcaption></figure>
+          <figure><div class="shot"><img src="v2/assets/venue-room-twilight.jpg" alt="The same hotel bedroom converted to twilight with the harbour lit up" loading="lazy" width="1600" height="1200"><span class="tag">Twilight conversion</span></div><figcaption class="mono">After</figcaption></figure>
+        </div>
+      </div>
+      <div class="room">
+        <div class="rhead"><h3>Heritage function room</h3><span class="mono" style="opacity:.6">Empty to event-ready</span></div>
+        <div class="pair wide">
+          <figure><img src="v2/assets/venue-hall-before.jpg" alt="Empty heritage function room with arched windows, phone photo" loading="lazy" width="1600" height="1200"><figcaption class="mono">Before · iPhone, site visit</figcaption></figure>
+          <figure><div class="shot"><img src="v2/assets/venue-hall-staged.jpg" alt="The same room set for a long-table dinner" loading="lazy" width="1600" height="1200"><span class="tag">Virtually staged</span></div><figcaption class="mono">After</figcaption></figure>
+        </div>
+        <p class="note">Same ceiling, same windows, same carpet. The long tables show planners what the room holds before they book a site visit.</p>
       </div>
     </div>
 

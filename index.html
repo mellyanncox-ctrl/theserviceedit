@@ -406,6 +406,17 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
   document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&['+','=','-','_','0','s','S'].indexOf(e.key)>-1)e.preventDefault();});
 })();
 </script>
+<style>
+/* Page heads for inner pages, three service cards */
+.page-head{background:var(--brown-deep);color:var(--off);padding:clamp(140px,14vw,210px) 0 clamp(64px,8vw,110px)}
+.page-head .mono{opacity:.6}
+.page-head h1{font-size:clamp(48px,8vw,128px);margin:16px 0 26px;max-width:12ch}
+.page-head .sub{max-width:46ch;font-size:clamp(18px,1.6vw,22px);opacity:.92}
+.page-head .actions{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:700px){.page-head{padding:120px 0 56px}}
+.svc-grid{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.svc-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -417,12 +428,10 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
   <div class="wrap">
     <a href="#top" aria-label="The Service Edit, home"><svg class="logo" viewBox="0 0 120 64" role="img"><title>The Service Edit</title><use href="#tse"/></svg></a>
     <ul>
-      <li><a href="#how">Websites</a></li>
-      <li><a href="#email">Email marketing</a></li>
+      <li><a href="websites.html">Websites</a></li>
+      <li><a href="email-marketing.html">Email marketing</a></li>
       <li><a href="photos.html">Photos</a></li>
       <li><a href="#work">Work</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#cost">What it costs</a></li>
       <li><a href="about.html">About</a></li>
       <li class="m-cta"><a href="#start">Get your site reviewed &rarr;</a></li>
     </ul>
@@ -436,13 +445,13 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
 <section class="hero">
   <div class="copy wrap">
     <div class="svc-tags"><span style="border:0;padding:0;border-radius:0">Digital marketing for hospitality, trades and local service businesses</span></div>
-    <h1 class="caps">Why does one<br class="d"> website cost $500<br class="d"> and another $5K?</h1>
-    <p class="sub">Usually the difference is everything behind the design: who the site is written for, whether Google can find it, and what a visitor is meant to do next. I build websites that way, then upgrade the photos and run the email marketing that keeps customers coming back.</p>
+    <h1 class="caps">Websites, photos<br class="d"> and email that<br class="d"> bring in customers.</h1>
+    <p class="sub">For hospitality, trades and local service businesses that are better than they look online. I build the website, upgrade the photos and run the emails, and you deal with me the whole way through.</p>
     <div class="actions">
       <a class="btn solid" href="#start">Get your site reviewed</a>
-      <a class="btn ghost" href="#how">See the difference</a>
+      <a class="btn ghost" href="#work">See the work</a>
     </div>
-    <div class="hero-me"><img src="v2/assets/mel-face.jpg?v=2" alt="Mel Cox" width="48" height="48"><p><b>Mel Cox.</b> I do the work myself, so you&rsquo;ll deal with me from the first email to launch and after that.</p></div>
+    <div class="hero-me"><img src="v2/assets/mel-face.jpg?v=2" alt="Mel Cox" width="48" height="48"><p><b>I&rsquo;m Mel Cox.</b> Twenty years in hospitality, and I did the marketing for my own cafés before I did it for anyone else. <a href="about.html">More about me</a></p></div>
   </div>
   <picture>
     <source media="(max-width:700px)" srcset="v2/assets/hero-mobile.jpg?v=20260927f">
@@ -452,67 +461,27 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
 
 <section class="services" id="services">
   <div class="wrap svc-grid">
-    <a class="svc" href="#how">
+    <a class="svc" href="websites.html">
       <span class="mono">01 · Websites</span>
       <h2 class="caps">Websites</h2>
-      <p>For businesses that have outgrown their website. I work out what the site needs to do, write it, set it up for Google and build it, so it brings in enquiries, bookings or orders.</p>
+      <p>For businesses that have outgrown their website. I work out what it needs to do, write it, set it up for Google and build it, so it brings in enquiries, bookings or orders.</p>
       <span class="svc-proof">CVBS · Giant Coffee · Coastside · Gold Foil Books · NutterJuck</span>
       <span class="svc-go">How a build works <b>&rarr;</b></span>
     </a>
-    <a class="svc" href="#email">
-      <span class="mono">02 · Email marketing</span>
+    <a class="svc" href="photos.html">
+      <span class="mono">02 · Photos</span>
+      <h2 class="caps">Photos</h2>
+      <p>The photos already on your phone, upgraded so the dish, the job or the room looks the way it does in person. Ready for your site, your Google profile, your menus and your listings.</p>
+      <span class="svc-proof">Cafés and restaurants · Trades · Property · Venues</span>
+      <span class="svc-go">See the before and afters <b>&rarr;</b></span>
+    </a>
+    <a class="svc" href="email-marketing.html">
+      <span class="mono">03 · Email marketing</span>
       <h2 class="caps">Email marketing</h2>
-      <p>Your customers&rsquo; email addresses are probably already sitting in your booking or order system. On a monthly retainer I write, design and send the campaigns, and set up the emails that go out on their own, like a welcome, a win back or an abandoned cart reminder.</p>
-      <span class="svc-proof">Jordy&rsquo;s · Meat Merchant · CVBS · Works with NowBookIt, TalkBox, Klaviyo and Mailchimp</span>
+      <p>Your customers&rsquo; email addresses are already in your booking or order system. On a monthly retainer I write and send the campaigns, and set up the emails that go out on their own.</p>
+      <span class="svc-proof">Jordy&rsquo;s · Meat Merchant · CVBS · NowBookIt, TalkBox, Klaviyo and Mailchimp</span>
       <span class="svc-go">How email works <b>&rarr;</b></span>
     </a>
-  </div>
-</section>
-<section class="statement">
-  <div class="wrap">
-    <span class="mono">The Service Edit</span>
-    <h2 class="caps rv" style="margin-top:18px">A site can look fine and still lose you work. <span>Most owners never find out.</span></h2>
-    <div class="row">
-      <p class="rv">A cheap site is usually a template with your logo on it, and if you only need to exist online, that&rsquo;s fine. If the website is meant to bring in enquiries, quotes or bookings, the design is the last and smallest part of the job.</p>
-      <p class="rv">Every website I build goes through the same five stages before it launches. Here they are, with examples from real builds.</p>
-    </div>
-  </div>
-</section>
-
-<section class="tear" id="how">
-  <div class="wrap">
-    <div class="tear-head">
-      <div><span class="mono">What every build has taught me</span><h2 class="caps">The five layers under a website that works.</h2></div>
-      <p>I&rsquo;ve built for a plasterer on the Gold Coast, a pizza bar in Casuarina, a mortgage broker in North Perth and a venue finder that works worldwide. Their customers have nothing in common, but the same five things decided whether each site brought in work, and all of them get sorted before anyone picks a colour.</p>
-    </div>
-
-    <div class="layers">
-      <article class="layer rv">
-        <div class="txt"><span class="num">01 · Strategy</span><h3 class="caps">The expensive part starts before the design.</h3>
-        <p>Who needs to find you, what they need to know, and what happens next. A builder checks crew capacity and documentation before sending plans. An EA booking a conference wants someone to trust with the decision. Someone looking for a broker wants to know exactly who they'll deal with. Get the buyer wrong and no design will save it.</p></div>
-        <div class="fig"><img src="v2/assets/layer-strategy.jpg?v=20260927venuegap" alt="A conference run sheet clipped to the wall with a rectangle cut out where the venue should be" loading="lazy"></div>
-      </article>
-      <article class="layer rv">
-        <div class="txt"><span class="num">02 · Copy</span><h3 class="caps">Good copy doesn't sound like everyone else.</h3>
-        <p>"Quality you can trust" is on every trade site. "The specification comes first" tells a builder exactly what kind of subcontractor Coastside is. "The right venue isn't searched. It's sourced." says what CVBS does that a search box can't. I keep cutting generic lines until the site sounds like the business and nobody else.</p></div>
-        <div class="fig"><img src="v2/assets/layer-copy.jpg?v=20260927real" alt="Four real site builds clipped to a brown wall: Gold Foil Books, Coastside, Jordy's and CVBS, each saying something only that business could say" loading="lazy"></div>
-      </article>
-      <article class="layer rv">
-        <div class="txt"><span class="num">03 · Search</span><h3 class="caps">The best website is useless if nobody finds it.</h3>
-        <p>Google has to understand what you do and where you do it. For a trade that means services and service areas, structured and connected. For CVBS it meant a page for every destination from Sydney to the Hunter Valley, each linked to the services behind it. That&rsquo;s why search gets planned with the structure of the site instead of added at the end.</p></div>
-        <div class="fig"><img src="v2/assets/layer-search-coastside.jpg?v=20260927all" alt="Hundreds of blank sheets face down on the floor with one Coastside page face up in a spotlight" loading="lazy"></div>
-      </article>
-      <article class="layer rv">
-        <div class="txt"><span class="num">04 · Enquiries</span><h3 class="caps">Every page should lead somewhere.</h3>
-        <p>Every site has one next step, and it's different every time. Send the plans. Submit a brief. Book a table. Book a chat. Every section either builds the case for that step or it comes out. Nothing sits on the page without a reason.</p></div>
-        <div class="fig"><img src="v2/assets/layer-enquiry.jpg?v=20260927cvbs" alt="CVBS website sections laid as a path across the floor, ending at the brief form" loading="lazy"></div>
-      </article>
-      <article class="layer rv">
-        <div class="txt"><span class="num">05 · Build</span><h3 class="caps">Designing it is only half the job.</h3>
-        <p>A builder checks it on a phone on site. An EA checks it between meetings. Someone books a table from the couch. Pages that load fast, forms that send, layouts that hold at every screen size. It&rsquo;s the part nobody notices until it doesn&rsquo;t work.</p></div>
-        <div class="fig"><img src="v2/assets/layer-build-coastside.jpg?v=20260927all" alt="A mobile width strip being cut from a desktop print of the Coastside homepage on a cutting mat" loading="lazy"></div>
-      </article>
-    </div>
   </div>
 </section>
 
@@ -537,120 +506,6 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
     <div class="rv-feature" id="rvFeature"></div>
     <div class="rv-grid" id="rvGrid"></div>
     <div class="rv-dots" id="rvDots" aria-hidden="true"></div>
-  </div>
-</section>
-
-<section class="photo" id="photos">
-  <div class="wrap">
-    <div class="photo-head">
-      <div><span class="mono" style="opacity:.6">Your photos</span><h2 class="caps" style="margin-top:14px">Same dish. Better light.</h2></div>
-      <p>Most businesses already have the photos. They're just on a phone, shot at 2pm under a fluoro. I take what you've got and make it look the way it does in person. Nothing added to the plate, nothing that isn't on the menu.</p>
-    </div>
-    <div class="ptwo">
-      <figure><img src="v2/assets/photo-ft-before.jpg" alt="French toast with berries as shot on a phone" loading="lazy" width="1000" height="1242"><figcaption class="mono">Before · iPhone, as sent</figcaption></figure>
-      <figure><img src="v2/assets/photo-ft-after.jpg" alt="The same french toast after the photo upgrade" loading="lazy" width="1000" height="1242"><figcaption class="mono">After</figcaption></figure>
-    </div>
-    <div class="pflow">
-      <div><span class="mono" style="opacity:.6">01</span><h3>Your food, not a render</h3><p>Same portion, same plate, same garnish. If a customer orders it, this is what turns up.</p></div>
-      <div><span class="mono" style="opacity:.6">02</span><h3>No photoshoot needed</h3><p>Send me what&rsquo;s in your camera roll. It&rsquo;s part of every build, so the site launches with photos that match, or you can have it done on its own.</p></div>
-      <div><span class="mono" style="opacity:.6">03</span><h3>Used everywhere</h3><p>The same shots work in your emails, on your Google profile and on your menus, wherever people come across you.</p></div>
-    </div>
-    <div class="pdirs">
-      <div class="pdirs-head"><span class="mono" style="opacity:.6">One phone photo · three directions</span><p>From the same shot: a clean overhead for the menu, a warm three quarter for the website, a moody crop for email headers. Same french toast every time.</p></div>
-      <div class="pgrid">
-        <figure><img src="v2/assets/photo-ft-after.jpg" alt="French toast, overhead" loading="lazy"><figcaption class="mono">Menu · overhead</figcaption></figure>
-        <figure><img src="v2/assets/photo-ft-angle.jpg" alt="French toast, three quarter angle" loading="lazy"><figcaption class="mono">Website · three quarter</figcaption></figure>
-        <figure><img src="v2/assets/photo-ft-moody.jpg" alt="French toast in low light" loading="lazy"><figcaption class="mono">Email · low light</figcaption></figure>
-      </div>
-    </div>
-    <div class="pprop">
-      <div><span class="mono" style="opacity:.6">Property photos</span><h3>A whole house, from one iPhone walk-through.</h3><p>Corrected listing photos and labelled virtual staging for agents. Same rooms, same fittings, nothing hidden.</p></div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="pbtn" href="photos.html">All photo work &rarr;</a><a class="pbtn" href="property.html">See the house &rarr;</a></div>
-    </div>
-
-    <div class="poffer">
-      <h3 class="caps">Send me your worst photo.</h3>
-      <div><p>Pick the one you'd never put on your website. I'll send it back upgraded, free, so you can see what your site could look like before we talk about building it.</p><a class="pbtn" href="mailto:hello@theserviceedit.com?subject=My%20worst%20photo&amp;body=Business%20name%3A%20%0AWhere%20the%20photo%20will%20be%20used%3A%20%0A%0A(Attach%20your%20photo%20to%20this%20email.%20Straight%20from%20your%20camera%20roll%20is%20fine.)">Email me your photo</a><p class="pmail">Attach it straight from your camera roll to <a href="mailto:hello@theserviceedit.com?subject=My%20worst%20photo">hello@theserviceedit.com</a>. I reply to every one myself.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="email" id="email">
-  <div class="wrap">
-    <div class="email-head">
-      <div><span class="mono" style="opacity:.6">Email marketing</span><h2 class="caps" style="margin-top:14px">Your list is already there. Let's use it.</h2></div>
-      <p>Every booking, every order, every QR code on a table is a name you already have. Most businesses never send those people anything. I write, design and send the emails, and set up the ones that run on their own. Right now that includes Jordy's, Meat Merchant and CVBS.</p>
-    </div>
-    <div class="wide rv"><img src="v2/assets/email-campaigns.jpg?v=20260927h" alt="Printed emails for Jordy's, Meat Merchant and CVBS hanging from a kitchen docket rail" loading="lazy"></div>
-    <div class="eflow">
-      <div class="rv"><span class="mono">01</span><h3>Set up properly</h3><p>Your platform configured, your domain authenticated, your list cleaned and segmented, so emails land in inboxes instead of spam.</p></div>
-      <div class="rv"><span class="mono">02</span><h3>Written and sent</h3><p>Campaigns written in your voice, designed to match your brand and sent on a schedule. You approve them before they go, or leave it with me.</p></div>
-      <div class="rv"><span class="mono">03</span><h3>Running on their own</h3><p>Welcome, birthday, milestone and win back emails. Set once, then working every day without you touching them.</p></div>
-    </div>
-    <div class="plat rv">
-      <span class="mono" style="opacity:.6">Works with what you already use</span>
-      <h3>Your list is probably already in your booking system.</h3>
-      <p>Jordy&rsquo;s emails are custom branded HTML, built to look like Jordy&rsquo;s and sent through TalkBox to the guests already in his NowBookIt bookings. Not a stock template, and nothing new for you to set up. For online shops I work in Klaviyo, the way I did for Meat Merchant, and CVBS&rsquo;s emails go out through Mailchimp.</p>
-    </div>
-    <div class="epair">
-      <figure class="rv"><img src="v2/assets/email-cvbs.jpg?v=20260927f" alt="A printed CVBS email on a steel bench beside a conference lanyard and hotel key card" loading="lazy"><figcaption>CVBS's brief confirmation. Sent the moment a brief lands, with exactly what happens next.</figcaption></figure>
-      <figure class="rv"><img src="v2/assets/email-subject.jpg?v=20260927f" alt="A Meat Merchant win back email sliding out of an envelope" loading="lazy"><figcaption>Meat Merchant's win back email. Written from the owner, with one offer and one button.</figcaption></figure>
-    </div>
-    <div class="proof">
-      <span class="mono" style="opacity:.6">Proof</span>
-      <h3 class="rv">What changed at Jordy's.</h3>
-      <div class="stats">
-        <div class="rv"><b>+22%</b><span>More covers this winter</span><p>2,376 booked covers from 11 June to 7 August, against 1,949 over the same nights last year.</p></div>
-        <div class="rv"><b>+17%</b><span>Midweek bookings</span><p>Wednesday and Thursday bookings are up 17 per cent since March, and the lift held right through autumn and winter.</p></div>
-        <div class="rv"><b>2&times;</b><span>The hospitality open rate</span><p>Segmented sends open at up to 68 per cent, against a hospitality benchmark of 25 to 35. Sent to the right guests, not the whole list.</p></div>
-      </div>
-      <p class="src rv">Jordy's real numbers out of NowBookIt and TalkBox, not a case study written backwards. Booked covers leave out walk-ins, so the real numbers are higher.</p>
-    </div>
-  </div>
-</section>
-
-<section class="price" id="cost">
-  <div class="wrap">
-    <span class="mono" style="opacity:.6">What it costs</span>
-    <h2 class="caps rv" style="margin-top:14px">Why builds cost what they cost.</h2>
-    <div class="pcols">
-      <div class="pcol rv">
-        <span class="mono">The cheap site</span>
-        <h3>A template, your logo, your phone number.</h3>
-        <ul><li>Written by filling in blanks</li><li>Same structure as every other site in your trade</li><li>Search left to chance</li><li>No thought about what a visitor does next</li><li>Right answer if you only need to exist online</li></ul>
-      </div>
-      <div class="pcol rv">
-        <span class="mono">The built site</span>
-        <h3>A sales tool, planned around your buyer.</h3>
-        <ul><li>Strategy before design</li><li>Copy written for your customers, in your voice</li><li>Pages structured to be found</li><li>Every section leading to an enquiry</li><li>Built to load fast and hold up on every screen</li></ul>
-      </div>
-    </div>
-    <div class="pret rv">
-      <span class="mono">Email marketing, ongoing</span>
-      <h3>A monthly retainer that keeps customers coming back.</h3>
-      <ul><li>Custom branded HTML emails on the platform you already use, including NowBookIt, TalkBox, Klaviyo and Mailchimp</li><li>Written in your voice and sent weekly or fortnightly</li><li>Welcome, birthday and win-back emails that run on their own</li><li>Your list stays yours, always</li></ul>
-      <p>The website gets someone through the door once. Email is how you get them back.</p>
-    </div>
-    <p class="foot rv">Every business is different, so every quote is too. Tell me what you need the site to do and I'll tell you what it takes, including when the cheaper option is the right one.</p>
-    <a class="btn solid price-cta rv" href="#start">Tell me what you need</a>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="wrap cols">
-    <div class="ph rv"><img src="v2/assets/mel.jpg?v=20260927f" alt="Mel Cox, founder of The Service Edit, sitting on a wooden stool in natural light" loading="lazy"></div>
-    <div>
-      <span class="mono">About</span>
-      <h2 class="caps rv">I started by doing this for my own cafés.</h2>
-      <p class="rv">I&rsquo;m Mel. I spent twenty years in hospitality and owned three cafés, and like most owners I did the marketing myself, because nobody else was going to. Working out what actually brought people in, and what was a waste of money, is how I ended up doing this for other businesses. I still do shifts at Giant Coffee in Northbridge, so I haven&rsquo;t lost touch with a busy Saturday.</p>
-      <p class="rv">You won&rsquo;t get passed to an account manager, and I won&rsquo;t pad the quote. I&rsquo;ll tell you what your business actually needs, even when it&rsquo;s less than you expected to spend.</p>
-      <p class="rv">It&rsquo;s just me, in Perth, working with businesses right across Australia. <a href="about.html">More about how I got here</a>.</p>
-      <div class="facts rv">
-        <div><b>20+ years</b><span>in hospitality</span></div>
-        <div><b>3 cafés</b><span>owned and run</span></div>
-        <div><b>1 system</b><span>website, photos and email</span></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -691,7 +546,7 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
       <small>Websites, photos and email marketing for service businesses. Based in Perth, working Australia wide.</small>
     </div>
     <nav>
-      <a href="#how">Websites</a><a href="#email">Email marketing</a><a href="photos.html">Photos</a><a href="#work">Work</a><a href="#reviews">Reviews</a><a href="property.html">Property photos</a><a href="about.html">About</a><a href="the-service-edit-journal.html">Journal</a>
+      <a href="websites.html">Websites</a><a href="email-marketing.html">Email marketing</a><a href="photos.html">Photos</a><a href="#work">Work</a><a href="property.html">Property photos</a><a href="about.html">About</a><a href="the-service-edit-journal.html">Journal</a>
       <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
       <a href="privacy-policy.html">Privacy</a>
     </nav>
@@ -803,5 +658,3 @@ var REVIEWS=[
   });
 })();
 </script>
-</body>
-</html>

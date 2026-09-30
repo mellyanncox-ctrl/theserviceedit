@@ -1,24 +1,262 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-AU">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Journal &middot; The Service Edit</title>
-<meta name="description" content="Notes on what moves the needle for service businesses, from someone who has run one.">
-<meta property="og:title" content="Journal &middot; The Service Edit"><meta property="og:type" content="website">
-<meta property="og:description" content="Notes on what moves the needle for service businesses, from someone who has run one.">
-<meta property="og:image" content="https://theserviceedit.com/tse2/assets/hero.webp">
-<meta property="og:image:width" content="1672"><meta property="og:image:height" content="941">
-<meta property="og:url" content="https://theserviceedit.com/the-service-edit-journal.html">
-<meta property="og:site_name" content="The Service Edit"><meta property="og:locale" content="en_AU">
+<title>Journal · The Service Edit</title>
+<meta name="description" content="Notes from Mel Cox on websites, photos and email marketing for hospitality, trades and local service businesses. Written for owners, from someone who has run the business.">
 <link rel="canonical" href="https://theserviceedit.com/the-service-edit-journal.html">
-<meta name="theme-color" content="#070708">
+<meta name="theme-color" content="#3A2E25">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Service Edit">
+<meta property="og:url" content="https://theserviceedit.com/the-service-edit-journal.html">
+<meta property="og:title" content="Journal · The Service Edit">
+<meta property="og:description" content="Notes from Mel Cox on websites, photos and email marketing for hospitality, trades and local service businesses. Written for owners, from someone who has run the business.">
+<meta property="og:image" content="https://theserviceedit.com/v2/assets/og.jpg">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="tse2/assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://theserviceedit.com/the-service-edit-journal.html#blog",
+  "name": "The Service Edit Journal",
+  "url": "https://theserviceedit.com/the-service-edit-journal.html",
+  "author": {
+    "@type": "Person",
+    "@id": "https://theserviceedit.com/about.html#mel",
+    "name": "Mel Cox",
+    "url": "https://theserviceedit.com/about.html"
+  },
+  "publisher": {
+    "@type": "ProfessionalService",
+    "@id": "https://theserviceedit.com/#business",
+    "name": "The Service Edit",
+    "url": "https://theserviceedit.com/"
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Quiet midweeks usually aren’t a foot traffic problem",
+      "url": "https://theserviceedit.com/journal/quiet-midweeks-are-not-a-foot-traffic-problem.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Why email works so well for hospitality",
+      "url": "https://theserviceedit.com/journal/why-hospitality-gets-better-email-results.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Your email list is sitting there doing nothing",
+      "url": "https://theserviceedit.com/journal/your-email-list-is-doing-nothing.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Your website might be losing you customers, and you won’t see which ones",
+      "url": "https://theserviceedit.com/journal/your-website-is-losing-you-customers.html"
+    }
+  ]
+}
+</script>
+<link rel="preload" href="/v2/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:Geist;src:url("/v2/assets/fonts/Geist-Variable.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}</style>
+<style>
+:root{
+  --brown:#584638; --brown-deep:#3A2E25; --wall:#4A3C31;
+  --off:#F1EDE2; --paper:#F7F4EC; --ink:#1B1512; --mute:#8C7F72; --line:rgba(241,237,226,.16); --line-dark:rgba(27,21,18,.14);
+  --max:1320px; --gut:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--brown-deep);color:var(--off);font-family:Geist,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.mono{font-family:Geist,"Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.caps{text-transform:uppercase;letter-spacing:-.035em;line-height:.92;font-weight:600}
+
+/* NAV (matches homepage) */
+.nav{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s,backdrop-filter .3s}
+.nav.solid{background:rgba(58,46,37,.88);backdrop-filter:blur(10px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav .logo{display:block;width:78px}
+.nav ul{display:flex;gap:32px;list-style:none}
+.nav ul a{text-decoration:none;font-size:14px;letter-spacing:.01em;opacity:.85}
+.nav ul a:hover,.nav ul a[aria-current]{opacity:1}
+.nav ul a[aria-current]{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.nav .cta{text-decoration:none;font-size:14px;font-weight:500;border:1px solid var(--off);border-radius:999px;padding:9px 18px}
+.nav .cta:hover{background:var(--off);color:var(--ink)}
+.menu-btn{display:none;background:none;border:0;color:var(--off);font:inherit;font-size:14px}
+.nav ul li.m-cta{display:none}
+@media(max-width:1000px){.nav ul,.nav .cta{display:none}.menu-btn{display:block}
+  .nav.open{background:var(--brown-deep)}
+  .nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;left:0;right:0;background:var(--brown-deep);padding:8px var(--gut) 28px;border-bottom:1px solid var(--line)}
+  .nav.open ul a{display:block;padding:14px 0;font-size:22px;border-bottom:1px solid var(--line)}
+  .nav.open ul li.m-cta{display:block}.nav.open ul li.m-cta a{font-weight:600;border-bottom:0}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:500;font-size:15px;border-radius:999px;padding:14px 22px;transition:transform .2s,background .2s,color .2s}
+.btn.solid{background:var(--off);color:var(--ink)}
+.btn.ghost{border:1px solid rgba(241,237,226,.7);color:var(--off)}
+.btn.dark{background:var(--ink);color:var(--off)}
+.btn:hover{transform:translateY(-2px)}
+
+/* HERO */
+.ab-hero{padding:clamp(110px,11vw,160px) 0 clamp(70px,9vw,120px)}
+.ab-hero .cols{display:grid;grid-template-columns:7fr 5fr;gap:clamp(30px,6vw,100px);align-items:end}
+.ab-hero .mono{opacity:.6}
+.ab-hero h1{font-size:clamp(44px,6.4vw,108px);margin:18px 0 30px;max-width:11ch}
+.ab-hero h1 span{color:#B9A897}
+.ab-hero .lede{font-size:clamp(18px,1.6vw,22px);max-width:40ch;opacity:.92}
+.ab-hero .by{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);display:flex;gap:10px 28px;flex-wrap:wrap;font-size:14px;opacity:.7;max-width:560px}
+.ab-hero .ph{border-radius:4px;overflow:hidden;background:var(--brown)}
+.ab-hero .ph img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:62% 50%}
+@media(max-width:860px){.ab-hero .cols{grid-template-columns:1fr}.ab-hero .ph{max-width:460px}}
+
+/* STORY */
+.story{background:var(--off);color:var(--ink);padding:clamp(90px,12vw,160px) 0}
+.story .cols{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,6vw,100px);align-items:start}
+.story .ph{position:sticky;top:100px;border-radius:4px;overflow:hidden;background:var(--brown)}
+.story .ph img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 35%}
+.story .ph figcaption{padding:12px 0 0;color:var(--mute);background:var(--off)}
+.story .mono{color:var(--mute)}
+.story h2{font-size:clamp(36px,4.8vw,76px);margin:14px 0 34px;max-width:15ch}
+.story p{max-width:54ch;margin-bottom:18px;color:#3A302A;font-size:clamp(17px,1.3vw,19px)}
+.story p.lead{font-size:clamp(20px,1.8vw,26px);line-height:1.4;color:var(--ink);letter-spacing:-.01em;max-width:34ch}
+.facts{display:flex;gap:clamp(20px,4vw,56px);margin-top:40px;flex-wrap:wrap;border-top:1px solid var(--line-dark);padding-top:22px}
+.facts b{display:block;font-size:30px;letter-spacing:-.03em;font-weight:600}
+.facts span{font-size:14px;color:#5E5247}
+@media(max-width:800px){.story .cols{grid-template-columns:1fr}.story .ph{position:static;max-width:420px}}
+
+/* WHAT I DO */
+.do{background:var(--paper);color:var(--ink);padding:clamp(90px,12vw,160px) 0}
+.do-head{max-width:880px;margin-bottom:clamp(40px,6vw,80px)}
+.do-head .mono{color:var(--mute)}
+.do-head h2{font-size:clamp(40px,6vw,96px);margin:14px 0 26px;max-width:13ch}
+.do-head p{max-width:52ch;color:#3A302A;font-size:clamp(17px,1.3vw,19px)}
+.drow{display:grid;grid-template-columns:200px 4fr 7fr;gap:clamp(16px,3vw,48px);padding:clamp(26px,3.4vw,44px) 0;border-top:1px solid var(--line-dark);align-items:baseline}
+.drow:last-child{border-bottom:1px solid var(--line-dark)}
+.drow .n{font-size:12px;color:var(--mute)}
+.drow h3{font-size:clamp(26px,2.8vw,42px);font-weight:600;letter-spacing:-.03em;line-height:1.05}
+.drow h3 a{text-decoration:none}
+.drow p{color:#3A302A;max-width:48ch}
+@media(max-width:800px){.drow{grid-template-columns:1fr;gap:10px}}
+@media(max-width:700px){.do{padding:60px 0}.do-head{margin-bottom:30px}}
+
+/* LESSONS */
+.lessons{background:var(--brown-deep);padding:clamp(90px,12vw,160px) 0}
+.lessons-head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)}
+.lessons-head h2{font-size:clamp(40px,6vw,96px)}
+.lessons-head .mono{opacity:.6;display:block;margin-bottom:18px}
+.lessons-head .ph{border-radius:4px;overflow:hidden;width:100%;max-width:300px;justify-self:end}
+.lessons-head .ph img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 60%}
+.lrow{display:grid;grid-template-columns:80px 5fr 7fr;gap:clamp(16px,3vw,48px);padding:clamp(26px,3.4vw,44px) 0;border-top:1px solid var(--line);align-items:baseline}
+.lrow .n{font-size:13px;opacity:.55;letter-spacing:.08em}
+.lrow h3{font-size:clamp(26px,2.8vw,42px);font-weight:600;letter-spacing:-.03em;line-height:1.05}
+.lrow p{opacity:.88;max-width:48ch}
+@media(max-width:800px){.lessons-head{grid-template-columns:1fr}.lessons-head .ph{justify-self:start}.lrow{grid-template-columns:1fr;gap:10px}}
+
+/* WORK INDEX + QUOTE */
+.built{background:var(--paper);color:var(--ink);padding:clamp(90px,12vw,160px) 0}
+.built-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(30px,4vw,50px)}
+.built-head h2{font-size:clamp(40px,6vw,96px)}
+.built-head p{max-width:40ch;color:#4A4038}
+.index ol{list-style:none;border-top:1px solid var(--line-dark)}
+.index li a,.index li>div{display:grid;grid-template-columns:48px 1fr 1fr 170px 24px;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line-dark);text-decoration:none;transition:padding .25s,background .25s}
+.index li a:hover{padding-left:10px;background:rgba(88,70,56,.06)}
+.index .n{font-size:12px;color:var(--mute)}
+.index .nm{font-weight:600;font-size:18px;letter-spacing:-.01em}
+.index .in,.index .lc{color:#5E5247;font-size:15px}
+.index .ar{text-align:right;color:var(--mute)}
+@media(max-width:760px){.index li a,.index li>div{grid-template-columns:36px 1fr 20px}.index .in,.index .lc{display:none}}
+.quote{margin-top:clamp(60px,8vw,110px);display:grid;grid-template-columns:1fr 2fr;gap:clamp(20px,4vw,60px);border-top:1px solid var(--line-dark);padding-top:clamp(30px,4vw,50px)}
+.quote .mono{color:var(--mute)}
+.quote blockquote{font-size:clamp(22px,2.4vw,34px);line-height:1.3;letter-spacing:-.02em;font-weight:500;max-width:30ch}
+.quote cite{display:block;margin-top:20px;font-style:normal;font-size:15px;color:#5E5247}
+.quote cite b{color:var(--ink);font-weight:600}
+.quote a{display:inline-block;margin-top:22px;font-size:15px;font-weight:500;text-underline-offset:4px}
+@media(max-width:760px){.quote{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{background:var(--off);color:var(--ink);padding:clamp(90px,12vw,160px) 0}
+.faq .cols{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,6vw,100px);align-items:start}
+.faq .mono{color:var(--mute)}
+.faq h2{font-size:clamp(40px,5.4vw,88px);margin-top:14px}
+.faq details{border-top:1px solid var(--line-dark)}
+.faq details:last-child{border-bottom:1px solid var(--line-dark)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font-size:clamp(19px,1.6vw,23px);font-weight:600;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;color:var(--mute);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 24px;max-width:56ch;color:#3A302A}
+.faq details p a{text-underline-offset:3px}
+@media(max-width:800px){.faq .cols{grid-template-columns:1fr}}
+
+/* CONTACT */
+.cta-end{background:var(--brown-deep);padding:clamp(90px,12vw,160px) 0}
+.cta-end h2{font-size:clamp(44px,7vw,120px);max-width:12ch}
+.cta-end p{margin-top:24px;max-width:44ch;font-size:clamp(18px,1.5vw,21px);opacity:.92}
+.cta-end .actions{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--brown-deep);border-top:1px solid var(--line);padding:50px 0 40px}
+footer .cols{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:end}
+footer .logo{width:110px}
+footer nav{display:flex;gap:26px;flex-wrap:wrap}
+footer a{text-decoration:none;opacity:.8;font-size:14px}
+footer a:hover{opacity:1}
+footer small{display:block;margin-top:14px;opacity:.55;font-size:13px}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* MOBILE */
+.mcta{display:none}
+@media(max-width:700px){
+.ab-hero{padding:104px 0 56px}
+.story,.lessons,.built,.faq,.cta-end{padding:60px 0}
+.story h2{margin:12px 0 22px}
+.facts{margin-top:28px}
+.lessons-head{margin-bottom:30px;gap:24px}
+.quote{margin-top:48px}
+.mcta{display:block;position:fixed;left:16px;right:16px;bottom:16px;z-index:30;text-align:center;text-decoration:none;background:var(--off);color:var(--ink);font-weight:600;font-size:16px;padding:15px 20px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.35);transform:translateY(140%);transition:transform .35s ease}
+.mcta.show{transform:none}
+footer{padding-bottom:96px}
+}
+</style>
+<style>
+.post-head{background:var(--brown-deep);padding:150px 0 60px}
+.narrow{max-width:800px;margin:0 auto;padding:0 var(--gut)}
+.crumb{display:flex;gap:10px;opacity:.7}.crumb a{text-decoration:none}.crumb a:hover{text-decoration:underline}
+.post-head h1{font-size:clamp(38px,5.6vw,76px);margin:22px 0 24px}
+.dek{font-size:clamp(19px,1.6vw,23px);line-height:1.45;opacity:.92;max-width:40ch}
+.byline{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);display:flex;gap:18px;flex-wrap:wrap;opacity:.7;font-size:12px}
+.post-body{background:var(--paper);color:var(--ink);padding:clamp(56px,8vw,100px) 0}
+.post-body p,.post-body li{font-size:19px;line-height:1.7;color:#2A211C}
+.post-body p{margin:0 0 1.15em}
+.post-body h2{font-size:clamp(25px,2.6vw,34px);font-weight:600;letter-spacing:-.025em;line-height:1.12;margin:1.9em 0 .6em;color:var(--ink)}
+.post-body ul{margin:0 0 1.3em 1.2em}.post-body li{margin:.35em 0}
+.post-body a{text-underline-offset:3px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:1.6em 0 .8em;padding:24px 0;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
+.stats b{display:block;font-size:clamp(30px,3.4vw,44px);font-weight:600;letter-spacing:-.03em;line-height:1}
+.stats span{display:block;margin-top:8px;font-size:14px;line-height:1.4;color:var(--mute)}
+.post-body p.note{font-size:14px;color:var(--mute);margin-bottom:1.6em}
+@media(max-width:640px){.stats{grid-template-columns:1fr;gap:16px}.post-head{padding:120px 0 44px}.post-body p,.post-body li{font-size:18px}}
+.jlist{list-style:none;border-top:1px solid var(--line-dark)}
+.jlist li{border-bottom:1px solid var(--line-dark)}
+.jlist a{display:grid;grid-template-columns:170px 1fr;gap:clamp(14px,3vw,40px);padding:clamp(26px,3.4vw,40px) 0;text-decoration:none}
+.jlist h2{margin:0 0 10px;font-size:clamp(24px,2.6vw,34px)}
+.jlist p{margin:0;color:#3A302A;max-width:56ch}
+.jlist .mono{color:var(--mute);padding-top:8px}
+.jlist a:hover h2{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+@media(max-width:700px){.jlist a{grid-template-columns:1fr;gap:6px}}
+.legal h2{margin-top:1.6em}
+</style>
 <!-- tse-protect v2 -->
 <style>
 html{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%}
@@ -46,65 +284,84 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
 })();
 </script>
 </head>
-<body class="dark">
-  <a class="tse-skip" href="#main">Skip to content</a>
-  <header class="tse-head">
-    <div class="tse-head__in">
-      <a class="tse-head__mark" href="index.html">The Service Edit</a>
-      <button class="tse-head__toggle" type="button" id="tseMenuBtn"
-              aria-expanded="false" aria-controls="tseMenu" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="tse-head__nav" id="tseMenu" aria-label="Main">
-        <a href="work.html">Work</a>
-        <a href="services.html" class="is-optional">Services</a>
-        <a href="about.html" class="is-optional">About</a>
-        <a href="contact.html">Start a project</a>
-      </nav>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="tse" viewBox="0 0 120 64"><text x="60" y="19" text-anchor="middle" font-family="Geist,Helvetica,Arial,sans-serif" font-weight="700" font-size="21" letter-spacing="-1" fill="currentColor">THE</text><text x="60" y="40" text-anchor="middle" font-family="Geist,Helvetica,Arial,sans-serif" font-weight="700" font-size="21" letter-spacing="-1" fill="currentColor">SERVICE</text><text x="60" y="61" text-anchor="middle" font-family="Geist,Helvetica,Arial,sans-serif" font-weight="700" font-size="21" letter-spacing="-1" fill="currentColor">EDIT</text></symbol>
+</defs></svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="/" aria-label="The Service Edit, home"><svg class="logo" viewBox="0 0 120 64" role="img"><title>The Service Edit</title><use href="#tse"/></svg></a>
+    <ul>
+      <li><a href="/#how">Websites</a></li>
+      <li><a href="/#email">Email marketing</a></li>
+      <li><a href="/photos.html">Photos</a></li>
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li class="m-cta"><a href="/#start">Get your site reviewed &rarr;</a></li>
+    </ul>
+    <a class="cta" href="/#start">Get your site reviewed</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+  <header class="post-head">
+    <div class="narrow">
+      <div class="crumb mono"><span>Journal</span></div>
+      <h1 class="caps">Journal.</h1>
+      <p class="dek">Things I&rsquo;ve learned about getting customers through the door, written for owners who don&rsquo;t have time to read marketing blogs.</p>
     </div>
   </header>
-  <section id="main" tabindex="-1" class="pg-open">
-    <div class="tse-wrap">
-      <p class="pg-lab">Journal</p>
-      <h1>Journal</h1>
-      <p class="lede">Notes on what actually moves the needle for service businesses, written from having run one rather than from having read about it.</p>
+  <div class="post-body">
+    <div class="narrow">
+      <ul class="jlist">
+<li><a href="/journal/quiet-midweeks-are-not-a-foot-traffic-problem.html"><span class="mono">Hospitality</span><div><h2>Quiet midweeks usually aren&rsquo;t a foot traffic problem</h2><p>The people who would come in on a Wednesday often already know you. That&rsquo;s a different problem to not being found, and a much cheaper one to fix.</p></div></a></li>
+<li><a href="/journal/why-hospitality-gets-better-email-results.html"><span class="mono">Email marketing</span><div><h2>Why email works so well for hospitality</h2><p>Venues have advantages most industries would love: customers who already like them, and something worth saying every week that isn&rsquo;t a discount.</p></div></a></li>
+<li><a href="/journal/your-email-list-is-doing-nothing.html"><span class="mono">Email marketing</span><div><h2>Your email list is sitting there doing nothing</h2><p>Your booking and ordering systems have been collecting customers&rsquo; email addresses for years. Here&rsquo;s what leaving that list alone costs, and how to start using it.</p></div></a></li>
+<li><a href="/journal/your-website-is-losing-you-customers.html"><span class="mono">Websites</span><div><h2>Your website might be losing you customers, and you won&rsquo;t see which ones</h2><p>Most small business websites look fine at a glance. The customers they lose leave no trace. Here&rsquo;s where it usually happens, and how to check yours.</p></div></a></li>
+      </ul>
     </div>
-  </section>
-  <section class="pg-sec pg-sec--plain">
-    <div class="tse-wrap">
-      <div class="jr">
-        <a class="jr__i" href="journal/quiet-midweeks-are-not-a-foot-traffic-problem.html"><h3>Quiet midweeks are not a foot traffic problem</h3><p>The people who would come on a Wednesday already know you exist. That is a different problem to being undiscovered, and it has a cheaper fix.</p></a>
-        <a class="jr__i" href="journal/restaurant-from-9-covers-to-fully-booked.html"><h3>From 9 covers to fully booked</h3><p>What one email did to a quiet night, and why the list it went to was already sitting in the booking system.</p></a>
-        <a class="jr__i" href="journal/why-hospitality-gets-better-email-results.html"><h3>Why hospitality gets better email results</h3><p>Venues have something almost no other industry has: a reason to write to people every single week that is not a discount.</p></a>
-        <a class="jr__i" href="journal/your-email-list-is-doing-nothing.html"><h3>Your email list is doing nothing</h3><p>Every booking and every order has been collecting names for years. Most venues have never sent them a thing.</p></a>
-        <a class="jr__i" href="journal/your-website-is-losing-you-customers.html"><h3>Your website is losing you customers</h3><p>Not by looking bad. By making the three things people came to do slightly harder than they need to be.</p></a>
-      </div>
+  </div>
+<section class="cta-end">
+  <div class="wrap">
+    <span class="mono" style="opacity:.6">Start here</span>
+    <h2 class="caps" style="margin-top:14px">Rather talk than read?</h2>
+    <p>Send me your website and a line about your business. I&rsquo;ll go through it and tell you plainly what I&rsquo;d fix first.</p>
+    <div class="actions">
+      <a class="btn solid" href="/#start">Get your site reviewed</a>
+      <a class="btn ghost" href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
     </div>
-  </section>
-  <section class="pg-end">
-    <div class="tse-wrap">
-      <h2>Rather talk than read?</h2>
-      <div class="btn-row"><a class="btn btn--solid" href="contact.html">Start a project &rarr;</a><a class="btn" href="work.html">See the work</a></div>
+  </div>
+</section>
+</main>
+
+<a class="mcta" id="mcta" href="/#start">Get your site reviewed</a>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <svg class="logo" viewBox="0 0 120 64" role="img"><title>The Service Edit</title><use href="#tse"/></svg>
+      <small>Websites, photos and email marketing for service businesses. Based in Perth, working Australia wide.</small>
     </div>
-  </section>
-  <footer class="tse-foot">
-    <div class="tse-foot__in">
-      <span>The Service Edit &middot; Based in Perth, working Australia wide</span>
-      <nav class="tse-foot__nav">
-        <a href="work.html">Work</a>
-        <a href="services.html">Services</a>
-        <a href="web-presence-build.html">Web presence build</a>
-        <a href="email-marketing.html">Email marketing</a>
-        <a href="digital-audit.html">Digital audit</a>
-        <a href="concept-builds.html">Concept builds</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="the-service-edit-journal.html">Journal</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy-policy.html">Privacy</a>
-      </nav>
-    </div>
-  </footer>
-<script src="tse2/assets/js/nav.js" defer></script>
+    <nav>
+      <a href="/#how">Websites</a><a href="/#email">Email marketing</a><a href="/photos.html">Photos</a><a href="/#work">Work</a><a href="/property.html">Property photos</a><a href="/about.html">About</a><a href="/the-service-edit-journal.html">Journal</a>
+      <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
+      <a href="/privacy-policy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),btn=document.getElementById('menuBtn'),m=document.getElementById('mcta');
+  function s(){nav.classList.toggle('solid',window.scrollY>40);if(m)m.classList.toggle('show',window.scrollY>500)}s();window.addEventListener('scroll',s,{passive:true});
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu'});
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>

@@ -415,6 +415,10 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
 .page-head .actions{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
 @media(max-width:700px){.page-head{padding:120px 0 56px}}
 .svc-grid{grid-template-columns:repeat(3,1fr)}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid.three .proj .meta{flex-direction:column;align-items:flex-start;gap:4px}
+@media(max-width:900px){.grid.three{grid-template-columns:1fr}}
+.work-more{margin-top:clamp(30px,4vw,48px);font-size:17px}.work-more a{font-weight:500;text-underline-offset:5px}
 @media(max-width:900px){.svc-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -431,7 +435,7 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
       <li><a href="websites.html">Websites</a></li>
       <li><a href="email-marketing.html">Email marketing</a></li>
       <li><a href="photos.html">Photos</a></li>
-      <li><a href="#work">Work</a></li>
+      <li><a href="work.html">Work</a></li>
       <li><a href="about.html">About</a></li>
       <li class="m-cta"><a href="#start">Get your site reviewed &rarr;</a></li>
     </ul>
@@ -488,10 +492,11 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
 <section class="work" id="work">
   <div class="wrap">
     <div class="work-head">
-      <div><span class="mono" style="color:var(--mute)">Selected builds</span><h2 class="caps" style="margin-top:14px">Some of the websites I&rsquo;ve built.</h2></div>
+      <div><span class="mono" style="color:var(--mute)">Selected builds</span><h2 class="caps" style="margin-top:14px">Recent work.</h2></div>
       <p>They&rsquo;re very different businesses, but each build started with the same question: what does someone need to do when they land here?</p>
     </div>
-    <div class="grid" id="featured"></div>
+    <div class="grid three" id="featured"></div>
+    <p class="work-more"><a href="work.html">See all six builds &rarr;</a></p>
   </div>
 </section>
 
@@ -546,7 +551,7 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
       <small>Websites, photos and email marketing for service businesses. Based in Perth, working Australia wide.</small>
     </div>
     <nav>
-      <a href="websites.html">Websites</a><a href="email-marketing.html">Email marketing</a><a href="photos.html">Photos</a><a href="#work">Work</a><a href="property.html">Property photos</a><a href="about.html">About</a><a href="the-service-edit-journal.html">Journal</a>
+      <a href="websites.html">Websites</a><a href="email-marketing.html">Email marketing</a><a href="photos.html">Photos</a><a href="work.html">Work</a><a href="property.html">Property photos</a><a href="about.html">About</a><a href="the-service-edit-journal.html">Journal</a>
       <a href="mailto:hello@theserviceedit.com">hello@theserviceedit.com</a>
       <a href="privacy-policy.html">Privacy</a>
     </nav>
@@ -555,6 +560,7 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
 
 <script>
 /* Projects. Notes are one line each: what the site was built to do. */
+var SHOW=['CVBS','Jordy\u2019s','Coastside Solid Plastering'];
 var FEATURED=[
  {n:'CVBS',i:'Events & Venues',l:'Worldwide',u:'https://the-service-edit.github.io/cvbs-2026/',img:'v2/assets/work-cvbs.jpg?v=20260929a',note:'A global venue finding business, rebuilt in phases around trust rather than search.'},
  {n:'Jordy\u2019s',i:'Hospitality',l:'Casuarina, NSW',u:'https://jordyscasuarina.com',img:'v2/assets/work-jordys.jpg?v=20260927k',note:'A pizza and margarita bar, built to get people booking a table or ordering in, with the email running alongside it.'},
@@ -565,7 +571,7 @@ var FEATURED=[
 ];
 (function(){
   var g=document.getElementById('featured');
-  FEATURED.forEach(function(p){
+  FEATURED.filter(function(p){return SHOW.indexOf(p.n)>-1}).forEach(function(p){
     var a=document.createElement('a');a.className='proj rv';a.href=p.u;a.target='_blank';a.rel='noopener';
     a.innerHTML='<div class="ph"><img src="'+p.img+'" alt="'+p.n+' website, printed" loading="lazy"></div><div class="meta"><h3>'+p.n+'</h3><span class="mono">'+p.i+' · '+p.l+'</span></div><p>'+p.note+'</p>';
     g.appendChild(a);

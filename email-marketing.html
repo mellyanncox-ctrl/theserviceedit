@@ -178,6 +178,18 @@ a{color:inherit}
 .proof .src{margin-top:clamp(28px,3vw,40px);max-width:70ch;opacity:.7;font-size:15px}
 @media(max-width:800px){.email-head,.epair{grid-template-columns:1fr}.eflow,.stats{grid-template-columns:1fr}.eflow div+div{border-left:0;padding-left:0;border-top:1px solid var(--line);margin-top:22px}}
 
+/* SERIES */
+.series{margin-top:clamp(70px,9vw,120px);border-top:1px solid var(--line);padding-top:clamp(30px,4vw,50px)}
+.series-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,60px);align-items:end}
+.series-head h3{font-size:clamp(28px,3vw,44px);font-weight:600;letter-spacing:-.03em;line-height:1.05;margin-top:12px}
+.series-head p{opacity:.85;max-width:46ch}
+.phones{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.6vw,24px);margin-top:clamp(36px,5vw,60px)}
+.phones figure{margin:0}
+.phones .scr{border-radius:clamp(18px,2vw,28px);overflow:hidden;border:5px solid #15110E;background:#fff;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.phones img{width:100%;aspect-ratio:1/2;object-fit:cover;object-position:top}
+.phones figcaption{margin-top:14px;font-size:14px;opacity:.75;line-height:1.4}
+.phones figcaption b{display:block;font-size:15px;font-weight:600;opacity:1;color:var(--off);margin-bottom:2px}
+@media(max-width:1000px){.series-head{grid-template-columns:1fr}.phones{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(62vw,260px);overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--gut)*-1);padding:0 var(--gut) 12px;scrollbar-width:none}.phones::-webkit-scrollbar{display:none}.phones figure{scroll-snap-align:start}}
 /* PRICE */
 .price{background:var(--brown);padding:clamp(90px,12vw,160px) 0}
 .price h2{font-size:clamp(40px,6vw,96px);max-width:12ch}
@@ -446,18 +458,31 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
   <div class="wrap">
     <span class="mono">Email marketing</span>
     <h1 class="caps">Your list is already there. Let&rsquo;s use it.</h1>
-    <p class="sub">Every booking, every order and every QR code on a table is a name you already have, and most businesses never send those people anything. On a monthly retainer I write, design and send the emails, and set up the ones that run on their own. Right now that includes Jordy&rsquo;s, Meat Merchant and CVBS.</p>
+    <p class="sub">Every booking, every order and every QR code on a table is a name you already have, and most businesses never send those people anything. On a monthly retainer I write, design and send the emails, and set up the ones that run on their own. Right now that includes Jordy&rsquo;s and CVBS, and it started with Meat Merchant.</p>
     <div class="actions"><a class="btn solid" href="#start">Get in touch</a><a class="btn ghost" href="#cost">What it costs</a></div>
   </div>
 </section>
 
 <section class="email" id="email">
   <div class="wrap">
-    <div class="wide rv"><img src="v2/assets/email-campaigns.jpg?v=20260927h" alt="Printed emails for Jordy's, Meat Merchant and CVBS hanging from a kitchen docket rail" loading="lazy"></div>
+    <div class="wide rv"><img src="v2/assets/email-hero-cvbs.jpg?v=20260930a" alt="A hand holding a phone open on The Feature, the CVBS newsletter about Sydney harbour dinners" loading="lazy"></div>
     <div class="eflow">
       <div class="rv"><span class="mono">01</span><h3>Set up properly</h3><p>Your platform configured, your domain authenticated, your list cleaned and segmented, so emails land in inboxes instead of spam.</p></div>
       <div class="rv"><span class="mono">02</span><h3>Written and sent</h3><p>Campaigns written in your voice, designed to match your brand and sent on a schedule. You approve them before they go, or leave it with me.</p></div>
       <div class="rv"><span class="mono">03</span><h3>Running on their own</h3><p>Welcome, birthday, milestone and win back emails. Set once, then working every day without you touching them.</p></div>
+    </div>
+    <div class="series">
+      <div class="series-head">
+        <div><span class="mono" style="opacity:.6">CVBS &middot; Mailchimp</span><h3 class="rv">One newsletter, five layouts.</h3></div>
+        <p class="rv">CVBS sends one newsletter, but not the same email every time. I built five layouts, each for a different job, so a venue comparison doesn&rsquo;t get squeezed into the shape of an offers email. Same brand and the same voice every issue, so it still reads like one publication.</p>
+      </div>
+      <div class="phones">
+        <figure class="rv"><div class="scr"><img src="v2/assets/cvbs-edm-insider.jpg?v=20260930a" alt="The Insider, a CVBS email comparing three venues for a conference of 150" loading="lazy"></div><figcaption><b>The Insider</b>Three venues, compared on what decides it</figcaption></figure>
+        <figure class="rv"><div class="scr"><img src="v2/assets/cvbs-edm-offers.jpg?v=20260930a" alt="The Offers, a CVBS email listing live venue offers in the order they close" loading="lazy"></div><figcaption><b>The Offers</b>Live offers, in the order they close</figcaption></figure>
+        <figure class="rv"><div class="scr"><img src="v2/assets/cvbs-edm-feature.jpg?v=20260930a" alt="The Feature, a CVBS email on Sydney harbour dinner venues" loading="lazy"></div><figcaption><b>The Feature</b>One city, told as a story</figcaption></figure>
+        <figure class="rv"><div class="scr"><img src="v2/assets/cvbs-edm-shortlist.jpg?v=20260930a" alt="The Shortlist, a CVBS email on four residential conference hotels" loading="lazy"></div><figcaption><b>The Shortlist</b>Four venues for one kind of brief</figcaption></figure>
+        <figure class="rv"><div class="scr"><img src="v2/assets/cvbs-edm-guide.jpg?v=20260930a" alt="The Guide, a CVBS destination guide to Perth and Bunker Bay" loading="lazy"></div><figcaption><b>The Guide</b>A destination, day by day</figcaption></figure>
+      </div>
     </div>
     <div class="plat rv">
       <span class="mono" style="opacity:.6">Works with what you already use</span>
@@ -465,8 +490,8 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
       <p>Jordy&rsquo;s emails are custom branded HTML, built to look like Jordy&rsquo;s and sent through TalkBox to the guests already in his NowBookIt bookings. Not a stock template, and nothing new for you to set up. For online shops I work in Klaviyo, the way I did for Meat Merchant, and CVBS&rsquo;s emails go out through Mailchimp.</p>
     </div>
     <div class="epair">
-      <figure class="rv"><img src="v2/assets/email-cvbs.jpg?v=20260927f" alt="A printed CVBS email on a steel bench beside a conference lanyard and hotel key card" loading="lazy"><figcaption>CVBS's brief confirmation. Sent the moment a brief lands, with exactly what happens next.</figcaption></figure>
-      <figure class="rv"><img src="v2/assets/email-subject.jpg?v=20260927f" alt="A Meat Merchant win back email sliding out of an envelope" loading="lazy"><figcaption>Meat Merchant's win back email. Written from the owner, with one offer and one button.</figcaption></figure>
+      <figure class="rv"><img src="v2/assets/email-jordys-birthday.jpg?v=20260930a" alt="Jordy's birthday email open on a phone above a pizza and a margarita" loading="lazy"><figcaption>Jordy&rsquo;s birthday email. One of the emails that runs on its own, sent to guests already in his NowBookIt bookings.</figcaption></figure>
+      <figure class="rv"><img src="v2/assets/email-meatmerchant.jpg?v=20260930a" alt="A Meat Merchant email open on a phone above two rump steaks on a butcher's block" loading="lazy"><figcaption>A Meat Merchant product email, built in Klaviyo. One cut, one price, one button.</figcaption></figure>
     </div>
     <div class="proof">
       <span class="mono" style="opacity:.6">Proof</span>

@@ -6,3 +6,13 @@ Disallow: /index-old-backup.html
 Disallow: /index-previous.html
 Disallow: /work-mockup.html
 Sitemap: https://theserviceedit.com/sitemap.xml
+Disallow: /twin-peaks/
+Disallow: /fiaje/
+Disallow: /alexandrina-cheese/
+Disallow: /habeo/
+Disallow: /woodside-cheese/
+Disallow: /luca-nougat/
+Disallow: /mondo-nougat/
+Disallow: /jocelyns-provisions/
+Disallow: /bison-home/
+Disallow: /just-ruby-and-me/

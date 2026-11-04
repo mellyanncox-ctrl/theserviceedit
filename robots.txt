@@ -71,3 +71,13 @@ Disallow: /tiger-tribe/
 Disallow: /tiny-bear-distillery/
 Disallow: /two-sisters-wine/
 Disallow: /underground-spirits/
+Disallow: /australian-meats/
+Disallow: /meeraboo/
+Disallow: /cheese-therapy/
+Disallow: /thousand-apologies/
+Disallow: /bun-coffee/
+Disallow: /kakawa-chocolates/
+Disallow: /castle-and-things/
+Disallow: /mayde/
+Disallow: /alfresco-emporium/
+Disallow: /clandestino-coffee/

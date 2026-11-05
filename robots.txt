@@ -95,3 +95,4 @@ Disallow: /sohi-spirits/
 Disallow: /scion-wine/
 Disallow: /cupitts-estate/
 Disallow: /chambers-rosewood/
+Disallow: /oranje-tractor/

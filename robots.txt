@@ -88,3 +88,4 @@ Disallow: /paranormal-wines/
 Disallow: /bellarine-distillery/
 Disallow: /burrundulla-wines/
 Disallow: /sawmill-gin/
+Disallow: /jack-rabbit-vineyard/

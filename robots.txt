@@ -97,3 +97,4 @@ Disallow: /cupitts-estate/
 Disallow: /chambers-rosewood/
 Disallow: /oranje-tractor/
 Disallow: /dukes-vineyard/
+Disallow: /whicher-ridge/

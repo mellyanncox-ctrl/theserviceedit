@@ -81,3 +81,6 @@ Disallow: /castle-and-things/
 Disallow: /mayde/
 Disallow: /alfresco-emporium/
 Disallow: /clandestino-coffee/
+Disallow: /grand-cru-wineshop/
+Disallow: /wise-child-wine-store/
+Disallow: /big-tree-distillery/

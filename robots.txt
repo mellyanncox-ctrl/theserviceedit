@@ -85,3 +85,4 @@ Disallow: /grand-cru-wineshop/
 Disallow: /wise-child-wine-store/
 Disallow: /big-tree-distillery/
 Disallow: /paranormal-wines/
+Disallow: /bellarine-distillery/

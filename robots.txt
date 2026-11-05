@@ -92,3 +92,4 @@ Disallow: /jack-rabbit-vineyard/
 Disallow: /pizzini-wines/
 Disallow: /old-bridge-cellars/
 Disallow: /sohi-spirits/
+Disallow: /scion-wine/

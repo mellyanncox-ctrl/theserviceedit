@@ -99,3 +99,4 @@ Disallow: /oranje-tractor/
 Disallow: /dukes-vineyard/
 Disallow: /whicher-ridge/
 Disallow: /zenith-distillery/
+Disallow: /tokar-estate/

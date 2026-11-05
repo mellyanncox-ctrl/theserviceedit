@@ -89,3 +89,6 @@ Disallow: /bellarine-distillery/
 Disallow: /burrundulla-wines/
 Disallow: /sawmill-gin/
 Disallow: /jack-rabbit-vineyard/
+Disallow: /pizzini-wines/
+Disallow: /old-bridge-cellars/
+Disallow: /sohi-spirits/

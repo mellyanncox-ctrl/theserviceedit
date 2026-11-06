@@ -100,3 +100,9 @@ Disallow: /dukes-vineyard/
 Disallow: /whicher-ridge/
 Disallow: /zenith-distillery/
 Disallow: /tokar-estate/
+Disallow: /fat-cow-gourmet-meats/
+Disallow: /daylesford-meat-co/
+Disallow: /peter-augustus/
+Disallow: /kingston-town-meats/
+Disallow: /hagens-organics/
+Disallow: /pryde-butchery/

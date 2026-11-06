@@ -106,3 +106,6 @@ Disallow: /peter-augustus/
 Disallow: /kingston-town-meats/
 Disallow: /hagens-organics/
 Disallow: /pryde-butchery/
+Disallow: /tender-gourmet-butchery/
+Disallow: /peter-bouchier/
+Disallow: /p-princi/

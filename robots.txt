@@ -109,3 +109,4 @@ Disallow: /pryde-butchery/
 Disallow: /tender-gourmet-butchery/
 Disallow: /peter-bouchier/
 Disallow: /p-princi/
+Disallow: /2-smoking-barrels/

@@ -134,3 +134,14 @@ Disallow: /edge-hill-cairns-bowls-club/
 Disallow: /mount-lawley-bowling-club/
 Disallow: /bondi-bowling-club/
 Disallow: /coolum-beach-sports-club/
+Disallow: /club-lithgow/
+Disallow: /surfers-paradise-slsc/
+Disallow: /ferntree-gully-bowling-club/
+Disallow: /armidale-city-bowling-club/
+Disallow: /club-whitsunday/
+Disallow: /evans-head-bowling-club/
+Disallow: /hollywood-subiaco-bowling-club/
+Disallow: /renmark-club/
+Disallow: /royal-hobart-golf-club/
+Disallow: /rainbow-beach-slsc/
+Disallow: /penrith-bowling-club/

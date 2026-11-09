@@ -123,3 +123,14 @@ Disallow: /clovelly-bowling-club/
 Disallow: /marrickville-bowling-club/
 Disallow: /ashfield-bowling-club/
 Disallow: /bowral-bowling-club/
+Disallow: /nelson-bay-bowling-club/
+Disallow: /the-boo/
+Disallow: /traralgon-bowls-club/
+Disallow: /seacliff-surfy/
+Disallow: /gerringong-bowlo/
+Disallow: /queenscliff-bowling-tennis-croquet-club/
+Disallow: /port-city-bowling-club/
+Disallow: /edge-hill-cairns-bowls-club/
+Disallow: /mount-lawley-bowling-club/
+Disallow: /bondi-bowling-club/
+Disallow: /coolum-beach-sports-club/

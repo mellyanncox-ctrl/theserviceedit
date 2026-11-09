@@ -145,3 +145,4 @@ Disallow: /renmark-club/
 Disallow: /royal-hobart-golf-club/
 Disallow: /rainbow-beach-slsc/
 Disallow: /penrith-bowling-club/
+Disallow: /lakes-entrance-bowls-club/

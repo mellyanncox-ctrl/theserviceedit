@@ -110,3 +110,16 @@ Disallow: /tender-gourmet-butchery/
 Disallow: /peter-bouchier/
 Disallow: /p-princi/
 Disallow: /2-smoking-barrels/
+Disallow: /torquay-bowls-club/
+Disallow: /pottsville-beach-sports-club/
+Disallow: /yamba-bowlo/
+Disallow: /cabarita-beach-bowls/
+Disallow: /harbord-bowling-club/
+Disallow: /ocean-grove-bowling-club/
+Disallow: /cooly-bowls-club/
+Disallow: /doubleview-bowling-club/
+Disallow: /glenelg-surf-life-saving-club/
+Disallow: /clovelly-bowling-club/
+Disallow: /marrickville-bowling-club/
+Disallow: /ashfield-bowling-club/
+Disallow: /bowral-bowling-club/

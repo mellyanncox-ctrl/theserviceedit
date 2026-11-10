@@ -164,3 +164,13 @@ Disallow: /mudbar/
 Disallow: /bistro-molines/
 Disallow: /the-robertson-hotel/
 Disallow: /ficifolia-fragrances/
+Disallow: /rowlee-wines/
+Disallow: /furneaux-distillery/
+Disallow: /cauldron-distillery/
+Disallow: /charlies-of-darwin/
+Disallow: /cannibal-creek-vineyard/
+Disallow: /harman-wines/
+Disallow: /la-fattoria-perth-hills/
+Disallow: /alice-springs-brewing-co/
+Disallow: /parrot-distilling-co/
+Disallow: /pomona-distilling-co/

@@ -153,3 +153,7 @@ Disallow: /yowani-country-club/
 Disallow: /dicky-beach-surf-club/
 Disallow: /darwin-trailer-boat-club/
 Disallow: /wines-of-while/
+Disallow: /the-agrarian-kitchen/
+Disallow: /canberra-cellar-door/
+Disallow: /cultured-living/
+Disallow: /mismatch-brewing/

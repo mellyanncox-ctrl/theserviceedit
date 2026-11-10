@@ -246,6 +246,17 @@ footer .small{grid-column:1/-1;border-top:1px solid #222;padding-top:22px;font-s
 }
 
 </style>
+<style id="lock-mobile">
+@supports (overflow:clip){html,body{overflow-x:clip}}
+@media (max-width:900px){
+ .pit-board>*,.pit-list,.pit-list li,.pit-row,.pit-txt{min-width:0;max-width:100%}
+ .pit-row{grid-template-columns:84px minmax(0,1fr) 18px}
+ .pit-name{overflow-wrap:anywhere}
+ .pit-end{flex-wrap:wrap;min-width:0}
+ .pit-go{white-space:normal}
+}
+@media (max-width:420px){.pit-row{grid-template-columns:76px minmax(0,1fr) 16px}}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="in">

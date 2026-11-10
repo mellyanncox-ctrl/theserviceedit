@@ -150,3 +150,5 @@ Disallow: /lobethal-road-wines/
 Disallow: /baker-williams-distillery/
 Disallow: /ballarat-golf-club/
 Disallow: /yowani-country-club/
+Disallow: /dicky-beach-surf-club/
+Disallow: /darwin-trailer-boat-club/

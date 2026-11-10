@@ -152,3 +152,4 @@ Disallow: /ballarat-golf-club/
 Disallow: /yowani-country-club/
 Disallow: /dicky-beach-surf-club/
 Disallow: /darwin-trailer-boat-club/
+Disallow: /wines-of-while/

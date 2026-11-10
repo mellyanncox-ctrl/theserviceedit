@@ -147,3 +147,4 @@ Disallow: /rainbow-beach-slsc/
 Disallow: /penrith-bowling-club/
 Disallow: /lakes-entrance-bowls-club/
 Disallow: /lobethal-road-wines/
+Disallow: /baker-williams-distillery/

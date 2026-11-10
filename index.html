@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>The Service Edit · Digital marketing for service businesses, Perth and Australia wide</title>
-<meta name="description" content="Digital marketing for hospitality, trades and local service businesses across Australia: websites, photo upgrades and email marketing. Run by Mel Cox, who spent twenty years in hospitality and did the marketing for her own cafés. Send your site for a straight review.">
+<title>The Service Edit · Email marketing and websites, Perth and Australia wide</title>
+<meta name="description" content="Email marketing and websites for Australian businesses, from Mel Cox in Perth. I design three emails for your brand before you hire me, then write, design and send them every month and set up the ones that go out on their own.">
 <link rel="canonical" href="https://theserviceedit.com/">
 <meta name="theme-color" content="#3A2E25">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Service Edit">
 <meta property="og:url" content="https://theserviceedit.com/">
-<meta property="og:title" content="The Service Edit · Digital marketing for service businesses">
-<meta property="og:description" content="Why does one website cost $500 and another $5K? Websites, photos and email marketing from someone who has run the business.">
+<meta property="og:title" content="The Service Edit · Email marketing and websites">
+<meta property="og:description" content="I&rsquo;ll design your next three emails before you hire me. Email marketing and websites from someone who has run the business.">
 <meta property="og:image" content="https://theserviceedit.com/v2/assets/og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -325,6 +325,21 @@ footer{padding:40px 0 32px}
 .hero-me p{font-size:15px;line-height:1.4;opacity:.92;margin:0}
 .hero-me b{font-weight:600}
 @media(max-width:700px){.hero-me{display:flex}}
+/* phone hero (Nov 2026) */
+.hero.hero-phone{background:#3A2416;min-height:min(56vw,900px);display:flex;align-items:center}
+.hero-phone picture{position:absolute;inset:0;margin:0;z-index:0}
+.hero-phone picture img{width:100%;height:100%;object-fit:cover;object-position:100% center;-webkit-mask-image:none;mask-image:none}
+.hero-phone::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(40,24,15,.66) 0%,rgba(40,24,15,.28) 38%,rgba(40,24,15,0) 52%)}
+.hero-phone .copy{width:100%;text-align:left;padding-top:clamp(110px,9vw,150px);padding-bottom:clamp(60px,6vw,100px)}
+.hero-phone .copy>*{max-width:min(41%,600px)}
+.hero-phone .svc-tags{justify-content:flex-start}
+.hero-phone h1{font-size:clamp(40px,4.7vw,82px)}
+.hero-phone h1 span{color:#D9B9A3}
+.hero-phone .sub{margin:24px 0 0;max-width:40ch;font-size:clamp(16px,1.3vw,19px)}
+.hero-phone .actions{justify-content:flex-start}
+.hp-cap{position:absolute;right:var(--gut);bottom:22px;z-index:2;font-size:11px;opacity:.7}
+@media(max-width:1100px){.hero.hero-phone{display:flex;flex-direction:column;min-height:0}.hero-phone .copy{order:1;padding-bottom:28px}.hero-phone .copy>*{max-width:none}.hero-phone picture{order:2;position:static;margin-top:0}.hero-phone picture img{height:auto}.hero-phone::after{display:none}.hp-cap{order:3;position:static;padding:10px var(--gut) 20px}}
+@media(min-width:701px) and (max-width:1100px){.hero-phone .copy>*{max-width:640px}}
 /* rv mobile polish */
 .rv-dots{display:none}
 @media(max-width:1200px){.rv-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}.rv-dots span{width:7px;height:7px;border-radius:50%;background:var(--line-dark);transition:background .2s,width .2s}.rv-dots span.on{background:var(--ink);width:20px;border-radius:4px}}
@@ -459,59 +474,60 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
   <div class="wrap">
     <a href="#top" aria-label="The Service Edit, home"><svg class="logo" viewBox="0 0 120 64" role="img"><title>The Service Edit</title><use href="#tse"/></svg></a>
     <ul>
-      <li><a href="websites.html">Websites</a></li>
       <li><a href="email-marketing.html">Email marketing</a></li>
+      <li><a href="websites.html">Websites</a></li>
       <li><a href="photos.html">Photos</a></li>
       <li><a href="work.html">Work</a></li>
       <li><a href="about.html">About</a></li>
-      <li class="m-cta"><a href="#start">Get your site reviewed &rarr;</a></li>
+      <li class="m-cta"><a href="#start">Get your three emails &rarr;</a></li>
     </ul>
-    <a class="cta" href="#start">Get your site reviewed</a>
+    <a class="cta" href="#start">Get your three emails</a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 
 <main id="top">
 
-<section class="hero">
-  <div class="copy wrap">
-    <div class="svc-tags"><span style="border:0;padding:0;border-radius:0">Digital marketing for hospitality, trades and local service businesses</span></div>
-    <h1 class="caps">Websites, photos<br class="d"> and email that<br class="d"> bring in customers.</h1>
-    <p class="sub">For hospitality, trades and local service businesses that are better than they look online. I build the website, upgrade the photos and run the emails, and you deal with me the whole way through.</p>
-    <div class="actions">
-      <a class="btn solid" href="#start">Get your site reviewed</a>
-      <a class="btn ghost" href="#work">See the work</a>
-    </div>
-    <div class="hero-me"><img src="v2/assets/mel-face.jpg?v=2" alt="Mel Cox" width="48" height="48"><p><b>I&rsquo;m Mel Cox.</b> Twenty years in hospitality, and I did the marketing for my own cafés before I did it for anyone else. <a href="about.html">More about me</a></p></div>
-  </div>
+<section class="hero hero-phone">
   <picture>
-    <source media="(max-width:700px)" srcset="v2/assets/hero-mobile.jpg?v=20260927f">
-    <img src="v2/assets/hero.jpg?v=20260927f" alt="A CVBS website print pouring out of a large format printer and curling onto the floor" fetchpriority="high">
+    <source media="(max-width:700px)" srcset="v2/assets/hero-phone-mobile.jpg?v=20261110">
+    <img src="v2/assets/hero-phone.jpg?v=20261110" alt="A burgundy iPhone 18 Pro Max showing the real CVBS launch email, standing beside a second phone on a warm brown studio backdrop" width="2400" height="1340" fetchpriority="high">
   </picture>
+  <div class="copy wrap">
+    <div class="svc-tags"><span style="border:0;padding:0;border-radius:0">Email marketing and websites &middot; Perth, working Australia wide</span></div>
+    <h1 class="caps">I&rsquo;ll design your next three emails <span>before you hire me.</span></h1>
+    <p class="sub">Built around your real products, your voice and the way your customers actually buy. If you like what you see, I write, design and send them every month, and set up the ones that go out on their own.</p>
+    <div class="actions">
+      <a class="btn solid" href="#start">Get your three emails</a>
+      <a class="btn ghost" href="email-marketing.html">See how email works</a>
+    </div>
+    <div class="hero-me"><img src="v2/assets/mel-face.jpg?v=2" alt="Mel Cox" width="48" height="48"><p><b>I&rsquo;m Mel Cox.</b> Twenty years in hospitality, and I did the marketing for my own caf&eacute;s before I did it for anyone else. <a href="about.html">More about me</a></p></div>
+  </div>
+  <p class="hp-cap mono">On screen &middot; the real CVBS launch email</p>
 </section>
 
 <section class="services" id="services">
   <div class="wrap svc-grid">
+    <a class="svc" href="email-marketing.html">
+      <span class="mono">01 · Email marketing</span>
+      <h2 class="caps">Email marketing</h2>
+      <p>Your customers&rsquo; email addresses are already in your booking or order system. On a monthly retainer I write and send the campaigns, and set up the emails that go out on their own.</p>
+      <span class="svc-proof">Jordy&rsquo;s · Meat Merchant · CVBS · NowBookIt, TalkBox, Klaviyo and Mailchimp</span>
+      <span class="svc-go">How email works <b>&rarr;</b></span>
+    </a>
     <a class="svc" href="websites.html">
-      <span class="mono">01 · Websites</span>
+      <span class="mono">02 · Websites</span>
       <h2 class="caps">Websites</h2>
       <p>For businesses that have outgrown their website. I work out what it needs to do, write it, set it up for Google and build it, so it brings in enquiries, bookings or orders.</p>
       <span class="svc-proof">CVBS · Giant Coffee · Coastside · Gold Foil Books · NutterJuck</span>
       <span class="svc-go">How a build works <b>&rarr;</b></span>
     </a>
     <a class="svc" href="photos.html">
-      <span class="mono">02 · Photos</span>
+      <span class="mono">03 · Photos</span>
       <h2 class="caps">Photos</h2>
       <p>The photos already on your phone, upgraded so the dish, the job or the room looks the way it does in person. Ready for your site, your Google profile, your menus and your listings.</p>
       <span class="svc-proof">Cafés and restaurants · Trades · Property · Venues</span>
       <span class="svc-go">See the before and afters <b>&rarr;</b></span>
-    </a>
-    <a class="svc" href="email-marketing.html">
-      <span class="mono">03 · Email marketing</span>
-      <h2 class="caps">Email marketing</h2>
-      <p>Your customers&rsquo; email addresses are already in your booking or order system. On a monthly retainer I write and send the campaigns, and set up the emails that go out on their own.</p>
-      <span class="svc-proof">Jordy&rsquo;s · Meat Merchant · CVBS · NowBookIt, TalkBox, Klaviyo and Mailchimp</span>
-      <span class="svc-go">How email works <b>&rarr;</b></span>
     </a>
   </div>
 </section>
@@ -544,12 +560,12 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
   <div class="wrap cols">
     <div>
       <span class="mono" style="opacity:.6">Start here</span>
-      <h2 class="caps" style="margin-top:14px">Send me your website.</h2>
-      <p class="lede">I'll go through it the same way I go through every build and tell you plainly what's costing you enquiries. If a new site isn't the answer, I'll say so.</p>
+      <h2 class="caps" style="margin-top:14px">Get your three emails.</h2>
+      <p class="lede">Tell me about your business and send your website or store. I&rsquo;ll join your list like a customer would, then design three emails built around your real products. I take on a few each month and reply to every one myself.</p>
       <ol class="steps">
-        <li>You send your site and a line about your business</li>
-        <li>I review the strategy, copy, search, enquiry path and build</li>
-        <li>You get a straight answer on what to fix first</li>
+        <li>You send your site or store and a line about your business</li>
+        <li>I sign up to your list and see what a new customer gets</li>
+        <li>You get three emails designed for your brand, ready to look through</li>
       </ol>
     </div>
     <form id="tseForm" novalidate>
@@ -557,8 +573,8 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
       <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
       <div><label for="f-biz">Business, and your website if you have one</label><input id="f-biz" name="business" type="text"></div>
       <div><label for="f-need">What are you after</label>
-        <select id="f-need" name="need"><option>A review of my current site</option><option>Website and email</option><option>Website only</option><option>Email marketing only</option><option>Photo upgrades</option><option>Not sure yet</option></select></div>
-      <div><label for="f-slow">Where are you losing people?</label><textarea id="f-slow" name="slow" rows="4" placeholder="Nobody can find us. Quotes go out and never come back. People visit once and we never hear from them again."></textarea></div>
+        <select id="f-need" name="need"><option>Three emails for my business</option><option>Email marketing each month</option><option>A review of my current site</option><option>Website and email</option><option>Website only</option><option>Email marketing only</option><option>Photo upgrades</option><option>Not sure yet</option></select></div>
+      <div><label for="f-slow">What do you send now, if anything?</label><textarea id="f-slow" name="slow" rows="4" placeholder="Nothing yet. A newsletter now and then. We use Klaviyo but nobody has touched it in months."></textarea></div>
       <div class="hp"><label for="f-co">Company</label><input id="f-co" name="company" type="text" tabindex="-1" autocomplete="off"></div>
       <button class="send" type="submit">Send it through</button>
       <p class="reassure">No obligation. I read and reply to every one myself.</p>
@@ -568,13 +584,13 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
 </section>
 
 </main>
-<a class="mcta" id="mcta" href="#start">Get your site reviewed</a>
+<a class="mcta" id="mcta" href="#start">Get your three emails</a>
 
 <footer>
   <div class="wrap cols">
     <div>
       <svg class="logo" viewBox="0 0 120 64" role="img"><title>The Service Edit</title><use href="#tse"/></svg>
-      <small>Websites, photos and email marketing for service businesses. Based in Perth, working Australia wide.</small>
+      <small>Email marketing and websites for Australian businesses. Based in Perth, working Australia wide.</small>
     </div>
     <nav>
       <a href="websites.html">Websites</a><a href="email-marketing.html">Email marketing</a><a href="photos.html">Photos</a><a href="work.html">Work</a><a href="property.html">Property photos</a><a href="about.html">About</a><a href="the-service-edit-journal.html">Journal</a>

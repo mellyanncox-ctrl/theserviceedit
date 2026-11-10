@@ -163,3 +163,4 @@ Disallow: /pee-wees-at-the-point/
 Disallow: /mudbar/
 Disallow: /bistro-molines/
 Disallow: /the-robertson-hotel/
+Disallow: /ficifolia-fragrances/

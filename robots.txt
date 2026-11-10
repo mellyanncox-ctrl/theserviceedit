@@ -174,3 +174,4 @@ Disallow: /la-fattoria-perth-hills/
 Disallow: /alice-springs-brewing-co/
 Disallow: /parrot-distilling-co/
 Disallow: /pomona-distilling-co/
+Disallow: /principle-brewing/

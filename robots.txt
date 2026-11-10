@@ -164,7 +164,6 @@ Disallow: /mudbar/
 Disallow: /bistro-molines/
 Disallow: /the-robertson-hotel/
 Disallow: /ficifolia-fragrances/
-<<<<<<< HEAD
 Disallow: /rowlee-wines/
 Disallow: /furneaux-distillery/
 Disallow: /cauldron-distillery/
@@ -175,5 +174,3 @@ Disallow: /la-fattoria-perth-hills/
 Disallow: /alice-springs-brewing-co/
 Disallow: /parrot-distilling-co/
 Disallow: /pomona-distilling-co/
-=======
->>>>>>> 6fb8d52 (Showcases: ficifolia-fragrances)

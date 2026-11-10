@@ -157,3 +157,9 @@ Disallow: /the-agrarian-kitchen/
 Disallow: /canberra-cellar-door/
 Disallow: /cultured-living/
 Disallow: /mismatch-brewing/
+Disallow: /orok-fragrances/
+Disallow: /rylstone-olive-press/
+Disallow: /pee-wees-at-the-point/
+Disallow: /mudbar/
+Disallow: /bistro-molines/
+Disallow: /the-robertson-hotel/

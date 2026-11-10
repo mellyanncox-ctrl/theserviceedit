@@ -295,7 +295,7 @@ footer{padding:40px 0 32px}
 /* v3 services */
 .svc-tags{display:flex;gap:8px;justify-content:center;margin-bottom:22px}
 .svc-tags span{font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(241,237,226,.55);border-radius:999px;padding:7px 14px;color:var(--off)}
-.services{background:var(--brown-deep);padding:clamp(40px,5vw,70px) 0;border-top:1px solid var(--line)}
+.services{background:var(--brown-deep);padding:clamp(40px,5vw,70px) 0}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px)}
 .svc{display:flex;flex-direction:column;text-decoration:none;color:var(--off);border:1px solid var(--line);border-radius:6px;padding:clamp(26px,3vw,44px);transition:background .25s,border-color .25s}
 .svc:hover{background:rgba(241,237,226,.04);border-color:rgba(241,237,226,.4)}
@@ -326,20 +326,23 @@ footer{padding:40px 0 32px}
 .hero-me b{font-weight:600}
 @media(max-width:700px){.hero-me{display:flex}}
 /* phone hero (Nov 2026) */
-.hero.hero-phone{background:#3A2416;min-height:min(56vw,900px);display:flex;align-items:center}
-.hero-phone picture{position:absolute;inset:0;margin:0;z-index:0}
-.hero-phone picture img{width:100%;height:100%;object-fit:cover;object-position:100% center;-webkit-mask-image:none;mask-image:none}
-.hero-phone::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(40,24,15,.66) 0%,rgba(40,24,15,.28) 38%,rgba(40,24,15,0) 52%)}
-.hero-phone .copy{width:100%;text-align:left;padding-top:clamp(110px,9vw,150px);padding-bottom:clamp(60px,6vw,100px)}
-.hero-phone .copy>*{max-width:min(41%,600px)}
+.hero.hero-phone{background:var(--brown-deep)}
+.hp-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:clamp(12px,3vw,48px);padding-top:clamp(96px,8vw,124px);padding-bottom:clamp(10px,2vw,30px)}
+.hero-phone .copy{padding-top:0;text-align:left;position:relative;z-index:2}
 .hero-phone .svc-tags{justify-content:flex-start}
-.hero-phone h1{font-size:clamp(40px,4.7vw,82px)}
+.hero-phone h1{font-size:clamp(40px,4.9vw,84px)}
 .hero-phone h1 span{color:#D9B9A3}
-.hero-phone .sub{margin:24px 0 0;max-width:40ch;font-size:clamp(16px,1.3vw,19px)}
+.hero-phone .sub{margin:24px 0 0;max-width:42ch;font-size:clamp(16px,1.3vw,19px)}
 .hero-phone .actions{justify-content:flex-start}
-.hp-cap{position:absolute;right:var(--gut);bottom:22px;z-index:2;font-size:11px;opacity:.7}
-@media(max-width:1100px){.hero.hero-phone{display:flex;flex-direction:column;min-height:0}.hero-phone .copy{order:1;padding-bottom:28px}.hero-phone .copy>*{max-width:none}.hero-phone picture{order:2;position:static;margin-top:0}.hero-phone picture img{height:auto}.hero-phone::after{display:none}.hp-cap{order:3;position:static;padding:10px var(--gut) 20px}}
-@media(min-width:701px) and (max-width:1100px){.hero-phone .copy>*{max-width:640px}}
+.hp-fig{margin:0;position:relative}
+.hp-fig{z-index:1}
+.hp-fig img{width:150%;max-width:none;height:auto;margin:-14% 0 -16% -25%;-webkit-mask-image:none;mask-image:none}
+.hp-fig figcaption{text-align:center;font-size:11px;opacity:.55;margin-top:-2%;position:relative}
+@media(max-width:900px){.hp-grid{grid-template-columns:minmax(0,1fr);padding-top:104px}.hp-fig{margin-top:-4%}.hp-fig img{width:140%;margin:-16% 0 -18% -20%}}
+.hero-proof{margin-top:26px;padding-left:16px;border-left:2px solid #D9B9A3;font-size:16px;line-height:1.45}
+.hero-proof b{font-weight:600;display:block}
+.hero-proof span{display:block;margin-top:4px;font-size:14px;opacity:.8}
+.hero-clients{margin-top:18px;font-size:12px;opacity:.7}
 /* rv mobile polish */
 .rv-dots{display:none}
 @media(max-width:1200px){.rv-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}.rv-dots span{width:7px;height:7px;border-radius:50%;background:var(--line-dark);transition:background .2s,width .2s}.rv-dots span.on{background:var(--ink);width:20px;border-radius:4px}}
@@ -489,11 +492,8 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
 <main id="top">
 
 <section class="hero hero-phone">
-  <picture>
-    <source media="(max-width:700px)" srcset="v2/assets/hero-phone-mobile.jpg?v=20261110">
-    <img src="v2/assets/hero-phone.jpg?v=20261110" alt="A burgundy iPhone 18 Pro Max showing the real CVBS launch email, standing beside a second phone on a warm brown studio backdrop" width="2400" height="1340" fetchpriority="high">
-  </picture>
-  <div class="copy wrap">
+  <div class="wrap hp-grid">
+    <div class="copy">
     <div class="svc-tags"><span style="border:0;padding:0;border-radius:0">Email marketing and websites &middot; Perth, working Australia wide</span></div>
     <h1 class="caps">I&rsquo;ll design your next three emails <span>before you hire me.</span></h1>
     <p class="sub">Built around your real products, your voice and the way your customers actually buy. If you like what you see, I write, design and send them every month, and set up the ones that go out on their own.</p>
@@ -501,9 +501,15 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
       <a class="btn solid" href="#start">Get your three emails</a>
       <a class="btn ghost" href="email-marketing.html">See how email works</a>
     </div>
+    <p class="hero-proof"><b>&ldquo;This winter we did 2,376 covers, 22 per cent up on last winter.&rdquo;</b> <span>Jordy, owner, Jordy&rsquo;s Casuarina. I send his emails every week.</span></p>
+    <p class="hero-clients mono">Emails for CVBS &middot; Jordy&rsquo;s &middot; Meat Merchant</p>
     <div class="hero-me"><img src="v2/assets/mel-face.jpg?v=2" alt="Mel Cox" width="48" height="48"><p><b>I&rsquo;m Mel Cox.</b> Twenty years in hospitality, and I did the marketing for my own caf&eacute;s before I did it for anyone else. <a href="about.html">More about me</a></p></div>
   </div>
-  <p class="hp-cap mono">On screen &middot; the real CVBS launch email</p>
+    <figure class="hp-fig">
+      <img src="v2/assets/hero-phone-blend.jpg?v=20261110b" alt="A burgundy iPhone 18 Pro Max showing the real CVBS launch email, standing beside a second phone" width="1400" height="1478" fetchpriority="high">
+      <figcaption class="mono">On screen &middot; the real CVBS launch email</figcaption>
+    </figure>
+  </div>
 </section>
 
 <section class="services" id="services">
@@ -532,29 +538,36 @@ img,picture,video,svg,canvas{-webkit-user-drag:none;user-drag:none;-webkit-user-
   </div>
 </section>
 
-<section class="work" id="work">
-  <div class="wrap">
-    <div class="work-head">
-      <div><span class="mono" style="color:var(--mute)">Selected builds</span><h2 class="caps" style="margin-top:14px">Recent work.</h2></div>
-      <p>They&rsquo;re very different businesses, but each build started with the same question: what does someone need to do when they land here?</p>
-    </div>
-    <div class="grid three" id="featured"></div>
-    <p class="work-more"><a href="work.html">See all six builds &rarr;</a></p>
-  </div>
-</section>
-
 <section class="reviews" id="reviews">
   <div class="wrap">
     <div class="rv-top">
       <div class="rv-logos" id="rvFaces"></div>
       <p class="rv-trust">From the owners I&rsquo;ve worked with.</p>
       <h2 class="caps">In their words.</h2>
-      <a class="btn dark" href="#start">Get your site reviewed</a>
+      <a class="btn dark" href="#start">Get your three emails</a>
     </div>
     <div class="rv-feature" id="rvFeature"></div>
     <div class="rv2" id="rvGrid"></div>
   </div>
 </section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="work-head">
+      <div><span class="mono" style="color:var(--mute)">Real sends</span><h2 class="caps" style="margin-top:14px">Recent emails.</h2></div>
+      <p>Every one of these went to real customers. Different businesses, same job: give people a reason to open it and one clear thing to do next.</p>
+    </div>
+    <div class="grid three">
+      <a class="proj rv" href="email-marketing.html"><div class="ph"><img src="v2/assets/email-jordys-birthday.jpg?v=20260930b" alt="Jordy's birthday email open on a phone above a pizza and a margarita" loading="lazy"></div><div class="meta"><h3>Jordy&rsquo;s</h3><span class="mono">Hospitality &middot; NowBookIt</span></div><p>A birthday email that runs on its own, sent to guests already in the booking system.</p></a>
+      <a class="proj rv" href="email-marketing.html"><div class="ph"><img src="v2/assets/email-meatmerchant.jpg?v=20260930b" alt="A Meat Merchant email open on a phone above two rump steaks on a butcher's block" loading="lazy"></div><div class="meta"><h3>Meat Merchant</h3><span class="mono">Retail &middot; Klaviyo</span></div><p>A product email built in Klaviyo. One cut, one price, one button.</p></a>
+      <a class="proj rv" href="email-marketing.html"><div class="ph"><img src="v2/assets/email-cvbs.jpg" alt="A printed CVBS email on a conference table beside a lanyard and a programme" loading="lazy"></div><div class="meta"><h3>CVBS</h3><span class="mono">Events &amp; venues &middot; Mailchimp</span></div><p>Emails for a venue finding business that brief clients and bring enquiries back.</p></a>
+    </div>
+    <p class="work-more"><a href="email-marketing.html">How email works &rarr;</a> &nbsp;&middot;&nbsp; <a href="work.html">See the website builds &rarr;</a></p>
+    <div id="featured" hidden></div>
+  </div>
+</section>
+
+
 
 <section class="contact" id="start">
   <div class="wrap cols">
@@ -612,7 +625,7 @@ var FEATURED=[
  {n:'NutterJuck Lures',i:'Handmade Lures',l:'Australia',u:'https://the-service-edit.github.io/nutterjuck/',img:'v2/assets/work-nutterjuck.jpg?v=20260927f',note:'Handmade fishing lures with a shop built to be as simple as the product.'},
 ];
 (function(){
-  var g=document.getElementById('featured');
+  var g=document.getElementById('featured');if(!g||g.hidden)return;
   FEATURED.filter(function(p){return SHOW.indexOf(p.n)>-1}).forEach(function(p){
     var a=document.createElement('a');a.className='proj rv';a.href=p.u;a.target='_blank';a.rel='noopener';
     a.innerHTML='<div class="ph"><img src="'+p.img+'" alt="The '+p.n+' website" loading="lazy"></div><div class="meta"><h3>'+p.n+'</h3><span class="mono">'+p.i+' · '+p.l+'</span></div><p>'+p.note+'</p>';

@@ -149,3 +149,4 @@ Disallow: /lakes-entrance-bowls-club/
 Disallow: /lobethal-road-wines/
 Disallow: /baker-williams-distillery/
 Disallow: /ballarat-golf-club/
+Disallow: /yowani-country-club/

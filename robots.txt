@@ -29,7 +29,6 @@ Disallow: /market-eating-house/
 Disallow: /masa-mesa/
 Disallow: /parcoola-retreats/
 Disallow: /red-poppy-estate/
-Disallow: /rose-gums-wilderness-retreat/
 Disallow: /scamander-sanctuary/
 Disallow: /studio-p/
 Disallow: /the-earl-of-leicester/

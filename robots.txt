@@ -56,7 +56,6 @@ Disallow: /margaret-river-chocolate/
 Disallow: /mork-chocolate/
 Disallow: /mount-zero-olives/
 Disallow: /old-youngs-distillery/
-Disallow: /olio-bello/
 Disallow: /otao-kitchen/
 Disallow: /pepe-saya/
 Disallow: /red-hill-candle/

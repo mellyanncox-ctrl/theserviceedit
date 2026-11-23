@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Email marketing agreement, Last Drop Elizabethan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Homemade+Apple&display=swap" rel="stylesheet">
+<style>
+/* Layout: TSE brown header band, one readable contract column, a deal summary up top, signing at the foot. */
+:root{
+  --paper:#F7F4EC; --ink:#1B1512; --brown:#3A2E25; --off:#F1EDE2; --mute:#6B5F54; --line:#DED6C8;
+  --card:#FFFDF8; --field:#FFFFFF; --fill:#F3E3C4; --fill-ink:#6A4512; --ok:#2F6B45; --ok-bg:#E4F0E6; --band-text:#E6DFD2;
+  --sans:Geist,'Helvetica Neue',Arial,sans-serif; --mono:'Geist Mono',ui-monospace,Menlo,monospace; --hand:'Homemade Apple',cursive;
+}
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{background:var(--brown);color:var(--off)}
+.draft{background:var(--fill);color:var(--fill-ink);font-size:13px}
+.draft .wrap{padding-block:10px;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between}
+header .wrap{padding-block:28px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:36px}
+.top small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--band-text)}
+.mark{font-weight:700;font-size:13px;line-height:1.05;letter-spacing:-.02em;text-align:center;color:var(--off)}
+h1{margin:0;font-size:clamp(32px,6vw,52px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;font-weight:600;text-wrap:balance;color:var(--off)}
+header p{margin:14px 0 0;max-width:58ch;color:var(--band-text);font-size:17px}
+.meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:13px;color:var(--band-text)}
+main .wrap{padding-block:36px 64px;display:grid;gap:44px}
+.deal{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.deal h2{margin-top:0}
+.terms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.terms div{background:var(--card);padding:14px 16px;min-width:0}
+.terms b{display:block;font-size:22px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.terms span{font-size:13px;color:var(--mute)}
+h2{margin:0 0 12px;font-size:22px;letter-spacing:-.02em;font-weight:600;text-wrap:balance;display:flex;gap:12px;align-items:baseline}
+h2 .n{font-family:var(--mono);font-size:13px;color:var(--mute);font-weight:500;min-width:2ch}
+section p,section li{max-width:66ch}
+section p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-left:22px}
+li{margin:0 0 6px}
+.k{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:16px 0 6px}
+.fill{background:var(--fill);color:var(--fill-ink);border-radius:4px;padding:0 5px;font-weight:500}
+.parties{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.party{border-top:2px solid var(--ink);padding-top:10px;min-width:0}
+.party dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:15px}
+.party dt{color:var(--mute)}
+.party dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.plan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+.month{border:1px solid var(--line);border-radius:10px;padding:16px 18px;min-width:0}
+.month h3{margin:0 0 8px;font-size:15px;letter-spacing:.1em;text-transform:uppercase}
+.month ol{margin:0}
+.month .tag{display:inline-block;font-size:12px;font-weight:600;background:var(--ok-bg);color:var(--ok);border-radius:99px;padding:2px 10px;margin-left:6px;letter-spacing:0;text-transform:none;vertical-align:2px}
+.example{border-left:3px solid var(--line);padding:6px 0 6px 16px;margin:12px 0;color:var(--mute);font-size:15px}
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.sig{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--card);display:grid;gap:12px;align-content:start;min-width:0}
+.sig h3{margin:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.sig .who{font-weight:600;margin-top:-6px}
+label{font-size:13px;color:var(--mute);display:grid;gap:4px}
+input[type=text]{font:inherit;color:var(--ink);background:var(--field);border:1px solid var(--line);border-radius:8px;padding:9px 11px;width:100%}
+input[type=text]:focus-visible,button:focus-visible,canvas:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.padwrap{position:relative}
+canvas{display:block;width:100%;height:120px;background:var(--field);border:1px dashed var(--mute);border-radius:8px;touch-action:none;cursor:crosshair}
+.padhint{position:absolute;left:12px;bottom:8px;font-size:12px;color:var(--mute);pointer-events:none}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+button{font:inherit;font-size:14px;font-weight:600;border-radius:99px;padding:9px 18px;cursor:pointer;border:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+button.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+button:disabled{opacity:.4;cursor:not-allowed}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink)}
+.check input{margin-top:4px;accent-color:var(--brown)}
+.err{color:#B23A2A;font-size:13px;min-height:1em}
+.done{display:grid;gap:4px}
+.done .ink{font-family:var(--hand);font-size:26px;line-height:1.6;color:var(--ink)}
+.done img{max-width:260px;background:transparent}
+.done .stamp{font-family:var(--mono);font-size:12px;color:var(--ok);background:var(--ok-bg);border-radius:6px;padding:6px 10px;justify-self:start}
+footer .wrap{padding-block:28px;font-size:14px;color:var(--band-text);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:680px){.terms{grid-template-columns:1fr 1fr}.parties,.plan,.sign{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+body{margin:0}
+.status{font-size:14px;font-weight:500}
+.status .wrap{padding-block:11px;display:flex;gap:10px 18px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.status[data-s="wait"]{background:var(--fill);color:var(--fill-ink)}
+.status[data-s="done"]{background:var(--ok-bg);color:var(--ok)}
+.status[data-s="err"]{background:#F6DCD6;color:#8A2A1C}
+.status button{padding:6px 14px;font-size:13px}
+.muted{color:var(--mute)}
+.waiting{font-size:14px;color:var(--mute);border:1px dashed var(--line);border-radius:10px;padding:16px}
+.note{font-size:13px;color:var(--mute);margin-top:12px}
+@media print{
+  .status,.form,.waiting,.no-print{display:none!important}
+  body{background:#fff;font-size:12px}
+  .band{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  main .wrap{gap:22px;padding-block:20px}
+  section,.sig,.deal{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="status" id="status" data-s="wait" role="status"><div class="wrap"><span id="status-text">Loading signatures</span><button type="button" class="ghost no-print" id="print-btn" hidden>Print or save as PDF</button></div></div>
+
+<header class="band"><div class="wrap">
+  <div class="top"><small>Prepared for Last Drop Elizabethan</small><div class="mark">THE<br>SERVICE<br>EDIT</div></div>
+  <h1>Email marketing agreement</h1>
+  <p>Four email campaigns a month, a welcome email for every new contact, your lists combined into one, and your first month on results. Month to month, no lock-in. Written in plain English so you know exactly what you're signing.</p>
+  <div class="meta"><span>Ref TSE-2026-013</span><span>Issued 23 Nov 2026</span><span>Offer open until 25 Nov 2026</span></div>
+</div></header>
+
+<main><div class="wrap">
+
+<div class="deal">
+  <h2>The deal on one page</h2>
+  <div class="terms">
+    <div><b>$750</b><span>a month plus GST</span></div>
+    <div><b>4</b><span>email campaigns a month</span></div>
+    <div><b>$0</b><span>to set up the welcome email and combine your lists</span></div>
+    <div><b>Month one</b><span>on results: more than $750 from the emails, or no fee</span></div>
+    <div><b>No lock-in</b><span>month to month, stop any time</span></div>
+    <div><b>First up</b><span>your Christmas functions email</span></div>
+  </div>
+</div>
+
+<section>
+  <h2><span class="n">1</span>Who this is between</h2>
+  <div class="parties">
+    <div class="party"><div class="k">The Service Edit ("TSE", "I")</div><dl>
+      <dt>Business</dt><dd>The Service Edit Studio, trading as The Service Edit</dd>
+      <dt>ABN</dt><dd>88 429 285 575</dd>
+      <dt>Contact</dt><dd>Mel Cox, Founder</dd>
+      <dt>Based</dt><dd>Perth, WA</dd>
+      <dt>Email</dt><dd>hello@theserviceedit.com</dd>
+    </dl></div>
+    <div class="party"><div class="k">The client ("you")</div><dl>
+      <dt>Business</dt><dd><span id="p-entity" class="muted">Entered when signing</span>, trading as Last Drop Elizabethan</dd>
+      <dt>ABN</dt><dd id="p-abn" class="muted">Entered when signing</dd>
+      <dt>Based</dt><dd>Bedfordale, WA</dd>
+      <dt>Contact</dt><dd>Sarah Nutton, info@lastdropelizabethan.com</dd>
+    </dl></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">2</span>What I'll do</h2>
+  <ul>
+    <li>Plan, write, design, build and send four email campaigns a month to your opted-in list.</li>
+    <li>Combine your opted-in contacts from Squarespace, me&amp;u and NowBookit into one list, remove duplicates and keep anyone who has unsubscribed off it, at no extra cost. I'll send you the final count before the first campaign goes out.</li>
+    <li>Set up the welcome email, at no extra cost, so every new newsletter sign-up gets it automatically.</li>
+    <li>Help you reword the marketing opt-in question in me&amp;u, so more guests say yes over the busy weeks.</li>
+    <li>Use your own photos, words, menu and prices only. I won't alter your photos or create new images with AI.</li>
+    <li>Give every campaign tracked links, so we can see which emails and buttons bring in table bookings, function enquiries and gift cards.</li>
+    <li>Check your Squarespace email plan and sending setup before the first send, so your campaigns land in inboxes, not spam.</li>
+    <li>Give you your own Lizzie planning page, where you or anyone you name can see each email on a phone and on desktop, and approve it or ask for changes.</li>
+    <li>Send you a short results note after each month: what went out, delivery and clicks for each email, and the bookings, functions and gift cards the emails brought in. Open rates are shown but not relied on, because some mail apps open emails automatically.</li>
+  </ul>
+  <div class="k">The first month</div>
+  <div class="plan">
+    <div class="month"><h3>Month one <span class="tag">On results</span></h3><ol>
+      <li>Christmas functions: the Classic Roast, your four spaces and the deadlines for final numbers, sent as soon as you approve it</li>
+      <li>Welcome: a hello to everyone on the combined list, and the welcome email switched on for new sign-ups</li>
+      <li>Gift cards for Christmas, plus table bookings for the summer</li>
+      <li>A short note from the Lizzie, written in your voice</li>
+    </ol></div>
+  </div>
+  <p style="margin-top:12px">Dates are proposed until we lock them in on your planning page. We can swap a campaign's topic by email at any time, as long as it's before I start building it.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span>What's not included</h2>
+  <ul>
+    <li>Your Squarespace, Squarespace Email Campaigns, me&amp;u, NowBookit and gift card subscriptions and fees, including any upgrade to your Squarespace email plan. These stay in your name and on your accounts. I'll tell you if your plan needs upgrading, and what it costs, before anything changes.</li>
+    <li>Moving your list and emails to a different email platform. If you'd like to look at that in the new year, I'll quote it separately first, and nothing starts without your written OK.</li>
+    <li>Social media, paid ads, SMS and new photo shoots.</li>
+    <li>Extra campaigns beyond four a month. I'll quote these first and only send them with your written OK.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">4</span>How we'll work together</h2>
+  <ul>
+    <li><b>Access.</b> You add hello@theserviceedit.com as a contributor on your Squarespace site with Administrator access. I never ask for your passwords, and you can remove my access at any time.</li>
+    <li><b>Your lists.</b> You send me exports of the guests who've opted in to hear from you in me&amp;u and NowBookit.</li>
+    <li><b>Reports.</b> You give me your NowBookit booking report, your gift card sales report and the function bookings confirmed from the emails for each month, or a reporting-only login.</li>
+    <li><b>Approval.</b> Nothing goes to your list until it's approved in writing by you or someone you name by email. A reply email saying "approved" counts, and so does the Approve button on your planning page. I'll send each campaign for approval at least 2 business days before its send date, or sooner if we agree a faster turnaround by email.</li>
+    <li><b>Changes.</b> Each campaign includes up to two rounds of changes.</li>
+    <li><b>Starting.</b> Month one starts on the day the first campaign goes out and runs for one month. Each month after runs on from there. I'll confirm the dates by email.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">5</span>Month one is on results</h2>
+  <p>If the emails don't bring in more than my $750 fee during month one, you don't pay for month one.</p>
+  <div class="k">What counts</div>
+  <ul>
+    <li><b>Table bookings</b> made through a tracked link in one of my emails. Each booked guest is valued at your average spend per head, which you give me by email before the first campaign goes out.</li>
+    <li><b>Functions</b> enquired about through a tracked link in one of my emails during month one. An enquiry on its own doesn't count. A function counts once it's confirmed with a deposit, within 30 days of the enquiry, at its confirmed value (the minimum spend or the quoted package).</li>
+    <li><b>Gift cards</b> bought through a tracked link in one of my emails.</li>
+    <li>Everything is counted at its value after discounts and refunds, and each sale or booking is counted once.</li>
+  </ul>
+  <div class="example">Example: one Christmas party of 30 books the Classic Roast at $53 a head through the functions email. That's $1,590, more than $750, so month one's fee is payable. If the emails brought in $700, month one is free.</div>
+  <div class="k">How it's checked</div>
+  <ul>
+    <li>The figures come straight from your own NowBookit, gift card and function records, so you see exactly what I see.</li>
+    <li>Within 7 days of month one ending, I send you the results with the bookings, functions and gift cards behind them, so you can check each one. Any function from month one that's still waiting on its deposit is added once it confirms, up to 30 days after the enquiry.</li>
+    <li>If fewer than three campaigns go out in month one because approvals or access were held up on your side, the results test doesn't apply and month one is invoiced as normal.</li>
+    <li>This applies once, to month one only, and needs 1,000 or more opted-in contacts once your lists are combined and duplicates removed. You've told me you have 961 subscribed contacts in Squarespace, plus opted-in contacts in me&amp;u. If the combined list comes in under 1,000, month one is at the standard fee, and we start with the welcome email and growing your list.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">6</span>Fees and invoices</h2>
+  <ul>
+    <li><b>Month one:</b> invoiced with the results, and only if the emails brought in more than $750. Due within 7 days.</li>
+    <li><b>Each month after:</b> $750 plus GST, invoiced at the start of each month you've confirmed. Due within 7 days.</li>
+    <li>If an invoice is more than 14 days overdue, I can pause sending until it's paid.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">7</span>Ending it</h2>
+  <ul>
+    <li>This agreement runs month to month, with no lock-in.</li>
+    <li>About a week before each new month starts, I'll check in by email to see if you'd like to continue. Once you confirm, the next month goes ahead. If you'd rather stop, just say so, and the month you're in is the last one.</li>
+    <li>Either of us can also stop by email at any time. The month you're in runs to its end, and there's no fee for any month after it.</li>
+    <li>When we finish, you keep everything I've made for you, and I hand back or delete any copies of your list I hold.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">8</span>Your list and the law</h2>
+  <ul>
+    <li>You confirm that everyone on the list has agreed to receive marketing emails from Last Drop Elizabethan, as the Spam Act 2003 requires. From me&amp;u and NowBookit, only guests who ticked the marketing opt-in are added. If you're not sure about part of the list, tell me and we'll leave that part out.</li>
+    <li>Every email I send identifies Last Drop Elizabethan as the sender and has a working unsubscribe link. Unsubscribes are honoured straight away.</li>
+    <li>Your list belongs to you. I only use it to send your campaigns, I never share or sell it, and I handle it in line with the Privacy Act 1988.</li>
+    <li>Emails promoting alcohol go only to your opted-in list, and you're responsible for your own liquor licence conditions.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">9</span>Who owns the work</h2>
+  <ul>
+    <li>Once a month is paid, or waived under the results month, you own the emails, copy and designs made for you in that month.</li>
+    <li>I keep my own templates, methods and know-how, and can use them for other clients without your content or branding.</li>
+    <li>I won't show your emails or results publicly unless you tick the box below.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">10</span>The fine print</h2>
+  <ul>
+    <li><b>Confidentiality.</b> Your sales figures, list and plans stay between us.</li>
+    <li><b>What I can't control.</b> I'm not responsible for outages or changes at Squarespace, me&amp;u, NowBookit or inbox providers, or for results in months after this agreement ends.</li>
+    <li><b>Liability.</b> My total liability under this agreement is capped at the fees you've paid me in the three months before a claim. Nothing here takes away your rights under Australian Consumer Law.</li>
+    <li><b>Changes.</b> Any change to this agreement needs both of us to agree in writing. Email is fine.</li>
+    <li><b>Law.</b> This agreement is governed by the laws of Western Australia.</li>
+    <li><b>Signing.</b> Signing electronically is as binding as signing on paper. This page is the whole agreement between us.</li>
+  </ul>
+</section>
+
+<section id="signing">
+  <h2><span class="n">11</span>Sign</h2>
+  <div class="sign">
+    <div class="sig" id="sig-client"><h3>For Last Drop Elizabethan</h3><div class="slot"></div></div>
+    <div class="sig" id="sig-tse"><h3>For The Service Edit</h3><div class="slot"></div></div>
+  </div>
+  <p class="note no-print" id="link-note" hidden>To sign, open this page from the link in your email.</p>
+</section>
+
+</div></main>
+
+
+<footer class="band"><div class="wrap"><span>Mel Cox · The Service Edit · Perth, WA</span><span>hello@theserviceedit.com · theserviceedit.com</span></div></footer>
+
+
+<template id="tpl-client"><div class="form" style="display:grid;gap:12px">
+  <label for="c-name">Full name<input type="text" id="c-name" autocomplete="name" placeholder="As you'd sign it"></label>
+  <label for="c-role">Position<input type="text" id="c-role" placeholder="e.g. Owner, Director"></label>
+  <label for="c-entity">Registered business name<input type="text" id="c-entity" autocomplete="organization" placeholder="As it appears on your ABN"></label>
+  <label for="c-abn">ABN<input type="text" id="c-abn" inputmode="numeric" placeholder="11 digits"></label>
+  <div class="padwrap"><canvas id="c-pad" tabindex="0" aria-label="Draw your signature"></canvas><span class="padhint">Sign here with your finger or mouse</span></div>
+  <div class="row"><button type="button" class="ghost" data-clear>Clear</button><button type="button" class="ghost" data-type>Type it instead</button></div>
+  <label class="check" for="c-folio"><input type="checkbox" id="c-folio"><span>The Service Edit may show our emails and results on theserviceedit.com.</span></label>
+  <label class="check" for="c-agree"><input type="checkbox" id="c-agree"><span>I've read this agreement and I'm authorised to sign it for the business.</span></label>
+  <div class="err" role="alert"></div>
+  <div class="row"><button type="button" data-sign>Sign agreement</button></div>
+</div></template>
+<template id="tpl-tse"><div class="form" style="display:grid;gap:12px">
+  <label for="t-name">Full name<input type="text" id="t-name" value="Mel Cox"></label>
+  <label for="t-role">Position<input type="text" id="t-role" value="Founder"></label>
+  <div class="padwrap"><canvas id="t-pad" tabindex="0" aria-label="Draw your signature"></canvas><span class="padhint">Sign here with your finger or mouse</span></div>
+  <div class="row"><button type="button" class="ghost" data-clear>Clear</button><button type="button" class="ghost" data-type>Type it instead</button></div>
+  <label class="check" for="t-agree"><input type="checkbox" id="t-agree"><span>I agree to provide the services on these terms for The Service Edit Studio.</span></label>
+  <div class="err" role="alert"></div>
+  <div class="row"><button type="button" data-sign>Sign agreement</button></div>
+</div></template>
+<script>
+(function(){
+  var EP = 'https://rxwjactnfsrakpagbiit.supabase.co/functions/v1/contract';
+  var VERSION = 'v1 23 Nov 2026';
+  var q = new URLSearchParams(location.search);
+  var ref = /^[a-z0-9-]{3,40}$/.test(q.get('ref') || '') ? q.get('ref') : 'tse-2026-013';
+  var key = (q.get('k') || '').toLowerCase();
+  if (!/^[a-z0-9]{16,40}$/.test(key)) key = '';
+  var termsSha = '';
+  var statusEl = document.getElementById('status'), statusText = document.getElementById('status-text'), printBtn = document.getElementById('print-btn');
+  printBtn.addEventListener('click', function(){ window.print(); });
+
+  function setStatus(s, text){ statusEl.dataset.s = s; statusText.textContent = text; }
+  function fmt(iso){
+    var d = new Date(iso);
+    return d.toLocaleString('en-AU', {day:'numeric', month:'short', year:'numeric', hour:'numeric', minute:'2-digit', timeZoneName:'short'});
+  }
+
+  async function hashTerms(){
+    try{
+      var m = document.querySelector('main').cloneNode(true);
+      var sg = m.querySelector('#signing'); if (sg) sg.remove();
+      var t = m.textContent.replace(/\s+/g, ' ').trim();
+      var b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t));
+      termsSha = Array.from(new Uint8Array(b)).map(function(x){ return x.toString(16).padStart(2,'0'); }).join('');
+    }catch(e){ termsSha = ''; }
+  }
+
+  function renderSigned(box, s){
+    var slot = box.querySelector('.slot'); slot.innerHTML = '';
+    var done = document.createElement('div'); done.className = 'done';
+    var im = document.createElement('img'); im.src = s.sig; im.alt = 'Signature of ' + s.name;
+    var who = document.createElement('div'); who.className = 'who'; who.textContent = s.name + (s.role ? ', ' + s.role : '');
+    done.appendChild(im); done.appendChild(who);
+    if (s.entity){ var en = document.createElement('div'); en.style.fontSize = '14px'; en.textContent = 'For ' + s.entity + (s.abn ? ', ABN ' + s.abn : ''); done.appendChild(en); }
+    var st = document.createElement('div'); st.className = 'stamp'; st.textContent = 'Signed ' + fmt(s.at); done.appendChild(st);
+    if (s.party === 'client'){ var f = document.createElement('div'); f.style.fontSize = '13px'; f.style.color = 'var(--mute)'; f.textContent = s.portfolio ? 'Portfolio use: allowed' : 'Portfolio use: not allowed'; done.appendChild(f); }
+    slot.appendChild(done);
+    if (s.party === 'client'){
+      if (s.entity){ var e = document.getElementById('p-entity'); e.textContent = s.entity; e.classList.remove('muted'); }
+      if (s.abn){ var a = document.getElementById('p-abn'); a.textContent = s.abn; a.classList.remove('muted'); }
+    }
+  }
+  function renderWaiting(box, who){
+    var slot = box.querySelector('.slot'); slot.innerHTML = '';
+    var w = document.createElement('div'); w.className = 'waiting'; w.textContent = 'Waiting for ' + who + ' to sign.';
+    slot.appendChild(w);
+  }
+
+  function renderForm(box, p){
+    var slot = box.querySelector('.slot'); slot.innerHTML = '';
+    slot.appendChild(document.getElementById('tpl-' + (p === 'client' ? 'client' : 'tse')).content.cloneNode(true));
+    var pre = p === 'client' ? 'c' : 't';
+    var cv = document.getElementById(pre + '-pad'), ctx = cv.getContext('2d'), drawing = false, last = null, inked = false, typedSig = false;
+    var typing = Promise.resolve();
+    var err = slot.querySelector('.err');
+    function size(){
+      var r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+      cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d);
+      ctx.setTransform(d,0,0,d,0,0); ctx.lineWidth = 2.2; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#1B1512';
+      inked = false; typedSig = false;
+    }
+    size();
+    function pt(e){ var r = cv.getBoundingClientRect(); return {x:e.clientX - r.left, y:e.clientY - r.top}; }
+    cv.addEventListener('pointerdown', function(e){ if (typedSig) size(); drawing = true; last = pt(e); cv.setPointerCapture(e.pointerId); });
+    cv.addEventListener('pointermove', function(e){ if (!drawing) return; var p2 = pt(e); ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(p2.x,p2.y); ctx.stroke(); last = p2; inked = true; });
+    ['pointerup','pointercancel'].forEach(function(ev){ cv.addEventListener(ev, function(){ drawing = false; }); });
+    window.addEventListener('resize', function(){ if (!inked) size(); });
+    slot.querySelector('[data-clear]').addEventListener('click', size);
+    slot.querySelector('[data-type]').addEventListener('click', function(){ typing = typeIt(); });
+    async function typeIt(){
+      var n = document.getElementById(pre + '-name').value.trim();
+      if (!n){ err.textContent = 'Add your full name first, then tap Type it instead.'; return; }
+      err.textContent = '';
+      try{ await document.fonts.load("28px 'Homemade Apple'"); }catch(e){}
+      size();
+      var r = cv.getBoundingClientRect();
+      ctx.fillStyle = '#1B1512'; ctx.font = "28px 'Homemade Apple', cursive"; ctx.textBaseline = 'middle';
+      ctx.fillText(n, 16, r.height / 2, r.width - 32); inked = true; typedSig = true;
+    }
+    var btn = slot.querySelector('[data-sign]');
+    btn.addEventListener('click', async function(){
+      await typing;
+      var name = document.getElementById(pre + '-name').value.trim();
+      var role = document.getElementById(pre + '-role').value.trim();
+      var entity = p === 'client' ? document.getElementById('c-entity').value.trim() : '';
+      var abn = p === 'client' ? document.getElementById('c-abn').value.replace(/\s+/g,'') : '';
+      if (name.length < 2){ err.textContent = 'Add your full name to sign.'; return; }
+      if (!role){ err.textContent = 'Add your position, for example Owner or Director.'; return; }
+      if (p === 'client' && !entity){ err.textContent = 'Add the registered business name, as it appears on your ABN.'; return; }
+      if (p === 'client' && !/^\d{11}$/.test(abn)){ err.textContent = 'Add your 11-digit ABN.'; return; }
+      if (!inked){ err.textContent = 'Draw your signature in the box, or tap Type it instead.'; return; }
+      if (!document.getElementById(pre + '-agree').checked){ err.textContent = 'Tick the box to confirm you agree.'; return; }
+      if (p === 'client') abn = abn.replace(/^(\d{2})(\d{3})(\d{3})(\d{3})$/, '$1 $2 $3 $4');
+      err.textContent = ''; btn.disabled = true; btn.textContent = 'Signing…';
+      try{
+        var r = await fetch(EP + '/sign', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+          ref: ref, k: key, name: name, role: role, entity: entity, abn: abn,
+          portfolio: p === 'client' ? document.getElementById('c-folio').checked : false,
+          sig: cv.toDataURL('image/png'), termsSha: termsSha, termsVersion: VERSION })});
+        var j = await r.json().catch(function(){ return {}; });
+        if (r.status === 409){ await load(); return; }
+        if (!r.ok || !j.ok) throw new Error(j.error || 'server');
+        await load();
+        var box2 = document.getElementById(p === 'client' ? 'sig-client' : 'sig-tse');
+        box2.scrollIntoView({behavior: 'smooth', block: 'center'});
+      }catch(e){
+        btn.disabled = false; btn.textContent = 'Sign agreement';
+        err.textContent = "Your signature didn't save. Check your connection and try again. If it keeps happening, email hello@theserviceedit.com.";
+      }
+    });
+  }
+
+  async function load(){
+    var boxes = {client: document.getElementById('sig-client'), tse: document.getElementById('sig-tse')};
+    if (!key){
+      renderWaiting(boxes.client, 'Last Drop Elizabethan'); renderWaiting(boxes.tse, 'The Service Edit');
+      document.getElementById('link-note').hidden = false;
+      setStatus('wait', 'Read-only copy. Open the link from your email to sign.');
+      return;
+    }
+    var j;
+    try{
+      var r = await fetch(EP + '/s?ref=' + encodeURIComponent(ref) + '&k=' + encodeURIComponent(key), {cache: 'no-store'});
+      j = await r.json();
+      if (!r.ok || j.error) throw new Error(j.error || 'server');
+    }catch(e){
+      setStatus('err', (e && e.message === 'bad_key') ? "This signing link isn't valid. Use the link from your email, or write to hello@theserviceedit.com." : "Signatures couldn't load. Refresh the page to try again.");
+      renderWaiting(boxes.client, 'Last Drop Elizabethan'); renderWaiting(boxes.tse, 'The Service Edit');
+      return;
+    }
+    var sigs = {}; (j.signatures || []).forEach(function(s){ sigs[s.party] = s; });
+    ['client','tse'].forEach(function(p){
+      if (sigs[p]) renderSigned(boxes[p], sigs[p]);
+      else if (j.party === p) renderForm(boxes[p], p);
+      else renderWaiting(boxes[p], p === 'client' ? 'Last Drop Elizabethan' : 'The Service Edit');
+    });
+    if (sigs.client && sigs.tse){
+      var last = sigs.client.at > sigs.tse.at ? sigs.client.at : sigs.tse.at;
+      setStatus('done', 'Signed by both parties. Agreement in effect from ' + new Date(last).toLocaleDateString('en-AU', {day:'numeric', month:'long', year:'numeric'}) + '.');
+    } else if (sigs[j.party]){
+      setStatus('done', 'Thanks, your signature is saved. Waiting for ' + (j.party === 'client' ? 'The Service Edit' : 'Last Drop Elizabethan') + ' to sign.');
+    } else {
+      setStatus('wait', 'Ready to sign. Read the agreement, then sign at the bottom.');
+    }
+    printBtn.hidden = false;
+  }
+
+  hashTerms().then(load);
+})();
+
+</script>
+</body>
+</html>

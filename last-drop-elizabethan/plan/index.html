@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Email Plan: The Lizzie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* TSE planning page: brown header band, the month's plan, a short check-in, email cards for approval, results. */
+:root{
+  --paper:#F7F4EC; --ink:#1B1512; --brown:#3A2E25; --off:#F1EDE2; --mute:#6B5F54; --line:#DED6C8;
+  --card:#FFFDF8; --field:#FFFFFF; --fill:#F3E3C4; --fill-ink:#6A4512; --ok:#2F6B45; --ok-bg:#E4F0E6;
+  --warn:#8A2A1C; --warn-bg:#F6DCD6; --band-text:#E6DFD2;
+  --sans:Geist,'Helvetica Neue',Arial,sans-serif; --mono:'Geist Mono',ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{background:var(--brown);color:var(--off)}
+.status{font-size:14px;font-weight:500}
+.status .wrap{padding-block:11px;display:flex;gap:8px 18px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.status[data-s="wait"]{background:var(--fill);color:var(--fill-ink)}
+.status[data-s="done"]{background:var(--ok-bg);color:var(--ok)}
+.status[data-s="err"]{background:var(--warn-bg);color:var(--warn)}
+header .wrap{padding-block:28px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:36px}
+.top small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--band-text)}
+.mark{font-weight:700;font-size:13px;line-height:1.05;letter-spacing:-.02em;text-align:center;color:var(--off)}
+h1{margin:0;font-size:clamp(32px,6vw,54px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;font-weight:600;text-wrap:balance}
+header p{margin:14px 0 0;max-width:60ch;color:var(--band-text);font-size:17px}
+.steps{margin-top:26px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(241,237,226,.18);border-radius:10px;overflow:hidden}
+.steps a{background:var(--brown);padding:12px 14px;color:var(--off);text-decoration:none;font-size:14px;min-width:0}
+.steps a:hover{background:#45372C}
+.steps b{display:block;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--band-text)}
+main .wrap{padding-block:40px 70px;display:grid;grid-template-columns:minmax(0,1fr);gap:56px}
+main .wrap > *{min-width:0}
+h2{margin:0 0 6px;font-size:clamp(24px,3vw,30px);letter-spacing:-.02em;font-weight:600;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+h2 .n{font-family:var(--mono);font-size:13px;color:var(--mute);font-weight:500}
+.lead{margin:0 0 20px;color:var(--mute);max-width:66ch}
+.tag{display:inline-block;font-size:12px;font-weight:600;border-radius:99px;padding:3px 10px;letter-spacing:0;vertical-align:3px;white-space:nowrap}
+.tag.ok{background:var(--ok-bg);color:var(--ok)}
+.tag.wait{background:var(--fill);color:var(--fill-ink)}
+.tag.warn{background:var(--warn-bg);color:var(--warn)}
+.tag.plain{background:var(--off);color:var(--mute);border:1px solid var(--line)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+/* plan */
+.sends{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.send{background:var(--card);display:grid;grid-template-columns:130px minmax(0,1fr) minmax(0,1.2fr);gap:18px;padding:16px 18px;align-items:start}
+.send .when{font-family:var(--mono);font-size:13px;color:var(--mute)}
+.send .when b{display:block;font-family:var(--sans);font-size:17px;color:var(--ink);letter-spacing:-.01em}
+.send h3{margin:0 0 2px;font-size:17px;letter-spacing:-.01em}
+.send .goal{font-size:14px;color:var(--mute)}
+.send .angle{font-size:15px}
+.send .angle span{display:block;font-size:13px;color:var(--mute);margin-top:4px}
+.note{font-size:13px;color:var(--mute);margin-top:12px}
+/* forms */
+label{display:grid;gap:6px;font-size:15px;font-weight:500}
+label small{font-weight:400;color:var(--mute);font-size:13px}
+input[type=text],textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--field);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+textarea{min-height:84px;resize:vertical}
+input:focus-visible,textarea:focus-visible,button:focus-visible,.choice:focus-within{outline:2px solid var(--ink);outline-offset:2px}
+.choices{display:flex;flex-wrap:wrap;gap:8px}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.choice span{display:block;border:1px solid var(--line);background:var(--field);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:500}
+.choice input:checked + span{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+legend{font-size:15px;font-weight:500;padding:0;margin-bottom:8px}
+.form{display:grid;gap:18px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+button{font:inherit;font-size:14px;font-weight:600;border-radius:99px;padding:10px 18px;cursor:pointer;border:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+button.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+button.okb{background:var(--ok);border-color:var(--ok)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.err{color:var(--warn);font-size:13px;min-height:1em}
+.saved{font-size:13px;color:var(--ok)}
+.whoami{display:flex;gap:10px;align-items:end;flex-wrap:wrap}
+.whoami label{flex:1 1 240px}
+.ro .respond{display:none!important}
+/* emails */
+.emails{display:grid;gap:28px}
+.ecard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;min-width:0;display:grid;gap:18px}
+.ecard .k{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.ehead{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.ehead > div{display:grid;gap:8px;min-width:0}
+.ecard h3{margin:0;font-size:24px;letter-spacing:-.02em;line-height:1.15}
+.readb{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.readb svg{width:16px;height:16px;flex:none}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:14px;margin:0;max-width:760px}
+.meta dt{color:var(--mute)}
+.meta dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.mocks{display:grid;grid-template-columns:300px minmax(0,1fr);gap:28px;align-items:start}
+.mock{display:grid;gap:8px;min-width:0}
+.mock .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.mock .hint{color:var(--mute);font-size:12px}
+.scr{position:relative;overflow:hidden;background:#fff}
+.scr iframe{position:absolute;top:0;left:0;border:0;background:#fff;transform-origin:0 0}
+.phone{background:#111;border-radius:40px;padding:10px;width:100%;max-width:300px;box-shadow:0 18px 40px rgba(27,21,18,.16)}
+.phone .scr{height:600px;border-radius:30px}
+.desk{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(27,21,18,.10)}
+.desk .bar{height:36px;background:var(--off);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 12px;min-width:0}
+.desk .bar i{width:10px;height:10px;border-radius:50%;background:#D6CDBD;flex:none}
+.desk .bar span{margin-left:8px;font-size:12px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.desk .scr{height:600px;background:#F4F4F4}
+@media (max-width:860px){.mocks{grid-template-columns:1fr}.phone{margin:0 auto}.desk .scr{height:460px}}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.toggle button{border:0;border-radius:0;background:transparent;color:var(--ink);padding:6px 12px;font-size:13px}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+/* full email reader */
+#reader{width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#E9E4DA;color:var(--ink)}
+#reader::backdrop{background:rgba(27,21,18,.6)}
+#reader .rhead{height:60px;background:var(--brown);color:var(--off);display:flex;align-items:center;gap:12px;padding:0 max(16px,env(safe-area-inset-left,0px))}
+#reader .rhead h2{margin:0;font-size:16px;font-weight:600;letter-spacing:-.01em;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--off)}
+#reader .toggle{border-color:rgba(241,237,226,.35)}
+#reader .toggle button{color:var(--off)}
+#reader .toggle button[aria-pressed="true"]{background:var(--off);color:var(--ink)}
+#reader .rclose{background:var(--off);color:var(--ink);border-color:var(--off);padding:8px 16px}
+#reader .rbody{height:calc(100% - 60px);display:flex;justify-content:center;padding:16px}
+#reader iframe{display:block;border:0;background:#fff;height:100%;width:100%;border-radius:12px;box-shadow:0 18px 40px rgba(27,21,18,.18);transition:max-width .2s}
+@media (max-width:700px){#reader .toggle{display:none}#reader .rbody{padding:0}#reader iframe{border-radius:0}}
+.flag{font-size:13px;background:var(--fill);color:var(--fill-ink);border-radius:8px;padding:9px 11px}
+.history{display:grid;gap:8px;font-size:14px}
+.history div{border-left:3px solid var(--line);padding:2px 0 2px 10px}
+.history .a{border-color:var(--ok)}
+.history .c{border-color:#C07A2B}
+.history .m{border-color:#3A2E25;background:#F4EFE4;padding:8px 10px;border-radius:0 8px 8px 0}
+.history time{display:block;font-family:var(--mono);font-size:12px;color:var(--mute)}
+.pending{border:1px dashed var(--line);border-radius:16px;padding:22px;display:grid;gap:10px;align-content:start;color:var(--mute);font-size:15px;min-width:0}
+.pending h3{margin:0;font-size:20px;color:var(--ink);letter-spacing:-.02em}
+/* results */
+table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600;background:var(--off)}
+td.num{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
+tr:last-child td{border-bottom:0}
+.tablewrap{overflow-x:auto;border-radius:12px}
+.target{display:flex;gap:20px;flex-wrap:wrap;align-items:baseline;margin-bottom:14px}
+.target b{font-size:30px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.target span{color:var(--mute);font-size:14px}
+footer .wrap{padding-block:28px;font-size:14px;color:var(--band-text);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:720px){
+  .steps{grid-template-columns:1fr 1fr}
+  .send{grid-template-columns:1fr;gap:6px}
+  .send .when b{display:inline;margin-right:8px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body class="ro">
+
+<div class="status" id="status" data-s="wait" role="status"><div class="wrap"><span id="status-text">Loading your plan</span></div></div>
+
+<header class="band"><div class="wrap">
+  <div class="top"><small>Prepared for Last Drop Elizabethan</small><div class="mark">THE<br>SERVICE<br>EDIT</div></div>
+  <h1>Your email plan</h1>
+  <p>Everything for your December emails in one place: what's going out and when, each email for your OK, what it brings in, and a few quick questions. Your answers come straight to me, and anyone you name can approve too.</p>
+  <nav class="steps" aria-label="Sections">
+    <a href="#plan"><b>01</b>The plan</a>
+    <a href="#emails"><b>02</b>Emails for your OK</a>
+    <a href="#results"><b>03</b>Results</a>
+    <a href="#questions"><b>04</b>Three minutes for me</a>
+  </nav>
+</div></header>
+
+<main><div class="wrap">
+
+<div class="panel respond whoami" id="who">
+  <label for="who-name">Your name<small>So I know who's answering. This browser remembers it.</small><input type="text" id="who-name" autocomplete="name" placeholder="e.g. Sarah Nutton"></label>
+</div>
+
+<section id="plan" aria-labelledby="plan-h">
+  <h2 id="plan-h"><span class="n">01</span>Your first month, 25 November to Christmas <span class="tag ok">Month one on results</span></h2>
+  <p class="lead">Four Christmas campaigns plus your welcome email. Christmas functions go first, because groups of 20 or more prepay 7 days ahead and the best Fridays are going now.</p>
+  <div class="panel" style="margin:0 0 18px 0;display:grid;gap:8px">
+    <h3 style="margin:0;font-size:18px;letter-spacing:-.01em">How I&#39;ve planned it</h3>
+    <ul style="margin:0;padding-left:20px;display:grid;gap:4px;font-size:15px;line-height:1.5">
+      <li>Your combined list is about 16,500 guests from Squarespace, me&amp;u and NowBookit. Most of them have eaten or ordered with you before, so they already know the Lizzie.</li>
+      <li>Christmas functions are in three of the four emails, each with the real book-by dates from your 7-day prepay rule. Friday 4 December needs locking in by Friday 27 November, so the first email goes out this week.</li>
+      <li>Every function button opens an email to you, ready filled with &ldquo;(from your email)&rdquo; in the subject line and a short form for the date, numbers and space. You can see straight away which enquiries the emails sent you.</li>
+      <li>Smaller groups get the weekend Christmas roast and a link to book online. Gift cards get two emails: one in early December, and a last-minute one for anyone who leaves it late.</li>
+      <li>The emails come from you. They&#39;re written in your voice and signed by you, because people book functions with a person they trust.</li>
+      <li>Every price, date and space is from your Christmas menu, your function booklet and your October menu. The reviews quoted are from your Google listing (1,500+ five-star reviews).</li>
+      <li>The first send goes to your newsletter subscribers in the morning and everyone else that evening, so we can check it lands well before it goes to the whole list.</li>
+    </ul>
+  </div>
+  <div class="sends">
+  <div class="send">
+    <div class="when"><b>Wed 25 Nov</b>proposed</div>
+    <div><h3>Christmas for the whole crew</h3><div class="goal">Christmas functions for groups of 20+</div><span class="tag ok" style="margin-top:6px">Functions</span></div>
+    <div class="angle">Your Christmas menu, $30 a head or $36 with pavlova, your spaces, and the weekend roast for smaller groups.<span>Goes to: your whole list (newsletter first)</span></div>
+  </div>
+  <div class="send">
+    <div class="when"><b>Thu 3 Dec</b>proposed</div>
+    <div><h3>What a $50 gift card gets</h3><div class="goal">Christmas gift cards</div><span class="tag wait" style="margin-top:6px">Gift cards</span></div>
+    <div class="angle">Gift cards from $25, with what each one covers on your menu, plus a reminder that there&#39;s still time to book the work do.<span>Goes to: your whole list</span></div>
+  </div>
+  <div class="send">
+    <div class="when"><b>Thu 10 Dec</b>proposed</div>
+    <div><h3>Last week to book Christmas</h3><div class="goal">Last Christmas functions and weekend roasts</div><span class="tag ok" style="margin-top:6px">Functions</span></div>
+    <div class="angle">A short note from you with the last dates to book (Friday 18 and Saturday 19 December, and Christmas Eve), the last two weekend roasts, and gift cards in the P.S.<span>Goes to: everyone who hasn&#39;t clicked the 25 November email, if Squarespace allows it, otherwise your whole list</span></div>
+  </div>
+  <div class="send">
+    <div class="when"><b>Sun 20 Dec</b>proposed</div>
+    <div><h3>Still one present to buy?</h3><div class="goal">Last-minute gift cards</div><span class="tag wait" style="margin-top:6px">Gift cards</span></div>
+    <div class="angle">Gift cards emailed straight to them, your Christmas closing dates, and a nudge to plan a function for early next year.<span>Goes to: your whole list</span></div>
+  </div>
+  <div class="send">
+    <div class="when"><b>Early Dec</b>always on</div>
+    <div><h3>Welcome email</h3><div class="goal">Turn every new sign-up into a first booking</div><span class="tag plain" style="margin-top:6px">New sign-ups</span></div>
+    <div class="angle">A hello from the Lizzie, a first-visit offer (if you&#39;re happy with it), your reviews, functions and #dogsofthelizzie.<span>Goes to: every new sign-up, automatically, once it&#39;s switched on</span></div>
+  </div>
+  </div>
+  <p class="note">Campaigns go out at 5:30pm Perth time, except the 20 December email, which goes at 9am so last-minute shoppers have the whole day. Prices and dates are checked against your menus the day before each send.</p>
+  <div class="respond panel" style="margin-top:16px;display:grid;gap:12px">
+    <label for="plan-note">Notes or changes to the plan<small>Optional. Anything to swap, add or move.</small><textarea id="plan-note" placeholder="e.g. Can we mention the courtyard on the 3 December email?"></textarea></label>
+    <div class="row">
+      <button type="button" class="okb" id="plan-ok">This plan looks good</button>
+      <button type="button" class="ghost" id="plan-note-send">Send my notes</button>
+    </div>
+    <div class="err" id="plan-err" role="alert"></div>
+  </div>
+  <div class="history" id="hist-plan" style="margin-top:12px"></div>
+</section>
+
+<section id="emails" aria-labelledby="emails-h">
+  <h2 id="emails-h"><span class="n">02</span>Emails for your OK</h2>
+  <p class="lead">Nothing goes to your list until you approve it. Read each one on phone or desktop, write any notes underneath, then approve it or send me your changes. Approving here is the same as replying "approved" to my email. The Christmas email is the urgent one: if you can, please approve it today so it can go out tomorrow.</p>
+  <div class="emails" id="email-cards"></div>
+</section>
+
+<section id="results" aria-labelledby="results-h">
+  <h2 id="results-h"><span class="n">03</span>Results</h2>
+  <p class="lead">Added about a week after each send: deliveries, clicks and unsubscribes from Squarespace, and the function enquiries, bookings and gift cards that came through the emails.</p>
+  <div class="target"><div><b>$750</b> <span>Month one to beat (from the first send to Christmas). More than $750 through the emails and month one&#39;s fee applies. Below it, month one is free.</span></div></div>
+  <div class="panel" style="margin:0 0 18px 0;display:grid;gap:8px">
+    <h3 style="margin:0;font-size:18px;letter-spacing:-.01em">How it&#39;s counted (from our agreement)</h3>
+    <ul style="margin:0;padding-left:20px;display:grid;gap:6px;font-size:15px;line-height:1.5">
+      <li><b>Functions:</b> an enquiry that comes from one of these emails (subject line &ldquo;from your email&rdquo;, or a click on a function button) counts once it&#39;s confirmed with a deposit, within 30 days of the enquiry, at its confirmed value.</li>
+      <li><b>Table bookings:</b> bookings made through a tracked link in the emails, with each guest valued at your average spend per head. It&#39;s the first question below.</li>
+      <li><b>Gift cards:</b> gift cards bought through a tracked link in the emails.</li>
+      <li>The figures come from your own NowBookit, gift card and function records, and you&#39;ll see every booking and sale behind the total.</li>
+    </ul>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th scope="col">Email</th><th scope="col">Sent</th><th scope="col">Clicked</th><th scope="col">Unsubscribes</th><th scope="col">Through the email</th></tr></thead>
+    <tbody>
+      <tr><td>Christmas for the whole crew</td><td colspan="4" style="color:var(--mute)">Not sent yet</td></tr>
+      <tr><td>What a $50 gift card gets</td><td colspan="4" style="color:var(--mute)">Not sent yet</td></tr>
+      <tr><td>Last week to book Christmas</td><td colspan="4" style="color:var(--mute)">Not sent yet</td></tr>
+      <tr><td>Still one present to buy?</td><td colspan="4" style="color:var(--mute)">Not sent yet</td></tr>
+      <tr><td>Welcome email</td><td colspan="4" style="color:var(--mute)">Not live yet</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="questions" aria-labelledby="q-h" class="respond">
+  <h2 id="q-h"><span class="n">04</span>Three minutes for me</h2>
+  <p class="lead">A few quick things I need before these go out. Answer what you can and send. It comes straight to me.</p>
+  <div class="panel" style="display:grid;gap:12px">
+    <label for="qa-spend">Your average spend per head<small>For valuing table bookings in month one. Our agreement needs it before the first email goes out.</small><textarea id="qa-spend"></textarea></label>
+    <label for="qa-photos">Customer reviews and dog photos<small>Are you happy for the emails to quote a few of your Google reviews (by first name only) and to show the dogs from your #dogsofthelizzie page?</small><textarea id="qa-photos"></textarea></label>
+    <label for="qa-offer">A first-visit offer in the welcome email<small>I&#39;ve suggested &ldquo;your first chippies are on us&rdquo;: one small chippies per table, dine in, within 30 days, claimed with the code CREW in the NowBookit booking notes or by showing the email at the bar. Happy to run it, or would you prefer something else or nothing? If yes, does your team see the booking notes?</small><textarea id="qa-offer"></textarea></label>
+    <label for="qa-roast">A photo of the Christmas roast<small>Even a phone photo of a plated Christmas roast would help the Christmas emails a lot. Reply to my email with it attached.</small><textarea id="qa-roast"></textarea></label>
+    <label for="qa-dates">Your Christmas closing dates<small>You mentioned you&#39;re closed from 25 December until 5 January. Is 5 January the day you reopen, or the last day you&#39;re closed? And what are your hours on Christmas Eve?</small><textarea id="qa-dates"></textarea></label>
+    <label for="qa-seniors">The seniors Christmas menu<small>Who can order it (for example, Seniors Card holders, or over a certain age)?</small><textarea id="qa-seniors"></textarea></label>
+    <div class="row"><button type="button" id="qa-send">Send my answers</button></div>
+    <div class="err" id="qa-err" role="alert"></div>
+  </div>
+  <div class="history" id="hist-questions" style="margin-top:12px"></div>
+</section>
+
+<section id="notes" aria-labelledby="notes-h" class="respond">
+  <h2 id="notes-h"><span class="n">05</span>Anything else?</h2>
+  <p class="lead">Ideas, questions, a date that's changed, something you'd love to try. It comes straight to me.</p>
+  <div class="panel" style="display:grid;gap:12px">
+    <label for="gen-note">Your note<textarea id="gen-note" placeholder="e.g. We have a band booked for 19 December"></textarea></label>
+    <div class="row"><button type="button" id="gen-send">Send to Mel</button></div>
+    <div class="err" id="gen-err" role="alert"></div>
+  </div>
+  <div class="history" id="hist-general" style="margin-top:12px"></div>
+</section>
+
+</div></main>
+
+<footer class="band"><div class="wrap"><span>Mel Cox · The Service Edit · Perth, WA</span><span>hello@theserviceedit.com · theserviceedit.com</span></div></footer>
+
+<dialog id="reader" aria-labelledby="reader-title">
+  <div class="rhead">
+    <h2 id="reader-title">Email</h2>
+    <div class="toggle" role="group" aria-label="Email width"><button type="button" id="r-phone" aria-pressed="false">Phone</button><button type="button" id="r-desk" aria-pressed="true">Desktop</button></div>
+    <button type="button" class="rclose" id="r-close">Close</button>
+  </div>
+  <div class="rbody"><iframe id="r-frame" title="Full email"></iframe></div>
+</dialog>
+<script>
+(function(){
+  var EP = 'https://rxwjactnfsrakpagbiit.supabase.co/functions/v1/plan';
+  var PLAN = 'last-drop-elizabethan';
+  var EMAILS = [
+     {
+      "id": "christmas",
+      "kicker": "Wed 25 Nov",
+      "title": "Christmas for the whole crew",
+      "file": "e-christmas.html",
+      "subject": "Turkey, crackling and yorkies, $30",
+      "preheader": "Christmas for groups of 20 or more, from this Saturday.",
+      "audience": "Your whole list (newsletter subscribers first)",
+      "when": "Wed 25 Nov, 5:30pm Perth time, proposed",
+      "flag": "The urgent one. It’s written and signed by you, because you’re the one people email to book. Every “Email Sarah” button opens an email to info@lastdropelizabethan.com, ready filled with the date, numbers and space for them to complete."
+     },
+     {
+      "id": "gifts",
+      "kicker": "Thu 3 Dec",
+      "title": "What a $50 gift card gets",
+      "file": "e-gifts.html",
+      "subject": "What a $50 gift card gets",
+      "preheader": "A burger and a sticky date pudding, for a start.",
+      "audience": "Your whole list",
+      "when": "Thu 3 Dec, 5:30pm Perth time, proposed",
+      "flag": "The gift card values match your NowBookit gift cards ($25, $50, $100 and $150), and what each one covers is priced from your October menu."
+     },
+     {
+      "id": "lastcall",
+      "kicker": "Thu 10 Dec",
+      "title": "Last week to book Christmas",
+      "file": "e-lastcall.html",
+      "subject": "Last week to book Christmas",
+      "preheader": "Christmas Eve bookings close on 17 December.",
+      "audience": "Everyone who hasn’t clicked the 25 November email, if Squarespace allows it",
+      "when": "Thu 10 Dec, 5:30pm Perth time, proposed",
+      "flag": "A short note from you, kept plain on purpose so it reads like a personal email. It says Friday 18 December needs locking in “by tomorrow”, so it has to go out on Thursday 10 December."
+     },
+     {
+      "id": "lastgift",
+      "kicker": "Sun 20 Dec",
+      "title": "Still one present to buy?",
+      "file": "e-lastgift.html",
+      "subject": "Still one present to buy?",
+      "preheader": "Our gift cards go straight to their inbox.",
+      "audience": "Your whole list",
+      "when": "Sun 20 Dec, 9am Perth time, proposed",
+      "flag": "Your closing dates are in this one, so please check the question about them below."
+     },
+     {
+      "id": "welcome",
+      "kicker": "Always on",
+      "title": "Welcome email",
+      "file": "e-welcome.html",
+      "subject": "Welcome to the Lizzie",
+      "preheader": "Your first chippies are on us.",
+      "audience": "Every new sign-up, automatically",
+      "when": "Switched on in early December, after the Christmas email",
+      "flag": "The chippies offer is only a suggestion. If you’d rather not run it, or want a different offer, tell me in the questions below and I’ll take it out or change it."
+     }
+    ];
+
+  /* Mel's replies to notes, shown in each card's thread */
+  var REPLIES = [];
+  function withReplies(list, item){
+    return list.concat(REPLIES.filter(function(r){ return r.item === item; }).map(function(r){ return {reply:true, at:r.at, text:r.text}; }))
+      .sort(function(a, b){ return new Date(a.at) - new Date(b.at); });
+  }
+  function replyEl(r){ var d = el('div', 'm'); d.appendChild(el('time', '', fmt(r.at) + ' · Mel, The Service Edit')); d.appendChild(el('span', '', r.text)); return d; }
+
+  var q = new URLSearchParams(location.search);
+  var key = (q.get('k') || '').toLowerCase();
+  if (!/^[a-z0-9]{16,40}$/.test(key)) key = '';
+  var party = '', responses = [];
+  var statusEl = document.getElementById('status'), statusText = document.getElementById('status-text');
+  function setStatus(s, t){ statusEl.dataset.s = s; statusText.textContent = t; }
+  function fmt(iso){ return new Date(iso).toLocaleString('en-AU', {weekday:'short', day:'numeric', month:'short', hour:'numeric', minute:'2-digit'}); }
+  function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  var nameIn = document.getElementById('who-name');
+  try{ nameIn.value = localStorage.getItem('tse_plan_name') || ''; }catch(e){}
+  nameIn.addEventListener('change', function(){ try{ localStorage.setItem('tse_plan_name', nameIn.value.trim()); }catch(e){} });
+  function needName(errEl){
+    var n = nameIn.value.trim();
+    if (n.length < 2){ errEl.textContent = 'Add your name at the top of the page first.'; nameIn.focus(); return ''; }
+    try{ localStorage.setItem('tse_plan_name', n); }catch(e){}
+    return n;
+  }
+
+  async function post(kind, item, body, errEl){
+    var name = needName(errEl); if (!name) return false;
+    errEl.textContent = '';
+    var prev = statusText.textContent, prevS = statusEl.dataset.s;
+    setStatus('wait', 'Saving…');
+    try{
+      var r = await fetch(EP + '/r', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({id:PLAN, k:key, kind:kind, item:item, name:name, body:body})});
+      var j = await r.json().catch(function(){ return {}; });
+      if (!r.ok || !j.ok) throw new Error(j.error || 'server');
+      await load();
+      return true;
+    }catch(e){
+      setStatus(prevS, prev);
+      errEl.textContent = "That didn't save. Check your connection and try again, or email hello@theserviceedit.com.";
+      return false;
+    }
+  }
+
+  /* full email reader */
+  var reader = document.getElementById('reader'), rFrame = document.getElementById('r-frame'), rTitle = document.getElementById('reader-title');
+  var rPhone = document.getElementById('r-phone'), rDesk = document.getElementById('r-desk');
+  function rMode(m){ rFrame.style.maxWidth = m === 'phone' ? '390px' : '900px'; rPhone.setAttribute('aria-pressed', m === 'phone'); rDesk.setAttribute('aria-pressed', m !== 'phone'); }
+  rPhone.addEventListener('click', function(){ rMode('phone'); });
+  rDesk.addEventListener('click', function(){ rMode('desktop'); });
+  function openReader(m){
+    rTitle.textContent = m.title + ' · ' + m.subject;
+    rFrame.title = m.title + ', full email'; rFrame.src = m.file + '?v=' + Date.now();
+    rMode(window.innerWidth < 700 ? 'phone' : 'desktop');
+    document.documentElement.style.overflow = 'hidden';
+    if (reader.showModal) reader.showModal(); else window.open(m.file, '_blank', 'noopener');
+  }
+  function closeReader(){ if (reader.open) reader.close(); }
+  document.getElementById('r-close').addEventListener('click', closeReader);
+  reader.addEventListener('close', function(){ document.documentElement.style.overflow = ''; rFrame.src = 'about:blank'; });
+  reader.addEventListener('click', function(e){ if (e.target === reader) closeReader(); });
+
+  /* email cards */
+  var cards = document.getElementById('email-cards');
+  EMAILS.forEach(function(m){
+    var c = el('article', 'ecard'); c.id = 'email-' + m.id;
+    var head = el('div', 'ehead'), hl = el('div');
+    var k = el('div', 'k'); k.appendChild(el('span', '', m.kicker)); var st = el('span', 'tag wait', 'Draft for your OK'); st.dataset.role = 'status'; k.appendChild(st); hl.appendChild(k);
+    hl.appendChild(el('h3', '', m.title)); head.appendChild(hl);
+    var rb = el('button', 'readb'); rb.type = 'button';
+    rb.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5"/></svg>';
+    rb.appendChild(document.createTextNode('Read the full email'));
+    rb.addEventListener('click', function(){ openReader(m); });
+    head.appendChild(rb); c.appendChild(head);
+    var dl = el('dl', 'meta');
+    [['Subject', m.subject], ['Preview', m.preheader], ['Goes to', m.audience], ['Sends', m.when]].forEach(function(p){ dl.appendChild(el('dt', '', p[0])); dl.appendChild(el('dd', '', p[1])); });
+    c.appendChild(dl);
+    var mocks = el('div', 'mocks');
+    function mock(kind){
+      var box = el('div', 'mock'); box.appendChild(el('div', 'lbl', kind === 'phone' ? 'On a phone' : 'On a desktop'));
+      var shell = el('div', kind === 'phone' ? 'phone' : 'desk');
+      if (kind === 'desk'){ var bar = el('div', 'bar'); bar.appendChild(el('i')); bar.appendChild(el('i')); bar.appendChild(el('i')); bar.appendChild(el('span', '', 'Last Drop Elizabethan · ' + m.subject)); shell.appendChild(bar); }
+      var scr = el('div', 'scr'), f = document.createElement('iframe');
+      f.title = m.title + (kind === 'phone' ? ' on a phone' : ' on a desktop'); f.loading = 'lazy'; f.src = m.file + '?v=' + Date.now();
+      scr.appendChild(f); shell.appendChild(scr); box.appendChild(shell);
+      box.appendChild(el('div', 'hint', 'Scroll inside to see the whole email.'));
+      var base = kind === 'phone' ? 390 : 900;
+      function fit(){
+        var w = scr.clientWidth, h = scr.clientHeight; if (!w) return;
+        var sc = Math.min(1, w / base);
+        f.style.width = (sc < 1 ? base : w) + 'px'; f.style.height = (h / sc) + 'px'; f.style.transform = sc < 1 ? 'scale(' + sc + ')' : '';
+      }
+      window.addEventListener('resize', fit); f.addEventListener('load', fit); requestAnimationFrame(fit);
+      return box;
+    }
+    mocks.appendChild(mock('phone')); mocks.appendChild(mock('desk')); c.appendChild(mocks);
+    if (m.flag) c.appendChild(el('div', 'flag', m.flag));
+    var resp = el('div', 'respond'); resp.style.display = 'grid'; resp.style.gap = '10px';
+    var lab = el('label', '', 'Notes or changes'); var ta = document.createElement('textarea'); ta.id = 'note-' + m.id;
+    ta.placeholder = 'Optional. e.g. Swap the top photo for one of the courtyard'; lab.setAttribute('for', ta.id); lab.appendChild(ta); resp.appendChild(lab);
+    var row = el('div', 'row');
+    var ba = el('button', 'okb', 'Approve'), bs = el('button', 'ghost', 'Send my notes'); ba.type = bs.type = 'button';
+    row.appendChild(ba); row.appendChild(bs); resp.appendChild(row);
+    resp.appendChild(el('div', 'note', 'Approving with a note means "go ahead once that small change is made".'));
+    var err = el('div', 'err'); err.setAttribute('role', 'alert'); resp.appendChild(err);
+    c.appendChild(resp);
+    var hist = el('div', 'history'); hist.dataset.item = m.id; c.appendChild(hist);
+    ba.addEventListener('click', async function(){
+      ba.disabled = true; ba.textContent = 'Saving…';
+      var t = ta.value.trim();
+      if (await post('approve', m.id, t ? {label: m.title, note: t} : {label: m.title}, err)) ta.value = '';
+      ba.textContent = 'Approve'; ba.disabled = false;
+    });
+    bs.addEventListener('click', async function(){
+      var t = ta.value.trim(); if (t.length < 3){ err.textContent = 'Write your note first.'; ta.focus(); return; }
+      bs.disabled = true; bs.textContent = 'Sending…';
+      if (await post('changes', m.id, {label: m.title, note: t}, err)) ta.value = '';
+      bs.textContent = 'Send my notes'; bs.disabled = false;
+    });
+    cards.appendChild(c);
+  });
+
+  /* three minutes for me */
+  (function(){
+    var qs = [['qa-spend','Average spend per head'],['qa-photos','Reviews and dog photos'],['qa-offer','First-visit offer'],['qa-roast','Christmas roast photo'],['qa-dates','Closing dates and Christmas Eve hours'],['qa-seniors','Seniors menu']];
+    var btn = document.getElementById('qa-send'), qerr = document.getElementById('qa-err');
+    btn.addEventListener('click', async function(){
+      var parts = qs.map(function(x){ var v = document.getElementById(x[0]).value.trim(); return v ? x[1] + ': ' + v : ''; }).filter(Boolean);
+      if (!parts.length){ qerr.textContent = 'Answer at least one first.'; return; }
+      btn.disabled = true; btn.textContent = 'Sending…';
+      if (await post('plan_note', 'questions', {note: parts.join(' | ')}, qerr)) qs.forEach(function(x){ document.getElementById(x[0]).value = ''; });
+      btn.textContent = 'Send my answers'; btn.disabled = false;
+    });
+  })();
+
+  /* plan and general notes */
+  var planErr = document.getElementById('plan-err'), planNote = document.getElementById('plan-note');
+  document.getElementById('plan-ok').addEventListener('click', async function(){
+    var b = this, t = planNote.value.trim(); b.disabled = true;
+    if (await post('plan_ok', 'plan', {note: t || 'Plan looks good'}, planErr)) planNote.value = '';
+    b.disabled = false;
+  });
+  document.getElementById('plan-note-send').addEventListener('click', async function(){
+    var b = this, t = planNote.value.trim(); if (t.length < 3){ planErr.textContent = 'Write your notes first.'; planNote.focus(); return; }
+    b.disabled = true; if (await post('plan_note', 'plan', {note: t}, planErr)) planNote.value = ''; b.disabled = false;
+  });
+  var genErr = document.getElementById('gen-err'), genNote = document.getElementById('gen-note');
+  document.getElementById('gen-send').addEventListener('click', async function(){
+    var b = this, t = genNote.value.trim(); if (t.length < 3){ genErr.textContent = 'Write your note first.'; genNote.focus(); return; }
+    b.disabled = true; if (await post('plan_note', 'general', {note: t}, genErr)) genNote.value = ''; b.disabled = false;
+  });
+
+  /* render responses */
+  function render(){
+    var mine = responses.filter(function(r){ return party === 'tse' || r.party === 'client'; });
+    [['plan','hist-plan'],['general','hist-general'],['questions','hist-questions']].forEach(function(x){
+      var hp = document.getElementById(x[1]); hp.innerHTML = '';
+      withReplies(mine.filter(function(r){ return r.item === x[0]; }), x[0]).forEach(function(r){
+        if (r.reply){ hp.appendChild(replyEl(r)); return; }
+        var note = (r.body && r.body.note) || '';
+        var d = el('div', r.kind === 'plan_ok' ? 'a' : 'c');
+        d.appendChild(el('time', '', fmt(r.at) + (r.party === 'tse' ? ' · TSE test' : '')));
+        d.appendChild(el('span', '', r.kind === 'plan_ok' ? r.name + ' said the plan looks good' + (note && note !== 'Plan looks good' ? ': ' + note : '') : r.name + ': ' + note));
+        hp.appendChild(d);
+      });
+    });
+    EMAILS.forEach(function(m){
+      var card = document.getElementById('email-' + m.id), h = card.querySelector('.history'), st = card.querySelector('[data-role=status]');
+      var rs = mine.filter(function(r){ return r.item === m.id; });
+      h.innerHTML = '';
+      withReplies(rs, m.id).forEach(function(r){
+        if (r.reply){ h.appendChild(replyEl(r)); return; }
+        var d = el('div', r.kind === 'approve' ? 'a' : 'c');
+        d.appendChild(el('time', '', fmt(r.at) + (r.party === 'tse' ? ' · TSE test' : '')));
+        var nt = (r.body && r.body.note) || ''; d.appendChild(el('span', '', r.kind === 'approve' ? 'Approved by ' + r.name + (nt ? ', with a note: ' + nt : '') : r.name + ' sent notes: ' + nt));
+        h.appendChild(d);
+      });
+      var last = rs[rs.length - 1];
+      var lastReply = REPLIES.filter(function(x){ return x.item === m.id; }).pop();
+      if (last && last.kind !== 'approve' && lastReply && new Date(lastReply.at) > new Date(last.at)){ st.className = 'tag wait'; st.textContent = 'Updated for your OK'; }
+      else if (!last){ st.className = 'tag wait'; st.textContent = 'Draft for your OK'; }
+      else if (last.kind === 'approve'){ st.className = 'tag ok'; st.textContent = (last.body && last.body.note) ? 'Approved with a note' : 'Approved'; }
+      else { st.className = 'tag warn'; st.textContent = 'Notes sent'; }
+    });
+  }
+
+  async function load(){
+    if (!key){
+      document.body.classList.add('ro');
+      setStatus('wait', 'Read-only copy. Open this page from the link in your email to answer and approve.');
+      return;
+    }
+    try{
+      var r = await fetch(EP + '/s?id=' + PLAN + '&k=' + encodeURIComponent(key), {cache:'no-store'});
+      var j = await r.json();
+      if (!r.ok || j.error) throw new Error(j.error || 'server');
+      party = j.party; responses = j.responses || [];
+    }catch(e){
+      document.body.classList.add('ro');
+      setStatus('err', (e && e.message === 'bad_key') ? "This link isn't valid. Use the link from your email, or write to hello@theserviceedit.com." : "Your plan couldn't load. Refresh the page to try again.");
+      return;
+    }
+    document.body.classList.remove('ro');
+    render();
+    var waiting = EMAILS.filter(function(m){ var rs = responses.filter(function(x){ return x.item === m.id && (party === 'tse' || x.party === 'client'); }); return !rs.length || rs[rs.length-1].kind !== 'approve'; }).length;
+    if (party === 'tse') setStatus('wait', 'Viewing as The Service Edit. Anything you send here is marked as a TSE test.');
+    else if (waiting) setStatus('wait', waiting + (waiting === 1 ? ' email is' : ' emails are') + ' waiting for your OK.');
+    else setStatus('done', "You're all caught up. Thanks.");
+  }
+  load();
+})();
+</script>
+</body>
+</html>

@@ -211,7 +211,7 @@ html{scroll-behavior:smooth}
   <div class="send">
     <div class="when"><b>Early Dec</b>always on</div>
     <div><h3>Welcome email</h3><div class="goal">Turn every new sign-up into a first booking</div><span class="tag plain" style="margin-top:6px">New sign-ups</span></div>
-    <div class="angle">A hello from the Lizzie, a first-visit offer (if you&#39;re happy with it), your reviews, functions and #dogsofthelizzie.<span>Goes to: every new sign-up, automatically, once it&#39;s switched on</span></div>
+    <div class="angle">A hello from the Lizzie, your reviews, functions and #dogsofthelizzie.<span>Goes to: every new sign-up, automatically, once it&#39;s switched on</span></div>
   </div>
   </div>
   <p class="note">The 25 November email goes to your newsletter subscribers at 9am and everyone else at 5:30pm, so we can check it lands well before it reaches the whole list. The 3 and 10 December emails go at 5:30pm, and the 20 December email at 9am so last-minute shoppers have the whole day. All times are Perth time. Prices and dates are checked against your menus the day before each send.</p>
@@ -274,7 +274,7 @@ html{scroll-behavior:smooth}
   <div class="panel" style="display:grid;gap:12px">
     <label for="qa-spend">Your average spend per head<small>For valuing table bookings in month one. Our agreement needs it before the first email goes out.</small><textarea id="qa-spend"></textarea></label>
     <label for="qa-photos">Customer reviews and dog photos<small>Are you happy for the emails to quote a few of your Google reviews (first name and initial only) and to show the dogs from your #dogsofthelizzie page?</small><textarea id="qa-photos"></textarea></label>
-    <label for="qa-offer">A first-visit offer in the welcome email<small>I&#39;ve suggested &ldquo;your first chippies are on us&rdquo;: one small chippies per table, dine in, within 30 days, claimed with the code CREW in the NowBookit booking notes or by showing the email at the bar. Happy to run it, or would you prefer something else or nothing? If yes, does your team see the booking notes?</small><textarea id="qa-offer"></textarea></label>
+    <label for="qa-offer">A welcome offer for first-time guests (optional)<small>The welcome email doesn&#39;t include an offer. If you&#39;d ever like to give new sign-ups something for their first visit, tell me what you&#39;d be happy to offer and I&#39;ll add it.</small><textarea id="qa-offer"></textarea></label>
     <label for="qa-roast">A photo of the Christmas roast<small>Even a phone photo of a plated Christmas roast would help the Christmas emails a lot. Reply to my email with it attached.</small><textarea id="qa-roast"></textarea></label>
     <label for="qa-dates">Your Christmas closing dates<small>You mentioned you&#39;re closed from 25 December until 5 January. Is 5 January the day you reopen, or the last day you&#39;re closed? And what are your hours on Christmas Eve?</small><textarea id="qa-dates"></textarea></label>
     <label for="qa-hire">Room hire for Christmas groups<small>Your function booklet lists a hire fee for the Leo Fowler Room ($500 to $700) and minimum spends for the other spaces. For a Christmas group of 20+ on the $30 menu, do those still apply? The emails currently say &ldquo;room hire and minimum spends may apply&rdquo;.</small><textarea id="qa-hire"></textarea></label>
@@ -363,10 +363,10 @@ html{scroll-behavior:smooth}
       "title": "Welcome email",
       "file": "e-welcome.html",
       "subject": "Welcome to the Lizzie",
-      "preheader": "Your first chippies are on us.",
+      "preheader": "Beer brewed on site since 1992, and a kitchen open seven days.",
       "audience": "Every new sign-up, automatically",
       "when": "Switched on in early December, after the Christmas email",
-      "flag": "The chippies offer is only a suggestion. If you’d rather not run it, or want a different offer, tell me in the questions below and I’ll take it out or change it."
+      "flag": "Everything in this one comes from your website, your menu and your function booklet, in your own words where possible."
      }
     ];
 
@@ -495,7 +495,7 @@ html{scroll-behavior:smooth}
 
   /* three minutes for me */
   (function(){
-    var qs = [['qa-spend','Average spend per head'],['qa-photos','Reviews and dog photos'],['qa-offer','First-visit offer'],['qa-roast','Christmas roast photo'],['qa-dates','Closing dates and Christmas Eve hours'],['qa-seniors','Seniors menu'],['qa-hire','Room hire for Christmas groups']];
+    var qs = [['qa-spend','Average spend per head'],['qa-photos','Reviews and dog photos'],['qa-offer','Welcome offer (optional)'],['qa-roast','Christmas roast photo'],['qa-dates','Closing dates and Christmas Eve hours'],['qa-seniors','Seniors menu'],['qa-hire','Room hire for Christmas groups']];
     var btn = document.getElementById('qa-send'), qerr = document.getElementById('qa-err');
     btn.addEventListener('click', async function(){
       var parts = qs.map(function(x){ var v = document.getElementById(x[0]).value.trim(); return v ? x[1] + ': ' + v : ''; }).filter(Boolean);

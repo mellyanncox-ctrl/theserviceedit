@@ -191,7 +191,7 @@ html{scroll-behavior:smooth}
   <div class="send">
     <div class="when"><b>Wed 25 Nov</b>proposed</div>
     <div><h3>Christmas for the whole crew</h3><div class="goal">Christmas functions for groups of 20+</div><span class="tag ok" style="margin-top:6px">Functions</span></div>
-    <div class="angle">Your Christmas menu, $30 a head or $36 with pavlova, your spaces, and the weekend roast for smaller groups.<span>Goes to: your whole list (newsletter first)</span></div>
+    <div class="angle">Your Christmas menu, $30 a head or $36 with pavlova, your spaces, platters for work functions, and the weekend roast for smaller groups.<span>Goes to: your whole list (newsletter first)</span></div>
   </div>
   <div class="send">
     <div class="when"><b>Thu 3 Dec</b>proposed</div>
@@ -252,7 +252,7 @@ html{scroll-behavior:smooth}
     <h3 style="margin:0;font-size:18px;letter-spacing:-.01em">How it&#39;s counted (from our agreement)</h3>
     <ul style="margin:0;padding-left:20px;display:grid;gap:6px;font-size:15px;line-height:1.5">
       <li><b>Functions:</b> an enquiry that comes from one of these emails (subject line &ldquo;from your email&rdquo;, or a click on a function button) counts once it&#39;s confirmed with a deposit, within 30 days of the enquiry, at its confirmed value.</li>
-      <li><b>Table bookings:</b> bookings made through a tracked link in the emails, with each guest valued at your average spend per head. It&#39;s the first question below.</li>
+      <li><b>Table bookings:</b> bookings made through a tracked link in the emails, with each guest valued at your average spend per head, which you told us is $55.</li>
       <li><b>Gift cards:</b> gift cards bought through a tracked link in the emails.</li>
       <li>The figures come from your own NowBookit, gift card and function records, and you&#39;ll see every booking and sale behind the total.</li>
     </ul>
@@ -278,7 +278,7 @@ html{scroll-behavior:smooth}
     <label for="qa-offer">A welcome offer for first-time guests (optional)<small>The welcome email doesn&#39;t include an offer. If you&#39;d ever like to give new sign-ups something for their first visit, tell me what you&#39;d be happy to offer and I&#39;ll add it.</small><textarea id="qa-offer"></textarea></label>
     <label for="qa-roast">A photo of the Christmas roast<small>Even a phone photo of a plated Christmas roast would help the Christmas emails a lot. Reply to my email with it attached.</small><textarea id="qa-roast"></textarea></label>
     <label for="qa-dates">Your Christmas closing dates<small>You mentioned you&#39;re closed from 25 December until 5 January. Is 5 January the day you reopen, or the last day you&#39;re closed? And what are your hours on Christmas Eve?</small><textarea id="qa-dates"></textarea></label>
-    <label for="qa-hire">Room hire for Christmas groups<small>Your function booklet lists a hire fee for the Leo Fowler Room ($500 to $700) and minimum spends for the other spaces. For a Christmas group of 20+ on the $30 menu, do those still apply? The emails currently say &ldquo;room hire and minimum spends may apply&rdquo;.</small><textarea id="qa-hire"></textarea></label>
+    <label for="qa-hire">Room hire for Christmas groups<small>Your function booklet lists a hire fee for the Leo Fowler Room ($500 to $700) and minimum spends for the other spaces. For a Christmas group of 20+ on the $30 menu, do those still apply?</small><textarea id="qa-hire"></textarea></label>
     <label for="qa-seniors">The seniors Christmas menu<small>Who can order it (for example, Seniors Card holders, or over a certain age)?</small><textarea id="qa-seniors"></textarea></label>
     <div class="row"><button type="button" id="qa-send">Send my answers</button></div>
     <div class="err" id="qa-err" role="alert"></div>
@@ -323,7 +323,7 @@ html{scroll-behavior:smooth}
       "preheader": "Christmas for groups of 20 or more, from this Saturday.",
       "audience": "Your whole list (newsletter subscribers first)",
       "when": "Wed 25 Nov: newsletter subscribers 9am, everyone else 5:30pm Perth time, proposed",
-      "flag": "The urgent one. It’s written and signed by you, because you’re the one people email to book. Every “Email Sarah” button opens an email to info@lastdropelizabethan.com, ready filled with the date, numbers and space for them to complete."
+      "flag": "The urgent one. It’s written and signed by you, because you’re the one people email to book. Every “Email Sarah” button opens an email to info@lastdropelizabethan.com, ready filled with the date, numbers and space for them to complete. Updated with your notes: platters for work functions added, the Village Green taken out, and the room hire wording now matches what you told us."
      },
      {
       "id": "gifts",
@@ -356,7 +356,7 @@ html{scroll-behavior:smooth}
       "preheader": "Our gift cards go straight to their inbox.",
       "audience": "Your whole list",
       "when": "Sun 20 Dec, 9am Perth time, proposed",
-      "flag": "Your closing dates are in this one, so please check the question about them below."
+      "flag": "Updated with your answers: your Christmas Eve hours (11am to 10pm, kitchen 12 to 2:30 and 5:30 to 8:30) and back on Wednesday 6 January."
      },
      {
       "id": "welcome",
@@ -372,7 +372,18 @@ html{scroll-behavior:smooth}
     ];
 
   /* Mel's replies to notes, shown in each card's thread */
-  var REPLIES = [];
+  var REPLIES = [
+ {
+  "item": "christmas",
+  "at": "2026-11-24T05:52:00Z",
+  "text": "Thanks Sarah, all done. We've added a platters section for work functions (from $70, with the 2 weeks' notice) and taken the Village Green out. The spaces now say there's no hire fee or minimum spend if they're happy to share, and a private hire fee if they want the space to themselves. Seniors groups are in too. Could you give it one more look and approve it when you're happy?"
+ },
+ {
+  "item": "questions",
+  "at": "2026-11-24T05:52:00Z",
+  "text": "Thanks for these. Your $55 average spend is now in how table bookings are counted. Your Christmas Eve hours and Wednesday 6 January reopening are in every email, @dogsofthelizzie is in the welcome, and we've swapped quiz night for long lunches in the gift card email since there's no quiz in January. Send the roast photo through after the weekend and we'll drop it in."
+ }
+];
   function withReplies(list, item){
     return list.concat(REPLIES.filter(function(r){ return r.item === item; }).map(function(r){ return {reply:true, at:r.at, text:r.text}; }))
       .sort(function(a, b){ return new Date(a.at) - new Date(b.at); });

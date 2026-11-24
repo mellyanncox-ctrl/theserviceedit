@@ -277,6 +277,7 @@ html{scroll-behavior:smooth}
     <label for="qa-offer">A first-visit offer in the welcome email<small>I&#39;ve suggested &ldquo;your first chippies are on us&rdquo;: one small chippies per table, dine in, within 30 days, claimed with the code CREW in the NowBookit booking notes or by showing the email at the bar. Happy to run it, or would you prefer something else or nothing? If yes, does your team see the booking notes?</small><textarea id="qa-offer"></textarea></label>
     <label for="qa-roast">A photo of the Christmas roast<small>Even a phone photo of a plated Christmas roast would help the Christmas emails a lot. Reply to my email with it attached.</small><textarea id="qa-roast"></textarea></label>
     <label for="qa-dates">Your Christmas closing dates<small>You mentioned you&#39;re closed from 25 December until 5 January. Is 5 January the day you reopen, or the last day you&#39;re closed? And what are your hours on Christmas Eve?</small><textarea id="qa-dates"></textarea></label>
+    <label for="qa-hire">Room hire for Christmas groups<small>Your function booklet lists a hire fee for the Leo Fowler Room ($500 to $700) and minimum spends for the other spaces. For a Christmas group of 20+ on the $30 menu, do those still apply? The emails currently say &ldquo;room hire and minimum spends may apply&rdquo;.</small><textarea id="qa-hire"></textarea></label>
     <label for="qa-seniors">The seniors Christmas menu<small>Who can order it (for example, Seniors Card holders, or over a certain age)?</small><textarea id="qa-seniors"></textarea></label>
     <div class="row"><button type="button" id="qa-send">Send my answers</button></div>
     <div class="err" id="qa-err" role="alert"></div>
@@ -494,7 +495,7 @@ html{scroll-behavior:smooth}
 
   /* three minutes for me */
   (function(){
-    var qs = [['qa-spend','Average spend per head'],['qa-photos','Reviews and dog photos'],['qa-offer','First-visit offer'],['qa-roast','Christmas roast photo'],['qa-dates','Closing dates and Christmas Eve hours'],['qa-seniors','Seniors menu']];
+    var qs = [['qa-spend','Average spend per head'],['qa-photos','Reviews and dog photos'],['qa-offer','First-visit offer'],['qa-roast','Christmas roast photo'],['qa-dates','Closing dates and Christmas Eve hours'],['qa-seniors','Seniors menu'],['qa-hire','Room hire for Christmas groups']];
     var btn = document.getElementById('qa-send'), qerr = document.getElementById('qa-err');
     btn.addEventListener('click', async function(){
       var parts = qs.map(function(x){ var v = document.getElementById(x[0]).value.trim(); return v ? x[1] + ': ' + v : ''; }).filter(Boolean);

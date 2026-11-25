@@ -334,7 +334,7 @@ html{scroll-behavior:smooth}
       "preheader": "And a $25 parmi every Wednesday.",
       "audience": "Your whole list",
       "when": "Thu 3 Dec, 5:30pm Perth time, proposed",
-      "flag": "New version for your OK. Mel noticed the emails had very little about your food and drink, so this one now leads with your weekly deals from Instagram: $22 pizzas every Friday and the $25 parmi every Wednesday, then the new summer menu, your 4-packs to take home and the kitchen crew. The gift cards and Christmas functions are still in it, lower down. The photos are your own Instagram posts, sharpened for email. Three things to check: are both deals running through December, are the Phoenix Ginger Beer and Priestess Sour Cherry Ale 4-packs still $55, and are you happy for the crew photo to be used?"
+      "flag": "New version for your OK. Mel noticed the emails had very little about your food and drink, so this one now leads with your weekly deals from Instagram: $22 pizzas every Friday and the $25 parmi every Wednesday, then the brisket sub from the new summer menu, your 4-packs to take home, the tasting paddle and the kitchen crew. The gift cards and Christmas functions are still in it, lower down, and the price panel for each gift card now only appears in the 20 December email. The photos are from your Instagram and website, sharpened for email. Three things to check: are both deals running through December, are the Phoenix Ginger Beer and Priestess Sour Cherry Ale 4-packs still $55, and are you happy for the crew photo to be used?"
      },
      {
       "id": "lastcall",
@@ -375,8 +375,9 @@ html{scroll-behavior:smooth}
   var REPLIES = [
  {
   "item": "gifts",
+  "reopen": true,
   "at": "2026-11-25T04:20:00Z",
-  "text": "Hi Sarah, we've reworked this one so your food and drink gets the spotlight: your Friday $22 pizzas up top, then the Wednesday parmi, the new summer menu, your 4-packs and the kitchen crew, with the gift cards and Christmas functions still below. The photos are from your Instagram. Could you confirm both deals run through December and the 4-packs are still $55? We've also changed four subject lines so the first name sits naturally in the sentence instead of at the start."
+  "text": "Hi Sarah, we've reworked this one so your food and drink gets the spotlight: your Friday $22 pizzas up top, then the Wednesday parmi, the brisket sub, your 4-packs, the tasting paddle and the kitchen crew, with the gift cards and Christmas functions still in there. The \u201cgood stuff\u201d price panel now only goes in the 20 December email, so it isn\u2019t repeated. The photos are from your Instagram and website. Could you confirm both deals run through December, the 4-packs are still $55, and that you're happy for the crew photo to be used? We've also changed four subject lines so the first name sits naturally in the sentence instead of at the start."
  },
  {
   "item": "christmas",
@@ -567,7 +568,7 @@ html{scroll-behavior:smooth}
       });
       var last = rs[rs.length - 1];
       var lastReply = REPLIES.filter(function(x){ return x.item === m.id; }).pop();
-      if (last && last.kind !== 'approve' && lastReply && new Date(lastReply.at) > new Date(last.at)){ st.className = 'tag wait'; st.textContent = 'Updated for your OK'; }
+      if (last && lastReply && new Date(lastReply.at) > new Date(last.at) && (last.kind !== 'approve' || lastReply.reopen)){ st.className = 'tag wait'; st.textContent = 'Updated for your OK'; }
       else if (!last){ st.className = 'tag wait'; st.textContent = 'Draft for your OK'; }
       else if (last.kind === 'approve'){ st.className = 'tag ok'; st.textContent = (last.body && last.body.note) ? 'Approved with a note' : 'Approved'; }
       else { st.className = 'tag warn'; st.textContent = 'Notes sent'; }
@@ -592,7 +593,7 @@ html{scroll-behavior:smooth}
     }
     document.body.classList.remove('ro');
     render();
-    var waiting = EMAILS.filter(function(m){ var rs = responses.filter(function(x){ return x.item === m.id && (party === 'tse' || x.party === 'client'); }); return !rs.length || rs[rs.length-1].kind !== 'approve'; }).length;
+    var waiting = EMAILS.filter(function(m){ var rs = responses.filter(function(x){ return x.item === m.id && (party === 'tse' || x.party === 'client'); }); var lr = REPLIES.filter(function(x){ return x.item === m.id && x.reopen; }).pop(); return !rs.length || rs[rs.length-1].kind !== 'approve' || (lr && new Date(lr.at) > new Date(rs[rs.length-1].at)); }).length;
     if (party === 'tse') setStatus('wait', 'Viewing as The Service Edit. Anything you send here is marked as a TSE test.');
     else if (waiting) setStatus('wait', waiting + (waiting === 1 ? ' email is' : ' emails are') + ' waiting for your OK.');
     else setStatus('done', "You're all caught up. Thanks.");
